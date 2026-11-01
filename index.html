@@ -219,7 +219,7 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 <div class="sheet" id="planSheet" hidden><div>
   <div class="shead"><h2>Plan du palais</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
   <svg id="planSvg" role="img" aria-label="Plan des deux étages"></svg>
-  <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms, longe le couloir, revient par la rangée d'en face jusqu'aux incises, monte les étages des incises par l'escalier, puis visite l'étage 2 des noms, verbes, adjectifs et adverbes avant de redescendre.</p>
+  <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms et longe les salles de mots. Elle revient par la rangée d'en face, où les expressions basiques, les modales et les incises forment chacune une tour d'étages desservie par l'escalier. Elle finit par l'étage 2 des noms, verbes, adjectifs et adverbes, puis redescend aux noms.</p>
 </div></div>
 
 <div class="sheet" id="accountSheet" hidden><div>
@@ -251,7 +251,9 @@ const FAMS = {
   incises:      { fr: "loggia des orateurs", it: "loggia", floor: ["terrazzo", "#c8b69a", "#7d6a4f"], wall: "#e9dcc4", ceil: "#d9c7a7", land: "lutrin" }
 };
 const SHORT = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj. qualif.", determinants: "Adj. déterm.", pronoms: "Pronoms", conjonctions: "Conjonctions",
-  prepositions: "Prépositions", adverbes: "Adverbes", courantes_1: "Expr. courantes", noms_2: "Noms ²", verbes_2: "Verbes ²", adjectifs_2: "Adj. ²", adverbes_2: "Adverbes ²", incises_1: "Incises", incises_2: "Incises ²", incises_3: "Incises ³", incises_4: "Incises ⁴" };
+  prepositions: "Prépositions", adverbes: "Adverbes", courantes_1: "Expr. courantes", noms_2: "Noms ²", verbes_2: "Verbes ²", adjectifs_2: "Adj. ²", adverbes_2: "Adverbes ²", incises_1: "Incises", incises_2: "Incises ²", incises_3: "Incises ³", incises_4: "Incises ⁴",
+  basiques_1: "Basiques", basiques_2: "Basiques ²", basiques_3: "Basiques ³", basiques_4: "Basiques ⁴", basiques_5: "Basiques ⁵",
+  modales_1: "Modales", modales_2: "Modales ²", modales_3: "Modales ³", modales_4: "Modales ⁴", modales_5: "Modales ⁵" };
 const code = r => ({ noms: "n", verbes: "v", adjectifs: "adj", determinants: "det", pronoms: "pro", conjonctions: "conj", prepositions: "prp", adverbes: "adv", courantes_1: "cour", noms_2: "n²", verbes_2: "v²", adjectifs_2: "adj²", adverbes_2: "adv²" }[r.id] || r.id.replace(/^basiques_/, "b").replace(/^modales_/, "m").replace(/^incises_/, "i"));
 const shortName = r => SHORT[r.id] || r.id.replace(/^basiques_(\d)/, "Basiques $1").replace(/^modales_(\d)/, "Modales $1").replace(/^incises_(\d)/, "Incises $1");
 const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"]];
@@ -1017,7 +1019,7 @@ function freeUpdate(dt) {
   if (free.target && !f && !s) { const dx = free.target.x - p.x, dz = free.target.z - p.z, dd = Math.hypot(dx, dz); if (dd < .2) free.target = null; else { mx = dx / dd; mz = dz / dd; } }
   else { free.target = null; const fx = -Math.sin(free.yaw), fz = -Math.cos(free.yaw); mx = fx * f - fz * s; mz = fz * f + fx * s; }
   const sp = 3.6 * dt, len = Math.hypot(mx, mz) || 1, nx0 = p.x + mx / Math.max(1, len) * sp, nz0 = p.z + mz / Math.max(1, len) * sp;
-  const [nx, nz] = collide(p.x, p.z, nx0, nz0, free.lv);
+  let nx = p.x, nz = p.z; const steps = Math.max(1, Math.ceil(Math.hypot(nx0 - p.x, nz0 - p.z) / .12)); for (let i = 1; i <= steps; i++) [nx, nz] = collide(nx, nz, nx + (nx0 - p.x) / steps, nz + (nz0 - p.z) / steps, free.lv);
   if (free.target && Math.hypot(nx - nx0, nz - nz0) > .05) free.target = null;
   const fy = floorY(nx, nz, p.y - EYE); free.lv = Math.round(fy / 10);
   p.set(nx, fy + EYE, nz);

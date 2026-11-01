@@ -12,10 +12,13 @@ TOUR = ["noms", "verbes", "adjectifs", "determinants", "pronoms", "conjonctions"
         "noms_2", "verbes_2", "adjectifs_2", "adverbes_2"]
 assert sorted(TOUR) == sorted(pc), set(pc) ^ set(TOUR)
 # emplacement de chaque pièce : (étage, côté du couloir, rang le long du couloir)
-SLOT = {pid: (0, "N", k) for k, pid in enumerate(TOUR[:12])}
-SLOT.update({pid: (0, "S", 11 - k) for k, pid in enumerate(["basiques_5", "courantes_1", "modales_1", "modales_2", "modales_3", "modales_4", "modales_5", "incises_1"])})
-SLOT.update({"noms_2": (1, "N", 0), "verbes_2": (1, "N", 1), "adjectifs_2": (1, "S", 1), "adverbes_2": (1, "S", 0),
-             "incises_2": (1, "S", 4), "incises_3": (2, "S", 4), "incises_4": (3, "S", 4)})
+SLOT = {pid: (0, "N", k) for k, pid in enumerate(TOUR[:8])}          # rez-de-chaussée, rangée nord : les mots
+SLOT.update({f"basiques_{k}": (k - 1, "S", 7) for k in range(1, 6)})  # tours : une salle par étage
+SLOT.update({"courantes_1": (0, "S", 6)})
+SLOT.update({f"modales_{k}": (k - 1, "S", 5) for k in range(1, 6)})
+SLOT.update({f"incises_{k}": (k - 1, "S", 4) for k in range(1, 5)})
+SLOT.update({"noms_2": (1, "N", 0), "verbes_2": (1, "N", 1), "adjectifs_2": (1, "S", 1), "adverbes_2": (1, "S", 0)})
+assert len(set(SLOT.values())) == len(SLOT) == len(TOUR)
 FAM = lambda pid: ("noms" if pid.startswith("noms") else "verbes" if pid.startswith("verbes") else
                    "adjectifs" if pid.startswith(("adjectifs", "determinants")) else "pronoms" if pid == "pronoms" else
                    "conjonctions" if pid == "conjonctions" else "prepositions" if pid == "prepositions" else

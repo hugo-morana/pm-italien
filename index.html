@@ -735,9 +735,27 @@ async function useSession(session) {
   ls.set("owner", store.uid); store.cache = {};
   await afterLogin(); renderAccount(); $("#accountBtn").textContent = "Compte ✓"; toast("Connecté : " + store.email);
 }
+/* Réagencement des étages (tri par fréquence) : déplace les cartes de répétition vers les nouvelles niches */
+function migrateCards(all) { // all : { roomId: { "n:type": carte } } -> même forme, réindexée
+  const mv = DATA.moves || {}, out = {};
+  for (const id in all) for (const k in all[id] || {}) {
+    const i = k.indexOf(":"), n = k.slice(0, i), ty = k.slice(i + 1), to = (mv[id + ":" + n] || id + ":" + n).split(":");
+    (out[to[0]] = out[to[0]] || {})[to[1] + ":" + ty] = all[id][k];
+  }
+  return out;
+}
+function migrateLocal() {
+  const rev = DATA.rev || 1; if (ls.get("rev", 1) >= rev) return;
+  const ids = new Set(R.map(r => r.id)), all = {}; for (const id of ids) all[id] = ls.get("srs_" + id, {});
+  const out = migrateCards(all); for (const id of ids) ls.set("srs_" + id, out[id] || {}); ls.set("rev", rev);
+}
 async function afterLogin() { // fusion de la progression locale et distante, puis envoi
   await loadHist();
-  for (let ri = 0; ri < R.length; ri++) { const id = R[ri].id, local = ls.get("srs_" + id, {}), rem = await remoteGet("srs_" + id); const m = mergeCards(local, (rem && rem.cards) || {}); store.cache[id] = m; ls.set("srs_" + id, m); if (Object.keys(m).length && JSON.stringify(m) !== JSON.stringify((rem && rem.cards) || {})) remoteSet("srs_" + id, { cards: m, maj: Date.now() }); }
+  const rev = DATA.rev || 1, meta = await remoteGet("meta"), remAll = {};
+  for (const r of R) { const rem = await remoteGet("srs_" + r.id); remAll[r.id] = (rem && rem.cards) || {}; }
+  const remM = (!meta || (meta.rev || 1) < rev) ? migrateCards(remAll) : remAll;
+  for (let ri = 0; ri < R.length; ri++) { const id = R[ri].id, local = ls.get("srs_" + id, {}), rc = remM[id] || {}; const m = mergeCards(local, rc); store.cache[id] = m; ls.set("srs_" + id, m); if (JSON.stringify(m) !== JSON.stringify(remAll[id] || {})) remoteSet("srs_" + id, { cards: m, maj: Date.now() }); }
+  if (!meta || (meta.rev || 1) < rev) remoteSet("meta", { rev });
   if (HIST.length) remoteSet("historique", { pts: HIST });
 }
 async function srsRoom(ri) {
@@ -1152,7 +1170,7 @@ async function start() {
   try {
     const res = await fetch("data3d.json"); DATA = await res.json();
   } catch (e) { $("#chargement").innerHTML = "Données introuvables<small>data3d.json n'a pas pu être chargé</small>"; return; }
-  R = DATA.rooms; layout();
+  R = DATA.rooms; migrateLocal(); layout();
   renderer = new THREE.WebGLRenderer({ canvas: $("#scene"), antialias: true }); renderer.setPixelRatio(Math.min(2, devicePixelRatio));
   scene = new THREE.Scene(); scene.background = new THREE.Color("#2a211d"); scene.fog = new THREE.Fog("#2a211d", 40, 140);
   camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, .05, 400); clock = new THREE.Clock();

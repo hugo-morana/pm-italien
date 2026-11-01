@@ -114484,7 +114484,7 @@
   },
   {
    "id": "incises_1",
-   "titre_fr": "Les incises (1)",
+   "titre_fr": "Les incises",
    "titre_cible": "Gli incisi",
    "decor": "loggia des orateurs",
    "ordre": "fréquence orale estimée (≈), décroissante",
@@ -120139,7 +120139,7 @@
      "exemple_fr_mot": "C'est fou comme",
      "exemple_cible": "È incredibile come è cresciuto.",
      "exemple_cible_mot": "È incredibile come",
-     "lien": "Le public incrédule monte vers la pièce suivante des incises.",
+     "lien": "Le public incrédule monte l'escalier jusqu'à l'étage 2 des incises.",
      "categorie": "incises",
      "sous_categories": [
       "incises_introductives"
@@ -120184,8 +120184,8 @@
   },
   {
    "id": "incises_2",
-   "titre_fr": "Les incises (2)",
-   "titre_cible": "Gli incisi",
+   "titre_fr": "Les incises · étage 2",
+   "titre_cible": "Gli incisi · primo piano",
    "decor": "loggia des orateurs",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -125853,7 +125853,7 @@
      "exemple_fr_mot": "En guise de conclusion",
      "exemple_cible": "A mo' di conclusione, grazie.",
      "exemple_cible_mot": "A mo' di conclusione",
-     "lien": "Le dernier mot descend vers la pièce suivante des incises.",
+     "lien": "Le dernier mot monte l'escalier jusqu'à l'étage 3 des incises.",
      "categorie": "incises",
      "sous_categories": [
       "incises_introductives"
@@ -125898,8 +125898,8 @@
   },
   {
    "id": "incises_3",
-   "titre_fr": "Les incises (3)",
-   "titre_cible": "Gli incisi",
+   "titre_fr": "Les incises · étage 3",
+   "titre_cible": "Gli incisi · secondo piano",
    "decor": "loggia des orateurs",
    "ordre": "introductives : fréquence orale estimée (≈) ; milieu : liste proposée, des plus courantes aux plus soutenues",
    "famille": "expressions",
@@ -128890,7 +128890,7 @@
      "exemple_fr_mot": "il faut dire",
      "exemple_cible": "È, bisogna dire, molto bravo.",
      "exemple_cible_mot": "bisogna dire",
-     "lien": "Le panneau file vers la salle des incises conclusives, niche 00.",
+     "lien": "Le panneau monte l'escalier jusqu'à l'étage 4, celui des incises conclusives, niche 00.",
      "categorie": "incises",
      "sous_categories": [
       "incises_milieu"
@@ -129256,8 +129256,8 @@
   },
   {
    "id": "incises_4",
-   "titre_fr": "Les incises (4)",
-   "titre_cible": "Gli incisi",
+   "titre_fr": "Les incises · étage 4",
+   "titre_cible": "Gli incisi · terzo piano",
    "decor": "loggia des orateurs",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -134628,7 +134628,7 @@
      "exemple_fr_mot": "disons-le",
      "exemple_cible": "È un fallimento, diciamolo.",
      "exemple_cible_mot": "diciamolo",
-     "lien": "On monte à l'étage de la loggia du marché, où les noms recommencent : derrière un masque de théâtre, une vraie personne.",
+     "lien": "On redescend l'escalier jusqu'à l'étage 2 du marché, où les noms recommencent : derrière un masque de théâtre, une vraie personne.",
      "categorie": "incises",
      "sous_categories": [
       "incises_conclusives"

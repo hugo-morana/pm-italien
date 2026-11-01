@@ -219,7 +219,7 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 <div class="sheet" id="planSheet" hidden><div>
   <div class="shead"><h2>Plan du palais</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
   <svg id="planSvg" role="img" aria-label="Plan des deux étages"></svg>
-  <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms, longe le couloir, revient par la rangée d'en face, monte l'escalier vers l'étage 2, puis redescend aux noms.</p>
+  <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms, longe le couloir, revient par la rangée d'en face jusqu'aux incises, monte les étages des incises par l'escalier, puis visite l'étage 2 des noms, verbes, adjectifs et adverbes avant de redescendre.</p>
 </div></div>
 
 <div class="sheet" id="accountSheet" hidden><div>
@@ -251,7 +251,7 @@ const FAMS = {
   incises:      { fr: "loggia des orateurs", it: "loggia", floor: ["terrazzo", "#c8b69a", "#7d6a4f"], wall: "#e9dcc4", ceil: "#d9c7a7", land: "lutrin" }
 };
 const SHORT = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj. qualif.", determinants: "Adj. déterm.", pronoms: "Pronoms", conjonctions: "Conjonctions",
-  prepositions: "Prépositions", adverbes: "Adverbes", courantes_1: "Expr. courantes", noms_2: "Noms ²", verbes_2: "Verbes ²", adjectifs_2: "Adj. ²", adverbes_2: "Adverbes ²" };
+  prepositions: "Prépositions", adverbes: "Adverbes", courantes_1: "Expr. courantes", noms_2: "Noms ²", verbes_2: "Verbes ²", adjectifs_2: "Adj. ²", adverbes_2: "Adverbes ²", incises_1: "Incises", incises_2: "Incises ²", incises_3: "Incises ³", incises_4: "Incises ⁴" };
 const code = r => ({ noms: "n", verbes: "v", adjectifs: "adj", determinants: "det", pronoms: "pro", conjonctions: "conj", prepositions: "prp", adverbes: "adv", courantes_1: "cour", noms_2: "n²", verbes_2: "v²", adjectifs_2: "adj²", adverbes_2: "adv²" }[r.id] || r.id.replace(/^basiques_/, "b").replace(/^modales_/, "m").replace(/^incises_/, "i"));
 const shortName = r => SHORT[r.id] || r.id.replace(/^basiques_(\d)/, "Basiques $1").replace(/^modales_(\d)/, "Modales $1").replace(/^incises_(\d)/, "Incises $1");
 const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"]];
@@ -303,19 +303,15 @@ function slotLocal(n) {
 }
 
 /* ============ Disposition des pièces dans le monde ============ */
-function layout() {
-  const ground = R.filter(r => r.floor === 0), up = R.filter(r => r.floor === 1);
-  const nNorth = Math.ceil(ground.length / 2 + .5);
-  ground.forEach((r, k) => {
-    if (k < nNorth) { r.o = V3(k * GAP, 0, -2 - D / 2); r.rot = 0; }
-    else { const j = k - nNorth; r.o = V3((nNorth - 1 - j) * GAP, 0, 2 + D / 2); r.rot = Math.PI; }
-  });
-  up.forEach((r, k) => {
-    const half = Math.ceil(up.length / 2);
-    if (k < half) { r.o = V3(k * GAP, 10, -2 - D / 2); r.rot = 0; }
-    else { const j = k - half; r.o = V3((half - 1 - j) * GAP, 10, 2 + D / 2); r.rot = Math.PI; }
-  });
-  layout.xmax0 = (nNorth - 1) * GAP + 6.5; layout.xmax1 = (Math.ceil(up.length / 2) - 1) * GAP + 6.5;
+let NL = 1;
+function layout() { // chaque pièce a un emplacement : étage, côté du couloir (N/S), rang le long du couloir
+  layout.xmax = [];
+  for (const r of R) {
+    const sl = r.slot || { floor: r.floor || 0, side: "N", x: 0 };
+    r.floor = sl.floor; r.o = V3(sl.x * GAP, sl.floor * 10, sl.side === "N" ? -2 - D / 2 : 2 + D / 2); r.rot = sl.side === "N" ? 0 : Math.PI;
+    layout.xmax[sl.floor] = Math.max(layout.xmax[sl.floor] ?? 6.5, sl.x * GAP + 6.5);
+  }
+  NL = layout.xmax.length;
 }
 function toWorld(r, v) { return v.clone().applyAxisAngle(V3(0, 1, 0), r.rot).add(r.o); }
 function dirWorld(r, v) { return v.clone().applyAxisAngle(V3(0, 1, 0), r.rot); }
@@ -434,8 +430,8 @@ function landmark(kind) {
 }
 function buildCorridors() {
   const corrM = mat({ map: plasterTex("#d8cdbd", 4) }), ceilM = mat({ map: plasterTex("#efe4d2", 4), side: THREE.BackSide });
-  for (const lv of [0, 1]) {
-    const y = lv * 10, xmax = lv ? layout.xmax1 : layout.xmax0, len = xmax + 6;
+  for (let lv = 0; lv < NL; lv++) {
+    const y = lv * 10, xmax = layout.xmax[lv], len = xmax + 6;
     const f = quad(len, 4, mat({ map: floorTex("terrazzo", "#cdbca2", "#8a7458") })); f.rotation.x = -Math.PI / 2; f.position.set((xmax - 6) / 2, y + .001, 0); f.userData.floor = lv; scene.add(f); floorsForRay.push(f);
     const c = quad(len, 4, ceilM); c.rotation.x = -Math.PI / 2; c.position.set((xmax - 6) / 2, y + H, 0); scene.add(c);
     const end = quad(4, H, corrM); placeQuad(end, V3(xmax, y + H / 2, 0), V3(0, 0, 1), V3(0, 1, 0)); scene.add(end);
@@ -450,25 +446,35 @@ function buildCorridors() {
       if (!xs.length || xs[0] > -6) { const w0 = (xs[0] ?? xmax) - 6 - (-6); if (w0 > 0) { const q = quad(w0, H, corrM); placeQuad(q, V3(-6 + w0 / 2, y + H / 2, side), side < 0 ? V3(1, 0, 0) : V3(-1, 0, 0), V3(0, 1, 0)); scene.add(q); } }
     }
   }
-  // escalier en U (cage à l'ouest) : volée A au sud (z<0) monte vers l'ouest, palier, volée B au nord redescend vers l'est jusqu'à l'étage 2
-  const stairM = mat({ map: floorTex("pierre", "#b3a58e", "#8d806b") });
-  for (let k = 0; k < 18; k++) {
-    const xA = -6 - (k + .5) * .5, yA = (k + 1) * 5 / 18; const sA = new THREE.Mesh(new THREE.BoxGeometry(.5, .12, 2), stairM); sA.position.set(xA, yA - .06, -1); scene.add(sA);
-    const xB = -15 + (k + .5) * .5, yB = 5 + (k + 1) * 5 / 18; const sB = new THREE.Mesh(new THREE.BoxGeometry(.5, .12, 2), stairM); sB.position.set(xB, yB - .06, 1); scene.add(sB);
+  // escalier en U (cage à l'ouest), répété à chaque étage : volée A au sud (z<0) vers l'ouest, palier, volée B au nord vers l'est
+  const stairM = mat({ map: floorTex("pierre", "#b3a58e", "#8d806b") }), stairWall = mat({ map: plasterTex("#cfc2ae", 4), side: THREE.DoubleSide });
+  const top = (NL - 1) * 10 + H;
+  for (let lv = 0; lv < NL - 1; lv++) {
+    const b = lv * 10;
+    for (let k = 0; k < 18; k++) {
+      const sA = new THREE.Mesh(new THREE.BoxGeometry(.5, .12, 2), stairM); sA.position.set(-6 - (k + .5) * .5, b + (k + 1) * 5 / 18 - .06, -1); scene.add(sA);
+      const sB = new THREE.Mesh(new THREE.BoxGeometry(.5, .12, 2), stairM); sB.position.set(-15 + (k + .5) * .5, b + 5 + (k + 1) * 5 / 18 - .06, 1); scene.add(sB);
+    }
+    const land = new THREE.Mesh(new THREE.BoxGeometry(1.2, .12, 4), stairM); land.position.set(-15.6, b + 4.94, 0); scene.add(land);
+    const div = quad(9, 9, stairWall); div.position.set(-10.5, b + 4.5, 0); scene.add(div);
   }
-  const land = new THREE.Mesh(new THREE.BoxGeometry(1.2, .12, 4), stairM); land.position.set(-15.6, 4.94, 0); scene.add(land);
-  const stairWall = mat({ map: plasterTex("#cfc2ae", 4), side: THREE.DoubleSide });
-  for (const z of [-2, 2]) { const q = quad(10.2, 16, stairWall); q.position.set(-11.1, 8, z); scene.add(q); }
-  const back = quad(4, 16, stairWall); back.rotation.y = Math.PI / 2; back.position.set(-16.2, 8, 0); scene.add(back);
-  const div = quad(9, 9, stairWall); div.position.set(-10.5, 4.5, 0); scene.add(div);
-  for (const lv of [0, 1]) walls2d.push({ a: [-16.2, -2], b: [-6, -2], lv }, { a: [-16.2, 2], b: [-6, 2], lv }, { a: [-16.2, -2], b: [-16.2, 2], lv }, { a: [-15, 0], b: [-6, 0], lv });
-  const ss = quad(3.6, .9, new THREE.MeshBasicMaterial({ map: canvasTex(720, 180, (g, w, h) => { g.fillStyle = "#2a211d"; g.fillRect(0, 0, w, h); g.fillStyle = "#f3e6cf"; g.textAlign = "center"; g.font = "600 60px 'Cormorant SC', Georgia, serif"; g.fillText("Scala · escalier", w / 2, 82); g.fillStyle = "#c9a24a"; g.font = "500 30px 'IBM Plex Mono', monospace"; g.fillText("↑ ÉTAGE 2   ↓ NOMS", w / 2, 140); }) }));
-  ss.rotation.y = Math.PI / 2; ss.position.set(-5.95, 3.6, 0); scene.add(ss);
+  for (const z of [-2, 2]) { const q = quad(10.2, top, stairWall); q.position.set(-11.1, top / 2, z); scene.add(q); }
+  const back = quad(4, top, stairWall); back.rotation.y = Math.PI / 2; back.position.set(-16.2, top / 2, 0); scene.add(back);
+  for (let lv = 0; lv < NL; lv++) walls2d.push({ a: [-16.2, -2], b: [-6, -2], lv }, { a: [-16.2, 2], b: [-6, 2], lv }, { a: [-16.2, -2], b: [-16.2, 2], lv }, { a: [-15, 0], b: [-6, 0], lv });
+  for (let lv = 0; lv < NL; lv++) {
+    const here = R.filter(r => r.floor === lv).map(shortName).slice(0, 3).join(" · ") + (R.filter(r => r.floor === lv).length > 3 ? "…" : "");
+    const ss = quad(3.6, .9, new THREE.MeshBasicMaterial({ map: canvasTex(720, 180, (g, w, h) => { g.fillStyle = "#2a211d"; g.fillRect(0, 0, w, h); g.fillStyle = "#f3e6cf"; g.textAlign = "center"; g.font = "600 56px 'Cormorant SC', Georgia, serif"; g.fillText(lv ? `Scala · étage ${lv + 1}` : "Scala · rez-de-chaussée", w / 2, 78); g.fillStyle = "#c9a24a"; g.font = "500 26px 'IBM Plex Mono', monospace"; g.fillText(here.toUpperCase(), w / 2, 140); }) }));
+    ss.rotation.y = Math.PI / 2; ss.position.set(-5.95, lv * 10 + 3.6, 0); scene.add(ss);
+  }
 }
-function floorY(x, z, lv) {
-  if (x >= -6) return lv * 10;
-  if (x < -15) return 5;
-  return z < 0 ? Math.min(5, (-6 - x) / 9 * 5) : 5 + Math.min(5, (x + 15) / 9 * 5);
+function floorY(x, z, y0) { // hauteur du sol ; dans la cage d'escalier, la volée la plus proche de la hauteur actuelle
+  if (x >= -6) return Math.max(0, Math.min(NL - 1, Math.round(y0 / 10))) * 10;
+  let best = null;
+  for (let k = 0; k < NL - 1; k++) {
+    const b = 10 * k, c = x < -15 ? b + 5 : z < 0 ? b + Math.min(5, (-6 - x) / 9 * 5) : b + 5 + Math.min(5, (x + 15) / 9 * 5);
+    if (best == null || Math.abs(c - y0) < Math.abs(best - y0)) best = c;
+  }
+  return best ?? 0;
 }
 
 /* ============ Texture d'un panneau (pièce courante seulement) ============ */
@@ -616,9 +622,10 @@ function doorIn(r) { return toWorld(r, V3(0, EYE, D / 2 - 1.5)); }
 function walkToRoom(ri, n, opts) {
   const A = R[st.r], B = R[ri], pts = [camera.position.clone(), doorIn(A), doorOut(A)];
   const ya = A.o.y + EYE, yb = B.o.y + EYE;
-  if (A.floor !== B.floor) {
-    if (A.floor === 0) pts.push(V3(-5, ya, -1), V3(-10.5, ya + 2.5, -1), V3(-15.3, ya + 5, 0), V3(-10.5, ya + 7.5, 1), V3(-5, yb, 1));
-    else pts.push(V3(-5, ya, 1), V3(-10.5, ya - 2.5, 1), V3(-15.3, ya - 5, 0), V3(-10.5, ya - 7.5, -1), V3(-5, yb, -1));
+  for (let k = A.floor, dir = Math.sign(B.floor - A.floor); k !== B.floor; k += dir) {
+    const y = k * 10 + EYE;
+    if (dir > 0) pts.push(V3(-5, y, -1), V3(-10.5, y + 2.5, -1), V3(-15.3, y + 5, 0), V3(-10.5, y + 7.5, 1), V3(-5, y + 10, 1));
+    else pts.push(V3(-5, y, 1), V3(-10.5, y - 2.5, 1), V3(-15.3, y - 5, 0), V3(-10.5, y - 7.5, -1), V3(-5, y - 10, -1));
   }
   pts.push(doorOut(B), doorIn(B));
   // ne pas créer de points trop proches
@@ -628,7 +635,7 @@ function walkToRoom(ri, n, opts) {
   banner(prevLink ? "⟶ " + B.it : "→ " + B.it, prevLink || B.fr + " · " + FAMS[B.fam].fr);
   anim.walking = true; setOthersVisible(null); ring.visible = arrow.visible = false; if (thread) thread.visible = false;
   st.r = ri; st.n = n; save(); renderRooms(); renderFiche();
-  walkTo(clean, toWorld(B, V3(0, 2.6, -2)), Math.min(4.5, Math.max(1.2, len / 14)), () => {
+  walkTo(clean, toWorld(B, V3(0, 2.6, -2)), Math.min(A.floor !== B.floor ? 6 : 4.5, Math.max(1.2, len / 14)), () => {
     anim.walking = false; texturizeRoom(ri, opts.mask ?? null); placeRing(ri, n); applyOverviewLook(); flyTo(poseFor(st.zoom), .6);
   });
 }
@@ -964,13 +971,13 @@ async function renderTests() {
   $("#map").innerHTML = R[st.r].niches.map((x, n) => { if (!x) return `<span class="vide">${n}</span>`; const k = c[n + ":" + prefs.mapType]; return `<span class="${k && k.seen ? "b" + Math.max(1, k.b) : ""}" title="${esc(x.fr)}">${n}</span>`; }).join("");
 }
 function renderPlan() {
-  const svg = $("#planSvg"), sc = 2.3, pad = 10, w0 = (layout.xmax0 + 18) * sc, h0 = 30 * sc;
-  svg.setAttribute("viewBox", `0 0 ${w0 + pad * 2} ${h0 * 2 + 60}`);
+  const svg = $("#planSvg"), sc = 2.3, pad = 10, w0 = (Math.max(...layout.xmax) + 18) * sc, h0 = 30 * sc;
+  svg.setAttribute("viewBox", `0 0 ${w0 + pad * 2} ${(h0 + 28) * NL + 10}`);
   let s = "";
-  for (const lv of [0, 1]) {
-    const oy = lv ? 18 : h0 + 46, X = x => pad + (x + 17) * sc, Z = z => oy + (z + 15) * sc;
-    s += `<text x="${pad}" y="${oy - 4}">${lv ? "ÉTAGE 2" : "REZ-DE-CHAUSSÉE"}</text>`;
-    s += `<rect x="${X(-16.2)}" y="${Z(-2)}" width="${((lv ? layout.xmax1 : layout.xmax0) + 16.2) * sc}" height="${4 * sc}" fill="var(--line)"/>`;
+  for (let lv = NL - 1; lv >= 0; lv--) {
+    const oy = 18 + (NL - 1 - lv) * (h0 + 28), X = x => pad + (x + 17) * sc, Z = z => oy + (z + 15) * sc;
+    s += `<text x="${pad}" y="${oy - 4}">${lv ? "ÉTAGE " + (lv + 1) : "REZ-DE-CHAUSSÉE"}</text>`;
+    s += `<rect x="${X(-16.2)}" y="${Z(-2)}" width="${(layout.xmax[lv] + 16.2) * sc}" height="${4 * sc}" fill="var(--line)"/>`;
     s += `<rect x="${X(-16.2)}" y="${Z(-2)}" width="${10.2 * sc}" height="${4 * sc}" fill="none" stroke="var(--muted)"/><text x="${X(-15.5)}" y="${Z(-2) - 2}">escalier</text>`;
     R.forEach((r, i) => { if (r.floor !== lv) return; const x0 = r.o.x - W / 2, z0 = r.o.z - D / 2;
       s += `<g data-goroom="${i}" style="cursor:pointer"><rect x="${X(x0)}" y="${Z(z0)}" width="${W * sc}" height="${D * sc}" rx="2" fill="${i === st.r ? "var(--accent)" : "var(--surface)"}" stroke="var(--fg)" stroke-width=".8"/>
@@ -1012,7 +1019,7 @@ function freeUpdate(dt) {
   const sp = 3.6 * dt, len = Math.hypot(mx, mz) || 1, nx0 = p.x + mx / Math.max(1, len) * sp, nz0 = p.z + mz / Math.max(1, len) * sp;
   const [nx, nz] = collide(p.x, p.z, nx0, nz0, free.lv);
   if (free.target && Math.hypot(nx - nx0, nz - nz0) > .05) free.target = null;
-  const fy = floorY(nx, nz, free.lv); if (nx < -6) free.lv = fy > 5 ? 1 : 0;
+  const fy = floorY(nx, nz, p.y - EYE); free.lv = Math.round(fy / 10);
   p.set(nx, fy + EYE, nz);
   const dir = V3(-Math.sin(free.yaw) * Math.cos(free.pitch), Math.sin(free.pitch), -Math.cos(free.yaw) * Math.cos(free.pitch));
   camTarget.copy(p).add(dir); camera.lookAt(camTarget);

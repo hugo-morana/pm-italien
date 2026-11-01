@@ -1,0 +1,82 @@
+Aimez-vous Vinf C ? (pluriel)|Vi piace …?|Vous aimez nager, les enfants ?|Vous aimez|Vi piace nuotare, bambini?|Vi piace
+Sait-on que SV C?|Si sa che …?|Sait-on qui a gagné ?|Sait-on|Si sa chi ha vinto?|Si sa
+Aimeriez-vous Vinf C ?|Le piacerebbe …? (Lei)|Aimeriez-vous visiter la ville ?|Aimeriez-vous|Le piacerebbe visitare la città?|Le piacerebbe
+Aimeriez-vous que S Vsub C ?|Vorrebbe che …? (Lei, subjonctif imparfait)|Aimeriez-vous que je vous accompagne ?|Aimeriez-vous que|Vorrebbe che la accompagnassi?|Vorrebbe che
+Sait-il que SV C ?|Sa che …?|Sait-il que tu es là ?|Sait-il que|Sa che sei qui?|Sa che
+Ils aimeraient C.|Vorrebbero … / Gli piacerebbe …|Ils aimeraient une réponse.|Ils aimeraient|Vorrebbero una risposta.|Vorrebbero
+Ils aimeraient Vinf C.|Gli piacerebbe …|Ils aimeraient venir.|Ils aimeraient|Gli piacerebbe venire.|Gli piacerebbe
+Ils aimeraient que S Vsbj C.|Vorrebbero che … (subjonctif imparfait)|Ils aimeraient que tu restes.|Ils aimeraient que|Vorrebbero che tu restassi.|Vorrebbero che
+Aimes-tu C ?|Ti piace …?|Aimes-tu le jazz ?|Aimes-tu|Ti piace il jazz?|Ti piace
+Aimes-tu Vinf C ?|Ti piace …?|Aimes-tu lire ?|Aimes-tu|Ti piace leggere?|Ti piace
+Elles aimeraient C.|Vorrebbero … / Gli piacerebbe …|Elles aimeraient un chat.|Elles aimeraient|Vorrebbero un gatto.|Vorrebbero
+Elles aimeraient Vinf C.|Gli piacerebbe …|Elles aimeraient danser.|Elles aimeraient|Gli piacerebbe ballare.|Gli piacerebbe
+Elles aimeraient que S Vsbj C.|Vorrebbero che … (subjonctif imparfait)|Elles aimeraient que tu chantes.|Elles aimeraient que|Vorrebbero che tu cantassi.|Vorrebbero che
+Veulent-ils C ?|Vogliono …?|Veulent-ils du vin ?|Veulent-ils|Vogliono del vino?|Vogliono
+Veulent-ils Vinf C ?|Vogliono …?|Veulent-ils manger ?|Veulent-ils|Vogliono mangiare?|Vogliono
+Veulent-ils que SV C?|Vogliono che …? (subjonctif)|Veulent-ils que je vienne ?|Veulent-ils que|Vogliono che venga?|Vogliono che
+Ne veulent-ils pas C?|Non vogliono …?|Ils veulent pas de café ?|Ils veulent pas|Non vogliono il caffè?|Non vogliono
+Ne veulent-ils pas Vinf C?|Non vogliono …?|Ils veulent pas rester ?|Ils veulent pas|Non vogliono restare?|Non vogliono
+Ne veulent-ils pas que SV C?|Non vogliono che …? (subjonctif)|Ils veulent pas qu'on les aide ?|Ils veulent pas qu'|Non vogliono che li aiutiamo?|Non vogliono che
+Ont-elles C ?|Hanno …?|Ont-elles des enfants ?|Ont-elles|Hanno figli?|Hanno
+Ont-elles besoin de C?|Hanno bisogno di …?|Ont-elles besoin d'aide ?|Ont-elles besoin d'|Hanno bisogno di aiuto?|Hanno bisogno di
+Aimerais-tu Vinf C?|Ti piacerebbe …?|Aimerais-tu venir ?|Aimerais-tu|Ti piacerebbe venire?|Ti piacerebbe
+Dois-tu Vinf C ?|Devi …?|Dois-tu partir ?|Dois-tu|Devi partire?|Devi
+Savons-nous que SV C ?|Sappiamo che …?|Savons-nous qu'il est parti ?|Savons-nous qu'|Sappiamo che è partito?|Sappiamo che
+Veut-elle C ?|Vuole …?|Veut-elle un thé ?|Veut-elle|Vuole un tè?|Vuole
+Veut-elle que SV C ?|Vuole che …? (subjonctif)|Veut-elle que je l'appelle ?|Veut-elle que|Vuole che la chiami?|Vuole che
+Veut-elle Vinf C?|Vuole …?|Veut-elle venir ?|Veut-elle|Vuole venire?|Vuole
+Ne veut-elle pas C ?|Non vuole …?|Elle veut pas de dessert ?|Elle veut pas|Non vuole il dolce?|Non vuole
+Ne veut-elle pas Vinf C ?|Non vuole …?|Elle veut pas sortir ?|Elle veut pas|Non vuole uscire?|Non vuole
+Ne veut-elle pas que SV C?|Non vuole che …? (subjonctif)|Elle veut pas qu'on vienne ?|Elle veut pas qu'|Non vuole che veniamo?|Non vuole che
+Sait-elle que SV C ?|Sa che …?|Sait-elle que tu l'aimes ?|Sait-elle que|Sa che la ami?|Sa che
+Devez-vous Vinf C ?|Dovete …? (Lei : deve …?)|Devez-vous partir ?|Devez-vous|Dovete partire?|Dovete
+Savent-ils que SV C?|Sanno che …?|Savent-ils que tu es là ?|Savent-ils que|Sanno che sei qui?|Sanno che
+Sais-je que SV C?|So che …?|Est-ce que je sais qu'il viendra ? Non.|je sais qu'|So che verrà? No.|So che
+Doit-elle Vinf C ?|Deve …?|Doit-elle venir ?|Doit-elle|Deve venire?|Deve
+Faudrait-il Vinf C ?|Bisognerebbe …?|Faudrait-il appeler ?|Faudrait-il|Bisognerebbe chiamare?|Bisognerebbe
+Faudrait-il que SVC ?|Bisognerebbe che …? (subjonctif imparfait)|Faudrait-il que je parte ?|Faudrait-il que|Bisognerebbe che partissi?|Bisognerebbe che
+Sauriez-vous Vinf C ?|Saprebbe …? (Lei) / Sapreste …?|Sauriez-vous m'indiquer la gare ?|Sauriez-vous|Saprebbe indicarmi la stazione?|Saprebbe
+Pense-t-il que SV C?|Pensa che …? (subjonctif)|Pense-t-il que c'est grave ?|Pense-t-il que|Pensa che sia grave?|Pensa che
+Peuvent-elles Vinf C ?|Possono …?|Peuvent-elles venir ?|Peuvent-elles|Possono venire?|Possono
+Doivent-ils Vinf C ?|Devono …?|Doivent-ils payer ?|Doivent-ils|Devono pagare?|Devono
+Saurais-tu Vinf C ?|Sapresti …?|Saurais-tu réparer ça ?|Saurais-tu|Sapresti ripararlo?|Sapresti
+Saurais-tu que SV C ?|Sapresti se …?|Saurais-tu s'il est là ?|Saurais-tu s'|Sapresti se è qui?|Sapresti se
+Voulons-nous C?|Vogliamo …?|Voulons-nous vraiment ça ?|Voulons-nous|Vogliamo davvero questo?|Vogliamo
+Voulons-nous Vinf C ?|Vogliamo …?|Voulons-nous partir ?|Voulons-nous|Vogliamo partire?|Vogliamo
+Voulons-nous que SV C ?|Vogliamo che …? (subjonctif)|Voulons-nous qu'il reste ?|Voulons-nous qu'|Vogliamo che resti?|Vogliamo che
+Ne voulons-nous pas C ?|Non vogliamo …?|On veut pas de dessert ?|On veut pas|Non vogliamo il dolce?|Non vogliamo
+Ne voulons-nous pas Vinf C ?|Non vogliamo …?|On veut pas rester ?|On veut pas|Non vogliamo restare?|Non vogliamo
+Ne voulons-nous pas que SV C ?|Non vogliamo che …? (subjonctif)|On veut pas qu'il vienne ?|On veut pas qu'|Non vogliamo che venga?|Non vogliamo che
+Pensent-ils que SV C?|Pensano che …? (subjonctif)|Pensent-ils que c'est possible ?|Pensent-ils que|Pensano che sia possibile?|Pensano che
+Veut-on C?|Vogliamo …?|Veut-on vraiment ça ?|Veut-on|Vogliamo davvero questo?|Vogliamo
+Veut-on Vinf C ?|Vogliamo …?|Veut-on y aller ?|Veut-on|Vogliamo andarci?|Vogliamo
+Veut-on que SV C?|Vogliamo che …? (subjonctif)|Veut-on qu'il parte ?|Veut-on qu'|Vogliamo che parta?|Vogliamo che
+Ne veut-on pas C?|Non vogliamo …?|On veut pas de pizza ?|On veut pas|Non vogliamo la pizza?|Non vogliamo
+Ne veut-on pas Vinf C ?|Non vogliamo …?|On veut pas sortir ?|On veut pas|Non vogliamo uscire?|Non vogliamo
+Ne veut-on pas que SV C?|Non vogliamo che …? (subjonctif)|On veut pas qu'elle sache ?|On veut pas qu'|Non vogliamo che lo sappia?|Non vogliamo che
+Croit-il que SV C ?|Crede che …? (subjonctif)|Croit-il que je mens ?|Croit-il que|Crede che io menta?|Crede che
+Aime-t-il C ?|Gli piace …?|Aime-t-il le sport ?|Aime-t-il|Gli piace lo sport?|Gli piace
+Pense-t-elle que SV C ?|Pensa che …? (subjonctif)|Pense-t-elle que j'ai tort ?|Pense-t-elle que|Pensa che io abbia torto?|Pensa che
+Aime-t-elle C ?|Le piace …?|Aime-t-elle les fleurs ?|Aime-t-elle|Le piacciono i fiori?|Le piacciono
+Croient-ils que SV C?|Credono che …? (subjonctif)|Croient-ils que c'est vrai ?|Croient-ils que|Credono che sia vero?|Credono che
+Pensons-nous que SV C?|Pensiamo che …? (subjonctif)|Pensons-nous que ce soit juste ?|Pensons-nous que|Pensiamo che sia giusto?|Pensiamo che
+Aiment-ils C ?|Gli piace …?|Aiment-ils la pizza ?|Aiment-ils|Gli piace la pizza?|Gli piace
+Croit-elle que SV C?|Crede che …? (subjonctif)|Croit-elle que tu mens ?|Croit-elle que|Crede che tu menta?|Crede che
+Veulent-elles C ?|Vogliono …?|Veulent-elles du gâteau ?|Veulent-elles|Vogliono della torta?|Vogliono
+Veulent-elles Vinf C?|Vogliono …?|Veulent-elles venir ?|Veulent-elles|Vogliono venire?|Vogliono
+Veulent-elles que SV C ?|Vogliono che …? (subjonctif)|Veulent-elles que je reste ?|Veulent-elles que|Vogliono che resti?|Vogliono che
+Ne veulent-elles pas C?|Non vogliono …?|Elles veulent pas de thé ?|Elles veulent pas|Non vogliono il tè?|Non vogliono
+Ne veulent-elles pas Vinf C ?|Non vogliono …?|Elles veulent pas venir ?|Elles veulent pas|Non vogliono venire?|Non vogliono
+Ne veulent-elles pas que SV C?|Non vogliono che …? (subjonctif)|Elles veulent pas que je chante ?|Elles veulent pas que|Non vogliono che canti?|Non vogliono che
+Aimons-nous C ?|Ci piace …?|Est-ce qu'on aime ça ?|on aime|Ci piace questo?|Ci piace
+Doivent-elles Vinf C ?|Devono …?|Doivent-elles attendre ?|Doivent-elles|Devono aspettare?|Devono
+Pense-t-on que SV C?|Si pensa che …? (subjonctif)|Pense-t-on que c'est sûr ?|Pense-t-on que|Si pensa che sia sicuro?|Si pensa che
+Savent-elles que SV C?|Sanno che …?|Savent-elles que tu es là ?|Savent-elles que|Sanno che sei qui?|Sanno che
+Croit-on que SV C?|Si crede che …? (subjonctif)|Croit-on qu'il viendra ?|Croit-on qu'|Si crede che verrà?|Si crede che
+Croyons-nous que SV C?|Crediamo che …? (subjonctif)|Croyons-nous que c'est vrai ?|Croyons-nous que|Crediamo che sia vero?|Crediamo che
+Aime-t-on C?|Ci piace …?|Aime-t-on ce genre de film ?|Aime-t-on|Ci piace questo genere di film?|Ci piace
+Crois-je que SV C?|Credo che …? (subjonctif)|Est-ce que je crois qu'il ment ? Oui.|je crois qu'|Credo che menta? Sì.|Credo che
+Aiment-elles C ?|Gli piace …? / A loro piace …?|Aiment-elles le chocolat ?|Aiment-elles|A loro piace il cioccolato?|A loro piace
+Croient-elles que SV C?|Credono che …? (subjonctif)|Croient-elles que c'est fini ?|Croient-elles que|Credono che sia finita?|Credono che
+Pensent-elles que SV C?|Pensano che …? (subjonctif)|Pensent-elles que j'ai raison ?|Pensent-elles que|Pensano che io abbia ragione?|Pensano che
+Pense-je que SV C?|Penso che …? (subjonctif)|Est-ce que je pense qu'il a raison ? Non.|je pense qu'|Penso che abbia ragione? No.|Penso che

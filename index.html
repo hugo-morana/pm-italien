@@ -736,26 +736,36 @@ async function useSession(session) {
   await afterLogin(); renderAccount(); $("#accountBtn").textContent = "Compte ✓"; toast("Connecté : " + store.email);
 }
 /* Réagencement des étages (tri par fréquence) : déplace les cartes de répétition vers les nouvelles niches */
-function migrateCards(all) { // all : { roomId: { "n:type": carte } } -> même forme, réindexée
-  const mv = DATA.moves || {}, out = {};
-  for (const id in all) for (const k in all[id] || {}) {
-    const i = k.indexOf(":"), n = k.slice(0, i), ty = k.slice(i + 1), to = (mv[id + ":" + n] || id + ":" + n).split(":");
-    (out[to[0]] = out[to[0]] || {})[to[1] + ":" + ty] = all[id][k];
+function migrateCards(all, from) { // all : { roomId: { "n:type": carte } } -> réindexé d'après les étapes de tri postérieures à « from »
+  let cur = all;
+  for (const step of (DATA.migr || [])) {
+    if (step.rev <= from) continue;
+    const mv = step.moves, out = {};
+    for (const id in cur) for (const k in cur[id] || {}) {
+      const i = k.indexOf(":"), n = k.slice(0, i), ty = k.slice(i + 1), to = (mv[id + ":" + n] || id + ":" + n).split(":");
+      (out[to[0]] = out[to[0]] || {})[to[1] + ":" + ty] = cur[id][k];
+    }
+    cur = out;
   }
-  return out;
+  return cur;
+}
+function allRoomIds() { // salles actuelles + anciennes salles citées dans les étapes de tri
+  const ids = new Set(R.map(r => r.id));
+  for (const step of (DATA.migr || [])) for (const k in step.moves) { ids.add(k.split(":")[0]); ids.add(step.moves[k].split(":")[0]); }
+  return [...ids];
 }
 function migrateLocal() {
-  const rev = DATA.rev || 1; if (ls.get("rev", 1) >= rev) return;
-  const ids = new Set(R.map(r => r.id)), all = {}; for (const id of ids) all[id] = ls.get("srs_" + id, {});
-  const out = migrateCards(all); for (const id of ids) ls.set("srs_" + id, out[id] || {}); ls.set("rev", rev);
+  const rev = DATA.rev || 1, from = ls.get("rev", 1); if (from >= rev) return;
+  const ids = allRoomIds(), all = {}; for (const id of ids) all[id] = ls.get("srs_" + id, {});
+  const out = migrateCards(all, from); for (const id of ids) ls.set("srs_" + id, out[id] || {}); ls.set("rev", rev);
 }
 async function afterLogin() { // fusion de la progression locale et distante, puis envoi
   await loadHist();
-  const rev = DATA.rev || 1, meta = await remoteGet("meta"), remAll = {};
-  for (const r of R) { const rem = await remoteGet("srs_" + r.id); remAll[r.id] = (rem && rem.cards) || {}; }
-  const remM = (!meta || (meta.rev || 1) < rev) ? migrateCards(remAll) : remAll;
+  const rev = DATA.rev || 1, meta = await remoteGet("meta"), from = (meta && meta.rev) || 1, remAll = {};
+  for (const id of (from < rev ? allRoomIds() : R.map(r => r.id))) { const rem = await remoteGet("srs_" + id); remAll[id] = (rem && rem.cards) || {}; }
+  const remM = from < rev ? migrateCards(remAll, from) : remAll;
   for (let ri = 0; ri < R.length; ri++) { const id = R[ri].id, local = ls.get("srs_" + id, {}), rc = remM[id] || {}; const m = mergeCards(local, rc); store.cache[id] = m; ls.set("srs_" + id, m); if (JSON.stringify(m) !== JSON.stringify(remAll[id] || {})) remoteSet("srs_" + id, { cards: m, maj: Date.now() }); }
-  if (!meta || (meta.rev || 1) < rev) remoteSet("meta", { rev });
+  if (from < rev) { for (const id of allRoomIds()) if (!R.some(r => r.id === id) && Object.keys(remAll[id] || {}).length) remoteSet("srs_" + id, { cards: {}, maj: Date.now() }); remoteSet("meta", { rev }); }
   if (HIST.length) remoteSet("historique", { pts: HIST });
 }
 async function srsRoom(ri) {

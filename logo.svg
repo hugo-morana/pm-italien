@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#2a211d"/>
+  <!-- sol -->
+  <rect x="0" y="430" width="512" height="82" fill="#3a2e27"/>
+  <!-- drapeau italien sur mât -->
+  <line x1="256" y1="52" x2="256" y2="150" stroke="#c9a24a" stroke-width="8" stroke-linecap="round"/>
+  <g transform="translate(260 56)">
+    <rect x="0" y="0" width="34" height="58" fill="#009246"/>
+    <rect x="34" y="0" width="34" height="58" fill="#f4f1ea"/>
+    <rect x="68" y="0" width="34" height="58" fill="#ce2b37"/>
+  </g>
+  <!-- cerveau en coupole -->
+  <g>
+    <path d="M122 246 C110 196 150 150 200 156 C214 132 250 126 256 150 C262 126 298 132 312 156 C362 150 402 196 390 246 Z" fill="#e58fb2"/>
+    <line x1="256" y1="150" x2="256" y2="246" stroke="#a9557c" stroke-width="7"/>
+    <path d="M168 220 C178 196 204 200 206 182 M150 238 C160 226 180 232 186 216 M222 238 C226 218 240 214 236 196" fill="none" stroke="#a9557c" stroke-width="7" stroke-linecap="round"/>
+    <path d="M344 220 C334 196 308 200 306 182 M362 238 C352 226 332 232 326 216 M290 238 C286 218 272 214 276 196" fill="none" stroke="#a9557c" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <!-- fronton et entablement -->
+  <rect x="102" y="244" width="308" height="26" fill="#f3e6cf"/>
+  <rect x="96" y="270" width="320" height="10" fill="#c9a24a"/>
+  <!-- colonnes -->
+  <g fill="#f3e6cf">
+    <rect x="122" y="286" width="34" height="122"/><rect x="190" y="286" width="34" height="122"/>
+    <rect x="288" y="286" width="34" height="122"/><rect x="356" y="286" width="34" height="122"/>
+  </g>
+  <g fill="#d8c7a8">
+    <rect x="114" y="282" width="50" height="10"/><rect x="182" y="282" width="50" height="10"/><rect x="280" y="282" width="50" height="10"/><rect x="348" y="282" width="50" height="10"/>
+  </g>
+  <!-- porte -->
+  <path d="M234 408 V340 A22 22 0 0 1 278 340 V408 Z" fill="#9c3d22"/>
+  <!-- marches -->
+  <rect x="86" y="408" width="340" height="12" fill="#e6d6bc"/>
+  <rect x="72" y="420" width="368" height="12" fill="#d8c7a8"/>
+</svg>

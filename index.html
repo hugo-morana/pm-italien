@@ -254,8 +254,10 @@ const SHORT = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj. qualif.", deter
   prepositions: "Prépositions", adverbes: "Adverbes", courantes_1: "Expr. courantes", noms_2: "Noms ²", verbes_2: "Verbes ²", adjectifs_2: "Adj. ²", adverbes_2: "Adverbes ²", incises_1: "Incises", incises_2: "Incises ²", incises_3: "Incises ³", incises_4: "Incises ⁴",
   basiques_1: "Basiques", basiques_2: "Basiques ²", basiques_3: "Basiques ³", basiques_4: "Basiques ⁴", basiques_5: "Basiques ⁵",
   modales_1: "Modales", modales_2: "Modales ²", modales_3: "Modales ³", modales_4: "Modales ⁴", modales_5: "Modales ⁵" };
-const code = r => ({ noms: "n", verbes: "v", adjectifs: "adj", determinants: "det", pronoms: "pro", conjonctions: "conj", prepositions: "prp", adverbes: "adv", courantes_1: "cour", noms_2: "n²", verbes_2: "v²", adjectifs_2: "adj²", adverbes_2: "adv²" }[r.id] || r.id.replace(/^basiques_/, "b").replace(/^modales_/, "m").replace(/^incises_/, "i"));
-const shortName = r => SHORT[r.id] || r.id.replace(/^basiques_(\d)/, "Basiques $1").replace(/^modales_(\d)/, "Modales $1").replace(/^incises_(\d)/, "Incises $1");
+const code = r => ({ noms: "n", verbes: "v", adjectifs: "adj", determinants: "det", pronoms: "pro", conjonctions: "conj", prepositions: "prp", adverbes: "adv", courantes_1: "cour", noms_2: "n²", verbes_2: "v²", adjectifs_2: "adj²", adverbes_2: "adv²" }[r.id] || r.id.replace(/^basiques_/, "b").replace(/^modales_/, "m").replace(/^incises_/, "i").replace(/^noms_/, "n").replace(/^verbes_/, "v").replace(/^adjectifs_/, "adj").replace(/^adverbes_/, "adv").replace(/^pronoms_/, "pro").replace(/^conjonctions_/, "conj").replace(/^prepositions_/, "prp").replace(/^courantes_/, "cour"));
+const SUP = n => String(n).split("").map(c => "⁰¹²³⁴⁵⁶⁷⁸⁹"[+c]).join("");
+const BASE = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj.", adverbes: "Adverbes", pronoms: "Pronoms", conjonctions: "Conj.", prepositions: "Prép.", courantes: "Courantes", basiques: "Basiques", modales: "Modales", incises: "Incises" };
+const shortName = r => SHORT[r.id] || ((m => m && BASE[m[1]] ? BASE[m[1]] + " " + SUP(m[2]) : r.id)(r.id.match(/^(\w+?)_(\d+)$/)));
 const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"]];
 const BOXDAYS = [0, 1, 2, 4, 8, 16];
 

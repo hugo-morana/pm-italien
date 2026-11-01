@@ -11,6 +11,14 @@ TOUR = ["noms", "verbes", "adjectifs", "determinants", "pronoms", "conjonctions"
         "modales_1", "modales_2", "modales_3", "modales_4", "modales_5", "incises_1", "incises_2", "incises_3", "incises_4",
         "noms_2", "verbes_2", "adjectifs_2", "adverbes_2"]
 assert sorted(TOUR) == sorted(pc), set(pc) ^ set(TOUR)
+# emplacement de chaque pièce : (étage, côté du couloir, rang le long du couloir)
+SLOT = {pid: (0, "N", k) for k, pid in enumerate(TOUR[:8])}          # rez-de-chaussée, rangée nord : les mots
+SLOT.update({f"basiques_{k}": (k - 1, "S", 7) for k in range(1, 6)})  # tours : une salle par étage
+SLOT.update({"courantes_1": (0, "S", 6)})
+SLOT.update({f"modales_{k}": (k - 1, "S", 5) for k in range(1, 6)})
+SLOT.update({f"incises_{k}": (k - 1, "S", 4) for k in range(1, 5)})
+SLOT.update({"noms_2": (1, "N", 0), "verbes_2": (1, "N", 1), "adjectifs_2": (1, "S", 1), "adverbes_2": (1, "S", 0)})
+assert len(set(SLOT.values())) == len(SLOT) == len(TOUR)
 FAM = lambda pid: ("noms" if pid.startswith("noms") else "verbes" if pid.startswith("verbes") else
                    "adjectifs" if pid.startswith(("adjectifs", "determinants")) else "pronoms" if pid == "pronoms" else
                    "conjonctions" if pid == "conjonctions" else "prepositions" if pid == "prepositions" else
@@ -34,6 +42,6 @@ for pid in TOUR:
                   "am": n.get("audio_mot"), "ap": n.get("audio_phrase")})
     while len(N) < 100: N.append(None)
     rooms.append({"id": pid, "fr": p["titre_fr"], "it": p["titre_cible"], "decor": p.get("decor", ""), "fam": FAM(pid),
-                  "floor": 1 if pid in ("noms_2", "verbes_2", "adjectifs_2", "adverbes_2") else 0, "blocs": p.get("blocs"), "niches": N})
+                  "floor": SLOT[pid][0], "slot": {"floor": SLOT[pid][0], "side": SLOT[pid][1], "x": SLOT[pid][2]}, "blocs": p.get("blocs"), "niches": N})
 json.dump({"langue": "italien", "rooms": rooms}, open("/home/claude/pm_italien/pm3d/data3d.json", "w"), ensure_ascii=False, separators=(",", ":"))
 import os; print(os.path.getsize("/home/claude/pm_italien/pm3d/data3d.json") // 1024, "Ko", sum(1 for r in rooms for n in r["niches"] if n))

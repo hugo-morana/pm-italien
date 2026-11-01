@@ -59685,7 +59685,7 @@
   },
   {
    "id": "basiques_1",
-   "titre_fr": "Les expressions basiques (1)",
+   "titre_fr": "Les expressions basiques",
    "titre_cible": "Le espressioni",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
@@ -65221,7 +65221,7 @@
      "exemple_fr_mot": "Je suis d'accord avec toi",
      "exemple_cible": "Sono d'accordo con te.",
      "exemple_cible_mot": "Sono d'accordo con te",
-     "lien": "Les deux amis filent vers la deuxième salle des expressions basiques.",
+     "lien": "Les deux amis montent l'escalier jusqu'à l'étage 2 des expressions basiques.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_basiques"
@@ -65264,8 +65264,8 @@
   },
   {
    "id": "basiques_2",
-   "titre_fr": "Les expressions basiques (2)",
-   "titre_cible": "Le espressioni",
+   "titre_fr": "Les expressions basiques · étage 2",
+   "titre_cible": "Le espressioni · primo piano",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -70812,7 +70812,7 @@
      "exemple_fr_mot": "Ça n'a aucun sens",
      "exemple_cible": "Non ha nessun senso.",
      "exemple_cible_mot": "Non ha nessun senso",
-     "lien": "La boussole perdue mène à la troisième salle des expressions basiques.",
+     "lien": "La boussole perdue monte l'escalier jusqu'à l'étage 3 des expressions basiques.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_basiques"
@@ -70856,8 +70856,8 @@
   },
   {
    "id": "basiques_3",
-   "titre_fr": "Les expressions basiques (3)",
-   "titre_cible": "Le espressioni",
+   "titre_fr": "Les expressions basiques · étage 3",
+   "titre_cible": "Le espressioni · secondo piano",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -76385,7 +76385,7 @@
      "exemple_fr_mot": "Bon après-midi",
      "exemple_cible": "Buon pomeriggio!",
      "exemple_cible_mot": "Buon pomeriggio",
-     "lien": "Le goûter file vers la quatrième salle des expressions basiques.",
+     "lien": "Le goûter monte l'escalier jusqu'à l'étage 4 des expressions basiques.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_basiques"
@@ -76429,8 +76429,8 @@
   },
   {
    "id": "basiques_4",
-   "titre_fr": "Les expressions basiques (4)",
-   "titre_cible": "Le espressioni",
+   "titre_fr": "Les expressions basiques · étage 4",
+   "titre_cible": "Le espressioni · terzo piano",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -81925,7 +81925,7 @@
      "exemple_fr_mot": "Ça s'annonce bien",
      "exemple_cible": "Cominciamo bene…",
      "exemple_cible_mot": "Cominciamo bene",
-     "lien": "Le coureur file vers la cinquième salle des expressions basiques.",
+     "lien": "Le coureur monte l'escalier jusqu'à l'étage 5 des expressions basiques.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_basiques"
@@ -81969,8 +81969,8 @@
   },
   {
    "id": "basiques_5",
-   "titre_fr": "Les expressions basiques (5)",
-   "titre_cible": "Le espressioni",
+   "titre_fr": "Les expressions basiques · étage 5",
+   "titre_cible": "Le espressioni · quarto piano",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -85877,7 +85877,7 @@
      "exemple_fr_mot": "Tu viens",
      "exemple_cible": "Vieni?",
      "exemple_cible_mot": "Vieni",
-     "lien": "Le point d'interrogation file vers la salle des expressions courantes, où deux amis se filment en disant « À plus ! ».",
+     "lien": "Le point d'interrogation redescend l'escalier jusqu'à la salle des expressions courantes, où deux amis se filment en disant « À plus ! ».",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_basiques"
@@ -87541,7 +87541,7 @@
   },
   {
    "id": "modales_1",
-   "titre_fr": "Les expressions modales (1)",
+   "titre_fr": "Les expressions modales",
    "titre_cible": "Le espressioni",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
@@ -93077,7 +93077,7 @@
      "exemple_fr_mot": "On n'a pas besoin de",
      "exemple_cible": "Non abbiamo bisogno di questo.",
      "exemple_cible_mot": "Non abbiamo bisogno di",
-     "lien": "La foule (on) pousse la porte de la deuxième salle des expressions modales.",
+     "lien": "La foule (on) monte l'escalier jusqu'à l'étage 2 des expressions modales.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_modales"
@@ -93121,8 +93121,8 @@
   },
   {
    "id": "modales_2",
-   "titre_fr": "Les expressions modales (2)",
-   "titre_cible": "Le espressioni",
+   "titre_fr": "Les expressions modales · étage 2",
+   "titre_cible": "Le espressioni · primo piano",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -98668,7 +98668,7 @@
      "exemple_fr_mot": "J'aurais pu",
      "exemple_cible": "Avrei potuto venire.",
      "exemple_cible_mot": "Avrei potuto",
-     "lien": "Mon reflet (je) pousse la porte de la salle suivante des expressions modales.",
+     "lien": "Mon reflet (je) monte l'escalier jusqu'à l'étage 3 des expressions modales.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_modales"
@@ -98712,8 +98712,8 @@
   },
   {
    "id": "modales_3",
-   "titre_fr": "Les expressions modales (3)",
-   "titre_cible": "Le espressioni",
+   "titre_fr": "Les expressions modales · étage 3",
+   "titre_cible": "Le espressioni · secondo piano",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -104247,7 +104247,7 @@
      "exemple_fr_mot": "Pensez-vous que",
      "exemple_cible": "Pensa che sia possibile?",
      "exemple_cible_mot": "Pensa che",
-     "lien": "La bande d'amis (vous) pousse la porte de la salle suivante des expressions modales.",
+     "lien": "La bande d'amis (vous) monte l'escalier jusqu'à l'étage 4 des expressions modales.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_modales"
@@ -104288,8 +104288,8 @@
   },
   {
    "id": "modales_4",
-   "titre_fr": "Les expressions modales (4)",
-   "titre_cible": "Le espressioni",
+   "titre_fr": "Les expressions modales · étage 4",
+   "titre_cible": "Le espressioni · terzo piano",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -109770,7 +109770,7 @@
      "exemple_fr_mot": "Aimez-vous",
      "exemple_cible": "Le piace viaggiare, signora?",
      "exemple_cible_mot": "Le piace",
-     "lien": "La bande d'amis (vous) pousse la porte de la salle suivante des expressions modales.",
+     "lien": "La bande d'amis (vous) monte l'escalier jusqu'à l'étage 5 des expressions modales.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_modales"
@@ -109814,8 +109814,8 @@
   },
   {
    "id": "modales_5",
-   "titre_fr": "Les expressions modales (5)",
-   "titre_cible": "Le espressioni",
+   "titre_fr": "Les expressions modales · étage 5",
+   "titre_cible": "Le espressioni · quarto piano",
    "decor": "place du marché (piazza)",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -114296,7 +114296,7 @@
      "exemple_fr_mot": "je pense qu'",
      "exemple_cible": "Penso che abbia ragione? No.",
      "exemple_cible_mot": "Penso che",
-     "lien": "Mon reflet (je) s'envole vers la loggia des orateurs, où commencent les incises : « Et… ».",
+     "lien": "Mon reflet (je) redescend l'escalier jusqu'à la loggia des orateurs, où commencent les incises : « Et… ».",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_modales"
@@ -114484,7 +114484,7 @@
   },
   {
    "id": "incises_1",
-   "titre_fr": "Les incises (1)",
+   "titre_fr": "Les incises",
    "titre_cible": "Gli incisi",
    "decor": "loggia des orateurs",
    "ordre": "fréquence orale estimée (≈), décroissante",
@@ -120139,7 +120139,7 @@
      "exemple_fr_mot": "C'est fou comme",
      "exemple_cible": "È incredibile come è cresciuto.",
      "exemple_cible_mot": "È incredibile come",
-     "lien": "Le public incrédule monte vers la pièce suivante des incises.",
+     "lien": "Le public incrédule monte l'escalier jusqu'à l'étage 2 des incises.",
      "categorie": "incises",
      "sous_categories": [
       "incises_introductives"
@@ -120184,8 +120184,8 @@
   },
   {
    "id": "incises_2",
-   "titre_fr": "Les incises (2)",
-   "titre_cible": "Gli incisi",
+   "titre_fr": "Les incises · étage 2",
+   "titre_cible": "Gli incisi · primo piano",
    "decor": "loggia des orateurs",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -125853,7 +125853,7 @@
      "exemple_fr_mot": "En guise de conclusion",
      "exemple_cible": "A mo' di conclusione, grazie.",
      "exemple_cible_mot": "A mo' di conclusione",
-     "lien": "Le dernier mot descend vers la pièce suivante des incises.",
+     "lien": "Le dernier mot monte l'escalier jusqu'à l'étage 3 des incises.",
      "categorie": "incises",
      "sous_categories": [
       "incises_introductives"
@@ -125898,8 +125898,8 @@
   },
   {
    "id": "incises_3",
-   "titre_fr": "Les incises (3)",
-   "titre_cible": "Gli incisi",
+   "titre_fr": "Les incises · étage 3",
+   "titre_cible": "Gli incisi · secondo piano",
    "decor": "loggia des orateurs",
    "ordre": "introductives : fréquence orale estimée (≈) ; milieu : liste proposée, des plus courantes aux plus soutenues",
    "famille": "expressions",
@@ -128890,7 +128890,7 @@
      "exemple_fr_mot": "il faut dire",
      "exemple_cible": "È, bisogna dire, molto bravo.",
      "exemple_cible_mot": "bisogna dire",
-     "lien": "Le panneau file vers la salle des incises conclusives, niche 00.",
+     "lien": "Le panneau monte l'escalier jusqu'à l'étage 4, celui des incises conclusives, niche 00.",
      "categorie": "incises",
      "sous_categories": [
       "incises_milieu"
@@ -129256,8 +129256,8 @@
   },
   {
    "id": "incises_4",
-   "titre_fr": "Les incises (4)",
-   "titre_cible": "Gli incisi",
+   "titre_fr": "Les incises · étage 4",
+   "titre_cible": "Gli incisi · terzo piano",
    "decor": "loggia des orateurs",
    "ordre": "fréquence orale estimée (≈), décroissante",
    "famille": "expressions",
@@ -134628,7 +134628,7 @@
      "exemple_fr_mot": "disons-le",
      "exemple_cible": "È un fallimento, diciamolo.",
      "exemple_cible_mot": "diciamolo",
-     "lien": "On monte à l'étage de la loggia du marché, où les noms recommencent : derrière un masque de théâtre, une vraie personne.",
+     "lien": "On redescend l'escalier jusqu'à l'étage 2 du marché, où les noms recommencent : derrière un masque de théâtre, une vraie personne.",
      "categorie": "incises",
      "sous_categories": [
       "incises_conclusives"

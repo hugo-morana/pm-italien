@@ -163,6 +163,7 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
     <button class="chip" id="modeBtn" type="button" aria-pressed="false" title="Visite libre">Libre</button>
     <button class="chip" id="testsBtn" type="button">Tests</button>
     <button class="chip" id="planBtn" type="button">Plan</button>
+    <button class="chip" id="accountBtn" type="button" hidden>Compte</button>
   </div>
   <nav id="rooms" aria-label="Pièces"></nav>
 </header>
@@ -221,10 +222,16 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
   <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms, longe le couloir, revient par la rangée d'en face, monte l'escalier vers l'étage 2, puis redescend aux noms.</p>
 </div></div>
 
+<div class="sheet" id="accountSheet" hidden><div>
+  <div class="shead"><h2>Mon compte</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
+  <div id="accountBody" style="display:flex;flex-direction:column;gap:12px"></div>
+</div></div>
+
 <div id="voile" hidden></div>
 <div id="quiz" hidden></div>
 <div id="toast" hidden></div>
 
+<script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 <script>
 "use strict";
@@ -674,26 +681,89 @@ function speak(text, src, btn) {
 /* ============ Persistance : préférences (navigateur) + répétition espacée (db par utilisateur) ============ */
 const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr" }, ls.get("prefs", {}));
 function save() { ls.set("pos", { r: st.r, n: st.n, zoom: st.zoom }); }
-const store = { db: null, uid: null, cache: {}, timers: {} };
+/* Deux comptes possibles : le compte Claude (capacité db) quand la page tourne dans Claude,
+   ou un compte e-mail Supabase (code à 6 chiffres) sur la version GitHub Pages. Sinon : navigateur seulement. */
+const SBCFG = window.PM_CONFIG || {};
+const store = { kind: null, db: null, sb: null, uid: null, email: "", cache: {}, timers: {} };
+const mergeCards = (a, b) => { const o = Object.assign({}, a); for (const k in b) { const x = o[k], y = b[k]; if (!x || (y.seen || 0) > (x.seen || 0) || (y.d || 0) > (x.d || 0) || ((y.d || 0) === (x.d || 0) && (y.b || 0) > (x.b || 0))) o[k] = y; } return o; };
+async function remoteGet(key) {
+  try {
+    if (store.kind === "claude") { const s = await store.db.doc(`data/users/${store.uid}/${key}`).get(); return s.exists ? s.data() : null; }
+    if (store.kind === "sb") { const { data, error } = await store.sb.from("progress").select("data").eq("key", key).maybeSingle(); if (error) throw error; return data ? data.data : null; }
+  } catch (e) { console.warn("lecture distante", key, e); }
+  return null;
+}
+async function remoteSet(key, data) {
+  try {
+    if (store.kind === "claude") await store.db.doc(`data/users/${store.uid}/${key}`).set(data);
+    if (store.kind === "sb") { const { error } = await store.sb.from("progress").upsert({ user_id: store.uid, key, data, updated_at: new Date().toISOString() }); if (error) throw error; }
+  } catch (e) { if (e && e.code === "quota_exceeded") toast("Stockage plein : progression gardée sur cet appareil"); else console.warn("écriture distante", key, e); }
+}
 async function initStore() {
   try {
-    if (!window.claude || !window.claude.use) return;
-    const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
-    const uid = user ? await user.id() : null;
-    if (db && uid) { store.db = db; store.uid = uid; loadHist(); toast("Progression synchronisée avec votre compte"); }
-  } catch (e) { /* hors d'un viewer : stockage local */ }
+    if (window.claude && window.claude.use) {
+      const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+      const uid = user ? await user.id() : null;
+      if (db && uid) { store.kind = "claude"; store.db = db; store.uid = uid; await afterLogin(); toast("Progression synchronisée avec votre compte"); }
+      return;
+    }
+    if (SBCFG.supabaseUrl && SBCFG.supabaseKey) {
+      await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js");
+      store.sb = window.supabase.createClient(SBCFG.supabaseUrl, SBCFG.supabaseKey, { auth: { persistSession: true, autoRefreshToken: true } });
+      $("#accountBtn").hidden = false;
+      const { data } = await store.sb.auth.getSession();
+      if (data && data.session) await useSession(data.session); else renderAccount();
+    }
+  } catch (e) { console.warn("stockage", e); }
+}
+function loadScript(src) { return new Promise((ok, ko) => { const sc = document.createElement("script"); sc.src = src; sc.onload = ok; sc.onerror = ko; document.head.appendChild(sc); }); }
+async function useSession(session) {
+  store.kind = "sb"; store.uid = session.user.id; store.email = session.user.email || "";
+  const owner = ls.get("owner", null);
+  if (owner && owner !== store.uid) { for (const r of R) ls.set("srs_" + r.id, {}); ls.set("hist", []); HIST = []; }
+  ls.set("owner", store.uid); store.cache = {};
+  await afterLogin(); renderAccount(); $("#accountBtn").textContent = "Compte ✓"; toast("Connecté : " + store.email);
+}
+async function afterLogin() { // fusion de la progression locale et distante, puis envoi
+  await loadHist();
+  for (let ri = 0; ri < R.length; ri++) { const id = R[ri].id, local = ls.get("srs_" + id, {}), rem = await remoteGet("srs_" + id); const m = mergeCards(local, (rem && rem.cards) || {}); store.cache[id] = m; ls.set("srs_" + id, m); if (Object.keys(m).length && JSON.stringify(m) !== JSON.stringify((rem && rem.cards) || {})) remoteSet("srs_" + id, { cards: m, maj: Date.now() }); }
+  if (HIST.length) remoteSet("historique", { pts: HIST });
 }
 async function srsRoom(ri) {
   const id = R[ri].id; if (store.cache[id]) return store.cache[id];
   let cards = ls.get("srs_" + id, {});
-  if (store.db) { try { const s = await store.db.doc(`data/users/${store.uid}/srs_${id}`).get(); if (s.exists) cards = Object.assign({}, cards, (s.data() || {}).cards || {}); } catch (e) {} }
+  if (store.kind) { const rem = await remoteGet("srs_" + id); if (rem && rem.cards) cards = mergeCards(cards, rem.cards); }
   return store.cache[id] = cards;
 }
 function srsSave(ri) {
   const id = R[ri].id, cards = store.cache[id]; ls.set("srs_" + id, cards);
-  if (!store.db) return; clearTimeout(store.timers[id]);
-  store.timers[id] = setTimeout(async () => { try { await store.db.doc(`data/users/${store.uid}/srs_${id}`).set({ cards, maj: Date.now() }); } catch (e) { if (e && e.code === "quota_exceeded") toast("Stockage plein : progression gardée sur cet appareil"); } }, 1200);
+  if (!store.kind) return; clearTimeout(store.timers[id]);
+  store.timers[id] = setTimeout(() => remoteSet("srs_" + id, { cards, maj: Date.now() }), 1200);
 }
+/* Fenêtre « Compte » (version GitHub Pages) */
+function renderAccount(step) {
+  const b = $("#accountBody"); if (!b) return;
+  if (store.kind === "sb") { b.innerHTML = `<p style="margin:0">Connecté avec <b>${esc(store.email)}</b>. Ta progression est enregistrée sur ton compte et suit tes appareils.</p><div class="btns"><button class="btn alt" type="button" id="sbOut">Se déconnecter</button></div>`; return; }
+  if (step === "code") { b.innerHTML = `<p style="margin:0">Un code à 6 chiffres a été envoyé à <b>${esc(store.email)}</b>. Il peut mettre une minute à arriver ; pense aux courriers indésirables.</p>
+      <div class="frow"><label for="sbCode">Code</label><input id="sbCode" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" style="font:inherit;font-size:20px;letter-spacing:.3em;width:7em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)"></div>
+      <div class="btns"><button class="btn" type="button" id="sbVerify">Se connecter</button><button class="btn alt" type="button" id="sbBack">Changer d'adresse</button></div><p class="pr" id="sbMsg" style="margin:0"></p>`; setTimeout(() => $("#sbCode") && $("#sbCode").focus(), 50); return; }
+  b.innerHTML = `<p style="margin:0">Connecte-toi pour retrouver ta progression sur tous tes appareils. Pas de mot de passe : tu reçois un code par e-mail.</p>
+    <div class="frow"><label for="sbEmail">E-mail</label><input id="sbEmail" type="email" autocomplete="email" placeholder="prenom@exemple.fr" style="font:inherit;font-size:16px;flex:1;min-width:12em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)" value="${esc(store.email)}"></div>
+    <div class="btns"><button class="btn" type="button" id="sbSend">Recevoir un code</button></div><p class="pr" id="sbMsg" style="margin:0"></p>`;
+}
+async function sbSend() {
+  const email = ($("#sbEmail").value || "").trim(); if (!/^\S+@\S+\.\S+$/.test(email)) { $("#sbMsg").textContent = "Adresse e-mail invalide."; return; }
+  $("#sbMsg").textContent = "Envoi…"; const { error } = await store.sb.auth.signInWithOtp({ email, options: { shouldCreateUser: true } });
+  if (error) { $("#sbMsg").textContent = error.status === 429 ? "Trop d'envois rapprochés : réessaie dans quelques minutes." : "Envoi impossible : " + error.message; return; }
+  store.email = email; renderAccount("code");
+}
+async function sbVerify() {
+  const token = ($("#sbCode").value || "").replace(/\D/g, ""); if (token.length < 6) { $("#sbMsg").textContent = "Le code fait 6 chiffres."; return; }
+  $("#sbMsg").textContent = "Vérification…"; const { data, error } = await store.sb.auth.verifyOtp({ email: store.email, token, type: "email" });
+  if (error || !data.session) { $("#sbMsg").textContent = "Code incorrect ou expiré. Redemande un code."; return; }
+  await useSession(data.session); closeSheets();
+}
+async function sbOut() { await store.sb.auth.signOut(); store.kind = null; store.uid = null; store.cache = {}; $("#accountBtn").textContent = "Compte"; renderAccount(); toast("Déconnecté : la progression reste aussi sur cet appareil"); }
 async function grade(ri, key, ok) {
   const c = await srsRoom(ri), cur = c[key] || { b: 0, d: today() };
   const b = ok ? Math.min(5, (cur.seen ? cur.b : 0) + 1) : 0;
@@ -837,12 +907,12 @@ async function updateHist() {
   const s = await learnedStats(), t = today();
   HIST = HIST.filter(p => p.d !== t).concat([{ d: t, n: s.n, c: Math.round(s.c * 100) / 100 }]).sort((a, b) => a.d - b.d).slice(-400);
   ls.set("hist", HIST);
-  if (store.db) { clearTimeout(updateHist.t); updateHist.t = setTimeout(async () => { try { await store.db.doc(`data/users/${store.uid}/historique`).set({ pts: HIST }); } catch (e) {} }, 1500); }
+  if (store.kind) { clearTimeout(updateHist.t); updateHist.t = setTimeout(() => remoteSet("historique", { pts: HIST }), 1500); }
   return s;
 }
 async function loadHist() {
-  if (!store.db) return;
-  try { const s = await store.db.doc(`data/users/${store.uid}/historique`).get(); if (s.exists) { const m = new Map(HIST.map(p => [p.d, p])); for (const p of (s.data() || {}).pts || []) { const q = m.get(p.d); if (!q || p.n > q.n) m.set(p.d, p); } HIST = [...m.values()].sort((a, b) => a.d - b.d); ls.set("hist", HIST); } } catch (e) {}
+  if (!store.kind) return;
+  const rem = await remoteGet("historique"); if (rem) { const m = new Map(HIST.map(p => [p.d, p])); for (const p of rem.pts || []) { const q = m.get(p.d); if (!q || p.n > q.n) m.set(p.d, p); } HIST = [...m.values()].sort((a, b) => a.d - b.d); ls.set("hist", HIST); }
 }
 async function renderCurve() {
   if (!CURVES) buildCurves();
@@ -888,7 +958,7 @@ async function renderTests() {
   $("#zmin").value = prefs.zmin; $("#zminV").textContent = (+prefs.zmin).toFixed(1); $("#newN").value = prefs.newN;
   $("#mapType").innerHTML = TYPES.filter(t => t[0] !== "chaine").map(([k, l]) => `<option value="${k}" ${k === prefs.mapType ? "selected" : ""}>${l}</option>`).join("");
   const pool = poolItems(); $("#poolInfo").textContent = `${pool.length} mot(s) dans la sélection`;
-  const due = await dueList(); $("#srsInfo").textContent = `Révision du jour : ${due.length} carte(s) à revoir.` + (store.db ? " Progression enregistrée sur votre compte." : " Progression enregistrée sur cet appareil.");
+  const due = await dueList(); $("#srsInfo").textContent = `Révision du jour : ${due.length} carte(s) à revoir.` + (store.kind === "claude" ? " Progression enregistrée sur votre compte Claude." : store.kind === "sb" ? ` Progression enregistrée sur le compte ${store.email}.` : " Progression enregistrée sur cet appareil." + (store.sb ? " Connecte-toi (bouton Compte) pour la garder sur tous tes appareils." : ""));
   renderCurve();
   const c = await srsRoom(st.r);
   $("#map").innerHTML = R[st.r].niches.map((x, n) => { if (!x) return `<span class="vide">${n}</span>`; const k = c[n + ":" + prefs.mapType]; return `<span class="${k && k.seen ? "b" + Math.max(1, k.b) : ""}" title="${esc(x.fr)}">${n}</span>`; }).join("");
@@ -1001,6 +1071,9 @@ function bindUI() {
   $("#dhead").onclick = () => setDrawer(!st.drawerOpen);
   $("#testsBtn").onclick = () => { $("#testsSheet").hidden = false; renderTests(); };
   $("#planBtn").onclick = () => { $("#planSheet").hidden = false; renderPlan(); };
+  $("#accountBtn").onclick = () => { $("#accountSheet").hidden = false; renderAccount(); };
+  $("#accountSheet").addEventListener("click", e => { const id = e.target.id; if (id === "sbSend") sbSend(); if (id === "sbVerify") sbVerify(); if (id === "sbBack") renderAccount(); if (id === "sbOut") sbOut(); });
+  $("#accountSheet").addEventListener("keydown", e => { if (e.key !== "Enter") return; if (e.target.id === "sbEmail") sbSend(); if (e.target.id === "sbCode") sbVerify(); });
   document.addEventListener("click", e => {
     const t = e.target;
     if (t.closest("[data-close]")) return closeSheets();

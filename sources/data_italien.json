@@ -177946,7 +177946,7 @@
      "exemple_fr_mot": "Où est-ce que je peux trouver",
      "exemple_cible": "Dove posso trovare un taxi?",
      "exemple_cible_mot": "Dove posso trovare",
-     "lien": "Le trouvère sur le dos croise une frégate dans le néant : je m'en fous.",
+     "lien": "Le trouvère trouve un seau rempli de succès : si cela arrive…",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_courantes"
@@ -177989,6 +177989,2556 @@
     },
     {
      "n": 7,
+     "fr": "si cela arrive",
+     "texte_source": "si cela arrive",
+     "cible": "se succede",
+     "prononciation": "sé sout-TCHÈ-dé",
+     "api": "/se sutˈtʃede/",
+     "mot_cle": "seau + succès",
+     "scene": "Un seau rempli de succès : si cela arrive.",
+     "decryptage": "se succede ≈ « seau + succès »",
+     "formes": "anglais : should this happen",
+     "exemple_fr": "Si cela arrive, appelle-moi.",
+     "exemple_fr_mot": "Si cela arrive",
+     "exemple_cible": "Se succede, chiamami.",
+     "exemple_cible_mot": "Se succede",
+     "lien": "Le seau tombe sur Hodgy, qui court contre le métronome : pas le temps.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.39,
+       "global": 5.17,
+       "parle": 5.39
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.56,
+       "global": 4.94
+      }
+     },
+     "zipf_fr": 5.39,
+     "zipf_cible": 5.56,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 24500,
+       "global": 14800,
+       "parle": 24500
+      },
+      "it": {
+       "parle": 36300,
+       "global": 8710
+      }
+     }
+    },
+    {
+     "n": 8,
+     "fr": "Aujourd'hui je n'ai pas le temps de ….",
+     "texte_source": "Aujourd'hui je n'ai pas le temps de Vinf C.",
+     "cible": "Oggi non ho tempo di …",
+     "prononciation": "OD-dji nonn o TÈMM-po di",
+     "api": "/ˈoddʒi non o ˈtempo di/",
+     "mot_cle": "Hodgy + tempo",
+     "scene": "Hodgy court contre le métronome.",
+     "decryptage": "oggi non ho tempo di ≈ « Hodgy + tempo »",
+     "formes": "",
+     "exemple_fr": "Aujourd'hui je n'ai pas le temps de manger.",
+     "exemple_fr_mot": "je n'ai pas le temps de",
+     "exemple_cible": "Oggi non ho tempo di mangiare.",
+     "exemple_cible_mot": "non ho tempo di",
+     "lien": "Hodgy sort une ultime chose d'un chapeau : et une dernière chose.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.39,
+       "global": null,
+       "parle": 5.39
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.52,
+       "global": 5.5
+      }
+     },
+     "zipf_fr": 5.39,
+     "zipf_cible": 5.52,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 24500,
+       "parle": 24500
+      },
+      "it": {
+       "parle": 33100,
+       "global": 31600
+      }
+     }
+    },
+    {
+     "n": 9,
+     "fr": "Et une dernière chose : ….",
+     "texte_source": "Et une dernière chose : S V C.",
+     "cible": "E un'ultima cosa: …",
+     "prononciation": "é ounn-OUL-ti-ma KO-za",
+     "api": "/e unulˈtima ˈkosa/",
+     "mot_cle": "ultime + chose",
+     "scene": "Une ultime chose sortie d'un chapeau.",
+     "decryptage": "e un'ultima cosa ≈ « ultime + chose »",
+     "formes": "anglais : And one last thing: S V C.",
+     "exemple_fr": "Et une dernière chose : merci.",
+     "exemple_fr_mot": "une dernière chose",
+     "exemple_cible": "E un'ultima cosa: grazie.",
+     "exemple_cible_mot": "un'ultima cosa",
+     "lien": "La chose atterrit sur le quai : « capiche », de ce que j'ai compris.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.38,
+       "global": 5.2,
+       "parle": 5.38
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.34,
+       "global": null
+      }
+     },
+     "zipf_fr": 5.38,
+     "zipf_cible": 5.34,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 24000,
+       "global": 15800,
+       "parle": 24000
+      },
+      "it": {
+       "parle": 21900
+      }
+     }
+    },
+    {
+     "n": 10,
+     "fr": "De ce que j'ai compris, ….",
+     "texte_source": "De ce que j'ai compris, S V C.",
+     "cible": "Da quello che ho capito, …",
+     "prononciation": "da KouÉL-lo ké o ka-PI-to",
+     "api": "/da ˈkwello ke o kaˈpito/",
+     "mot_cle": "quai + capiche",
+     "scene": "Sur le quai, « capiche » : de ce que j'ai compris.",
+     "decryptage": "da quello che ho capito ≈ « quai + capiche »",
+     "formes": "anglais : From what I understand, S V C.",
+     "exemple_fr": "De ce que j'ai compris, il part.",
+     "exemple_fr_mot": "De ce que j'ai compris",
+     "exemple_cible": "Da quello che ho capito, parte.",
+     "exemple_cible_mot": "Da quello che ho capito",
+     "lien": "Sur le quai, une chose et une dette : qu'avez-vous dit ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.38,
+       "global": null,
+       "parle": 5.38
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.5,
+       "global": 5.18
+      }
+     },
+     "zipf_fr": 5.38,
+     "zipf_cible": 5.5,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 24000,
+       "parle": 24000
+      },
+      "it": {
+       "parle": 31600,
+       "global": 15100
+      }
+     }
+    },
+    {
+     "n": 11,
+     "fr": "Qu'avez-vous dit ?",
+     "texte_source": "Qu'avez-vous dit ?",
+     "cible": "Cosa ha detto?",
+     "prononciation": "KO-za a DÈT-to",
+     "api": "/ˈkosa a ˈdetto/",
+     "mot_cle": "chose + dette",
+     "scene": "Une chose et une dette : qu'avez-vous dit ?",
+     "decryptage": "cosa ha detto ≈ « chose + dette »",
+     "formes": "",
+     "exemple_fr": "Pardon, qu'avez-vous dit ?",
+     "exemple_fr_mot": "qu'avez-vous dit ?",
+     "exemple_cible": "Scusi, cosa ha detto?",
+     "exemple_cible_mot": "cosa ha detto?",
+     "lien": "La dette est réclamée à un Perse qui a perdu son tapis.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.38,
+       "global": null,
+       "parle": 5.38
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 6.11,
+       "global": 5.59
+      }
+     },
+     "zipf_fr": 5.38,
+     "zipf_cible": 6.11,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 24000,
+       "parle": 24000
+      },
+      "it": {
+       "parle": 129000,
+       "global": 38900
+      }
+     }
+    },
+    {
+     "n": 12,
+     "fr": "J'ai perdu ….",
+     "texte_source": "J'ai perdu C.",
+     "cible": "Ho perso …",
+     "prononciation": "o PÈR-so",
+     "api": "/o ˈperso/",
+     "mot_cle": "Perse",
+     "scene": "Un Perse a perdu son tapis.",
+     "decryptage": "ho perso ≈ « Perse »",
+     "formes": "anglais : I have lost C. I’ve lost C.",
+     "exemple_fr": "J'ai perdu mes clés.",
+     "exemple_fr_mot": "J'ai perdu",
+     "exemple_cible": "Ho perso le chiavi.",
+     "exemple_cible_mot": "Ho perso",
+     "lien": "Le Perse cherche sous une comète sur un sapin : comme vous le savez déjà.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.38,
+       "global": null,
+       "parle": 5.38
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.42,
+       "global": 5.09
+      }
+     },
+     "zipf_fr": 5.38,
+     "zipf_cible": 5.42,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 24000,
+       "parle": 24000
+      },
+      "it": {
+       "parle": 26300,
+       "global": 12300
+      }
+     }
+    },
+    {
+     "n": 13,
+     "fr": "Comme vous le savez déjà, ….",
+     "texte_source": "Comme vous le savez déjà, S V C.",
+     "cible": "Come sapete già, …",
+     "prononciation": "KO-mé sa-PÉ-té DJA",
+     "api": "/ˈkome saˈpete dʒa/",
+     "mot_cle": "comète + sapin",
+     "scene": "Une comète sur un sapin, déjà connue.",
+     "decryptage": "come sapete già ≈ « comète + sapin »",
+     "formes": "anglais : As you already know, S V C.",
+     "exemple_fr": "Comme vous le savez déjà, c'est fermé.",
+     "exemple_fr_mot": "Comme vous le savez déjà",
+     "exemple_cible": "Come sapete già, è chiuso.",
+     "exemple_cible_mot": "Come sapete già",
+     "lien": "La comète tombe dans un anneau : elles ont besoin d'un bisou.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.36,
+       "global": 4.66,
+       "parle": 5.36
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.16,
+       "global": 4.62
+      }
+     },
+     "zipf_fr": 5.36,
+     "zipf_cible": 5.16,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 22900,
+       "global": 4570,
+       "parle": 22900
+      },
+      "it": {
+       "parle": 14500,
+       "global": 4170
+      }
+     }
+    },
+    {
+     "n": 14,
+     "fr": "Elles ont besoin que ….",
+     "texte_source": "Elles ont besoin que S Vsbj C.",
+     "cible": "Hanno bisogno che …",
+     "prononciation": "ANN-no bi-ZO-gno ké",
+     "api": "/ˈanno biˈsoɲɲo ke/",
+     "mot_cle": "anneau + bisou",
+     "scene": "Elles tendent un anneau : besoin d'un bisou.",
+     "decryptage": "hanno bisogno che ≈ « anneau + bisou »",
+     "formes": "",
+     "exemple_fr": "Elles ont besoin que tu viennes.",
+     "exemple_fr_mot": "Elles ont besoin que",
+     "exemple_cible": "Hanno bisogno che tu venga.",
+     "exemple_cible_mot": "Hanno bisogno che",
+     "lien": "L'anneau roule vers un lot rond vide : sans eux.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.36,
+       "global": 5.23,
+       "parle": 5.36
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.72,
+       "global": 5.42
+      }
+     },
+     "zipf_fr": 5.36,
+     "zipf_cible": 5.72,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 22900,
+       "global": 17000,
+       "parle": 22900
+      },
+      "it": {
+       "parle": 52500,
+       "global": 26300
+      }
+     }
+    },
+    {
+     "n": 15,
+     "fr": "sans eux",
+     "texte_source": "sans eux",
+     "cible": "senza di loro",
+     "prononciation": "SÈNN-tsa di LO-ro",
+     "api": "/ˈsentsa di ˈloro/",
+     "mot_cle": "sans + lot rond",
+     "scene": "Un lot rond vide : sans eux.",
+     "decryptage": "senza di loro ≈ « sans + lot rond »",
+     "formes": "",
+     "exemple_fr": "On part sans eux.",
+     "exemple_fr_mot": "sans eux",
+     "exemple_cible": "Partiamo senza di loro.",
+     "exemple_cible_mot": "senza di loro",
+     "lien": "Le lot vide fait crier une nonne : pas possible !",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.34,
+       "global": 5.46,
+       "parle": 5.34
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.64,
+       "global": 5.8
+      }
+     },
+     "zipf_fr": 5.34,
+     "zipf_cible": 5.64,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 21900,
+       "global": 28800,
+       "parle": 21900
+      },
+      "it": {
+       "parle": 43700,
+       "global": 63100
+      }
+     }
+    },
+    {
+     "n": 16,
+     "fr": "Pas possible !",
+     "texte_source": "Pas possible !",
+     "cible": "Non è possibile!",
+     "prononciation": "nonn è pos-SI-bi-lé",
+     "api": "/non ɛ posˈsibile/",
+     "mot_cle": "nonne + possible",
+     "scene": "Une nonne barre le mot « possible ».",
+     "decryptage": "non è possibile ≈ « nonne + possible »",
+     "formes": "",
+     "exemple_fr": "Pas possible ! T'as gagné ?",
+     "exemple_fr_mot": "Pas possible !",
+     "exemple_cible": "Non è possibile! Hai vinto?",
+     "exemple_cible_mot": "Non è possibile!",
+     "lien": "La nonne croise un oignon qui fait volte-face à chaque fois.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.34,
+       "global": 5.38,
+       "parle": 5.34
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.41,
+       "global": 5.5
+      }
+     },
+     "zipf_fr": 5.34,
+     "zipf_cible": 5.41,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 21900,
+       "global": 24000,
+       "parle": 21900
+      },
+      "it": {
+       "parle": 25700,
+       "global": 31600
+      }
+     }
+    },
+    {
+     "n": 17,
+     "fr": "à chaque fois que …",
+     "texte_source": "à chaque fois que S V C",
+     "cible": "ogni volta che …",
+     "prononciation": "O-gni VOL-ta ké",
+     "api": "/ˈoɲɲi ˈvolta ke/",
+     "mot_cle": "oignon + volte-face",
+     "scene": "Un oignon fait volte-face à chaque fois qu'on passe.",
+     "decryptage": "ogni volta che ≈ « oignon + volte-face »",
+     "formes": "anglais : whenever S V C every time S V C each time S V C every time that S V C each time that S V C",
+     "exemple_fr": "À chaque fois que je viens, il pleut.",
+     "exemple_fr_mot": "À chaque fois que",
+     "exemple_cible": "Ogni volta che vengo, piove.",
+     "exemple_cible_mot": "Ogni volta che",
+     "lien": "L'oignon rencontre un anchois qui fait semblant d'être d'accord : je trouve aussi.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.33,
+       "global": 5.42,
+       "parle": 5.33
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.6,
+       "global": 5.63
+      }
+     },
+     "zipf_fr": 5.33,
+     "zipf_cible": 5.6,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 21400,
+       "global": 26300,
+       "parle": 21400
+      },
+      "it": {
+       "parle": 39800,
+       "global": 42700
+      }
+     }
+    },
+    {
+     "n": 18,
+     "fr": "Je trouve aussi.",
+     "texte_source": "Je trouve aussi.",
+     "cible": "Anche a me sembra.",
+     "prononciation": "ANN-ké a mé SÈMM-bra",
+     "api": "/ˈanke a me ˈsembra/",
+     "mot_cle": "anchois + semblant",
+     "scene": "Un anchois fait semblant d'être d'accord.",
+     "decryptage": "anche a me sembra ≈ « anchois + semblant »",
+     "formes": "anglais : I think so too.",
+     "exemple_fr": "C'est beau. – Je trouve aussi.",
+     "exemple_fr_mot": "Je trouve aussi.",
+     "exemple_cible": "È bello. – Anche a me sembra.",
+     "exemple_cible_mot": "Anche a me sembra.",
+     "lien": "L'anchois est cuisiné par une star fâchée : je suis en train de faire…",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.33,
+       "global": 5.41,
+       "parle": 5.33
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.64,
+       "global": 5.47
+      }
+     },
+     "zipf_fr": 5.33,
+     "zipf_cible": 5.64,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 21400,
+       "global": 25700,
+       "parle": 21400
+      },
+      "it": {
+       "parle": 43700,
+       "global": 29500
+      }
+     }
+    },
+    {
+     "n": 19,
+     "fr": "Je suis en train de faire ….",
+     "texte_source": "Je suis en train de faire C.",
+     "cible": "Sto facendo …",
+     "prononciation": "sto fa-TCHÈNN-do",
+     "api": "/sto faˈtʃendo/",
+     "mot_cle": "star + fâché",
+     "scene": "Une star fâchée en train de cuisiner.",
+     "decryptage": "sto facendo ≈ « star + fâché »",
+     "formes": "",
+     "exemple_fr": "Je suis en train de faire mes devoirs.",
+     "exemple_fr_mot": "Je suis en train de faire",
+     "exemple_cible": "Sto facendo i compiti.",
+     "exemple_cible_mot": "Sto facendo",
+     "lien": "La star part pour Andorre : ça te dirait ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.33,
+       "global": 5.13,
+       "parle": 5.33
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.6,
+       "global": 5.14
+      }
+     },
+     "zipf_fr": 5.33,
+     "zipf_cible": 5.6,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 21400,
+       "global": 13500,
+       "parle": 21400
+      },
+      "it": {
+       "parle": 39800,
+       "global": 13800
+      }
+     }
+    },
+    {
+     "n": 20,
+     "fr": "Ça te dirait de … ?",
+     "texte_source": "Ça te dirait de Vinf C ?",
+     "cible": "Ti andrebbe di …?",
+     "prononciation": "ti ann-DRÈB-bé di",
+     "api": "/ti anˈdrebbe di/",
+     "mot_cle": "Andorre + rebbe",
+     "scene": "Un voyageur pour Andorre : ça te dirait ?",
+     "decryptage": "ti andrebbe di ≈ « Andorre + rebbe »",
+     "formes": "",
+     "exemple_fr": "Ça te dirait de sortir ?",
+     "exemple_fr_mot": "Ça te dirait de",
+     "exemple_cible": "Ti andrebbe di uscire?",
+     "exemple_cible_mot": "Ti andrebbe di",
+     "lien": "À Andorre, on touche une prime sur le premier tempo.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.32,
+       "global": 4.84,
+       "parle": 5.32
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.45,
+       "global": 4.34
+      }
+     },
+     "zipf_fr": 5.32,
+     "zipf_cible": 4.45,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 20900,
+       "global": 6920,
+       "parle": 20900
+      },
+      "it": {
+       "parle": 2820,
+       "global": 2190
+      }
+     }
+    },
+    {
+     "n": 21,
+     "fr": "dans un premier temps",
+     "texte_source": "dans un premier temps",
+     "cible": "in un primo tempo",
+     "prononciation": "inn ounn PRI-mo TÈMM-po",
+     "api": "/in un ˈprimo ˈtempo/",
+     "mot_cle": "prime + tempo",
+     "scene": "Une prime sur le premier tempo.",
+     "decryptage": "n un primo tempo ≈ « prime + tempo »",
+     "formes": "anglais : at first as a first step",
+     "exemple_fr": "Dans un premier temps, on observe.",
+     "exemple_fr_mot": "Dans un premier temps",
+     "exemple_cible": "In un primo tempo, osserviamo.",
+     "exemple_cible_mot": "In un primo tempo",
+     "lien": "La prime achète un toast à un pioupiou, ou plutôt deux.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.29,
+       "global": 5.52,
+       "parle": 5.29
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.4,
+       "global": 5.29
+      }
+     },
+     "zipf_fr": 5.29,
+     "zipf_cible": 4.4,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 19500,
+       "global": 33100,
+       "parle": 19500
+      },
+      "it": {
+       "parle": 2510,
+       "global": 19500
+      }
+     }
+    },
+    {
+     "n": 22,
+     "fr": "…, ou plutôt ….",
+     "texte_source": "C, ou plutôt C2.",
+     "cible": "…, o piuttosto …",
+     "prononciation": "o piout-TOS-to",
+     "api": "/o pjutˈtosto/",
+     "mot_cle": "pioupiou + toast",
+     "scene": "Un pioupiou préfère un toast, ou plutôt deux.",
+     "decryptage": "o piuttosto ≈ « pioupiou + toast »",
+     "formes": "anglais : C, or rather C2",
+     "exemple_fr": "Un café, ou plutôt un thé.",
+     "exemple_fr_mot": "ou plutôt",
+     "exemple_cible": "Un caffè, o piuttosto un tè.",
+     "exemple_cible_mot": "o piuttosto",
+     "lien": "Le pioupiou nettoie un beau lavoir : bon boulot !",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.29,
+       "global": 5.32,
+       "parle": 5.29
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.13,
+       "global": 5.21
+      }
+     },
+     "zipf_fr": 5.29,
+     "zipf_cible": 5.13,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 19500,
+       "global": 20900,
+       "parle": 19500
+      },
+      "it": {
+       "parle": 13500,
+       "global": 16200
+      }
+     }
+    },
+    {
+     "n": 23,
+     "fr": "Bon boulot !",
+     "texte_source": "Bon boulot !",
+     "cible": "Bel lavoro!",
+     "prononciation": "bèl la-VO-ro",
+     "api": "/bel laˈvoro/",
+     "mot_cle": "belle + lavoir",
+     "scene": "Un beau lavoir propre : bon boulot !",
+     "decryptage": "bel lavoro ≈ « belle + lavoir »",
+     "formes": "anglais : Good job!",
+     "exemple_fr": "Bon boulot, les gars !",
+     "exemple_fr_mot": "Bon boulot",
+     "exemple_cible": "Bel lavoro, ragazzi!",
+     "exemple_cible_mot": "Bel lavoro",
+     "lien": "Au lavoir, un dada demande : depuis combien de temps ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.29,
+       "global": 4.78,
+       "parle": 5.29
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.36,
+       "global": 5.08
+      }
+     },
+     "zipf_fr": 5.29,
+     "zipf_cible": 5.36,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 19500,
+       "global": 6030,
+       "parle": 19500
+      },
+      "it": {
+       "parle": 22900,
+       "global": 12000
+      }
+     }
+    },
+    {
+     "n": 24,
+     "fr": "Depuis combien de temps … ?",
+     "texte_source": "Depuis combien de temps V S C ?",
+     "cible": "Da quanto tempo …?",
+     "prononciation": "da KouANN-to TÈMM-po",
+     "api": "/da ˈkwanto ˈtempo/",
+     "mot_cle": "dada + quand + tempo",
+     "scene": "Un dada demande : depuis combien de temps ?",
+     "decryptage": "da quanto tempo ≈ « dada + quand + tempo »",
+     "formes": "anglais : How long has S been Vpp C?",
+     "exemple_fr": "Depuis combien de temps t'habites ici ?",
+     "exemple_fr_mot": "Depuis combien de temps",
+     "exemple_cible": "Da quanto tempo abiti qui?",
+     "exemple_cible_mot": "Da quanto tempo",
+     "lien": "Le dada vadrouille tout droit.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.28,
+       "global": 4.9,
+       "parle": 5.28
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.67,
+       "global": 5.66
+      }
+     },
+     "zipf_fr": 5.28,
+     "zipf_cible": 5.67,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 19100,
+       "global": 7940,
+       "parle": 19100
+      },
+      "it": {
+       "parle": 46800,
+       "global": 45700
+      }
+     }
+    },
+    {
+     "n": 25,
+     "fr": "Allez tout droit.",
+     "texte_source": "Allez tout droit.",
+     "cible": "Vada dritto.",
+     "prononciation": "VA-da DRIT-to",
+     "api": "/ˈvada ˈdritto/",
+     "mot_cle": "vadrouille + droit",
+     "scene": "Un vadrouilleur file tout droit.",
+     "decryptage": "vada dritto ≈ « vadrouille + droit »",
+     "formes": "anglais : Straight ahead. Go forward.",
+     "exemple_fr": "Allez tout droit, puis à gauche.",
+     "exemple_fr_mot": "Allez tout droit",
+     "exemple_cible": "Vada dritto, poi a sinistra.",
+     "exemple_cible_mot": "Vada dritto",
+     "lien": "Tout droit, un rat demande : il y aura du fromage ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.27,
+       "global": 5.04,
+       "parle": 5.27
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.49,
+       "global": 4.1
+      }
+     },
+     "zipf_fr": 5.27,
+     "zipf_cible": 4.49,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 18600,
+       "global": 11000,
+       "parle": 18600
+      },
+      "it": {
+       "parle": 3090,
+       "global": 1260
+      }
+     }
+    },
+    {
+     "n": 26,
+     "fr": "Est-ce qu'il y aura … ?",
+     "texte_source": "Est-ce qu'il y aura C ?",
+     "cible": "Ci sarà …?",
+     "prononciation": "tchi sa-RA",
+     "api": "/tʃi saˈra/",
+     "mot_cle": "« ça rat »",
+     "scene": "Un rat demande : il y aura du fromage ?",
+     "decryptage": "ci sarà ≈ « « ça rat » »",
+     "formes": "anglais : Will there be C?",
+     "exemple_fr": "Est-ce qu'il y aura du monde ?",
+     "exemple_fr_mot": "Est-ce qu'il y aura",
+     "exemple_cible": "Ci sarà gente?",
+     "exemple_cible_mot": "Ci sarà",
+     "lien": "Le rat pousse l'ultime perle : en dernier.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.27,
+       "global": null,
+       "parle": 5.27
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.6,
+       "global": 5.65
+      }
+     },
+     "zipf_fr": 5.27,
+     "zipf_cible": 5.6,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 18600,
+       "parle": 18600
+      },
+      "it": {
+       "parle": 39800,
+       "global": 44700
+      }
+     }
+    },
+    {
+     "n": 27,
+     "fr": "en dernier",
+     "texte_source": "en dernier",
+     "cible": "per ultimo",
+     "prononciation": "pèr OUL-ti-mo",
+     "api": "/per ˈultimo/",
+     "mot_cle": "perle + ultime",
+     "scene": "L'ultime perle arrive en dernier.",
+     "decryptage": "per ultimo ≈ « perle + ultime »",
+     "formes": "anglais : lastly last but not least",
+     "exemple_fr": "Il est arrivé en dernier.",
+     "exemple_fr_mot": "en dernier",
+     "exemple_cible": "È arrivato per ultimo.",
+     "exemple_cible_mot": "per ultimo",
+     "lien": "La perle est ramassée par un capitaine en mai : ça t'est déjà arrivé ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.26,
+       "global": 5.46,
+       "parle": 5.26
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.22,
+       "global": 5.19
+      }
+     },
+     "zipf_fr": 5.26,
+     "zipf_cible": 5.22,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 18200,
+       "global": 28800,
+       "parle": 18200
+      },
+      "it": {
+       "parle": 16600,
+       "global": 15500
+      }
+     }
+    },
+    {
+     "n": 28,
+     "fr": "Ça t'est déjà arrivé que … ?",
+     "texte_source": "Ça t'est déjà arrivé que S Vsub C ?",
+     "cible": "Ti è mai capitato che …?",
+     "prononciation": "ti è MA-i ka-pi-TA-to ké",
+     "api": "/ti ɛ ˈmai kapiˈtato ke/",
+     "mot_cle": "mai + capitaine",
+     "scene": "Un capitaine en mai : ça t'est déjà arrivé ?",
+     "decryptage": "ti è mai capitato che ≈ « mai + capitaine »",
+     "formes": "anglais : Has it ever happened to you that S V C?",
+     "exemple_fr": "Ça t'est déjà arrivé qu'on te vole ?",
+     "exemple_fr_mot": "Ça t'est déjà arrivé qu'",
+     "exemple_cible": "Ti è mai capitato che ti rubino?",
+     "exemple_cible_mot": "Ti è mai capitato che",
+     "lien": "Le capitaine croise un mouton qui fait « bêê » : ben, en fait.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.26,
+       "global": null,
+       "parle": 5.26
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.16,
+       "global": 4.17
+      }
+     },
+     "zipf_fr": 5.26,
+     "zipf_cible": 4.16,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 18200,
+       "parle": 18200
+      },
+      "it": {
+       "parle": 1450,
+       "global": 1480
+      }
+     }
+    },
+    {
+     "n": 29,
+     "fr": "Ben en fait, ….",
+     "texte_source": "Ben en fait, S V C.",
+     "cible": "Beh, in realtà, …",
+     "prononciation": "bè inn ré-al-TA",
+     "api": "/be in realˈta/",
+     "mot_cle": "bêê + réalité",
+     "scene": "Un mouton fait « bêê » : ben, en fait.",
+     "decryptage": "beh in realtà ≈ « bêê + réalité »",
+     "formes": "anglais : Well, I mean, S V C.",
+     "exemple_fr": "Ben en fait, je viens pas.",
+     "exemple_fr_mot": "Ben en fait",
+     "exemple_cible": "Beh, in realtà non vengo.",
+     "exemple_cible_mot": "Beh, in realtà",
+     "lien": "Le mouton regarde l'herbe, vert d'envie.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.24,
+       "global": 4.99,
+       "parle": 5.24
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.98,
+       "global": 4.89
+      }
+     },
+     "zipf_fr": 5.24,
+     "zipf_cible": 4.98,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 17400,
+       "global": 9770,
+       "parle": 17400
+      },
+      "it": {
+       "parle": 9550,
+       "global": 7760
+      }
+     }
+    },
+    {
+     "n": 30,
+     "fr": "Je vous envie.",
+     "texte_source": "Je vous envie.",
+     "cible": "La invidio.",
+     "prononciation": "la inn-VI-dio",
+     "api": "/la inˈvidjo/",
+     "mot_cle": "envie",
+     "scene": "Un regard vert d'envie.",
+     "decryptage": "invidio ≈ « envie »",
+     "formes": "",
+     "exemple_fr": "Je vous envie, vraiment.",
+     "exemple_fr_mot": "Je vous envie",
+     "exemple_cible": "La invidio, davvero.",
+     "exemple_cible_mot": "La invidio",
+     "lien": "L'envie gonfle une voile affamée : je veux manger.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.24,
+       "global": 5.16,
+       "parle": 5.24
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 3.73,
+       "global": 3.62
+      }
+     },
+     "zipf_fr": 5.24,
+     "zipf_cible": 3.73,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 17400,
+       "global": 14500,
+       "parle": 17400
+      },
+      "it": {
+       "parle": 537,
+       "global": 417
+      }
+     }
+    },
+    {
+     "n": 31,
+     "fr": "Je veux manger.",
+     "texte_source": "Je veux manger.",
+     "cible": "Voglio mangiare.",
+     "prononciation": "VO-llio mann-DJA-ré",
+     "api": "/ˈvoʎʎo manˈdʒare/",
+     "mot_cle": "voile + manger",
+     "scene": "Une voile gonflée de faim.",
+     "decryptage": "voglio mangiare ≈ « voile + manger »",
+     "formes": "",
+     "exemple_fr": "Je veux manger maintenant.",
+     "exemple_fr_mot": "Je veux manger",
+     "exemple_cible": "Voglio mangiare adesso.",
+     "exemple_cible_mot": "Voglio mangiare",
+     "lien": "La voile mène deux compagnons du même pays.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.24,
+       "global": 4.92,
+       "parle": 5.24
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.21,
+       "global": 4.91
+      }
+     },
+     "zipf_fr": 5.24,
+     "zipf_cible": 5.21,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 17400,
+       "global": 8320,
+       "parle": 17400
+      },
+      "it": {
+       "parle": 16200,
+       "global": 8130
+      }
+     }
+    },
+    {
+     "n": 32,
+     "fr": "On est pays.",
+     "texte_source": "On est pays.",
+     "cible": "Siamo compaesani.",
+     "prononciation": "SIA-mo komm-pa-é-ZA-ni",
+     "api": "/ˈsjamo kompaeˈsani/",
+     "mot_cle": "compagnon + pays",
+     "scene": "Deux compagnons du même pays.",
+     "decryptage": "siamo compaesani ≈ « compagnon + pays »",
+     "formes": "",
+     "exemple_fr": "Toi et moi, on est pays.",
+     "exemple_fr_mot": "on est pays",
+     "exemple_cible": "Io e te siamo compaesani.",
+     "exemple_cible_mot": "siamo compaesani",
+     "lien": "Les compagnons repartent avec un mouton : « bêê », bon ben.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.23,
+       "global": 5.73,
+       "parle": 5.23
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 2.54,
+       "global": 2.95
+      }
+     },
+     "zipf_fr": 5.23,
+     "zipf_cible": 2.54,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 17000,
+       "global": 53700,
+       "parle": 17000
+      },
+      "it": {
+       "parle": 34,
+       "global": 89
+      }
+     }
+    },
+    {
+     "n": 33,
+     "fr": "Bon ben, ….",
+     "texte_source": "Bon ben, S V C.",
+     "cible": "Va beh, …",
+     "prononciation": "va BÈ",
+     "api": "/va be/",
+     "mot_cle": "va + bêê",
+     "scene": "Un mouton qui va : « bêê », bon ben.",
+     "decryptage": "va beh ≈ « va + bêê »",
+     "formes": "anglais : Well, S V C.",
+     "exemple_fr": "Bon ben, on y va.",
+     "exemple_fr_mot": "Bon ben",
+     "exemple_cible": "Va beh, andiamo.",
+     "exemple_cible_mot": "Va beh",
+     "lien": "Le mouton fait semblant : ça semble fini.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.22,
+       "global": 4.96,
+       "parle": 5.22
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.97,
+       "global": 4.98
+      }
+     },
+     "zipf_fr": 5.22,
+     "zipf_cible": 5.97,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 16600,
+       "global": 9120,
+       "parle": 16600
+      },
+      "it": {
+       "parle": 93300,
+       "global": 9550
+      }
+     }
+    },
+    {
+     "n": 34,
+     "fr": "Ça semble ….",
+     "texte_source": "Ça semble Vpp.",
+     "cible": "Sembra …",
+     "prononciation": "SÈMM-bra",
+     "api": "/ˈsembra/",
+     "mot_cle": "semblant",
+     "scene": "Un acteur fait semblant : ça semble fini.",
+     "decryptage": "sembra ≈ « semblant »",
+     "formes": "anglais : That sounds like Vpp. It seems Vpp.",
+     "exemple_fr": "Ça semble terminé.",
+     "exemple_fr_mot": "Ça semble",
+     "exemple_cible": "Sembra finito.",
+     "exemple_cible_mot": "Sembra",
+     "lien": "Le semblant fait sortir un génie : tu es génial.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.21,
+       "global": 5.26,
+       "parle": 5.21
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.87,
+       "global": 5.66
+      }
+     },
+     "zipf_fr": 5.21,
+     "zipf_cible": 5.87,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 16200,
+       "global": 18200,
+       "parle": 16200
+      },
+      "it": {
+       "parle": 74100,
+       "global": 45700
+      }
+     }
+    },
+    {
+     "n": 35,
+     "fr": "Tu es génial.",
+     "texte_source": "Tu es génial.",
+     "cible": "Sei geniale.",
+     "prononciation": "SÉÏ djé-NIA-lé",
+     "api": "/ˈsei dʒeˈnjale/",
+     "mot_cle": "génie",
+     "scene": "Un génie sort de la lampe : tu es génial.",
+     "decryptage": "sei geniale ≈ « génie »",
+     "formes": "",
+     "exemple_fr": "Merci, tu es génial.",
+     "exemple_fr_mot": "tu es génial",
+     "exemple_cible": "Grazie, sei geniale.",
+     "exemple_cible_mot": "sei geniale",
+     "lien": "Le génie demande à un bol de lait : qui êtes-vous ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.21,
+       "global": 4.48,
+       "parle": 5.21
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.32,
+       "global": 4.09
+      }
+     },
+     "zipf_fr": 5.21,
+     "zipf_cible": 4.32,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 16200,
+       "global": 3020,
+       "parle": 16200
+      },
+      "it": {
+       "parle": 2090,
+       "global": 1230
+      }
+     }
+    },
+    {
+     "n": 36,
+     "fr": "Qui êtes-vous ?",
+     "texte_source": "Qui êtes-vous ?",
+     "cible": "Chi è lei?",
+     "prononciation": "ki è LÉÏ",
+     "api": "/ki ɛ ˈlei/",
+     "mot_cle": "qui + lait",
+     "scene": "« Qui ? » demande un bol de lait.",
+     "decryptage": "chi è lei ≈ « qui + lait »",
+     "formes": "",
+     "exemple_fr": "Pardon, qui êtes-vous ?",
+     "exemple_fr_mot": "qui êtes-vous ?",
+     "exemple_cible": "Scusi, chi è lei?",
+     "exemple_cible_mot": "chi è lei?",
+     "lien": "Le lait part pour Andorre chercher un diamant : allons-y !",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.19,
+       "global": null,
+       "parle": 5.19
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.95,
+       "global": 5.47
+      }
+     },
+     "zipf_fr": 5.19,
+     "zipf_cible": 5.95,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 15500,
+       "parle": 15500
+      },
+      "it": {
+       "parle": 89100,
+       "global": 29500
+      }
+     }
+    },
+    {
+     "n": 37,
+     "fr": "Allons-y !",
+     "texte_source": "Allons-y !",
+     "cible": "Andiamo!",
+     "prononciation": "ann-DIA-mo",
+     "api": "/anˈdjamo/",
+     "mot_cle": "Andorre + diamant",
+     "scene": "Partons à Andorre chercher un diamant !",
+     "decryptage": "andiamo ≈ « Andorre + diamant »",
+     "formes": "",
+     "exemple_fr": "Allez, allons-y !",
+     "exemple_fr_mot": "allons-y",
+     "exemple_cible": "Dai, andiamo!",
+     "exemple_cible_mot": "andiamo",
+     "lien": "Le diamant est béni par un prêtre : ça marche ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.18,
+       "global": null,
+       "parle": 5.18
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.99,
+       "global": 4.75
+      }
+     },
+     "zipf_fr": 5.18,
+     "zipf_cible": 5.99,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 15100,
+       "parle": 15100
+      },
+      "it": {
+       "parle": 97700,
+       "global": 5620
+      }
+     }
+    },
+    {
+     "n": 38,
+     "fr": "…, OK ? …, ça marche ?",
+     "texte_source": "S V C, OK ? S V C, ça marche ?",
+     "cible": "…, va bene?",
+     "prononciation": "va BÈ-né",
+     "api": "/va ˈbene/",
+     "mot_cle": "va + bénit",
+     "scene": "Un prêtre bénit : ça marche ?",
+     "decryptage": "va bene ≈ « va + bénit »",
+     "formes": "anglais : S V C, right?",
+     "exemple_fr": "On se voit à huit heures, ça marche ?",
+     "exemple_fr_mot": "ça marche ?",
+     "exemple_cible": "Ci vediamo alle otto, va bene?",
+     "exemple_cible_mot": "va bene?",
+     "lien": "Le prêtre devient Penseur : ça me fait penser à…",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.17,
+       "global": 4.79,
+       "parle": 5.17
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 6.13,
+       "global": 5.51
+      }
+     },
+     "zipf_fr": 5.17,
+     "zipf_cible": 6.13,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 14800,
+       "global": 6170,
+       "parle": 14800
+      },
+      "it": {
+       "parle": 135000,
+       "global": 32400
+      }
+     }
+    },
+    {
+     "n": 39,
+     "fr": "Ça me fait penser à ….",
+     "texte_source": "Ça me fait penser à C.",
+     "cible": "Mi fa pensare a …",
+     "prononciation": "mi fa pènn-SA-ré a",
+     "api": "/mi fa penˈsare a/",
+     "mot_cle": "Penseur",
+     "scene": "Le Penseur pense à sa mère.",
+     "decryptage": "mi fa pensare a ≈ « Penseur »",
+     "formes": "anglais : That makes me think of C.",
+     "exemple_fr": "Ça me fait penser à Rome.",
+     "exemple_fr_mot": "Ça me fait penser à",
+     "exemple_cible": "Mi fa pensare a Roma.",
+     "exemple_cible_mot": "Mi fa pensare a",
+     "lien": "Le Penseur entend un son de félicité : je suis heureux.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.17,
+       "global": 5.02,
+       "parle": 5.17
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.3,
+       "global": 5.19
+      }
+     },
+     "zipf_fr": 5.17,
+     "zipf_cible": 5.3,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 14800,
+       "global": 10500,
+       "parle": 14800
+      },
+      "it": {
+       "parle": 20000,
+       "global": 15500
+      }
+     }
+    },
+    {
+     "n": 40,
+     "fr": "Je suis heureux.",
+     "texte_source": "Je suis heureux.",
+     "cible": "Sono felice.",
+     "prononciation": "SO-no fé-LI-tché",
+     "api": "/ˈsono feˈlitʃe/",
+     "mot_cle": "félicité",
+     "scene": "Un son de félicité.",
+     "decryptage": "sono felice ≈ « félicité »",
+     "formes": "anglais : I'm happy.",
+     "exemple_fr": "Je suis heureux de te voir.",
+     "exemple_fr_mot": "Je suis heureux",
+     "exemple_cible": "Sono felice di vederti.",
+     "exemple_cible_mot": "Sono felice",
+     "lien": "La félicité est photographiée d'un flash précis : à l'instant même.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.17,
+       "global": 4.94,
+       "parle": 5.17
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.46,
+       "global": 5.12
+      }
+     },
+     "zipf_fr": 5.17,
+     "zipf_cible": 5.46,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 14800,
+       "global": 8710,
+       "parle": 14800
+      },
+      "it": {
+       "parle": 28800,
+       "global": 13200
+      }
+     }
+    },
+    {
+     "n": 41,
+     "fr": "à l'instant même",
+     "texte_source": "à l'instant même",
+     "cible": "in questo preciso istante",
+     "prononciation": "inn KouÈS-to pré-TCHI-zo is-TANN-té",
+     "api": "/in ˈkwesto preˈtʃiso isˈtante/",
+     "mot_cle": "précis + instant",
+     "scene": "Un flash précis : à l'instant même.",
+     "decryptage": "n questo preciso istante ≈ « précis + instant »",
+     "formes": "anglais : this very minute right this minute at the very moment as we speak",
+     "exemple_fr": "Il est arrivé à l'instant même.",
+     "exemple_fr_mot": "à l'instant même",
+     "exemple_cible": "È arrivato in questo preciso istante.",
+     "exemple_cible_mot": "in questo preciso istante",
+     "lien": "Le flash éclaire un ouvrier au lavoir : je travaille dans…",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.16,
+       "global": null,
+       "parle": 5.16
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 3.96,
+       "global": 3.99
+      }
+     },
+     "zipf_fr": 5.16,
+     "zipf_cible": 3.96,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 14500,
+       "parle": 14500
+      },
+      "it": {
+       "parle": 912,
+       "global": 977
+      }
+     }
+    },
+    {
+     "n": 42,
+     "fr": "Je travaille dans ….",
+     "texte_source": "Je travaille dans C.",
+     "cible": "Lavoro in …",
+     "prononciation": "la-VO-ro inn",
+     "api": "/laˈvoro in/",
+     "mot_cle": "lavoir",
+     "scene": "Un ouvrier au lavoir : je travaille dans le linge.",
+     "decryptage": "voro in ≈ « lavoir »",
+     "formes": "",
+     "exemple_fr": "Je travaille dans une banque.",
+     "exemple_fr_mot": "Je travaille dans",
+     "exemple_cible": "Lavoro in una banca.",
+     "exemple_cible_mot": "Lavoro in",
+     "lien": "Au lavoir, un phare et une rame : on se fera une sortie.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.16,
+       "global": 4.83,
+       "parle": 5.16
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 1.21,
+       "global": 1.52
+      }
+     },
+     "zipf_fr": 5.16,
+     "zipf_cible": 1.21,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 14500,
+       "global": 6760,
+       "parle": 14500
+      },
+      "it": {
+       "parle": 1,
+       "global": 3
+      }
+     }
+    },
+    {
+     "n": 43,
+     "fr": "On se fera ….",
+     "texte_source": "On se fera C.",
+     "cible": "Ci faremo …",
+     "prononciation": "tchi fa-RÉ-mo",
+     "api": "/tʃi faˈremo/",
+     "mot_cle": "phare + rame",
+     "scene": "Un phare et une rame : on se fera une sortie.",
+     "decryptage": "ci faremo ≈ « phare + rame »",
+     "formes": "anglais : We'll have C.",
+     "exemple_fr": "On se fera un ciné.",
+     "exemple_fr_mot": "On se fera",
+     "exemple_cible": "Ci faremo un cinema.",
+     "exemple_cible_mot": "Ci faremo",
+     "lien": "La sortie est menée par un capitaine de mai : t'est-il déjà arrivé… ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.15,
+       "global": 4.96,
+       "parle": 5.15
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.2,
+       "global": 4.37
+      }
+     },
+     "zipf_fr": 5.15,
+     "zipf_cible": 5.2,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 14100,
+       "global": 9120,
+       "parle": 14100
+      },
+      "it": {
+       "parle": 15800,
+       "global": 2340
+      }
+     }
+    },
+    {
+     "n": 44,
+     "fr": "Cela t'est déjà arrivé de … ?",
+     "texte_source": "Cela t'est déjà arrivé de Vinf C ?",
+     "cible": "Ti è mai capitato di …?",
+     "prononciation": "ti è MA-i ka-pi-TA-to di",
+     "api": "/ti ɛ ˈmai kapiˈtato di/",
+     "mot_cle": "mai + capitaine",
+     "scene": "Un capitaine de mai : t'est-il déjà arrivé de naviguer ?",
+     "decryptage": "ti è mai capitato di ≈ « mai + capitaine »",
+     "formes": "anglais : Have you ever Vpp C?",
+     "exemple_fr": "Cela t'est déjà arrivé de perdre tes clés ?",
+     "exemple_fr_mot": "Cela t'est déjà arrivé de",
+     "exemple_cible": "Ti è mai capitato di perdere le chiavi?",
+     "exemple_cible_mot": "Ti è mai capitato di",
+     "lien": "Le capitaine montre une figure qui rit : tu parles !",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.14,
+       "global": null,
+       "parle": 5.14
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.16,
+       "global": 4.17
+      }
+     },
+     "zipf_fr": 5.14,
+     "zipf_cible": 4.16,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 13800,
+       "parle": 13800
+      },
+      "it": {
+       "parle": 1450,
+       "global": 1480
+      }
+     }
+    },
+    {
+     "n": 45,
+     "fr": "Tu parles !",
+     "texte_source": "Tu parles !",
+     "cible": "Figurati!",
+     "prononciation": "fi-GOU-ra-ti",
+     "api": "/fiˈɡurati/",
+     "mot_cle": "figure",
+     "scene": "Une figure qui rit : tu parles !",
+     "decryptage": "figurati ≈ « figure »",
+     "formes": "anglais : I'm sure!",
+     "exemple_fr": "Fatigué ? Tu parles !",
+     "exemple_fr_mot": "Tu parles !",
+     "exemple_cible": "Stanco? Figurati!",
+     "exemple_cible_mot": "Figurati!",
+     "lien": "La figure croise une nonne qui tourne la page : pas de verso, pas moyen !",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.14,
+       "global": 4.67,
+       "parle": 5.14
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.42,
+       "global": 4.18
+      }
+     },
+     "zipf_fr": 5.14,
+     "zipf_cible": 4.42,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 13800,
+       "global": 4680,
+       "parle": 13800
+      },
+      "it": {
+       "parle": 2630,
+       "global": 1510
+      }
+     }
+    },
+    {
+     "n": 46,
+     "fr": "Pas moyen !",
+     "texte_source": "Pas moyen !",
+     "cible": "Non c'è verso!",
+     "prononciation": "nonn tchè VÈR-so",
+     "api": "/non kɛ ˈverso/",
+     "mot_cle": "nonne + verso",
+     "scene": "Une nonne tourne la page : pas de verso, pas moyen !",
+     "decryptage": "non c'è verso ≈ « nonne + verso »",
+     "formes": "anglais : No way!",
+     "exemple_fr": "Pas moyen de dormir !",
+     "exemple_fr_mot": "Pas moyen",
+     "exemple_cible": "Non c'è verso di dormire!",
+     "exemple_cible_mot": "Non c'è verso",
+     "lien": "La nonne tend des menottes, sauf si tu as la clé.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.13,
+       "global": 5.28,
+       "parle": 5.13
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.29,
+       "global": null
+      }
+     },
+     "zipf_fr": 5.13,
+     "zipf_cible": 5.29,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 13500,
+       "global": 19100,
+       "parle": 13500
+      },
+      "it": {
+       "parle": 19500
+      }
+     }
+    },
+    {
+     "n": 47,
+     "fr": "Sauf si ….",
+     "texte_source": "Sauf si S V C.",
+     "cible": "A meno che …",
+     "prononciation": "a MÉ-no ké",
+     "api": "/a ˈmeno ke/",
+     "mot_cle": "menottes",
+     "scene": "Des menottes, sauf si tu as la clé.",
+     "decryptage": "a meno che ≈ « menottes »",
+     "formes": "anglais : except if S V C. unless S V C.",
+     "exemple_fr": "Je viens, sauf s'il pleut.",
+     "exemple_fr_mot": "sauf s'il",
+     "exemple_cible": "Vengo, a meno che non piova.",
+     "exemple_cible_mot": "a meno che",
+     "lien": "Une main lâche les menottes : laisse-moi passer.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.12,
+       "global": 5.08,
+       "parle": 5.12
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.56,
+       "global": 5.68
+      }
+     },
+     "zipf_fr": 5.12,
+     "zipf_cible": 5.56,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 13200,
+       "global": 12000,
+       "parle": 13200
+      },
+      "it": {
+       "parle": 36300,
+       "global": 47900
+      }
+     }
+    },
+    {
+     "n": 48,
+     "fr": "Laisse-moi ….",
+     "texte_source": "Laisse-moi Vinf C.",
+     "cible": "Lasciami …",
+     "prononciation": "LACH-cha-mi",
+     "api": "/ˈlaʃʃami/",
+     "mot_cle": "lâcher",
+     "scene": "Une main lâche : laisse-moi passer.",
+     "decryptage": "sciami ≈ « lâcher »",
+     "formes": "",
+     "exemple_fr": "Laisse-moi dormir.",
+     "exemple_fr_mot": "Laisse-moi",
+     "exemple_cible": "Lasciami dormire.",
+     "exemple_cible_mot": "Lasciami",
+     "lien": "La main libérée prend celle d'un ami : tu m'aimes ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.12,
+       "global": null,
+       "parle": 5.12
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 2.43,
+       "global": 2.67
+      }
+     },
+     "zipf_fr": 5.12,
+     "zipf_cible": 2.43,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 13200,
+       "parle": 13200
+      },
+      "it": {
+       "parle": 26,
+       "global": 46
+      }
+     }
+    },
+    {
+     "n": 49,
+     "fr": "Tu m'aimes ?",
+     "texte_source": "Tu m'aimes ?",
+     "cible": "Mi ami?",
+     "prononciation": "mi A-mi",
+     "api": "/mi ˈami/",
+     "mot_cle": "ami",
+     "scene": "Un ami demande : tu m'aimes ?",
+     "decryptage": "mi ami ≈ « ami »",
+     "formes": "",
+     "exemple_fr": "Dis, tu m'aimes ?",
+     "exemple_fr_mot": "tu m'aimes ?",
+     "exemple_cible": "Dimmi, mi ami?",
+     "exemple_cible_mot": "mi ami?",
+     "lien": "L'ami s'assoit au bord d'un lac calme : calme-toi.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.12,
+       "global": null,
+       "parle": 5.12
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.8,
+       "global": 4.36
+      }
+     },
+     "zipf_fr": 5.12,
+     "zipf_cible": 4.8,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 13200,
+       "parle": 13200
+      },
+      "it": {
+       "parle": 6310,
+       "global": 2290
+      }
+     }
+    },
+    {
+     "n": 50,
+     "fr": "Calme toi.",
+     "texte_source": "Calme toi.",
+     "cible": "Calmati.",
+     "prononciation": "KAL-ma-ti",
+     "api": "/ˈkalmati/",
+     "mot_cle": "calme",
+     "scene": "Un lac calme : calme-toi.",
+     "decryptage": "calmati ≈ « calme »",
+     "formes": "",
+     "exemple_fr": "Calme-toi, c'est rien.",
+     "exemple_fr_mot": "Calme-toi",
+     "exemple_cible": "Calmati, non è niente.",
+     "exemple_cible_mot": "Calmati",
+     "lien": "Le lac mène au parloir : tu parles italien ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.11,
+       "global": 4.82,
+       "parle": 5.11
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.81,
+       "global": 3.12
+      }
+     },
+     "zipf_fr": 5.11,
+     "zipf_cible": 4.81,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 12900,
+       "global": 6610,
+       "parle": 12900
+      },
+      "it": {
+       "parle": 6460,
+       "global": 132
+      }
+     }
+    },
+    {
+     "n": 51,
+     "fr": "Est-ce que tu parles … ?",
+     "texte_source": "Est-ce que tu parles Clangue ?",
+     "cible": "Parli …?",
+     "prononciation": "PAR-li",
+     "api": "/ˈparli/",
+     "mot_cle": "parloir",
+     "scene": "Au parloir : tu parles italien ?",
+     "decryptage": "parli ≈ « parloir »",
+     "formes": "anglais : Do you speak C?",
+     "exemple_fr": "Est-ce que tu parles italien ?",
+     "exemple_fr_mot": "Est-ce que tu parles",
+     "exemple_cible": "Parli italiano?",
+     "exemple_cible_mot": "Parli",
+     "lien": "Au parloir, une frégate dans le néant : je m'en fous.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.11,
+       "global": null,
+       "parle": 5.11
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.16,
+       "global": 4.66
+      }
+     },
+     "zipf_fr": 5.11,
+     "zipf_cible": 5.16,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 12900,
+       "parle": 12900
+      },
+      "it": {
+       "parle": 14500,
+       "global": 4570
+      }
+     }
+    },
+    {
+     "n": 52,
      "fr": "Je m'en fous.",
      "texte_source": "Je m'en fous.",
      "cible": "Non me ne frega niente.",
@@ -178002,7 +180552,7 @@
      "exemple_fr_mot": "je m'en fous",
      "exemple_cible": "Sinceramente, non me ne frega niente.",
      "exemple_cible_mot": "non me ne frega niente",
-     "lien": "La frégate lâche son ancre et la laisse tomber.",
+     "lien": "La frégate importe un seau : ça fait quoi si… ?",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_courantes"
@@ -178043,7 +180593,347 @@
      }
     },
     {
-     "n": 8,
+     "n": 53,
+     "fr": "Qu'est-ce que ça fait si … ? Et qu'est-ce que ça fait si … ? Quel est le problème si … ? Ça fait quoi si … ? (fam)",
+     "texte_source": "Qu'est-ce que ça fait si S V C ? Et qu'est-ce que ça fait si S V C ? Quel est le problème si S V C ? Ça fait quoi si S V C ? (fam)",
+     "cible": "Che importa se …?",
+     "prononciation": "ké imm-POR-ta sé",
+     "api": "/ke imˈporta se/",
+     "mot_cle": "importer + seau",
+     "scene": "Un seau importé : qu'est-ce que ça fait ?",
+     "decryptage": "che importa se ≈ « importer + seau »",
+     "formes": "anglais : So what if S V C?",
+     "exemple_fr": "Ça fait quoi si je suis en retard ?",
+     "exemple_fr_mot": "Ça fait quoi si",
+     "exemple_cible": "Che importa se sono in ritardo?",
+     "exemple_cible_mot": "Che importa se",
+     "lien": "Le seau tombe sur une horloge qui retarde : en retard.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.1,
+       "global": null,
+       "parle": 5.1
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.39,
+       "global": 4.76
+      }
+     },
+     "zipf_fr": 5.1,
+     "zipf_cible": 5.39,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 12600,
+       "parle": 12600
+      },
+      "it": {
+       "parle": 24500,
+       "global": 5750
+      }
+     }
+    },
+    {
+     "n": 54,
+     "fr": "en retard",
+     "texte_source": "en retard",
+     "cible": "in ritardo",
+     "prononciation": "inn ri-TAR-do",
+     "api": "/in riˈtardo/",
+     "mot_cle": "retard",
+     "scene": "Une horloge qui retarde.",
+     "decryptage": "n ritardo ≈ « retard »",
+     "formes": "anglais : late",
+     "exemple_fr": "Je suis en retard.",
+     "exemple_fr_mot": "en retard",
+     "exemple_cible": "Sono in ritardo.",
+     "exemple_cible_mot": "in ritardo",
+     "lien": "L'horloge est jetée par un roi absolu : surtout pas !",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.09,
+       "global": 4.75,
+       "parle": 5.09
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.33,
+       "global": 4.62
+      }
+     },
+     "zipf_fr": 5.09,
+     "zipf_cible": 4.33,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 12300,
+       "global": 5620,
+       "parle": 12300
+      },
+      "it": {
+       "parle": 2140,
+       "global": 4170
+      }
+     }
+    },
+    {
+     "n": 55,
+     "fr": "Surtout pas !",
+     "texte_source": "Surtout pas !",
+     "cible": "Assolutamente no!",
+     "prononciation": "as-so-lou-ta-MÈNN-té no",
+     "api": "/assolutaˈmente no/",
+     "mot_cle": "absolu",
+     "scene": "Un roi absolu crie : surtout pas !",
+     "decryptage": "assolutamente no ≈ « absolu »",
+     "formes": "anglais : Definitely not! Don't!",
+     "exemple_fr": "Ne touche surtout pas !",
+     "exemple_fr_mot": "surtout pas",
+     "exemple_cible": "Assolutamente no, non toccare!",
+     "exemple_cible_mot": "Assolutamente no",
+     "lien": "Le roi demande à une star : qu'est-ce que tu veux manger ce soir ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.09,
+       "global": 5.47,
+       "parle": 5.09
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.15,
+       "global": 4.97
+      }
+     },
+     "zipf_fr": 5.09,
+     "zipf_cible": 5.15,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 12300,
+       "global": 29500,
+       "parle": 12300
+      },
+      "it": {
+       "parle": 14100,
+       "global": 9330
+      }
+     }
+    },
+    {
+     "n": 56,
+     "fr": "Qu'est-ce que tu veux manger ce soir",
+     "texte_source": "Qu'est-ce que tu veux manger ce soir",
+     "cible": "Cosa vuoi mangiare stasera?",
+     "prononciation": "KO-za vouOÏ mann-DJA-ré sta-SÉ-ra",
+     "api": "/ˈkosa vuˈoi manˈdʒare staˈsera/",
+     "mot_cle": "chose + star",
+     "scene": "Une star demande : quoi manger ce soir ?",
+     "decryptage": "cosa vuoi mangiare stasera ≈ « chose + star »",
+     "formes": "",
+     "exemple_fr": "Qu'est-ce que tu veux manger ce soir ?",
+     "exemple_fr_mot": "manger ce soir",
+     "exemple_cible": "Cosa vuoi mangiare stasera?",
+     "exemple_cible_mot": "mangiare stasera",
+     "lien": "La star hésite : « comment ça commence ? », pour commencer.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.08,
+       "global": null,
+       "parle": 5.08
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.99,
+       "global": 4.58
+      }
+     },
+     "zipf_fr": 5.08,
+     "zipf_cible": 4.99,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 12000,
+       "parle": 12000
+      },
+      "it": {
+       "parle": 9770,
+       "global": 3800
+      }
+     }
+    },
+    {
+     "n": 57,
+     "fr": "Pour commencer, ….",
+     "texte_source": "Pour commencer, S V C.",
+     "cible": "Per cominciare, …",
+     "prononciation": "pèr ko-minn-TCHA-ré",
+     "api": "/per kominˈtʃare/",
+     "mot_cle": "« comment ça ? »",
+     "scene": "« Comment ça commence ? » : pour commencer.",
+     "decryptage": "per cominciare ≈ « « comment ça ? » »",
+     "formes": "anglais : To begin with, S V C. To start with, S V C. For starters, S V C. To get started, S V C. US To kick off, S V C.",
+     "exemple_fr": "Pour commencer, une soupe.",
+     "exemple_fr_mot": "Pour commencer",
+     "exemple_cible": "Per cominciare, una zuppa.",
+     "exemple_cible_mot": "Per cominciare",
+     "lien": "Une tornade revient : pour revenir à nos moutons.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.07,
+       "global": 4.93,
+       "parle": 5.07
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.76,
+       "global": 4.55
+      }
+     },
+     "zipf_fr": 5.07,
+     "zipf_cible": 4.76,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 11700,
+       "global": 8510,
+       "parle": 11700
+      },
+      "it": {
+       "parle": 5750,
+       "global": 3550
+      }
+     }
+    },
+    {
+     "n": 58,
+     "fr": "Pour revenir à ….",
+     "texte_source": "Pour revenir à C.",
+     "cible": "Per tornare a …",
+     "prononciation": "pèr tor-NA-ré a",
+     "api": "/per torˈnare a/",
+     "mot_cle": "tornade",
+     "scene": "Une tornade revient : pour revenir à nos moutons.",
+     "decryptage": "per tornare a ≈ « tornade »",
+     "formes": "anglais : Coming back to C.",
+     "exemple_fr": "Pour revenir à ta question.",
+     "exemple_fr_mot": "Pour revenir à",
+     "exemple_cible": "Per tornare alla tua domanda.",
+     "exemple_cible_mot": "Per tornare alla",
+     "lien": "La tornade lâche tout : laisse tomber.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.07,
+       "global": 4.88,
+       "parle": 5.07
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.48,
+       "global": 5.07
+      }
+     },
+     "zipf_fr": 5.07,
+     "zipf_cible": 5.48,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 11700,
+       "global": 7590,
+       "parle": 11700
+      },
+      "it": {
+       "parle": 30200,
+       "global": 11700
+      }
+     }
+    },
+    {
+     "n": 59,
      "fr": "Laisse tomber.",
      "texte_source": "Laisse tomber.",
      "cible": "Lascia perdere.",
@@ -178057,7 +180947,7 @@
      "exemple_fr_mot": "Laisse tomber",
      "exemple_cible": "Lascia perdere, non è grave.",
      "exemple_cible_mot": "Lascia perdere",
-     "lien": "Le ballon roule vers un cerf qui secoue la tête : certainement pas.",
+     "lien": "Ce qui tombe est une carte de restaurant : à la carte.",
      "categorie": "expressions",
      "sous_categories": [
       "expressions_courantes"
@@ -178099,876 +180989,2264 @@
      }
     },
     {
-     "n": 9,
-     "fr": "Certainement pas.",
-     "texte_source": "Certainement pas.",
-     "cible": "Certo che no!",
-     "prononciation": "TCHÈR-to ké NO",
-     "api": "/ˈtʃɛrto ke ˈnɔ/",
-     "mot_cle": "cerf + nono",
-     "scene": "Un cerf secoue ses bois : non, non, certainement pas !",
-     "decryptage": "certo che no = bien sûr que non",
-     "formes": "oral",
-     "exemple_fr": "Tu lui prêtes ta voiture ? Certainement pas.",
-     "exemple_fr_mot": "Certainement pas",
-     "exemple_cible": "Gli presti la macchina? Certo che no!",
-     "exemple_cible_mot": "Certo che no",
-     "lien": "Le cerf, finalement soulagé, remercie à l'infini.",
-     "categorie": "expressions",
-     "sous_categories": [
-      "expressions_courantes"
-     ],
-     "tags": [
-      "expressions",
-      "expressions_courantes"
-     ],
-     "audio_mot": null,
-     "audio_phrase": null,
-     "zipf": {
-      "fr": {
-       "ecrit": null,
-       "films": null,
-       "soustitres": 4.76,
-       "global": 4.74,
-       "parle": 4.76
-      },
-      "it": {
-       "ecrit": null,
-       "parle": 5.94,
-       "global": 5.42
-      }
-     },
-     "zipf_fr": 4.76,
-     "zipf_cible": 5.94,
-     "zipf_source": "estimé (locution)",
-     "approx": true,
-     "occ100M": {
-      "fr": {
-       "soustitres": 5750,
-       "global": 5500,
-       "parle": 5750
-      },
-      "it": {
-       "parle": 87100,
-       "global": 26300
-      }
-     }
-    },
-    {
-     "n": 10,
-     "fr": "Merci mille fois.",
-     "texte_source": "Merci mille fois.",
-     "cible": "Grazie infinite.",
-     "prononciation": "GRA-tsié inn-fi-NI-té",
-     "api": "/ˈɡrattsje infiˈnite/",
-     "mot_cle": "infini",
-     "scene": "Un ruban de mercis se déroule à l'infini.",
-     "decryptage": "infinite = infinies (grazie est féminin pluriel)",
-     "formes": "poli",
-     "exemple_fr": "Merci mille fois pour ton aide !",
-     "exemple_fr_mot": "Merci mille fois",
-     "exemple_cible": "Grazie infinite per il tuo aiuto!",
-     "exemple_cible_mot": "Grazie infinite",
-     "lien": "Le ruban s'enroule autour d'un plaid cosy : comme ci, comme ça.",
-     "categorie": "expressions",
-     "sous_categories": [
-      "expressions_courantes"
-     ],
-     "tags": [
-      "expressions",
-      "expressions_courantes"
-     ],
-     "audio_mot": null,
-     "audio_phrase": null,
-     "zipf": {
-      "fr": {
-       "ecrit": null,
-       "films": null,
-       "soustitres": 4.66,
-       "global": 4.58,
-       "parle": 4.66
-      },
-      "it": {
-       "ecrit": null,
-       "parle": 3.97,
-       "global": 4.08
-      }
-     },
-     "zipf_fr": 4.66,
-     "zipf_cible": 3.97,
-     "zipf_source": "estimé (locution)",
-     "approx": true,
-     "occ100M": {
-      "fr": {
-       "soustitres": 4570,
-       "global": 3800,
-       "parle": 4570
-      },
-      "it": {
-       "parle": 933,
-       "global": 1200
-      }
-     }
-    },
-    {
-     "n": 11,
-     "fr": "Comme ci, comme ça.",
-     "texte_source": "Comme ci, comme ça.",
-     "cible": "Così così.",
-     "prononciation": "ko-ZI ko-ZI",
-     "api": "/koˈzi koˈzi/",
-     "mot_cle": "cosy",
-     "scene": "Un fauteuil cosy, cosy… mais sans plus : comme ci, comme ça.",
-     "decryptage": "così = ainsi",
-     "formes": "oral",
-     "exemple_fr": "Ça va ? — Comme ci, comme ça.",
-     "exemple_fr_mot": "Comme ci, comme ça",
-     "exemple_cible": "Come va? — Così così.",
-     "exemple_cible_mot": "Così così",
-     "lien": "Comme ci, comme ça : du salon cosy, on monte au marché des noms, étage 4, où l'on colore une palette.",
-     "categorie": "expressions",
-     "sous_categories": [
-      "expressions_courantes"
-     ],
-     "tags": [
-      "expressions",
-      "expressions_courantes"
-     ],
-     "audio_mot": null,
-     "audio_phrase": null,
-     "zipf": {
-      "fr": {
-       "ecrit": null,
-       "films": null,
-       "soustitres": 3.97,
-       "global": 5.37,
-       "parle": 3.97
-      },
-      "it": {
-       "ecrit": null,
-       "parle": 5.85,
-       "global": 5.84
-      }
-     },
-     "zipf_fr": 3.97,
-     "zipf_cible": 5.85,
-     "zipf_source": "estimé (locution)",
-     "approx": true,
-     "occ100M": {
-      "fr": {
-       "soustitres": 933,
-       "global": 23400,
-       "parle": 933
-      },
-      "it": {
-       "parle": 70800,
-       "global": 69200
-      }
-     }
-    },
-    {
-     "n": 12,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 13,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 14,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 15,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 16,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 17,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 18,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 19,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 20,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 21,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 22,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 23,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 24,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 25,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 26,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 27,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 28,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 29,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 30,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 31,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 32,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 33,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 34,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 35,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 36,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 37,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 38,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 39,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 40,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 41,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 42,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 43,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 44,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 45,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 46,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 47,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 48,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 49,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 50,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 51,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 52,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 53,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 54,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 55,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 56,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 57,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 58,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
-     "n": 59,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
-    },
-    {
      "n": 60,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "à la carte",
+     "texte_source": "à la carte",
+     "cible": "alla carta",
+     "prononciation": "AL-la KAR-ta",
+     "api": "/alla ˈkarta/",
+     "mot_cle": "carte",
+     "scene": "Une carte de restaurant.",
+     "decryptage": "alla carta ≈ « carte »",
+     "formes": "anglais : à la carte",
+     "exemple_fr": "On mange à la carte.",
+     "exemple_fr_mot": "à la carte",
+     "exemple_cible": "Mangiamo alla carta.",
+     "exemple_cible_mot": "alla carta",
+     "lien": "La carte fait faire volte-face à un pioupiou le plus souvent.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.05,
+       "global": 5.06,
+       "parle": 5.05
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.94,
+       "global": 5.06
+      }
+     },
+     "zipf_fr": 5.05,
+     "zipf_cible": 4.94,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 11200,
+       "global": 11500,
+       "parle": 11200
+      },
+      "it": {
+       "parle": 8710,
+       "global": 11500
+      }
+     }
     },
     {
      "n": 61,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "le plus souvent",
+     "texte_source": "le plus souvent",
+     "cible": "il più delle volte",
+     "prononciation": "il piou DÈL-lé VOL-té",
+     "api": "/il pju ˈdelle ˈvolte/",
+     "mot_cle": "pioupiou + volte",
+     "scene": "Un pioupiou qui fait volte-face le plus souvent.",
+     "decryptage": "più delle volte ≈ « pioupiou + volte »",
+     "formes": "anglais : more often than not idiom. most often usually",
+     "exemple_fr": "Le plus souvent, il pleut.",
+     "exemple_fr_mot": "Le plus souvent",
+     "exemple_cible": "Il più delle volte piove.",
+     "exemple_cible_mot": "Il più delle volte",
+     "lien": "Le pioupiou écoute une nonne réciter son credo : il n'a pas raison.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.05,
+       "global": 5.46,
+       "parle": 5.05
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.43,
+       "global": 5.52
+      }
+     },
+     "zipf_fr": 5.05,
+     "zipf_cible": 5.43,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 11200,
+       "global": 28800,
+       "parle": 11200
+      },
+      "it": {
+       "parle": 26900,
+       "global": 33100
+      }
+     }
     },
     {
      "n": 62,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Je ne crois pas que … ait raison.",
+     "texte_source": "Je ne crois pas que C ait raison.",
+     "cible": "Non credo che … abbia ragione.",
+     "prononciation": "nonn KRÉ-do ké … AB-bia ra-DJO-né",
+     "api": "/non ˈkredo ke ˈabbja ˈradʒone/",
+     "mot_cle": "credo + raison",
+     "scene": "Une nonne récite son credo : il n'a pas raison.",
+     "decryptage": "non credo che abbia ragione ≈ « credo + raison »",
+     "formes": "anglais : I do not believe C is right.",
+     "exemple_fr": "Je ne crois pas que Marco ait raison.",
+     "exemple_fr_mot": "Je ne crois pas que",
+     "exemple_cible": "Non credo che Marco abbia ragione.",
+     "exemple_cible_mot": "Non credo che",
+     "lien": "Le credo est filmé en vidéo : voyons.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.05,
+       "global": 4.85,
+       "parle": 5.05
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.3,
+       "global": 4.99
+      }
+     },
+     "zipf_fr": 5.05,
+     "zipf_cible": 5.3,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 11200,
+       "global": 7080,
+       "parle": 11200
+      },
+      "it": {
+       "parle": 20000,
+       "global": 9770
+      }
+     }
     },
     {
      "n": 63,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "voyons",
+     "texte_source": "voyons",
+     "cible": "vediamo",
+     "prononciation": "vé-DIA-mo",
+     "api": "/veˈdjamo/",
+     "mot_cle": "vidéo",
+     "scene": "Une vidéo : voyons.",
+     "decryptage": "vediamo ≈ « vidéo »",
+     "formes": "anglais : let me see let's see",
+     "exemple_fr": "Voyons, réfléchis.",
+     "exemple_fr_mot": "Voyons",
+     "exemple_cible": "Vediamo, rifletti.",
+     "exemple_cible_mot": "Vediamo",
+     "lien": "La vidéo montre un dormeur en plein songe : j'ai un rêve.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.05,
+       "global": 4.42,
+       "parle": 5.05
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.52,
+       "global": 4.96
+      }
+     },
+     "zipf_fr": 5.05,
+     "zipf_cible": 5.52,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 11200,
+       "global": 2630,
+       "parle": 11200
+      },
+      "it": {
+       "parle": 33100,
+       "global": 9120
+      }
+     }
     },
     {
      "n": 64,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "J'ai un rêve.",
+     "texte_source": "J'ai un rêve.",
+     "cible": "Ho un sogno.",
+     "prononciation": "o ounn SO-gno",
+     "api": "/o un ˈsoɲɲo/",
+     "mot_cle": "songe",
+     "scene": "Un dormeur en plein songe.",
+     "decryptage": "ho un sogno ≈ « songe »",
+     "formes": "",
+     "exemple_fr": "J'ai un rêve.",
+     "exemple_fr_mot": "J'ai un rêve",
+     "exemple_cible": "Ho un sogno.",
+     "exemple_cible_mot": "Ho un sogno",
+     "lien": "Le songe reçoit une prime sur la première vista.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.05,
+       "global": null,
+       "parle": 5.05
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.02,
+       "global": 4.84
+      }
+     },
+     "zipf_fr": 5.05,
+     "zipf_cible": 5.02,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 11200,
+       "parle": 11200
+      },
+      "it": {
+       "parle": 10500,
+       "global": 6920
+      }
+     }
     },
     {
      "n": 65,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "à première vue",
+     "texte_source": "à première vue",
+     "cible": "a prima vista",
+     "prononciation": "a PRI-ma VIS-ta",
+     "api": "/a ˈprima ˈvista/",
+     "mot_cle": "prime + vista",
+     "scene": "Une prime sur la première vista.",
+     "decryptage": "a prima vista ≈ « prime + vista »",
+     "formes": "anglais : at first sight at first glance",
+     "exemple_fr": "À première vue, c'est facile.",
+     "exemple_fr_mot": "À première vue",
+     "exemple_cible": "A prima vista è facile.",
+     "exemple_cible_mot": "A prima vista",
+     "lien": "Une main lâche la vista : laissez-moi voir.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.02,
+       "global": 5.19,
+       "parle": 5.02
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.25,
+       "global": 5.34
+      }
+     },
+     "zipf_fr": 5.02,
+     "zipf_cible": 5.25,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 10500,
+       "global": 15500,
+       "parle": 10500
+      },
+      "it": {
+       "parle": 17800,
+       "global": 21900
+      }
+     }
     },
     {
      "n": 66,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Laissez-moi voir.",
+     "texte_source": "Laissez-moi voir.",
+     "cible": "Mi lasci vedere.",
+     "prononciation": "mi LACH-chi vé-DÉ-ré",
+     "api": "/mi ˈlaʃʃi veˈdere/",
+     "mot_cle": "lâcher + vidéo",
+     "scene": "Une main lâche la vidéo : laissez-moi voir.",
+     "decryptage": "mi lasci vedere ≈ « lâcher + vidéo »",
+     "formes": "",
+     "exemple_fr": "Laissez-moi voir la photo.",
+     "exemple_fr_mot": "Laissez-moi voir",
+     "exemple_cible": "Mi lasci vedere la foto.",
+     "exemple_cible_mot": "Mi lasci vedere",
+     "lien": "La vue mène deux amis ensemble à Andorre.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.02,
+       "global": null,
+       "parle": 5.02
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.97,
+       "global": 4.24
+      }
+     },
+     "zipf_fr": 5.02,
+     "zipf_cible": 4.97,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 10500,
+       "parle": 10500
+      },
+      "it": {
+       "parle": 9330,
+       "global": 1740
+      }
+     }
     },
     {
      "n": 67,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Allons-y ensemble.",
+     "texte_source": "Allons-y ensemble.",
+     "cible": "Andiamoci insieme.",
+     "prononciation": "ann-DIA-mo-tchi inn-SIÈ-mé",
+     "api": "/anˈdjamotʃi inˈsjeme/",
+     "mot_cle": "Andorre + ensemble",
+     "scene": "Deux amis partent ensemble à Andorre.",
+     "decryptage": "andiamoci insieme ≈ « Andorre + ensemble »",
+     "formes": "",
+     "exemple_fr": "Allons-y ensemble.",
+     "exemple_fr_mot": "Allons-y ensemble",
+     "exemple_cible": "Andiamoci insieme.",
+     "exemple_cible_mot": "Andiamoci insieme",
+     "lien": "À Andorre, une nonne en mai n'avait jamais dansé.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.02,
+       "global": null,
+       "parle": 5.02
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 3.5,
+       "global": 2.45
+      }
+     },
+     "zipf_fr": 5.02,
+     "zipf_cible": 3.5,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 10500,
+       "parle": 10500
+      },
+      "it": {
+       "parle": 316,
+       "global": 28
+      }
+     }
     },
     {
      "n": 68,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Vous n'aviez jamais … ?",
+     "texte_source": "Vous n'aviez jamais Vinf C ?",
+     "cible": "Non aveva mai …?",
+     "prononciation": "nonn a-VÉ-va MA-i",
+     "api": "/non aˈveva ˈmai/",
+     "mot_cle": "nonne + mai",
+     "scene": "Une nonne en mai n'avait jamais dansé.",
+     "decryptage": "non aveva mai ≈ « nonne + mai »",
+     "formes": "",
+     "exemple_fr": "Vous n'aviez jamais vu la mer ?",
+     "exemple_fr_mot": "Vous n'aviez jamais",
+     "exemple_cible": "Non aveva mai visto il mare?",
+     "exemple_cible_mot": "Non aveva mai",
+     "lien": "La nonne offre une mie de pain au point de vista : de mon point de vue.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.02,
+       "global": null,
+       "parle": 5.02
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.64,
+       "global": 5.55
+      }
+     },
+     "zipf_fr": 5.02,
+     "zipf_cible": 5.64,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 10500,
+       "parle": 10500
+      },
+      "it": {
+       "parle": 43700,
+       "global": 35500
+      }
+     }
     },
     {
      "n": 69,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "de mon point de vue",
+     "texte_source": "de mon point de vue",
+     "cible": "dal mio punto di vista",
+     "prononciation": "dal MI-o POUNN-to di VIS-ta",
+     "api": "/dal mjo ˈpunto di ˈvista/",
+     "mot_cle": "mie + point + vista",
+     "scene": "Une mie de pain au point de vista : de mon point de vue.",
+     "decryptage": "dal mio punto di vista ≈ « mie + point + vista »",
+     "formes": "anglais : from my point of view",
+     "exemple_fr": "De mon point de vue, c'est bien.",
+     "exemple_fr_mot": "De mon point de vue",
+     "exemple_cible": "Dal mio punto di vista, va bene.",
+     "exemple_cible_mot": "Dal mio punto di vista",
+     "lien": "Le point de vue mène à une quête sur l'ultime point.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.01,
+       "global": 5.12,
+       "parle": 5.01
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.0,
+       "global": 5.11
+      }
+     },
+     "zipf_fr": 5.01,
+     "zipf_cible": 5.0,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 10200,
+       "global": 13200,
+       "parle": 10200
+      },
+      "it": {
+       "parle": 10000,
+       "global": 12900
+      }
+     }
     },
     {
      "n": 70,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Sur ce dernier point, ….",
+     "texte_source": "Sur ce dernier point, S V C.",
+     "cible": "Su quest'ultimo punto, …",
+     "prononciation": "sou kouès-TOUL-ti-mo POUNN-to",
+     "api": "/su kwesˈtultimo ˈpunto/",
+     "mot_cle": "quête + ultime",
+     "scene": "Une quête sur l'ultime point.",
+     "decryptage": "su quest'ultimo punto ≈ « quête + ultime »",
+     "formes": "anglais : On the latter point, S V C.",
+     "exemple_fr": "Sur ce dernier point, je suis d'accord.",
+     "exemple_fr_mot": "Sur ce dernier point",
+     "exemple_cible": "Su quest'ultimo punto, sono d'accordo.",
+     "exemple_cible_mot": "Su quest'ultimo punto",
+     "lien": "La quête finance un viatique : bon voyage.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 5.01,
+       "global": 5.2,
+       "parle": 5.01
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.84,
+       "global": null
+      }
+     },
+     "zipf_fr": 5.01,
+     "zipf_cible": 4.84,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 10200,
+       "global": 15800,
+       "parle": 10200
+      },
+      "it": {
+       "parle": 6920
+      }
+     }
     },
     {
      "n": 71,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Bon voyage.",
+     "texte_source": "Bon voyage.",
+     "cible": "Buon viaggio.",
+     "prononciation": "bouonn VIAD-djo",
+     "api": "/ˈbuon ˈvjaddʒo/",
+     "mot_cle": "viatique",
+     "scene": "Un viatique pour le voyage.",
+     "decryptage": "buon viaggio ≈ « viatique »",
+     "formes": "anglais : Have a nice trip.",
+     "exemple_fr": "Bon voyage !",
+     "exemple_fr_mot": "Bon voyage",
+     "exemple_cible": "Buon viaggio!",
+     "exemple_cible_mot": "Buon viaggio",
+     "lien": "Le voyageur paie, compresse comprise : service compris.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.99,
+       "global": 4.94,
+       "parle": 4.99
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.95,
+       "global": 4.94
+      }
+     },
+     "zipf_fr": 4.99,
+     "zipf_cible": 4.95,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 9770,
+       "global": 8710,
+       "parle": 9770
+      },
+      "it": {
+       "parle": 8910,
+       "global": 8710
+      }
+     }
     },
     {
      "n": 72,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "service compris",
+     "texte_source": "service compris",
+     "cible": "servizio compreso",
+     "prononciation": "sèr-VI-tsio komm-PRÉ-zo",
+     "api": "/serˈvitsjo komˈpreso/",
+     "mot_cle": "service + compresse",
+     "scene": "Une compresse comprise dans le service.",
+     "decryptage": "servizio compreso ≈ « service + compresse »",
+     "formes": "anglais : service included",
+     "exemple_fr": "Le prix est service compris.",
+     "exemple_fr_mot": "service compris",
+     "exemple_cible": "Il prezzo è servizio compreso.",
+     "exemple_cible_mot": "servizio compreso",
+     "lien": "Une nonne refuse la compresse : service non compris.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.98,
+       "global": 5.03,
+       "parle": 4.98
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.08,
+       "global": 4.52
+      }
+     },
+     "zipf_fr": 4.98,
+     "zipf_cible": 4.08,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 9550,
+       "global": 10700,
+       "parle": 9550
+      },
+      "it": {
+       "parle": 1200,
+       "global": 3310
+      }
+     }
     },
     {
      "n": 73,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "service non compris",
+     "texte_source": "service non compris",
+     "cible": "servizio non compreso",
+     "prononciation": "sèr-VI-tsio nonn komm-PRÉ-zo",
+     "api": "/serˈvitsjo non komˈpreso/",
+     "mot_cle": "service + nonne",
+     "scene": "Une nonne refuse la compresse : service non compris.",
+     "decryptage": "servizio non compreso ≈ « service + nonne »",
+     "formes": "anglais : service not included",
+     "exemple_fr": "Attention, service non compris.",
+     "exemple_fr_mot": "service non compris",
+     "exemple_cible": "Attenzione, servizio non compreso.",
+     "exemple_cible_mot": "servizio non compreso",
+     "lien": "La nonne joue enfin d'accord à l'accordéon : je suis en effet d'accord.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.97,
+       "global": 4.99,
+       "parle": 4.97
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.08,
+       "global": 4.52
+      }
+     },
+     "zipf_fr": 4.97,
+     "zipf_cible": 4.08,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 9330,
+       "global": 9770,
+       "parle": 9330
+      },
+      "it": {
+       "parle": 1200,
+       "global": 3310
+      }
+     }
     },
     {
      "n": 74,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Je suis en effet d'accord avec ….",
+     "texte_source": "Je suis en effet d'accord avec C.",
+     "cible": "Sono infatti d'accordo con …",
+     "prononciation": "SO-no inn-FAT-ti dak-KOR-do konn",
+     "api": "/ˈsono inˈfatti dakˈkordo kon/",
+     "mot_cle": "en fait + accordéon",
+     "scene": "Un accordéon en fait d'accord.",
+     "decryptage": "sono infatti d'accordo con ≈ « en fait + accordéon »",
+     "formes": "anglais : I do indeed agree with C.",
+     "exemple_fr": "Je suis en effet d'accord avec toi.",
+     "exemple_fr_mot": "en effet d'accord avec",
+     "exemple_cible": "Sono infatti d'accordo con te.",
+     "exemple_cible_mot": "infatti d'accordo con",
+     "lien": "L'accordéon creuse une famine : j'ai faim.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.97,
+       "global": null,
+       "parle": 4.97
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.81,
+       "global": null
+      }
+     },
+     "zipf_fr": 4.97,
+     "zipf_cible": 4.81,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 9330,
+       "parle": 9330
+      },
+      "it": {
+       "parle": 6460
+      }
+     }
     },
     {
      "n": 75,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "J'ai faim.",
+     "texte_source": "J'ai faim.",
+     "cible": "Ho fame.",
+     "prononciation": "o FA-mé",
+     "api": "/o ˈfame/",
+     "mot_cle": "famine",
+     "scene": "Une famine : j'ai faim.",
+     "decryptage": "ho fame ≈ « famine »",
+     "formes": "anglais : I'm hungry.",
+     "exemple_fr": "J'ai faim !",
+     "exemple_fr_mot": "J'ai faim",
+     "exemple_cible": "Ho fame!",
+     "exemple_cible_mot": "Ho fame",
+     "lien": "L'affamé file au parloir : bonjour, puis-je parler à… ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.97,
+       "global": null,
+       "parle": 4.97
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.0,
+       "global": 4.84
+      }
+     },
+     "zipf_fr": 4.97,
+     "zipf_cible": 5.0,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 9330,
+       "parle": 9330
+      },
+      "it": {
+       "parle": 10000,
+       "global": 6920
+      }
+     }
     },
     {
      "n": 76,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Bonjour, puis-je parler à … ?",
+     "texte_source": "Bonjour, puis-je parler à C ?",
+     "cible": "Buongiorno, posso parlare con …?",
+     "prononciation": "bouonn-DJOR-no POS-so par-LA-ré konn",
+     "api": "/buˈondʒorno ˈposso parˈlare kon/",
+     "mot_cle": "bonjour + parloir",
+     "scene": "Au parloir : bonjour, puis-je parler ?",
+     "decryptage": "buongiorno posso parlare con ≈ « bonjour + parloir »",
+     "formes": "",
+     "exemple_fr": "Bonjour, puis-je parler à Marco ?",
+     "exemple_fr_mot": "puis-je parler à",
+     "exemple_cible": "Buongiorno, posso parlare con Marco?",
+     "exemple_cible_mot": "posso parlare con",
+     "lien": "Au parloir, un oignon dans chaque case : en tout état de cause.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.97,
+       "global": null,
+       "parle": 4.97
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.09,
+       "global": 4.55
+      }
+     },
+     "zipf_fr": 4.97,
+     "zipf_cible": 5.09,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 9330,
+       "parle": 9330
+      },
+      "it": {
+       "parle": 12300,
+       "global": 3550
+      }
+     }
     },
     {
      "n": 77,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "en tout état de cause",
+     "texte_source": "en tout état de cause",
+     "cible": "in ogni caso",
+     "prononciation": "inn O-gni KA-zo",
+     "api": "/in ˈoɲɲi ˈkaso/",
+     "mot_cle": "oignon + case",
+     "scene": "Un oignon dans chaque case : en tout état de cause.",
+     "decryptage": "n ogni caso ≈ « oignon + case »",
+     "formes": "anglais : at any rate in any case in any event anyway",
+     "exemple_fr": "En tout état de cause, je viens.",
+     "exemple_fr_mot": "En tout état de cause",
+     "exemple_cible": "In ogni caso vengo.",
+     "exemple_cible_mot": "In ogni caso",
+     "lien": "Une main lâche l'oignon vers Andorre : laissez-moi partir.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.94,
+       "global": 5.17,
+       "parle": 4.94
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.4,
+       "global": 5.3
+      }
+     },
+     "zipf_fr": 4.94,
+     "zipf_cible": 4.4,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 8710,
+       "global": 14800,
+       "parle": 8710
+      },
+      "it": {
+       "parle": 2510,
+       "global": 20000
+      }
+     }
     },
     {
      "n": 78,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Laissez-moi partir.",
+     "texte_source": "Laissez-moi partir.",
+     "cible": "Mi lasci andare.",
+     "prononciation": "mi LACH-chi ann-DA-ré",
+     "api": "/mi ˈlaʃʃi anˈdare/",
+     "mot_cle": "lâcher + Andorre",
+     "scene": "Une main lâche le voyageur pour Andorre.",
+     "decryptage": "mi lasci andare ≈ « lâcher + Andorre »",
+     "formes": "",
+     "exemple_fr": "Laissez-moi partir !",
+     "exemple_fr_mot": "Laissez-moi partir",
+     "exemple_cible": "Mi lasci andare!",
+     "exemple_cible_mot": "Mi lasci andare",
+     "lien": "À Andorre, une famine molle : j'ai très faim.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.94,
+       "global": null,
+       "parle": 4.94
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.99,
+       "global": 4.24
+      }
+     },
+     "zipf_fr": 4.94,
+     "zipf_cible": 4.99,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 8710,
+       "parle": 8710
+      },
+      "it": {
+       "parle": 9770,
+       "global": 1740
+      }
+     }
     },
     {
      "n": 79,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "J'ai très faim.",
+     "texte_source": "J'ai très faim.",
+     "cible": "Ho molta fame.",
+     "prononciation": "o MOL-ta FA-mé",
+     "api": "/o ˈmolta ˈfame/",
+     "mot_cle": "molle + famine",
+     "scene": "Une famine molle : j'ai très faim.",
+     "decryptage": "ho molta fame ≈ « molle + famine »",
+     "formes": "",
+     "exemple_fr": "J'ai très faim ce soir.",
+     "exemple_fr_mot": "J'ai très faim",
+     "exemple_cible": "Ho molta fame stasera.",
+     "exemple_cible_mot": "Ho molta fame",
+     "lien": "L'affamé prend un train anticipé : en avance.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.94,
+       "global": null,
+       "parle": 4.94
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.57,
+       "global": 4.51
+      }
+     },
+     "zipf_fr": 4.94,
+     "zipf_cible": 4.57,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 8710,
+       "parle": 8710
+      },
+      "it": {
+       "parle": 3720,
+       "global": 3240
+      }
+     }
     },
     {
      "n": 80,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "en avance",
+     "texte_source": "en avance",
+     "cible": "in anticipo",
+     "prononciation": "inn ann-TI-tchi-po",
+     "api": "/in anˈtitʃipo/",
+     "mot_cle": "anticipé",
+     "scene": "Un train anticipé : en avance.",
+     "decryptage": "n anticipo ≈ « anticipé »",
+     "formes": "anglais : early in advance",
+     "exemple_fr": "Je suis en avance.",
+     "exemple_fr_mot": "en avance",
+     "exemple_cible": "Sono in anticipo.",
+     "exemple_cible_mot": "in anticipo",
+     "lien": "Dans le train, un sosie : cela lui ressemble.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.93,
+       "global": 4.94,
+       "parle": 4.93
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.15,
+       "global": 4.38
+      }
+     },
+     "zipf_fr": 4.93,
+     "zipf_cible": 4.15,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 8510,
+       "global": 8710,
+       "parle": 8510
+      },
+      "it": {
+       "parle": 1410,
+       "global": 2400
+      }
+     }
     },
     {
      "n": 81,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Cela lui ressemble.",
+     "texte_source": "Cela lui ressemble.",
+     "cible": "Gli assomiglia.",
+     "prononciation": "lli as-so-MI-llia",
+     "api": "/ʎi assoˈmiʎʎa/",
+     "mot_cle": "assimiler",
+     "scene": "Un sosie assimilé : cela lui ressemble.",
+     "decryptage": "assomiglia ≈ « assimiler »",
+     "formes": "anglais : It's just like him.",
+     "exemple_fr": "Cela lui ressemble bien.",
+     "exemple_fr_mot": "Cela lui ressemble",
+     "exemple_cible": "Gli assomiglia proprio.",
+     "exemple_cible_mot": "Gli assomiglia",
+     "lien": "Le sosie touche un chaudron : j'ai chaud.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.93,
+       "global": 4.66,
+       "parle": 4.93
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.2,
+       "global": 3.93
+      }
+     },
+     "zipf_fr": 4.93,
+     "zipf_cible": 4.2,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 8510,
+       "global": 4570,
+       "parle": 8510
+      },
+      "it": {
+       "parle": 1580,
+       "global": 851
+      }
+     }
     },
     {
      "n": 82,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "J'ai chaud.",
+     "texte_source": "J'ai chaud.",
+     "cible": "Ho caldo.",
+     "prononciation": "o KAL-do",
+     "api": "/o ˈkaldo/",
+     "mot_cle": "chaudron",
+     "scene": "Un chaudron bouillant : j'ai chaud.",
+     "decryptage": "ho caldo ≈ « chaudron »",
+     "formes": "anglais : I'm hot. I'm feeling warm.",
+     "exemple_fr": "J'ai chaud, ouvre la fenêtre.",
+     "exemple_fr_mot": "J'ai chaud",
+     "exemple_cible": "Ho caldo, apri la finestra.",
+     "exemple_cible_mot": "Ho caldo",
+     "lien": "Une star tourne en cercle autour du chaudron : j'essaye.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.92,
+       "global": null,
+       "parle": 4.92
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.85,
+       "global": 4.79
+      }
+     },
+     "zipf_fr": 4.92,
+     "zipf_cible": 4.85,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 8320,
+       "parle": 8320
+      },
+      "it": {
+       "parle": 7080,
+       "global": 6170
+      }
+     }
     },
     {
      "n": 83,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "J'essaye de ….",
+     "texte_source": "J'essaye de Vinf C.",
+     "cible": "Sto cercando di …",
+     "prononciation": "sto tchèr-KANN-do di",
+     "api": "/sto tʃerˈkando di/",
+     "mot_cle": "star + cercle",
+     "scene": "Une star tourne en cercle : j'essaye.",
+     "decryptage": "sto cercando di ≈ « star + cercle »",
+     "formes": "anglais : I'm trying to Vinf C. I'm attempting to Vinf C.",
+     "exemple_fr": "J'essaye de comprendre.",
+     "exemple_fr_mot": "J'essaye de",
+     "exemple_cible": "Sto cercando di capire.",
+     "exemple_cible_mot": "Sto cercando di",
+     "lien": "Le chaudron chauffe au soleil : il fait chaud.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.91,
+       "global": null,
+       "parle": 4.91
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.46,
+       "global": 4.9
+      }
+     },
+     "zipf_fr": 4.91,
+     "zipf_cible": 5.46,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 8130,
+       "parle": 8130
+      },
+      "it": {
+       "parle": 28800,
+       "global": 7940
+      }
+     }
     },
     {
      "n": 84,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Il fait chaud.",
+     "texte_source": "Il fait chaud.",
+     "cible": "Fa caldo.",
+     "prononciation": "fa KAL-do",
+     "api": "/fa ˈkaldo/",
+     "mot_cle": "chaudron",
+     "scene": "Un chaudron sous le soleil : il fait chaud.",
+     "decryptage": "fa caldo ≈ « chaudron »",
+     "formes": "anglais : It's hot. It's warm.",
+     "exemple_fr": "Il fait chaud aujourd'hui.",
+     "exemple_fr_mot": "Il fait chaud",
+     "exemple_cible": "Oggi fa caldo.",
+     "exemple_cible_mot": "fa caldo",
+     "lien": "Au soleil, une nonne et une vis déjà vues : on ne s'était pas déjà rencontré ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.91,
+       "global": 4.78,
+       "parle": 4.91
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.83,
+       "global": 4.78
+      }
+     },
+     "zipf_fr": 4.91,
+     "zipf_cible": 4.83,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 8130,
+       "global": 6030,
+       "parle": 8130
+      },
+      "it": {
+       "parle": 6760,
+       "global": 6030
+      }
+     }
     },
     {
      "n": 85,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "On ne s'était pas déjà rencontré à … ?",
+     "texte_source": "On ne s'était pas déjà rencontré à C ?",
+     "cible": "Non ci siamo già visti a …?",
+     "prononciation": "nonn tchi SIA-mo DJA VIS-ti a",
+     "api": "/non tʃi ˈsjamo dʒa ˈvisti a/",
+     "mot_cle": "nonne + vis",
+     "scene": "Une nonne et une vis déjà vues à Rome ?",
+     "decryptage": "non ci siamo già visti a ≈ « nonne + vis »",
+     "formes": "anglais : Haven't we already met at C?",
+     "exemple_fr": "On ne s'était pas déjà rencontré à Rome ?",
+     "exemple_fr_mot": "On ne s'était pas déjà rencontré à",
+     "exemple_cible": "Non ci siamo già visti a Roma?",
+     "exemple_cible_mot": "Non ci siamo già visti a",
+     "lien": "La vis fixe le bureau de poste qu'on adore : j'adore cet endroit.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.9,
+       "global": null,
+       "parle": 4.9
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.66,
+       "global": 4.55
+      }
+     },
+     "zipf_fr": 4.9,
+     "zipf_cible": 4.66,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 7940,
+       "parle": 7940
+      },
+      "it": {
+       "parle": 4570,
+       "global": 3550
+      }
+     }
     },
     {
      "n": 86,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "J'adore cet endroit.",
+     "texte_source": "J'adore cet endroit.",
+     "cible": "Adoro questo posto.",
+     "prononciation": "a-DO-ro KouÈS-to POS-to",
+     "api": "/aˈdoro ˈkwesto ˈposto/",
+     "mot_cle": "adorer + poste",
+     "scene": "Un adorateur devant un bureau de poste.",
+     "decryptage": "adoro questo posto ≈ « adorer + poste »",
+     "formes": "anglais : I love it here.",
+     "exemple_fr": "J'adore cet endroit.",
+     "exemple_fr_mot": "J'adore cet endroit",
+     "exemple_cible": "Adoro questo posto.",
+     "exemple_cible_mot": "Adoro questo posto",
+     "lien": "Devant la poste, Freddy grelotte : il fait froid.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.9,
+       "global": null,
+       "parle": 4.9
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.92,
+       "global": 4.5
+      }
+     },
+     "zipf_fr": 4.9,
+     "zipf_cible": 4.92,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 7940,
+       "parle": 7940
+      },
+      "it": {
+       "parle": 8320,
+       "global": 3160
+      }
+     }
     },
     {
      "n": 87,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Il fait froid.",
+     "texte_source": "Il fait froid.",
+     "cible": "Fa freddo.",
+     "prononciation": "fa FRÉD-do",
+     "api": "/fa ˈfreddo/",
+     "mot_cle": "Freddy",
+     "scene": "Freddy grelotte : il fait froid.",
+     "decryptage": "fa freddo ≈ « Freddy »",
+     "formes": "anglais : It's cold.",
+     "exemple_fr": "Il fait froid ce matin.",
+     "exemple_fr_mot": "Il fait froid",
+     "exemple_cible": "Fa freddo stamattina.",
+     "exemple_cible_mot": "Fa freddo",
+     "lien": "Freddy frappe à une porte ouverte : entrez !",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.9,
+       "global": 4.81,
+       "parle": 4.9
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.89,
+       "global": 4.74
+      }
+     },
+     "zipf_fr": 4.9,
+     "zipf_cible": 4.89,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 7940,
+       "global": 6460,
+       "parle": 7940
+      },
+      "it": {
+       "parle": 7760,
+       "global": 5500
+      }
+     }
     },
     {
      "n": 88,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Entrez !",
+     "texte_source": "Entrez !",
+     "cible": "Entri!",
+     "prononciation": "ÈNN-tri",
+     "api": "/ˈentri/",
+     "mot_cle": "entrer",
+     "scene": "Une porte ouverte : entrez !",
+     "decryptage": "entri ≈ « entrer »",
+     "formes": "anglais : Please come in. Come in.",
+     "exemple_fr": "Entrez, je vous prie !",
+     "exemple_fr_mot": "Entrez",
+     "exemple_cible": "Entri, prego!",
+     "exemple_cible_mot": "Entri",
+     "lien": "Derrière la porte, une chose joue un fa : que faites-vous ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.89,
+       "global": 3.64,
+       "parle": 4.89
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.61,
+       "global": 4.16
+      }
+     },
+     "zipf_fr": 4.89,
+     "zipf_cible": 4.61,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 7760,
+       "global": 437,
+       "parle": 7760
+      },
+      "it": {
+       "parle": 4070,
+       "global": 1450
+      }
+     }
     },
     {
      "n": 89,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Que faites-vous ?",
+     "texte_source": "Que faites-vous ?",
+     "cible": "Che cosa fa?",
+     "prononciation": "ké KO-za fa",
+     "api": "/ke ˈkosa fa/",
+     "mot_cle": "chose + fa",
+     "scene": "Une chose joue un fa : que faites-vous ?",
+     "decryptage": "che cosa fa ≈ « chose + fa »",
+     "formes": "",
+     "exemple_fr": "Que faites-vous ici ?",
+     "exemple_fr_mot": "Que faites-vous",
+     "exemple_cible": "Che cosa fa qui?",
+     "exemple_cible_mot": "Che cosa fa",
+     "lien": "Le fa monte sur un dos qui va : où allez-vous ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.89,
+       "global": null,
+       "parle": 4.89
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 6.04,
+       "global": 5.83
+      }
+     },
+     "zipf_fr": 4.89,
+     "zipf_cible": 6.04,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 7760,
+       "parle": 7760
+      },
+      "it": {
+       "parle": 110000,
+       "global": 67600
+      }
+     }
     },
     {
      "n": 90,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Où allez-vous ?",
+     "texte_source": "Où allez-vous ?",
+     "cible": "Dove va?",
+     "prononciation": "DO-vé va",
+     "api": "/ˈdove va/",
+     "mot_cle": "dos + va",
+     "scene": "Un dos qui va : où allez-vous ?",
+     "decryptage": "dove va ≈ « dos + va »",
+     "formes": "",
+     "exemple_fr": "Où allez-vous, monsieur ?",
+     "exemple_fr_mot": "Où allez-vous",
+     "exemple_cible": "Dove va, signore?",
+     "exemple_cible_mot": "Dove va",
+     "lien": "Le dos croise un capitaine qui arrive à propos : ça tombe bien.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.89,
+       "global": null,
+       "parle": 4.89
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.92,
+       "global": 5.53
+      }
+     },
+     "zipf_fr": 4.89,
+     "zipf_cible": 5.92,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 7760,
+       "parle": 7760
+      },
+      "it": {
+       "parle": 83200,
+       "global": 33900
+      }
+     }
     },
     {
      "n": 91,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Ça tombe bien.",
+     "texte_source": "Ça tombe bien.",
+     "cible": "Capita a proposito.",
+     "prononciation": "KA-pi-ta a pro-PO-zi-to",
+     "api": "/ˈkapita a proˈposito/",
+     "mot_cle": "capitaine + propos",
+     "scene": "Un capitaine arrive à propos : ça tombe bien.",
+     "decryptage": "capita a proposito ≈ « capitaine + propos »",
+     "formes": "anglais : It's a good thing.",
+     "exemple_fr": "Ça tombe bien, j'ai faim.",
+     "exemple_fr_mot": "Ça tombe bien",
+     "exemple_cible": "Capita a proposito, ho fame.",
+     "exemple_cible_mot": "Capita a proposito",
+     "lien": "Le capitaine console un clown triste.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.88,
+       "global": 4.81,
+       "parle": 4.88
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.4,
+       "global": 4.34
+      }
+     },
+     "zipf_fr": 4.88,
+     "zipf_cible": 4.4,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 7590,
+       "global": 6460,
+       "parle": 7590
+      },
+      "it": {
+       "parle": 2510,
+       "global": 2190
+      }
+     }
     },
     {
      "n": 92,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Je suis triste.",
+     "texte_source": "Je suis triste.",
+     "cible": "Sono triste.",
+     "prononciation": "SO-no TRIS-té",
+     "api": "/ˈsono ˈtriste/",
+     "mot_cle": "triste",
+     "scene": "Un clown triste.",
+     "decryptage": "sono triste ≈ « triste »",
+     "formes": "anglais : I feel sad. I am sad.",
+     "exemple_fr": "Je suis triste ce soir.",
+     "exemple_fr_mot": "Je suis triste",
+     "exemple_cible": "Sono triste stasera.",
+     "exemple_cible_mot": "Sono triste",
+     "lien": "Le clown ouvre une case avec un présent dedans : dans le cas présent.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.88,
+       "global": 4.72,
+       "parle": 4.88
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.91,
+       "global": 4.76
+      }
+     },
+     "zipf_fr": 4.88,
+     "zipf_cible": 4.91,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 7590,
+       "global": 5250,
+       "parle": 7590
+      },
+      "it": {
+       "parle": 8130,
+       "global": 5750
+      }
+     }
     },
     {
      "n": 93,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "dans le cas présent",
+     "texte_source": "dans le cas présent",
+     "cible": "nel caso presente",
+     "prononciation": "nèl KA-zo pré-ZÈNN-té",
+     "api": "/nel ˈkaso preˈsente/",
+     "mot_cle": "case + présent",
+     "scene": "Une case avec un présent dedans.",
+     "decryptage": "nel caso presente ≈ « case + présent »",
+     "formes": "anglais : in this case",
+     "exemple_fr": "Dans le cas présent, c'est possible.",
+     "exemple_fr_mot": "Dans le cas présent",
+     "exemple_cible": "Nel caso presente, è possibile.",
+     "exemple_cible_mot": "Nel caso presente",
+     "lien": "Le présent est un pain : on meurt de faim.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.84,
+       "global": 4.98,
+       "parle": 4.84
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.77,
+       "global": 5.16
+      }
+     },
+     "zipf_fr": 4.84,
+     "zipf_cible": 4.77,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6920,
+       "global": 9550,
+       "parle": 6920
+      },
+      "it": {
+       "parle": 5890,
+       "global": 14500
+      }
+     }
     },
     {
      "n": 94,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "mourir de faim",
+     "texte_source": "mourir de faim",
+     "cible": "morire di fame",
+     "prononciation": "mo-RI-ré di FA-mé",
+     "api": "/moˈrire di ˈfame/",
+     "mot_cle": "mourir + famine",
+     "scene": "Une famine où l'on meurt de faim.",
+     "decryptage": "morire di fame ≈ « mourir + famine »",
+     "formes": "anglais : starve starve to death",
+     "exemple_fr": "Je meurs de faim !",
+     "exemple_fr_mot": "meurs de faim",
+     "exemple_cible": "Muoio di fame!",
+     "exemple_cible_mot": "Muoio di fame",
+     "lien": "L'affamé reçoit un diplôme : félicitations !",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.82,
+       "global": 4.37,
+       "parle": 4.82
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.83,
+       "global": 4.61
+      }
+     },
+     "zipf_fr": 4.82,
+     "zipf_cible": 4.83,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6610,
+       "global": 2340,
+       "parle": 6610
+      },
+      "it": {
+       "parle": 6760,
+       "global": 4070
+      }
+     }
     },
     {
      "n": 95,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Félicitations !",
+     "texte_source": "Félicitations !",
+     "cible": "Congratulazioni!",
+     "prononciation": "konn-gra-tou-la-TSIO-ni",
+     "api": "/konɡratulatˈsjoni/",
+     "mot_cle": "congratulations",
+     "scene": "Un diplôme et des congratulations.",
+     "decryptage": "congratulazioni ≈ « congratulations »",
+     "formes": "anglais : Congratulations! Congrats!",
+     "exemple_fr": "Félicitations pour ton diplôme !",
+     "exemple_fr_mot": "Félicitations",
+     "exemple_cible": "Congratulazioni per la laurea!",
+     "exemple_cible_mot": "Congratulazioni",
+     "lien": "Le diplômé fait semblant d'entendre : vous avez l'air de vous y connaître.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.82,
+       "global": 4.23,
+       "parle": 4.82
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.83,
+       "global": 4.1
+      }
+     },
+     "zipf_fr": 4.82,
+     "zipf_cible": 4.83,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6610,
+       "global": 1700,
+       "parle": 6610
+      },
+      "it": {
+       "parle": 6760,
+       "global": 1260
+      }
+     }
     },
     {
      "n": 96,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Vous avez l'air de vous y connaître en …, non ?",
+     "texte_source": "Vous avez l'air de vous y connaître en C, non ?",
+     "cible": "Sembra che se ne intenda di …, no?",
+     "prononciation": "SÈMM-bra ké sé né inn-TÈNN-da di",
+     "api": "/ˈsembra ke se ne inˈtenda di no/",
+     "mot_cle": "semblant + entendre",
+     "scene": "Un connaisseur fait semblant d'entendre.",
+     "decryptage": "sembra che se ne intenda di no ≈ « semblant + entendre »",
+     "formes": "anglais : You seem to be well acquainted with C, aren't you?",
+     "exemple_fr": "Vous avez l'air de vous y connaître en vin, non ?",
+     "exemple_fr_mot": "Vous avez l'air de vous y connaître en",
+     "exemple_cible": "Sembra che se ne intenda di vino, no?",
+     "exemple_cible_mot": "se ne intenda di",
+     "lien": "Le connaisseur trébuche, un pote crie « aïe ! » : pouvez-vous m'aider ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.81,
+       "global": null,
+       "parle": 4.81
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 3.47,
+       "global": 3.75
+      }
+     },
+     "zipf_fr": 4.81,
+     "zipf_cible": 3.47,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6460,
+       "parle": 6460
+      },
+      "it": {
+       "parle": 295,
+       "global": 562
+      }
+     }
     },
     {
      "n": 97,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Pouvez-vous m'aider ?",
+     "texte_source": "Pouvez-vous m'aider ?",
+     "cible": "Può aiutarmi?",
+     "prononciation": "PouO aïou-TAR-mi",
+     "api": "/ˈpuɔ aˈiutarmi/",
+     "mot_cle": "pote + « aïe »",
+     "scene": "Un pote crie « aïe ! » : pouvez-vous m'aider ?",
+     "decryptage": "può aiutarmi ≈ « pote + « aïe » »",
+     "formes": "anglais : Can you help me?",
+     "exemple_fr": "Pardon, pouvez-vous m'aider ?",
+     "exemple_fr_mot": "pouvez-vous m'aider ?",
+     "exemple_cible": "Scusi, può aiutarmi?",
+     "exemple_cible_mot": "può aiutarmi?",
+     "lien": "Le pote passe au bureau de change pour idées : j'ai changé d'avis.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.81,
+       "global": null,
+       "parle": 4.81
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.77,
+       "global": 3.85
+      }
+     },
+     "zipf_fr": 4.81,
+     "zipf_cible": 4.77,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6460,
+       "parle": 6460
+      },
+      "it": {
+       "parle": 5890,
+       "global": 708
+      }
+     }
     },
     {
      "n": 98,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "J'ai changé d'avis.",
+     "texte_source": "J'ai changé d'avis.",
+     "cible": "Ho cambiato idea.",
+     "prononciation": "o kamm-BIA-to i-DÈ-a",
+     "api": "/o kamˈbjato iˈdea/",
+     "mot_cle": "change + idée",
+     "scene": "Un bureau de change pour idées.",
+     "decryptage": "ho cambiato idea ≈ « change + idée »",
+     "formes": "anglais : I've changed my mind.",
+     "exemple_fr": "Finalement, j'ai changé d'avis.",
+     "exemple_fr_mot": "j'ai changé d'avis",
+     "exemple_cible": "Alla fine ho cambiato idea.",
+     "exemple_cible_mot": "ho cambiato idea",
+     "lien": "La nouvelle idée chante un ré : je dirais…",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.81,
+       "global": null,
+       "parle": 4.81
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.94,
+       "global": 4.75
+      }
+     },
+     "zipf_fr": 4.81,
+     "zipf_cible": 4.94,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6460,
+       "parle": 6460
+      },
+      "it": {
+       "parle": 8710,
+       "global": 5620
+      }
+     }
     },
     {
      "n": 99,
-     "libre": true,
-     "fr": "libre",
-     "cible": "",
-     "lien": "",
-     "tags": []
+     "fr": "Je dirais ….",
+     "texte_source": "Je dirais C.",
+     "cible": "Direi …",
+     "prononciation": "di-RÉ-i",
+     "api": "/diˈrei/",
+     "mot_cle": "dire + ré",
+     "scene": "Une bouche chante un ré : je dirais.",
+     "decryptage": "direi ≈ « dire + ré »",
+     "formes": "anglais : I would say C. I'd say C.",
+     "exemple_fr": "Je dirais trois heures.",
+     "exemple_fr_mot": "Je dirais",
+     "exemple_cible": "Direi tre ore.",
+     "exemple_cible_mot": "Direi",
+     "lien": "Le ré monte au marché des noms, étage 4, où l'on colore une palette.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.81,
+       "global": 4.55,
+       "parle": 4.81
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.08,
+       "global": 4.83
+      }
+     },
+     "zipf_fr": 4.81,
+     "zipf_cible": 5.08,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6460,
+       "global": 3550,
+       "parle": 6460
+      },
+      "it": {
+       "parle": 12000,
+       "global": 6760
+      }
+     }
     }
    ]
   },
@@ -200328,7 +204606,7 @@
      "exemple_fr_mot": "notamment",
      "exemple_cible": "Amo la frutta, in particolare le fragole.",
      "exemple_cible_mot": "particolare",
-     "lien": "Notamment, la visite touche à sa fin.",
+     "lien": "Notamment, on monte à la piazza des expressions courantes, étage 3, où une nonne refuse l'accord de l'accordéon.",
      "categorie": "adverbes",
      "sous_categories": [
       "adverbes_spécificatifs"
@@ -200370,6 +204648,1393 @@
       "adverbes",
       "adverbes_spécificatifs"
      ]
+    },
+    {
+     "n": 86,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 87,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 88,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 89,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 90,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 91,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 92,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 93,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 94,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 95,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 96,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 97,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 98,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 99,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "id": "courantes_3",
+   "titre_fr": "Les expressions courantes · étage 3",
+   "titre_cible": "Le espressioni · secondo piano",
+   "decor": "place du marché (piazza), étage",
+   "ordre": "Zipf FR parlé décroissant, continu d'un étage à l'autre de la classe",
+   "famille": "expressions",
+   "niches": [
+    {
+     "n": 0,
+     "fr": "Je n'ai pas le même avis que vous au sujet de ….",
+     "texte_source": "Je n'ai pas le même avis que vous au sujet de C.",
+     "cible": "Non sono d'accordo con lei su …",
+     "prononciation": "nonn SO-no dak-KOR-do konn léï sou",
+     "api": "/non ˈsono dakˈkordo kon ˈlei su/",
+     "mot_cle": "nonne + accordéon",
+     "scene": "Une nonne refuse l'accord de l'accordéon.",
+     "decryptage": "non sono d'accordo con lei su ≈ « nonne + accordéon »",
+     "formes": "anglais : I differ with you about C. I differ with you on C.",
+     "exemple_fr": "Je n'ai pas le même avis que vous au sujet de ce film.",
+     "exemple_fr_mot": "Je n'ai pas le même avis que vous au sujet de",
+     "exemple_cible": "Non sono d'accordo con lei su questo film.",
+     "exemple_cible_mot": "Non sono d'accordo con lei su",
+     "lien": "La nonne en désaccord appelle un taxi « libre » : êtes-vous libre ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.8,
+       "global": null,
+       "parle": 4.8
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.38,
+       "global": null
+      }
+     },
+     "zipf_fr": 4.8,
+     "zipf_cible": 5.38,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6310,
+       "parle": 6310
+      },
+      "it": {
+       "parle": 24000
+      }
+     }
+    },
+    {
+     "n": 1,
+     "fr": "Êtes-vous libre ?",
+     "texte_source": "Êtes-vous libre ?",
+     "cible": "È libero?",
+     "prononciation": "è LI-bé-ro",
+     "api": "/ɛ ˈlibero/",
+     "mot_cle": "libre",
+     "scene": "Un taxi « libre » : êtes-vous libre ?",
+     "decryptage": "è libero ≈ « libre »",
+     "formes": "",
+     "exemple_fr": "Êtes-vous libre ce soir ?",
+     "exemple_fr_mot": "Êtes-vous libre",
+     "exemple_cible": "È libero stasera?",
+     "exemple_cible_mot": "È libero",
+     "lien": "Dans le taxi, un scherzo mis à part : blague à part.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.79,
+       "global": null,
+       "parle": 4.79
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.05,
+       "global": 5.08
+      }
+     },
+     "zipf_fr": 4.79,
+     "zipf_cible": 5.05,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6170,
+       "parle": 6170
+      },
+      "it": {
+       "parle": 11200,
+       "global": 12000
+      }
+     }
+    },
+    {
+     "n": 2,
+     "fr": "blague à part",
+     "texte_source": "blague à part",
+     "cible": "scherzi a parte",
+     "prononciation": "SKÈR-tsi a PAR-té",
+     "api": "/sˈkertsi a ˈparte/",
+     "mot_cle": "scherzo + part",
+     "scene": "Un scherzo mis à part : blague à part.",
+     "decryptage": "scherzi a parte ≈ « scherzo + part »",
+     "formes": "anglais : all joking aside",
+     "exemple_fr": "Blague à part, c'est sérieux.",
+     "exemple_fr_mot": "Blague à part",
+     "exemple_cible": "Scherzi a parte, è serio.",
+     "exemple_cible_mot": "Scherzi a parte",
+     "lien": "Le scherzo est battu par un majeur, la plupart du temps.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.78,
+       "global": 4.6,
+       "parle": 4.78
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.52,
+       "global": 4.24
+      }
+     },
+     "zipf_fr": 4.78,
+     "zipf_cible": 4.52,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 6030,
+       "global": 3980,
+       "parle": 6030
+      },
+      "it": {
+       "parle": 3310,
+       "global": 1740
+      }
+     }
+    },
+    {
+     "n": 3,
+     "fr": "la plupart du temps",
+     "texte_source": "la plupart du temps",
+     "cible": "la maggior parte del tempo",
+     "prononciation": "la mad-DJOR PAR-té dèl TÈMM-po",
+     "api": "/la madˈdʒor ˈparte del ˈtempo/",
+     "mot_cle": "majeur + tempo",
+     "scene": "Un majeur bat le tempo la plupart du temps.",
+     "decryptage": "maggior parte del tempo ≈ « majeur + tempo »",
+     "formes": "anglais : most of the time",
+     "exemple_fr": "La plupart du temps, il dort.",
+     "exemple_fr_mot": "La plupart du temps",
+     "exemple_cible": "La maggior parte del tempo dorme.",
+     "exemple_cible_mot": "La maggior parte del tempo",
+     "lien": "Le majeur fait semblant : ça paraît facile.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.77,
+       "global": 5.03,
+       "parle": 4.77
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.72,
+       "global": 5.15
+      }
+     },
+     "zipf_fr": 4.77,
+     "zipf_cible": 4.72,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 5890,
+       "global": 10700,
+       "parle": 5890
+      },
+      "it": {
+       "parle": 5250,
+       "global": 14100
+      }
+     }
+    },
+    {
+     "n": 4,
+     "fr": "Ça paraît ….",
+     "texte_source": "Ça paraît C.",
+     "cible": "Sembra …",
+     "prononciation": "SÈMM-bra",
+     "api": "/ˈsembra/",
+     "mot_cle": "semblant",
+     "scene": "Un acteur fait semblant : ça paraît facile.",
+     "decryptage": "sembra ≈ « semblant »",
+     "formes": "anglais : It seems C. It sounds C.",
+     "exemple_fr": "Ça paraît facile.",
+     "exemple_fr_mot": "Ça paraît",
+     "exemple_cible": "Sembra facile.",
+     "exemple_cible_mot": "Sembra",
+     "lien": "Le semblant attire un moustique fastidieux : ça te dérange ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.77,
+       "global": 4.67,
+       "parle": 4.77
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.87,
+       "global": 5.66
+      }
+     },
+     "zipf_fr": 4.77,
+     "zipf_cible": 5.87,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 5890,
+       "global": 4680,
+       "parle": 5890
+      },
+      "it": {
+       "parle": 74100,
+       "global": 45700
+      }
+     }
+    },
+    {
+     "n": 5,
+     "fr": "Ça te dérange si … ?",
+     "texte_source": "Ça te dérange si S V C ?",
+     "cible": "Ti dà fastidio se …?",
+     "prononciation": "ti DA fas-TI-dio sé",
+     "api": "/ti da fasˈtidjo se/",
+     "mot_cle": "fastidieux",
+     "scene": "Un moustique fastidieux : ça te dérange ?",
+     "decryptage": "ti dà fastidio se ≈ « fastidieux »",
+     "formes": "anglais : Do you mind if S V C? Would you mind if S Vcond C?",
+     "exemple_fr": "Ça te dérange si j'ouvre ?",
+     "exemple_fr_mot": "Ça te dérange si",
+     "exemple_cible": "Ti dà fastidio se apro?",
+     "exemple_cible_mot": "Ti dà fastidio se",
+     "lien": "Le moustique pique un cerf qui dit « no no » : certainement pas.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.77,
+       "global": 4.3,
+       "parle": 4.77
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.33,
+       "global": 4.28
+      }
+     },
+     "zipf_fr": 4.77,
+     "zipf_cible": 4.33,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 5890,
+       "global": 2000,
+       "parle": 5890
+      },
+      "it": {
+       "parle": 2140,
+       "global": 1910
+      }
+     }
+    },
+    {
+     "n": 6,
+     "fr": "Certainement pas.",
+     "texte_source": "Certainement pas.",
+     "cible": "Certo che no!",
+     "prononciation": "TCHÈR-to ké NO",
+     "api": "/ˈtʃɛrto ke ˈnɔ/",
+     "mot_cle": "cerf + nono",
+     "scene": "Un cerf secoue ses bois : non, non, certainement pas !",
+     "decryptage": "certo che no = bien sûr que non",
+     "formes": "oral",
+     "exemple_fr": "Tu lui prêtes ta voiture ? Certainement pas.",
+     "exemple_fr_mot": "Certainement pas",
+     "exemple_cible": "Gli presti la macchina? Certo che no!",
+     "exemple_cible_mot": "Certo che no",
+     "lien": "Le cerf admire un chapeau au comptoir avec un piaf : où l'avez-vous acheté ?",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.76,
+       "global": 4.74,
+       "parle": 4.76
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.94,
+       "global": 5.42
+      }
+     },
+     "zipf_fr": 4.76,
+     "zipf_cible": 5.94,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 5750,
+       "global": 5500,
+       "parle": 5750
+      },
+      "it": {
+       "parle": 87100,
+       "global": 26300
+      }
+     }
+    },
+    {
+     "n": 7,
+     "fr": "J'aime bien votre …, où est-ce que vous l'avez acheté ?",
+     "texte_source": "J'aime bien votre C, où est-ce que vous l'avez acheté ?",
+     "cible": "Mi piace il suo …, dove l'ha comprato?",
+     "prononciation": "mi PIA-tché il SOU-o … DO-vé la komm-PRA-to",
+     "api": "/mi ˈpjatʃe il ˈsuo ˈdove la komˈprato/",
+     "mot_cle": "piaf + comptoir",
+     "scene": "Un piaf admire un chapeau au comptoir.",
+     "decryptage": "mi piace il suo dove l'ha comprato ≈ « piaf + comptoir »",
+     "formes": "anglais : I like your C! Where did you buy it?",
+     "exemple_fr": "J'aime bien votre sac, où est-ce que vous l'avez acheté ?",
+     "exemple_fr_mot": "où est-ce que vous l'avez acheté ?",
+     "exemple_cible": "Mi piace la sua borsa, dove l'ha comprata?",
+     "exemple_cible_mot": "dove l'ha comprata?",
+     "lien": "Le piaf picore de la ciboulette : j'aime la nourriture.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.76,
+       "global": null,
+       "parle": 4.76
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 4.76,
+       "global": null
+      }
+     },
+     "zipf_fr": 4.76,
+     "zipf_cible": 4.76,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 5750,
+       "parle": 5750
+      },
+      "it": {
+       "parle": 5750
+      }
+     }
+    },
+    {
+     "n": 8,
+     "fr": "J'aime la nourriture.",
+     "texte_source": "J'aime la nourriture.",
+     "cible": "Mi piace il cibo.",
+     "prononciation": "mi PIA-tché il TCHI-bo",
+     "api": "/mi ˈpjatʃe il ˈtʃibo/",
+     "mot_cle": "piaf + ciboulette",
+     "scene": "Un piaf picore de la ciboulette.",
+     "decryptage": "mi piace il cibo ≈ « piaf + ciboulette »",
+     "formes": "anglais : I like the food.",
+     "exemple_fr": "J'aime la nourriture italienne.",
+     "exemple_fr_mot": "J'aime la nourriture",
+     "exemple_cible": "Mi piace il cibo italiano.",
+     "exemple_cible_mot": "Mi piace il cibo",
+     "lien": "La ciboulette est surlignée comme une occurrence : à l'occasion.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.76,
+       "global": null,
+       "parle": 4.76
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.01,
+       "global": 4.89
+      }
+     },
+     "zipf_fr": 4.76,
+     "zipf_cible": 5.01,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 5750,
+       "parle": 5750
+      },
+      "it": {
+       "parle": 10200,
+       "global": 7760
+      }
+     }
+    },
+    {
+     "n": 9,
+     "fr": "À l'occasion, ….",
+     "texte_source": "À l'occasion, Vimp C.",
+     "cible": "All'occorrenza, …",
+     "prononciation": "al-lok-kor-RÈNN-tsa",
+     "api": "/allokkorˈrentsa/",
+     "mot_cle": "occurrence",
+     "scene": "Une occurrence surlignée : à l'occasion.",
+     "decryptage": "all'occorrenza ≈ « occurrence »",
+     "formes": "anglais : On occasion, Vinf C.",
+     "exemple_fr": "À l'occasion, appelle-moi.",
+     "exemple_fr_mot": "À l'occasion",
+     "exemple_cible": "All'occorrenza, chiamami.",
+     "exemple_cible_mot": "All'occorrenza",
+     "lien": "L'occurrence revient à l'infini : merci mille fois.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "source": "Anki",
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.75,
+       "global": null,
+       "parle": 4.75
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 2.63,
+       "global": null
+      }
+     },
+     "zipf_fr": 4.75,
+     "zipf_cible": 2.63,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 5620,
+       "parle": 5620
+      },
+      "it": {
+       "parle": 42
+      }
+     }
+    },
+    {
+     "n": 10,
+     "fr": "Merci mille fois.",
+     "texte_source": "Merci mille fois.",
+     "cible": "Grazie infinite.",
+     "prononciation": "GRA-tsié inn-fi-NI-té",
+     "api": "/ˈɡrattsje infiˈnite/",
+     "mot_cle": "infini",
+     "scene": "Un ruban de mercis se déroule à l'infini.",
+     "decryptage": "infinite = infinies (grazie est féminin pluriel)",
+     "formes": "poli",
+     "exemple_fr": "Merci mille fois pour ton aide !",
+     "exemple_fr_mot": "Merci mille fois",
+     "exemple_cible": "Grazie infinite per il tuo aiuto!",
+     "exemple_cible_mot": "Grazie infinite",
+     "lien": "Le ruban s'enroule autour d'un plaid cosy : comme ci, comme ça.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 4.66,
+       "global": 4.58,
+       "parle": 4.66
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 3.97,
+       "global": 4.08
+      }
+     },
+     "zipf_fr": 4.66,
+     "zipf_cible": 3.97,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 4570,
+       "global": 3800,
+       "parle": 4570
+      },
+      "it": {
+       "parle": 933,
+       "global": 1200
+      }
+     }
+    },
+    {
+     "n": 11,
+     "fr": "Comme ci, comme ça.",
+     "texte_source": "Comme ci, comme ça.",
+     "cible": "Così così.",
+     "prononciation": "ko-ZI ko-ZI",
+     "api": "/koˈzi koˈzi/",
+     "mot_cle": "cosy",
+     "scene": "Un fauteuil cosy, cosy… mais sans plus : comme ci, comme ça.",
+     "decryptage": "così = ainsi",
+     "formes": "oral",
+     "exemple_fr": "Ça va ? — Comme ci, comme ça.",
+     "exemple_fr_mot": "Comme ci, comme ça",
+     "exemple_cible": "Come va? — Così così.",
+     "exemple_cible_mot": "Così così",
+     "lien": "Comme ci, comme ça : la visite touche à sa fin.",
+     "categorie": "expressions",
+     "sous_categories": [
+      "expressions_courantes"
+     ],
+     "tags": [
+      "expressions",
+      "expressions_courantes"
+     ],
+     "audio_mot": null,
+     "audio_phrase": null,
+     "zipf": {
+      "fr": {
+       "ecrit": null,
+       "films": null,
+       "soustitres": 3.97,
+       "global": 5.37,
+       "parle": 3.97
+      },
+      "it": {
+       "ecrit": null,
+       "parle": 5.85,
+       "global": 5.84
+      }
+     },
+     "zipf_fr": 3.97,
+     "zipf_cible": 5.85,
+     "zipf_source": "estimé (locution)",
+     "approx": true,
+     "occ100M": {
+      "fr": {
+       "soustitres": 933,
+       "global": 23400,
+       "parle": 933
+      },
+      "it": {
+       "parle": 70800,
+       "global": 69200
+      }
+     }
+    },
+    {
+     "n": 12,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 13,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 14,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 15,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 16,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 17,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 18,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 19,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 20,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 21,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 22,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 23,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 24,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 25,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 26,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 27,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 28,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 29,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 30,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 31,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 32,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 33,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 34,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 35,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 36,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 37,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 38,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 39,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 40,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 41,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 42,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 43,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 44,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 45,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 46,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 47,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 48,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 49,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 50,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 51,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 52,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 53,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 54,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 55,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 56,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 57,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 58,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 59,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 60,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 61,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 62,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 63,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 64,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 65,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 66,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 67,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 68,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 69,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 70,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 71,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 72,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 73,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 74,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 75,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 76,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 77,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 78,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 79,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 80,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 81,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 82,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 83,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 84,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
+    },
+    {
+     "n": 85,
+     "libre": true,
+     "fr": "libre",
+     "cible": "",
+     "lien": "",
+     "tags": []
     },
     {
      "n": 86,

@@ -13,6 +13,19 @@ Chaque pièce compte 100 niches réparties sur 10 surfaces (mur gauche, diagonal
 
 Une niche contient le mot français, sa traduction italienne, la prononciation et l'API, un mot-clé sonore et sa scène, une phrase d'exemple, les fréquences Zipf (écrit, parlé, mixte, occurrences par 100 millions de mots) et le lien vers la niche suivante.
 
+## Comptes et progression
+
+Chaque personne peut se connecter avec son adresse e-mail (bouton **Compte**) : elle reçoit un code à 6 chiffres, sans mot de passe. Sa progression (répétition espacée, courbe de compréhension) est alors enregistrée en ligne et la suit sur tous ses appareils. Sans connexion, la progression reste dans le navigateur de l'appareil.
+
+La connexion utilise [Supabase](https://supabase.com) (offre gratuite). Mise en place, une seule fois :
+
+1. Crée un compte puis un projet sur supabase.com (région Europe).
+2. **SQL Editor** → colle le contenu de `supabase/schema.sql` → *Run*. La table `progress` est créée, et chacun ne peut lire que ses propres lignes.
+3. **Authentication → Emails → Magic Link** : dans le modèle, remplace le lien par le code, par exemple `<p>Ton code Palazzo : <strong>{{ .Token }}</strong></p>`.
+4. **Project Settings → API** : copie l'URL du projet et la clé `anon public` dans `config.js`.
+
+Dans la version publiée sur Claude, la progression va sur le compte Claude et ce réglage n'est pas utilisé.
+
 ## Fréquences
 
 - Français : Lexique 3.83 (livres et films) et OpenSubtitles 2018.

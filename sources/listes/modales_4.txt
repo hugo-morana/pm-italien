@@ -1,0 +1,100 @@
+Ai-je besoin de C?|Ho bisogno di …?|Ai-je besoin d'un visa ?|Ai-je besoin d'|Ho bisogno di un visto?|Ho bisogno di
+Il faudrait que SV C.|Bisognerebbe che … (subjonctif imparfait)|Il faudrait que tu te reposes.|Il faudrait que|Bisognerebbe che tu ti riposassi.|Bisognerebbe che
+Il faudrait Vinf C.|Bisognerebbe …|Il faudrait partir tôt.|Il faudrait|Bisognerebbe partire presto.|Bisognerebbe
+SV C, tu trouves pas? S V C, non? S V C, n'est-ce pas?|…, non trovi? / …, no? / …, vero?|Il fait froid, non ?|non ?|Fa freddo, no?|no?
+Ils aiment C.|Gli piace … / A loro piace …|Ils aiment le foot.|Ils aiment|Gli piace il calcio.|Gli piace
+Ils aiment Vinf C.|Gli piace …|Ils aiment voyager.|Ils aiment|Gli piace viaggiare.|Gli piace
+Suis-je C?|Sono …?|Suis-je en retard ?|Suis-je|Sono in ritardo?|Sono
+Ils pensent que SV C.|Pensano che … (subjonctif)|Ils pensent que t'es malade.|Ils pensent que|Pensano che tu sia malato.|Pensano che
+Ils ne pensent pas que S V C.|Non pensano che … (subjonctif)|Ils ne pensent pas que ce soit grave.|Ils ne pensent pas que|Non pensano che sia grave.|Non pensano che
+Ils pensent à C.|Pensano a …|Ils pensent à leur avenir.|Ils pensent à|Pensano al loro futuro.|Pensano al
+Sais-tu Vinf C ?|Sai …?|Sais-tu nager ?|Sais-tu|Sai nuotare?|Sai
+Sais-tu que SV C?|Sai che …?|Sais-tu qu'il est marié ?|Sais-tu qu'|Sai che è sposato?|Sai che
+Elles aiment C.|Gli piace … / A loro piace …|Elles aiment le cinéma.|Elles aiment|A loro piace il cinema.|A loro piace
+Dois-je Vinf C ?|Devo …?|Dois-je payer maintenant ?|Dois-je|Devo pagare adesso?|Devo
+Elles aiment Vinf C.|Gli piace …|Elles aiment chanter.|Elles aiment|Gli piace cantare.|Gli piace
+Penses-tu que SV C?|Pensi che …? (subjonctif)|Penses-tu que ce soit vrai ?|Penses-tu que|Pensi che sia vero?|Pensi che
+Que penses-tu de C?|Cosa ne pensi di …?|Que penses-tu de ce film ?|Que penses-tu de|Cosa ne pensi di questo film?|Cosa ne pensi di
+Elles pensent que SV C.|Pensano che … (subjonctif)|Elles pensent que c'est juste.|Elles pensent que|Pensano che sia giusto.|Pensano che
+Elles ne pensent pas que SV C.|Non pensano che … (subjonctif)|Elles ne pensent pas que tu viennes.|Elles ne pensent pas que|Non pensano che tu venga.|Non pensano che
+Elles pensent à C.|Pensano a …|Elles pensent aux vacances.|Elles pensent aux|Pensano alle vacanze.|Pensano alle
+Nous voulons C.|Vogliamo …|Nous voulons la vérité.|Nous voulons|Vogliamo la verità.|Vogliamo
+Nous voulons Vinf C.|Vogliamo …|Nous voulons voyager.|Nous voulons|Vogliamo viaggiare.|Vogliamo
+Nous voulons que SV C.|Vogliamo che … (subjonctif)|Nous voulons que tu sois là.|Nous voulons que|Vogliamo che tu ci sia.|Vogliamo che
+Peut-on Vinf C ?|Si può …?|Peut-on entrer ?|Peut-on|Si può entrare?|Si può
+Nous ne voulons pas C.|Non vogliamo …|Nous ne voulons pas d'histoires.|Nous ne voulons pas|Non vogliamo storie.|Non vogliamo
+Nous ne voulons pas Vinf C.|Non vogliamo …|Nous ne voulons pas partir.|Nous ne voulons pas|Non vogliamo partire.|Non vogliamo
+Nous ne voulons pas que S V C.|Non vogliamo che … (subjonctif)|Nous ne voulons pas que tu pleures.|Nous ne voulons pas que|Non vogliamo che tu pianga.|Non vogliamo che
+Sont-ils C?|Sono …?|Sont-ils arrivés ?|Sont-ils|Sono arrivati?|Sono
+A-t-elle C ?|Ha …?|A-t-elle un copain ?|A-t-elle|Ha un ragazzo?|Ha
+A-t-elle besoin de C?|Ha bisogno di …?|A-t-elle besoin de quelque chose ?|A-t-elle besoin de|Ha bisogno di qualcosa?|Ha bisogno di
+Je regrette que SV C.|Mi dispiace che … (subjonctif)|Je regrette que tu partes.|Je regrette que|Mi dispiace che tu parta.|Mi dispiace che
+Ont-ils C ?|Hanno …?|Ont-ils des enfants ?|Ont-ils|Hanno figli?|Hanno
+Pourriez-vous Vinf C?|Potrebbe …? (Lei) / Potreste …?|Pourriez-vous m'aider ?|Pourriez-vous|Potrebbe aiutarmi?|Potrebbe
+Ont-ils besoin de C?|Hanno bisogno di …?|Ont-ils besoin d'aide ?|Ont-ils besoin d'|Hanno bisogno di aiuto?|Hanno bisogno di
+Nous pourrions Vinf C.|Potremmo …|Nous pourrions sortir ce soir.|Nous pourrions|Potremmo uscire stasera.|Potremmo
+Ils croient que SV C.|Credono che … (subjonctif)|Ils croient que c'est fini.|Ils croient que|Credono che sia finita.|Credono che
+Ils ne croient pas que S V C.|Non credono che … (subjonctif)|Ils ne croient pas que tu reviennes.|Ils ne croient pas que|Non credono che tu torni.|Non credono che
+Il aimerait C.|Gli piacerebbe … / Vorrebbe …|Il aimerait une moto.|Il aimerait|Vorrebbe una moto.|Vorrebbe
+Il aimerait Vinf C.|Gli piacerebbe …|Il aimerait voyager.|Il aimerait|Gli piacerebbe viaggiare.|Gli piacerebbe
+Il aimerait que SV C.|Vorrebbe che … (subjonctif imparfait)|Il aimerait que tu l'appelles.|Il aimerait que|Vorrebbe che tu lo chiamassi.|Vorrebbe che
+Elle aimerait C.|Le piacerebbe … / Vorrebbe …|Elle aimerait un chat.|Elle aimerait|Vorrebbe un gatto.|Vorrebbe
+Elle aimerait Vinf C.|Le piacerebbe …|Elle aimerait chanter.|Elle aimerait|Le piacerebbe cantare.|Le piacerebbe
+On aimerait C.|Ci piacerebbe … / Vorremmo …|On aimerait un peu de calme.|On aimerait|Vorremmo un po' di calma.|Vorremmo
+On aimerait Vinf C.|Ci piacerebbe …|On aimerait rester.|On aimerait|Ci piacerebbe restare.|Ci piacerebbe
+Elle aimerait que S Vsbj C.|Vorrebbe che … (subjonctif imparfait)|Elle aimerait que tu viennes.|Elle aimerait que|Vorrebbe che tu venissi.|Vorrebbe che
+On aimerait que S Vsbj C.|Vorremmo che … (subjonctif imparfait)|On aimerait que tu restes.|On aimerait que|Vorremmo che tu restassi.|Vorremmo che
+Elles croient que SV C.|Credono che … (subjonctif)|Elles croient que tu mens.|Elles croient que|Credono che tu menta.|Credono che
+Elles ne croient pas que S V C.|Non credono che … (subjonctif)|Elles ne croient pas que ce soit lui.|Elles ne croient pas que|Non credono che sia lui.|Non credono che
+Sommes-nous C ?|Siamo …?|Sommes-nous prêts ?|Sommes-nous|Siamo pronti?|Siamo
+Il aurait fallu Vinf C.|Sarebbe bisognato … / Avremmo dovuto …|Il aurait fallu partir plus tôt.|Il aurait fallu|Sarebbe bisognato partire prima.|Sarebbe bisognato
+Il aurait fallu que S Vsbj C.|Sarebbe bisognato che … (subjonctif plus-que-parfait)|Il aurait fallu que tu le dises.|Il aurait fallu que|Sarebbe bisognato che tu lo dicessi.|Sarebbe bisognato che
+Peut-il Vinf C ?|Può …?|Peut-il venir ?|Peut-il|Può venire?|Può
+Pourrais-je Vinf C ?|Potrei …?|Pourrais-je avoir l'addition ?|Pourrais-je|Potrei avere il conto?|Potrei
+Ils connaissent C.|Conoscono …|Ils connaissent la route.|Ils connaissent|Conoscono la strada.|Conoscono
+Nous pensons que S V C.|Pensiamo che … (subjonctif)|Nous pensons que c'est une bonne idée.|Nous pensons que|Pensiamo che sia una buona idea.|Pensiamo che
+Nous ne pensons pas que SV C.|Non pensiamo che … (subjonctif)|Nous ne pensons pas que ce soit nécessaire.|Nous ne pensons pas que|Non pensiamo che sia necessario.|Non pensiamo che
+Nous pensons à C.|Pensiamo a …|Nous pensons à toi.|Nous pensons à|Pensiamo a te.|Pensiamo a
+Elles connaissent C.|Conoscono …|Elles connaissent mon secret.|Elles connaissent|Conoscono il mio segreto.|Conoscono
+Avons-nous C?|Abbiamo …?|Avons-nous le temps ?|Avons-nous|Abbiamo tempo?|Abbiamo
+Avons-nous besoin de C ?|Abbiamo bisogno di …?|Avons-nous besoin d'un taxi ?|Avons-nous besoin d'|Abbiamo bisogno di un taxi?|Abbiamo bisogno di
+Crois-tu que SV C?|Credi che …? (subjonctif)|Crois-tu qu'il dise la vérité ?|Crois-tu qu'|Credi che dica la verità?|Credi che
+Pouvons-nous Vinf C ?|Possiamo …?|Pouvons-nous entrer ?|Pouvons-nous|Possiamo entrare?|Possiamo
+Faut-il Vinf C?|Bisogna …?|Faut-il réserver ?|Faut-il|Bisogna prenotare?|Bisogna
+Faut-il que SV C?|Bisogna che …? (subjonctif)|Faut-il que je vienne ?|Faut-il que|Bisogna che io venga?|Bisogna che
+Croyez-vous que SV C ?|Crede che …? (Lei) / Credete che …?|Croyez-vous qu'il viendra ?|Croyez-vous qu'|Crede che verrà?|Crede che
+Connaissez-vous C ?|Conosce …? (Lei) / Conoscete …?|Connaissez-vous un bon restaurant ?|Connaissez-vous|Conosce un buon ristorante?|Conosce
+A-t-on besoin de C?|Abbiamo bisogno di …? / Serve …?|A-t-on besoin d'un passeport ?|A-t-on besoin d'|Serve il passaporto?|Serve
+Pourrais-tu Vinf C ?|Potresti …?|Pourrais-tu m'aider ?|Pourrais-tu|Potresti aiutarmi?|Potresti
+Nous connaissons C. (plu)|Conosciamo …|Nous connaissons le chemin.|Nous connaissons|Conosciamo la strada.|Conosciamo
+Nous aimons C.|Ci piace …|Nous aimons la mer.|Nous aimons|Ci piace il mare.|Ci piace
+Nous aimons Vinf C.|Ci piace …|Nous aimons marcher.|Nous aimons|Ci piace camminare.|Ci piace
+Voudriez-vous Vinf C ?|Vorrebbe …? (Lei) / Vorreste …?|Voudriez-vous laisser un message ?|Voudriez-vous|Vorrebbe lasciare un messaggio?|Vorrebbe
+Voudriez-vous que SV C?|Vorrebbe che …? (Lei, subjonctif imparfait)|Voudriez-vous que je vous rappelle ?|Voudriez-vous que|Vorrebbe che la richiamassi?|Vorrebbe che
+Voudriez-vous C ?|Vorrebbe …? (Lei) / Vorreste …?|Voudriez-vous un dessert ?|Voudriez-vous|Vorrebbe un dolce?|Vorrebbe
+Vous aimeriez C. (plu)|Vi piacerebbe … / Vorreste …|Vous aimeriez une pizza, les enfants ?|Vous aimeriez|Vorreste una pizza, bambini?|Vorreste
+Vous aimeriez Vinf C.|Vi piacerebbe …|Vous aimeriez venir ?|Vous aimeriez|Vi piacerebbe venire?|Vi piacerebbe
+Vous aimeriez C.|Le piacerebbe … (Lei) / Vorrebbe …|Vous aimeriez un café, madame ?|Vous aimeriez|Vorrebbe un caffè, signora?|Vorrebbe
+Vous aimeriez Vinf C. (pol)|Le piacerebbe … (Lei)|Vous aimeriez visiter Rome, monsieur ?|Vous aimeriez|Le piacerebbe visitare Roma, signore?|Le piacerebbe
+Vous aimeriez que S Vsbj C.|Vorreste che … (subjonctif imparfait)|Vous aimeriez que je chante ?|Vous aimeriez que|Vorreste che cantassi?|Vorreste che
+Sont-elles C ?|Sono …?|Sont-elles parties ?|Sont-elles|Sono partite?|Sono
+Nous aimerions C.|Vorremmo …|Nous aimerions une table pour deux.|Nous aimerions|Vorremmo un tavolo per due.|Vorremmo
+Nous aimerions Vinf C.|Ci piacerebbe …|Nous aimerions rester.|Nous aimerions|Ci piacerebbe restare.|Ci piacerebbe
+Nous aimerions que S Vsbj C.|Vorremmo che … (subjonctif imparfait)|Nous aimerions que tu viennes.|Nous aimerions que|Vorremmo che tu venissi.|Vorremmo che
+Doit-on Vinf C?|Si deve …? / Dobbiamo …?|Doit-on payer ?|Doit-on|Si deve pagare?|Si deve
+Voudrais-tu Vinf C ?|Vorresti …?|Voudrais-tu venir avec moi ?|Voudrais-tu|Vorresti venire con me?|Vorresti
+Voudrais-tu que S V C?|Vorresti che …? (subjonctif imparfait)|Voudrais-tu que je t'aide ?|Voudrais-tu que|Vorresti che ti aiutassi?|Vorresti che
+Peut-elle Vinf C ?|Può …?|Peut-elle venir ?|Peut-elle|Può venire?|Può
+Veut-il C ?|Vuole …?|Veut-il du café ?|Veut-il|Vuole del caffè?|Vuole
+Veut-il Vinf C ?|Vuole …?|Veut-il venir ?|Veut-il|Vuole venire?|Vuole
+Veut-il que SV C?|Vuole che …? (subjonctif)|Veut-il que je l'appelle ?|Veut-il que|Vuole che lo chiami?|Vuole che
+Ne veut-il pas C?|Non vuole …?|Il veut pas de dessert ?|Il veut pas|Non vuole il dolce?|Non vuole
+Ne veut-il pas que SV C?|Non vuole che …? (subjonctif)|Il veut pas qu'on vienne ?|Il veut pas qu'|Non vuole che veniamo?|Non vuole che
+Ne veut-il pas Vinf C ?|Non vuole …?|Il veut pas venir ?|Il veut pas|Non vuole venire?|Non vuole
+Devons-nous Vinf C ?|Dobbiamo …?|Devons-nous partir ?|Devons-nous|Dobbiamo partire?|Dobbiamo
+Nous croyons que S V C.|Crediamo che … (subjonctif)|Nous croyons que c'est vrai.|Nous croyons que|Crediamo che sia vero.|Crediamo che
+Nous ne croyons pas que SV C.|Non crediamo che … (subjonctif)|Nous ne croyons pas que ce soit possible.|Nous ne croyons pas que|Non crediamo che sia possibile.|Non crediamo che
+Aurais-tu C?|Avresti …?|Aurais-tu un stylo ?|Aurais-tu|Avresti una penna?|Avresti
+Peuvent-ils Vinf C ?|Possono …?|Peuvent-ils entrer ?|Peuvent-ils|Possono entrare?|Possono
+Aimez-vous C?|Le piace …? (Lei)|Aimez-vous le vin, monsieur ?|Aimez-vous|Le piace il vino, signore?|Le piace
+Aimez-vous Vinf C ?|Le piace …? (Lei)|Aimez-vous voyager, madame ?|Aimez-vous|Le piace viaggiare, signora?|Le piace

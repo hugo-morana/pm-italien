@@ -1,0 +1,100 @@
+J'aurais dû Vinf C.|Avrei dovuto …|J'aurais dû te le dire.|J'aurais dû|Avrei dovuto dirtelo.|Avrei dovuto
+A-t-il C ?|Ha …?|A-t-il des enfants ?|A-t-il|Ha figli?|Ha
+Y a-t-il C ?|C'è …? / Ci sono …?|Y a-t-il un problème ?|Y a-t-il|C'è un problema?|C'è
+Vous devez Vinf C.|Dovete … (Lei : deve …)|Vous devez signer ici.|Vous devez|Dovete firmare qui.|Dovete
+Tu penses que SV C.|Pensi che … (subjonctif)|Tu penses que c'est facile ?|Tu penses que|Pensi che sia facile?|Pensi che
+Tu penses à C.|Pensi a …|Tu penses à quoi ?|Tu penses à|A cosa pensi?|pensi
+As-tu besoin de C?|Hai bisogno di …?|As-tu besoin de quelque chose ?|As-tu besoin de|Hai bisogno di qualcosa?|Hai bisogno di
+Vous ne devez pas Vinf C.|Non dovete …|Vous ne devez pas fumer ici.|Vous ne devez pas|Non dovete fumare qui.|Non dovete
+Tu ne penses pas que S V C.|Non pensi che … (subjonctif)|Tu ne penses pas que c'est risqué ?|Tu ne penses pas que|Non pensi che sia rischioso?|Non pensi che
+A-t-il besoin de C?|Ha bisogno di …?|A-t-il besoin d'aide ?|A-t-il besoin d'|Ha bisogno di aiuto?|Ha bisogno di
+J'ai envie de Vinf C.|Ho voglia di …|J'ai envie de dormir.|J'ai envie de|Ho voglia di dormire.|Ho voglia di
+Êtes-vous C?|Siete …? (Lei : è …?)|Êtes-vous prêts ?|Êtes-vous|Siete pronti?|Siete
+Je voudrais C.|Vorrei …|Je voudrais un verre d'eau.|Je voudrais|Vorrei un bicchiere d'acqua.|Vorrei
+Je voudrais Vinf C.|Vorrei …|Je voudrais réserver une table.|Je voudrais|Vorrei prenotare un tavolo.|Vorrei
+Es-tu C?|Sei …?|Es-tu sûr ?|Es-tu|Sei sicuro?|Sei
+Elles étaient C.|Erano …|Elles étaient heureuses.|Elles étaient|Erano felici.|Erano
+Je voudrais que SV C.|Vorrei che … (subjonctif imparfait)|Je voudrais que tu m'écoutes.|Je voudrais que|Vorrei che tu mi ascoltassi.|Vorrei che
+Vous étiez C.|Eravate …|Vous étiez où ?|Vous étiez|Dov'eravate?|eravate
+Ils peuvent Vinf C.|Possono …|Ils peuvent attendre.|Ils peuvent|Possono aspettare.|Possono
+Tu aimes C.|Ti piace …|T'aimes la pizza ?|T'aimes|Ti piace la pizza?|Ti piace
+Vous pensez que SVC.|Pensate che … (subjonctif)|Vous pensez qu'il va pleuvoir ?|Vous pensez qu'|Pensate che pioverà?|Pensate che
+Vous ne pensez pas que SV C.|Non pensate che … (subjonctif)|Vous ne pensez pas que c'est trop tard ?|Vous ne pensez pas que|Non pensate che sia troppo tardi?|Non pensate che
+Ils ne peuvent pas Vinf C.|Non possono …|Ils ne peuvent pas venir.|Ils ne peuvent pas|Non possono venire.|Non possono
+Puis-je Vinf C ?|Posso …?|Puis-je vous aider ?|Puis-je|Posso aiutarla?|Posso
+Tu aimes Vinf C.|Ti piace …|T'aimes danser ?|T'aimes|Ti piace ballare?|Ti piace
+Vous pensez à C.|Pensate a …|Vous pensez à vos vacances ?|Vous pensez à|Pensate alle vacanze?|Pensate alle
+Nous devons Vinf C.|Dobbiamo …|Nous devons parler.|Nous devons|Dobbiamo parlare.|Dobbiamo
+J'allais Vinf C.|Stavo per …|J'allais t'appeler.|J'allais|Stavo per chiamarti.|Stavo per
+Ils veulent C.|Vogliono …|Ils veulent la paix.|Ils veulent|Vogliono la pace.|Vogliono
+Ils veulent Vinf C.|Vogliono …|Ils veulent partir.|Ils veulent|Vogliono partire.|Vogliono
+Ils veulent que S V C.|Vogliono che … (subjonctif)|Ils veulent que tu viennes.|Ils veulent que|Vogliono che tu venga.|Vogliono che
+Ils ne veulent pas C.|Non vogliono …|Ils ne veulent pas d'aide.|Ils ne veulent pas|Non vogliono aiuto.|Non vogliono
+Ils ne veulent pas Vinf C.|Non vogliono …|Ils ne veulent pas parler.|Ils ne veulent pas|Non vogliono parlare.|Non vogliono
+Ils ne veulent pas que SV C.|Non vogliono che … (subjonctif)|Ils ne veulent pas que tu partes.|Ils ne veulent pas que|Non vogliono che tu parta.|Non vogliono che
+Voulez-vous Vinf C ?|Vuole …? (Lei)|Voulez-vous vous asseoir, madame ?|Voulez-vous|Vuole sedersi, signora?|Vuole
+Voulez-vous que SV C ?|Vuole che …? (Lei, subjonctif)|Voulez-vous que je vous accompagne ?|Voulez-vous que|Vuole che la accompagni?|Vuole che
+Voulez-vous C?|Vuole …? (Lei)|Voulez-vous un café, monsieur ?|Voulez-vous|Vuole un caffè, signore?|Vuole
+Voulez-vous que S V C ? (pluriel)|Volete che …? (subjonctif)|Voulez-vous que je vous aide, les enfants ?|Voulez-vous que|Volete che vi aiuti, ragazzi?|Volete che
+Voulez-vous Vinf C ? (pluriel)|Volete …?|Voulez-vous venir avec nous ?|Voulez-vous|Volete venire con noi?|Volete
+Voulez-vous C ? (plu)|Volete …?|Voulez-vous du gâteau, les amis ?|Voulez-vous|Volete della torta, ragazzi?|Volete
+Ne voulez-vous pas C ?|Non volete …?|Ne voulez-vous pas de dessert ?|Ne voulez-vous pas|Non volete il dolce?|Non volete
+Ne voulez-vous pas Vinf C ?|Non volete …?|Ne voulez-vous pas rester ?|Ne voulez-vous pas|Non volete restare?|Non volete
+Ne voulez-vous pas que SV C?|Non volete che …? (subjonctif)|Ne voulez-vous pas que je vienne ?|Ne voulez-vous pas que|Non volete che venga?|Non volete che
+Vous aviez C. (plu)|Avevate …|Vous aviez raison, les gars.|Vous aviez|Avevate ragione, ragazzi.|Avevate
+Vous aviez C. (pol)|Aveva … (Lei)|Vous aviez raison, monsieur.|Vous aviez|Aveva ragione, signore.|Aveva
+S a été Vpp C.|… è stato … (participe)|Le match a été annulé.|a été|La partita è stata annullata.|è stata
+Elles peuvent Vinf C.|Possono …|Elles peuvent entrer.|Elles peuvent|Possono entrare.|Possono
+Ils avaient C.|Avevano …|Ils avaient peur.|Ils avaient|Avevano paura.|Avevano
+Ne veux-tu pas que SV C ?|Non vuoi che …? (subjonctif)|Tu ne veux pas que je t'accompagne ?|Tu ne veux pas que|Non vuoi che ti accompagni?|Non vuoi che
+Veux-tu C ?|Vuoi …?|Veux-tu un thé ?|Veux-tu|Vuoi un tè?|Vuoi
+Veux-tu Vinf C?|Vuoi …?|Veux-tu danser ?|Veux-tu|Vuoi ballare?|Vuoi
+Veux-tu que SV C?|Vuoi che …? (subjonctif)|Veux-tu que je t'aide ?|Veux-tu que|Vuoi che ti aiuti?|Vuoi che
+Elles ne peuvent pas Vinf C.|Non possono …|Elles ne peuvent pas rester.|Elles ne peuvent pas|Non possono restare.|Non possono
+Ne veux-tu pas Vinf C ?|Non vuoi …?|Tu veux pas venir ?|Tu veux pas|Non vuoi venire?|Non vuoi
+Vous connaissez C.|Conoscete … (Lei : conosce …)|Vous connaissez Marco ?|Vous connaissez|Conoscete Marco?|Conoscete
+Elles veulent C.|Vogliono …|Elles veulent des glaces.|Elles veulent|Vogliono dei gelati.|Vogliono
+Elles veulent Vinf C.|Vogliono …|Elles veulent danser.|Elles veulent|Vogliono ballare.|Vogliono
+Elles veulent que S V C.|Vogliono che … (subjonctif)|Elles veulent que tu chantes.|Elles veulent que|Vogliono che tu canti.|Vogliono che
+Elles ne veulent pas C.|Non vogliono …|Elles ne veulent pas de ton aide.|Elles ne veulent pas|Non vogliono il tuo aiuto.|Non vogliono
+Elles ne veulent pas Vinf C.|Non vogliono …|Elles ne veulent pas rentrer.|Elles ne veulent pas|Non vogliono tornare.|Non vogliono
+Elles ne veulent pas que S V C.|Non vogliono che … (subjonctif)|Elles ne veulent pas que tu viennes.|Elles ne veulent pas que|Non vogliono che tu venga.|Non vogliono che
+Vous croyez que SV C.|Credete che … (subjonctif)|Vous croyez que c'est vrai ?|Vous croyez que|Credete che sia vero?|Credete che
+Vous ne croyez pas que S V C.|Non credete che … (subjonctif)|Vous ne croyez pas que c'est assez ?|Vous ne croyez pas que|Non credete che sia abbastanza?|Non credete che
+S a dû Vinf C.|… ha dovuto …|Marco a dû partir.|a dû|Marco è dovuto partire.|è dovuto
+Nous pouvons Vinf C.|Possiamo …|Nous pouvons commencer.|Nous pouvons|Possiamo cominciare.|Possiamo
+Nous ne pouvons pas Vinf C.|Non possiamo …|Nous ne pouvons pas rester.|Nous ne pouvons pas|Non possiamo restare.|Non possiamo
+Ils doivent Vinf C.|Devono …|Ils doivent travailler.|Ils doivent|Devono lavorare.|Devono
+Il connaît C.|Conosce …|Il connaît bien Rome.|Il connaît|Conosce bene Roma.|Conosce
+Elles avaient C.|Avevano …|Elles avaient froid.|Elles avaient|Avevano freddo.|Avevano
+Elle connaît C.|Conosce …|Elle connaît ton frère.|Elle connaît|Conosce tuo fratello.|Conosce
+On connaît C.|Conosciamo …|On connaît la chanson.|On connaît|Conosciamo la canzone.|Conosciamo
+Pouvez-vous Vinf C ?|Può …? (Lei) / Potete …?|Pouvez-vous m'aider ?|Pouvez-vous|Può aiutarmi?|Può
+Je préfère Vinf C.|Preferisco …|Je préfère rester.|Je préfère|Preferisco restare.|Preferisco
+Je préfère que S Vsbj C.|Preferisco che … (subjonctif)|Je préfère que tu restes.|Je préfère que|Preferisco che tu resti.|Preferisco che
+Elles doivent Vinf C.|Devono …|Elles doivent partir.|Elles doivent|Devono partire.|Devono
+Est-elle C ?|È …?|Est-elle malade ?|Est-elle|È malata?|È
+Ils savent que S V C.|Sanno che …|Ils savent que t'es là.|Ils savent que|Sanno che sei qui.|Sanno che
+Ils savent Vinf C.|Sanno …|Ils savent nager.|Ils savent|Sanno nuotare.|Sanno
+Ils ne savent pas que S V C.|Non sanno che …|Ils ne savent pas qu'on est là.|Ils ne savent pas qu'|Non sanno che siamo qui.|Non sanno che
+Nous étions C.|Eravamo …|Nous étions jeunes.|Nous étions|Eravamo giovani.|Eravamo
+Savez-vous Vinf C ?|Sa …? (Lei) / Sapete …?|Savez-vous conduire ?|Savez-vous|Sa guidare?|Sa
+Savez-vous que SVC ?|Sa che …? (Lei) / Sapete che …?|Savez-vous qu'il est parti ?|Savez-vous qu'|Sa che è partito?|Sa che
+Il croit que S V C.|Crede che … (subjonctif)|Il croit que tu mens.|Il croit que|Crede che tu menta.|Crede che
+Elle croit que SV C.|Crede che … (subjonctif)|Elle croit que c'est une blague.|Elle croit que|Crede che sia uno scherzo.|Crede che
+On croit que S V C.|Crediamo che … (subjonctif)|On croit que c'est possible.|On croit que|Crediamo che sia possibile.|Crediamo che
+Il ne croit pas que SV C.|Non crede che … (subjonctif)|Il ne croit pas que ce soit vrai.|Il ne croit pas que|Non crede che sia vero.|Non crede che
+Elle ne croit pas que SV C.|Non crede che … (subjonctif)|Elle ne croit pas qu'il revienne.|Elle ne croit pas qu'|Non crede che torni.|Non crede che
+On ne croit pas que S V C.|Non crediamo che … (subjonctif)|On ne croit pas que ce soit lui.|On ne croit pas que|Non crediamo che sia lui.|Non crediamo che
+Nous avions C.|Avevamo …|Nous avions un chien.|Nous avions|Avevamo un cane.|Avevamo
+Peux-tu Vinf C ?|Puoi …?|Peux-tu fermer la porte ?|Peux-tu|Puoi chiudere la porta?|Puoi
+Vous aimez C.|Vi piace …|Vous aimez la musique ?|Vous aimez|Vi piace la musica?|Vi piace
+Vous aimez Vinf C.|Vi piace …|Vous aimez cuisiner ?|Vous aimez|Vi piace cucinare?|Vi piace
+Elles savent Vinf C.|Sanno …|Elles savent danser.|Elles savent|Sanno ballare.|Sanno
+Elles savent que SV C.|Sanno che …|Elles savent que tu mens.|Elles savent que|Sanno che menti.|Sanno che
+Elles ne savent pas que SV C.|Non sanno che …|Elles ne savent pas que je suis là.|Elles ne savent pas que|Non sanno che sono qui.|Non sanno che
+Nous savons que SV C.|Sappiamo che …|Nous savons que c'est difficile.|Nous savons que|Sappiamo che è difficile.|Sappiamo che
+Nous ne savons pas que SV C.|Non sappiamo che …|Nous ne savions pas que c'était fermé.|Nous ne savions pas que|Non sapevamo che fosse chiuso.|Non sapevamo che
+Nous savons Vinf C.|Sappiamo …|Nous savons cuisiner.|Nous savons|Sappiamo cucinare.|Sappiamo
+Ai-je C?|Ho …?|Ai-je le choix ?|Ai-je|Ho scelta?|Ho
+Pensez-vous que SV C?|Pensa che …? (Lei) / Pensate che …?|Pensez-vous que ce soit possible ?|Pensez-vous que|Pensa che sia possibile?|Pensa che

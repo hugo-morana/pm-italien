@@ -1,0 +1,100 @@
+Il est C.|È …|Il est content.|Il est|È contento.|È
+On est C.|Siamo …|On est en retard.|On est|Siamo in ritardo.|Siamo
+Il a C.|Ha …|Il a un chien.|Il a|Ha un cane.|Ha
+Il a Vpp C.|Ha … (participe)|Il a mangé.|Il a|Ha mangiato.|Ha
+On a C.|Abbiamo …|On a le temps.|On a|Abbiamo tempo.|Abbiamo
+On a Vpp C.|Abbiamo … (participe)|On a gagné !|On a|Abbiamo vinto!|Abbiamo
+J'ai C.|Ho …|J'ai faim.|J'ai|Ho fame.|Ho
+J'ai Vpp C.|Ho … (participe)|J'ai fini.|J'ai|Ho finito.|Ho
+Elle est C.|È …|Elle est fatiguée.|Elle est|È stanca.|È
+On vous a Vpp C.|Vi hanno … (participe)|On vous a appelés ce matin.|On vous a|Vi hanno chiamati stamattina.|Vi hanno
+Je suis C.|Sono …|Je suis prêt.|Je suis|Sono pronto.|Sono
+Elle a C.|Ha …|Elle a deux frères.|Elle a|Ha due fratelli.|Ha
+Elle a Vpp C.|Ha … (participe)|Elle a appelé.|Elle a|Ha chiamato.|Ha
+Il n'est pas C.|Non è …|Il n'est pas là.|Il n'est pas|Non è qui.|Non è
+On n'est pas C.|Non siamo …|On n'est pas pressés.|On n'est pas|Non siamo di fretta.|Non siamo
+Je n'ai pas C.|Non ho …|Je n'ai pas le temps.|Je n'ai pas|Non ho tempo.|Non ho
+Tu as C.|Hai …|Tu as raison.|Tu as|Hai ragione.|Hai
+Il n'a pas de C.|Non ha …|Il n'a pas de voiture.|Il n'a pas de|Non ha la macchina.|Non ha
+Il était C.|Era …|Il était malade.|Il était|Era malato.|Era
+Tu as Vpp C.|Hai … (participe)|T'as vu ça ?|T'as|Hai visto?|Hai
+Je sais Vinf C.|So …|Je sais nager.|Je sais|So nuotare.|So
+On nous a Vpp C.|Ci hanno … (participe)|On nous a invités.|On nous a|Ci hanno invitati.|Ci hanno
+Je ne suis pas C.|Non sono …|Je ne suis pas sûr.|Je ne suis pas|Non sono sicuro.|Non sono
+On n'a pas de C.|Non abbiamo …|On n'a pas de pain.|On n'a pas de|Non abbiamo pane.|Non abbiamo
+On était C.|Eravamo …|On était amis.|On était|Eravamo amici.|Eravamo
+Tu sais Vinf C.|Sai …|Tu sais conduire ?|Tu sais|Sai guidare?|Sai
+Elle n'est pas C.|Non è …|Elle n'est pas d'accord.|Elle n'est pas|Non è d'accordo.|Non è
+On t'a Vpp C.|Ti hanno … (participe)|On t'a vu hier.|On t'a|Ti hanno visto ieri.|Ti hanno
+Je veux C.|Voglio …|Je veux un café.|Je veux|Voglio un caffè.|Voglio
+Je veux Vinf C.|Voglio …|Je veux partir.|Je veux|Voglio partire.|Voglio
+Je sais que SV C.|So che …|Je sais que t'es là.|Je sais que|So che sei qui.|So che
+On m'a Vpp C.|Mi hanno … (participe)|On m'a volé mon sac.|On m'a|Mi hanno rubato la borsa.|Mi hanno
+Tu veux C.|Vuoi …|Tu veux de l'eau ?|Tu veux|Vuoi dell'acqua?|Vuoi
+Tu veux Vinf C.|Vuoi …|Tu veux venir ?|Tu veux|Vuoi venire?|Vuoi
+Est-ce que SVC?|… ? (intonation)|Est-ce que tu viens ?|Est-ce que|Vieni?|Vieni?
+Tu sais que SV C.|Sai che …|Tu sais que je t'aime.|Tu sais que|Sai che ti amo.|Sai che
+Je veux que S Vsub C.|Voglio che … (subjonctif)|Je veux que tu restes.|Je veux que|Voglio che tu resti.|Voglio che
+Elle n'a pas de C.|Non ha …|Elle n'a pas de chance.|Elle n'a pas de|Non ha fortuna.|Non ha
+Elle était C.|Era …|Elle était belle.|Elle était|Era bella.|Era
+Tu es C.|Sei …|T'es fou !|T'es|Sei pazzo!|Sei
+Tu veux que SV C.|Vuoi che … (subjonctif)|Tu veux que je vienne ?|Tu veux que|Vuoi che venga?|Vuoi che
+Je peux Vinf C.|Posso …|Je peux entrer ?|Je peux|Posso entrare?|Posso
+Tu n'as pas C.|Non hai …|T'as pas faim ?|T'as pas|Non hai fame?|Non hai
+Tu peux Vinf C.|Puoi …|Tu peux m'aider ?|Tu peux|Puoi aiutarmi?|Puoi
+Je ne veux pas Vinf C.|Non voglio …|Je ne veux pas y aller.|Je ne veux pas|Non voglio andarci.|Non voglio
+Je vais Vinf C.|Sto per … / (futur)|Je vais partir.|Je vais|Sto per partire.|Sto per
+Il n'y a pas de C.|Non c'è … / Non ci sono …|Il n'y a pas de problème.|Il n'y a pas de|Non c'è problema.|Non c'è
+Je ne sais pas que SV C.|Non so che …|Je ne savais pas qu'il était là.|ne savais pas qu'|Non sapevo che fosse qui.|Non sapevo che
+Vous avez C.|Avete …|Vous avez faim ?|Vous avez|Avete fame?|Avete
+Tu ne veux pas Vinf C.|Non vuoi …|Tu ne veux pas venir ?|Tu ne veux pas|Non vuoi venire?|Non vuoi
+Vous avez Vpp C.|Avete … (participe)|Vous avez mangé ?|Vous avez|Avete mangiato?|Avete
+Vous avez Vpp C. (pol)|Ha … (participe, Lei)|Vous avez réservé, monsieur ?|Vous avez|Ha prenotato, signore?|Ha
+Tu ne sais pas que SV C.|Non sai che …|Tu ne sais pas qu'il est parti ?|Tu ne sais pas qu'|Non sai che è partito?|Non sai che
+On lui a Vpp C.|Gli hanno … (participe)|On lui a dit la vérité.|On lui a|Gli hanno detto la verità.|Gli hanno
+Je ne veux pas que S Vsbj C.|Non voglio che … (subjonctif)|Je ne veux pas que tu partes.|Je ne veux pas que|Non voglio che tu parta.|Non voglio che
+Je veux bien.|Volentieri.|Un café ? — Je veux bien.|Je veux bien|Un caffè? — Volentieri.|Volentieri
+Tu ne veux pas que SV C.|Non vuoi che … (subjonctif)|Tu ne veux pas que je t'aide ?|Tu ne veux pas que|Non vuoi che ti aiuti?|Non vuoi che
+Je ne peux pas Vinf C.|Non posso …|Je ne peux pas venir.|Je ne peux pas|Non posso venire.|Non posso
+Tu n'es pas C.|Non sei …|T'es pas seul.|T'es pas|Non sei solo.|Non sei
+Tu ne peux pas Vinf C.|Non puoi …|Tu ne peux pas faire ça !|Tu ne peux pas|Non puoi farlo!|Non puoi
+Je ne vais pas Vinf C.|Non … (futur)|Je ne vais pas te mentir.|Je ne vais pas|Non ti mentirò.|Non ti mentirò
+Il n'y a plus C.|Non c'è più …|Il n'y a plus de lait.|Il n'y a plus|Non c'è più latte.|Non c'è più
+Ils sont C.|Sono …|Ils sont gentils.|Ils sont|Sono gentili.|Sono
+Vous n'avez pas de C.|Non avete …|Vous n'avez pas de monnaie ?|Vous n'avez pas de|Non avete spiccioli?|Non avete
+Il peut Vinf C.|Può …|Il peut venir demain.|Il peut|Può venire domani.|Può
+Vous êtes C.|Siete … (Lei : è …)|Vous êtes prêts ?|Vous êtes|Siete pronti?|Siete
+On peut Vinf C.|Si può … / Possiamo …|On peut y aller ?|On peut|Possiamo andare?|Possiamo
+Ils ont C.|Hanno …|Ils ont un chat.|Ils ont|Hanno un gatto.|Hanno
+Ils ne sont pas C.|Non sono …|Ils ne sont pas là.|Ils ne sont pas|Non sono qui.|Non sono
+Ils ont Vpp C.|Hanno … (participe)|Ils ont gagné.|Ils ont|Hanno vinto.|Hanno
+Oui, je veux bien.|Sì, volentieri.|Tu restes dîner ? — Oui, je veux bien.|Oui, je veux bien|Resti a cena? — Sì, volentieri.|Sì, volentieri
+Elle peut Vinf C.|Può …|Elle peut rester.|Elle peut|Può restare.|Può
+Il ne peut pas Vinf C.|Non può …|Il ne peut pas parler.|Il ne peut pas|Non può parlare.|Non può
+Je dois Vinf C.|Devo …|Je dois y aller.|Je dois|Devo andare.|Devo
+On ne peut pas Vinf C.|Non si può … / Non possiamo …|On ne peut pas fumer ici.|On ne peut pas|Non si può fumare qui.|Non si può
+Il avait C.|Aveva …|Il avait peur.|Il avait|Aveva paura.|Aveva
+Il faut Vinf C.|Bisogna …|Il faut partir.|Il faut|Bisogna partire.|Bisogna
+Est-ce que je peux Vinf C ?|Posso …?|Est-ce que je peux m'asseoir ?|Est-ce que je peux|Posso sedermi?|Posso
+Vous n'êtes pas C.|Non siete …|Vous n'êtes pas seuls.|Vous n'êtes pas|Non siete soli.|Non siete
+Tu dois Vinf C.|Devi …|Tu dois dormir.|Tu dois|Devi dormire.|Devi
+On avait C.|Avevamo …|On avait raison.|On avait|Avevamo ragione.|Avevamo
+Il faut que S V C.|Bisogna che … (subjonctif)|Il faut que tu viennes.|Il faut que|Bisogna che tu venga.|Bisogna che
+Il a besoin de C.|Ha bisogno di …|Il a besoin d'aide.|Il a besoin d'|Ha bisogno di aiuto.|Ha bisogno di
+Elle ne peut pas Vinf C.|Non può …|Elle ne peut pas venir.|Elle ne peut pas|Non può venire.|Non può
+Ils n'ont pas C.|Non hanno …|Ils n'ont pas compris.|Ils n'ont pas|Non hanno capito.|Non hanno
+On a besoin de C.|Abbiamo bisogno di …|On a besoin de toi.|On a besoin de|Abbiamo bisogno di te.|Abbiamo bisogno di
+Elle avait C.|Aveva …|Elle avait froid.|Elle avait|Aveva freddo.|Aveva
+J'ai besoin de Vinf C.|Ho bisogno di …|J'ai besoin de dormir.|J'ai besoin de|Ho bisogno di dormire.|Ho bisogno di
+Ils n'ont pas de C.|Non hanno …|Ils n'ont pas d'enfants.|Ils n'ont pas d'|Non hanno figli.|Non hanno
+Tu étais C.|Eri …|T'étais où ?|T'étais|Dov'eri?|eri
+Je n'ai pas encore Vpp C.|Non ho ancora … (participe)|J'ai pas encore mangé.|J'ai pas encore|Non ho ancora mangiato.|Non ho ancora
+Elle a besoin de C.|Ha bisogno di …|Elle a besoin de repos.|Elle a besoin de|Ha bisogno di riposo.|Ha bisogno di
+Tu avais C.|Avevi …|T'avais raison.|T'avais|Avevi ragione.|Avevi
+Il n'a pas besoin de C.|Non ha bisogno di …|Il n'a pas besoin de ça.|Il n'a pas besoin de|Non ha bisogno di questo.|Non ha bisogno di
+Je n'ai pas besoin de C.|Non ho bisogno di …|J'ai pas besoin d'aide.|J'ai pas besoin d'|Non ho bisogno di aiuto.|Non ho bisogno di
+Je pense que SV C.|Penso che … (subjonctif)|Je pense que c'est vrai.|Je pense que|Penso che sia vero.|Penso che
+Tu crois que SV C ?|Credi che …? (subjonctif)|Tu crois qu'il va venir ?|Tu crois qu'|Credi che verrà?|Credi che
+Il aime C.|Gli piace …|Il aime le foot.|Il aime|Gli piace il calcio.|Gli piace
+Tu as besoin de C.|Hai bisogno di …|T'as besoin de quelque chose ?|T'as besoin de|Hai bisogno di qualcosa?|Hai bisogno di
+On n'a pas besoin de C.|Non abbiamo bisogno di …|On n'a pas besoin de ça.|On n'a pas besoin de|Non abbiamo bisogno di questo.|Non abbiamo bisogno di

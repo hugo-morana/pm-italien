@@ -298,6 +298,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <input type="search" id="libQ" placeholder="Chercher un mot, en français ou en italien…" aria-label="Chercher" autocomplete="off">
     <select id="libFam" aria-label="Classe"></select>
     <select id="libTag" aria-label="Sous-catégorie"></select>
+    <select id="libTh" aria-label="Thème"></select>
     <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
     <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Par fréquence</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button></div>
     <span id="libInfo"></span>
@@ -317,6 +318,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <p id="curveTxt"></p>
   </div>
   <div class="card"><h3 style="margin:0">Mots appris par classe</h3><div class="cls" id="cbCls"></div></div>
+  <div class="card"><h3 style="margin:0">Mots appris par thème</h3><div class="cls" id="cbTh"></div><p class="pr" style="margin:0">Chaque mot ou expression compte dans un seul thème. Les « notions générales » regroupent les mots abstraits sans thème concret (la fois, le besoin, la façon…).</p></div>
   <div class="card"><h3 style="margin:0">Boîtes de révision</h3><div class="boxes" id="cbBoxes"></div><p class="pr" style="margin:0">Chaque réussite fait monter un mot d'une boîte : il revient 1, 2, 4, 8 puis 16 jours plus tard. Un échec le renvoie en boîte 1.</p></div>
   <div class="card"><h3 style="margin:0">Historique</h3><div id="cbHist"></div></div>
 </div></section>
@@ -1410,7 +1412,8 @@ function libIndex() {
   if (LIB) return LIB;
   LIB = [];
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) LIB.push({ ri, n, x, fam: famOf(r), q: nrm(x.fr + " | " + x.it + " | " + x.mc) }); }));
-  const fams = [...new Set(LIB.map(e => e.fam))];
+  const fams = [...new Set(LIB.map(e => e.fam))], TH = DATA.themes || {};
+  $("#libTh").innerHTML = `<option value="">tous les thèmes</option>` + Object.keys(TH).map(k => `<option value="${k}">${esc(TH[k])}</option>`).join("");
   $("#libFam").innerHTML = `<option value="">toutes les classes</option>` + fams.map(f => `<option value="${f}">${FAML[f] || f}</option>`).join("");
   return LIB;
 }
@@ -1421,10 +1424,10 @@ function libTags() {
 }
 async function renderLib() {
   libIndex(); if (!$("#libTag").options.length) libTags();
-  const q = nrm($("#libQ").value.trim()), f = $("#libFam").value, tg = $("#libTag").value, sf = $("#libSt").value;
+  const q = nrm($("#libQ").value.trim()), f = $("#libFam").value, tg = $("#libTag").value, sf = $("#libSt").value, th = $("#libTh").value;
   const S = await statusAll();
   const rows = LIB.filter(e => {
-    if (f && e.fam !== f) return false; if (tg && !(e.x.t || []).includes(tg)) return false; if (q && !e.q.includes(q)) return false;
+    if (f && e.fam !== f) return false; if (th && (e.x.th || "autres") !== th) return false; if (tg && !(e.x.t || []).includes(tg)) return false; if (q && !e.q.includes(q)) return false;
     if (sf) { const o = S.get(e.ri + ":" + e.n); if (sf === "new" && o) return false; if (sf === "seen" && !o) return false; if (sf === "due" && !(o && o.due)) return false; if (sf === "weak" && !(o && o.b <= 2)) return false; }
     return true;
   });
@@ -1467,6 +1470,10 @@ async function renderCarnet() {
   renderCurve();
   const fam = new Map(); R.forEach((r, ri) => { const f = famOf(r), o = fam.get(f) || { tot: 0, got: 0 }; r.niches.forEach((x, n) => { if (!x) return; o.tot++; if (S.has(ri + ":" + n)) o.got++; }); fam.set(f, o); });
   $("#cbCls").innerHTML = [...fam].map(([f, o]) => `<span>${FAML[f] || f}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.got} / ${o.tot} · ${o.tot ? Math.round(o.got / o.tot * 100) : 0} %</span>`).join("");
+  const TH = DATA.themes || {}, tm = new Map(Object.keys(TH).map(k => [k, { tot: 0, got: 0 }]));
+  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const o = tm.get(x.th || "autres") || tm.get("autres"); if (!o) return; o.tot++; if (S.has(ri + ":" + n)) o.got++; }));
+  const last = ["grammaire", "formules", "autres"], ths = [...tm].filter(([, o]) => o.tot).sort((a, b) => (last.indexOf(a[0]) - last.indexOf(b[0])) || (b[1].tot - a[1].tot));
+  $("#cbTh").innerHTML = ths.map(([k, o]) => `<span>${esc(TH[k] || k)}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.got} / ${o.tot} · ${o.tot ? Math.round(o.got / o.tot * 100) : 0} %</span>`).join("");
   const bx = [0, 0, 0, 0, 0, 0]; for (const o of S.values()) bx[o.b]++; bx[0] = LIB ? LIB.length - S.size : CURVES.total - S.size;
   const BC = ["var(--bg)", "#e6b9a5", "#e0cf8f", "#b7d39a", "#86c08f", "#4f9c63"];
   $("#cbBoxes").innerHTML = bx.map((v, i) => `<div style="background:${BC[i]};${i === 5 ? "color:#fff" : i ? "color:#2a211d" : ""}"><b>${v}</b>${i ? "boîte " + i : "jamais vus"}</div>`).join("");
@@ -1479,7 +1486,7 @@ function bindViews() {
   $("#tabs").addEventListener("click", e => { const b = e.target.closest("[data-view]"); if (!b) return; if (b.dataset.view === "test") startAuto(); else setView(b.dataset.view); });
   let qt; $("#libQ").addEventListener("input", () => { clearTimeout(qt); qt = setTimeout(renderLib, 180); });
   $("#libFam").onchange = () => { libTags(); renderLib(); };
-  document.addEventListener("click", e => { const b = e.target.closest("[data-liborder]"); if (!b) return; prefs.libOrder = b.dataset.liborder; savePrefs(); renderLib(); $("#lib").scrollTo(0, 0); }); $("#libTag").onchange = renderLib; $("#libSt").onchange = renderLib;
+  document.addEventListener("click", e => { const b = e.target.closest("[data-liborder]"); if (!b) return; prefs.libOrder = b.dataset.liborder; savePrefs(); renderLib(); $("#lib").scrollTo(0, 0); }); $("#libTag").onchange = renderLib; $("#libTh").onchange = renderLib; $("#libSt").onchange = renderLib;
   $("#libList").addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("lrow")) openLibRow(e.target); }, true);
   $("#libList").addEventListener("click", e => { const g = e.target.closest("[data-gopal]"); if (!g) return; const [ri, n] = g.dataset.gopal.split(":").map(Number); setView("palais"); goTo(ri, n); setDrawer(true); });
   $("#cbRevue").onclick = () => startAuto();

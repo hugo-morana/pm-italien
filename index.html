@@ -5,7 +5,8 @@
 <style>
 /* Palais 3D plein écran : barre de pièces en haut, commandes rondes en bas, fiche en tiroir, feuilles pour tests et plan */
 :root {
-  --tb:calc(60px + env(safe-area-inset-bottom,0px));
+  --sab:max(0px, calc(env(safe-area-inset-bottom,0px) - 20px));   /* la barre d'accueil iOS n'a besoin que d'une petite marge */
+  --tb:calc(54px + var(--sab));
   --bg:#efe7db; --surface:#fbf6ee; --fg:#2a211d; --muted:#6c5e55; --accent:#9c3d22; --line:#d9cbb8; --ok:#3d7a4a; --ko:#a8322a; --hl:#f1d3bd;
   --display:"Cormorant SC", Georgia, serif; --body:"Source Serif 4", Georgia, serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
   --shadow:0 6px 24px rgba(40,25,15,.18); --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
@@ -157,9 +158,9 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 .hidden-ui #top, .hidden-ui #drawer { display:none }
 .hidden-ui #nav, .hidden-ui #eye { bottom:calc(var(--tb) + 16px) }
 /* Bandeau des modes (bas d'écran) */
-#tabs { position:fixed; z-index:16; left:0; right:0; bottom:0; height:var(--tb); padding:0 max(8px, env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(8px, env(safe-area-inset-left,0px));
+#tabs { position:fixed; z-index:16; left:0; right:0; bottom:0; height:var(--tb); padding:0 max(8px, env(safe-area-inset-right,0px)) var(--sab) max(8px, env(safe-area-inset-left,0px));
   display:flex; justify-content:center; gap:4px; background:var(--surface); border-top:1px solid var(--line); box-shadow:0 -4px 18px rgba(40,25,15,.10) }
-#tabs button { flex:1; max-width:180px; border:0; background:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:var(--muted); font:500 11px var(--mono); letter-spacing:.06em; text-transform:uppercase; border-radius:10px; margin:6px 0 }
+#tabs button { flex:1; max-width:180px; border:0; background:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:var(--muted); font:500 11px var(--mono); letter-spacing:.06em; text-transform:uppercase; border-radius:10px; margin:5px 0 }
 #tabs button svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round }
 #tabs .tbi { position:relative; display:grid }
 #tabs .tbi b { position:absolute; top:-5px; left:14px; min-width:17px; height:17px; padding:0 4px; border-radius:9px; background:var(--accent); color:var(--surface); font:600 10px/17px var(--mono); text-align:center; letter-spacing:0 }

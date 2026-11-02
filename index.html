@@ -157,10 +157,12 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 .hidden-ui #top, .hidden-ui #drawer { display:none }
 .hidden-ui #nav, .hidden-ui #eye { bottom:calc(var(--tb) + 16px) }
 /* Bandeau des modes (bas d'écran) */
-#tabs { position:fixed; z-index:13; left:0; right:0; bottom:0; height:var(--tb); padding:0 max(8px, env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(8px, env(safe-area-inset-left,0px));
+#tabs { position:fixed; z-index:16; left:0; right:0; bottom:0; height:var(--tb); padding:0 max(8px, env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(8px, env(safe-area-inset-left,0px));
   display:flex; justify-content:center; gap:4px; background:var(--surface); border-top:1px solid var(--line); box-shadow:0 -4px 18px rgba(40,25,15,.10) }
 #tabs button { flex:1; max-width:180px; border:0; background:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:var(--muted); font:500 11px var(--mono); letter-spacing:.06em; text-transform:uppercase; border-radius:10px; margin:6px 0 }
 #tabs button svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round }
+#tabs .tbi { position:relative; display:grid }
+#tabs .tbi b { position:absolute; top:-5px; left:14px; min-width:17px; height:17px; padding:0 4px; border-radius:9px; background:var(--accent); color:var(--surface); font:600 10px/17px var(--mono); text-align:center; letter-spacing:0 }
 #tabs button[aria-current="page"] { color:var(--accent); background:color-mix(in srgb, var(--accent) 10%, transparent) }
 body:not([data-view="palais"]) #top, body:not([data-view="palais"]) #nav, body:not([data-view="palais"]) #eye, body:not([data-view="palais"]) #drawer,
 body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body:not([data-view="palais"]) #bandeau { display:none !important }
@@ -300,7 +302,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 <section class="view" id="carnet" hidden aria-label="Carnet de bord"><div class="in">
   <h1>Carnet de bord <small id="cbStore"></small></h1>
   <div class="kpis" id="kpis"></div>
-  <div class="btns"><button class="btn" type="button" id="cbRevue">Révision du jour</button><button class="btn alt" type="button" id="cbLearn">Apprendre de nouveaux mots</button><button class="btn alt" type="button" id="cbTests">Réglages des tests</button></div>
+  <div class="btns"><button class="btn" type="button" id="cbRevue">Reprendre mes tests</button><button class="btn alt" type="button" id="cbLearn">Apprendre de nouveaux mots</button><button class="btn alt" type="button" id="cbTests">Réglages des tests</button></div>
   <div class="card">
   <h3 style="margin:0">Courbe de compréhension</h3>
   <div class="ckey" aria-hidden="true"><span><i style="border-color:var(--s1)"></i>dans l'ordre du palais</span><span><i style="border-color:var(--s2);border-top-style:dashed"></i>par fréquence décroissante</span><span><i style="border-color:var(--s3)"></i>ta progression</span></div>
@@ -315,6 +317,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 <nav id="tabs" aria-label="Modes">
   <button type="button" data-view="lib"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16.5 4.5l3.6-.9 3 15.5-3.6.9z"/></svg>Bibliothèque</button>
   <button type="button" data-view="palais"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v10M9.7 9v10M14.3 9v10M19 9v10M3 20h18"/></svg>Palais</button>
+  <button type="button" data-view="test"><span class="tbi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.6-5.9M20 4v4.5h-4.5M9 12.5l2.2 2.2L15.5 10"/></svg><b id="testBadge" hidden></b></span>Test</button>
   <button type="button" data-view="carnet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16M7.5 15l4-4.5 3 2.5 5-6"/></svg>Carnet</button>
 </nav>
 
@@ -959,6 +962,7 @@ async function startQuiz(kind) {
     if (!fresh.length) { toast("Tous les mots de la sélection ont déjà été présentés"); return; }
     quizState.learn = { fresh, active: [], counter: 0, done: 0 };
   }
+  quizState.auto = null;
   Object.assign(quizState, { on: true, list, idx: 0, mode: kind, stats: { ok: 0, ko: 0 } });
   closeSheets(); st.ui = false; document.body.classList.add("hidden-ui"); measureDrawer(); setDrawer(false); toggleChain(false);
   if (kind === "learn") learnNext(); else ask(list[0]);
@@ -969,7 +973,7 @@ function learnNext() {
   if (due) return ask({ ri: due.ri, n: due.n, ty: types[due.step % types.length] || "fr", learn: due });
   if (L.active.length < 4 && L.fresh.length) { const [ri, n] = L.fresh.shift(); const a = { ri, n, step: 0, at: L.counter + 2 }; L.active.push(a); return present(a); }
   if (L.active.length) { const a = L.active.sort((x, y) => x.at - y.at)[0]; return ask({ ri: a.ri, n: a.n, ty: types[a.step % types.length] || "fr", learn: a }); }
-  endQuiz(`Séance terminée : ${L.done} mot(s) appris.`);
+  endQuiz(`Séance terminée : ${L.done} mot(s) appris.` + (quizState.auto ? " Touche « Test » pour la suite." : ""));
 }
 function present(a) {
   quizState.q = { ri: a.ri, n: a.n, ty: "present" }; quizState.revealed = true;
@@ -1029,10 +1033,16 @@ async function onGrade(ok) {
     else { a.step = 0; a.at = L.counter + 2; }
     return learnNext();
   }
-  quizState.idx++; if (quizState.idx >= quizState.list.length) return endQuiz(); ask(quizState.list[quizState.idx]);
+  if (quizState.auto && !ok && !q.retry) quizState.list.push({ ri: q.ri, n: q.n, ty: q.ty, retry: true });
+  quizState.idx++;
+  if (quizState.idx >= quizState.list.length) {
+    if (quizState.auto && quizState.auto.fresh.length) { const s0 = quizState.stats; toast(`Révisions faites (${s0.ok} réussie(s), ${s0.ko} ratée(s)) : place aux nouveaux mots`); return beginAutoLearn(); }
+    return endQuiz();
+  }
+  ask(quizState.list[quizState.idx]);
 }
 function endQuiz(msg) {
-  const s = quizState.stats; Object.assign(quizState, { on: false, revealed: false, q: null, learn: null });
+  const s = quizState.stats; Object.assign(quizState, { on: false, revealed: false, q: null, learn: null, auto: null }); markTabs(); updateTestBadge();
   $("#quiz").hidden = true; $("#voile").hidden = true; texturizeRoom(st.r, null); st.ui = true; document.body.classList.remove("hidden-ui"); measureDrawer(); renderFiche(); placeRing(st.r, st.n);
   toast(msg || `Fin du test : ${s.ok} réussi(s), ${s.ko} raté(s)`);
 }
@@ -1291,6 +1301,54 @@ function onResize() {
   if (st.mode === "guide" && !anim.walking && R.length) flyTo(poseFor(st.zoom), .25);
 }
 
+/* ============ Test « reprendre » : répétition espacée sans réglages ============
+   1) toutes les cartes dues, dans toutes les salles (les plus en retard d'abord) ; une carte ratée est reposée une fois en fin de liste ;
+   2) puis les mots jamais vus suivants, dans l'ordre du palais (donc par fréquence), « Nouveaux par séance » à la fois.
+   Rien à mémoriser : l'état vient des cartes elles-mêmes, une séance interrompue reprend où elle s'est arrêtée. */
+const AUTOTY = new Set(["num", "img", "fr", "it", "aud", "suite"]);
+async function autoDue() {
+  const t = today(), out = [];
+  for (let ri = 0; ri < R.length; ri++) {
+    const c = await srsRoom(ri);
+    for (const k in c) { const v = c[k]; if (!v || !v.seen || v.d > t) continue; const [n, ty] = k.split(":"); if (!AUTOTY.has(ty) || !R[ri].niches[+n]) continue; out.push({ ri, n: +n, ty, d: v.d, r: Math.random() }); }
+  }
+  out.sort((a, b) => a.d - b.d || a.r - b.r);
+  for (let i = 1; i < out.length; i++) if (out[i].ri === out[i - 1].ri && out[i].n === out[i - 1].n) { const j = out.findIndex((o, k) => k > i && (o.ri !== out[i].ri || o.n !== out[i].n)); if (j > 0) [out[i], out[j]] = [out[j], out[i]]; }
+  return out.map(({ ri, n, ty }) => ({ ri, n, ty }));
+}
+async function nextFresh(k) {
+  const out = [];
+  for (let ri = 0; ri < R.length && out.length < k; ri++) {
+    const c = await srsRoom(ri), seen = new Set(Object.keys(c).filter(key => c[key] && c[key].seen).map(key => +key.split(":")[0]));
+    for (let n = 0; n < 100 && out.length < k; n++) if (R[ri].niches[n] && !seen.has(n)) out.push([ri, n]);
+  }
+  return out;
+}
+function quizUI() { closeSheets(); st.ui = false; document.body.classList.add("hidden-ui"); measureDrawer(); setDrawer(false); toggleChain(false); }
+function beginAutoLearn() {
+  quizState.learn = { fresh: quizState.auto.fresh, active: [], counter: 0, done: 0 }; quizState.auto.fresh = [];
+  Object.assign(quizState, { list: [], idx: 0, mode: "learn" }); learnNext();
+}
+async function startAuto() {
+  if (quizState.on && quizState.auto) return;
+  if (quizState.on) endQuiz(" ");
+  setView("palais");
+  const due = await autoDue(), fresh = await nextFresh(prefs.newN);
+  if (!due.length && !fresh.length) { toast("Tout est à jour : aucun mot à réviser ni à découvrir"); return; }
+  Object.assign(quizState, { on: true, list: due, idx: 0, mode: due.length ? "revue" : "learn", stats: { ok: 0, ko: 0 }, auto: { fresh } });
+  markTabs(); quizUI();
+  toast(due.length ? `${due.length} carte(s) à réviser, puis ${fresh.length} nouveau(x) mot(s)` : `Rien à réviser : ${fresh.length} nouveau(x) mot(s)`);
+  if (due.length) ask(due[0]); else beginAutoLearn();
+}
+function markTabs() {
+  const cur = quizState.on && quizState.auto ? "test" : VIEW;
+  document.querySelectorAll("#tabs [data-view]").forEach(b => b.setAttribute("aria-current", b.dataset.view === cur ? "page" : "false"));
+}
+async function updateTestBadge() {
+  if (!R.length) return; const n = (await autoDue()).length, b = $("#testBadge");
+  b.textContent = n > 99 ? "99+" : n; b.hidden = !n; $("#tabs [data-view=test]").setAttribute("aria-label", n ? `Test : ${n} carte(s) à réviser` : "Test");
+}
+
 /* ============ Modes : bibliothèque, palais, carnet de bord ============ */
 let VIEW = "palais";
 const FAML = { noms: "Noms", verbes: "Verbes", adjectifs: "Adjectifs", pronoms: "Pronoms", conjonctions: "Conjonctions", prepositions: "Prépositions", adverbes: "Adverbes", expressions: "Expressions", incises: "Incises" };
@@ -1301,7 +1359,7 @@ function setView(v) {
   if (v !== "palais" && st.mode === "free") leaveFree();
   VIEW = v; document.body.dataset.view = v; ls.set("view", v);
   $("#lib").hidden = v !== "lib"; $("#carnet").hidden = v !== "carnet";
-  document.querySelectorAll("#tabs [data-view]").forEach(b => b.setAttribute("aria-current", b.dataset.view === v ? "page" : "false"));
+  markTabs();
   if (v === "palais") { onResize(); renderRooms(); }
   if (v === "lib") renderLib();
   if (v === "carnet") renderCarnet();
@@ -1379,12 +1437,12 @@ async function renderCarnet() {
     : `<p class="pr" style="margin:0">Pas encore de séance : lance une révision ou apprends tes premiers mots.</p>`;
 }
 function bindViews() {
-  $("#tabs").addEventListener("click", e => { const b = e.target.closest("[data-view]"); if (b) setView(b.dataset.view); });
+  $("#tabs").addEventListener("click", e => { const b = e.target.closest("[data-view]"); if (!b) return; if (b.dataset.view === "test") startAuto(); else setView(b.dataset.view); });
   let qt; $("#libQ").addEventListener("input", () => { clearTimeout(qt); qt = setTimeout(renderLib, 180); });
   $("#libFam").onchange = () => { libTags(); renderLib(); }; $("#libTag").onchange = renderLib; $("#libSt").onchange = renderLib;
   $("#libList").addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("lrow")) openLibRow(e.target); }, true);
   $("#libList").addEventListener("click", e => { const g = e.target.closest("[data-gopal]"); if (!g) return; const [ri, n] = g.dataset.gopal.split(":").map(Number); setView("palais"); goTo(ri, n); setDrawer(true); });
-  $("#cbRevue").onclick = () => { setView("palais"); startQuiz("revue"); };
+  $("#cbRevue").onclick = () => startAuto();
   $("#cbLearn").onclick = () => { setView("palais"); startQuiz("learn"); };
   $("#cbTests").onclick = () => { setView("palais"); $("#testsSheet").hidden = false; renderTests(); };
 }
@@ -1412,7 +1470,7 @@ async function start() {
   pickVoice(); if (window.speechSynthesis) speechSynthesis.onvoiceschanged = pickVoice;
   addEventListener("resize", onResize);
   $("#chargement").hidden = true; measureDrawer();
-  setView(ls.get("view", "palais"));
+  setView(ls.get("view", "palais")); setTimeout(updateTestBadge, 1500);
   requestAnimationFrame(tick);
   initStore();
   window.__pm = { setView, renderLib, renderCarnet, st, goTo, stepN, R, setZoom, enterFree, leaveFree, startQuiz, reveal, onGrade, toggleChain, free, quizState, camera };

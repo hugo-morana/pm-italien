@@ -193,6 +193,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .lrow .ln.rk { width:2.6em; font-size:11px }
 .lroomtag { display:block; font:500 10px var(--mono); color:var(--muted); letter-spacing:.03em; margin-top:1px }
 .lrow .lit { flex:1 1 40%; min-width:0; font:600 17px/1.2 var(--display); color:var(--accent); overflow-wrap:anywhere }
+.lrow .lo { flex:none; font:500 11px var(--mono); color:var(--fg); width:7.5em; text-align:right; font-variant-numeric:tabular-nums }
 .lrow .lz { flex:none; font:500 11px var(--mono); color:var(--muted); width:3.2em; text-align:right; font-variant-numeric:tabular-nums }
 .lrow .say { width:30px; height:30px; font-size:13px }
 .dotb { flex:none; width:10px; height:10px; border-radius:50%; border:1px solid var(--line); background:transparent }
@@ -200,7 +201,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .dotb.due { box-shadow:0 0 0 2px var(--surface), 0 0 0 3.5px var(--accent) }
 .lbody { padding:10px 14px 14px }
 .lbody .btns { margin-top:10px }
-@media (max-width:520px) { .lrow > summary { flex-wrap:wrap; gap:2px 8px } .lrow .lit { flex-basis:100%; order:5; padding-left:calc(1.8em + 26px) } .lrow .ln.rk ~ .lit { padding-left:59px } .lrow .lfr { flex:1 1 0 } }
+@media (max-width:520px) { .lrow > summary { flex-wrap:wrap; gap:2px 8px } .lrow .lit { flex-basis:100%; order:5; padding-left:calc(1.8em + 26px) } .lrow .ln.rk ~ .lit { padding-left:59px } .lrow .lz, .lrow .lo { width:auto } .lrow .lfr { flex:1 1 0 } }
 /* Carnet de bord */
 .kpis { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px }
 .kpi { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:12px 14px; display:flex; flex-direction:column; gap:4px }
@@ -1422,6 +1423,7 @@ function libTags() {
   for (const e of LIB) if (!f || e.fam === f) (e.x.t || []).forEach(t => tags.add(t));
   $("#libTag").innerHTML = `<option value="">toutes les sous-catégories</option>` + [...tags].sort().map(t => `<option ${t === cur ? "selected" : ""}>${esc(t)}</option>`).join("");
 }
+const fineF = x => x.of || (x.zf != null ? Math.pow(10, x.zf - 1) : 0);   // fréquence fine (occ./100 M), à défaut tirée du Zipf
 async function renderLib() {
   libIndex(); if (!$("#libTag").options.length) libTags();
   const q = nrm($("#libQ").value.trim()), f = $("#libFam").value, tg = $("#libTag").value, sf = $("#libSt").value, th = $("#libTh").value;
@@ -1437,11 +1439,11 @@ async function renderLib() {
   $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? " · du plus fréquent au plus rare (Zipf FR parlé)" : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe, dans l'ordre du palais") + " · touche une ligne pour la fiche complète";
   const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
     `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
-    `<span class="lfr">${esc(x.fr)}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span><span class="lz">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span>` +
+    `<span class="lfr">${esc(x.fr)}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span><span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>` +
     `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; };
   if (!rows.length) { $("#libList").innerHTML = `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`; return; }
   if (freq) {   // ordre purement fréquentiel : toutes classes mêlées, par tranches de 250 rangs
-    const sorted = rows.slice().sort((a, b) => (b.x.zf ?? -9) - (a.x.zf ?? -9) || a.ri - b.ri || a.n - b.n), parts = [];
+    const sorted = rows.slice().sort((a, b) => fineF(b.x) - fineF(a.x) || a.ri - b.ri || a.n - b.n), parts = [];
     for (let i = 0; i < sorted.length; i += 250) parts.push(`<section class="lroom"><h2>Rangs ${i + 1} à ${Math.min(i + 250, sorted.length)} <small>Zipf ${(sorted[i].x.zf ?? 0).toFixed(1)} → ${(sorted[Math.min(i + 249, sorted.length - 1)].x.zf ?? 0).toFixed(1)}</small></h2>` + sorted.slice(i, i + 250).map((e, j) => row(e, i + j + 1)).join("") + `</section>`);
     $("#libList").innerHTML = parts.join("");
   } else if (ord === "theme") {   // par thème : un bloc par famille thématique, mots triés par fréquence
@@ -1449,7 +1451,7 @@ async function renderLib() {
     for (const e of rows) { const k = e.x.th || "autres"; if (!by.has(k)) by.set(k, []); by.get(k).push(e); }
     const tot = k => LIB.filter(e => (e.x.th || "autres") === k).length;
     const keys = [...by.keys()].sort((a, b) => (last.indexOf(a) - last.indexOf(b)) || (tot(b) - tot(a)));
-    $("#libList").innerHTML = keys.map(k => { const es = by.get(k).slice().sort((a, b) => (b.x.zf ?? -9) - (a.x.zf ?? -9)), got = es.filter(e => S.has(e.ri + ":" + e.n)).length;
+    $("#libList").innerHTML = keys.map(k => { const es = by.get(k).slice().sort((a, b) => fineF(b.x) - fineF(a.x)), got = es.filter(e => S.has(e.ri + ":" + e.n)).length;
       return `<section class="lroom"><h2>${esc(TH[k] || k)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
   } else {
     const by = new Map(); for (const e of rows) { if (!by.has(e.ri)) by.set(e.ri, []); by.get(e.ri).push(e); }

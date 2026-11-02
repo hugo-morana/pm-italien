@@ -238,7 +238,8 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 <div id="toast" hidden></div>
 
 <script src="config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="offline.js"></script>
 <script>
 "use strict";
 /* ============ Constantes ============ */
@@ -694,11 +695,12 @@ function pickVoice() { const s = window.speechSynthesis; if (!s) return; const a
 /* Sons Anki : paquets mp3 par salle ; « pk:paquet:début:longueur » */
 const asrc = (ref, alt) => ref ? "pk:" + ref.join(":") : (alt || "");
 const PACKS = {}, CLIPS = {};
+const packUrl = u => (navigator.serviceWorker && navigator.serviceWorker.controller) ? u : u.split("?")[0];   // version utile seulement au cache hors-ligne
 async function clipUrl(src) {
   if (!src.startsWith("pk:")) return src;
   if (CLIPS[src]) return CLIPS[src];
   const [, i, off, len] = src.split(":").map(Number);
-  PACKS[i] = PACKS[i] || fetch(DATA.packs[i]).then(r => { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); });
+  PACKS[i] = PACKS[i] || fetch(packUrl(DATA.packs[i])).then(r => { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); });
   const buf = await PACKS[i];
   return CLIPS[src] = URL.createObjectURL(new Blob([buf.slice(off, off + len)], { type: "audio/mpeg" }));
 }

@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Palais d'italien</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&family=Noto+Sans:wght@400&display=swap">
@@ -53586,12 +53587,12 @@ dd b { font:500 11px var(--mono); font-variant-numeric:tabular-nums }
 })();
 (function(){
   var syn = window.speechSynthesis, voix = null, voixFr = null, info = document.getElementById('voix');
-  var PACKS = ["audio/noms.mp3", "audio/verbes.mp3", "audio/adjectifs.mp3", "audio/determinants.mp3", "audio/pronoms.mp3", "audio/conjonctions.mp3", "audio/prepositions.mp3", "audio/adverbes.mp3", "audio/basiques_1.mp3", "audio/basiques_2.mp3", "audio/basiques_3.mp3", "audio/basiques_4.mp3", "audio/basiques_5.mp3", "audio/courantes_1.mp3", "audio/modales_1.mp3", "audio/modales_2.mp3", "audio/modales_3.mp3", "audio/modales_4.mp3", "audio/modales_5.mp3", "audio/incises_1.mp3", "audio/incises_2.mp3", "audio/incises_3.mp3", "audio/incises_4.mp3", "audio/noms_2.mp3", "audio/verbes_2.mp3", "audio/adjectifs_2.mp3", "audio/adverbes_2.mp3", "audio/noms_3.mp3", "audio/verbes_3.mp3", "audio/adjectifs_3.mp3", "audio/adverbes_3.mp3", "audio/prepositions_2.mp3", "audio/conjonctions_2.mp3", "audio/courantes_2.mp3", "audio/noms_4.mp3", "audio/verbes_4.mp3", "audio/adjectifs_4.mp3", "audio/adverbes_4.mp3", "audio/courantes_3.mp3", "audio/courantes_4.mp3", "audio/courantes_5.mp3", "audio/adverbes_5.mp3", "audio/adverbes_6.mp3", "audio/adverbes_7.mp3"], BUF = {}, CLIP = {};
+  var PACKS = ["audio/noms.mp3?v=1e201d64", "audio/verbes.mp3?v=7df6326d", "audio/adjectifs.mp3?v=6647a158", "audio/determinants.mp3?v=04bef6a5", "audio/pronoms.mp3?v=79c1ac23", "audio/conjonctions.mp3?v=cc3e1203", "audio/prepositions.mp3?v=950db543", "audio/adverbes.mp3?v=f78de0ad", "audio/basiques_1.mp3?v=a4c8f725", "audio/basiques_2.mp3?v=d26bd3c1", "audio/basiques_3.mp3?v=97f5083c", "audio/basiques_4.mp3?v=6800bca9", "audio/basiques_5.mp3?v=ac83c49e", "audio/courantes_1.mp3?v=286ab766", "audio/modales_1.mp3?v=cc0fb64f", "audio/modales_2.mp3?v=947fbf5b", "audio/modales_3.mp3?v=b1084e3f", "audio/modales_4.mp3?v=45e7f7cb", "audio/modales_5.mp3?v=91cbc5ff", "audio/incises_1.mp3?v=1437af83", "audio/incises_2.mp3?v=1c7550bb", "audio/incises_3.mp3?v=8a244dfd", "audio/incises_4.mp3?v=1abbab2c", "audio/noms_2.mp3?v=1d2dc5d0", "audio/verbes_2.mp3?v=a032e4c4", "audio/adjectifs_2.mp3?v=01c2d11f", "audio/adverbes_2.mp3?v=6bd10720", "audio/noms_3.mp3?v=1ae082fc", "audio/verbes_3.mp3?v=7d6e0b0e", "audio/adjectifs_3.mp3?v=6d75591b", "audio/adverbes_3.mp3?v=e8fcefa7", "audio/prepositions_2.mp3?v=dd3a0002", "audio/conjonctions_2.mp3?v=71cd1710", "audio/courantes_2.mp3?v=74aabf26", "audio/noms_4.mp3?v=026d02ce", "audio/verbes_4.mp3?v=4ea7a3eb", "audio/adjectifs_4.mp3?v=7bc834e7", "audio/adverbes_4.mp3?v=5b02b13d", "audio/courantes_3.mp3?v=001b4792", "audio/courantes_4.mp3?v=3964ad6d", "audio/courantes_5.mp3?v=fa4a9e33", "audio/adverbes_5.mp3?v=b2a2c958", "audio/adverbes_6.mp3?v=e63b62bf", "audio/adverbes_7.mp3?v=88e4cd2c"], BUF = {}, CLIP = {};
   function clip(src){
     if(src.indexOf('pk:') !== 0) return Promise.resolve(src);
     if(CLIP[src]) return Promise.resolve(CLIP[src]);
     var a = src.split(':').map(Number), i = a[1], off = a[2], len = a[3];
-    BUF[i] = BUF[i] || fetch(PACKS[i]).then(function(r){ if(!r.ok) throw new Error(r.status); return r.arrayBuffer(); });
+    BUF[i] = BUF[i] || fetch((navigator.serviceWorker && navigator.serviceWorker.controller) ? PACKS[i] : PACKS[i].split('?')[0]).then(function(r){ if(!r.ok) throw new Error(r.status); return r.arrayBuffer(); });
     return BUF[i].then(function(b){ return CLIP[src] = URL.createObjectURL(new Blob([b.slice(off, off + len)], {type: 'audio/mpeg'})); });
   }
   function choisir(){

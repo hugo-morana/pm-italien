@@ -316,8 +316,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="btns"><button class="btn" type="button" id="cbRevue">Reprendre mes tests</button><button class="btn alt" type="button" id="cbLearn">Apprendre de nouveaux mots</button><button class="btn alt" type="button" id="cbTests">Réglages des tests</button></div>
   <div class="card">
   <h3 style="margin:0">Courbe de compréhension</h3>
-  <div class="ckey" aria-hidden="true"><span><i style="border-color:var(--s1)"></i>dans l'ordre du palais</span><span><i style="border-color:var(--s2);border-top-style:dashed"></i>par fréquence décroissante</span><span><i style="border-color:var(--s3)"></i>ta progression</span><span id="ckeyExt" hidden><i style="border-color:var(--muted);border-top-style:dotted"></i>au-delà du palais</span></div>
+  <div class="ckey" aria-hidden="true"><span><i style="border-color:var(--s1)"></i><b id="ckey1" style="font-weight:500">dans l'ordre du palais</b></span><span><i style="border-color:var(--s2);border-top-style:dashed"></i>ordre optimal</span><span><i style="border-color:var(--s3)"></i>ta progression</span><span id="ckeyExt" hidden><i style="border-color:var(--muted);border-top-style:dotted"></i>au-delà du palais</span></div>
   <div class="pills" role="group" aria-label="Étendue de la courbe"><button class="pill" type="button" data-cscale="pal" aria-pressed="true">Palais</button><button class="pill" type="button" data-cscale="full" aria-pressed="false">Jusqu'à 100 %</button></div>
+  <div class="pills" role="group" aria-label="Ordre d'apprentissage de la courbe" style="margin-top:6px"><button class="pill" type="button" data-corder="pal" aria-pressed="true">Ordre du palais</button><button class="pill" type="button" data-corder="fr" aria-pressed="false">Fréquence FR</button><button class="pill" type="button" data-corder="it" aria-pressed="false">Fréquence IT</button></div>
   <div class="curvebox"><svg id="curve" viewBox="0 0 640 400" role="img" aria-label="Pourcentage de compréhension selon le nombre de mots appris"></svg><div id="ctip" hidden></div></div>
   <p id="curveTxt"></p>
   </div>
@@ -1091,9 +1092,11 @@ const isWordRoom = r => r.fam !== "expressions" && r.fam !== "incises";
 const counts = (r, x) => (x._cls ? x._cls !== "expressions" && x._cls !== "incises" : isWordRoom(r)) && !x.ax;
 function buildCurves() {
   const pal = [[0, 0]], items = []; let n = 0, c = 0;
-  R.forEach(r => r.niches.forEach(x => { if (!x) return; const v = counts(r, x) ? (x.oi || 0) / 1e6 : 0; n++; c += v; pal.push([n, c]); items.push(v); }));
+  const all = [];
+  R.forEach(r => r.niches.forEach(x => { if (!x) return; const v = counts(r, x) ? (x.oi || 0) / 1e6 : 0; n++; c += v; pal.push([n, c]); items.push(v); all.push({ x, v }); }));
   items.sort((a, b) => b - a); const fq = [[0, 0]]; let f = 0; items.forEach((v, i) => { f += v; fq.push([i + 1, f]); });
-  CURVES = { pal, fq, total: n, max: c, words: R.reduce((a, r) => a + r.niches.filter(x => x && counts(r, x)).length, 0) };
+  const byLg = lg => { const fn = fineBy(lg), out = [[0, 0]]; let k = 0, t = 0; all.slice().sort((a, b) => fn(b.x) - fn(a.x)).forEach(e => { t += e.v; out.push([++k, t]); }); return out; };
+  CURVES = { pal, fq, ord: { pal, fr: byLg("fr"), it: byLg("it") }, total: n, max: c, words: R.reduce((a, r) => a + r.niches.filter(x => x && counts(r, x)).length, 0) };
 }
 async function learnedStats() {
   let n = 0, c = 0;
@@ -1117,7 +1120,9 @@ async function loadHist() {
 }
 async function renderCurve() {
   if (!CURVES) buildCurves();
-  const full = !!prefs.curveFull, ext = (DATA.ext || []), N0 = CURVES.total, P0 = CURVES.max;
+  const full = !!prefs.curveFull, ext = (DATA.ext || []), N0 = CURVES.total, P0 = CURVES.max, ord = prefs.curveOrder || "pal", C1 = CURVES.ord[ord] || CURVES.pal;
+  document.querySelectorAll("[data-corder]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.corder === ord)));
+  $("#ckey1").textContent = ord === "fr" ? "par fréquence française" : ord === "it" ? "par fréquence italienne" : "dans l'ordre du palais";
   document.querySelectorAll("[data-cscale]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.cscale === "full") === full)));
   $("#ckeyExt").hidden = !full;
   const me = await updateHist(), svg = $("#curve"), Wd = svg.parentElement.clientWidth < 520 ? 400 : 640, Hd = 400, L = 44, Rm = 18, T = 14, B = 52;
@@ -1140,14 +1145,14 @@ async function renderCurve() {
     for (let n = 0; n <= N0; n += 100) { const x = X(n); g += `<line class="axis" x1="${x}" x2="${x}" y1="${y0}" y2="${y0 + (n % 500 ? 3 : 6)}"/><text x="${x}" y="${y0 + 10}" text-anchor="end" transform="rotate(-60 ${x} ${y0 + 10})" style="font-size:${Wd < 500 ? 7 : 8.5}px">${n}</text>`; }
   }
   g += `<line class="axis" x1="${L}" x2="${Wd - Rm}" y1="${y0}" y2="${y0}"/><text x="${(L + Wd - Rm) / 2}" y="${Hd - 3}" text-anchor="middle">mots et expressions appris${full ? " (échelle logarithmique)" : ""}</text>`;
-  g += `<path class="s2" d="${path(CURVES.fq, 4)}"/><path class="s1" d="${path(CURVES.pal, 4)}"/>`;
+  g += `<path class="s2" d="${path(CURVES.fq, 4)}"/><path class="s1" d="${path(C1, 4)}"/>`;
   if (full && extPts.length) {
     g += `<path class="s4" d="${path([[N0, P0], ...extPts], 1)}"/>`;
     let ly = Y(60); g += `<text class="lab" x="${Wd - Rm - 4}" y="${ly}" text-anchor="end">au-delà du palais :</text>`;
     for (const q of [90, 95, 99]) { const p = extPts.find(z => z[1] >= q); if (!p) continue; ly += 15;
       g += `<circle class="mk" cx="${X(p[0])}" cy="${Y(q)}" r="3.5"/><text x="${Wd - Rm - 4}" y="${ly}" text-anchor="end" style="font-size:10px">● ${q} % vers ${(Math.round(p[0] / 1000) * 1000).toLocaleString("fr-FR")} mots</text>`; }
   } else {
-    const end = CURVES.pal[CURVES.pal.length - 1];
+    const end = C1[C1.length - 1];
     g += `<text class="lab" x="${X(end[0]) - 4}" y="${Y(end[1]) - 8}" text-anchor="end">${end[1].toFixed(0)} % · ${end[0]} niches</text>`;
   }
   if (HIST.length > 1) g += `<polyline class="s3" points="${HIST.filter(p => !full || p.n >= 1).map(p => X(p.n).toFixed(1) + "," + Y(p.c).toFixed(1)).join(" ")}"/>`;
@@ -1155,17 +1160,17 @@ async function renderCurve() {
   g += `<circle class="dot" cx="${X(Math.max(full ? 1 : 0, me.n))}" cy="${Y(me.c)}" r="6"/><text class="lab" x="${X(Math.max(full ? 1 : 0, me.n)) + 10}" y="${Y(me.c) - 8}">toi · ${me.n} · ${me.c.toFixed(1)} %</text>`;
   g += `<line class="xh" id="xh" y1="${T}" y2="${y0}" x1="-10" x2="-10"/>`;
   svg.innerHTML = g;
-  const nextWords = CURVES.pal.find(p => p[0] > me.n && p[1] > me.c + 5), p95 = extPts.find(z => z[1] >= 95);
-  $("#curveTxt").textContent = `Tu as appris ${me.n} mot(s) ou expression(s) (au moins une réussite) : ils couvrent environ ${me.c.toFixed(1)} % des mots entendus dans une conversation en italien. Les ${N0.toLocaleString("fr-FR")} niches du palais en couvrent ${P0.toFixed(0)} % ; les expressions et locutions n'ajoutent pas de pourcentage, car leurs mots sont déjà comptés, mais elles aident à comprendre les tournures.` + (nextWords ? ` En suivant l'ordre du palais, +5 % arrivent vers ${nextWords[0]} niches.` : "") +
+  const nextWords = C1.find(p => p[0] > me.n && p[1] > me.c + 5), p95 = extPts.find(z => z[1] >= 95);
+  $("#curveTxt").textContent = `Tu as appris ${me.n} mot(s) ou expression(s) (au moins une réussite) : ils couvrent environ ${me.c.toFixed(1)} % des mots entendus dans une conversation en italien. Les ${N0.toLocaleString("fr-FR")} niches du palais en couvrent ${P0.toFixed(0)} % ; les expressions et locutions n'ajoutent pas de pourcentage, car leurs mots sont déjà comptés, mais elles aident à comprendre les tournures.` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence italienne" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") +
     (full ? ` Au-delà du palais, la courbe pointillée prolonge avec les mots suivants de l'italien parlé (sous-titres de films), par fréquence : ${p95 ? `95 % vers ${Math.round(p95[0] / 1000)} 000 mots ; ` : ""}les derniers pour cent sont surtout des noms propres et des mots très rares.` : "");
   const valAt = (pts, n) => { if (n <= 0) return 0; let lo = 0, hi = pts.length - 1; if (n >= pts[hi][0]) return pts[hi][1]; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (pts[m][0] <= n) lo = m; else hi = m; } return pts[lo][1]; };
   const tip = $("#ctip");
   svg.onpointermove = e => {
     const b = svg.getBoundingClientRect(), vx = (e.clientX - b.left) / b.width * Wd; if (vx < L || vx > Wd - Rm) { tip.hidden = true; return; }
     const t = (vx - L) / (Wd - L - Rm), n = Math.max(full ? 1 : 0, Math.round(full ? 10 ** (t * lx(NMAX)) : t * N0));
-    const pa = n <= N0 ? CURVES.pal[n][1] : valAt(extPts, n), fq = n <= N0 ? CURVES.fq[n][1] : pa;
+    const pa = n <= N0 ? C1[n][1] : valAt(extPts, n), fq = n <= N0 ? CURVES.fq[n][1] : pa;
     $("#xh").setAttribute("x1", X(n)); $("#xh").setAttribute("x2", X(n));
-    tip.hidden = false; tip.textContent = n <= N0 ? `${n.toLocaleString("fr-FR")} appris · palais ${pa.toFixed(1)} % · fréquence ${fq.toFixed(1)} %` : `${n.toLocaleString("fr-FR")} mots · ≈ ${pa.toFixed(1)} % (au-delà du palais)`;
+    tip.hidden = false; tip.textContent = n <= N0 ? `${n.toLocaleString("fr-FR")} appris · ${ord === "pal" ? "palais" : ord === "fr" ? "fréq. FR" : "fréq. IT"} ${pa.toFixed(1)} % · optimal ${fq.toFixed(1)} %` : `${n.toLocaleString("fr-FR")} mots · ≈ ${pa.toFixed(1)} % (au-delà du palais)`;
     const half = tip.offsetWidth / 2; tip.style.left = Math.max(half, Math.min(b.width - half, X(n) / Wd * b.width)) + "px"; tip.style.top = (Y(pa) / Hd * b.height) + "px";
   };
   svg.onpointerleave = () => { tip.hidden = true; $("#xh").setAttribute("x1", -10); $("#xh").setAttribute("x2", -10); };
@@ -1527,7 +1532,7 @@ async function renderCarnet() {
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const o = tm.get(x.th || "autres") || tm.get("autres"); if (!o) return; o.tot++; if (S.has(ri + ":" + n)) o.got++; }));
   const last = ["grammaire", "formules", "autres"], ths = [...tm].filter(([, o]) => o.tot).sort((a, b) => (last.indexOf(a[0]) - last.indexOf(b[0])) || (b[1].tot - a[1].tot));
   $("#cbTh").innerHTML = ths.map(([k, o]) => `<span>${esc(TH[k] || k)}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.got} / ${o.tot} · ${o.tot ? Math.round(o.got / o.tot * 100) : 0} %</span>`).join("");
-  const FB = freqBands(), fb = FBANDS.map(() => ({ tot: 0, got: 0 }));
+  const FB = freqBands((prefs.curveOrder || "pal") === "it" || ((prefs.curveOrder || "pal") === "pal" && PAL === "freqit") ? "it" : "fr"), fb = FBANDS.map(() => ({ tot: 0, got: 0 }));
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const o = fb[FB.get(ri + ":" + n)]; o.tot++; if (S.has(ri + ":" + n)) o.got++; }));
   $("#cbFq").innerHTML = fb.map((o, i) => (o.tot || FBANDS[i] <= 90) ? `<span>${i === 0 ? "0 → 50 %" : `${FBANDS[i - 1]} → ${FBANDS[i]} %`}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.tot ? `${o.got} / ${o.tot} · ${Math.round(o.got / o.tot * 100)} %` : "hors du palais"}</span>` : "").join("");
   const bx = [0, 0, 0, 0, 0, 0]; for (const o of S.values()) bx[o.b]++; bx[0] = LIB ? LIB.length - S.size : CURVES.total - S.size;
@@ -1550,6 +1555,7 @@ function bindViews() {
   $("#libList").addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("lrow")) openLibRow(e.target); }, true);
   $("#libList").addEventListener("click", e => { const g = e.target.closest("[data-gopal]"); if (!g) return; const [ri, n] = g.dataset.gopal.split(":").map(Number); setView("palais"); goTo(ri, n); setDrawer(true); });
   $("#cbRevue").onclick = () => startAuto();
+  document.addEventListener("click", e => { const b = e.target.closest("[data-corder]"); if (!b) return; prefs.curveOrder = b.dataset.corder; savePrefs(); renderCarnet(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-cscale]"); if (!b) return; prefs.curveFull = b.dataset.cscale === "full"; savePrefs(); renderCurve(); });
   $("#cbLearn").onclick = () => { setView("palais"); startQuiz("learn"); };
   $("#cbTests").onclick = () => { setView("palais"); $("#testsSheet").hidden = false; renderTests(); };

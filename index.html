@@ -64,6 +64,9 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 .big-it { display:flex; align-items:center; gap:10px; font:600 32px/1.05 var(--display); color:var(--accent); letter-spacing:.02em }
 .say { width:36px; height:36px; flex:none; border-radius:50%; border:1px solid var(--line); background:var(--bg); font-size:16px; line-height:1 }
 .say.on { border-color:var(--accent) }
+.say.sm { width:26px; height:26px; font-size:12px; margin-right:6px; vertical-align:middle }
+.frw { display:flex; align-items:center; gap:4px; margin:-2px 0 4px; color:var(--muted); font-size:15px }
+.frw .lg { font:500 10px var(--mono); letter-spacing:.08em; border:1px solid var(--line); border-radius:4px; padding:1px 4px; margin-left:6px }
 .phon { display:flex; gap:12px; align-items:baseline; flex-wrap:wrap; margin-left:46px }
 .ipa { font:400 17px/1.3 "Noto Sans", "Gentium Plus", "Lucida Sans Unicode", system-ui, sans-serif }
 .pr { font:500 11px var(--mono); color:var(--muted); letter-spacing:.05em }
@@ -663,10 +666,11 @@ function renderFiche() {
   if (q) { $("#dbody").innerHTML = ""; return; }
   const [nr, nn] = stepN(1), nx = R[nr].niches[nn], [pr, pn] = stepN(-1), px = R[pr].niches[pn];
   $("#dbody").innerHTML = `<div class="fiche">
-    <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(x.am || "")}" aria-label="Écouter le mot">🔊</button><span>${esc(x.it)}</span></div>
+    <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter le mot">🔊</button><span>${esc(x.it)}</span></div>
+    <div class="frw"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.fr)}" data-src="${esc(asrc(x.af))}" aria-label="Écouter le mot en français">🔊</button><span>${esc(x.fr)}</span><span class="lg">FR</span></div>
     <div class="phon"><span class="ipa" lang="it-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
-    <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(x.ap || "")}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr">${mark(x.efr, x.efm)}</p></div></div>
-    ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr">${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
+    <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(x.ap || "")}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.efr)}" aria-label="Écouter la phrase en français">🔊</button>${mark(x.efr, x.efm)}</p></div></div>
+    ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" data-src="${esc(asrc(e[3]))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(e[0])}" data-src="${esc(asrc(e[2]))}" aria-label="Écouter la phrase en français">🔊</button>${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
     <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Zipf parlé</span><span>rang ${x.rk} · occ./100 M</span></span>${zipfBar("FR", x.zf, x.of, x.ax)}${zipfBar("IT", x.zi, x.oi, x.ax)}</div>
     <dl>
       <div><dt>Mot-clé</dt><dd><em>${esc(x.mc)}</em></dd></div>
@@ -685,12 +689,28 @@ function applyOffset() { if (!camera) return; const wide = innerWidth >= 900 && 
 
 /* ============ Audio ============ */
 let voice = null;
-function pickVoice() { const s = window.speechSynthesis; if (!s) return; const vs = s.getVoices().filter(v => /^it/i.test(v.lang)); voice = vs.find(v => /it-IT/i.test(v.lang) && v.localService) || vs[0] || null; document.body.classList.toggle("novoice", !voice); }
-function speak(text, src, btn) {
+let voiceFr = null;
+function pickVoice() { const s = window.speechSynthesis; if (!s) return; const all = s.getVoices(), vs = all.filter(v => /^it/i.test(v.lang)), vf = all.filter(v => /^fr/i.test(v.lang)); voice = vs.find(v => /it-IT/i.test(v.lang) && v.localService) || vs[0] || null; voiceFr = vf.find(v => /fr-FR/i.test(v.lang) && v.localService) || vf[0] || null; document.body.classList.toggle("novoice", !voice); }
+/* Sons Anki : paquets mp3 par salle ; « pk:paquet:début:longueur » */
+const asrc = (ref, alt) => ref ? "pk:" + ref.join(":") : (alt || "");
+const PACKS = {}, CLIPS = {};
+async function clipUrl(src) {
+  if (!src.startsWith("pk:")) return src;
+  if (CLIPS[src]) return CLIPS[src];
+  const [, i, off, len] = src.split(":").map(Number);
+  PACKS[i] = PACKS[i] || fetch(DATA.packs[i]).then(r => { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); });
+  const buf = await PACKS[i];
+  return CLIPS[src] = URL.createObjectURL(new Blob([buf.slice(off, off + len)], { type: "audio/mpeg" }));
+}
+function speak(text, src, btn, lang = "it") {
   if (btn) btn.classList.add("on"); const done = () => btn && btn.classList.remove("on");
-  if (src) { const a = new Audio(src); a.onended = done; a.play().catch(done); return; }
-  const s = window.speechSynthesis; if (!s || !voice) { done(); toast("Aucune voix italienne sur cet appareil"); return; }
-  s.cancel(); const u = new SpeechSynthesisUtterance(text.replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = "it-IT"; u.voice = voice; u.rate = .9; u.onend = u.onerror = done; s.speak(u);
+  const tts = () => {
+    const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice;
+    if (!s || !v) { done(); toast(lang === "fr" ? "Aucune voix française sur cet appareil" : "Aucune voix italienne sur cet appareil"); return; }
+    s.cancel(); const u = new SpeechSynthesisUtterance(text.replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u);
+  };
+  if (src) { clipUrl(src).then(u => { const a = new Audio(u); a.onended = done; return a.play(); }).catch(() => tts()); return; }
+  tts();
 }
 
 /* ============ Persistance : préférences (navigateur) + répétition espacée (db par utilisateur) ============ */
@@ -868,7 +888,7 @@ function present(a) {
   $("#quiz").innerHTML = `<div class="qh"><span>NOUVEAU · ${esc(shortName(R[a.ri]))} ${String(a.n).padStart(2, "0")}</span><span class="spacer"></span><button class="chip" type="button" data-quit>Quitter le test</button></div>
     <div class="qa"><span class="it">${esc(x.it)}</span><span>${esc(x.fr)} · <span class="pr">${esc(x.pr)}</span></span><span class="exfr">${esc(x.sc)}</span>${p ? `<span class="pr">⟵ ${esc(p.li)}</span>` : ""}</div>
     <div class="btns"><button class="btn" type="button" data-say-q>🔊 Écouter</button><button class="btn alt" type="button" data-next>J'ai mémorisé</button></div>`;
-  speak(x.it, x.am);
+  speak(x.it, asrc(x.ai, x.am));
 }
 function ask(q) {
   if (!q) return endQuiz();
@@ -889,7 +909,7 @@ function ask(q) {
     ${q.ty === "aud" ? `<div class="btns"><button class="btn" type="button" data-say-q>🔊 Réécouter</button></div>` : ""}
     ${input ? `<input id="rep" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Ta réponse (facultatif)">` : ""}
     <div class="btns"><button class="btn" type="button" data-reveal>Révéler</button></div>`;
-  if (q.ty === "aud") speak(x.it, x.am);
+  if (q.ty === "aud") speak(x.it, asrc(x.ai, x.am));
   renderFiche();
 }
 function reveal() {
@@ -1122,7 +1142,7 @@ function bindUI() {
     if (t.closest("[data-close]")) return closeSheets();
     if (t.classList.contains("sheet")) return closeSheets();
     const g = t.closest("[data-goroom]"); if (g) { closeSheets(); if (st.mode === "free") leaveFree(); const ri = +g.dataset.goroom; return goTo(ri, filled(ri)[0]); }
-    const say = t.closest(".say"); if (say) return speak(say.dataset.say, say.dataset.src, say);
+    const say = t.closest(".say"); if (say) return speak(say.dataset.say, say.dataset.src, say, say.dataset.lang || "it");
     if (t.closest("[data-type]")) { const k = t.closest("[data-type]").dataset.type; prefs.types = prefs.types.includes(k) ? prefs.types.filter(x => x !== k) : [...prefs.types, k]; savePrefs(); return renderTests(); }
     if (t.closest("[data-room]")) { const k = +t.closest("[data-room]").dataset.room; prefs.rooms = prefs.rooms.includes(k) ? prefs.rooms.filter(x => x !== k) : [...prefs.rooms, k]; savePrefs(); return renderTests(); }
     if (t.closest("[data-dec]")) { const k = +t.closest("[data-dec]").dataset.dec; prefs.decs = prefs.decs.includes(k) ? prefs.decs.filter(x => x !== k) : [...prefs.decs, k]; savePrefs(); return renderTests(); }
@@ -1130,7 +1150,7 @@ function bindUI() {
     if (t.closest("[data-reveal]")) return reveal();
     if (t.closest("[data-grade]")) return onGrade(t.closest("[data-grade]").dataset.grade === "1");
     if (t.closest("[data-next]")) return learnNext();
-    if (t.closest("[data-say-q]")) { const q = quizState.q, x = q.target && quizState.revealed ? R[q.target.r].niches[q.target.n] : R[q.ri].niches[q.n]; return speak(x.it, x.am); }
+    if (t.closest("[data-say-q]")) { const q = quizState.q, x = q.target && quizState.revealed ? R[q.target.r].niches[q.target.n] : R[q.ri].niches[q.n]; return speak(x.it, asrc(x.ai, x.am)); }
     if (t.closest("[data-zoomq]")) return setZoom((st.zoom + 1) % 3);
   });
   $("#quiz").addEventListener("keydown", e => { if (e.key === "Enter" && !quizState.revealed) reveal(); });

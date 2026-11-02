@@ -158,7 +158,7 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 .hidden-ui #top, .hidden-ui #drawer { display:none }
 .hidden-ui #nav, .hidden-ui #eye { bottom:calc(var(--tb) + 16px) }
 /* Bandeau des modes (bas d'écran) */
-#tabs { position:fixed; z-index:16; left:0; right:0; bottom:0; height:var(--tb); padding:0 max(8px, env(safe-area-inset-right,0px)) var(--sab) max(8px, env(safe-area-inset-left,0px));
+#tabs { position:fixed; z-index:16; left:0; right:0; bottom:0; height:var(--tb); box-sizing:border-box; padding:0 max(8px, env(safe-area-inset-right,0px)) var(--sab) max(8px, env(safe-area-inset-left,0px));
   display:flex; justify-content:center; gap:4px; background:var(--surface); border-top:1px solid var(--line); box-shadow:0 -4px 18px rgba(40,25,15,.10) }
 #tabs button { flex:1; max-width:180px; border:0; background:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:var(--muted); font:500 11px var(--mono); letter-spacing:.06em; text-transform:uppercase; border-radius:10px; margin:5px 0 }
 #tabs button svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round }

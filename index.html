@@ -319,7 +319,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <p id="curveTxt"></p>
   </div>
   <div class="card"><h3 style="margin:0">Mots appris par classe</h3><div class="cls" id="cbCls"></div></div>
-  <div class="card"><h3 style="margin:0">Mots appris par famille de fréquence</h3><div class="cls" id="cbFq"></div><p class="pr" style="margin:0">Tous les mots du palais rangés du plus fréquent au plus rare : la première famille réunit ceux qui suffisent à comprendre 10 % des mots d'une conversation, la suivante ceux qui mènent à 20 %, et ainsi de suite. Les familles au-delà de ~78 % sont hors du palais (voir la courbe « Jusqu'à 100 % »).</p></div>
+  <div class="card"><h3 style="margin:0">Mots appris par famille de fréquence</h3><div class="cls" id="cbFq"></div><p class="pr" style="margin:0">Tous les mots du palais rangés du plus fréquent au plus rare : la première famille réunit ceux qui suffisent à comprendre la moitié des mots d'une conversation, la suivante ceux qui mènent à 60 %, et ainsi de suite. Les familles au-delà de ~78 % sont hors du palais (voir la courbe « Jusqu'à 100 % »).</p></div>
   <div class="card"><h3 style="margin:0">Mots appris par thème</h3><div class="cls" id="cbTh"></div><p class="pr" style="margin:0">Chaque mot ou expression compte dans un seul thème. Les « notions générales » regroupent les mots abstraits sans thème concret (la fois, le besoin, la façon…).</p></div>
   <div class="card"><h3 style="margin:0">Boîtes de révision</h3><div class="boxes" id="cbBoxes"></div><p class="pr" style="margin:0">Chaque réussite fait monter un mot d'une boîte : il revient 1, 2, 4, 8 puis 16 jours plus tard. Un échec le renvoie en boîte 1.</p></div>
   <div class="card"><h3 style="margin:0">Historique</h3><div id="cbHist"></div></div>
@@ -1427,8 +1427,8 @@ function libTags() {
 const fineF = x => x.of || (x.zf != null ? Math.pow(10, x.zf - 1) : 0);   // fréquence fine (occ./100 M), à défaut tirée du Zipf
 /* Familles de fréquence : on range tous les mots du plus fréquent au plus rare et on cumule la compréhension qu'ils apportent ;
    la famille d'un mot = la tranche de compréhension (0-10 %, 10-20 %…) qu'on atteint en l'apprenant dans cet ordre. */
-const FBANDS = [10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100];
-const bandLabel = i => i === 0 ? "Jusqu'à 10 % de compréhension" : `De ${FBANDS[i - 1]} à ${FBANDS[i]} % de compréhension`;
+const FBANDS = [50, 60, 70, 75, 80, 90, 100];
+const bandLabel = i => i === 0 ? "De 0 à 50 % de compréhension" : `De ${FBANDS[i - 1]} à ${FBANDS[i]} % de compréhension`;
 let FBAND = null;
 function freqBands() {
   if (FBAND) return FBAND;
@@ -1502,7 +1502,7 @@ async function renderCarnet() {
   $("#cbTh").innerHTML = ths.map(([k, o]) => `<span>${esc(TH[k] || k)}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.got} / ${o.tot} · ${o.tot ? Math.round(o.got / o.tot * 100) : 0} %</span>`).join("");
   const FB = freqBands(), fb = FBANDS.map(() => ({ tot: 0, got: 0 }));
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const o = fb[FB.get(ri + ":" + n)]; o.tot++; if (S.has(ri + ":" + n)) o.got++; }));
-  $("#cbFq").innerHTML = fb.map((o, i) => (o.tot || FBANDS[i] <= 90) ? `<span>${i === 0 ? "≤ 10 %" : `${FBANDS[i - 1]} → ${FBANDS[i]} %`}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.tot ? `${o.got} / ${o.tot} · ${Math.round(o.got / o.tot * 100)} %` : "hors du palais"}</span>` : "").join("");
+  $("#cbFq").innerHTML = fb.map((o, i) => (o.tot || FBANDS[i] <= 90) ? `<span>${i === 0 ? "0 → 50 %" : `${FBANDS[i - 1]} → ${FBANDS[i]} %`}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.tot ? `${o.got} / ${o.tot} · ${Math.round(o.got / o.tot * 100)} %` : "hors du palais"}</span>` : "").join("");
   const bx = [0, 0, 0, 0, 0, 0]; for (const o of S.values()) bx[o.b]++; bx[0] = LIB ? LIB.length - S.size : CURVES.total - S.size;
   const BC = ["var(--bg)", "#e6b9a5", "#e0cf8f", "#b7d39a", "#86c08f", "#4f9c63"];
   $("#cbBoxes").innerHTML = bx.map((v, i) => `<div style="background:${BC[i]};${i === 5 ? "color:#fff" : i ? "color:#2a211d" : ""}"><b>${v}</b>${i ? "boîte " + i : "jamais vus"}</div>`).join("");

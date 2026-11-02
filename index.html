@@ -285,7 +285,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 <div class="sheet" id="planSheet" hidden><div>
   <div class="shead"><h2>Plan du palais</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
   <h3>Version du palais</h3>
-  <div class="pills" role="group" aria-label="Version du palais"><button class="pill" type="button" data-palais="classe">Par classe</button><button class="pill" type="button" data-palais="freq">Par fréquence</button><button class="pill" type="button" data-palais="theme">Par thème</button></div>
+  <div class="pills" role="group" aria-label="Version du palais"><button class="pill" type="button" data-palais="classe">Par classe</button><button class="pill" type="button" data-palais="freq">Par fréquence FR</button><button class="pill" type="button" data-palais="freqit">Par fréquence IT</button><button class="pill" type="button" data-palais="theme">Par thème</button></div>
   <p id="palTxt" style="margin:0;font:500 11px var(--mono);color:var(--muted);letter-spacing:.05em"></p>
   <svg id="planSvg" role="img" aria-label="Plan des deux étages"></svg>
   <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms et longe les salles de mots. Chaque classe forme une tour d'étages desservie par l'escalier, du mot le plus fréquent (rez-de-chaussée) au moins fréquent (dernier étage). La boucle revient par la rangée d'en face (expressions basiques, courantes, modales, incises), monte ensuite étage par étage, puis redescend aux noms.</p>
@@ -304,7 +304,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <select id="libTag" aria-label="Sous-catégorie"></select>
     <select id="libTh" aria-label="Thème"></select>
     <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
-    <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Par fréquence</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button><button class="pill" type="button" data-liborder="theme" aria-pressed="false">Par thème</button></div>
+    <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Fréquence FR</button><button class="pill" type="button" data-liborder="freqit" aria-pressed="false">Fréquence IT</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button><button class="pill" type="button" data-liborder="theme" aria-pressed="false">Par thème</button></div>
     <span id="libInfo"></span>
   </div>
   <div id="libList"></div>
@@ -785,7 +785,7 @@ function ficheHTML(ri, n) {
       <div><dt>Décryptage</dt><dd class="exfr">${esc(x.de)}</dd></div>
       ${x.fo ? `<div><dt>Formes</dt><dd class="exfr">${esc(x.fo)}</dd></div>` : ""}
       ${x.t && x.t.length ? `<div><dt>Étiquettes</dt><dd class="tags">${x.t.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</dd></div>` : ""}
-      ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
+      ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence en français" : PAL === "freqit" ? "par fréquence en italien" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
     </dl>
     ${px ? `<details class="prev"><summary>⟵ depuis ${String(pn).padStart(2, "0")} · ${esc(px.it)}</summary><p class="exfr" style="margin:6px 0 0">${esc(px.li)}</p></details>` : ""}
   </div>`;
@@ -824,7 +824,7 @@ function speak(text, src, btn, lang = "it") {
 /* ============ Persistance : préférences (navigateur) + répétition espacée (db par utilisateur) ============ */
 /* Trois palais sur les mêmes niches : par classe (le palais d'origine), par fréquence, par thème. La progression est commune :
    elle reste rangée sous les salles du palais par classe (salles « canoniques »). */
-const PAL = ["classe", "freq", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
+const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
 const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
@@ -1449,18 +1449,21 @@ function libTags() {
   $("#libTag").innerHTML = `<option value="">toutes les sous-catégories</option>` + [...tags].sort().map(t => `<option ${t === cur ? "selected" : ""}>${esc(t)}</option>`).join("");
 }
 const fineF = x => x.of || (x.zf != null ? Math.pow(10, x.zf - 1) : 0);   // fréquence fine (occ./100 M), à défaut tirée du Zipf
+const fineI = x => x.oi || (x.zi != null ? Math.pow(10, x.zi - 1) : 0);   // idem, italien parlé
+const fineBy = lg => lg === "it" ? fineI : fineF;
 /* Familles de fréquence : on range tous les mots du plus fréquent au plus rare et on cumule la compréhension qu'ils apportent ;
    la famille d'un mot = la tranche de compréhension (0-10 %, 10-20 %…) qu'on atteint en l'apprenant dans cet ordre. */
 const FBANDS = [50, 60, 70, 75, 80, 90, 100];
 const bandLabel = i => i === 0 ? "De 0 à 50 % de compréhension" : `De ${FBANDS[i - 1]} à ${FBANDS[i]} % de compréhension`;
-let FBAND = null;
-function freqBands() {
-  if (FBAND) return FBAND;
+const FBAND = {};
+function freqBands(lg = "fr") {
+  if (FBAND[lg]) return FBAND[lg];
+  const fineF = fineBy(lg);
   const all = []; R.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) all.push({ r, ri, n, x }); }));
   all.sort((a, b) => fineF(b.x) - fineF(a.x) || a.ri - b.ri || a.n - b.n);
-  FBAND = new Map(); let c = 0;
-  for (const e of all) { let i = FBANDS.findIndex(t => c < t); if (i < 0) i = FBANDS.length - 1; FBAND.set(e.ri + ":" + e.n, i); if (counts(e.r, e.x)) c += (e.x.oi || 0) / 1e6; }
-  return FBAND;
+  const M = FBAND[lg] = new Map(); let c = 0;
+  for (const e of all) { let i = FBANDS.findIndex(t => c < t); if (i < 0) i = FBANDS.length - 1; M.set(e.ri + ":" + e.n, i); if (counts(e.r, e.x)) c += (e.x.oi || 0) / 1e6; }
+  return M;
 }
 async function renderLib() {
   libIndex(); if (!$("#libTag").options.length) libTags();
@@ -1471,18 +1474,18 @@ async function renderLib() {
     if (sf) { const o = S.get(e.ri + ":" + e.n); if (sf === "new" && o) return false; if (sf === "seen" && !o) return false; if (sf === "due" && !(o && o.due)) return false; if (sf === "weak" && !(o && o.b <= 2)) return false; }
     return true;
   });
-  const ord = prefs.libOrder || "freq", freq = ord === "freq";
+  const ord = prefs.libOrder || "freq", freq = ord === "freq" || ord === "freqit", lg = ord === "freqit" ? "it" : "fr", fineF = fineBy(lg);
   document.querySelectorAll("[data-liborder]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.liborder === ord)));
   $("#libCount").textContent = `${LIB.length} mots et expressions · ${S.size} appris`;
-  $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? " · du plus fréquent au plus rare (Zipf FR parlé)" : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe, dans l'ordre du palais") + " · touche une ligne pour la fiche complète";
+  $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? ` · du plus fréquent au plus rare (${lg === "it" ? "italien" : "français"} parlé)` : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe, dans l'ordre du palais") + " · touche une ligne pour la fiche complète";
   const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
     `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
-    `<span class="lfr">${esc(x.fr)}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span><span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>` +
+    `<span class="lfr">${esc(x.fr)}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span>${lg === "it" ? `<span class="lz" title="Zipf parlé italien (score grossier)">${x.zi != null ? (x.ax ? "≈" : "") + x.zi.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
     `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; };
   if (!rows.length) { $("#libList").innerHTML = `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`; return; }
   if (freq) {   // ordre purement fréquentiel : toutes classes mêlées, par tranches de 250 rangs
     const sorted = rows.slice().sort((a, b) => fineF(b.x) - fineF(a.x) || a.ri - b.ri || a.n - b.n), parts = [];
-    const FB = freqBands(); let cur = -1, buf = [];
+    const FB = freqBands(lg); let cur = -1, buf = [];
     const flush = () => { if (!buf.length) return; const got = buf.filter(([e]) => S.has(e.ri + ":" + e.n)).length;
       parts.push(`<section class="lroom"><h2>${bandLabel(cur)} <small>${buf.length} mots · ${got} appris · rangs ${buf[0][1]} à ${buf[buf.length - 1][1]}</small></h2>` + buf.map(([e, k]) => row(e, k)).join("") + `</section>`); buf = []; };
     sorted.forEach((e, j) => { const b = FB.get(e.ri + ":" + e.n); if (b !== cur) { flush(); cur = b; } buf.push([e, j + 1]); }); flush();
@@ -1558,10 +1561,10 @@ const CR = () => CANON || R;
 function buildVirtual(kind) {
   const all = [];
   CANON.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) all.push({ x, ri, n, cls: famOf(r), fam: r.fam }); }));
-  const ff = e => e.x.of || (e.x.zf != null ? Math.pow(10, e.x.zf - 1) : 0);
+  const isF = kind === "freq" || kind === "freqit", fb = fineBy(kind === "freqit" ? "it" : "fr"), ff = e => fb(e.x);
   all.sort((a, b) => ff(b) - ff(a) || a.ri - b.ri || a.n - b.n);
   const groups = [];
-  if (kind === "freq") {   // une famille de fréquence (0-50 %, 50-60 %…) par groupe d'étages
+  if (isF) {   // une famille de fréquence (0-50 %, 50-60 %…) par groupe d'étages
     let c = 0, cur = null;
     for (const e of all) {
       let i = FBANDS.findIndex(t => c < t); if (i < 0) i = FBANDS.length - 1;
@@ -1573,15 +1576,15 @@ function buildVirtual(kind) {
     for (const e of all) { const k = e.x.th || "autres"; if (!by.has(k)) by.set(k, []); by.get(k).push(e); }
     [...by.keys()].sort((a, b) => (last.indexOf(a) - last.indexOf(b)) || (by.get(b).length - by.get(a).length)).forEach(k => groups.push({ key: k, fr: TH[k] || k, it: TH[k] || k, items: by.get(k) })); }
   const rooms = []; let rank = 0, fl = 0, j = 0;
-  for (const g of groups) { if (kind === "freq" && j) { fl++; j = 0; }   // chaque famille de fréquence commence à un nouvel étage
+  for (const g of groups) { if (isF && j) { fl++; j = 0; }   // chaque famille de fréquence commence à un nouvel étage
   for (let i = 0, part = 1; i < g.items.length; i += 100, part++) {
     const chunk = g.items.slice(i, i + 100), cnt = {}; chunk.forEach(e => cnt[e.fam] = (cnt[e.fam] || 0) + 1);
     const fam = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])[0];
     if (j === 16) { fl++; j = 0; }
     const k = rooms.length, multi = g.items.length > 100;
-    const lab = kind === "freq" ? `${g.fr} · salle ${part} (rangs ${rank + 1} à ${rank + chunk.length})` : `${g.fr}${multi ? " · " + part : ""}`;
+    const lab = isF ? `${g.fr} · salle ${part} (rangs ${rank + 1} à ${rank + chunk.length})` : `${g.fr}${multi ? " · " + part : ""}`;
     rooms.push({ id: `v_${kind}_${k + 1}`, virt: true, fam, fr: lab, it: `${g.it}${multi ? " · " + part : ""}`,
-      code: kind === "freq" ? g.key.split("-")[1] + "·" + part : g.key.slice(0, 3) + (multi ? part : ""), short: kind === "freq" ? `${g.lab} · ${part}` : (g.fr.split(/[ ,]/)[0] + (multi ? " " + part : "")), blocs: null,
+      code: isF ? g.key.split("-")[1] + "·" + part : g.key.slice(0, 3) + (multi ? part : ""), short: isF ? `${g.lab} · ${part}` : (g.fr.split(/[ ,]/)[0] + (multi ? " " + part : "")), blocs: null,
       slot: { floor: fl, side: j < 8 ? "N" : "S", x: j % 8 }, band: g.band, srcIds: [...new Set(chunk.map(e => CANON[e.ri].id))],
       niches: Array.from({ length: 100 }, (_, m) => { const e = chunk[m]; return e ? Object.assign({}, e.x, { li: "", _src: [e.ri, e.n], _cls: e.cls }) : null; }) });
     rank += chunk.length; j++;
@@ -1589,7 +1592,8 @@ function buildVirtual(kind) {
   return rooms;
 }
 const PALTXT = { classe: "Palais par classe : une tour d'étages par classe de mots (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre.",
-  freq: "Palais par fréquence : tous les mots, du plus fréquent au plus rare, 100 par salle. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
+  freqit: "Palais par fréquence italienne : tous les mots, du plus fréquent au plus rare dans l'italien parlé, 100 par salle. C'est l'ordre qui fait monter le plus vite la compréhension de l'italien. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
+  freq: "Palais par fréquence française : tous les mots, du plus fréquent au plus rare dans le français parlé, 100 par salle. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
   theme: "Palais par thème : une ou plusieurs salles par famille thématique (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème." };
 function choosePalace(v) { if (v === PAL) return; ls.set("palais", v); location.reload(); }
 

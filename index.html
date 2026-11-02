@@ -300,7 +300,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <select id="libTag" aria-label="Sous-catégorie"></select>
     <select id="libTh" aria-label="Thème"></select>
     <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
-    <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Par fréquence</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button></div>
+    <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Par fréquence</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button><button class="pill" type="button" data-liborder="theme" aria-pressed="false">Par thème</button></div>
     <span id="libInfo"></span>
   </div>
   <div id="libList"></div>
@@ -1431,10 +1431,10 @@ async function renderLib() {
     if (sf) { const o = S.get(e.ri + ":" + e.n); if (sf === "new" && o) return false; if (sf === "seen" && !o) return false; if (sf === "due" && !(o && o.due)) return false; if (sf === "weak" && !(o && o.b <= 2)) return false; }
     return true;
   });
-  const freq = (prefs.libOrder || "freq") === "freq";
-  document.querySelectorAll("[data-liborder]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.liborder === "freq") === freq)));
+  const ord = prefs.libOrder || "freq", freq = ord === "freq";
+  document.querySelectorAll("[data-liborder]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.liborder === ord)));
   $("#libCount").textContent = `${LIB.length} mots et expressions · ${S.size} appris`;
-  $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? " · du plus fréquent au plus rare (Zipf FR parlé)" : " · par classe, dans l'ordre du palais") + " · touche une ligne pour la fiche complète";
+  $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? " · du plus fréquent au plus rare (Zipf FR parlé)" : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe, dans l'ordre du palais") + " · touche une ligne pour la fiche complète";
   const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
     `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
     `<span class="lfr">${esc(x.fr)}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span><span class="lz">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span>` +
@@ -1444,6 +1444,13 @@ async function renderLib() {
     const sorted = rows.slice().sort((a, b) => (b.x.zf ?? -9) - (a.x.zf ?? -9) || a.ri - b.ri || a.n - b.n), parts = [];
     for (let i = 0; i < sorted.length; i += 250) parts.push(`<section class="lroom"><h2>Rangs ${i + 1} à ${Math.min(i + 250, sorted.length)} <small>Zipf ${(sorted[i].x.zf ?? 0).toFixed(1)} → ${(sorted[Math.min(i + 249, sorted.length - 1)].x.zf ?? 0).toFixed(1)}</small></h2>` + sorted.slice(i, i + 250).map((e, j) => row(e, i + j + 1)).join("") + `</section>`);
     $("#libList").innerHTML = parts.join("");
+  } else if (ord === "theme") {   // par thème : un bloc par famille thématique, mots triés par fréquence
+    const TH = DATA.themes || {}, last = ["grammaire", "formules", "autres"], by = new Map();
+    for (const e of rows) { const k = e.x.th || "autres"; if (!by.has(k)) by.set(k, []); by.get(k).push(e); }
+    const tot = k => LIB.filter(e => (e.x.th || "autres") === k).length;
+    const keys = [...by.keys()].sort((a, b) => (last.indexOf(a) - last.indexOf(b)) || (tot(b) - tot(a)));
+    $("#libList").innerHTML = keys.map(k => { const es = by.get(k).slice().sort((a, b) => (b.x.zf ?? -9) - (a.x.zf ?? -9)), got = es.filter(e => S.has(e.ri + ":" + e.n)).length;
+      return `<section class="lroom"><h2>${esc(TH[k] || k)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
   } else {
     const by = new Map(); for (const e of rows) { if (!by.has(e.ri)) by.set(e.ri, []); by.get(e.ri).push(e); }
     $("#libList").innerHTML = [...by].map(([ri, es]) => `<section class="lroom"><h2>${esc(R[ri].fr)} <small>${esc(R[ri].it)} · ${es.length}</small></h2>` + es.map(e => row(e, 0)).join("") + `</section>`).join("");

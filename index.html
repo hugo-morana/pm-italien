@@ -1561,26 +1561,35 @@ function buildVirtual(kind) {
   const ff = e => e.x.of || (e.x.zf != null ? Math.pow(10, e.x.zf - 1) : 0);
   all.sort((a, b) => ff(b) - ff(a) || a.ri - b.ri || a.n - b.n);
   const groups = [];
-  if (kind === "freq") groups.push({ key: "freq", fr: "Par fréquence", it: "Per frequenza", items: all });
+  if (kind === "freq") {   // une famille de fréquence (0-50 %, 50-60 %…) par groupe d'étages
+    let c = 0, cur = null;
+    for (const e of all) {
+      let i = FBANDS.findIndex(t => c < t); if (i < 0) i = FBANDS.length - 1;
+      if (!cur || cur.band !== i) { const lo = i ? FBANDS[i - 1] : 0, hi = FBANDS[i]; cur = { band: i, key: `${lo}-${hi}`, fr: `De ${lo} à ${hi} % de compréhension`, it: `Dal ${lo} al ${hi} % di comprensione`, lab: `${lo}-${hi} %`, items: [] }; groups.push(cur); }
+      cur.items.push(e); if (counts(CANON[e.ri], e.x)) c += (e.x.oi || 0) / 1e6;
+    }
+  }
   else { const TH = DATA.themes || {}, by = new Map(), last = ["grammaire", "formules", "autres"];
     for (const e of all) { const k = e.x.th || "autres"; if (!by.has(k)) by.set(k, []); by.get(k).push(e); }
     [...by.keys()].sort((a, b) => (last.indexOf(a) - last.indexOf(b)) || (by.get(b).length - by.get(a).length)).forEach(k => groups.push({ key: k, fr: TH[k] || k, it: TH[k] || k, items: by.get(k) })); }
-  const rooms = []; let rank = 0;
-  for (const g of groups) for (let i = 0, part = 1; i < g.items.length; i += 100, part++) {
+  const rooms = []; let rank = 0, fl = 0, j = 0;
+  for (const g of groups) { if (kind === "freq" && j) { fl++; j = 0; }   // chaque famille de fréquence commence à un nouvel étage
+  for (let i = 0, part = 1; i < g.items.length; i += 100, part++) {
     const chunk = g.items.slice(i, i + 100), cnt = {}; chunk.forEach(e => cnt[e.fam] = (cnt[e.fam] || 0) + 1);
     const fam = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])[0];
-    const k = rooms.length, perFloor = 16, fl = Math.floor(k / perFloor), j = k % perFloor;
-    const lab = kind === "freq" ? `Rangs ${rank + 1} à ${rank + chunk.length}` : `${g.fr}${g.items.length > 100 ? " · " + part : ""}`;
-    rooms.push({ id: `v_${kind}_${k + 1}`, virt: true, fam, fr: kind === "freq" ? `Par fréquence · salle ${k + 1} (${lab.toLowerCase()})` : lab, it: kind === "freq" ? `Per frequenza · sala ${k + 1}` : `${g.it}${g.items.length > 100 ? " · " + part : ""}`,
-      code: kind === "freq" ? String(k + 1) : g.key.slice(0, 3) + (g.items.length > 100 ? part : ""), short: kind === "freq" ? `Fréq. ${k + 1}` : (g.fr.split(/[ ,]/)[0] + (g.items.length > 100 ? " " + part : "")), blocs: null,
-      slot: { floor: fl, side: j < 8 ? "N" : "S", x: j % 8 }, srcIds: [...new Set(chunk.map(e => CANON[e.ri].id))],
+    if (j === 16) { fl++; j = 0; }
+    const k = rooms.length, multi = g.items.length > 100;
+    const lab = kind === "freq" ? `${g.fr} · salle ${part} (rangs ${rank + 1} à ${rank + chunk.length})` : `${g.fr}${multi ? " · " + part : ""}`;
+    rooms.push({ id: `v_${kind}_${k + 1}`, virt: true, fam, fr: lab, it: `${g.it}${multi ? " · " + part : ""}`,
+      code: kind === "freq" ? g.key.split("-")[1] + "·" + part : g.key.slice(0, 3) + (multi ? part : ""), short: kind === "freq" ? `${g.lab} · ${part}` : (g.fr.split(/[ ,]/)[0] + (multi ? " " + part : "")), blocs: null,
+      slot: { floor: fl, side: j < 8 ? "N" : "S", x: j % 8 }, band: g.band, srcIds: [...new Set(chunk.map(e => CANON[e.ri].id))],
       niches: Array.from({ length: 100 }, (_, m) => { const e = chunk[m]; return e ? Object.assign({}, e.x, { li: "", _src: [e.ri, e.n], _cls: e.cls }) : null; }) });
-    rank += chunk.length;
-  }
+    rank += chunk.length; j++;
+  } }
   return rooms;
 }
 const PALTXT = { classe: "Palais par classe : une tour d'étages par classe de mots (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre.",
-  freq: "Palais par fréquence : tous les mots, du plus fréquent au plus rare, 100 par salle, 16 salles par étage.",
+  freq: "Palais par fréquence : tous les mots, du plus fréquent au plus rare, 100 par salle. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
   theme: "Palais par thème : une ou plusieurs salles par famille thématique (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème." };
 function choosePalace(v) { if (v === PAL) return; ls.set("palais", v); location.reload(); }
 

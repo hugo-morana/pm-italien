@@ -284,6 +284,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 
 <div class="sheet" id="planSheet" hidden><div>
   <div class="shead"><h2>Plan du palais</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
+  <h3>Version du palais</h3>
+  <div class="pills" role="group" aria-label="Version du palais"><button class="pill" type="button" data-palais="classe">Par classe</button><button class="pill" type="button" data-palais="freq">Par fréquence</button><button class="pill" type="button" data-palais="theme">Par thème</button></div>
+  <p id="palTxt" style="margin:0;font:500 11px var(--mono);color:var(--muted);letter-spacing:.05em"></p>
   <svg id="planSvg" role="img" aria-label="Plan des deux étages"></svg>
   <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms et longe les salles de mots. Chaque classe forme une tour d'étages desservie par l'escalier, du mot le plus fréquent (rez-de-chaussée) au moins fréquent (dernier étage). La boucle revient par la rangée d'en face (expressions basiques, courantes, modales, incises), monte ensuite étage par étage, puis redescend aux noms.</p>
 </div></div>
@@ -360,10 +363,10 @@ const SHORT = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj. qualif.", deter
   prepositions: "Prépositions", adverbes: "Adverbes", courantes_1: "Expr. courantes", noms_2: "Noms ²", verbes_2: "Verbes ²", adjectifs_2: "Adj. ²", adverbes_2: "Adverbes ²", incises_1: "Incises", incises_2: "Incises ²", incises_3: "Incises ³", incises_4: "Incises ⁴",
   basiques_1: "Basiques", basiques_2: "Basiques ²", basiques_3: "Basiques ³", basiques_4: "Basiques ⁴", basiques_5: "Basiques ⁵",
   modales_1: "Modales", modales_2: "Modales ²", modales_3: "Modales ³", modales_4: "Modales ⁴", modales_5: "Modales ⁵" };
-const code = r => ({ noms: "n", verbes: "v", adjectifs: "adj", determinants: "det", pronoms: "pro", conjonctions: "conj", prepositions: "prp", adverbes: "adv", courantes_1: "cour" }[r.id] || r.id.replace(/^basiques_/, "b").replace(/^modales_/, "m").replace(/^incises_/, "i").replace(/^noms_/, "n").replace(/^verbes_/, "v").replace(/^adjectifs_/, "adj").replace(/^adverbes_/, "adv").replace(/^pronoms_/, "pro").replace(/^conjonctions_/, "conj").replace(/^prepositions_/, "prp").replace(/^courantes_/, "cour"));
+const code = r => r.code || ({ noms: "n", verbes: "v", adjectifs: "adj", determinants: "det", pronoms: "pro", conjonctions: "conj", prepositions: "prp", adverbes: "adv", courantes_1: "cour" }[r.id] || r.id.replace(/^basiques_/, "b").replace(/^modales_/, "m").replace(/^incises_/, "i").replace(/^noms_/, "n").replace(/^verbes_/, "v").replace(/^adjectifs_/, "adj").replace(/^adverbes_/, "adv").replace(/^pronoms_/, "pro").replace(/^conjonctions_/, "conj").replace(/^prepositions_/, "prp").replace(/^courantes_/, "cour"));
 const SUP = n => String(n).split("").map(c => "⁰¹²³⁴⁵⁶⁷⁸⁹"[+c]).join("");
 const BASE = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj.", adverbes: "Adverbes", pronoms: "Pronoms", conjonctions: "Conj.", prepositions: "Prép.", courantes: "Courantes", basiques: "Basiques", modales: "Modales", incises: "Incises" };
-const shortName = r => SHORT[r.id] || ((m => m && BASE[m[1]] ? BASE[m[1]] + " " + SUP(m[2]) : r.id)(r.id.match(/^(\w+?)_(\d+)$/)));
+const shortName = r => r.short || SHORT[r.id] || ((m => m && BASE[m[1]] ? BASE[m[1]] + " " + SUP(m[2]) : r.id)(r.id.match(/^(\w+?)_(\d+)$/)));
 const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"]];
 const BOXDAYS = [0, 1, 2, 4, 8, 16];
 
@@ -782,7 +785,7 @@ function ficheHTML(ri, n) {
       <div><dt>Décryptage</dt><dd class="exfr">${esc(x.de)}</dd></div>
       ${x.fo ? `<div><dt>Formes</dt><dd class="exfr">${esc(x.fo)}</dd></div>` : ""}
       ${x.t && x.t.length ? `<div><dt>Étiquettes</dt><dd class="tags">${x.t.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</dd></div>` : ""}
-      <div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>
+      ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
     </dl>
     ${px ? `<details class="prev"><summary>⟵ depuis ${String(pn).padStart(2, "0")} · ${esc(px.it)}</summary><p class="exfr" style="margin:6px 0 0">${esc(px.li)}</p></details>` : ""}
   </div>`;
@@ -819,8 +822,12 @@ function speak(text, src, btn, lang = "it") {
 }
 
 /* ============ Persistance : préférences (navigateur) + répétition espacée (db par utilisateur) ============ */
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr" }, ls.get("prefs", {}));
-function save() { ls.set("pos", { r: st.r, n: st.n, zoom: st.zoom }); }
+/* Trois palais sur les mêmes niches : par classe (le palais d'origine), par fréquence, par thème. La progression est commune :
+   elle reste rangée sous les salles du palais par classe (salles « canoniques »). */
+const PAL = ["classe", "freq", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
+const PK = k => PAL === "classe" ? k : k + "_" + PAL;
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
 /* Deux comptes possibles : le compte Claude (capacité db) quand la page tourne dans Claude,
    ou un compte e-mail Supabase (code à 6 chiffres) sur la version GitHub Pages. Sinon : navigateur seulement. */
 const SBCFG = window.PM_CONFIG || {};
@@ -860,7 +867,7 @@ function loadScript(src) { return new Promise((ok, ko) => { const sc = document.
 async function useSession(session) {
   store.kind = "sb"; store.uid = session.user.id; store.email = session.user.email || "";
   const owner = ls.get("owner", null);
-  if (owner && owner !== store.uid) { for (const r of R) ls.set("srs_" + r.id, {}); ls.set("hist", []); HIST = []; }
+  if (owner && owner !== store.uid) { for (const r of CR()) ls.set("srs_" + r.id, {}); ls.set("hist", []); HIST = []; }
   ls.set("owner", store.uid); store.cache = {};
   await afterLogin(); renderAccount(); $("#accountBtn").textContent = "Compte ✓"; toast("Connecté : " + store.email);
 }
@@ -879,7 +886,7 @@ function migrateCards(all, from) { // all : { roomId: { "n:type": carte } } -> r
   return cur;
 }
 function allRoomIds() { // salles actuelles + anciennes salles citées dans les étapes de tri
-  const ids = new Set(R.map(r => r.id));
+  const ids = new Set(CR().map(r => r.id));
   for (const step of (DATA.migr || [])) for (const k in step.moves) { ids.add(k.split(":")[0]); ids.add(step.moves[k].split(":")[0]); }
   return [...ids];
 }
@@ -891,20 +898,37 @@ function migrateLocal() {
 async function afterLogin() { // fusion de la progression locale et distante, puis envoi
   await loadHist();
   const rev = DATA.rev || 1, meta = await remoteGet("meta"), from = (meta && meta.rev) || 1, remAll = {};
-  for (const id of (from < rev ? allRoomIds() : R.map(r => r.id))) { const rem = await remoteGet("srs_" + id); remAll[id] = (rem && rem.cards) || {}; }
+  for (const id of (from < rev ? allRoomIds() : CR().map(r => r.id))) { const rem = await remoteGet("srs_" + id); remAll[id] = (rem && rem.cards) || {}; }
   const remM = from < rev ? migrateCards(remAll, from) : remAll;
-  for (let ri = 0; ri < R.length; ri++) { const id = R[ri].id, local = ls.get("srs_" + id, {}), rc = remM[id] || {}; const m = mergeCards(local, rc); store.cache[id] = m; ls.set("srs_" + id, m); if (JSON.stringify(m) !== JSON.stringify(remAll[id] || {})) remoteSet("srs_" + id, { cards: m, maj: Date.now() }); }
-  if (from < rev) { for (const id of allRoomIds()) if (!R.some(r => r.id === id) && Object.keys(remAll[id] || {}).length) remoteSet("srs_" + id, { cards: {}, maj: Date.now() }); remoteSet("meta", { rev }); }
+  for (let ri = 0; ri < CR().length; ri++) { const id = CR()[ri].id, local = ls.get("srs_" + id, {}), rc = remM[id] || {}; const m = mergeCards(local, rc); store.cache[id] = m; ls.set("srs_" + id, m); if (JSON.stringify(m) !== JSON.stringify(remAll[id] || {})) remoteSet("srs_" + id, { cards: m, maj: Date.now() }); }
+  if (from < rev) { for (const id of allRoomIds()) if (!CR().some(r => r.id === id) && Object.keys(remAll[id] || {}).length) remoteSet("srs_" + id, { cards: {}, maj: Date.now() }); remoteSet("meta", { rev }); }
   if (HIST.length) remoteSet("historique", { pts: HIST });
 }
-async function srsRoom(ri) {
-  const id = R[ri].id; if (store.cache[id]) return store.cache[id];
+async function srsById(id) {
+  if (store.cache[id]) return store.cache[id];
   let cards = ls.get("srs_" + id, {});
   if (store.kind) { const rem = await remoteGet("srs_" + id); if (rem && rem.cards) cards = mergeCards(cards, rem.cards); }
   return store.cache[id] = cards;
 }
-function srsSave(ri) {
-  const id = R[ri].id, cards = store.cache[id]; ls.set("srs_" + id, cards);
+const VTY = ["num", "img", "fr", "it", "aud", "suite", "chaine"], VPROXY = {};
+async function srsRoom(ri) {
+  const r = R[ri]; if (!r.virt) return srsById(r.id);
+  // salle d'un palais par fréquence ou par thème : vue sur les cartes des salles canoniques
+  for (const id of r.srcIds) await srsById(id);
+  if (VPROXY[ri]) return VPROXY[ri];
+  const at = k => { const [n, ty] = k.split(":"), x = r.niches[+n]; return x && x._src ? [CANON[x._src[0]].id, x._src[1] + ":" + ty] : null; };
+  const cache = id => store.cache[id] || (store.cache[id] = ls.get("srs_" + id, {}));
+  return VPROXY[ri] = new Proxy({}, {
+    get: (_, k) => { if (typeof k !== "string") return undefined; const a = at(k); return a ? cache(a[0])[a[1]] : undefined; },
+    set: (_, k, v) => { const a = at(k); if (a) cache(a[0])[a[1]] = v; return true; },
+    has: (_, k) => { const a = typeof k === "string" && at(k); return !!(a && a[1] in cache(a[0])); },
+    ownKeys: () => { const out = []; r.niches.forEach((x, n) => { if (!x || !x._src) return; const c = cache(CANON[x._src[0]].id); for (const ty of VTY) if (c[x._src[1] + ":" + ty]) out.push(n + ":" + ty); }); return out; },
+    getOwnPropertyDescriptor: (_, k) => { const a = at(k); if (!a) return undefined; const v = cache(a[0])[a[1]]; return v === undefined ? undefined : { value: v, writable: true, enumerable: true, configurable: true }; }
+  });
+}
+function srsSave(ri) { const r = R[ri]; if (r.virt) { for (const id of r.srcIds) srsSaveId(id); return; } srsSaveId(r.id); }
+function srsSaveId(id) {
+  const cards = store.cache[id]; ls.set("srs_" + id, cards);
   if (!store.kind) return; clearTimeout(store.timers[id]);
   store.timers[id] = setTimeout(() => remoteSet("srs_" + id, { cards, maj: Date.now() }), 1200);
 }
@@ -1064,7 +1088,7 @@ function endQuiz(msg) {
 let CURVES = null, HIST = ls.get("hist", []);
 const isWordRoom = r => r.fam !== "expressions" && r.fam !== "incises";
 // couverture : seuls les mots dont la fréquence est mesurée comptent (les locutions estimées ≈ recompteraient leurs mots)
-const counts = (r, x) => isWordRoom(r) && !x.ax;
+const counts = (r, x) => (x._cls ? x._cls !== "expressions" && x._cls !== "incises" : isWordRoom(r)) && !x.ax;
 function buildCurves() {
   const pal = [[0, 0]], items = []; let n = 0, c = 0;
   R.forEach(r => r.niches.forEach(x => { if (!x) return; const v = counts(r, x) ? (x.oi || 0) / 1e6 : 0; n++; c += v; pal.push([n, c]); items.push(v); }));
@@ -1149,7 +1173,7 @@ async function renderCurve() {
 
 /* ============ Feuilles : tests, plan ============ */
 function closeSheets() { document.querySelectorAll(".sheet").forEach(s => s.hidden = true); }
-function savePrefs() { ls.set("prefs", prefs); }
+function savePrefs() { ls.set("prefs", prefs); if (PAL !== "classe") ls.set(PK("prefs"), { rooms: prefs.rooms, decs: prefs.decs }); }
 async function renderTests() {
   $("#typesP").innerHTML = TYPES.map(([k, l]) => `<button class="pill" type="button" data-type="${k}" aria-pressed="${prefs.types.includes(k)}">${l}</button>`).join("");
   $("#roomsP").innerHTML = R.map((r, i) => `<button class="pill" type="button" data-room="${i}" aria-pressed="${prefs.rooms.includes(i)}">${esc(shortName(r))}</button>`).join("");
@@ -1413,7 +1437,7 @@ let LIB = null;
 function libIndex() {
   if (LIB) return LIB;
   LIB = [];
-  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) LIB.push({ ri, n, x, fam: famOf(r), q: nrm(x.fr + " | " + x.it + " | " + x.mc) }); }));
+  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) LIB.push({ ri, n, x, fam: x._cls || famOf(r), q: nrm(x.fr + " | " + x.it + " | " + x.mc) }); }));
   const fams = [...new Set(LIB.map(e => e.fam))], TH = DATA.themes || {};
   $("#libTh").innerHTML = `<option value="">tous les thèmes</option>` + Object.keys(TH).map(k => `<option value="${k}">${esc(TH[k])}</option>`).join("");
   $("#libFam").innerHTML = `<option value="">toutes les classes</option>` + fams.map(f => `<option value="${f}">${FAML[f] || f}</option>`).join("");
@@ -1494,7 +1518,7 @@ async function renderCarnet() {
     [streak, "jours d'affilée", `${days.size} jour(s) d'étude au total`]
   ].map(([v, l, sm]) => `<div class="kpi"><span>${l}</span><b>${v}</b><small>${sm}</small></div>`).join("");
   renderCurve();
-  const fam = new Map(); R.forEach((r, ri) => { const f = famOf(r), o = fam.get(f) || { tot: 0, got: 0 }; r.niches.forEach((x, n) => { if (!x) return; o.tot++; if (S.has(ri + ":" + n)) o.got++; }); fam.set(f, o); });
+  const fam = new Map(); R.forEach((r, ri) => { r.niches.forEach((x, n) => { if (!x) return; const f = x._cls || famOf(r), o = fam.get(f) || { tot: 0, got: 0 }; fam.set(f, o); o.tot++; if (S.has(ri + ":" + n)) o.got++; }); });
   $("#cbCls").innerHTML = [...fam].map(([f, o]) => `<span>${FAML[f] || f}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.got} / ${o.tot} · ${o.tot ? Math.round(o.got / o.tot * 100) : 0} %</span>`).join("");
   const TH = DATA.themes || {}, tm = new Map(Object.keys(TH).map(k => [k, { tot: 0, got: 0 }]));
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const o = tm.get(x.th || "autres") || tm.get("autres"); if (!o) return; o.tot++; if (S.has(ri + ":" + n)) o.got++; }));
@@ -1512,6 +1536,10 @@ async function renderCarnet() {
     : `<p class="pr" style="margin:0">Pas encore de séance : lance une révision ou apprends tes premiers mots.</p>`;
 }
 function bindViews() {
+  document.querySelectorAll("[data-palais]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.palais === PAL)));
+  $("#palTxt").textContent = PALTXT[PAL] + " Ta progression est la même dans les trois versions.";
+  if (PAL !== "classe") $("#planSheet p.pr:not(#palTxt)").textContent = "Touchez une pièce pour y aller. L'escalier, à l'ouest, dessert tous les étages ; chaque étage compte 8 salles de chaque côté du couloir.";
+  document.addEventListener("click", e => { const b = e.target.closest("[data-palais]"); if (b) choosePalace(b.dataset.palais); });
   $("#tabs").addEventListener("click", e => { const b = e.target.closest("[data-view]"); if (!b) return; if (b.dataset.view === "test") startAuto(); else setView(b.dataset.view); });
   let qt; $("#libQ").addEventListener("input", () => { clearTimeout(qt); qt = setTimeout(renderLib, 180); });
   $("#libFam").onchange = () => { libTags(); renderLib(); };
@@ -1524,12 +1552,55 @@ function bindViews() {
   $("#cbTests").onclick = () => { setView("palais"); $("#testsSheet").hidden = false; renderTests(); };
 }
 
+/* ============ Palais par fréquence / par thème ============ */
+let CANON = null;
+const CR = () => CANON || R;
+function buildVirtual(kind) {
+  const all = [];
+  CANON.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) all.push({ x, ri, n, cls: famOf(r), fam: r.fam }); }));
+  const ff = e => e.x.of || (e.x.zf != null ? Math.pow(10, e.x.zf - 1) : 0);
+  all.sort((a, b) => ff(b) - ff(a) || a.ri - b.ri || a.n - b.n);
+  const groups = [];
+  if (kind === "freq") {   // une famille de fréquence (0-50 %, 50-60 %…) par groupe d'étages
+    let c = 0, cur = null;
+    for (const e of all) {
+      let i = FBANDS.findIndex(t => c < t); if (i < 0) i = FBANDS.length - 1;
+      if (!cur || cur.band !== i) { const lo = i ? FBANDS[i - 1] : 0, hi = FBANDS[i]; cur = { band: i, key: `${lo}-${hi}`, fr: `De ${lo} à ${hi} % de compréhension`, it: `Dal ${lo} al ${hi} % di comprensione`, lab: `${lo}-${hi} %`, items: [] }; groups.push(cur); }
+      cur.items.push(e); if (counts(CANON[e.ri], e.x)) c += (e.x.oi || 0) / 1e6;
+    }
+  }
+  else { const TH = DATA.themes || {}, by = new Map(), last = ["grammaire", "formules", "autres"];
+    for (const e of all) { const k = e.x.th || "autres"; if (!by.has(k)) by.set(k, []); by.get(k).push(e); }
+    [...by.keys()].sort((a, b) => (last.indexOf(a) - last.indexOf(b)) || (by.get(b).length - by.get(a).length)).forEach(k => groups.push({ key: k, fr: TH[k] || k, it: TH[k] || k, items: by.get(k) })); }
+  const rooms = []; let rank = 0, fl = 0, j = 0;
+  for (const g of groups) { if (kind === "freq" && j) { fl++; j = 0; }   // chaque famille de fréquence commence à un nouvel étage
+  for (let i = 0, part = 1; i < g.items.length; i += 100, part++) {
+    const chunk = g.items.slice(i, i + 100), cnt = {}; chunk.forEach(e => cnt[e.fam] = (cnt[e.fam] || 0) + 1);
+    const fam = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])[0];
+    if (j === 16) { fl++; j = 0; }
+    const k = rooms.length, multi = g.items.length > 100;
+    const lab = kind === "freq" ? `${g.fr} · salle ${part} (rangs ${rank + 1} à ${rank + chunk.length})` : `${g.fr}${multi ? " · " + part : ""}`;
+    rooms.push({ id: `v_${kind}_${k + 1}`, virt: true, fam, fr: lab, it: `${g.it}${multi ? " · " + part : ""}`,
+      code: kind === "freq" ? g.key.split("-")[1] + "·" + part : g.key.slice(0, 3) + (multi ? part : ""), short: kind === "freq" ? `${g.lab} · ${part}` : (g.fr.split(/[ ,]/)[0] + (multi ? " " + part : "")), blocs: null,
+      slot: { floor: fl, side: j < 8 ? "N" : "S", x: j % 8 }, band: g.band, srcIds: [...new Set(chunk.map(e => CANON[e.ri].id))],
+      niches: Array.from({ length: 100 }, (_, m) => { const e = chunk[m]; return e ? Object.assign({}, e.x, { li: "", _src: [e.ri, e.n], _cls: e.cls }) : null; }) });
+    rank += chunk.length; j++;
+  } }
+  return rooms;
+}
+const PALTXT = { classe: "Palais par classe : une tour d'étages par classe de mots (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre.",
+  freq: "Palais par fréquence : tous les mots, du plus fréquent au plus rare, 100 par salle. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
+  theme: "Palais par thème : une ou plusieurs salles par famille thématique (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème." };
+function choosePalace(v) { if (v === PAL) return; ls.set("palais", v); location.reload(); }
+
 /* ============ Démarrage ============ */
 async function start() {
   try {
     const res = await fetch("data3d.json"); DATA = await res.json();
   } catch (e) { $("#chargement").innerHTML = "Données introuvables<small>data3d.json n'a pas pu être chargé</small>"; return; }
-  document.body.dataset.view = "palais"; R = DATA.rooms; migrateLocal(); layout();
+  document.body.dataset.view = "palais"; R = DATA.rooms; migrateLocal();
+  if (PAL !== "classe") { CANON = R; R = buildVirtual(PAL); prefs.rooms = prefs.rooms.filter(i => i < R.length); if (!prefs.rooms.length) prefs.rooms = [0]; }
+  layout();
   renderer = new THREE.WebGLRenderer({ canvas: $("#scene"), antialias: true }); renderer.setPixelRatio(Math.min(2, devicePixelRatio));
   scene = new THREE.Scene(); scene.background = new THREE.Color("#2a211d"); scene.fog = new THREE.Fog("#2a211d", 40, 140);
   camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, .05, 400); clock = new THREE.Clock();
@@ -1539,7 +1610,7 @@ async function start() {
   R.forEach((_, i) => buildRoom(i));
   const mark0 = scene.children.length; buildCorridors(); corrObjs = scene.children.slice(mark0);
   buildMarkers();
-  const pos = ls.get("pos", null); if (pos && R[pos.r]) { st.r = pos.r; st.n = R[pos.r].niches[pos.n] ? pos.n : filled(pos.r)[0]; st.zoom = pos.zoom || 0; }
+  const pos = ls.get(PK("pos"), null); if (pos && R[pos.r]) { st.r = pos.r; st.n = R[pos.r].niches[pos.n] ? pos.n : filled(pos.r)[0]; st.zoom = pos.zoom || 0; }
   $("#zoom").textContent = ZL[st.zoom];
   bindUI(); bindViews(); renderRooms(); onResize();
   texturizeRoom(st.r); placeRing(st.r, st.n); applyOverviewLook(); renderFiche();

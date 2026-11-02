@@ -41,3 +41,7 @@ python3 sources/build_data3d.py         # data3d.json pour le palais
 ```
 
 Les scripts ont été écrits pour l'environnement de travail d'origine : les chemins absolus en tête de fichier sont à adapter.
+
+## Hors-ligne
+
+Sur GitHub Pages, `sw.js` (service worker) garde l'app sur l'appareil : `index.html`, `data3d.json`, `vendor/three.min.js`, la page de validation et les icônes. La page et les données passent d'abord par le réseau pour recevoir les mises à jour, puis par le cache. Les sons sont mis en cache au fil de l'écoute, ou d'un coup avec le bouton « Télécharger tous les sons » du plan. Les paquets sont versionnés (`?v=`) : seuls ceux qui changent sont retéléchargés. La progression reste sur l'appareil hors connexion et se resynchronise avec Supabase au retour du réseau.

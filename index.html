@@ -71,6 +71,9 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 .ex p { margin:0 }
 .exit { font-weight:600 }
 .exfr { color:var(--muted); font-style:italic; font-size:14px }
+.more-ex summary { cursor:pointer; font-size:14px; color:var(--muted); margin:2px 0 6px }
+.more-ex .ex { margin:8px 0 }
+.more-ex .exit { font-weight:500 }
 mark { background:var(--hl); color:inherit; padding:0 2px; border-radius:2px }
 .bars { display:grid; grid-template-columns:auto 1fr; gap:4px 10px; align-items:center; font:500 11px var(--mono); color:var(--muted); padding:6px 0; border-block:1px solid var(--line) }
 .bar { position:relative; height:8px; background:var(--line); border-radius:4px }
@@ -663,6 +666,7 @@ function renderFiche() {
     <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(x.am || "")}" aria-label="Écouter le mot">🔊</button><span>${esc(x.it)}</span></div>
     <div class="phon"><span class="ipa" lang="it-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
     <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(x.ap || "")}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr">${mark(x.efr, x.efm)}</p></div></div>
+    ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr">${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
     <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Zipf parlé</span><span>rang ${x.rk} · occ./100 M</span></span>${zipfBar("FR", x.zf, x.of, x.ax)}${zipfBar("IT", x.zi, x.oi, x.ax)}</div>
     <dl>
       <div><dt>Mot-clé</dt><dd><em>${esc(x.mc)}</em></dd></div>

@@ -190,6 +190,8 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .lrow[open] > summary { border-bottom:1px solid var(--line) }
 .lrow .ln { font:500 12px var(--mono); color:var(--muted); width:1.8em; font-variant-numeric:tabular-nums }
 .lrow .lfr { flex:1 1 40%; min-width:0; font-weight:600; overflow-wrap:anywhere }
+.lrow .ln.rk { width:2.6em; font-size:11px }
+.lroomtag { display:block; font:500 10px var(--mono); color:var(--muted); letter-spacing:.03em; margin-top:1px }
 .lrow .lit { flex:1 1 40%; min-width:0; font:600 17px/1.2 var(--display); color:var(--accent); overflow-wrap:anywhere }
 .lrow .lz { flex:none; font:500 11px var(--mono); color:var(--muted); width:3.2em; text-align:right; font-variant-numeric:tabular-nums }
 .lrow .say { width:30px; height:30px; font-size:13px }
@@ -198,7 +200,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .dotb.due { box-shadow:0 0 0 2px var(--surface), 0 0 0 3.5px var(--accent) }
 .lbody { padding:10px 14px 14px }
 .lbody .btns { margin-top:10px }
-@media (max-width:520px) { .lrow > summary { flex-wrap:wrap; gap:2px 8px } .lrow .lit { flex-basis:100%; order:5; padding-left:calc(1.8em + 26px) } .lrow .lfr { flex:1 1 0 } }
+@media (max-width:520px) { .lrow > summary { flex-wrap:wrap; gap:2px 8px } .lrow .lit { flex-basis:100%; order:5; padding-left:calc(1.8em + 26px) } .lrow .ln.rk ~ .lit { padding-left:59px } .lrow .lfr { flex:1 1 0 } }
 /* Carnet de bord */
 .kpis { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px }
 .kpi { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:12px 14px; display:flex; flex-direction:column; gap:4px }
@@ -297,6 +299,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <select id="libFam" aria-label="Classe"></select>
     <select id="libTag" aria-label="Sous-catégorie"></select>
     <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
+    <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Par fréquence</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button></div>
     <span id="libInfo"></span>
   </div>
   <div id="libList"></div>
@@ -1425,15 +1428,23 @@ async function renderLib() {
     if (sf) { const o = S.get(e.ri + ":" + e.n); if (sf === "new" && o) return false; if (sf === "seen" && !o) return false; if (sf === "due" && !(o && o.due)) return false; if (sf === "weak" && !(o && o.b <= 2)) return false; }
     return true;
   });
-  const by = new Map(); for (const e of rows) { if (!by.has(e.ri)) by.set(e.ri, []); by.get(e.ri).push(e); }
+  const freq = (prefs.libOrder || "freq") === "freq";
+  document.querySelectorAll("[data-liborder]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.liborder === "freq") === freq)));
   $("#libCount").textContent = `${LIB.length} mots et expressions · ${S.size} appris`;
-  $("#libInfo").textContent = rows.length === LIB.length ? `${rows.length} entrées · touche une ligne pour la fiche complète` : `${rows.length} entrée(s) sur ${LIB.length}`;
-  $("#libList").innerHTML = rows.length ? [...by].map(([ri, es]) => `<section class="lroom"><h2>${esc(R[ri].fr)} <small>${esc(R[ri].it)} · ${es.length}</small></h2>` +
-    es.map(({ n, x }) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
-      `<span class="ln">${String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
-      `<span class="lfr">${esc(x.fr)}</span><span class="lit" lang="it">${esc(x.it)}</span><span class="lz">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span>` +
-      `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; }).join("") + `</section>`).join("")
-    : `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`;
+  $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? " · du plus fréquent au plus rare (Zipf FR parlé)" : " · par classe, dans l'ordre du palais") + " · touche une ligne pour la fiche complète";
+  const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
+    `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
+    `<span class="lfr">${esc(x.fr)}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span><span class="lz">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span>` +
+    `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; };
+  if (!rows.length) { $("#libList").innerHTML = `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`; return; }
+  if (freq) {   // ordre purement fréquentiel : toutes classes mêlées, par tranches de 250 rangs
+    const sorted = rows.slice().sort((a, b) => (b.x.zf ?? -9) - (a.x.zf ?? -9) || a.ri - b.ri || a.n - b.n), parts = [];
+    for (let i = 0; i < sorted.length; i += 250) parts.push(`<section class="lroom"><h2>Rangs ${i + 1} à ${Math.min(i + 250, sorted.length)} <small>Zipf ${(sorted[i].x.zf ?? 0).toFixed(1)} → ${(sorted[Math.min(i + 249, sorted.length - 1)].x.zf ?? 0).toFixed(1)}</small></h2>` + sorted.slice(i, i + 250).map((e, j) => row(e, i + j + 1)).join("") + `</section>`);
+    $("#libList").innerHTML = parts.join("");
+  } else {
+    const by = new Map(); for (const e of rows) { if (!by.has(e.ri)) by.set(e.ri, []); by.get(e.ri).push(e); }
+    $("#libList").innerHTML = [...by].map(([ri, es]) => `<section class="lroom"><h2>${esc(R[ri].fr)} <small>${esc(R[ri].it)} · ${es.length}</small></h2>` + es.map(e => row(e, 0)).join("") + `</section>`).join("");
+  }
 }
 function openLibRow(d) {
   const b = d.querySelector(".lbody"); if (!d.open || b.childElementCount) return;
@@ -1467,7 +1478,8 @@ async function renderCarnet() {
 function bindViews() {
   $("#tabs").addEventListener("click", e => { const b = e.target.closest("[data-view]"); if (!b) return; if (b.dataset.view === "test") startAuto(); else setView(b.dataset.view); });
   let qt; $("#libQ").addEventListener("input", () => { clearTimeout(qt); qt = setTimeout(renderLib, 180); });
-  $("#libFam").onchange = () => { libTags(); renderLib(); }; $("#libTag").onchange = renderLib; $("#libSt").onchange = renderLib;
+  $("#libFam").onchange = () => { libTags(); renderLib(); };
+  document.addEventListener("click", e => { const b = e.target.closest("[data-liborder]"); if (!b) return; prefs.libOrder = b.dataset.liborder; savePrefs(); renderLib(); $("#lib").scrollTo(0, 0); }); $("#libTag").onchange = renderLib; $("#libSt").onchange = renderLib;
   $("#libList").addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("lrow")) openLibRow(e.target); }, true);
   $("#libList").addEventListener("click", e => { const g = e.target.closest("[data-gopal]"); if (!g) return; const [ri, n] = g.dataset.gopal.split(":").map(Number); setView("palais"); goTo(ri, n); setDrawer(true); });
   $("#cbRevue").onclick = () => startAuto();

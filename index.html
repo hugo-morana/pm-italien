@@ -319,6 +319,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <p id="curveTxt"></p>
   </div>
   <div class="card"><h3 style="margin:0">Mots appris par classe</h3><div class="cls" id="cbCls"></div></div>
+  <div class="card"><h3 style="margin:0">Mots appris par famille de fréquence</h3><div class="cls" id="cbFq"></div><p class="pr" style="margin:0">Tous les mots du palais rangés du plus fréquent au plus rare : la première famille réunit ceux qui suffisent à comprendre 10 % des mots d'une conversation, la suivante ceux qui mènent à 20 %, et ainsi de suite. Les familles au-delà de ~78 % sont hors du palais (voir la courbe « Jusqu'à 100 % »).</p></div>
   <div class="card"><h3 style="margin:0">Mots appris par thème</h3><div class="cls" id="cbTh"></div><p class="pr" style="margin:0">Chaque mot ou expression compte dans un seul thème. Les « notions générales » regroupent les mots abstraits sans thème concret (la fois, le besoin, la façon…).</p></div>
   <div class="card"><h3 style="margin:0">Boîtes de révision</h3><div class="boxes" id="cbBoxes"></div><p class="pr" style="margin:0">Chaque réussite fait monter un mot d'une boîte : il revient 1, 2, 4, 8 puis 16 jours plus tard. Un échec le renvoie en boîte 1.</p></div>
   <div class="card"><h3 style="margin:0">Historique</h3><div id="cbHist"></div></div>
@@ -1424,6 +1425,19 @@ function libTags() {
   $("#libTag").innerHTML = `<option value="">toutes les sous-catégories</option>` + [...tags].sort().map(t => `<option ${t === cur ? "selected" : ""}>${esc(t)}</option>`).join("");
 }
 const fineF = x => x.of || (x.zf != null ? Math.pow(10, x.zf - 1) : 0);   // fréquence fine (occ./100 M), à défaut tirée du Zipf
+/* Familles de fréquence : on range tous les mots du plus fréquent au plus rare et on cumule la compréhension qu'ils apportent ;
+   la famille d'un mot = la tranche de compréhension (0-10 %, 10-20 %…) qu'on atteint en l'apprenant dans cet ordre. */
+const FBANDS = [10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100];
+const bandLabel = i => i === 0 ? "Jusqu'à 10 % de compréhension" : `De ${FBANDS[i - 1]} à ${FBANDS[i]} % de compréhension`;
+let FBAND = null;
+function freqBands() {
+  if (FBAND) return FBAND;
+  const all = []; R.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) all.push({ r, ri, n, x }); }));
+  all.sort((a, b) => fineF(b.x) - fineF(a.x) || a.ri - b.ri || a.n - b.n);
+  FBAND = new Map(); let c = 0;
+  for (const e of all) { let i = FBANDS.findIndex(t => c < t); if (i < 0) i = FBANDS.length - 1; FBAND.set(e.ri + ":" + e.n, i); if (counts(e.r, e.x)) c += (e.x.oi || 0) / 1e6; }
+  return FBAND;
+}
 async function renderLib() {
   libIndex(); if (!$("#libTag").options.length) libTags();
   const q = nrm($("#libQ").value.trim()), f = $("#libFam").value, tg = $("#libTag").value, sf = $("#libSt").value, th = $("#libTh").value;
@@ -1444,7 +1458,10 @@ async function renderLib() {
   if (!rows.length) { $("#libList").innerHTML = `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`; return; }
   if (freq) {   // ordre purement fréquentiel : toutes classes mêlées, par tranches de 250 rangs
     const sorted = rows.slice().sort((a, b) => fineF(b.x) - fineF(a.x) || a.ri - b.ri || a.n - b.n), parts = [];
-    for (let i = 0; i < sorted.length; i += 250) parts.push(`<section class="lroom"><h2>Rangs ${i + 1} à ${Math.min(i + 250, sorted.length)} <small>Zipf ${(sorted[i].x.zf ?? 0).toFixed(1)} → ${(sorted[Math.min(i + 249, sorted.length - 1)].x.zf ?? 0).toFixed(1)}</small></h2>` + sorted.slice(i, i + 250).map((e, j) => row(e, i + j + 1)).join("") + `</section>`);
+    const FB = freqBands(); let cur = -1, buf = [];
+    const flush = () => { if (!buf.length) return; const got = buf.filter(([e]) => S.has(e.ri + ":" + e.n)).length;
+      parts.push(`<section class="lroom"><h2>${bandLabel(cur)} <small>${buf.length} mots · ${got} appris · rangs ${buf[0][1]} à ${buf[buf.length - 1][1]}</small></h2>` + buf.map(([e, k]) => row(e, k)).join("") + `</section>`); buf = []; };
+    sorted.forEach((e, j) => { const b = FB.get(e.ri + ":" + e.n); if (b !== cur) { flush(); cur = b; } buf.push([e, j + 1]); }); flush();
     $("#libList").innerHTML = parts.join("");
   } else if (ord === "theme") {   // par thème : un bloc par famille thématique, mots triés par fréquence
     const TH = DATA.themes || {}, last = ["grammaire", "formules", "autres"], by = new Map();
@@ -1483,6 +1500,9 @@ async function renderCarnet() {
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const o = tm.get(x.th || "autres") || tm.get("autres"); if (!o) return; o.tot++; if (S.has(ri + ":" + n)) o.got++; }));
   const last = ["grammaire", "formules", "autres"], ths = [...tm].filter(([, o]) => o.tot).sort((a, b) => (last.indexOf(a[0]) - last.indexOf(b[0])) || (b[1].tot - a[1].tot));
   $("#cbTh").innerHTML = ths.map(([k, o]) => `<span>${esc(TH[k] || k)}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.got} / ${o.tot} · ${o.tot ? Math.round(o.got / o.tot * 100) : 0} %</span>`).join("");
+  const FB = freqBands(), fb = FBANDS.map(() => ({ tot: 0, got: 0 }));
+  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const o = fb[FB.get(ri + ":" + n)]; o.tot++; if (S.has(ri + ":" + n)) o.got++; }));
+  $("#cbFq").innerHTML = fb.map((o, i) => (o.tot || FBANDS[i] <= 90) ? `<span>${i === 0 ? "≤ 10 %" : `${FBANDS[i - 1]} → ${FBANDS[i]} %`}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.tot ? `${o.got} / ${o.tot} · ${Math.round(o.got / o.tot * 100)} %` : "hors du palais"}</span>` : "").join("");
   const bx = [0, 0, 0, 0, 0, 0]; for (const o of S.values()) bx[o.b]++; bx[0] = LIB ? LIB.length - S.size : CURVES.total - S.size;
   const BC = ["var(--bg)", "#e6b9a5", "#e0cf8f", "#b7d39a", "#86c08f", "#4f9c63"];
   $("#cbBoxes").innerHTML = bx.map((v, i) => `<div style="background:${BC[i]};${i === 5 ? "color:#fff" : i ? "color:#2a211d" : ""}"><b>${v}</b>${i ? "boîte " + i : "jamais vus"}</div>`).join("");

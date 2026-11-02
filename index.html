@@ -5,6 +5,7 @@
 <style>
 /* Palais 3D plein écran : barre de pièces en haut, commandes rondes en bas, fiche en tiroir, feuilles pour tests et plan */
 :root {
+  --tb:calc(60px + env(safe-area-inset-bottom,0px));
   --bg:#efe7db; --surface:#fbf6ee; --fg:#2a211d; --muted:#6c5e55; --accent:#9c3d22; --line:#d9cbb8; --ok:#3d7a4a; --ko:#a8322a; --hl:#f1d3bd;
   --display:"Cormorant SC", Georgia, serif; --body:"Source Serif 4", Georgia, serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
   --shadow:0 6px 24px rgba(40,25,15,.18); --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
@@ -43,14 +44,14 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 
 /* Commandes du bas */
 #nav { position:fixed; z-index:6; left:50%; transform:translateX(-50%); display:flex; gap:8px; align-items:center;
-  bottom:calc(env(safe-area-inset-bottom,0px) + var(--drawer-h, 64px) + 12px) }
+  bottom:calc(var(--tb) + var(--drawer-h, 64px) + 12px) }
 .rb { width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow); font:600 18px/1 var(--mono); display:grid; place-items:center }
 .rb.big { width:56px; height:56px; font-size:12px; background:var(--fg); color:var(--surface); border-color:var(--fg) }
-#eye { position:fixed; z-index:7; right:max(12px, env(safe-area-inset-right,0px)); bottom:calc(env(safe-area-inset-bottom,0px) + var(--drawer-h, 64px) + 12px) }
+#eye { position:fixed; z-index:7; right:max(12px, env(safe-area-inset-right,0px)); bottom:calc(var(--tb) + var(--drawer-h, 64px) + 12px) }
 
 /* Tiroir de fiche */
-#drawer { position:fixed; z-index:6; left:0; right:0; bottom:0; background:var(--surface); border-top:1px solid var(--line); box-shadow:var(--shadow);
-  padding-bottom:env(safe-area-inset-bottom,0px); max-height:62%; display:flex; flex-direction:column; border-radius:12px 12px 0 0 }
+#drawer { position:fixed; z-index:6; left:0; right:0; bottom:var(--tb); background:var(--surface); border-top:1px solid var(--line); box-shadow:var(--shadow);
+  max-height:calc(62% - 40px); display:flex; flex-direction:column; border-radius:12px 12px 0 0 }
 #dhead { display:flex; align-items:center; gap:10px; padding:10px max(16px, env(safe-area-inset-right,0px)) 10px max(16px, env(safe-area-inset-left,0px)); border:0; background:none; width:100%; text-align:left }
 #dhead .n { font:500 13px var(--mono); border:3px solid var(--fc,#ccc); border-radius:4px; padding:1px 6px; font-variant-numeric:tabular-nums }
 #dhead .t { flex:1; min-width:0; display:flex; flex-direction:column }
@@ -93,7 +94,7 @@ dd { margin:0; min-width:0 }
 details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:pointer }
 
 /* Joystick (visite libre) */
-#joy { position:fixed; z-index:6; left:max(20px, env(safe-area-inset-left,0px)); bottom:calc(env(safe-area-inset-bottom,0px) + var(--drawer-h, 64px) + 20px); width:110px; height:110px; border-radius:50%;
+#joy { position:fixed; z-index:6; left:max(20px, env(safe-area-inset-left,0px)); bottom:calc(var(--tb) + var(--drawer-h, 64px) + 20px); width:110px; height:110px; border-radius:50%;
   background:color-mix(in srgb, var(--surface) 70%, transparent); border:1px solid var(--line); touch-action:none }
 #joy i { position:absolute; left:50%; top:50%; width:44px; height:44px; margin:-22px; border-radius:50%; background:var(--fg); opacity:.75 }
 #cross { position:fixed; z-index:3; left:50%; top:50%; width:14px; height:14px; margin:-7px; border:2px solid var(--fg); border-radius:50%; opacity:.6; pointer-events:none }
@@ -150,13 +151,68 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 #voile { position:fixed; inset:0; z-index:14; background:var(--bg) }
 .verdict { font:500 12px var(--mono) }
 .verdict.ok { color:var(--ok) } .verdict.ko { color:var(--ko) }
-#toast { position:fixed; z-index:30; left:50%; transform:translateX(-50%); bottom:calc(env(safe-area-inset-bottom,0px) + 140px); background:var(--fg); color:var(--surface); border-radius:8px; padding:8px 14px; font-size:14px }
+#toast { position:fixed; z-index:30; left:50%; transform:translateX(-50%); bottom:calc(var(--tb) + 140px); background:var(--fg); color:var(--surface); border-radius:8px; padding:8px 14px; font-size:14px }
 #chargement { position:fixed; inset:0; z-index:40; display:grid; place-items:center; background:var(--bg); font:600 22px var(--display); letter-spacing:.04em; text-align:center; padding:16px }
 #chargement small { display:block; font:500 11px var(--mono); color:var(--muted); margin-top:8px; letter-spacing:.06em }
 .hidden-ui #top, .hidden-ui #drawer { display:none }
-.hidden-ui #nav, .hidden-ui #eye { bottom:calc(env(safe-area-inset-bottom,0px) + 16px) }
+.hidden-ui #nav, .hidden-ui #eye { bottom:calc(var(--tb) + 16px) }
+/* Bandeau des modes (bas d'écran) */
+#tabs { position:fixed; z-index:13; left:0; right:0; bottom:0; height:var(--tb); padding:0 max(8px, env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(8px, env(safe-area-inset-left,0px));
+  display:flex; justify-content:center; gap:4px; background:var(--surface); border-top:1px solid var(--line); box-shadow:0 -4px 18px rgba(40,25,15,.10) }
+#tabs button { flex:1; max-width:180px; border:0; background:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:var(--muted); font:500 11px var(--mono); letter-spacing:.06em; text-transform:uppercase; border-radius:10px; margin:6px 0 }
+#tabs button svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round }
+#tabs button[aria-current="page"] { color:var(--accent); background:color-mix(in srgb, var(--accent) 10%, transparent) }
+body:not([data-view="palais"]) #top, body:not([data-view="palais"]) #nav, body:not([data-view="palais"]) #eye, body:not([data-view="palais"]) #drawer,
+body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body:not([data-view="palais"]) #bandeau { display:none !important }
+.view { position:fixed; z-index:12; left:0; right:0; top:0; bottom:var(--tb); overflow-y:auto; background:var(--bg); touch-action:pan-y; -webkit-user-select:text; user-select:text;
+  padding:calc(env(safe-area-inset-top,0px) + 14px) max(14px, env(safe-area-inset-right,0px)) 28px max(14px, env(safe-area-inset-left,0px)) }
+.view > .in { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:14px }
+.view h1 { font:600 28px/1.05 var(--display); letter-spacing:.03em; margin:0; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap }
+.view h1 small { font:500 11px var(--mono); color:var(--muted); letter-spacing:.06em; text-transform:uppercase }
+.view h3 { font:500 11px var(--mono); text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:6px 0 0 }
+/* Bibliothèque */
+.ltool { position:sticky; top:calc(-14px - env(safe-area-inset-top,0px)); z-index:2; background:var(--bg); padding:8px 0; display:flex; gap:8px; flex-wrap:wrap; border-bottom:1px solid var(--line) }
+.ltool input[type=search] { flex:1 1 220px; min-width:0; font:inherit; font-size:16px; padding:8px 12px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--fg) }
+.ltool select { font:inherit; font-size:14px; padding:7px 8px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--fg); max-width:48% }
+#libInfo { font:500 11px var(--mono); color:var(--muted); letter-spacing:.04em; flex-basis:100% }
+.lroom { content-visibility:auto; contain-intrinsic-size:auto 1200px; display:flex; flex-direction:column; gap:3px; margin-bottom:12px }
+.lroom h2 { font:600 20px/1.2 var(--display); margin:6px 0 6px; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap }
+.lroom h2 small { font:500 11px var(--mono); color:var(--muted); letter-spacing:.05em }
+.lrow { background:var(--surface); border:1px solid var(--line); border-left:5px solid var(--fc, var(--line)); border-radius:4px }
+.lrow > summary { list-style:none; display:flex; gap:10px; align-items:center; padding:7px 10px; cursor:pointer; min-height:28px }
+.lrow > summary::-webkit-details-marker { display:none }
+.lrow > summary:hover { background:var(--bg) }
+.lrow[open] > summary { border-bottom:1px solid var(--line) }
+.lrow .ln { font:500 12px var(--mono); color:var(--muted); width:1.8em; font-variant-numeric:tabular-nums }
+.lrow .lfr { flex:1 1 40%; min-width:0; font-weight:600; overflow-wrap:anywhere }
+.lrow .lit { flex:1 1 40%; min-width:0; font:600 17px/1.2 var(--display); color:var(--accent); overflow-wrap:anywhere }
+.lrow .lz { flex:none; font:500 11px var(--mono); color:var(--muted); width:3.2em; text-align:right; font-variant-numeric:tabular-nums }
+.lrow .say { width:30px; height:30px; font-size:13px }
+.dotb { flex:none; width:10px; height:10px; border-radius:50%; border:1px solid var(--line); background:transparent }
+.dotb.b1 { background:#e6b9a5; border-color:#e6b9a5 } .dotb.b2 { background:#e0cf8f; border-color:#e0cf8f } .dotb.b3 { background:#b7d39a; border-color:#b7d39a } .dotb.b4 { background:#86c08f; border-color:#86c08f } .dotb.b5 { background:#4f9c63; border-color:#4f9c63 }
+.dotb.due { box-shadow:0 0 0 2px var(--surface), 0 0 0 3.5px var(--accent) }
+.lbody { padding:10px 14px 14px }
+.lbody .btns { margin-top:10px }
+@media (max-width:520px) { .lrow > summary { flex-wrap:wrap; gap:2px 8px } .lrow .lit { flex-basis:100%; order:5; padding-left:calc(1.8em + 26px) } .lrow .lfr { flex:1 1 0 } }
+/* Carnet de bord */
+.kpis { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px }
+.kpi { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:12px 14px; display:flex; flex-direction:column; gap:4px }
+.kpi b { font:600 34px/1 var(--display); letter-spacing:.02em; font-variant-numeric:tabular-nums }
+.kpi span { font:500 10px var(--mono); text-transform:uppercase; letter-spacing:.07em; color:var(--muted) }
+.kpi small { font-size:13px; color:var(--muted) }
+.card { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:14px; display:flex; flex-direction:column; gap:10px }
+.cls { display:grid; grid-template-columns:minmax(90px, auto) 1fr auto; gap:8px 12px; align-items:center; font-size:14px }
+.cls .bar { height:10px }
+.cls .v { font:500 11px var(--mono); color:var(--muted); font-variant-numeric:tabular-nums; text-align:right }
+.boxes { display:grid; grid-template-columns:repeat(6, 1fr); gap:6px }
+.boxes div { border-radius:8px; padding:8px 6px; text-align:center; font:500 10px var(--mono); color:var(--fg); border:1px solid var(--line) }
+.boxes div b { display:block; font:600 22px/1.1 var(--display) }
+.hist { width:100%; border-collapse:collapse; font-size:14px; font-variant-numeric:tabular-nums }
+.hist th { font:500 10px var(--mono); text-transform:uppercase; letter-spacing:.06em; color:var(--muted); text-align:right; padding:4px 6px; border-bottom:1px solid var(--line) }
+.hist td { text-align:right; padding:5px 6px; border-bottom:1px solid var(--line) }
+.hist th:first-child, .hist td:first-child { text-align:left }
 @media (prefers-reduced-motion: reduce) { * { transition:none !important } }
-@media (min-width: 900px) { #drawer { left:auto; right:16px; bottom:16px; width:420px; border-radius:12px; max-height:calc(100% - 140px) } #nav { bottom:calc(env(safe-area-inset-bottom,0px) + 20px); left:calc(50% - 210px) } #eye { bottom:calc(env(safe-area-inset-bottom,0px) + 20px); right:452px } #joy { bottom:30px } }
+@media (min-width: 900px) { #drawer { left:auto; right:16px; bottom:calc(var(--tb) + 16px); width:420px; border-radius:12px; max-height:calc(100% - 200px) } #nav { bottom:calc(var(--tb) + 20px); left:calc(50% - 210px) } #eye { bottom:calc(var(--tb) + 20px); right:452px } #joy { bottom:calc(var(--tb) + 30px) } }
 </style>
 
 <canvas id="scene" aria-label="Palais mental 3D"></canvas>
@@ -212,10 +268,6 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
   <div class="frow"><label for="tagSel">Sous-catégorie</label><select id="tagSel"><option value="">toutes</option></select></div>
   <div class="frow"><label for="zmin">Fréquence FR minimale (Zipf)</label><input type="range" id="zmin" min="1" max="7" step="0.1" value="1"><span class="mono" id="zminV">1.0</span></div>
   <div class="frow" id="poolInfo"></div>
-  <h3>Courbe de compréhension</h3>
-  <div class="ckey" aria-hidden="true"><span><i style="border-color:var(--s1)"></i>dans l'ordre du palais</span><span><i style="border-color:var(--s2);border-top-style:dashed"></i>par fréquence décroissante</span><span><i style="border-color:var(--s3)"></i>ta progression</span></div>
-  <div class="curvebox"><svg id="curve" viewBox="0 0 640 400" role="img" aria-label="Pourcentage de compréhension selon le nombre de mots appris"></svg><div id="ctip" hidden></div></div>
-  <p id="curveTxt"></p>
   <h3>Progression · pièce actuelle</h3>
   <div class="frow"><label for="mapType">Afficher</label><select id="mapType"></select></div>
   <div class="map" id="map"></div>
@@ -232,6 +284,39 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
   <div class="shead"><h2>Mon compte</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
   <div id="accountBody" style="display:flex;flex-direction:column;gap:12px"></div>
 </div></div>
+
+<section class="view" id="lib" hidden aria-label="Bibliothèque"><div class="in">
+  <h1>Bibliothèque <small id="libCount"></small></h1>
+  <div class="ltool">
+    <input type="search" id="libQ" placeholder="Chercher un mot, en français ou en italien…" aria-label="Chercher" autocomplete="off">
+    <select id="libFam" aria-label="Classe"></select>
+    <select id="libTag" aria-label="Sous-catégorie"></select>
+    <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
+    <span id="libInfo"></span>
+  </div>
+  <div id="libList"></div>
+</div></section>
+
+<section class="view" id="carnet" hidden aria-label="Carnet de bord"><div class="in">
+  <h1>Carnet de bord <small id="cbStore"></small></h1>
+  <div class="kpis" id="kpis"></div>
+  <div class="btns"><button class="btn" type="button" id="cbRevue">Révision du jour</button><button class="btn alt" type="button" id="cbLearn">Apprendre de nouveaux mots</button><button class="btn alt" type="button" id="cbTests">Réglages des tests</button></div>
+  <div class="card">
+  <h3 style="margin:0">Courbe de compréhension</h3>
+  <div class="ckey" aria-hidden="true"><span><i style="border-color:var(--s1)"></i>dans l'ordre du palais</span><span><i style="border-color:var(--s2);border-top-style:dashed"></i>par fréquence décroissante</span><span><i style="border-color:var(--s3)"></i>ta progression</span></div>
+  <div class="curvebox"><svg id="curve" viewBox="0 0 640 400" role="img" aria-label="Pourcentage de compréhension selon le nombre de mots appris"></svg><div id="ctip" hidden></div></div>
+  <p id="curveTxt"></p>
+  </div>
+  <div class="card"><h3 style="margin:0">Mots appris par classe</h3><div class="cls" id="cbCls"></div></div>
+  <div class="card"><h3 style="margin:0">Boîtes de révision</h3><div class="boxes" id="cbBoxes"></div><p class="pr" style="margin:0">Chaque réussite fait monter un mot d'une boîte : il revient 1, 2, 4, 8 puis 16 jours plus tard. Un échec le renvoie en boîte 1.</p></div>
+  <div class="card"><h3 style="margin:0">Historique</h3><div id="cbHist"></div></div>
+</div></section>
+
+<nav id="tabs" aria-label="Modes">
+  <button type="button" data-view="lib"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16.5 4.5l3.6-.9 3 15.5-3.6.9z"/></svg>Bibliothèque</button>
+  <button type="button" data-view="palais"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v10M9.7 9v10M14.3 9v10M19 9v10M3 20h18"/></svg>Palais</button>
+  <button type="button" data-view="carnet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16M7.5 15l4-4.5 3 2.5 5-6"/></svg>Carnet</button>
+</nav>
 
 <div id="voile" hidden></div>
 <div id="quiz" hidden></div>
@@ -604,10 +689,11 @@ function applyOverviewLook() {
 
 /* ============ Navigation guidée ============ */
 const filled = ri => R[ri].niches.map((x, i) => x ? i : -1).filter(i => i >= 0);
-function stepN(dir) {
-  let ri = st.r, n = st.n;
+function stepN(dir) { return stepFrom(st.r, st.n, dir); }
+function stepFrom(ri, n, dir) {
+  const r0 = ri, n0 = n;
   for (let k = 0; k < 2800; k++) { n += dir; if (n > 99) { ri = (ri + 1) % R.length; n = 0; } if (n < 0) { ri = (ri - 1 + R.length) % R.length; n = 99; } if (R[ri].niches[n]) return [ri, n]; }
-  return [st.r, st.n];
+  return [r0, n0];
 }
 function stepDecade(dir) {
   let ri = st.r, d = Math.floor(st.n / 10);
@@ -665,8 +751,11 @@ function renderFiche() {
   const q = quizState.on && !quizState.revealed;
   $("#dfr").textContent = q && quizState.hideFr ? "?" : x.fr; $("#dit").textContent = q ? "?" : x.it;
   if (q) { $("#dbody").innerHTML = ""; return; }
-  const [nr, nn] = stepN(1), nx = R[nr].niches[nn], [pr, pn] = stepN(-1), px = R[pr].niches[pn];
-  $("#dbody").innerHTML = `<div class="fiche">
+  $("#dbody").innerHTML = ficheHTML(st.r, st.n);
+}
+function ficheHTML(ri, n) {
+  const x = R[ri].niches[n], [nr, nn] = stepFrom(ri, n, 1), nx = R[nr].niches[nn], [pr, pn] = stepFrom(ri, n, -1), px = R[pr].niches[pn];
+  return `<div class="fiche">
     <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter le mot">🔊</button><span>${esc(x.it)}</span></div>
     <div class="frw"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.fr)}" data-src="${esc(asrc(x.af))}" aria-label="Écouter le mot en français">🔊</button><span>${esc(x.fr)}</span><span class="lg">FR</span></div>
     <div class="phon"><span class="ipa" lang="it-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
@@ -679,7 +768,7 @@ function renderFiche() {
       <div><dt>Décryptage</dt><dd class="exfr">${esc(x.de)}</dd></div>
       ${x.fo ? `<div><dt>Formes</dt><dd class="exfr">${esc(x.fo)}</dd></div>` : ""}
       ${x.t && x.t.length ? `<div><dt>Étiquettes</dt><dd class="tags">${x.t.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</dd></div>` : ""}
-      <div class="lien"><dt>⟶ ${nr === st.r ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>
+      <div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>
     </dl>
     ${px ? `<details class="prev"><summary>⟵ depuis ${String(pn).padStart(2, "0")} · ${esc(px.it)}</summary><p class="exfr" style="margin:6px 0 0">${esc(px.li)}</p></details>` : ""}
   </div>`;
@@ -953,18 +1042,20 @@ function endQuiz(msg) {
 // somme des occurrences par 100 M de mots (lemme, parlé IT). Les expressions et incises n'ajoutent rien : leurs mots sont déjà comptés.
 let CURVES = null, HIST = ls.get("hist", []);
 const isWordRoom = r => r.fam !== "expressions" && r.fam !== "incises";
+// couverture : seuls les mots dont la fréquence est mesurée comptent (les locutions estimées ≈ recompteraient leurs mots)
+const counts = (r, x) => isWordRoom(r) && !x.ax;
 function buildCurves() {
   const pal = [[0, 0]], items = []; let n = 0, c = 0;
-  R.forEach(r => r.niches.forEach(x => { if (!x) return; const v = isWordRoom(r) ? (x.oi || 0) / 1e6 : 0; n++; c += v; pal.push([n, c]); items.push(v); }));
+  R.forEach(r => r.niches.forEach(x => { if (!x) return; const v = counts(r, x) ? (x.oi || 0) / 1e6 : 0; n++; c += v; pal.push([n, c]); items.push(v); }));
   items.sort((a, b) => b - a); const fq = [[0, 0]]; let f = 0; items.forEach((v, i) => { f += v; fq.push([i + 1, f]); });
-  CURVES = { pal, fq, total: n, max: c, words: R.reduce((a, r) => a + (isWordRoom(r) ? r.niches.filter(Boolean).length : 0), 0) };
+  CURVES = { pal, fq, total: n, max: c, words: R.reduce((a, r) => a + r.niches.filter(x => x && counts(r, x)).length, 0) };
 }
 async function learnedStats() {
   let n = 0, c = 0;
   for (let ri = 0; ri < R.length; ri++) {
     const cards = await srsRoom(ri), got = new Set();
     for (const k in cards) { const v = cards[k]; if (v && v.seen && v.b >= 1) got.add(+k.split(":")[0]); }
-    for (const m of got) { const x = R[ri].niches[m]; if (!x) continue; n++; if (isWordRoom(R[ri])) c += (x.oi || 0) / 1e6; }
+    for (const m of got) { const x = R[ri].niches[m]; if (!x) continue; n++; if (counts(R[ri], x)) c += (x.oi || 0) / 1e6; }
   }
   return { n, c };
 }
@@ -999,7 +1090,7 @@ async function renderCurve() {
   g += `<line class="xh" id="xh" y1="${T}" y2="${Y(0)}" x1="-10" x2="-10"/>`;
   svg.innerHTML = g;
   const nextWords = CURVES.pal.find(p => p[0] > me.n && p[1] > me.c + 5);
-  $("#curveTxt").textContent = `Tu as appris ${me.n} mot(s) ou expression(s) (au moins une réussite) : ils couvrent environ ${me.c.toFixed(1)} % des mots entendus dans une conversation en italien. Les ${CURVES.words} mots du palais en couvrent ${CURVES.max.toFixed(0)} % ; les expressions n'ajoutent pas de pourcentage, car leurs mots sont déjà comptés, mais elles aident à comprendre les tournures.` + (nextWords ? ` En suivant l'ordre du palais, +5 % arrivent vers ${nextWords[0]} niches.` : "");
+  $("#curveTxt").textContent = `Tu as appris ${me.n} mot(s) ou expression(s) (au moins une réussite) : ils couvrent environ ${me.c.toFixed(1)} % des mots entendus dans une conversation en italien. Les ${CURVES.words} mots du palais en couvrent ${CURVES.max.toFixed(0)} % ; les expressions et locutions n'ajoutent pas de pourcentage, car leurs mots sont déjà comptés, mais elles aident à comprendre les tournures.` + (nextWords ? ` En suivant l'ordre du palais, +5 % arrivent vers ${nextWords[0]} niches.` : "");
   const tip = $("#ctip"), box = svg.parentElement;
   svg.onpointermove = e => {
     const b = svg.getBoundingClientRect(), vx = (e.clientX - b.left) / b.width * Wd; if (vx < L || vx > Wd - Rm) { tip.hidden = true; return; }
@@ -1024,7 +1115,6 @@ async function renderTests() {
   $("#mapType").innerHTML = TYPES.filter(t => t[0] !== "chaine").map(([k, l]) => `<option value="${k}" ${k === prefs.mapType ? "selected" : ""}>${l}</option>`).join("");
   const pool = poolItems(); $("#poolInfo").textContent = `${pool.length} mot(s) dans la sélection`;
   const due = await dueList(); $("#srsInfo").textContent = `Révision du jour : ${due.length} carte(s) à revoir.` + (store.kind === "claude" ? " Progression enregistrée sur votre compte Claude." : store.kind === "sb" ? ` Progression enregistrée sur le compte ${store.email}.` : " Progression enregistrée sur cet appareil." + (store.sb ? " Connecte-toi (bouton Compte) pour la garder sur tous tes appareils." : ""));
-  renderCurve();
   const c = await srsRoom(st.r);
   $("#map").innerHTML = R[st.r].niches.map((x, n) => { if (!x) return `<span class="vide">${n}</span>`; const k = c[n + ":" + prefs.mapType]; return `<span class="${k && k.seen ? "b" + Math.max(1, k.b) : ""}" title="${esc(x.fr)}">${n}</span>`; }).join("");
 }
@@ -1114,7 +1204,7 @@ function tick() {
     if (t >= 1) { anim.active = false; if (anim.kind === "thread") particle.visible = false; const f = anim.then; anim.then = null; f && f(); }
   }
   if (ring.visible) { const k = 1 + .12 * Math.sin(performance.now() / 160); ring.scale.setScalar(k * (ring.userData.base || 1)); }
-  renderer.render(scene, camera);
+  if (VIEW === "palais") renderer.render(scene, camera);
   requestAnimationFrame(tick);
 }
 
@@ -1144,7 +1234,7 @@ function bindUI() {
     if (t.closest("[data-close]")) return closeSheets();
     if (t.classList.contains("sheet")) return closeSheets();
     const g = t.closest("[data-goroom]"); if (g) { closeSheets(); if (st.mode === "free") leaveFree(); const ri = +g.dataset.goroom; return goTo(ri, filled(ri)[0]); }
-    const say = t.closest(".say"); if (say) return speak(say.dataset.say, say.dataset.src, say, say.dataset.lang || "it");
+    const say = t.closest(".say"); if (say && say.closest("summary")) e.preventDefault(); if (say) return speak(say.dataset.say, say.dataset.src, say, say.dataset.lang || "it");
     if (t.closest("[data-type]")) { const k = t.closest("[data-type]").dataset.type; prefs.types = prefs.types.includes(k) ? prefs.types.filter(x => x !== k) : [...prefs.types, k]; savePrefs(); return renderTests(); }
     if (t.closest("[data-room]")) { const k = +t.closest("[data-room]").dataset.room; prefs.rooms = prefs.rooms.includes(k) ? prefs.rooms.filter(x => x !== k) : [...prefs.rooms, k]; savePrefs(); return renderTests(); }
     if (t.closest("[data-dec]")) { const k = +t.closest("[data-dec]").dataset.dec; prefs.decs = prefs.decs.includes(k) ? prefs.decs.filter(x => x !== k) : [...prefs.decs, k]; savePrefs(); return renderTests(); }
@@ -1201,12 +1291,110 @@ function onResize() {
   if (st.mode === "guide" && !anim.walking && R.length) flyTo(poseFor(st.zoom), .25);
 }
 
+/* ============ Modes : bibliothèque, palais, carnet de bord ============ */
+let VIEW = "palais";
+const FAML = { noms: "Noms", verbes: "Verbes", adjectifs: "Adjectifs", pronoms: "Pronoms", conjonctions: "Conjonctions", prepositions: "Prépositions", adverbes: "Adverbes", expressions: "Expressions", incises: "Incises" };
+const famOf = r => r.id.startsWith("determinants") ? "adjectifs" : r.fam;
+function setView(v) {
+  if (!["lib", "palais", "carnet"].includes(v)) v = "palais";
+  if (v !== "palais" && quizState.on) endQuiz();
+  if (v !== "palais" && st.mode === "free") leaveFree();
+  VIEW = v; document.body.dataset.view = v; ls.set("view", v);
+  $("#lib").hidden = v !== "lib"; $("#carnet").hidden = v !== "carnet";
+  document.querySelectorAll("#tabs [data-view]").forEach(b => b.setAttribute("aria-current", b.dataset.view === v ? "page" : "false"));
+  if (v === "palais") { onResize(); renderRooms(); }
+  if (v === "lib") renderLib();
+  if (v === "carnet") renderCarnet();
+}
+async function statusAll() { // par niche : boîte la plus haute atteinte (toutes questions confondues) et révision due
+  const out = new Map(), t = today();
+  for (let ri = 0; ri < R.length; ri++) {
+    const c = await srsRoom(ri);
+    for (const k in c) { const v = c[k]; if (!v || !v.seen) continue; const n = +k.split(":")[0], key = ri + ":" + n, o = out.get(key) || { b: 0, due: false };
+      o.b = Math.max(o.b, Math.max(1, v.b)); o.due = o.due || v.d <= t; out.set(key, o); }
+  }
+  return out;
+}
+const nrm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+let LIB = null;
+function libIndex() {
+  if (LIB) return LIB;
+  LIB = [];
+  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) LIB.push({ ri, n, x, fam: famOf(r), q: nrm(x.fr + " | " + x.it + " | " + x.mc) }); }));
+  const fams = [...new Set(LIB.map(e => e.fam))];
+  $("#libFam").innerHTML = `<option value="">toutes les classes</option>` + fams.map(f => `<option value="${f}">${FAML[f] || f}</option>`).join("");
+  return LIB;
+}
+function libTags() {
+  const f = $("#libFam").value, cur = $("#libTag").value, tags = new Set();
+  for (const e of LIB) if (!f || e.fam === f) (e.x.t || []).forEach(t => tags.add(t));
+  $("#libTag").innerHTML = `<option value="">toutes les sous-catégories</option>` + [...tags].sort().map(t => `<option ${t === cur ? "selected" : ""}>${esc(t)}</option>`).join("");
+}
+async function renderLib() {
+  libIndex(); if (!$("#libTag").options.length) libTags();
+  const q = nrm($("#libQ").value.trim()), f = $("#libFam").value, tg = $("#libTag").value, sf = $("#libSt").value;
+  const S = await statusAll();
+  const rows = LIB.filter(e => {
+    if (f && e.fam !== f) return false; if (tg && !(e.x.t || []).includes(tg)) return false; if (q && !e.q.includes(q)) return false;
+    if (sf) { const o = S.get(e.ri + ":" + e.n); if (sf === "new" && o) return false; if (sf === "seen" && !o) return false; if (sf === "due" && !(o && o.due)) return false; if (sf === "weak" && !(o && o.b <= 2)) return false; }
+    return true;
+  });
+  const by = new Map(); for (const e of rows) { if (!by.has(e.ri)) by.set(e.ri, []); by.get(e.ri).push(e); }
+  $("#libCount").textContent = `${LIB.length} mots et expressions · ${S.size} appris`;
+  $("#libInfo").textContent = rows.length === LIB.length ? `${rows.length} entrées · touche une ligne pour la fiche complète` : `${rows.length} entrée(s) sur ${LIB.length}`;
+  $("#libList").innerHTML = rows.length ? [...by].map(([ri, es]) => `<section class="lroom"><h2>${esc(R[ri].fr)} <small>${esc(R[ri].it)} · ${es.length}</small></h2>` +
+    es.map(({ n, x }) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
+      `<span class="ln">${String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
+      `<span class="lfr">${esc(x.fr)}</span><span class="lit" lang="it">${esc(x.it)}</span><span class="lz">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span>` +
+      `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; }).join("") + `</section>`).join("")
+    : `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`;
+}
+function openLibRow(d) {
+  const b = d.querySelector(".lbody"); if (!d.open || b.childElementCount) return;
+  const ri = +d.dataset.ri, n = +d.dataset.n;
+  b.innerHTML = ficheHTML(ri, n) + `<div class="btns"><button class="btn alt" type="button" data-gopal="${ri}:${n}">Voir dans le palais</button></div>`;
+}
+const fmtDay = d => new Date(d * 86400000).toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" });
+async function renderCarnet() {
+  if (!CURVES) buildCurves();
+  const S = await statusAll(), me = await updateHist(), t = today();
+  let due = 0; for (let ri = 0; ri < R.length; ri++) { const c = await srsRoom(ri); for (const k in c) if (c[k] && c[k].seen && c[k].d <= t) due++; }
+  const days = new Set(HIST.map(p => p.d)); let streak = 0; for (let d = days.has(t) ? t : t - 1; days.has(d); d--) streak++;
+  $("#cbStore").textContent = store.kind === "claude" ? "progression sur ton compte Claude" : store.kind === "sb" ? "progression sur " + store.email : "progression sur cet appareil";
+  $("#kpis").innerHTML = [
+    [me.n, "mots appris", `sur ${CURVES.total} niches`],
+    [me.c.toFixed(1) + " %", "compréhension", `de l'italien parlé courant`],
+    [due, "cartes à réviser", due ? "aujourd'hui" : "rien d'urgent"],
+    [streak, "jours d'affilée", `${days.size} jour(s) d'étude au total`]
+  ].map(([v, l, sm]) => `<div class="kpi"><span>${l}</span><b>${v}</b><small>${sm}</small></div>`).join("");
+  renderCurve();
+  const fam = new Map(); R.forEach((r, ri) => { const f = famOf(r), o = fam.get(f) || { tot: 0, got: 0 }; r.niches.forEach((x, n) => { if (!x) return; o.tot++; if (S.has(ri + ":" + n)) o.got++; }); fam.set(f, o); });
+  $("#cbCls").innerHTML = [...fam].map(([f, o]) => `<span>${FAML[f] || f}</span><span class="bar" role="img" aria-label="${o.got} sur ${o.tot}"><i style="width:${o.tot ? o.got / o.tot * 100 : 0}%"></i></span><span class="v">${o.got} / ${o.tot} · ${o.tot ? Math.round(o.got / o.tot * 100) : 0} %</span>`).join("");
+  const bx = [0, 0, 0, 0, 0, 0]; for (const o of S.values()) bx[o.b]++; bx[0] = LIB ? LIB.length - S.size : CURVES.total - S.size;
+  const BC = ["var(--bg)", "#e6b9a5", "#e0cf8f", "#b7d39a", "#86c08f", "#4f9c63"];
+  $("#cbBoxes").innerHTML = bx.map((v, i) => `<div style="background:${BC[i]};${i === 5 ? "color:#fff" : i ? "color:#2a211d" : ""}"><b>${v}</b>${i ? "boîte " + i : "jamais vus"}</div>`).join("");
+  const H = HIST.slice(-14).reverse();
+  $("#cbHist").innerHTML = H.length ? `<table class="hist"><thead><tr><th>Jour</th><th>Mots appris</th><th>Gain</th><th>Compréhension</th></tr></thead><tbody>` +
+    H.map((p, i) => { const prev = H[i + 1]; const g = prev ? p.n - prev.n : null; return `<tr><td>${fmtDay(p.d)}</td><td>${p.n}</td><td>${g == null ? "—" : (g > 0 ? "+" : "") + g}</td><td>${p.c.toFixed(1)} %</td></tr>`; }).join("") + `</tbody></table>`
+    : `<p class="pr" style="margin:0">Pas encore de séance : lance une révision ou apprends tes premiers mots.</p>`;
+}
+function bindViews() {
+  $("#tabs").addEventListener("click", e => { const b = e.target.closest("[data-view]"); if (b) setView(b.dataset.view); });
+  let qt; $("#libQ").addEventListener("input", () => { clearTimeout(qt); qt = setTimeout(renderLib, 180); });
+  $("#libFam").onchange = () => { libTags(); renderLib(); }; $("#libTag").onchange = renderLib; $("#libSt").onchange = renderLib;
+  $("#libList").addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("lrow")) openLibRow(e.target); }, true);
+  $("#libList").addEventListener("click", e => { const g = e.target.closest("[data-gopal]"); if (!g) return; const [ri, n] = g.dataset.gopal.split(":").map(Number); setView("palais"); goTo(ri, n); setDrawer(true); });
+  $("#cbRevue").onclick = () => { setView("palais"); startQuiz("revue"); };
+  $("#cbLearn").onclick = () => { setView("palais"); startQuiz("learn"); };
+  $("#cbTests").onclick = () => { setView("palais"); $("#testsSheet").hidden = false; renderTests(); };
+}
+
 /* ============ Démarrage ============ */
 async function start() {
   try {
     const res = await fetch("data3d.json"); DATA = await res.json();
   } catch (e) { $("#chargement").innerHTML = "Données introuvables<small>data3d.json n'a pas pu être chargé</small>"; return; }
-  R = DATA.rooms; migrateLocal(); layout();
+  document.body.dataset.view = "palais"; R = DATA.rooms; migrateLocal(); layout();
   renderer = new THREE.WebGLRenderer({ canvas: $("#scene"), antialias: true }); renderer.setPixelRatio(Math.min(2, devicePixelRatio));
   scene = new THREE.Scene(); scene.background = new THREE.Color("#2a211d"); scene.fog = new THREE.Fog("#2a211d", 40, 140);
   camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, .05, 400); clock = new THREE.Clock();
@@ -1218,15 +1406,16 @@ async function start() {
   buildMarkers();
   const pos = ls.get("pos", null); if (pos && R[pos.r]) { st.r = pos.r; st.n = R[pos.r].niches[pos.n] ? pos.n : filled(pos.r)[0]; st.zoom = pos.zoom || 0; }
   $("#zoom").textContent = ZL[st.zoom];
-  bindUI(); renderRooms(); onResize();
+  bindUI(); bindViews(); renderRooms(); onResize();
   texturizeRoom(st.r); placeRing(st.r, st.n); applyOverviewLook(); renderFiche();
   const p = poseFor(st.zoom); camera.position.copy(p.pos); camTarget.copy(p.target); camera.up.copy(p.up); camera.lookAt(camTarget);
   pickVoice(); if (window.speechSynthesis) speechSynthesis.onvoiceschanged = pickVoice;
   addEventListener("resize", onResize);
   $("#chargement").hidden = true; measureDrawer();
+  setView(ls.get("view", "palais"));
   requestAnimationFrame(tick);
   initStore();
-  window.__pm = { st, goTo, stepN, R, setZoom, enterFree, leaveFree, startQuiz, reveal, onGrade, toggleChain, free, quizState, camera };
+  window.__pm = { setView, renderLib, renderCarnet, st, goTo, stepN, R, setZoom, enterFree, leaveFree, startQuiz, reveal, onGrade, toggleChain, free, quizState, camera };
 }
 start();
 </script>

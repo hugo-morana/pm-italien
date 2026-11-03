@@ -330,6 +330,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h3>Réponse</h3>
   <div class="pills" role="group" aria-label="Mode de réponse"><button class="pill" type="button" data-inmode="aucun">Aucune · je m'auto-évalue</button><button class="pill" type="button" data-inmode="clavier">Clavier · je tape</button><button class="pill" type="button" data-inmode="voix">Voix · je parle</button></div>
   <p class="pr" id="inModeTxt" style="margin:0"></p>
+  <h3>Voix</h3>
+  <div class="pills" role="group" aria-label="Lecture audio pendant les tests"><button class="pill" type="button" data-sayopt="sayQ">🔊 Lire la question</button><button class="pill" type="button" data-sayopt="sayA">🔊 Lire la réponse</button></div>
+  <p class="pr" style="margin:0">La question est lue dès qu'elle s'affiche (le mot ou la phrase à traduire, dans sa langue) ; la réponse est lue quand tu la découvres.</p>
   <h3>Approche d'apprentissage</h3>
   <div class="pills" role="group" aria-label="Approche d'apprentissage"><button class="pill" type="button" data-approach="freqfr">Fréquence FR</button><button class="pill" type="button" data-approach="freqit">Fréquence IT</button><button class="pill" type="button" data-approach="theme">Par thème</button><button class="pill" type="button" data-approach="classe">Par classe</button></div>
   <p class="pr" id="approachTxt" style="margin:0"></p>
@@ -875,7 +878,7 @@ function speak(text, src, btn, lang = "it") {
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
 prefs.approach = AP_OF[PAL];   // l'approche d'apprentissage et la version du palais vont ensemble
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
@@ -1100,7 +1103,7 @@ function ask(q) {
     ${input ? `<input id="rep" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${IM === "voix" ? "Touche 🎤 et parle (ou dicte au clavier)" : "Ta réponse"}" lang="${repLang(q.ty).slice(0, 2)}">` : ""}
     <div class="btns">${IM === "voix" ? `<button class="btn" type="button" data-mic>🎤 Parler</button>` : ""}<button class="btn${IM === "voix" ? " alt" : ""}" type="button" data-reveal>${IM === "aucun" ? "Révéler" : "Valider"}</button></div>`;
   if (IM === "clavier") setTimeout(() => { const r = $("#rep"); if (r) r.focus(); }, 60);
-  if (q.ty === "aud") speak(x.it, asrc(x.ai, x.am));
+  if (q.ty === "aud") speak(x.it, asrc(x.ai, x.am)); else sayQuestion(q);
   renderFiche();
 }
 const repLang = ty => (ty === "it" || ty === "aud" || ty === "img" || ty === "phit") ? "fr-FR" : "it-IT";
@@ -1186,7 +1189,8 @@ function revealPhrase(q, x, reps) {
   fillPhraseWords(q, x);
 }
 
-function reveal() {
+function reveal() { revealCore(); sayAnswer(quizState.q); }
+function revealCore() {
   const q = quizState.q, x = R[q.ri].niches[q.n]; quizState.revealed = true; $("#voile").hidden = true;
   const rep = ($("#rep") || {}).value || "", reps = [rep, ...(quizState.micAlts || [])].filter(Boolean); quizState.micAlts = null;
   let ans, okGuess = null;
@@ -1349,6 +1353,22 @@ const APTXT = {
   theme: "Palais par thème : les nouveaux mots arrivent thème par thème (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème.",
   classe: "Palais par classe : les nouveaux mots arrivent classe par classe (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre." };
 const TMTXT = { auto: "les cartes à réviser aujourd'hui, puis de nouveaux mots", revue: "uniquement les cartes à réviser aujourd'hui", learn: "uniquement de nouveaux mots", libre: "30 questions au hasard, sans tenir compte des révisions", exemple: "20 phrases d'exemple, mots pas encore appris d'abord" };
+function renderSayOpts() { document.querySelectorAll("[data-sayopt]").forEach(b => b.setAttribute("aria-pressed", String(!!prefs[b.dataset.sayopt]))); }
+function sayQuestion(q) {   // lit la question à son affichage (réglage « Lire la question »)
+  if (!prefs.sayQ || !q) return; const x = R[q.ri].niches[q.n];
+  if (q.ty === "fr") speak(x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", null, "fr");
+  else if (q.ty === "it" || q.ty === "img" || q.ty === "suite" || q.ty === "chaine") speak(x.it, asrc(x.ai, x.am));
+  else if (q.ty === "phit") speak(x.eit, asrc(null, x.ap));
+  else if (q.ty === "phfr") speak(x.efr, "", null, "fr");
+}
+function sayAnswer(q) {   // lit la réponse quand on la découvre (réglage « Lire la réponse »)
+  if (!prefs.sayA || !q) return; const x = R[q.ri].niches[q.n];
+  if (q.ty === "fr" || q.ty === "num" || q.ty === "img") speak(x.it, asrc(x.ai, x.am));
+  else if (q.ty === "it" || q.ty === "aud") speak(x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", null, "fr");
+  else if (q.ty === "phit") speak(x.efr, "", null, "fr");
+  else if (q.ty === "phfr") speak(x.eit, asrc(null, x.ap));
+  else if ((q.ty === "suite" || q.ty === "chaine") && q.target) { const y = R[q.target.r].niches[q.target.n]; speak(y.it, asrc(y.ai, y.am)); }
+}
 function renderTMode() {
   const m = prefs.testMode || "auto"; document.querySelectorAll("[data-tmode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tmode === m)));
   const t = $("#tModeTxt"); if (!t) return; const nr = prefs.rooms.length;
@@ -1360,7 +1380,7 @@ function orderItems(items) {   // ordre d'introduction des nouveaux mots : celui
 }
 function renderInMode() { const m = prefs.inMode || "clavier"; document.querySelectorAll("[data-inmode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.inmode === m))); const t = $("#inModeTxt"); if (t) t.textContent = INTXT[m]; }
 async function renderTests() {
-  renderInMode(); renderApproach(); renderTMode();
+  renderInMode(); renderApproach(); renderTMode(); renderSayOpts();
   $("#typesP").innerHTML = TYPES.map(([k, l]) => `<button class="pill" type="button" data-type="${k}" aria-pressed="${prefs.types.includes(k)}">${l}</button>`).join("");
   $("#roomsP").innerHTML = R.map((r, i) => `<button class="pill" type="button" data-room="${i}" aria-pressed="${prefs.rooms.includes(i)}">${esc(shortName(r))}</button>`).join("");
   $("#decP").innerHTML = [...Array(10).keys()].map(d => `<button class="pill" type="button" data-dec="${d}" aria-pressed="${prefs.decs.includes(d)}" style="border-color:${COLS[d]}">${d}x</button>`).join("");
@@ -1508,6 +1528,7 @@ function bindUI() {
   $("#curR").onclick = () => { prefs.rooms = [st.r]; savePrefs(); renderTests(); };
   $("#tagSel").onchange = e => { prefs.tag = e.target.value; savePrefs(); renderTests(); };
   $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = prefs.zmin.toFixed(1); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
+  document.addEventListener("click", e => { const b = e.target.closest("[data-sayopt]"); if (!b) return; const k = b.dataset.sayopt; prefs[k] = !prefs[k]; savePrefs(); renderSayOpts(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-tmode]"); if (!b) return; prefs.testMode = b.dataset.tmode; savePrefs(); renderTMode(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-approach]"); if (!b) return; prefs.approach = b.dataset.approach; savePrefs(); renderApproach(); choosePalace(PAL_OF[b.dataset.approach]); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-inmode]"); if (!b) return; prefs.inMode = b.dataset.inmode; savePrefs(); renderInMode(); });

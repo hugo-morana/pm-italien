@@ -383,6 +383,7 @@ const FAMS = {
   adverbes:     { fr: "salle de théâtre", it: "teatro", floor: ["planches", "#5b3a26", "#714a30"], wall: "#7a1f24", ceil: "#2e1c18", land: "rideau" },
   expressions:  { fr: "place du marché", it: "piazza", floor: ["pierre", "#a99f8f", "#7f7566"], wall: "#e0b77e", ceil: "#8fb3d6", land: "fontaine" },
   incises:      { fr: "loggia des orateurs", it: "loggia", floor: ["terrazzo", "#c8b69a", "#7d6a4f"], wall: "#e9dcc4", ceil: "#d9c7a7", land: "lutrin" },
+  accords:      { fr: "salle des reflets", it: "sala dei riflessi", floor: ["marbre", "#e6dccb", "#8a7a64"], wall: "#5b4a6b", ceil: "#ece6dc", land: "chevalet" },
   formes:       { fr: "salle des miroirs", it: "sala degli specchi", floor: ["marbre", "#d8d4cc", "#6f6a62"], wall: "#3f5a6b", ceil: "#e8e4dc", land: "etabli" }
 };
 const SHORT = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj. qualif.", determinants: "Adj. déterm.", pronoms: "Pronoms", conjonctions: "Conjonctions",
@@ -391,7 +392,7 @@ const SHORT = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj. qualif.", deter
   modales_1: "Modales", modales_2: "Modales ²", modales_3: "Modales ³", modales_4: "Modales ⁴", modales_5: "Modales ⁵" };
 const code = r => r.code || ({ noms: "n", verbes: "v", adjectifs: "adj", determinants: "det", pronoms: "pro", conjonctions: "conj", prepositions: "prp", adverbes: "adv", courantes_1: "cour" }[r.id] || r.id.replace(/^basiques_/, "b").replace(/^modales_/, "m").replace(/^incises_/, "i").replace(/^noms_/, "n").replace(/^verbes_/, "v").replace(/^adjectifs_/, "adj").replace(/^adverbes_/, "adv").replace(/^pronoms_/, "pro").replace(/^conjonctions_/, "conj").replace(/^prepositions_/, "prp").replace(/^courantes_/, "cour"));
 const SUP = n => String(n).split("").map(c => "⁰¹²³⁴⁵⁶⁷⁸⁹"[+c]).join("");
-const BASE = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj.", adverbes: "Adverbes", pronoms: "Pronoms", conjonctions: "Conj.", prepositions: "Prép.", courantes: "Courantes", basiques: "Basiques", modales: "Modales", incises: "Incises", formes: "Formes" };
+const BASE = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj.", adverbes: "Adverbes", pronoms: "Pronoms", conjonctions: "Conj.", prepositions: "Prép.", courantes: "Courantes", basiques: "Basiques", modales: "Modales", incises: "Incises", formes: "Formes", accords: "Accords" };
 const shortName = r => r.short || SHORT[r.id] || ((m => m && BASE[m[1]] ? BASE[m[1]] + " " + SUP(m[2]) : r.id)(r.id.match(/^(\w+?)_(\d+)$/)));
 const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"], ["phit", "Phrase IT → FR"], ["phfr", "Phrase FR → IT"]];
 const BOXDAYS = [0, 1, 2, 4, 8, 16];
@@ -1102,18 +1103,13 @@ function sentOk(expected, answer) {   // part des mots attendus retrouvés dans 
   const hit = E.filter(w => A.some(a => a === w || (w.length > 3 && lev(a, w) <= Math.floor(w.length * 0.25)))).length;
   return hit / E.length >= 0.75;
 }
-let WIDX = null;   // mot italien (forme) → niches de mots qui le couvrent
+let WIDX = null;   // forme italienne exacte → items qui la portent (une forme conjuguée ou accordée compte pour son propre item, pas pour l'infinitif ni le mot de base)
 function wordIndex() {
-  if (WIDX) return WIDX; WIDX = new Map(); const lemmaAt = new Map();
+  if (WIDX) return WIDX; WIDX = new Map();
   const add = (w, ri, n) => { w = norm(w).trim(); if (!w || w.includes(" ")) return; if (!WIDX.has(w)) WIDX.set(w, []); WIDX.get(w).push([ri, n]); };
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const cls = x._cls || famOf(r);
     if (cls === "expressions" || cls === "incises") return;
-    for (const a of altsOf(x.it)) { add(a, ri, n); if (cls !== "formes" && norm(a).trim() && !norm(a).trim().includes(" ")) lemmaAt.set(norm(a).trim(), [ri, n]); }
-    if (cls === "adjectifs" || cls === "noms") for (const a of altsOf(x.it)) { const w = norm(a).trim(); if (!w || w.includes(" ") || w.length < 3) continue;   // genre et nombre
-      const st = w.slice(0, -1), e = w.slice(-1); if (e === "o") ["a", "i", "e"].forEach(v => add(st + v, ri, n)); if (e === "a") ["e", "i"].forEach(v => add(st + v, ri, n)); if (e === "e") add(st + "i", ri, n);
-      if (w.endsWith("co")) add(w.slice(0, -2) + "chi", ri, n); if (w.endsWith("ca")) add(w.slice(0, -2) + "che", ri, n); }
-    for (const f of String(x.fo || "").split(/[,;\/]/)) add(f, ri, n); }));
-  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x || (x._cls || famOf(r)) !== "formes") return; const L = lemmaAt.get(norm(String(x.mc || "").replace("→", "")).trim()); if (L) for (const a of altsOf(x.it)) add(a, L[0], L[1]); }));
+    for (const a of altsOf(x.it)) add(a, ri, n); }));
   return WIDX;
 }
 async function creditSentence(q, x) {   // phrase réussie : chaque mot qui la compose compte comme appris dans ce sens
@@ -1534,7 +1530,7 @@ async function updateTestBadge() {
 
 /* ============ Modes : bibliothèque, palais, carnet de bord ============ */
 let VIEW = "palais";
-const FAML = { noms: "Noms", verbes: "Verbes", adjectifs: "Adjectifs", pronoms: "Pronoms", conjonctions: "Conjonctions", prepositions: "Prépositions", adverbes: "Adverbes", expressions: "Expressions", incises: "Incises", formes: "Formes verbales" };
+const FAML = { noms: "Noms", verbes: "Verbes", adjectifs: "Adjectifs", pronoms: "Pronoms", conjonctions: "Conjonctions", prepositions: "Prépositions", adverbes: "Adverbes", expressions: "Expressions", incises: "Incises", formes: "Formes verbales", accords: "Formes accordées" };
 const famOf = r => r.id.startsWith("determinants") ? "adjectifs" : r.fam;
 function setView(v) {
   if (!["lib", "palais", "carnet", "reglages"].includes(v)) v = "palais";
@@ -1600,6 +1596,7 @@ function toggleSec(h) { const sec = h.closest(".lsub, .lroom"), k = sec.dataset.
 const TENSES = ["présent", "imparfait", "passé simple", "futur", "conditionnel", "subjonctif", "subj. imparfait", "impératif", "gérondif", "participe", "infinitif"];
 function subKey(f, x) {
   if (f === "noms" || f === "verbes") { const k = x.th || "autres"; return [k, (DATA.themes || {})[k] || k]; }
+  if (f === "accords") { const m = (x.fr || "").match(/\(([^,()]+), ([^()]+)\)\s*$/), t = m ? m[2].trim() : "autres"; return [t, t.charAt(0).toUpperCase() + t.slice(1)]; }
   if (f === "formes") { const m = (x.fr || "").match(/\(([^,()]+), ([^()]+)\)\s*$/); const t = m ? m[2].split(" / ")[0].trim() : "autres"; return [t, t.charAt(0).toUpperCase() + t.slice(1)]; }
   const k = x.sc || ""; if (!k || k === f || k === "expressions" || k === "pronoms" || k === "adjectifs" || k === "adverbes") return ["~", "Autres"];
   let lab = k.replace(/_/g, " ");
@@ -1650,7 +1647,7 @@ async function renderLib() {
       return `${secOpen("t" + k)}${esc(TH[k] || k)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
   } else {
     // par classe : une famille par classe grammaticale (noms, verbes, adverbes…), dans l'ordre du palais par classe
-    const CR0 = CANON || R, FO = ["noms", "verbes", "formes", "adjectifs", "pronoms", "conjonctions", "prepositions", "adverbes", "expressions", "incises"];
+    const CR0 = CANON || R, FO = ["noms", "verbes", "formes", "adjectifs", "accords", "pronoms", "conjonctions", "prepositions", "adverbes", "expressions", "incises"];
     const pos = e => { const [cri, cn] = e.x._src || [e.ri, e.n], r = CR0[cri]; return [r ? r.floor : 0, cri, cn]; };
     const by = new Map(); for (const e of rows) { if (!by.has(e.fam)) by.set(e.fam, []); by.get(e.fam).push(e); }
     const keys = [...by.keys()].sort((a, b) => (FO.indexOf(a) + 99 * (FO.indexOf(a) < 0)) - (FO.indexOf(b) + 99 * (FO.indexOf(b) < 0)));

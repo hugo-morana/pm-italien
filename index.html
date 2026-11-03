@@ -150,6 +150,17 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 #quiz .qq { font:600 22px/1.2 var(--display); text-wrap:balance }
 #quiz .qa { font-size:15px; display:flex; flex-direction:column; gap:4px }
 #quiz .qa .it { font:600 26px/1.1 var(--display); color:var(--accent) }
+.phw-box { display:grid; gap:6px; margin:6px 0 }
+.phw-h { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted) }
+.phw-l { display:flex; flex-wrap:wrap; gap:4px }
+.phw { font-size:13px; padding:2px 7px; border-radius:999px; border:1px solid var(--line); color:var(--muted) }
+.phw b { font-weight:600; color:inherit }
+.phw.new { color:var(--fg); border-color:var(--accent) }
+.phw.new b { color:var(--accent) }
+.phw .g { font-style:normal; font-size:10px; font-weight:700; padding:0 3px; border-radius:3px; background:rgba(127,127,127,.18) }
+.phw-n { font-size:12px; color:var(--muted) }
+.phw-g { display:flex; flex-wrap:wrap; gap:4px 14px; font-size:13px }
+.phw-g .cur { font-weight:600 } .phw-g .cur b { color:var(--accent) }
 #quiz input { font:inherit; font-size:16px; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--fg); width:100% }
 #voile { position:fixed; inset:0; z-index:14; background:var(--bg) }
 .verdict { font:500 12px var(--mono) }
@@ -1110,34 +1121,64 @@ function sentOk(expected, answer) {   // part des mots attendus retrouvés dans 
   return hit / E.length >= 0.75;
 }
 let WIDX = null;   // forme italienne exacte → items qui la portent (une forme conjuguée ou accordée compte pour son propre item, pas pour l'infinitif ni le mot de base)
+// forme exacte, accents gardés (« là » ≠ « la », « è » ≠ « e ») ; article initial retiré des items (« la fame » → fame)
+const wtok = s => String(s || "").normalize("NFC").toLowerCase().replace(/\(.*?\)/g, " ").replace(/[’`]/g, "'").replace(/'/g, "' ").replace(/[^a-zà-öø-ÿ' ]/g, " ").split(/\s+/).map(w => w.replace(/^'+/, "")).filter(Boolean);
+const wkey = s => { const t = wtok(s); if (t.length > 1 && /^(il|lo|la|i|gli|le|l'|un|una|uno|un')$/.test(t[0])) t.shift(); return t.join(" "); };
 function wordIndex() {
   if (WIDX) return WIDX; WIDX = new Map();
-  const add = (w, ri, n) => { w = norm(w).trim(); if (!w || w.includes(" ")) return; if (!WIDX.has(w)) WIDX.set(w, []); WIDX.get(w).push([ri, n]); };
+  const add = (w, ri, n) => { w = wkey(w); if (!w || w.includes(" ")) return; if (!WIDX.has(w)) WIDX.set(w, []); WIDX.get(w).push([ri, n]); };
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const cls = x._cls || famOf(r);
     if (cls === "expressions" || cls === "incises") return;
-    for (const a of altsOf(x.it)) add(a, ri, n); }));
+    if (x.k === "tpl" && String(x.it).split(" / ").some(t => (t.match(/\b(?:S|V|C)\d?(?:_[a-zàéè]+)?(?![’'\w])/g) || []).length > 1)) return;   // tournure à plusieurs trous : pas un mot
+    for (const a of altsOf(String(x.it).replace(/\(.*?\)/g, " "))) add(a, ri, n); }));
   return WIDX;
 }
+async function phraseWords(x) {   // items portés par les mots de la phrase italienne, avec ce qu'ils rapportent s'ils ne sont pas encore acquis
+  const idx = wordIndex(), seen = new Set(), out = [];
+  const words = wtok(x.eit);
+  for (const w of words) for (const [ri, n] of (idx.get(w) || [])) {
+    const key = ri + ":" + n; if (seen.has(key)) continue; seen.add(key);
+    const c = await srsRoom(ri), y = R[ri].niches[n], ok = ty => c[n + ":" + ty] && c[n + ":" + ty].seen && c[n + ":" + ty].b >= 1;
+    const w0 = counts(R[ri], y) ? (y.oi || 0) / 1e6 : 0, comp = ok("it") || ok("aud"), expr = ok("fr");
+    out.push({ ri, n, it: y.it, fr: y.fr, w: w0, comp, expr });
+  }
+  return out;
+}
+const fmtGain = v => "+" + (v >= 0.1 ? v.toFixed(2) : v >= 0.001 ? v.toFixed(3) : v > 0 ? "<0,001" : "0").replace(".", ",") + " %";
+async function fillPhraseWords(q, x) {
+  const box = $("#phWords"); if (!box) return;
+  const L = await phraseWords(x); if (!$("#phWords")) return;
+  if (!L.length) { box.innerHTML = `<span class="pr">Aucun mot de la phrase n'est encore dans le palais.</span>`; return; }
+  const gc = L.filter(o => !o.comp).reduce((a, o) => a + o.w, 0), ge = L.filter(o => !o.expr).reduce((a, o) => a + o.w, 0), dir = q.ty === "phit" ? "c" : "e";
+  const nn = L.filter(o => dir === "c" ? !o.comp : !o.expr).length;
+  box.innerHTML = `<div class="phw-h">Mots de la phrase · ${nn ? `${nn} à apprendre` : "tous déjà acquis dans ce sens"}</div>
+    <div class="phw-l">${L.map(o => { const nw = dir === "c" ? !o.comp : !o.expr; return `<span class="phw${nw ? " new" : ""}" title="${nw ? "nouveau dans ce sens" : "déjà acquis dans ce sens"}"><b>${esc(o.it)}</b> ${esc(o.fr)}${o.comp ? "" : ` <i class="g c">C</i>`}${o.expr ? "" : ` <i class="g e">E</i>`}</span>`; }).join("")}</div>
+    <div class="phw-g"><span class="${dir === "c" ? "cur" : ""}">Compréhension IT → FR <b>${fmtGain(gc)}</b></span><span class="${dir === "e" ? "cur" : ""}">Expression FR → IT <b>${fmtGain(ge)}</b></span></div>
+    <div class="phw-n">Si tu réussis cette phrase, tu gagnes la ${dir === "c" ? "compréhension" : "expression"} ; ${dir === "c" ? "l'expression se gagne en traduisant la phrase du français vers l'italien" : "la compréhension se gagne en traduisant la phrase de l'italien vers le français"}. C = pas encore compris, E = pas encore su dire.</div>`;
+}
 async function creditSentence(q, x) {   // phrase réussie : chaque mot qui la compose compte comme appris dans ce sens
-  const ty = q.ty === "phit" ? "it" : "fr", idx = wordIndex(), seen = new Set(), t = today(); let k = 0;
-  const words = norm(String(x.eit || "").replace(/'/g, "' ")).split(/\s+/).filter(Boolean);
+  const ty = q.ty === "phit" ? "it" : "fr", idx = wordIndex(), seen = new Set(), t = today(); let k = 0, g = 0;
+  const words = wtok(x.eit);
   for (const w of words) for (const [ri, n] of (idx.get(w) || [])) {
     const key = ri + ":" + n; if (seen.has(key)) continue; seen.add(key);
     const c = await srsRoom(ri), cur = c[n + ":" + ty];
     if (cur && cur.seen && cur.b >= 1) continue;
-    c[n + ":" + ty] = { b: 1, d: t + BOXDAYS[1], seen: 1 }; srsSave(ri); k++;
+    if (ty === "it" && c[n + ":aud"] && c[n + ":aud"].seen && c[n + ":aud"].b >= 1) continue;
+    c[n + ":" + ty] = { b: 1, d: t + BOXDAYS[1], seen: 1 }; srsSave(ri); k++; const y = R[ri].niches[n]; g += counts(R[ri], y) ? (y.oi || 0) / 1e6 : 0;
   }
-  if (k) { updateHist(); toast(`+${k} mot(s) compté(s) comme appris (${ty === "it" ? "compréhension" : "expression"})`); }
+  if (k) { updateHist(); toast(`+${k} mot(s) appris · ${ty === "it" ? "compréhension" : "expression"} ${fmtGain(g)}`); }
 }
 function revealPhrase(q, x, reps) {
   const exp = q.ty === "phit" ? x.efr : x.eit, okGuess = reps.length ? reps.some(r => sentOk(exp, r)) : null;
   texturizeRoom(q.ri, null); st.zoom = 0; goTo(q.ri, q.n); placeRing(q.ri, q.n); renderFiche();
-  $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${esc(x.eit)}</span><span>${esc(x.efr)}</span><span class="exfr">mot de la niche : ${esc(x.it)} · ${esc(x.fr)}</span></div>
+  $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${esc(x.eit)}</span><span>${esc(x.efr)}</span><span class="exfr">mot de la niche : ${esc(x.it)} · ${esc(x.fr)}</span></div><div id="phWords" class="phw-box"><span class="pr">…</span></div>
     ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta traduction correspond." : "Ta traduction ne correspond pas."}</span>`}
     ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
       ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-ph>🔊</button></div>`
       : `<div class="btns"><button class="btn ${okGuess ? "ok" : "ko"}" type="button" data-grade="${okGuess ? 1 : 0}" data-suggest>Continuer · ${okGuess ? "réussi" : "raté"}</button><button class="btn alt" type="button" data-grade="${okGuess ? 0 : 1}">Compter ${okGuess ? "raté" : "réussi"}</button><button class="btn alt" type="button" data-say-ph>🔊</button></div>`}`;
+  fillPhraseWords(q, x);
 }
+
 function reveal() {
   const q = quizState.q, x = R[q.ri].niches[q.n]; quizState.revealed = true; $("#voile").hidden = true;
   const rep = ($("#rep") || {}).value || "", reps = [rep, ...(quizState.micAlts || [])].filter(Boolean); quizState.micAlts = null;

@@ -174,6 +174,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .view > .in { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:14px }
 .view h1 { font:600 28px/1.05 var(--display); letter-spacing:.03em; margin:0; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap }
 .view h1 small { font:500 11px var(--mono); color:var(--muted); letter-spacing:.06em; text-transform:uppercase }
+#reglages h2 { font:600 20px/1.2 var(--display); letter-spacing:.02em }
 .view h3 { font:500 11px var(--mono); text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:6px 0 0 }
 /* Bibliothèque */
 .ltool { position:sticky; top:calc(-14px - env(safe-area-inset-top,0px)); z-index:2; background:var(--bg); padding:8px 0; display:flex; gap:8px; flex-wrap:wrap; border-bottom:1px solid var(--line) }
@@ -262,31 +263,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div id="dbody" hidden></div>
 </section>
 
-<div class="sheet" id="testsSheet" hidden><div>
-  <div class="shead"><h2>Tests et révisions</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
-  <div class="frow" id="srsInfo">Révision du jour : …</div>
-  <div class="btns">
-    <button class="btn" type="button" id="goRevue">Révision du jour</button>
-    <button class="btn alt" type="button" id="goLearn">Apprendre de nouveaux mots</button>
-    <button class="btn alt" type="button" id="goFree">Entraînement libre</button>
-  </div>
-  <div class="frow">Nouveaux par séance <input type="number" id="newN" min="1" max="30" value="8" style="width:4.5em"></div>
-  <h3>Questions</h3>
-  <div class="pills" id="typesP"></div>
-  <h3>Pièces</h3>
-  <div class="btns"><button class="chip" type="button" id="allR">Toutes</button><button class="chip" type="button" id="noR">Aucune</button><button class="chip" type="button" id="curR">Pièce actuelle</button></div>
-  <div class="pills" id="roomsP"></div>
-  <h3>Dizaines</h3>
-  <div class="pills" id="decP"></div>
-  <h3>Filtres</h3>
-  <div class="frow"><label for="tagSel">Sous-catégorie</label><select id="tagSel"><option value="">toutes</option></select></div>
-  <div class="frow"><label for="zmin">Fréquence FR minimale (Zipf)</label><input type="range" id="zmin" min="1" max="7" step="0.1" value="1"><span class="mono" id="zminV">1.0</span></div>
-  <div class="frow" id="poolInfo"></div>
-  <h3>Progression · pièce actuelle</h3>
-  <div class="frow"><label for="mapType">Afficher</label><select id="mapType"></select></div>
-  <div class="map" id="map"></div>
-  <div class="legend"><span>vide = libre</span><span>gris = jamais vu</span><span>du rose au vert = boîte 1 à 5</span></div>
-</div></div>
+
 
 <div class="sheet" id="planSheet" hidden><div>
   <div class="shead"><h2>Plan du palais</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
@@ -316,6 +293,34 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div id="libList"></div>
 </div></section>
 
+<section class="view" id="reglages" hidden aria-label="Réglages"><div class="in">
+  <h1>Réglages</h1>
+  <h2 style="margin:4px 0 0">Tests et révisions</h2>
+
+  <div class="frow" id="srsInfo">Révision du jour : …</div>
+  <div class="btns">
+    <button class="btn" type="button" id="goRevue">Révision du jour</button>
+    <button class="btn alt" type="button" id="goLearn">Apprendre de nouveaux mots</button>
+    <button class="btn alt" type="button" id="goFree">Entraînement libre</button>
+  </div>
+  <div class="frow">Nouveaux par séance <input type="number" id="newN" min="1" max="30" value="8" style="width:4.5em"></div>
+  <h3>Questions</h3>
+  <div class="pills" id="typesP"></div>
+  <h3>Pièces</h3>
+  <div class="btns"><button class="chip" type="button" id="allR">Toutes</button><button class="chip" type="button" id="noR">Aucune</button><button class="chip" type="button" id="curR">Pièce actuelle</button></div>
+  <div class="pills" id="roomsP"></div>
+  <h3>Dizaines</h3>
+  <div class="pills" id="decP"></div>
+  <h3>Filtres</h3>
+  <div class="frow"><label for="tagSel">Sous-catégorie</label><select id="tagSel"><option value="">toutes</option></select></div>
+  <div class="frow"><label for="zmin">Fréquence FR minimale (Zipf)</label><input type="range" id="zmin" min="1" max="7" step="0.1" value="1"><span class="mono" id="zminV">1.0</span></div>
+  <div class="frow" id="poolInfo"></div>
+  <h3>Progression · pièce actuelle</h3>
+  <div class="frow"><label for="mapType">Afficher</label><select id="mapType"></select></div>
+  <div class="map" id="map"></div>
+  <div class="legend"><span>vide = libre</span><span>gris = jamais vu</span><span>du rose au vert = boîte 1 à 5</span></div>
+</div></section>
+
 <section class="view" id="carnet" hidden aria-label="Carnet de bord"><div class="in">
   <h1>Carnet de bord <small id="cbStore"></small></h1>
   <div class="kpis" id="kpis"></div>
@@ -341,6 +346,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <button type="button" data-view="palais"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v10M9.7 9v10M14.3 9v10M19 9v10M3 20h18"/></svg>Palais</button>
   <button type="button" data-view="test"><span class="tbi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.6-5.9M20 4v4.5h-4.5M9 12.5l2.2 2.2L15.5 10"/></svg><b id="testBadge" hidden></b></span>Test</button>
   <button type="button" data-view="carnet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16M7.5 15l4-4.5 3 2.5 5-6"/></svg>Carnet</button>
+  <button type="button" data-view="reglages"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>Réglages</button>
 </nav>
 
 <div id="voile" hidden></div>
@@ -1316,7 +1322,7 @@ function bindUI() {
   $("#modeBtn").onclick = () => st.mode === "free" ? leaveFree() : enterFree();
   $("#eye").onclick = () => { st.ui = !st.ui; document.body.classList.toggle("hidden-ui", !st.ui); $("#eye").setAttribute("aria-label", st.ui ? "Masquer les menus" : "Afficher les menus"); measureDrawer(); setTimeout(onResize, 50); };
   $("#dhead").onclick = () => setDrawer(!st.drawerOpen);
-  $("#testsBtn").onclick = () => { $("#testsSheet").hidden = false; renderTests(); };
+  $("#testsBtn").onclick = () => setView("reglages");
   $("#planBtn").onclick = () => { $("#planSheet").hidden = false; renderPlan(); };
   $("#accountBtn").onclick = () => { $("#accountSheet").hidden = false; renderAccount(); };
   $("#accountSheet").addEventListener("click", e => { const id = e.target.id; if (id === "sbSend") sbSend(); if (id === "sbVerify") sbVerify(); if (id === "sbBack") renderAccount(); if (id === "sbOut") sbOut(); });
@@ -1345,7 +1351,7 @@ function bindUI() {
   $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = prefs.zmin.toFixed(1); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
   $("#newN").onchange = e => { prefs.newN = Math.max(1, Math.min(30, +e.target.value || 8)); savePrefs(); };
   $("#mapType").onchange = e => { prefs.mapType = e.target.value; savePrefs(); renderTests(); };
-  $("#goRevue").onclick = () => startQuiz("revue"); $("#goLearn").onclick = () => startQuiz("learn"); $("#goFree").onclick = () => startQuiz("libre");
+  $("#goRevue").onclick = () => { setView("palais"); startQuiz("revue"); }; $("#goLearn").onclick = () => { setView("palais"); startQuiz("learn"); }; $("#goFree").onclick = () => { setView("palais"); startQuiz("libre"); };
   // clavier
   addEventListener("keydown", e => {
     if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
@@ -1436,15 +1442,16 @@ let VIEW = "palais";
 const FAML = { noms: "Noms", verbes: "Verbes", adjectifs: "Adjectifs", pronoms: "Pronoms", conjonctions: "Conjonctions", prepositions: "Prépositions", adverbes: "Adverbes", expressions: "Expressions", incises: "Incises", formes: "Formes verbales" };
 const famOf = r => r.id.startsWith("determinants") ? "adjectifs" : r.fam;
 function setView(v) {
-  if (!["lib", "palais", "carnet"].includes(v)) v = "palais";
+  if (!["lib", "palais", "carnet", "reglages"].includes(v)) v = "palais";
   if (v !== "palais" && quizState.on) endQuiz();
   if (v !== "palais" && st.mode === "free") leaveFree();
   VIEW = v; document.body.dataset.view = v; ls.set("view", v);
-  $("#lib").hidden = v !== "lib"; $("#carnet").hidden = v !== "carnet";
+  $("#lib").hidden = v !== "lib"; $("#carnet").hidden = v !== "carnet"; $("#reglages").hidden = v !== "reglages";
   markTabs();
   if (v === "palais") { onResize(); renderRooms(); }
   if (v === "lib") renderLib();
   if (v === "carnet") renderCarnet();
+  if (v === "reglages") renderTests();
 }
 async function statusAll() { // par niche : boîte la plus haute atteinte (toutes questions confondues) et révision due
   const out = new Map(), t = today();
@@ -1594,7 +1601,7 @@ function bindViews() {
   document.addEventListener("click", e => { const b = e.target.closest("[data-corder]"); if (!b) return; prefs.curveOrder = b.dataset.corder; savePrefs(); renderCarnet(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-cscale]"); if (!b) return; prefs.curveFull = b.dataset.cscale === "full"; savePrefs(); renderCurve(); });
   $("#cbLearn").onclick = () => { setView("palais"); startQuiz("learn"); };
-  $("#cbTests").onclick = () => { setView("palais"); $("#testsSheet").hidden = false; renderTests(); };
+  $("#cbTests").onclick = () => setView("reglages");
 }
 
 /* ============ Palais par fréquence / par thème ============ */

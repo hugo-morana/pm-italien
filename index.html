@@ -183,6 +183,11 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .lroom { content-visibility:auto; contain-intrinsic-size:auto 1200px; display:flex; flex-direction:column; gap:3px; margin-bottom:12px }
 .lroom h2 { font:600 20px/1.2 var(--display); margin:6px 0 6px; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap }
 .lroom h2 small { font:500 11px var(--mono); color:var(--muted); letter-spacing:.05em }
+.lroom h2.tog { cursor:pointer; user-select:none; -webkit-tap-highlight-color:transparent }
+.lroom h2.tog::before { content:"▾"; font:500 14px var(--mono); color:var(--muted); width:1em; transition:transform .15s }
+.lroom.closed h2.tog::before { transform:rotate(-90deg) }
+.lroom.closed { contain-intrinsic-size:auto 40px }
+.lroom.closed > :not(h2) { display:none }
 .lrow { background:var(--surface); border:1px solid var(--line); border-left:5px solid var(--fc, var(--line)); border-radius:4px }
 .lrow > summary { list-style:none; display:flex; gap:10px; align-items:center; padding:7px 10px; cursor:pointer; min-height:28px }
 .lrow > summary::-webkit-details-marker { display:none }
@@ -306,7 +311,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <select id="libTh" aria-label="Thème"></select>
     <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
     <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Fréquence FR</button><button class="pill" type="button" data-liborder="freqit" aria-pressed="false">Fréquence IT</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button><button class="pill" type="button" data-liborder="theme" aria-pressed="false">Par thème</button></div>
-    <span id="libInfo"></span>
+    <span id="libInfo"></span> <button class="pill" type="button" id="libFold" style="margin-left:6px">Tout replier</button>
   </div>
   <div id="libList"></div>
 </div></section>
@@ -1482,6 +1487,11 @@ function freqBands(lg = "fr") {
   for (const e of all) { let i = FBANDS.findIndex(t => c < t); if (i < 0) i = FBANDS.length - 1; M.set(e.ri + ":" + e.n, i); if (counts(e.r, e.x)) c += (e.x.oi || 0) / 1e6; }
   return M;
 }
+const libClosed = () => new Set(prefs.libClosed || []);
+function secOpen(k) { const c = libClosed().has(k); return `<section class="lroom${c ? " closed" : ""}" data-k="${esc(k)}"><h2 class="tog" role="button" tabindex="0" aria-expanded="${!c}">`; }
+const foldLabel = () => { const b = $("#libFold"); if (b) b.textContent = [...document.querySelectorAll("#libList .lroom")].some(x => !x.classList.contains("closed")) ? "Tout replier" : "Tout déplier"; };
+function toggleSec(h) { const sec = h.closest(".lroom"), k = sec.dataset.k, set = libClosed(); const c = !sec.classList.contains("closed");
+  sec.classList.toggle("closed", c); h.setAttribute("aria-expanded", String(!c)); c ? set.add(k) : set.delete(k); prefs.libClosed = [...set]; savePrefs(); foldLabel(); }
 async function renderLib() {
   libIndex(); if (!$("#libTag").options.length) libTags();
   const q = nrm($("#libQ").value.trim()), f = $("#libFam").value, tg = $("#libTag").value, sf = $("#libSt").value, th = $("#libTh").value;
@@ -1504,7 +1514,7 @@ async function renderLib() {
     const sorted = rows.slice().sort((a, b) => fineF(b.x) - fineF(a.x) || a.ri - b.ri || a.n - b.n), parts = [];
     const FB = freqBands(lg); let cur = -1, buf = [];
     const flush = () => { if (!buf.length) return; const got = buf.filter(([e]) => S.has(e.ri + ":" + e.n)).length;
-      parts.push(`<section class="lroom"><h2>${bandLabel(cur)} <small>${buf.length} mots · ${got} appris · rangs ${buf[0][1]} à ${buf[buf.length - 1][1]}</small></h2>` + buf.map(([e, k]) => row(e, k)).join("") + `</section>`); buf = []; };
+      parts.push(`${secOpen("f" + lg + cur)}${bandLabel(cur)} <small>${buf.length} mots · ${got} appris · rangs ${buf[0][1]} à ${buf[buf.length - 1][1]}</small></h2>` + buf.map(([e, k]) => row(e, k)).join("") + `</section>`); buf = []; };
     sorted.forEach((e, j) => { const b = FB.get(e.ri + ":" + e.n); if (b !== cur) { flush(); cur = b; } buf.push([e, j + 1]); }); flush();
     $("#libList").innerHTML = parts.join("");
   } else if (ord === "theme") {   // par thème : un bloc par famille thématique, mots triés par fréquence
@@ -1513,11 +1523,12 @@ async function renderLib() {
     const tot = k => LIB.filter(e => (e.x.th || "autres") === k).length;
     const keys = [...by.keys()].sort((a, b) => (last.indexOf(a) - last.indexOf(b)) || (tot(b) - tot(a)));
     $("#libList").innerHTML = keys.map(k => { const es = by.get(k).slice().sort((a, b) => fineF(b.x) - fineF(a.x)), got = es.filter(e => S.has(e.ri + ":" + e.n)).length;
-      return `<section class="lroom"><h2>${esc(TH[k] || k)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
+      return `${secOpen("t" + k)}${esc(TH[k] || k)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
   } else {
     const by = new Map(); for (const e of rows) { if (!by.has(e.ri)) by.set(e.ri, []); by.get(e.ri).push(e); }
-    $("#libList").innerHTML = [...by].map(([ri, es]) => `<section class="lroom"><h2>${esc(R[ri].fr)} <small>${esc(R[ri].it)} · ${es.length}</small></h2>` + es.map(e => row(e, 0)).join("") + `</section>`).join("");
+    $("#libList").innerHTML = [...by].map(([ri, es]) => `${secOpen("c" + R[ri].id)}${esc(R[ri].fr)} <small>${esc(R[ri].it)} · ${es.length}</small></h2>` + es.map(e => row(e, 0)).join("") + `</section>`).join("");
   }
+  foldLabel();
 }
 function openLibRow(d) {
   const b = d.querySelector(".lbody"); if (!d.open || b.childElementCount) return;
@@ -1566,6 +1577,11 @@ function bindViews() {
   $("#libFam").onchange = () => { libTags(); renderLib(); };
   document.addEventListener("click", e => { const b = e.target.closest("[data-liborder]"); if (!b) return; prefs.libOrder = b.dataset.liborder; savePrefs(); renderLib(); $("#lib").scrollTo(0, 0); }); $("#libTag").onchange = renderLib; $("#libTh").onchange = renderLib; $("#libSt").onchange = renderLib;
   $("#libList").addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("lrow")) openLibRow(e.target); }, true);
+  $("#libList").addEventListener("click", e => { const h = e.target.closest("h2.tog"); if (h) toggleSec(h); });
+  $("#libList").addEventListener("keydown", e => { const h = e.target.closest("h2.tog"); if (h && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleSec(h); } });
+  $("#libFold").onclick = () => { const secs = [...document.querySelectorAll("#libList .lroom")], close = secs.some(x => !x.classList.contains("closed")), set = libClosed();
+    secs.forEach(x => { x.classList.toggle("closed", close); x.querySelector("h2.tog")?.setAttribute("aria-expanded", String(!close)); close ? set.add(x.dataset.k) : set.delete(x.dataset.k); });
+    prefs.libClosed = [...set]; savePrefs(); foldLabel(); };
   $("#libList").addEventListener("click", e => { const g = e.target.closest("[data-gopal]"); if (!g) return; const [ri, n] = g.dataset.gopal.split(":").map(Number); setView("palais"); goTo(ri, n); setDrawer(true); });
   $("#cbRevue").onclick = () => startAuto();
   document.addEventListener("click", e => { const b = e.target.closest("[data-cmes]"); if (!b) return; prefs.curveMes = b.dataset.cmes; savePrefs(); renderCurve(); });

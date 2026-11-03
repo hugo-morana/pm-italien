@@ -308,12 +308,10 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h2 style="margin:4px 0 0">Tests et révisions</h2>
 
   <div class="frow" id="srsInfo">Révision du jour : …</div>
-  <div class="btns">
-    <button class="btn" type="button" id="goRevue">Révision du jour</button>
-    <button class="btn alt" type="button" id="goLearn">Apprendre de nouveaux mots</button>
-    <button class="btn alt" type="button" id="goFree">Entraînement libre</button>
-    <button class="btn alt" type="button" id="goEx">Apprendre par l'exemple</button>
-  </div>
+  <h3>Le bouton Test lance</h3>
+  <div class="pills" role="group" aria-label="Ce que lance le bouton Test"><button class="pill" type="button" data-tmode="auto">Révision puis nouveaux mots</button><button class="pill" type="button" data-tmode="revue">Révision du jour</button><button class="pill" type="button" data-tmode="learn">Apprendre de nouveaux mots</button><button class="pill" type="button" data-tmode="libre">Entraînement libre</button><button class="pill" type="button" data-tmode="exemple">Apprendre par l'exemple</button></div>
+  <p class="pr" id="tModeTxt" style="margin:0"></p>
+  <div class="btns"><button class="btn" type="button" id="goTest">Lancer le test</button></div>
   <h3>Réponse</h3>
   <div class="pills" role="group" aria-label="Mode de réponse"><button class="pill" type="button" data-inmode="aucun">Aucune · je m'auto-évalue</button><button class="pill" type="button" data-inmode="clavier">Clavier · je tape</button><button class="pill" type="button" data-inmode="voix">Voix · je parle</button></div>
   <p class="pr" id="inModeTxt" style="margin:0"></p>
@@ -860,7 +858,7 @@ function speak(text, src, btn, lang = "it") {
    elle reste rangée sous les salles du palais par classe (salles « canoniques »). */
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr", inMode: "clavier", approach: "palais" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
 /* Deux comptes possibles : le compte Claude (capacité db) quand la page tourne dans Claude,
    ou un compte e-mail Supabase (code à 6 chiffres) sur la version GitHub Pages. Sinon : navigateur seulement. */
@@ -1037,7 +1035,7 @@ async function startQuiz(kind) {
     if (!fresh.length) { toast("Tous les mots de la sélection ont déjà été présentés"); return; }
     quizState.learn = { fresh, active: [], counter: 0, done: 0 };
   }
-  quizState.auto = null;
+  quizState.auto = null; quizState.fromTest = false;
   Object.assign(quizState, { on: true, list, idx: 0, mode: kind, stats: { ok: 0, ko: 0 } });
   closeSheets(); st.ui = false; document.body.classList.add("hidden-ui"); measureDrawer(); setDrawer(false); toggleChain(false);
   if (kind === "learn") learnNext(); else ask(list[0]);
@@ -1178,7 +1176,7 @@ async function onGrade(ok) {
   ask(quizState.list[quizState.idx]);
 }
 function endQuiz(msg) {
-  const s = quizState.stats; Object.assign(quizState, { on: false, revealed: false, q: null, learn: null, auto: null }); markTabs(); updateTestBadge();
+  const s = quizState.stats; Object.assign(quizState, { on: false, revealed: false, q: null, learn: null, auto: null, fromTest: false }); markTabs(); updateTestBadge();
   $("#quiz").hidden = true; $("#voile").hidden = true; texturizeRoom(st.r, null); st.ui = true; document.body.classList.remove("hidden-ui"); measureDrawer(); renderFiche(); placeRing(st.r, st.n);
   toast(msg || `Fin du test : ${s.ok} réussi(s), ${s.ko} raté(s)`);
 }
@@ -1301,6 +1299,12 @@ const APTXT = { palais: "Les nouveaux mots arrivent dans l'ordre de la version d
   freqit: "Les nouveaux mots arrivent du plus fréquent au plus rare en italien parlé : c'est l'ordre qui fait monter le plus vite ta compréhension.",
   theme: "Les nouveaux mots arrivent thème par thème (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème.",
   classe: "Les nouveaux mots arrivent classe par classe (noms, verbes, adjectifs…), dans l'ordre du palais par classe." };
+const TMTXT = { auto: "les cartes à réviser aujourd'hui, puis de nouveaux mots", revue: "uniquement les cartes à réviser aujourd'hui", learn: "uniquement de nouveaux mots", libre: "30 questions au hasard, sans tenir compte des révisions", exemple: "20 phrases d'exemple, mots pas encore appris d'abord" };
+function renderTMode() {
+  const m = prefs.testMode || "auto"; document.querySelectorAll("[data-tmode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tmode === m)));
+  const t = $("#tModeTxt"); if (!t) return; const nr = prefs.rooms.length;
+  t.textContent = `Test lance ${TMTXT[m]}, sur ${nr === R.length ? "toutes les pièces" : nr + " pièce(s)"}, avec les questions, dizaines et filtres choisis ci-dessous.` + (m === "auto" || m === "learn" ? ` ${prefs.newN} nouveau(x) mot(s) par séance.` : "");
+}
 function renderApproach() { const a = prefs.approach || "palais"; document.querySelectorAll("[data-approach]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.approach === a))); const t = $("#approachTxt"); if (t) t.textContent = APTXT[a]; }
 function orderItems(items) {   // ordre d'introduction des nouveaux mots selon l'approche choisie
   const a = prefs.approach || "palais"; if (a === "palais") return items.slice();
@@ -1315,7 +1319,7 @@ function orderItems(items) {   // ordre d'introduction des nouveaux mots selon l
 }
 function renderInMode() { const m = prefs.inMode || "clavier"; document.querySelectorAll("[data-inmode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.inmode === m))); const t = $("#inModeTxt"); if (t) t.textContent = INTXT[m]; }
 async function renderTests() {
-  renderInMode(); renderApproach();
+  renderInMode(); renderApproach(); renderTMode();
   $("#typesP").innerHTML = TYPES.map(([k, l]) => `<button class="pill" type="button" data-type="${k}" aria-pressed="${prefs.types.includes(k)}">${l}</button>`).join("");
   $("#roomsP").innerHTML = R.map((r, i) => `<button class="pill" type="button" data-room="${i}" aria-pressed="${prefs.rooms.includes(i)}">${esc(shortName(r))}</button>`).join("");
   $("#decP").innerHTML = [...Array(10).keys()].map(d => `<button class="pill" type="button" data-dec="${d}" aria-pressed="${prefs.decs.includes(d)}" style="border-color:${COLS[d]}">${d}x</button>`).join("");
@@ -1463,11 +1467,12 @@ function bindUI() {
   $("#curR").onclick = () => { prefs.rooms = [st.r]; savePrefs(); renderTests(); };
   $("#tagSel").onchange = e => { prefs.tag = e.target.value; savePrefs(); renderTests(); };
   $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = prefs.zmin.toFixed(1); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
+  document.addEventListener("click", e => { const b = e.target.closest("[data-tmode]"); if (!b) return; prefs.testMode = b.dataset.tmode; savePrefs(); renderTMode(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-approach]"); if (!b) return; prefs.approach = b.dataset.approach; savePrefs(); renderApproach(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-inmode]"); if (!b) return; prefs.inMode = b.dataset.inmode; savePrefs(); renderInMode(); });
-  $("#newN").onchange = e => { prefs.newN = Math.max(1, Math.min(30, +e.target.value || 8)); savePrefs(); };
+  $("#newN").onchange = e => { prefs.newN = Math.max(1, Math.min(30, +e.target.value || 8)); savePrefs(); renderTMode(); };
   $("#mapType").onchange = e => { prefs.mapType = e.target.value; savePrefs(); renderTests(); };
-  $("#goRevue").onclick = () => { setView("palais"); startQuiz("revue"); }; $("#goLearn").onclick = () => { setView("palais"); startQuiz("learn"); }; $("#goFree").onclick = () => { setView("palais"); startQuiz("libre"); }; $("#goEx").onclick = () => { setView("palais"); startQuiz("exemple"); };
+  $("#goTest").onclick = () => startAuto();
   // clavier
   addEventListener("keydown", e => {
     if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
@@ -1510,21 +1515,23 @@ function onResize() {
    2) puis les mots jamais vus suivants, dans l'ordre du palais (donc par fréquence), « Nouveaux par séance » à la fois.
    Rien à mémoriser : l'état vient des cartes elles-mêmes, une séance interrompue reprend où elle s'est arrêtée. */
 const AUTOTY = new Set(["num", "img", "fr", "it", "aud", "suite", "phit", "phfr"]);
+function selSet() { const S = new Set(); for (const [ri, n] of poolItems()) S.add(ri + ":" + n); return S; }   // niches retenues par les réglages
+function selTypes() { const T = new Set(prefs.types.filter(t => AUTOTY.has(t))); return T.size ? T : AUTOTY; }
 async function autoDue() {
-  const t = today(), out = [];
-  for (let ri = 0; ri < R.length; ri++) {
+  const t = today(), out = [], S = selSet(), T = selTypes();
+  for (const ri of [...new Set(prefs.rooms)].filter(i => R[i])) {
     const c = await srsRoom(ri);
-    for (const k in c) { const v = c[k]; if (!v || !v.seen || v.d > t) continue; const [n, ty] = k.split(":"); if (!AUTOTY.has(ty) || !R[ri].niches[+n]) continue; out.push({ ri, n: +n, ty, d: v.d, r: Math.random() }); }
+    for (const k in c) { const v = c[k]; if (!v || !v.seen || v.d > t) continue; const [n, ty] = k.split(":"); if (!T.has(ty) || !S.has(ri + ":" + n)) continue; out.push({ ri, n: +n, ty, d: v.d, r: Math.random() }); }
   }
   out.sort((a, b) => a.d - b.d || a.r - b.r);
   for (let i = 1; i < out.length; i++) if (out[i].ri === out[i - 1].ri && out[i].n === out[i - 1].n) { const j = out.findIndex((o, k) => k > i && (o.ri !== out[i].ri || o.n !== out[i].n)); if (j > 0) [out[i], out[j]] = [out[j], out[i]]; }
   return out.map(({ ri, n, ty }) => ({ ri, n, ty }));
 }
 async function nextFresh(k) {
-  const all = [], pal = (prefs.approach || "palais") === "palais";
-  for (let ri = 0; ri < R.length; ri++) {
+  const all = [], pal = (prefs.approach || "palais") === "palais", S = selSet();
+  for (const ri of [...new Set(prefs.rooms)].filter(i => R[i]).sort((a, b) => a - b)) {
     const c = await srsRoom(ri), seen = new Set(Object.keys(c).filter(key => c[key] && c[key].seen).map(key => +key.split(":")[0]));
-    for (let n = 0; n < 100; n++) if (R[ri].niches[n] && !seen.has(n)) all.push([ri, n]);
+    for (let n = 0; n < 100; n++) if (S.has(ri + ":" + n) && !seen.has(n)) all.push([ri, n]);
     if (pal && all.length >= k) break;
   }
   return orderItems(all).slice(0, k);
@@ -1535,18 +1542,21 @@ function beginAutoLearn() {
   Object.assign(quizState, { list: [], idx: 0, mode: "learn" }); learnNext();
 }
 async function startAuto() {
-  if (quizState.on && quizState.auto) return;
+  const m = prefs.testMode || "auto";
+  if (quizState.on && quizState.fromTest) return;
   if (quizState.on) endQuiz(" ");
   setView("palais");
+  if (!prefs.rooms.length) { toast("Aucune pièce choisie dans Réglages"); return; }
+  if (m !== "auto") { await startQuiz(m); if (quizState.on) { quizState.fromTest = true; markTabs(); } return; }
   const due = await autoDue(), fresh = await nextFresh(prefs.newN);
   if (!due.length && !fresh.length) { toast("Tout est à jour : aucun mot à réviser ni à découvrir"); return; }
-  Object.assign(quizState, { on: true, list: due, idx: 0, mode: due.length ? "revue" : "learn", stats: { ok: 0, ko: 0 }, auto: { fresh } });
+  Object.assign(quizState, { on: true, list: due, idx: 0, mode: due.length ? "revue" : "learn", stats: { ok: 0, ko: 0 }, auto: { fresh }, fromTest: true });
   markTabs(); quizUI();
   toast(due.length ? `${due.length} carte(s) à réviser, puis ${fresh.length} nouveau(x) mot(s)` : `Rien à réviser : ${fresh.length} nouveau(x) mot(s)`);
   if (due.length) ask(due[0]); else beginAutoLearn();
 }
 function markTabs() {
-  const cur = quizState.on && quizState.auto ? "test" : VIEW;
+  const cur = quizState.on && quizState.fromTest ? "test" : VIEW;
   document.querySelectorAll("#tabs [data-view]").forEach(b => b.setAttribute("aria-current", b.dataset.view === cur ? "page" : "false"));
 }
 async function updateTestBadge() {

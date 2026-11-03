@@ -66,6 +66,8 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 .big-it { display:flex; align-items:center; gap:10px; font:600 32px/1.05 var(--display); color:var(--accent); letter-spacing:.02em }
 .say { width:36px; height:36px; flex:none; border-radius:50%; border:1px solid var(--line); background:var(--bg); font-size:16px; line-height:1 }
 .say.on { border-color:var(--accent) }
+.say.colc { width:auto; height:auto; border-radius:999px; padding:2px 9px; margin:0 4px 4px 0; font:13px/1.5 var(--body, inherit); font-style:italic }
+.say.colc.inp { border-color:var(--accent); font-style:normal }
 .say.sm { width:26px; height:26px; font-size:12px; margin-right:6px; vertical-align:middle }
 .frw { display:flex; align-items:center; gap:4px; margin:-2px 0 4px; color:var(--muted); font-size:15px }
 .frw .lg { font:500 10px var(--mono); letter-spacing:.08em; border:1px solid var(--line); border-radius:4px; padding:1px 4px; margin-left:6px }
@@ -217,6 +219,8 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .lrow .ln.rk { width:2.6em; font-size:11px }
 .kind { display:inline-block; margin-left:6px; padding:0 5px; border-radius:4px; font:500 9px/1.6 var(--mono); letter-spacing:.04em; text-transform:uppercase; vertical-align:middle; border:1px solid var(--line); color:var(--muted) }
 .kind.tpl { border-style:dashed }
+.kind.loc { border-style:dotted }
+.kind.col { border-color:var(--accent); color:var(--accent) }
 .lroomtag { display:block; font:500 10px var(--mono); color:var(--muted); letter-spacing:.03em; margin-top:1px }
 .lrow .lit { flex:1 1 40%; min-width:0; font:600 17px/1.2 var(--display); color:var(--accent); overflow-wrap:anywhere }
 .lrow .lo { flex:none; font:500 11px var(--mono); color:var(--fg); width:7.5em; text-align:right; font-variant-numeric:tabular-nums }
@@ -306,7 +310,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <select id="libFam" aria-label="Classe"></select>
     <select id="libTag" aria-label="Sous-catégorie"></select>
     <select id="libTh" aria-label="Thème"></select>
-    <select id="libKind" aria-label="Type"><option value="">mots et tournures</option><option value="fig">expressions figées</option><option value="tpl">tournures à trous (…)</option><option value="mot">mots seuls</option></select>
+    <select id="libKind" aria-label="Type"><option value="">mots et tournures</option><option value="fig">expressions figées</option><option value="loc">locutions</option><option value="col">collocations</option><option value="tpl">tournures à trous (…)</option><option value="mot">mots seuls</option></select>
     <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
     <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Fréquence FR</button><button class="pill" type="button" data-liborder="freqit" aria-pressed="false">Fréquence IT</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button><button class="pill" type="button" data-liborder="theme" aria-pressed="false">Par thème</button></div>
     <span id="libInfo"></span> <button class="pill" type="button" id="libFold" style="margin-left:6px">Tout replier</button> <button class="pill" type="button" id="libFoldSub" hidden>Replier les sous-catégories</button>
@@ -826,7 +830,8 @@ function ficheHTML(ri, n) {
       <div><dt>Scène</dt><dd>${esc(x.sc)}</dd></div>
       <div><dt>Décryptage</dt><dd class="exfr">${esc(x.de)}</dd></div>
       ${x.fo ? `<div><dt>Formes</dt><dd class="exfr">${esc(x.fo)}</dd></div>` : ""}
-      ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter avec tes propres mots. S = sujet, V = verbe (V_inf infinitif, V_sub subjonctif, V_pp participe passé, V_imper impératif, V_cond conditionnel, V_fut futur, V_ger gérondif), C = complément (C_lieu, C_date, C_adj… précisent sa nature) ; 2 = second sujet, verbe ou complément." : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
+      ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter avec tes propres mots. S = sujet, V = verbe (V_inf infinitif, V_sub subjonctif, V_pp participe passé, V_imper impératif, V_cond conditionnel, V_fut futur, V_ger gérondif), C = complément (C_lieu, C_date, C_adj… précisent sa nature) ; 2 = second sujet, verbe ou complément." : x.k === "col" ? "Collocation : une association de mots que l'italien préfère. Le sens se devine, mais c'est cette combinaison qu'on emploie (et pas une autre)." : x.k === "loc" ? `Locution ${LOCLAB[x._cls || famOf(R[ri])] || ""} : plusieurs mots qui fonctionnent ensemble comme un seul ${CLSING[x._cls || famOf(R[ri])] || "mot"}.` : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
+      ${x.co && x.co.length ? `<div><dt>Collocations</dt><dd class="colls">${x.co.map(([c, f, inp]) => `<button class="say colc${inp ? " inp" : ""}" type="button" data-say="${esc(c)}" data-src="" title="${inp ? "déjà dans le palais · " : ""}${Math.round(f).toLocaleString("fr-FR")} fois / 100 M mots">${esc(c)}${inp ? " ✓" : ""}</button>`).join("")}<span class="exfr" style="display:block;font-size:12px;margin-top:2px">Les associations les plus fréquentes dans les sous-titres ; ✓ = déjà dans le palais. Touche pour écouter.</span></dd></div>` : ""}
       ${x.t && x.t.length ? `<div><dt>Étiquettes</dt><dd class="tags">${x.t.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</dd></div>` : ""}
       ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence en français" : PAL === "freqit" ? "par fréquence en italien" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
     </dl>
@@ -1666,12 +1671,16 @@ function toggleSec(h) { const sec = h.closest(".lsub, .lroom"), k = sec.dataset.
   sec.classList.toggle("closed", c); h.setAttribute("aria-expanded", String(!c)); c ? set.add(k) : set.delete(k); prefs.libClosed = [...set]; savePrefs(); foldLabel(); }
 /* sous-catégories d'une classe (bibliothèque « par classe ») : arbre des sous-catégories, thèmes pour noms et verbes, temps pour les formes verbales */
 const TENSES = ["présent", "imparfait", "passé simple", "futur", "conditionnel", "subjonctif", "subj. imparfait", "impératif", "gérondif", "participe", "infinitif"];
+const LOCLAB = { adverbes: "adverbiale", adjectifs: "adjectivale", pronoms: "pronominale", conjonctions: "conjonctive", prepositions: "prépositive", noms: "nominale", verbes: "verbale" };
+const CLSING = { adverbes: "adverbe", adjectifs: "adjectif", pronoms: "pronom", conjonctions: "conjonction", prepositions: "préposition", noms: "nom", verbes: "verbe" };
 function subKey(f, x) {
+  if (x.k === "col" && f !== "expressions" && f !== "incises") return ["~col", "Collocations"];
+  if ((f === "noms" || f === "verbes") && x.k === "loc") return ["locutions", "Locutions " + LOCLAB[f] + "s"];
   if (f === "noms" || f === "verbes") { const k = x.th || "autres"; return [k, (DATA.themes || {})[k] || k]; }
   if (f === "accords") { const m = (x.fr || "").match(/\(([^,()]+), ([^()]+)\)\s*$/), t = m ? m[2].trim() : "autres"; return [t, t.charAt(0).toUpperCase() + t.slice(1)]; }
   if (f === "formes") { const m = (x.fr || "").match(/\(([^,()]+), ([^()]+)\)\s*$/); const t = m ? m[2].split(" / ")[0].trim() : "autres"; return [t, t.charAt(0).toUpperCase() + t.slice(1)]; }
-  if ((f === "expressions" || f === "incises") && x.k) { const [k0, l0] = subKey(f + "_", Object.assign({}, x, { k: "" })); return [k0 + "|" + x.k, l0 + (x.k === "tpl" ? " · à trous" : " · figées")]; }
-  const k = x.sc || ""; if (!k || k === f || k === "expressions" || k === "pronoms" || k === "adjectifs" || k === "adverbes") return ["~", "Autres"];
+  if ((f === "expressions" || f === "incises") && x.k) { const [k0, l0] = subKey(f + "_", Object.assign({}, x, { k: "" })); return [k0 + "|" + x.k, l0 + (x.k === "tpl" ? " · à trous" : x.k === "col" ? " · collocations" : " · figées")]; }
+  const k = x.scat || ""; if (!k || k === f || k === "expressions" || k === "pronoms" || k === "adjectifs" || k === "adverbes") return ["~", "Autres"];
   let lab = k.replace(/_/g, " ");
   for (const pre of ["conjonctions subordination ", f + " ", "prépositions ", "incises ", "expressions "]) if (lab.startsWith(pre) && lab.length > pre.length) { lab = lab.slice(pre.length); break; }
   return [k, lab.charAt(0).toUpperCase() + lab.slice(1)];
@@ -1681,7 +1690,7 @@ function subGroups(f, es, S, row) {
   if (by.size < 2) return es.map((e, j) => row(e, j + 1)).join("");
   const ord = (DATA.scorder || {})[f] || [];
   const keys = [...by.keys()].sort((a, b) => f === "formes" ? (TENSES.indexOf(a) + 99 * (TENSES.indexOf(a) < 0)) - (TENSES.indexOf(b) + 99 * (TENSES.indexOf(b) < 0))
-    : (a === "~" || a === "autres") - (b === "~" || b === "autres") || (ord.length ? (ord.indexOf(a.split("|")[0]) - ord.indexOf(b.split("|")[0])) : 0) || (a.includes("|") ? a.localeCompare(b) : 0) || by.get(b).items.length - by.get(a).items.length);
+    : ((a === "~" || a === "autres") + 2 * (a === "~col")) - ((b === "~" || b === "autres") + 2 * (b === "~col")) || (ord.length ? (ord.indexOf(a.split("|")[0]) - ord.indexOf(b.split("|")[0])) : 0) || (a.includes("|") ? a.localeCompare(b) : 0) || by.get(b).items.length - by.get(a).items.length);
   const cl = libClosed();
   return keys.map(k => { const g = by.get(k), got = g.items.filter(e => S.has(e.ri + ":" + e.n)).length, sk = "s" + f + ":" + k, c = cl.has(sk);
     return `<div class="lsub${c ? " closed" : ""}" data-k="${esc(sk)}"><h3 class="tog" role="button" tabindex="0" aria-expanded="${!c}">${esc(g.lab)} <small>${g.items.length} · ${got} appris</small></h3>` + g.items.map((e, j) => row(e, j + 1)).join("") + `</div>`; }).join("");
@@ -1702,7 +1711,7 @@ async function renderLib() {
   $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? ` · du plus fréquent au plus rare (${lg === "it" ? "italien" : "français"} parlé)` : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe grammaticale, dans l'ordre du palais par classe") + " · touche une ligne pour la fiche complète";
   const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
     `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
-    `<span class="lfr">${esc(x.fr)}${x.k ? `<small class="kind ${x.k}">${x.k === "tpl" ? "à trous" : "figée"}</small>` : ""}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span>${lg === "it" ? `<span class="lz" title="Zipf parlé italien (score grossier)">${x.zi != null ? (x.ax ? "≈" : "") + x.zi.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
+    `<span class="lfr">${esc(x.fr)}${x.k ? `<small class="kind ${x.k}">${x.k === "tpl" ? "à trous" : x.k === "loc" ? "locution" : x.k === "col" ? "collocation" : "figée"}</small>` : ""}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span>${lg === "it" ? `<span class="lz" title="Zipf parlé italien (score grossier)">${x.zi != null ? (x.ax ? "≈" : "") + x.zi.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
     `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; };
   if (!rows.length) { $("#libList").innerHTML = `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`; return; }
   if (freq) {   // ordre purement fréquentiel : toutes classes mêlées, par tranches de 250 rangs

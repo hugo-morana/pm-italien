@@ -1504,7 +1504,7 @@ async function renderLib() {
   const ord = prefs.libOrder || "freq", freq = ord === "freq" || ord === "freqit", lg = ord === "freqit" ? "it" : "fr", fineF = fineBy(lg);
   document.querySelectorAll("[data-liborder]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.liborder === ord)));
   $("#libCount").textContent = `${LIB.length} mots et expressions · ${S.size} appris`;
-  $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? ` · du plus fréquent au plus rare (${lg === "it" ? "italien" : "français"} parlé)` : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe, dans l'ordre du palais") + " · touche une ligne pour la fiche complète";
+  $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? ` · du plus fréquent au plus rare (${lg === "it" ? "italien" : "français"} parlé)` : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe grammaticale, dans l'ordre du palais par classe") + " · touche une ligne pour la fiche complète";
   const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
     `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
     `<span class="lfr">${esc(x.fr)}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span>${lg === "it" ? `<span class="lz" title="Zipf parlé italien (score grossier)">${x.zi != null ? (x.ax ? "≈" : "") + x.zi.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
@@ -1525,8 +1525,13 @@ async function renderLib() {
     $("#libList").innerHTML = keys.map(k => { const es = by.get(k).slice().sort((a, b) => fineF(b.x) - fineF(a.x)), got = es.filter(e => S.has(e.ri + ":" + e.n)).length;
       return `${secOpen("t" + k)}${esc(TH[k] || k)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
   } else {
-    const by = new Map(); for (const e of rows) { if (!by.has(e.ri)) by.set(e.ri, []); by.get(e.ri).push(e); }
-    $("#libList").innerHTML = [...by].map(([ri, es]) => `${secOpen("c" + R[ri].id)}${esc(R[ri].fr)} <small>${esc(R[ri].it)} · ${es.length}</small></h2>` + es.map(e => row(e, 0)).join("") + `</section>`).join("");
+    // par classe : une famille par classe grammaticale (noms, verbes, adverbes…), dans l'ordre du palais par classe
+    const CR0 = CANON || R, FO = ["noms", "verbes", "adjectifs", "pronoms", "conjonctions", "prepositions", "adverbes", "expressions", "incises"];
+    const pos = e => { const [cri, cn] = e.x._src || [e.ri, e.n], r = CR0[cri]; return [r ? r.floor : 0, cri, cn]; };
+    const by = new Map(); for (const e of rows) { if (!by.has(e.fam)) by.set(e.fam, []); by.get(e.fam).push(e); }
+    const keys = [...by.keys()].sort((a, b) => (FO.indexOf(a) + 99 * (FO.indexOf(a) < 0)) - (FO.indexOf(b) + 99 * (FO.indexOf(b) < 0)));
+    $("#libList").innerHTML = keys.map(f => { const es = by.get(f).map(e => [pos(e), e]).sort((a, b) => a[0][0] - b[0][0] || a[0][1] - b[0][1] || a[0][2] - b[0][2]).map(z => z[1]), got = es.filter(e => S.has(e.ri + ":" + e.n)).length;
+      return `${secOpen("c" + f)}${esc(FAML[f] || f)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
   }
   foldLabel();
 }

@@ -295,7 +295,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <select id="libTh" aria-label="Thème"></select>
     <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
     <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Fréquence FR</button><button class="pill" type="button" data-liborder="freqit" aria-pressed="false">Fréquence IT</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button><button class="pill" type="button" data-liborder="theme" aria-pressed="false">Par thème</button></div>
-    <span id="libInfo"></span> <button class="pill" type="button" id="libFold" style="margin-left:6px">Tout replier</button>
+    <span id="libInfo"></span> <button class="pill" type="button" id="libFold" style="margin-left:6px">Tout replier</button> <button class="pill" type="button" id="libFoldSub" hidden>Replier les sous-catégories</button>
   </div>
   <div id="libList"></div>
 </div></section>
@@ -1538,7 +1538,8 @@ function freqBands(lg = "fr") {
 }
 const libClosed = () => new Set(prefs.libClosed || []);
 function secOpen(k) { const c = libClosed().has(k); return `<section class="lroom${c ? " closed" : ""}" data-k="${esc(k)}"><h2 class="tog" role="button" tabindex="0" aria-expanded="${!c}">`; }
-const foldLabel = () => { const b = $("#libFold"); if (b) b.textContent = [...document.querySelectorAll("#libList .lroom")].some(x => !x.classList.contains("closed")) ? "Tout replier" : "Tout déplier"; };
+const foldLabel = () => { const b = $("#libFold"); if (b) b.textContent = [...document.querySelectorAll("#libList .lroom")].some(x => !x.classList.contains("closed")) ? "Tout replier" : "Tout déplier";
+  const s2 = $("#libFoldSub"), subs = document.querySelectorAll("#libList .lsub"); if (s2) { s2.hidden = !subs.length; s2.textContent = [...subs].some(x => !x.classList.contains("closed")) ? "Replier les sous-catégories" : "Déplier les sous-catégories"; } };
 function toggleSec(h) { const sec = h.closest(".lsub, .lroom"), k = sec.dataset.k, set = libClosed(); const c = !sec.classList.contains("closed");
   sec.classList.toggle("closed", c); h.setAttribute("aria-expanded", String(!c)); c ? set.add(k) : set.delete(k); prefs.libClosed = [...set]; savePrefs(); foldLabel(); }
 /* sous-catégories d'une classe (bibliothèque « par classe ») : arbre des sous-catégories, thèmes pour noms et verbes, temps pour les formes verbales */
@@ -1654,6 +1655,9 @@ function bindViews() {
   $("#libList").addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("lrow")) openLibRow(e.target); }, true);
   $("#libList").addEventListener("click", e => { const h = e.target.closest(".tog"); if (h) toggleSec(h); });
   $("#libList").addEventListener("keydown", e => { const h = e.target.closest(".tog"); if (h && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleSec(h); } });
+  $("#libFoldSub").onclick = () => { const subs = [...document.querySelectorAll("#libList .lsub")], close = subs.some(x => !x.classList.contains("closed")), set = libClosed();
+    subs.forEach(x => { x.classList.toggle("closed", close); x.querySelector(".tog")?.setAttribute("aria-expanded", String(!close)); close ? set.add(x.dataset.k) : set.delete(x.dataset.k); });
+    prefs.libClosed = [...set]; savePrefs(); foldLabel(); };
   $("#libFold").onclick = () => { const secs = [...document.querySelectorAll("#libList .lroom")], close = secs.some(x => !x.classList.contains("closed")), set = libClosed();
     secs.forEach(x => { x.classList.toggle("closed", close); x.querySelector("h2.tog")?.setAttribute("aria-expanded", String(!close)); close ? set.add(x.dataset.k) : set.delete(x.dataset.k); });
     prefs.libClosed = [...set]; savePrefs(); foldLabel(); };

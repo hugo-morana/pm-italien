@@ -189,6 +189,13 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .lroom.closed h2.tog::before { transform:rotate(-90deg) }
 .lroom.closed { contain-intrinsic-size:auto 40px }
 .lroom.closed > :not(h2) { display:none }
+.lsub { display:flex; flex-direction:column; gap:3px; margin:4px 0 6px }
+.lsub > h3.tog { cursor:pointer; user-select:none; -webkit-tap-highlight-color:transparent; display:flex; gap:8px; align-items:baseline; flex-wrap:wrap;
+  font:600 15px/1.2 var(--display); margin:6px 0 2px; padding-left:6px; border-left:3px solid var(--line) }
+.lsub > h3.tog small { font:500 10px var(--mono); color:var(--muted); letter-spacing:.05em }
+.lsub > h3.tog::before { content:"▾"; font:500 12px var(--mono); color:var(--muted); width:1em; transition:transform .15s }
+.lsub.closed > h3.tog::before { transform:rotate(-90deg) }
+.lsub.closed > :not(h3) { display:none }
 .lrow { background:var(--surface); border:1px solid var(--line); border-left:5px solid var(--fc, var(--line)); border-radius:4px }
 .lrow > summary { list-style:none; display:flex; gap:10px; align-items:center; padding:7px 10px; cursor:pointer; min-height:28px }
 .lrow > summary::-webkit-details-marker { display:none }
@@ -1120,17 +1127,21 @@ function buildCurves() {
 }
 async function learnedStats() {
   if (!CURVES) buildCurves();
-  let n = 0, c = 0, t = 0;
+  // compréhension = réussi dans le sens IT → FR (ou à l'écoute) ; expression = réussi dans le sens FR → IT
+  let n = 0, c = 0, t = 0, e = 0, nc = 0, ne = 0;
   for (let ri = 0; ri < R.length; ri++) {
-    const cards = await srsRoom(ri), got = new Set();
-    for (const k in cards) { const v = cards[k]; if (v && v.seen && v.b >= 1) got.add(+k.split(":")[0]); }
-    for (const m of got) { const x = R[ri].niches[m]; if (!x) continue; n++; if (counts(R[ri], x)) c += (x.oi || 0) / 1e6; else if (CURVES.TT) t += tvOf(R[ri], x) / CURVES.TT * 100; }
+    const cards = await srsRoom(ri), got = new Set(), comp = new Set(), expr = new Set();
+    for (const k in cards) { const v = cards[k]; if (!(v && v.seen && v.b >= 1)) continue; const [m, ty] = k.split(":"); got.add(+m); if (ty === "it" || ty === "aud") comp.add(+m); if (ty === "fr") expr.add(+m); }
+    for (const m of got) { const x = R[ri].niches[m]; if (!x) continue; n++;
+      const w = counts(R[ri], x) ? (x.oi || 0) / 1e6 : 0;
+      if (comp.has(m)) { nc++; c += w; if (!w && CURVES.TT) t += tvOf(R[ri], x) / CURVES.TT * 100; }
+      if (expr.has(m)) { ne++; e += w; } }
   }
-  return { n, c, t };
+  return { n, c, t, e, nc, ne };
 }
 async function updateHist() {
   const s = await learnedStats(), t = today();
-  HIST = HIST.filter(p => p.d !== t).concat([{ d: t, n: s.n, c: Math.round(s.c * 100) / 100, t: Math.round(s.t * 100) / 100 }]).sort((a, b) => a.d - b.d).slice(-400);
+  HIST = HIST.filter(p => p.d !== t).concat([{ d: t, n: s.n, c: Math.round(s.c * 100) / 100, t: Math.round(s.t * 100) / 100, e: Math.round(s.e * 100) / 100 }]).sort((a, b) => a.d - b.d).slice(-400);
   ls.set("hist", HIST);
   if (store.kind) { clearTimeout(updateHist.t); updateHist.t = setTimeout(() => remoteSet("historique", { pts: HIST }), 1500); }
   return s;
@@ -1149,7 +1160,7 @@ async function renderCurve() {
   $("#ckey1").textContent = ord === "fr" ? "par fréquence française" : ord === "it" ? "par fréquence italienne" : "dans l'ordre du palais";
   document.querySelectorAll("[data-cscale]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.cscale === "full") === full)));
   $("#ckeyExt").hidden = !full;
-  const me0 = await updateHist(), me = { n: me0.n, c: tour ? me0.t : me0.c }, HP = HIST.filter(p => !tour || p.t != null).map(p => ({ d: p.d, n: p.n, c: tour ? p.t : p.c })), svg = $("#curve"), Wd = svg.parentElement.clientWidth < 520 ? 400 : 640, Hd = 400, L = 44, Rm = 18, T = 14, B = 52;
+  const me0 = await updateHist(), me = { n: me0.nc, c: tour ? me0.t : me0.c }, HP = HIST.filter(p => !tour || p.t != null).map(p => ({ d: p.d, n: p.n, c: tour ? p.t : p.c })), svg = $("#curve"), Wd = svg.parentElement.clientWidth < 520 ? 400 : 640, Hd = 400, L = 44, Rm = 18, T = 14, B = 52;
   // au-delà du palais : mots suivants de l'italien parlé, la part restante (100 % − fin du palais) se remplit selon les sous-titres
   const extPts = ext.map(([k, f]) => [N0 + k, P0 + f * (100 - P0)]), NMAX = full && extPts.length ? extPts[extPts.length - 1][0] : N0;
   const lx = n => Math.log10(Math.max(1, n));
@@ -1185,7 +1196,7 @@ async function renderCurve() {
   g += `<line class="xh" id="xh" y1="${T}" y2="${y0}" x1="-10" x2="-10"/>`;
   svg.innerHTML = g;
   const nextWords = C1.find(p => p[0] > me.n && p[1] > me.c + 5), p95 = extPts.find(z => z[1] >= 95);
-  $("#curveTxt").textContent = tour ? `Tournures : tu maîtrises ${me.c.toFixed(1)} % des tournures du palais, pondérées par leur fréquence. Chaque expression, locution ou incise vaut sa fréquence comme bloc dans l'italien parlé, mesurée sur 200 millions de mots de sous-titres de films et séries (OpenSubtitles) ; seules les expressions à trou dont la partie fixe est un seul mot (« E …? ») sont estimées. Les ${CURVES.tours.toLocaleString("fr-FR")} tournures du palais font 100 % ; les mots seuls n'y comptent pas, ils sont dans la courbe « Mots ».` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence italienne" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") : `Tu as appris ${me.n} mot(s) ou expression(s) (au moins une réussite) : ils couvrent environ ${me.c.toFixed(1)} % des mots entendus dans une conversation en italien. Les ${N0.toLocaleString("fr-FR")} niches du palais en couvrent ${P0.toFixed(0)} % ; les expressions et locutions n'ajoutent pas de pourcentage, car leurs mots sont déjà comptés, mais elles aident à comprendre les tournures.` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence italienne" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") +
+  $("#curveTxt").textContent = tour ? `Tournures : tu maîtrises ${me.c.toFixed(1)} % des tournures du palais, pondérées par leur fréquence. Chaque expression, locution ou incise vaut sa fréquence comme bloc dans l'italien parlé, mesurée sur 200 millions de mots de sous-titres de films et séries (OpenSubtitles) ; seules les expressions à trou dont la partie fixe est un seul mot (« E …? ») sont estimées. Les ${CURVES.tours.toLocaleString("fr-FR")} tournures du palais font 100 % ; les mots seuls n'y comptent pas, ils sont dans la courbe « Mots ».` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence italienne" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") : `Tu reconnais ${me0.nc} mot(s) ou expression(s) dans le sens italien → français (au moins une réussite en IT → FR ou à l'écoute) : ils couvrent environ ${me.c.toFixed(1)} % des mots entendus dans une conversation en italien. Les ${N0.toLocaleString("fr-FR")} niches du palais en couvrent ${P0.toFixed(0)} % ; les expressions et locutions n'ajoutent pas de pourcentage, car leurs mots sont déjà comptés, mais elles aident à comprendre les tournures.` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence italienne" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") +
     (full ? ` Au-delà du palais, la courbe pointillée prolonge avec les mots suivants de l'italien parlé (sous-titres de films), par fréquence : ${p95 ? `95 % vers ${Math.round(p95[0] / 1000)} 000 mots ; ` : ""}les derniers pour cent sont surtout des noms propres et des mots très rares.` : "");
   const valAt = (pts, n) => { if (n <= 0) return 0; let lo = 0, hi = pts.length - 1; if (n >= pts[hi][0]) return pts[hi][1]; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (pts[m][0] <= n) lo = m; else hi = m; } return pts[lo][1]; };
   const tip = $("#ctip");
@@ -1498,8 +1509,28 @@ function freqBands(lg = "fr") {
 const libClosed = () => new Set(prefs.libClosed || []);
 function secOpen(k) { const c = libClosed().has(k); return `<section class="lroom${c ? " closed" : ""}" data-k="${esc(k)}"><h2 class="tog" role="button" tabindex="0" aria-expanded="${!c}">`; }
 const foldLabel = () => { const b = $("#libFold"); if (b) b.textContent = [...document.querySelectorAll("#libList .lroom")].some(x => !x.classList.contains("closed")) ? "Tout replier" : "Tout déplier"; };
-function toggleSec(h) { const sec = h.closest(".lroom"), k = sec.dataset.k, set = libClosed(); const c = !sec.classList.contains("closed");
+function toggleSec(h) { const sec = h.closest(".lsub, .lroom"), k = sec.dataset.k, set = libClosed(); const c = !sec.classList.contains("closed");
   sec.classList.toggle("closed", c); h.setAttribute("aria-expanded", String(!c)); c ? set.add(k) : set.delete(k); prefs.libClosed = [...set]; savePrefs(); foldLabel(); }
+/* sous-catégories d'une classe (bibliothèque « par classe ») : arbre des sous-catégories, thèmes pour noms et verbes, temps pour les formes verbales */
+const TENSES = ["présent", "imparfait", "passé simple", "futur", "conditionnel", "subjonctif", "subj. imparfait", "impératif", "gérondif", "participe", "infinitif"];
+function subKey(f, x) {
+  if (f === "noms" || f === "verbes") { const k = x.th || "autres"; return [k, (DATA.themes || {})[k] || k]; }
+  if (f === "formes") { const m = (x.fr || "").match(/\(([^,()]+), ([^()]+)\)\s*$/); const t = m ? m[2].split(" / ")[0].trim() : "autres"; return [t, t.charAt(0).toUpperCase() + t.slice(1)]; }
+  const k = x.sc || ""; if (!k || k === f || k === "expressions" || k === "pronoms" || k === "adjectifs" || k === "adverbes") return ["~", "Autres"];
+  let lab = k.replace(/_/g, " ");
+  for (const pre of ["conjonctions subordination ", f + " ", "prépositions ", "incises ", "expressions "]) if (lab.startsWith(pre) && lab.length > pre.length) { lab = lab.slice(pre.length); break; }
+  return [k, lab.charAt(0).toUpperCase() + lab.slice(1)];
+}
+function subGroups(f, es, S, row) {
+  const by = new Map(); for (const e of es) { const [k, lab] = subKey(f, e.x); if (!by.has(k)) by.set(k, { lab, items: [] }); by.get(k).items.push(e); }
+  if (by.size < 2) return es.map((e, j) => row(e, j + 1)).join("");
+  const ord = (DATA.scorder || {})[f] || [];
+  const keys = [...by.keys()].sort((a, b) => f === "formes" ? (TENSES.indexOf(a) + 99 * (TENSES.indexOf(a) < 0)) - (TENSES.indexOf(b) + 99 * (TENSES.indexOf(b) < 0))
+    : (a === "~" || a === "autres") - (b === "~" || b === "autres") || (ord.length ? (ord.indexOf(a) - ord.indexOf(b)) : 0) || by.get(b).items.length - by.get(a).items.length);
+  const cl = libClosed();
+  return keys.map(k => { const g = by.get(k), got = g.items.filter(e => S.has(e.ri + ":" + e.n)).length, sk = "s" + f + ":" + k, c = cl.has(sk);
+    return `<div class="lsub${c ? " closed" : ""}" data-k="${esc(sk)}"><h3 class="tog" role="button" tabindex="0" aria-expanded="${!c}">${esc(g.lab)} <small>${g.items.length} · ${got} appris</small></h3>` + g.items.map((e, j) => row(e, j + 1)).join("") + `</div>`; }).join("");
+}
 async function renderLib() {
   libIndex(); if (!$("#libTag").options.length) libTags();
   const q = nrm($("#libQ").value.trim()), f = $("#libFam").value, tg = $("#libTag").value, sf = $("#libSt").value, th = $("#libTh").value;
@@ -1539,7 +1570,7 @@ async function renderLib() {
     const by = new Map(); for (const e of rows) { if (!by.has(e.fam)) by.set(e.fam, []); by.get(e.fam).push(e); }
     const keys = [...by.keys()].sort((a, b) => (FO.indexOf(a) + 99 * (FO.indexOf(a) < 0)) - (FO.indexOf(b) + 99 * (FO.indexOf(b) < 0)));
     $("#libList").innerHTML = keys.map(f => { const es = by.get(f).map(e => [pos(e), e]).sort((a, b) => a[0][0] - b[0][0] || a[0][1] - b[0][1] || a[0][2] - b[0][2]).map(z => z[1]), got = es.filter(e => S.has(e.ri + ":" + e.n)).length;
-      return `${secOpen("c" + f)}${esc(FAML[f] || f)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
+      return `${secOpen("c" + f)}${esc(FAML[f] || f)} <small>${es.length} · ${got} appris</small></h2>` + subGroups(f, es, S, row) + `</section>`; }).join("");
   }
   foldLabel();
 }
@@ -1557,7 +1588,8 @@ async function renderCarnet() {
   $("#cbStore").textContent = store.kind === "claude" ? "progression sur ton compte Claude" : store.kind === "sb" ? "progression sur " + store.email : "progression sur cet appareil";
   $("#kpis").innerHTML = [
     [me.n, "mots appris", `sur ${CURVES.total} niches`],
-    [me.c.toFixed(1) + " %", "compréhension", `de l'italien parlé courant`],
+    [me.c.toFixed(1) + " %", "compréhension · IT → FR", `de l'italien parlé courant · ${me.nc} mot(s) reconnu(s)`],
+    [(me.e || 0).toFixed(1) + " %", "expression · FR → IT", `des mots d'une conversation · ${me.ne} mot(s) que tu sais dire`],
     [(me.t || 0).toFixed(1) + " %", "tournures", `des ${CURVES.tours} tournures du palais (pondérées)`],
     [due, "cartes à réviser", due ? "aujourd'hui" : "rien d'urgent"],
     [streak, "jours d'affilée", `${days.size} jour(s) d'étude au total`]
@@ -1590,8 +1622,8 @@ function bindViews() {
   $("#libFam").onchange = () => { libTags(); renderLib(); };
   document.addEventListener("click", e => { const b = e.target.closest("[data-liborder]"); if (!b) return; prefs.libOrder = b.dataset.liborder; savePrefs(); renderLib(); $("#lib").scrollTo(0, 0); }); $("#libTag").onchange = renderLib; $("#libTh").onchange = renderLib; $("#libSt").onchange = renderLib;
   $("#libList").addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("lrow")) openLibRow(e.target); }, true);
-  $("#libList").addEventListener("click", e => { const h = e.target.closest("h2.tog"); if (h) toggleSec(h); });
-  $("#libList").addEventListener("keydown", e => { const h = e.target.closest("h2.tog"); if (h && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleSec(h); } });
+  $("#libList").addEventListener("click", e => { const h = e.target.closest(".tog"); if (h) toggleSec(h); });
+  $("#libList").addEventListener("keydown", e => { const h = e.target.closest(".tog"); if (h && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleSec(h); } });
   $("#libFold").onclick = () => { const secs = [...document.querySelectorAll("#libList .lroom")], close = secs.some(x => !x.classList.contains("closed")), set = libClosed();
     secs.forEach(x => { x.classList.toggle("closed", close); x.querySelector("h2.tog")?.setAttribute("aria-expanded", String(!close)); close ? set.add(x.dataset.k) : set.delete(x.dataset.k); });
     prefs.libClosed = [...set]; savePrefs(); foldLabel(); };

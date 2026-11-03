@@ -365,7 +365,8 @@ const FAMS = {
   prepositions: { fr: "cour à arcades", it: "cortile", floor: ["pierre", "#b3a58e", "#8d806b"], wall: "#d8b98d", ceil: "#7fa4c8", land: "colonne" },
   adverbes:     { fr: "salle de théâtre", it: "teatro", floor: ["planches", "#5b3a26", "#714a30"], wall: "#7a1f24", ceil: "#2e1c18", land: "rideau" },
   expressions:  { fr: "place du marché", it: "piazza", floor: ["pierre", "#a99f8f", "#7f7566"], wall: "#e0b77e", ceil: "#8fb3d6", land: "fontaine" },
-  incises:      { fr: "loggia des orateurs", it: "loggia", floor: ["terrazzo", "#c8b69a", "#7d6a4f"], wall: "#e9dcc4", ceil: "#d9c7a7", land: "lutrin" }
+  incises:      { fr: "loggia des orateurs", it: "loggia", floor: ["terrazzo", "#c8b69a", "#7d6a4f"], wall: "#e9dcc4", ceil: "#d9c7a7", land: "lutrin" },
+  formes:       { fr: "salle des miroirs", it: "sala degli specchi", floor: ["marbre", "#d8d4cc", "#6f6a62"], wall: "#3f5a6b", ceil: "#e8e4dc", land: "etabli" }
 };
 const SHORT = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj. qualif.", determinants: "Adj. déterm.", pronoms: "Pronoms", conjonctions: "Conjonctions",
   prepositions: "Prépositions", adverbes: "Adverbes", courantes_1: "Expr. courantes", noms_2: "Noms ²", verbes_2: "Verbes ²", adjectifs_2: "Adj. ²", adverbes_2: "Adverbes ²", incises_1: "Incises", incises_2: "Incises ²", incises_3: "Incises ³", incises_4: "Incises ⁴",
@@ -373,7 +374,7 @@ const SHORT = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj. qualif.", deter
   modales_1: "Modales", modales_2: "Modales ²", modales_3: "Modales ³", modales_4: "Modales ⁴", modales_5: "Modales ⁵" };
 const code = r => r.code || ({ noms: "n", verbes: "v", adjectifs: "adj", determinants: "det", pronoms: "pro", conjonctions: "conj", prepositions: "prp", adverbes: "adv", courantes_1: "cour" }[r.id] || r.id.replace(/^basiques_/, "b").replace(/^modales_/, "m").replace(/^incises_/, "i").replace(/^noms_/, "n").replace(/^verbes_/, "v").replace(/^adjectifs_/, "adj").replace(/^adverbes_/, "adv").replace(/^pronoms_/, "pro").replace(/^conjonctions_/, "conj").replace(/^prepositions_/, "prp").replace(/^courantes_/, "cour"));
 const SUP = n => String(n).split("").map(c => "⁰¹²³⁴⁵⁶⁷⁸⁹"[+c]).join("");
-const BASE = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj.", adverbes: "Adverbes", pronoms: "Pronoms", conjonctions: "Conj.", prepositions: "Prép.", courantes: "Courantes", basiques: "Basiques", modales: "Modales", incises: "Incises" };
+const BASE = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj.", adverbes: "Adverbes", pronoms: "Pronoms", conjonctions: "Conj.", prepositions: "Prép.", courantes: "Courantes", basiques: "Basiques", modales: "Modales", incises: "Incises", formes: "Formes" };
 const shortName = r => r.short || SHORT[r.id] || ((m => m && BASE[m[1]] ? BASE[m[1]] + " " + SUP(m[2]) : r.id)(r.id.match(/^(\w+?)_(\d+)$/)));
 const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"]];
 const BOXDAYS = [0, 1, 2, 4, 8, 16];
@@ -1432,7 +1433,7 @@ async function updateTestBadge() {
 
 /* ============ Modes : bibliothèque, palais, carnet de bord ============ */
 let VIEW = "palais";
-const FAML = { noms: "Noms", verbes: "Verbes", adjectifs: "Adjectifs", pronoms: "Pronoms", conjonctions: "Conjonctions", prepositions: "Prépositions", adverbes: "Adverbes", expressions: "Expressions", incises: "Incises" };
+const FAML = { noms: "Noms", verbes: "Verbes", adjectifs: "Adjectifs", pronoms: "Pronoms", conjonctions: "Conjonctions", prepositions: "Prépositions", adverbes: "Adverbes", expressions: "Expressions", incises: "Incises", formes: "Formes verbales" };
 const famOf = r => r.id.startsWith("determinants") ? "adjectifs" : r.fam;
 function setView(v) {
   if (!["lib", "palais", "carnet"].includes(v)) v = "palais";
@@ -1526,7 +1527,7 @@ async function renderLib() {
       return `${secOpen("t" + k)}${esc(TH[k] || k)} <small>${es.length} · ${got} appris</small></h2>` + es.map((e, j) => row(e, j + 1)).join("") + `</section>`; }).join("");
   } else {
     // par classe : une famille par classe grammaticale (noms, verbes, adverbes…), dans l'ordre du palais par classe
-    const CR0 = CANON || R, FO = ["noms", "verbes", "adjectifs", "pronoms", "conjonctions", "prepositions", "adverbes", "expressions", "incises"];
+    const CR0 = CANON || R, FO = ["noms", "verbes", "formes", "adjectifs", "pronoms", "conjonctions", "prepositions", "adverbes", "expressions", "incises"];
     const pos = e => { const [cri, cn] = e.x._src || [e.ri, e.n], r = CR0[cri]; return [r ? r.floor : 0, cri, cn]; };
     const by = new Map(); for (const e of rows) { if (!by.has(e.fam)) by.set(e.fam, []); by.get(e.fam).push(e); }
     const keys = [...by.keys()].sort((a, b) => (FO.indexOf(a) + 99 * (FO.indexOf(a) < 0)) - (FO.indexOf(b) + 99 * (FO.indexOf(b) < 0)));

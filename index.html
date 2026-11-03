@@ -318,7 +318,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h3>Approche d'apprentissage</h3>
   <div class="pills" role="group" aria-label="Approche d'apprentissage"><button class="pill" type="button" data-approach="palais">Ordre du palais</button><button class="pill" type="button" data-approach="freqfr">Fréquence FR</button><button class="pill" type="button" data-approach="freqit">Fréquence IT</button><button class="pill" type="button" data-approach="theme">Par thème</button><button class="pill" type="button" data-approach="classe">Par classe</button></div>
   <p class="pr" id="approachTxt" style="margin:0"></p>
-  <div class="frow">Nouveaux par séance <input type="number" id="newN" min="1" max="30" value="8" style="width:4.5em"></div>
+  <div class="frow">Nouveaux par séance <input type="number" id="newN" min="1" max="30" value="10" style="width:4.5em"></div>
   <h3>Questions</h3>
   <div class="pills" id="typesP"></div>
   <h3>Pièces</h3>
@@ -858,7 +858,8 @@ function speak(text, src, btn, lang = "it") {
    elle reste rangée sous les salles du palais par classe (salles « canoniques »). */
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
 /* Deux comptes possibles : le compte Claude (capacité db) quand la page tourne dans Claude,
    ou un compte e-mail Supabase (code à 6 chiffres) sur la version GitHub Pages. Sinon : navigateur seulement. */
@@ -1470,7 +1471,7 @@ function bindUI() {
   document.addEventListener("click", e => { const b = e.target.closest("[data-tmode]"); if (!b) return; prefs.testMode = b.dataset.tmode; savePrefs(); renderTMode(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-approach]"); if (!b) return; prefs.approach = b.dataset.approach; savePrefs(); renderApproach(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-inmode]"); if (!b) return; prefs.inMode = b.dataset.inmode; savePrefs(); renderInMode(); });
-  $("#newN").onchange = e => { prefs.newN = Math.max(1, Math.min(30, +e.target.value || 8)); savePrefs(); renderTMode(); };
+  $("#newN").onchange = e => { prefs.newN = Math.max(1, Math.min(30, +e.target.value || 10)); savePrefs(); renderTMode(); };
   $("#mapType").onchange = e => { prefs.mapType = e.target.value; savePrefs(); renderTests(); };
   $("#goTest").onclick = () => startAuto();
   // clavier

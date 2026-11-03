@@ -309,6 +309,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <button class="btn" type="button" id="goRevue">Révision du jour</button>
     <button class="btn alt" type="button" id="goLearn">Apprendre de nouveaux mots</button>
     <button class="btn alt" type="button" id="goFree">Entraînement libre</button>
+    <button class="btn alt" type="button" id="goEx">Apprendre par l'exemple</button>
   </div>
   <h3>Réponse</h3>
   <div class="pills" role="group" aria-label="Mode de réponse"><button class="pill" type="button" data-inmode="aucun">Aucune · je m'auto-évalue</button><button class="pill" type="button" data-inmode="clavier">Clavier · je tape</button><button class="pill" type="button" data-inmode="voix">Voix · je parle</button></div>
@@ -392,7 +393,7 @@ const code = r => r.code || ({ noms: "n", verbes: "v", adjectifs: "adj", determi
 const SUP = n => String(n).split("").map(c => "⁰¹²³⁴⁵⁶⁷⁸⁹"[+c]).join("");
 const BASE = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj.", adverbes: "Adverbes", pronoms: "Pronoms", conjonctions: "Conj.", prepositions: "Prép.", courantes: "Courantes", basiques: "Basiques", modales: "Modales", incises: "Incises", formes: "Formes" };
 const shortName = r => r.short || SHORT[r.id] || ((m => m && BASE[m[1]] ? BASE[m[1]] + " " + SUP(m[2]) : r.id)(r.id.match(/^(\w+?)_(\d+)$/)));
-const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"]];
+const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"], ["phit", "Phrase IT → FR"], ["phfr", "Phrase FR → IT"]];
 const BOXDAYS = [0, 1, 2, 4, 8, 16];
 
 /* ============ Petits outils ============ */
@@ -1016,6 +1017,12 @@ async function startQuiz(kind) {
     if (types.includes("chaine")) { const [ri, n0] = pool[Math.floor(Math.random() * pool.length)]; const d = Math.floor(n0 / 10); list = filled(ri).filter(n => Math.floor(n / 10) === d).map(n => ({ ri, n, ty: "chaine" })).slice(0, -1); }
     list = list.concat(shuffle(pool.slice()).slice(0, 30).map(([ri, n]) => ({ ri, n, ty: types.filter(t => t !== "chaine")[Math.floor(Math.random() * types.filter(t => t !== "chaine").length)] || "fr" })));
   }
+  if (kind === "exemple") {   // apprendre par l'exemple : phrases des niches sélectionnées, mots pas encore appris d'abord
+    const pool = poolItems().filter(([ri, n]) => R[ri].niches[n].eit && R[ri].niches[n].efr); if (!pool.length) { toast("Aucune phrase d'exemple dans la sélection"); return; }
+    const pt = types.filter(t => t === "phit" || t === "phfr"), dirs = pt.length ? pt : ["phit", "phfr"], fresh = [], rest = [];
+    for (const [ri, n] of pool) { const c = await srsRoom(ri); (dirs.some(d => c[n + ":" + d] && c[n + ":" + d].seen) ? rest : fresh).push([ri, n]); }
+    list = shuffle(fresh).concat(shuffle(rest)).slice(0, 20).map(([ri, n], i) => ({ ri, n, ty: dirs[i % dirs.length] }));
+  }
   if (kind === "learn") {
     const pool = poolItems(), fresh = [];
     for (const [ri, n] of pool) { const c = await srsRoom(ri); if (!types.some(ty => c[n + ":" + ty] && c[n + ":" + ty].seen)) fresh.push([ri, n]); if (fresh.length >= prefs.newN) break; }
@@ -1054,21 +1061,24 @@ function ask(q) {
   if (q.ty === "fr") text = `Traduis : ${x.fr}`;
   if (q.ty === "it") { text = `Que veut dire : ${x.it} ?`; quizState.hideFr = true; mask = null; }
   if (q.ty === "aud") { text = "Écoute, puis donne le sens en français."; quizState.hideFr = true; }
+  if (q.ty === "phit") { text = `Traduis en français : « ${x.eit} »`; quizState.hideFr = true; mask = null; }
+  if (q.ty === "phfr") { text = `Traduis en italien : « ${x.efr} »`; mask = null; }
   if (q.ty === "suite" || q.ty === "chaine") { const nx = nextOf(q.ri, q.n); q.target = nx; text = `Après « ${x.it} » (${num}), quel mot vient ensuite ?`; mask = nx.r === q.ri ? nx.n : null; }
-  $("#voile").hidden = !(q.ty === "img" || q.ty === "aud" || q.ty === "fr" || q.ty === "it");
+  $("#voile").hidden = !(q.ty === "img" || q.ty === "aud" || q.ty === "fr" || q.ty === "it" || q.ty === "phit" || q.ty === "phfr");
   const focusN = q.ty === "suite" || q.ty === "chaine" ? q.n : q.n;
   st.zoom = 0; goTo(q.ri, focusN, { mask, dur: .45 }); if (q.ty === "img") { ring.visible = arrow.visible = false; }
   $("#quiz").hidden = false;
   $("#quiz").innerHTML = `<div class="qh"><span>${esc(TYPES.find(t => t[0] === q.ty)[1].toUpperCase())}${quizState.list.length ? ` · ${quizState.idx + 1}/${quizState.list.length}` : ""}</span><span class="spacer"></span><button class="chip" type="button" data-quit>Quitter le test</button></div>
     <div class="qq">${esc(text)}</div>
     ${q.ty === "aud" ? `<div class="btns"><button class="btn" type="button" data-say-q>🔊 Réécouter</button></div>` : ""}
+    ${q.ty === "phit" ? `<div class="btns"><button class="btn alt" type="button" data-say-ph>🔊 Écouter la phrase</button></div>` : ""}
     ${input ? `<input id="rep" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${IM === "voix" ? "Touche 🎤 et parle (ou dicte au clavier)" : "Ta réponse"}" lang="${repLang(q.ty).slice(0, 2)}">` : ""}
     <div class="btns">${IM === "voix" ? `<button class="btn" type="button" data-mic>🎤 Parler</button>` : ""}<button class="btn${IM === "voix" ? " alt" : ""}" type="button" data-reveal>${IM === "aucun" ? "Révéler" : "Valider"}</button></div>`;
   if (IM === "clavier") setTimeout(() => { const r = $("#rep"); if (r) r.focus(); }, 60);
   if (q.ty === "aud") speak(x.it, asrc(x.ai, x.am));
   renderFiche();
 }
-const repLang = ty => (ty === "it" || ty === "aud" || ty === "img") ? "fr-FR" : "it-IT";
+const repLang = ty => (ty === "it" || ty === "aud" || ty === "img" || ty === "phit") ? "fr-FR" : "it-IT";
 function lev(a, b) { const m = a.length, n = b.length; if (!m) return n; if (!n) return m; let p = Array.from({ length: n + 1 }, (_, j) => j);
   for (let i = 1; i <= m; i++) { const c = [i]; for (let j = 1; j <= n; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; } return p[n]; }
 const close = (a, b) => { a = norm(a).trim(); b = norm(b).trim(); if (!a || !b) return false; return a === b || lev(a, b) <= Math.max(1, Math.floor(Math.min(a.length, b.length) * 0.2)); };
@@ -1085,6 +1095,47 @@ function startMic() {
     rec.start();
   } catch (err) { toast("Micro indisponible : utilise la dictée du clavier."); }
 }
+/* ============ Apprendre par l'exemple : phrases d'exemple ============ */
+function sentOk(expected, answer) {   // part des mots attendus retrouvés dans la réponse (petites fautes tolérées)
+  const tok = t => norm(t).split(/\s+/).filter(w => w.length > 1), E = tok(expected), A = tok(answer);
+  if (!E.length || !A.length) return false;
+  const hit = E.filter(w => A.some(a => a === w || (w.length > 3 && lev(a, w) <= Math.floor(w.length * 0.25)))).length;
+  return hit / E.length >= 0.75;
+}
+let WIDX = null;   // mot italien (forme) → niches de mots qui le couvrent
+function wordIndex() {
+  if (WIDX) return WIDX; WIDX = new Map(); const lemmaAt = new Map();
+  const add = (w, ri, n) => { w = norm(w).trim(); if (!w || w.includes(" ")) return; if (!WIDX.has(w)) WIDX.set(w, []); WIDX.get(w).push([ri, n]); };
+  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const cls = x._cls || famOf(r);
+    if (cls === "expressions" || cls === "incises") return;
+    for (const a of altsOf(x.it)) { add(a, ri, n); if (cls !== "formes" && norm(a).trim() && !norm(a).trim().includes(" ")) lemmaAt.set(norm(a).trim(), [ri, n]); }
+    if (cls === "adjectifs" || cls === "noms") for (const a of altsOf(x.it)) { const w = norm(a).trim(); if (!w || w.includes(" ") || w.length < 3) continue;   // genre et nombre
+      const st = w.slice(0, -1), e = w.slice(-1); if (e === "o") ["a", "i", "e"].forEach(v => add(st + v, ri, n)); if (e === "a") ["e", "i"].forEach(v => add(st + v, ri, n)); if (e === "e") add(st + "i", ri, n);
+      if (w.endsWith("co")) add(w.slice(0, -2) + "chi", ri, n); if (w.endsWith("ca")) add(w.slice(0, -2) + "che", ri, n); }
+    for (const f of String(x.fo || "").split(/[,;\/]/)) add(f, ri, n); }));
+  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x || (x._cls || famOf(r)) !== "formes") return; const L = lemmaAt.get(norm(String(x.mc || "").replace("→", "")).trim()); if (L) for (const a of altsOf(x.it)) add(a, L[0], L[1]); }));
+  return WIDX;
+}
+async function creditSentence(q, x) {   // phrase réussie : chaque mot qui la compose compte comme appris dans ce sens
+  const ty = q.ty === "phit" ? "it" : "fr", idx = wordIndex(), seen = new Set(), t = today(); let k = 0;
+  const words = norm(String(x.eit || "").replace(/'/g, "' ")).split(/\s+/).filter(Boolean);
+  for (const w of words) for (const [ri, n] of (idx.get(w) || [])) {
+    const key = ri + ":" + n; if (seen.has(key)) continue; seen.add(key);
+    const c = await srsRoom(ri), cur = c[n + ":" + ty];
+    if (cur && cur.seen && cur.b >= 1) continue;
+    c[n + ":" + ty] = { b: 1, d: t + BOXDAYS[1], seen: 1 }; srsSave(ri); k++;
+  }
+  if (k) { updateHist(); toast(`+${k} mot(s) compté(s) comme appris (${ty === "it" ? "compréhension" : "expression"})`); }
+}
+function revealPhrase(q, x, reps) {
+  const exp = q.ty === "phit" ? x.efr : x.eit, okGuess = reps.length ? reps.some(r => sentOk(exp, r)) : null;
+  texturizeRoom(q.ri, null); st.zoom = 0; goTo(q.ri, q.n); placeRing(q.ri, q.n); renderFiche();
+  $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${esc(x.eit)}</span><span>${esc(x.efr)}</span><span class="exfr">mot de la niche : ${esc(x.it)} · ${esc(x.fr)}</span></div>
+    ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta traduction correspond." : "Ta traduction ne correspond pas."}</span>`}
+    ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
+      ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-ph>🔊</button></div>`
+      : `<div class="btns"><button class="btn ${okGuess ? "ok" : "ko"}" type="button" data-grade="${okGuess ? 1 : 0}" data-suggest>Continuer · ${okGuess ? "réussi" : "raté"}</button><button class="btn alt" type="button" data-grade="${okGuess ? 0 : 1}">Compter ${okGuess ? "raté" : "réussi"}</button><button class="btn alt" type="button" data-say-ph>🔊</button></div>`}`;
+}
 function reveal() {
   const q = quizState.q, x = R[q.ri].niches[q.n]; quizState.revealed = true; $("#voile").hidden = true;
   const rep = ($("#rep") || {}).value || "", reps = [rep, ...(quizState.micAlts || [])].filter(Boolean); quizState.micAlts = null;
@@ -1093,6 +1144,7 @@ function reveal() {
   if (q.ty === "img") { ans = x; if (rep) okGuess = parseInt(rep, 10) === q.n; }
   if (q.ty === "fr" || q.ty === "num") { if (rep) okGuess = reps.some(r => altsOf(x.it).some(c => close(c, r))); }
   if (q.ty === "it" || q.ty === "aud") { if (rep) okGuess = reps.some(r => altsOf(x.fr).some(c => close(c, r)) || (norm(r).trim().length > 2 && norm(x.fr).includes(norm(r).trim()))); }
+  if (q.ty === "phit" || q.ty === "phfr") return revealPhrase(q, x, reps);
   let shown = x, extra = "";
   if (q.ty === "suite" || q.ty === "chaine") { shown = R[q.target.r].niches[q.target.n]; extra = `<span class="pr">⟶ ${esc(x.li)}</span>`; if (rep) okGuess = reps.some(r => altsOf(shown.it).some(c => close(c, r)) || close(shown.fr, r)); }
   texturizeRoom(q.ri, null); st.zoom = 0;
@@ -1107,6 +1159,7 @@ function reveal() {
 async function onGrade(ok) {
   const q = quizState.q; quizState.stats[ok ? "ok" : "ko"]++;
   await grade(q.ri, q.ty === "suite" || q.ty === "chaine" ? q.n + ":suite" : q.n + ":" + q.ty, ok);
+  if (ok && (q.ty === "phit" || q.ty === "phfr")) await creditSentence(q, R[q.ri].niches[q.n]);
   if (q.learn) {
     const a = q.learn, L = quizState.learn;
     if (ok) { a.step++; a.at = L.counter + [2, 5, 10][Math.min(a.step, 2)]; if (a.step >= 3) { L.active = L.active.filter(z => z !== a); L.done++; } }
@@ -1379,6 +1432,7 @@ function bindUI() {
     if (t.closest("[data-reveal]")) return reveal();
     if (t.closest("[data-grade]")) return onGrade(t.closest("[data-grade]").dataset.grade === "1");
     if (t.closest("[data-mic]")) return startMic();
+    if (t.closest("[data-say-ph]")) { const x = R[quizState.q.ri].niches[quizState.q.n]; return speak(x.eit, asrc(null, x.ap)); }
     if (t.closest("[data-next]")) return learnNext();
     if (t.closest("[data-say-q]")) { const q = quizState.q, x = q.target && quizState.revealed ? R[q.target.r].niches[q.target.n] : R[q.ri].niches[q.n]; return speak(x.it, asrc(x.ai, x.am)); }
     if (t.closest("[data-zoomq]")) return setZoom((st.zoom + 1) % 3);
@@ -1392,7 +1446,7 @@ function bindUI() {
   document.addEventListener("click", e => { const b = e.target.closest("[data-inmode]"); if (!b) return; prefs.inMode = b.dataset.inmode; savePrefs(); renderInMode(); });
   $("#newN").onchange = e => { prefs.newN = Math.max(1, Math.min(30, +e.target.value || 8)); savePrefs(); };
   $("#mapType").onchange = e => { prefs.mapType = e.target.value; savePrefs(); renderTests(); };
-  $("#goRevue").onclick = () => { setView("palais"); startQuiz("revue"); }; $("#goLearn").onclick = () => { setView("palais"); startQuiz("learn"); }; $("#goFree").onclick = () => { setView("palais"); startQuiz("libre"); };
+  $("#goRevue").onclick = () => { setView("palais"); startQuiz("revue"); }; $("#goLearn").onclick = () => { setView("palais"); startQuiz("learn"); }; $("#goFree").onclick = () => { setView("palais"); startQuiz("libre"); }; $("#goEx").onclick = () => { setView("palais"); startQuiz("exemple"); };
   // clavier
   addEventListener("keydown", e => {
     if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
@@ -1434,7 +1488,7 @@ function onResize() {
    1) toutes les cartes dues, dans toutes les salles (les plus en retard d'abord) ; une carte ratée est reposée une fois en fin de liste ;
    2) puis les mots jamais vus suivants, dans l'ordre du palais (donc par fréquence), « Nouveaux par séance » à la fois.
    Rien à mémoriser : l'état vient des cartes elles-mêmes, une séance interrompue reprend où elle s'est arrêtée. */
-const AUTOTY = new Set(["num", "img", "fr", "it", "aud", "suite"]);
+const AUTOTY = new Set(["num", "img", "fr", "it", "aud", "suite", "phit", "phfr"]);
 async function autoDue() {
   const t = today(), out = [];
   for (let ri = 0; ri < R.length; ri++) {

@@ -310,6 +310,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <button class="btn alt" type="button" id="goLearn">Apprendre de nouveaux mots</button>
     <button class="btn alt" type="button" id="goFree">Entraînement libre</button>
   </div>
+  <h3>Réponse</h3>
+  <div class="pills" role="group" aria-label="Mode de réponse"><button class="pill" type="button" data-inmode="aucun">Aucune · je m'auto-évalue</button><button class="pill" type="button" data-inmode="clavier">Clavier · je tape</button><button class="pill" type="button" data-inmode="voix">Voix · je parle</button></div>
+  <p class="pr" id="inModeTxt" style="margin:0"></p>
   <div class="frow">Nouveaux par séance <input type="number" id="newN" min="1" max="30" value="8" style="width:4.5em"></div>
   <h3>Questions</h3>
   <div class="pills" id="typesP"></div>
@@ -848,7 +851,7 @@ function speak(text, src, btn, lang = "it") {
    elle reste rangée sous les salles du palais par classe (salles « canoniques »). */
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr", inMode: "clavier" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
 /* Deux comptes possibles : le compte Claude (capacité db) quand la page tourne dans Claude,
    ou un compte e-mail Supabase (code à 6 chiffres) sur la version GitHub Pages. Sinon : navigateur seulement. */
@@ -1045,7 +1048,7 @@ function present(a) {
 function ask(q) {
   if (!q) return endQuiz();
   quizState.q = q; quizState.revealed = false; const x = R[q.ri].niches[q.n], num = String(q.n).padStart(2, "0"), room = shortName(R[q.ri]);
-  let text = "", input = true, mask = q.n; quizState.hideFr = false;
+  const IM = prefs.inMode || "clavier"; let text = "", input = IM !== "aucun", mask = q.n; quizState.hideFr = false;
   if (q.ty === "num") text = `${room} · emplacement ${num} : quel mot ?`;
   if (q.ty === "img") { text = `Où se trouve « ${x.it} » (${x.fr}) ? Donne le numéro.`; mask = null; }
   if (q.ty === "fr") text = `Traduis : ${x.fr}`;
@@ -1059,27 +1062,47 @@ function ask(q) {
   $("#quiz").innerHTML = `<div class="qh"><span>${esc(TYPES.find(t => t[0] === q.ty)[1].toUpperCase())}${quizState.list.length ? ` · ${quizState.idx + 1}/${quizState.list.length}` : ""}</span><span class="spacer"></span><button class="chip" type="button" data-quit>Quitter le test</button></div>
     <div class="qq">${esc(text)}</div>
     ${q.ty === "aud" ? `<div class="btns"><button class="btn" type="button" data-say-q>🔊 Réécouter</button></div>` : ""}
-    ${input ? `<input id="rep" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Ta réponse (facultatif)">` : ""}
-    <div class="btns"><button class="btn" type="button" data-reveal>Révéler</button></div>`;
+    ${input ? `<input id="rep" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${IM === "voix" ? "Touche 🎤 et parle (ou dicte au clavier)" : "Ta réponse"}" lang="${repLang(q.ty).slice(0, 2)}">` : ""}
+    <div class="btns">${IM === "voix" ? `<button class="btn" type="button" data-mic>🎤 Parler</button>` : ""}<button class="btn${IM === "voix" ? " alt" : ""}" type="button" data-reveal>${IM === "aucun" ? "Révéler" : "Valider"}</button></div>`;
+  if (IM === "clavier") setTimeout(() => { const r = $("#rep"); if (r) r.focus(); }, 60);
   if (q.ty === "aud") speak(x.it, asrc(x.ai, x.am));
   renderFiche();
 }
+const repLang = ty => (ty === "it" || ty === "aud" || ty === "img") ? "fr-FR" : "it-IT";
+function lev(a, b) { const m = a.length, n = b.length; if (!m) return n; if (!n) return m; let p = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) { const c = [i]; for (let j = 1; j <= n; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; } return p[n]; }
+const close = (a, b) => { a = norm(a).trim(); b = norm(b).trim(); if (!a || !b) return false; return a === b || lev(a, b) <= Math.max(1, Math.floor(Math.min(a.length, b.length) * 0.2)); };
+const altsOf = s => String(s || "").split(/ \/ |\/|;|,/).map(t => t.replace(/[!?.…]/g, " ").trim()).filter(Boolean);
+function startMic() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition, q = quizState.q;
+  if (!SR) { toast("Reconnaissance vocale indisponible ici : utilise la dictée du clavier (🎤 du clavier)."); const r = $("#rep"); if (r) r.focus(); return; }
+  try {
+    const rec = new SR(); rec.lang = repLang(q.ty); rec.interimResults = false; rec.maxAlternatives = 3;
+    const b = $("#quiz [data-mic]"); if (b) b.textContent = "🎤 J'écoute…";
+    rec.onresult = ev => { const alts = [...ev.results[0]].map(a => a.transcript); const r = $("#rep"); if (r) r.value = alts[0] || ""; quizState.micAlts = alts; if (!quizState.revealed) reveal(); };
+    rec.onerror = ev => { toast(`Micro indisponible (${ev.error}) : utilise la dictée du clavier.`); const r = $("#rep"); if (r) r.focus(); };
+    rec.onend = () => { const b2 = $("#quiz [data-mic]"); if (b2) b2.textContent = "🎤 Parler"; };
+    rec.start();
+  } catch (err) { toast("Micro indisponible : utilise la dictée du clavier."); }
+}
 function reveal() {
   const q = quizState.q, x = R[q.ri].niches[q.n]; quizState.revealed = true; $("#voile").hidden = true;
-  const rep = ($("#rep") || {}).value || "";
+  const rep = ($("#rep") || {}).value || "", reps = [rep, ...(quizState.micAlts || [])].filter(Boolean); quizState.micAlts = null;
   let ans, okGuess = null;
   if (q.ty === "num") ans = x;
   if (q.ty === "img") { ans = x; if (rep) okGuess = parseInt(rep, 10) === q.n; }
-  if (q.ty === "fr" || q.ty === "num") { if (rep) okGuess = x.it.split(/ \/ |\//).some(c => norm(c) && norm(c) === norm(rep)); }
-  if (q.ty === "it" || q.ty === "aud") { if (rep) okGuess = norm(x.fr).includes(norm(rep)) && norm(rep).length > 1; }
+  if (q.ty === "fr" || q.ty === "num") { if (rep) okGuess = reps.some(r => altsOf(x.it).some(c => close(c, r))); }
+  if (q.ty === "it" || q.ty === "aud") { if (rep) okGuess = reps.some(r => altsOf(x.fr).some(c => close(c, r)) || (norm(r).trim().length > 2 && norm(x.fr).includes(norm(r).trim()))); }
   let shown = x, extra = "";
-  if (q.ty === "suite" || q.ty === "chaine") { shown = R[q.target.r].niches[q.target.n]; extra = `<span class="pr">⟶ ${esc(x.li)}</span>`; if (rep) okGuess = shown.it.split(/ \/ |\//).some(c => norm(c) === norm(rep)) || norm(shown.fr) === norm(rep); }
+  if (q.ty === "suite" || q.ty === "chaine") { shown = R[q.target.r].niches[q.target.n]; extra = `<span class="pr">⟶ ${esc(x.li)}</span>`; if (rep) okGuess = reps.some(r => altsOf(shown.it).some(c => close(c, r)) || close(shown.fr, r)); }
   texturizeRoom(q.ri, null); st.zoom = 0;
   if (q.ty === "suite" || q.ty === "chaine") goTo(q.target.r, q.target.n, { thread: true }); else { goTo(q.ri, q.n); placeRing(q.ri, q.n); }
   renderFiche();
   $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${esc(shown.it)}</span><span>${esc(shown.fr)} · <span class="mono">${String(q.ty === "suite" || q.ty === "chaine" ? q.target.n : q.n).padStart(2, "0")}</span></span><span class="exfr">${esc(shown.sc)}</span>${extra}</div>
     ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta réponse correspond." : "Ta réponse ne correspond pas."}</span>`}
-    <div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-q>🔊</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`;
+    ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
+      ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-q>🔊</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`
+      : `<div class="btns"><button class="btn ${okGuess ? "ok" : "ko"}" type="button" data-grade="${okGuess ? 1 : 0}" data-suggest>Continuer · ${okGuess ? "réussi" : "raté"}</button><button class="btn alt" type="button" data-grade="${okGuess ? 0 : 1}">Compter ${okGuess ? "raté" : "réussi"}</button><button class="btn alt" type="button" data-say-q>🔊</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`}`;
 }
 async function onGrade(ok) {
   const q = quizState.q; quizState.stats[ok ? "ok" : "ko"]++;
@@ -1214,7 +1237,12 @@ async function renderCurve() {
 /* ============ Feuilles : tests, plan ============ */
 function closeSheets() { document.querySelectorAll(".sheet").forEach(s => s.hidden = true); }
 function savePrefs() { ls.set("prefs", prefs); if (PAL !== "classe") ls.set(PK("prefs"), { rooms: prefs.rooms, decs: prefs.decs }); }
+const INTXT = { aucun: "Pas de saisie : tu révèles la réponse puis tu dis toi-même si c'était réussi ou raté.",
+  clavier: "Tu tapes ta réponse ; elle est corrigée automatiquement (petites fautes tolérées). Tu peux toujours corriger le verdict.",
+  voix: "Tu touches 🎤 et tu dis ta réponse (en italien pour FR → IT, en français pour IT → FR) ; elle est corrigée automatiquement. Si le micro n'est pas disponible ici, utilise la dictée du clavier de l'iPhone (🎤 du clavier)." };
+function renderInMode() { const m = prefs.inMode || "clavier"; document.querySelectorAll("[data-inmode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.inmode === m))); const t = $("#inModeTxt"); if (t) t.textContent = INTXT[m]; }
 async function renderTests() {
+  renderInMode();
   $("#typesP").innerHTML = TYPES.map(([k, l]) => `<button class="pill" type="button" data-type="${k}" aria-pressed="${prefs.types.includes(k)}">${l}</button>`).join("");
   $("#roomsP").innerHTML = R.map((r, i) => `<button class="pill" type="button" data-room="${i}" aria-pressed="${prefs.rooms.includes(i)}">${esc(shortName(r))}</button>`).join("");
   $("#decP").innerHTML = [...Array(10).keys()].map(d => `<button class="pill" type="button" data-dec="${d}" aria-pressed="${prefs.decs.includes(d)}" style="border-color:${COLS[d]}">${d}x</button>`).join("");
@@ -1350,16 +1378,18 @@ function bindUI() {
     if (t.closest("[data-quit]")) return endQuiz();
     if (t.closest("[data-reveal]")) return reveal();
     if (t.closest("[data-grade]")) return onGrade(t.closest("[data-grade]").dataset.grade === "1");
+    if (t.closest("[data-mic]")) return startMic();
     if (t.closest("[data-next]")) return learnNext();
     if (t.closest("[data-say-q]")) { const q = quizState.q, x = q.target && quizState.revealed ? R[q.target.r].niches[q.target.n] : R[q.ri].niches[q.n]; return speak(x.it, asrc(x.ai, x.am)); }
     if (t.closest("[data-zoomq]")) return setZoom((st.zoom + 1) % 3);
   });
-  $("#quiz").addEventListener("keydown", e => { if (e.key === "Enter" && !quizState.revealed) reveal(); });
+  $("#quiz").addEventListener("keydown", e => { if (e.key !== "Enter") return; if (!quizState.revealed) reveal(); else { const s = $("#quiz [data-suggest]"); if (s) s.click(); } });
   $("#allR").onclick = () => { prefs.rooms = R.map((_, i) => i); savePrefs(); renderTests(); };
   $("#noR").onclick = () => { prefs.rooms = []; savePrefs(); renderTests(); };
   $("#curR").onclick = () => { prefs.rooms = [st.r]; savePrefs(); renderTests(); };
   $("#tagSel").onchange = e => { prefs.tag = e.target.value; savePrefs(); renderTests(); };
   $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = prefs.zmin.toFixed(1); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
+  document.addEventListener("click", e => { const b = e.target.closest("[data-inmode]"); if (!b) return; prefs.inMode = b.dataset.inmode; savePrefs(); renderInMode(); });
   $("#newN").onchange = e => { prefs.newN = Math.max(1, Math.min(30, +e.target.value || 8)); savePrefs(); };
   $("#mapType").onchange = e => { prefs.mapType = e.target.value; savePrefs(); renderTests(); };
   $("#goRevue").onclick = () => { setView("palais"); startQuiz("revue"); }; $("#goLearn").onclick = () => { setView("palais"); startQuiz("learn"); }; $("#goFree").onclick = () => { setView("palais"); startQuiz("libre"); };

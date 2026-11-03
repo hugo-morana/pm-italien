@@ -317,6 +317,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h3>Réponse</h3>
   <div class="pills" role="group" aria-label="Mode de réponse"><button class="pill" type="button" data-inmode="aucun">Aucune · je m'auto-évalue</button><button class="pill" type="button" data-inmode="clavier">Clavier · je tape</button><button class="pill" type="button" data-inmode="voix">Voix · je parle</button></div>
   <p class="pr" id="inModeTxt" style="margin:0"></p>
+  <h3>Approche d'apprentissage</h3>
+  <div class="pills" role="group" aria-label="Approche d'apprentissage"><button class="pill" type="button" data-approach="palais">Ordre du palais</button><button class="pill" type="button" data-approach="freqfr">Fréquence FR</button><button class="pill" type="button" data-approach="freqit">Fréquence IT</button><button class="pill" type="button" data-approach="theme">Par thème</button><button class="pill" type="button" data-approach="classe">Par classe</button></div>
+  <p class="pr" id="approachTxt" style="margin:0"></p>
   <div class="frow">Nouveaux par séance <input type="number" id="newN" min="1" max="30" value="8" style="width:4.5em"></div>
   <h3>Questions</h3>
   <div class="pills" id="typesP"></div>
@@ -814,7 +817,7 @@ function ficheHTML(ri, n) {
       <div><dt>Scène</dt><dd>${esc(x.sc)}</dd></div>
       <div><dt>Décryptage</dt><dd class="exfr">${esc(x.de)}</dd></div>
       ${x.fo ? `<div><dt>Formes</dt><dd class="exfr">${esc(x.fo)}</dd></div>` : ""}
-      ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter (…) avec tes propres mots." : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
+      ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter avec tes propres mots. S = sujet, V = verbe (V_inf infinitif, V_sub subjonctif, V_pp participe passé, V_imper impératif, V_cond conditionnel, V_fut futur, V_ger gérondif), C = complément (C_lieu, C_date, C_adj… précisent sa nature) ; 2 = second sujet, verbe ou complément." : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
       ${x.t && x.t.length ? `<div><dt>Étiquettes</dt><dd class="tags">${x.t.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</dd></div>` : ""}
       ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence en français" : PAL === "freqit" ? "par fréquence en italien" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
     </dl>
@@ -857,7 +860,7 @@ function speak(text, src, btn, lang = "it") {
    elle reste rangée sous les salles du palais par classe (salles « canoniques »). */
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr", inMode: "clavier" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 8, mapType: "fr", inMode: "clavier", approach: "palais" }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
 /* Deux comptes possibles : le compte Claude (capacité db) quand la page tourne dans Claude,
    ou un compte e-mail Supabase (code à 6 chiffres) sur la version GitHub Pages. Sinon : navigateur seulement. */
@@ -1026,10 +1029,10 @@ async function startQuiz(kind) {
     const pool = poolItems().filter(([ri, n]) => R[ri].niches[n].eit && R[ri].niches[n].efr); if (!pool.length) { toast("Aucune phrase d'exemple dans la sélection"); return; }
     const pt = types.filter(t => t === "phit" || t === "phfr"), dirs = pt.length ? pt : ["phit", "phfr"], fresh = [], rest = [];
     for (const [ri, n] of pool) { const c = await srsRoom(ri); (dirs.some(d => c[n + ":" + d] && c[n + ":" + d].seen) ? rest : fresh).push([ri, n]); }
-    list = shuffle(fresh).concat(shuffle(rest)).slice(0, 20).map(([ri, n], i) => ({ ri, n, ty: dirs[i % dirs.length] }));
+    list = ((prefs.approach || "palais") === "palais" ? shuffle(fresh) : orderItems(fresh)).concat(shuffle(rest)).slice(0, 20).map(([ri, n], i) => ({ ri, n, ty: dirs[i % dirs.length] }));
   }
   if (kind === "learn") {
-    const pool = poolItems(), fresh = [];
+    const pool = orderItems(poolItems()), fresh = [];
     for (const [ri, n] of pool) { const c = await srsRoom(ri); if (!types.some(ty => c[n + ":" + ty] && c[n + ":" + ty].seen)) fresh.push([ri, n]); if (fresh.length >= prefs.newN) break; }
     if (!fresh.length) { toast("Tous les mots de la sélection ont déjà été présentés"); return; }
     quizState.learn = { fresh, active: [], counter: 0, done: 0 };
@@ -1087,7 +1090,7 @@ const repLang = ty => (ty === "it" || ty === "aud" || ty === "img" || ty === "ph
 function lev(a, b) { const m = a.length, n = b.length; if (!m) return n; if (!n) return m; let p = Array.from({ length: n + 1 }, (_, j) => j);
   for (let i = 1; i <= m; i++) { const c = [i]; for (let j = 1; j <= n; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; } return p[n]; }
 const close = (a, b) => { a = norm(a).trim(); b = norm(b).trim(); if (!a || !b) return false; return a === b || lev(a, b) <= Math.max(1, Math.floor(Math.min(a.length, b.length) * 0.2)); };
-const altsOf = s => String(s || "").split(/ \/ |\/|;|,/).map(t => t.replace(/[!?.…]/g, " ").trim()).filter(Boolean);
+const altsOf = s => String(s || "").replace(/\b(?:S|V|C)\d?(?:_[a-zàéè]+)?(?![’'\w])/g, " ").split(/ \/ |\/|;|,/).map(t => t.replace(/[!?.…]/g, " ").replace(/\s+/g, " ").trim()).filter(Boolean);
 function startMic() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition, q = quizState.q;
   if (!SR) { toast("Reconnaissance vocale indisponible ici : utilise la dictée du clavier (🎤 du clavier)."); const r = $("#rep"); if (r) r.focus(); return; }
@@ -1293,9 +1296,26 @@ function savePrefs() { ls.set("prefs", prefs); if (PAL !== "classe") ls.set(PK("
 const INTXT = { aucun: "Pas de saisie : tu révèles la réponse puis tu dis toi-même si c'était réussi ou raté.",
   clavier: "Tu tapes ta réponse ; elle est corrigée automatiquement (petites fautes tolérées). Tu peux toujours corriger le verdict.",
   voix: "Tu touches 🎤 et tu dis ta réponse (en italien pour FR → IT, en français pour IT → FR) ; elle est corrigée automatiquement. Si le micro n'est pas disponible ici, utilise la dictée du clavier de l'iPhone (🎤 du clavier)." };
+const APTXT = { palais: "Les nouveaux mots arrivent dans l'ordre de la version du palais que tu visites.",
+  freqfr: "Les nouveaux mots arrivent du plus fréquent au plus rare en français parlé, toutes classes mêlées.",
+  freqit: "Les nouveaux mots arrivent du plus fréquent au plus rare en italien parlé : c'est l'ordre qui fait monter le plus vite ta compréhension.",
+  theme: "Les nouveaux mots arrivent thème par thème (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème.",
+  classe: "Les nouveaux mots arrivent classe par classe (noms, verbes, adjectifs…), dans l'ordre du palais par classe." };
+function renderApproach() { const a = prefs.approach || "palais"; document.querySelectorAll("[data-approach]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.approach === a))); const t = $("#approachTxt"); if (t) t.textContent = APTXT[a]; }
+function orderItems(items) {   // ordre d'introduction des nouveaux mots selon l'approche choisie
+  const a = prefs.approach || "palais"; if (a === "palais") return items.slice();
+  const X = ([ri, n]) => R[ri].niches[n];
+  if (a === "freqfr" || a === "freqit") { const f = fineBy(a === "freqit" ? "it" : "fr"); return items.slice().sort((p, q) => f(X(q)) - f(X(p))); }
+  if (a === "theme") { const cnt = {}; items.forEach(e => { const k = X(e).th || "autres"; cnt[k] = (cnt[k] || 0) + 1; }); const last = ["grammaire", "formules", "autres"];
+    const rk = k => (last.includes(k) ? 1e6 + last.indexOf(k) : -cnt[k]);
+    return items.slice().sort((p, q) => { const kp = X(p).th || "autres", kq = X(q).th || "autres"; return rk(kp) - rk(kq) || kp.localeCompare(kq) || fineF(X(q)) - fineF(X(p)); }); }
+  const FO = ["noms", "verbes", "formes", "adjectifs", "accords", "pronoms", "conjonctions", "prepositions", "adverbes", "expressions", "incises"], CR0 = CANON || R;
+  const key = ([ri, n]) => { const x = X([ri, n]), [cri, cn] = x._src || [ri, n], r = CR0[cri], f = x._cls || famOf(R[ri]); return [FO.indexOf(f) < 0 ? 99 : FO.indexOf(f), r ? r.floor : 0, cri, cn]; };
+  return items.slice().sort((p, q) => { const a1 = key(p), b1 = key(q); for (let i = 0; i < 4; i++) if (a1[i] !== b1[i]) return a1[i] - b1[i]; return 0; });
+}
 function renderInMode() { const m = prefs.inMode || "clavier"; document.querySelectorAll("[data-inmode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.inmode === m))); const t = $("#inModeTxt"); if (t) t.textContent = INTXT[m]; }
 async function renderTests() {
-  renderInMode();
+  renderInMode(); renderApproach();
   $("#typesP").innerHTML = TYPES.map(([k, l]) => `<button class="pill" type="button" data-type="${k}" aria-pressed="${prefs.types.includes(k)}">${l}</button>`).join("");
   $("#roomsP").innerHTML = R.map((r, i) => `<button class="pill" type="button" data-room="${i}" aria-pressed="${prefs.rooms.includes(i)}">${esc(shortName(r))}</button>`).join("");
   $("#decP").innerHTML = [...Array(10).keys()].map(d => `<button class="pill" type="button" data-dec="${d}" aria-pressed="${prefs.decs.includes(d)}" style="border-color:${COLS[d]}">${d}x</button>`).join("");
@@ -1443,6 +1463,7 @@ function bindUI() {
   $("#curR").onclick = () => { prefs.rooms = [st.r]; savePrefs(); renderTests(); };
   $("#tagSel").onchange = e => { prefs.tag = e.target.value; savePrefs(); renderTests(); };
   $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = prefs.zmin.toFixed(1); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
+  document.addEventListener("click", e => { const b = e.target.closest("[data-approach]"); if (!b) return; prefs.approach = b.dataset.approach; savePrefs(); renderApproach(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-inmode]"); if (!b) return; prefs.inMode = b.dataset.inmode; savePrefs(); renderInMode(); });
   $("#newN").onchange = e => { prefs.newN = Math.max(1, Math.min(30, +e.target.value || 8)); savePrefs(); };
   $("#mapType").onchange = e => { prefs.mapType = e.target.value; savePrefs(); renderTests(); };
@@ -1500,12 +1521,13 @@ async function autoDue() {
   return out.map(({ ri, n, ty }) => ({ ri, n, ty }));
 }
 async function nextFresh(k) {
-  const out = [];
-  for (let ri = 0; ri < R.length && out.length < k; ri++) {
+  const all = [], pal = (prefs.approach || "palais") === "palais";
+  for (let ri = 0; ri < R.length; ri++) {
     const c = await srsRoom(ri), seen = new Set(Object.keys(c).filter(key => c[key] && c[key].seen).map(key => +key.split(":")[0]));
-    for (let n = 0; n < 100 && out.length < k; n++) if (R[ri].niches[n] && !seen.has(n)) out.push([ri, n]);
+    for (let n = 0; n < 100; n++) if (R[ri].niches[n] && !seen.has(n)) all.push([ri, n]);
+    if (pal && all.length >= k) break;
   }
-  return out;
+  return orderItems(all).slice(0, k);
 }
 function quizUI() { closeSheets(); st.ui = false; document.body.classList.add("hidden-ui"); measureDrawer(); setDrawer(false); toggleChain(false); }
 function beginAutoLearn() {

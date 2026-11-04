@@ -33,6 +33,8 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 .spacer { flex:1 }
 .chip { border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:6px 12px; font:500 12px var(--mono); box-shadow:var(--shadow); white-space:nowrap }
 .chip[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:var(--surface) }
+#hfIc { font-weight:500 }
+@media (max-width:560px) { .hfl { display:none } }
 #rooms { display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; padding:2px 2px 6px }
 #rooms::-webkit-scrollbar { display:none }
 .rp { flex:none; border:1px solid var(--line); background:var(--surface); border-radius:6px; padding:4px 9px; font:500 11px var(--mono); box-shadow:var(--shadow); border-left:4px solid var(--fc, var(--line)) }
@@ -261,6 +263,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="row1">
     <div class="brand">Palazzo dell'italiano<small id="where">—</small></div>
     <span class="spacer"></span>
+    <button class="chip" id="hfBtn" type="button" aria-pressed="false" title="Parcours mains libres : le palais avance seul de niche en niche" aria-label="Parcours mains libres"><b id="hfIc">▶</b><span class="hfl"> Mains libres</span></button>
     <button class="chip" id="modeBtn" type="button" aria-pressed="false" title="Visite libre">Libre</button>
     <button class="chip" id="testsBtn" type="button">Tests</button>
     <button class="chip" id="planBtn" type="button">Plan</button>
@@ -324,6 +327,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h3>Lecture pendant la visite</h3>
   <div class="pills" role="group" aria-label="Lecture audio pendant la visite du palais"><button class="pill" type="button" data-sayopt="vF">🔊 Mot FR</button><button class="pill" type="button" data-sayopt="vI">🔊 Mot IT</button><button class="pill" type="button" data-sayopt="vEF">🔊 Exemple FR</button><button class="pill" type="button" data-sayopt="vEI">🔊 Exemple IT</button></div>
   <p class="pr" style="margin:0">À chaque niche atteinte (visite guidée ou libre), les sons cochés sont lus l'un après l'autre, dans cet ordre.</p>
+  <h3>Parcours mains libres</h3>
+  <div class="pills" role="group" aria-label="Pause entre deux niches en mains libres"><button class="pill" type="button" data-hfpause="1.5">Pause 1,5 s</button><button class="pill" type="button" data-hfpause="3">Pause 3 s</button><button class="pill" type="button" data-hfpause="6">Pause 6 s</button><button class="pill" type="button" data-hfpause="10">Pause 10 s</button></div>
+  <p class="pr" style="margin:0">Le bouton ▶ Mains libres du palais passe seul à la niche suivante, en suivant la chaîne : il lit les sons cochés ci-dessus, attend la pause, puis avance. Sans case cochée, il avance après la pause seulement. Un geste (toucher l'écran, une touche, un bouton) l'arrête ; l'écran reste allumé pendant le parcours.</p>
   <h2 style="margin:18px 0 0">Tests et révisions</h2>
 
   <div class="frow" id="srsInfo">Révision du jour : …</div>
@@ -825,8 +831,8 @@ function renderFiche() {
   visitSay();
 }
 /* Lecture pendant la visite (réglage Palais) : sons cochés, l'un après l'autre, à chaque nouvelle niche */
-let vsKey = null, vsTok = 0, vsAudio = null, vsTimer = null;
-function vsStop() { vsTok++; clearTimeout(vsTimer); if (vsAudio) { vsAudio.pause(); vsAudio = null; } if (window.speechSynthesis) speechSynthesis.cancel(); }
+let vsKey = null, vsTok = 0, vsAudio = null, vsTimer = null, vsDone = Promise.resolve(), vsFin = null;
+function vsStop() { vsTok++; clearTimeout(vsTimer); if (vsFin) { vsFin(); vsFin = null; } if (vsAudio) { vsAudio.pause(); vsAudio = null; } if (window.speechSynthesis) speechSynthesis.cancel(); }
 function vsOne(text, src, lang, tok) {
   return new Promise(res => {
     if (!text || tok !== vsTok) return res();
@@ -838,16 +844,38 @@ function vsOne(text, src, lang, tok) {
 }
 function visitSay() {
   const key = st.r + ":" + st.n; if (key === vsKey) return; vsKey = key;
-  if (!(prefs.vF || prefs.vI || prefs.vEF || prefs.vEI) || quizState.on || document.body.dataset.view !== "palais") return;
-  vsStop(); const tok = vsTok, x = R[st.r].niches[st.n]; if (!x) return;
+  if (!(prefs.vF || prefs.vI || prefs.vEF || prefs.vEI) || quizState.on || document.body.dataset.view !== "palais") { vsStop(); vsDone = Promise.resolve(); return; }
+  vsStop(); const tok = vsTok, x = R[st.r].niches[st.n]; if (!x) { vsDone = Promise.resolve(); return; }
+  vsDone = new Promise(r => vsFin = r);
   vsTimer = setTimeout(async () => {   // petit délai : en visite libre, le regard balaie plusieurs niches
     const seq = [];
     if (prefs.vF) seq.push([x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", "fr"]);
     if (prefs.vI) seq.push([x.it, asrc(x.ai, x.am), "it"]);
     if (prefs.vEF) seq.push([x.efr, "", "fr"]);
     if (prefs.vEI) seq.push([x.eit, x.ap || "", "it"]);
-    for (const [t, src, lg] of seq) { if (tok !== vsTok) return; await vsOne(t, src, lg, tok); await new Promise(r => setTimeout(r, 350)); }
+    for (const [t, src, lg] of seq) { if (tok !== vsTok) break; await vsOne(t, src, lg, tok); await new Promise(r => setTimeout(r, 350)); }
+    if (tok === vsTok && vsFin) { vsFin(); vsFin = null; }
   }, 450);
+}
+/* Parcours mains libres : niche suivante (fil de la chaîne) après les sons cochés et la pause */
+const hf = { on: false, tok: 0, lock: null };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+function hfSet(on) {
+  if (on === hf.on) return; hf.on = on; hf.tok++; $("#hfBtn").setAttribute("aria-pressed", String(on)); $("#hfIc").textContent = on ? "■" : "▶";
+  if (on) {
+    if (st.mode === "free") leaveFree();
+    try { navigator.wakeLock && navigator.wakeLock.request("screen").then(l => { if (hf.on) hf.lock = l; else l.release(); }).catch(() => {}); } catch (e) {}
+    vsKey = null; visitSay(); hfLoop(hf.tok);
+  } else { vsStop(); if (hf.lock) { hf.lock.release().catch(() => {}); hf.lock = null; } }
+}
+async function hfLoop(tok) {
+  const alive = () => hf.on && tok === hf.tok;
+  while (alive()) {
+    await sleep(500); while (alive() && (anim.walking || anim.active)) await sleep(200);
+    await vsDone; if (!alive()) return;
+    await sleep((prefs.hfPause || 3) * 1000); if (!alive()) return;
+    const [r, n] = stepN(1); goTo(r, n, { thread: true });
+  }
 }
 function ficheHTML(ri, n) {
   const x = R[ri].niches[n], [nr, nn] = stepFrom(ri, n, 1), nx = R[nr].niches[nn], [pr, pn] = stepFrom(ri, n, -1), px = R[pr].niches[pn];
@@ -908,7 +936,7 @@ function speak(text, src, btn, lang = "it") {
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, vF: false, vI: false, vEF: false, vEI: false }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, vF: false, vI: false, vEF: false, vEI: false, hfPause: 3 }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
 prefs.approach = AP_OF[PAL];   // l'approche d'apprentissage et la version du palais vont ensemble
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
@@ -1426,7 +1454,7 @@ const APTXT = {
   theme: "Palais par thème : les nouveaux mots arrivent thème par thème (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème.",
   classe: "Palais par classe : les nouveaux mots arrivent classe par classe (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre." };
 const TMTXT = { auto: "les cartes à réviser aujourd'hui, puis de nouveaux mots", revue: "uniquement les cartes à réviser aujourd'hui", learn: "uniquement de nouveaux mots", libre: "30 questions au hasard, sans tenir compte des révisions", exemple: "20 phrases d'exemple, mots pas encore appris d'abord" };
-function renderSayOpts() { document.querySelectorAll("[data-sayopt]").forEach(b => b.setAttribute("aria-pressed", String(!!prefs[b.dataset.sayopt]))); }
+function renderSayOpts() { document.querySelectorAll("[data-sayopt]").forEach(b => b.setAttribute("aria-pressed", String(!!prefs[b.dataset.sayopt]))); document.querySelectorAll("[data-hfpause]").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.hfpause === (prefs.hfPause || 3)))); }
 function sayQuestion(q) {   // lit la question à son affichage (réglage « Lire la question »)
   if (!prefs.sayQ || !q) return; const x = R[q.ri].niches[q.n];
   if (q.ty === "fr") speak(x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", null, "fr");
@@ -1570,6 +1598,12 @@ function bindUI() {
   $("#pd").onclick = () => { if (st.mode === "free") leaveFree(); const [r, n] = stepDecade(-1); goTo(r, n); };
   $("#zoom").onclick = () => { if (st.mode === "free") leaveFree(); setZoom((st.zoom + 1) % 3); };
   $("#modeBtn").onclick = () => st.mode === "free" ? leaveFree() : enterFree();
+  $("#hfBtn").onclick = () => hfSet(!hf.on);
+  // un geste de l'utilisateur arrête le parcours (sauf dans la fiche, qu'on peut lire et faire défiler)
+  addEventListener("pointerdown", e => { if (hf.on && !e.target.closest("#hfBtn, #drawer")) hfSet(false); }, true);
+  addEventListener("keydown", () => { if (hf.on) hfSet(false); }, true);
+  document.addEventListener("visibilitychange", () => { if (hf.on && document.visibilityState === "visible" && navigator.wakeLock) navigator.wakeLock.request("screen").then(l => hf.lock = l).catch(() => {}); });
+  document.addEventListener("click", e => { const b = e.target.closest("[data-hfpause]"); if (!b) return; prefs.hfPause = +b.dataset.hfpause; savePrefs(); renderSayOpts(); });
   $("#eye").onclick = () => { st.ui = !st.ui; document.body.classList.toggle("hidden-ui", !st.ui); $("#eye").setAttribute("aria-label", st.ui ? "Masquer les menus" : "Afficher les menus"); measureDrawer(); setTimeout(onResize, 50); };
   $("#dhead").onclick = () => setDrawer(!st.drawerOpen);
   $("#testsBtn").onclick = () => setView("reglages");
@@ -1707,7 +1741,7 @@ function setView(v) {
   if (!["lib", "palais", "carnet", "reglages"].includes(v)) v = "palais";
   if (v !== "palais" && quizState.on) endQuiz();
   if (v !== "palais" && st.mode === "free") leaveFree();
-  if (v !== "palais") { vsStop(); vsKey = null; }
+  if (v !== "palais") { hfSet(false); vsStop(); vsKey = null; }
   VIEW = v; document.body.dataset.view = v; ls.set("view", v);
   $("#lib").hidden = v !== "lib"; $("#carnet").hidden = v !== "carnet"; $("#reglages").hidden = v !== "reglages";
   markTabs();

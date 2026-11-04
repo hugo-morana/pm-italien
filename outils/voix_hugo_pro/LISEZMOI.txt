@@ -5,3 +5,14 @@ Boucle par lot k (lots.json, 200 textes ; lots 3.. ) :
   python3 cut_energy.py k 'content_url'   (découpage dp.py, écrit aud/enc/hp_*.mp3, hp_map.json, done_v4.json)
 Intégration : python3 /home/claude/pm_italien/tri/hugo_audio.py ; build_data ; publier les paquets changés.
 Total lots : 3..39 (len(lots.json)=40).
+
+Découpage par transcription (remplace cut_energy.py, qui décalait parfois une série de clips) :
+  attach_reference_file(url du lot) -> transcribe_audio(scribe_v1) ; plusieurs sessions sondées ensemble -> fichier d'état
+  python3 stt_extract.py <fichier_état> <lots candidats…>   (télécharge words_download_url -> raw/wordsKKK.json)
+  PREFIX=hp_ python3 cut_stt.py k   (italien)   /   PREFIX=hf_ python3 cut_stt.py k   (français)
+  align_stt.py : alignement lettre à lettre textes attendus / transcription ; coupe entre les milieux des voisins (-0,10 s / +0,15 s).
+  Les nombres transcrits en chiffres ne s'alignent pas : l'item garde son clip précédent.
+
+Français (fr/) : même voix, language_code fr ; mots_fr.json = 6 122 textes nettoyés (niches sans audio Anki FR).
+  fr/prompt.py k -> texte ; lots de plus de 4 500 caractères coupés en deux (au-delà de ~5 000 la génération échoue).
+  Intégration : python3 hugo_audio_fr.py (audio_hp.fr) ; build_data prend l'Anki FR s'il existe, sinon audio_hp.fr.

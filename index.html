@@ -320,7 +320,11 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 
 <section class="view" id="reglages" hidden aria-label="Réglages"><div class="in">
   <h1>Réglages</h1>
-  <h2 style="margin:4px 0 0">Tests et révisions</h2>
+  <h2 style="margin:4px 0 0">Palais</h2>
+  <h3>Lecture pendant la visite</h3>
+  <div class="pills" role="group" aria-label="Lecture audio pendant la visite du palais"><button class="pill" type="button" data-sayopt="vF">🔊 Mot FR</button><button class="pill" type="button" data-sayopt="vI">🔊 Mot IT</button><button class="pill" type="button" data-sayopt="vEF">🔊 Exemple FR</button><button class="pill" type="button" data-sayopt="vEI">🔊 Exemple IT</button></div>
+  <p class="pr" style="margin:0">À chaque niche atteinte (visite guidée ou libre), les sons cochés sont lus l'un après l'autre, dans cet ordre.</p>
+  <h2 style="margin:18px 0 0">Tests et révisions</h2>
 
   <div class="frow" id="srsInfo">Révision du jour : …</div>
   <h3>Le bouton Test lance</h3>
@@ -818,6 +822,32 @@ function renderFiche() {
   $("#dfr").textContent = q && quizState.hideFr ? "?" : x.fr; $("#dit").textContent = q ? "?" : x.it;
   if (q) { $("#dbody").innerHTML = ""; return; }
   $("#dbody").innerHTML = ficheHTML(st.r, st.n);
+  visitSay();
+}
+/* Lecture pendant la visite (réglage Palais) : sons cochés, l'un après l'autre, à chaque nouvelle niche */
+let vsKey = null, vsTok = 0, vsAudio = null, vsTimer = null;
+function vsStop() { vsTok++; clearTimeout(vsTimer); if (vsAudio) { vsAudio.pause(); vsAudio = null; } if (window.speechSynthesis) speechSynthesis.cancel(); }
+function vsOne(text, src, lang, tok) {
+  return new Promise(res => {
+    if (!text || tok !== vsTok) return res();
+    const tts = () => { const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice; if (!s || !v || tok !== vsTok) return res();
+      const u = new SpeechSynthesisUtterance(text.replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = () => res(); s.speak(u); };
+    if (!src) return tts();
+    clipUrl(src).then(u => { if (tok !== vsTok) return res(); const a = vsAudio = new Audio(u); a.onended = a.onerror = () => res(); return a.play(); }).catch(() => tts());
+  });
+}
+function visitSay() {
+  const key = st.r + ":" + st.n; if (key === vsKey) return; vsKey = key;
+  if (!(prefs.vF || prefs.vI || prefs.vEF || prefs.vEI) || quizState.on || document.body.dataset.view !== "palais") return;
+  vsStop(); const tok = vsTok, x = R[st.r].niches[st.n]; if (!x) return;
+  vsTimer = setTimeout(async () => {   // petit délai : en visite libre, le regard balaie plusieurs niches
+    const seq = [];
+    if (prefs.vF) seq.push([x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", "fr"]);
+    if (prefs.vI) seq.push([x.it, asrc(x.ai, x.am), "it"]);
+    if (prefs.vEF) seq.push([x.efr, "", "fr"]);
+    if (prefs.vEI) seq.push([x.eit, x.ap || "", "it"]);
+    for (const [t, src, lg] of seq) { if (tok !== vsTok) return; await vsOne(t, src, lg, tok); await new Promise(r => setTimeout(r, 350)); }
+  }, 450);
 }
 function ficheHTML(ri, n) {
   const x = R[ri].niches[n], [nr, nn] = stepFrom(ri, n, 1), nx = R[nr].niches[nn], [pr, pn] = stepFrom(ri, n, -1), px = R[pr].niches[pn];
@@ -878,7 +908,7 @@ function speak(text, src, btn, lang = "it") {
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, vF: false, vI: false, vEF: false, vEI: false }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
 prefs.approach = AP_OF[PAL];   // l'approche d'apprentissage et la version du palais vont ensemble
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
@@ -1677,6 +1707,7 @@ function setView(v) {
   if (!["lib", "palais", "carnet", "reglages"].includes(v)) v = "palais";
   if (v !== "palais" && quizState.on) endQuiz();
   if (v !== "palais" && st.mode === "free") leaveFree();
+  if (v !== "palais") { vsStop(); vsKey = null; }
   VIEW = v; document.body.dataset.view = v; ls.set("view", v);
   $("#lib").hidden = v !== "lib"; $("#carnet").hidden = v !== "carnet"; $("#reglages").hidden = v !== "reglages";
   markTabs();

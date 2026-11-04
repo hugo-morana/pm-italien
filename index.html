@@ -265,7 +265,6 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
     <span class="spacer"></span>
     <button class="chip" id="hfBtn" type="button" aria-pressed="false" title="Parcours mains libres : le palais avance seul de niche en niche" aria-label="Parcours mains libres"><b id="hfIc">▶</b><span class="hfl"> Mains libres</span></button>
     <button class="chip" id="modeBtn" type="button" aria-pressed="false" title="Visite libre">Libre</button>
-    <button class="chip" id="testsBtn" type="button">Tests</button>
     <button class="chip" id="planBtn" type="button">Plan</button>
     <button class="chip" id="accountBtn" type="button" hidden>Compte</button>
   </div>
@@ -832,14 +831,23 @@ function renderFiche() {
 }
 /* Lecture pendant la visite (réglage Palais) : sons cochés, l'un après l'autre, à chaque nouvelle niche */
 let vsKey = null, vsTok = 0, vsAudio = null, vsTimer = null, vsDone = Promise.resolve(), vsFin = null;
-function vsStop() { vsTok++; clearTimeout(vsTimer); if (vsFin) { vsFin(); vsFin = null; } if (vsAudio) { vsAudio.pause(); vsAudio = null; } if (window.speechSynthesis) speechSynthesis.cancel(); }
+let vsUtt = null;   // garder l'énoncé en mémoire : sinon certains navigateurs le libèrent et « onend » n'arrive jamais
+const vsPlayer = () => vsAudio || (vsAudio = new Audio());   // un seul lecteur, débloqué par le geste qui lance le parcours (iPhone)
+const SILENCE = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=";
+function vsUnlock() { const a = vsPlayer(); a.src = SILENCE; const p = a.play(); if (p && p.catch) p.catch(() => {}); if (window.speechSynthesis) { const u = new SpeechSynthesisUtterance(" "); u.volume = 0; speechSynthesis.speak(u); } }
+function vsStop() { vsTok++; clearTimeout(vsTimer); if (vsFin) { vsFin(); vsFin = null; } if (vsAudio) { vsAudio.onended = vsAudio.onerror = vsAudio.onloadedmetadata = null; vsAudio.pause(); } if (window.speechSynthesis) speechSynthesis.cancel(); }
 function vsOne(text, src, lang, tok) {
   return new Promise(res => {
     if (!text || tok !== vsTok) return res();
-    const tts = () => { const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice; if (!s || !v || tok !== vsTok) return res();
-      const u = new SpeechSynthesisUtterance(text.replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = () => res(); s.speak(u); };
+    // garde-fou : un son qui ne signale jamais sa fin (lecture bloquée, voix muette) ne doit pas figer le parcours
+    let guard = null, over = false; const done = () => { if (over) return; over = true; clearTimeout(guard); res(); }, arm = ms => { clearTimeout(guard); guard = setTimeout(done, ms); };
+    const tts = () => { const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice; if (!s || !v || tok !== vsTok) return done();
+      arm(3000 + 120 * text.length);
+      try { const u = vsUtt = new SpeechSynthesisUtterance(text.replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u); } catch (e) { done(); } };
     if (!src) return tts();
-    clipUrl(src).then(u => { if (tok !== vsTok) return res(); const a = vsAudio = new Audio(u); a.onended = a.onerror = () => res(); return a.play(); }).catch(() => tts());
+    arm(15000);
+    clipUrl(src).then(u => { if (tok !== vsTok) return done(); const a = vsPlayer(); a.onended = done; a.onerror = () => { a.onerror = null; tts(); };
+      a.onloadedmetadata = () => { if (isFinite(a.duration)) arm(a.duration * 1000 + 2500); }; a.src = u; return a.play(); }).catch(() => tts());
   });
 }
 function visitSay() {
@@ -865,16 +873,19 @@ function hfSet(on) {
   if (on) {
     if (st.mode === "free") leaveFree();
     try { navigator.wakeLock && navigator.wakeLock.request("screen").then(l => { if (hf.on) hf.lock = l; else l.release(); }).catch(() => {}); } catch (e) {}
-    vsKey = null; visitSay(); hfLoop(hf.tok);
+    vsUnlock(); vsKey = null; setTimeout(() => { if (hf.on) { visitSay(); hfLoop(hf.tok); } }, 150);
   } else { vsStop(); if (hf.lock) { hf.lock.release().catch(() => {}); hf.lock = null; } }
 }
 async function hfLoop(tok) {
   const alive = () => hf.on && tok === hf.tok;
   while (alive()) {
-    await sleep(500); while (alive() && (anim.walking || anim.active)) await sleep(200);
-    await vsDone; if (!alive()) return;
-    await sleep((prefs.hfPause || 3) * 1000); if (!alive()) return;
-    const [r, n] = stepN(1); goTo(r, n, { thread: true });
+    try {
+      await sleep(500); for (let k = 0; k < 50 && alive() && (anim.walking || anim.active); k++) await sleep(200);   // 10 s au plus (animation figée en arrière-plan)
+      await Promise.race([vsDone, sleep(45000)]); if (!alive()) return;
+      await sleep((prefs.hfPause || 3) * 1000); if (!alive()) return;
+      if (document.body.dataset.view !== "palais" || quizState.on) { hfSet(false); return; }
+      const [r, n] = stepN(1); goTo(r, n, { thread: true });
+    } catch (e) { console.warn("mains libres", e); await sleep(1000); }
   }
 }
 function ficheHTML(ri, n) {
@@ -1606,7 +1617,6 @@ function bindUI() {
   document.addEventListener("click", e => { const b = e.target.closest("[data-hfpause]"); if (!b) return; prefs.hfPause = +b.dataset.hfpause; savePrefs(); renderSayOpts(); });
   $("#eye").onclick = () => { st.ui = !st.ui; document.body.classList.toggle("hidden-ui", !st.ui); $("#eye").setAttribute("aria-label", st.ui ? "Masquer les menus" : "Afficher les menus"); measureDrawer(); setTimeout(onResize, 50); };
   $("#dhead").onclick = () => setDrawer(!st.drawerOpen);
-  $("#testsBtn").onclick = () => setView("reglages");
   $("#planBtn").onclick = () => { $("#planSheet").hidden = false; renderPlan(); };
   $("#accountBtn").onclick = () => { $("#accountSheet").hidden = false; renderAccount(); };
   $("#accountSheet").addEventListener("click", e => { const id = e.target.id; if (id === "sbSend") sbSend(); if (id === "sbVerify") sbVerify(); if (id === "sbBack") renderAccount(); if (id === "sbOut") sbOut(); });

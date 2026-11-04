@@ -115,7 +115,7 @@ if "villes_pays" not in I:
         eim = next(w for w in [bare_it] if w in eit)
         rows.append(niche(fr, it, pr, api, mc, sc, efr, efm, eit, eim, ["noms", "noms_propres"], "geo", zf=zf, zi=zi, ax=False))
     rows.sort(key=lambda x: -x["zi"])
-    room = {"id": "villes_pays", "fr": "Les villes et pays", "it": "Città e paesi", "decor": "salle des cartes : mappemondes et portulans",
+    room = {"id": "villes_pays", "fr": "Les villes et pays", "it": "Città e paesi", "short": "Villes et pays", "code": "geo", "decor": "salle des cartes : mappemondes et portulans",
             "fam": "noms", "floor": 0, "slot": {"floor": 0, "side": "S", "x": 2}, "blocs": None,
             "niches": rows + [None] * (100 - len(rows))}
     R.append(room); I["villes_pays"] = room

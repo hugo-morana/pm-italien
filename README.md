@@ -38,6 +38,7 @@ Dans la version publiée sur Claude, la progression va sur le compte Claude et c
 python3 sources/sous_categories.py      # étiquettes de sous-catégories
 python3 sources/build_table.py          # page de validation
 python3 sources/build_data3d.py         # data3d.json pour le palais
+python3 sources/mots_phrase.py          # niches pour « Mots de la phrase » : a C_lieu, participes passés, villes et pays
 ```
 
 Les scripts ont été écrits pour l'environnement de travail d'origine : les chemins absolus en tête de fichier sont à adapter.

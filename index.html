@@ -1130,24 +1130,69 @@ function sentOk(expected, answer) {   // part des mots attendus retrouvés dans 
   const hit = E.filter(w => A.some(a => a === w || (w.length > 3 && lev(a, w) <= Math.floor(w.length * 0.25)))).length;
   return hit / E.length >= 0.75;
 }
-let WIDX = null;   // forme italienne exacte → items qui la portent (une forme conjuguée ou accordée compte pour son propre item, pas pour l'infinitif ni le mot de base)
+let WIDX = null, WMW = null;   // forme italienne exacte → items qui la portent (une forme conjuguée ou accordée compte pour son propre item, pas pour l'infinitif ni le mot de base) ; WMW : lieux en plusieurs mots (Stati Uniti)
 // forme exacte, accents gardés (« là » ≠ « la », « è » ≠ « e ») ; article initial retiré des items (« la fame » → fame)
 const wtok = s => String(s || "").normalize("NFC").toLowerCase().replace(/\(.*?\)/g, " ").replace(/[’`]/g, "'").replace(/'/g, "' ").replace(/[^a-zà-öø-ÿ' ]/g, " ").split(/\s+/).map(w => w.replace(/^'+/, "")).filter(Boolean);
 const wkey = s => { const t = wtok(s); if (t.length > 1 && /^(il|lo|la|i|gli|le|l'|un|una|uno|un')$/.test(t[0])) t.shift(); return t.join(" "); };
+// trou d'un item à trou unique : « a C_lieu » → lieu, « a C_qn » → qn, « da C » → c
+const holeOf = a => { const m = String(a).match(/\bC\d?_([a-zàéè]+)/); return m ? m[1] : /\b(?:S|V|C)\d?(?![’'\w])/.test(a) ? "c" : ""; };
+// la phrase, mot à mot, avec la majuscule (un prénom après « a » appelle « a C_qn ») ; les chiffres restent (« a 30 anni »)
+const ctoks = s => String(s || "").normalize("NFC").replace(/\(.*?\)/g, " ").replace(/[’`]/g, "'").replace(/'/g, "' ").replace(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9' ]/g, " ").split(/\s+/).map(w => w.replace(/^'+/, "")).filter(Boolean).map((w, i) => ({ w: w.toLowerCase(), cap: i > 0 && /^[A-ZÀ-ÖØ-Þ]/.test(w) }));
+const AUXW = new Set(`ho hai ha abbiamo avete hanno avevo avevi aveva avevamo avevate avevano avrò avrai avrà avremo avrete avranno avrei avresti avrebbe avremmo avreste avrebbero abbia abbiano avessi avesse avessimo avessero aver avere avendo
+  sono sei è siamo siete ero eri era eravamo eravate erano sarò sarai sarà saremo sarete saranno sarei saresti sarebbe saremmo sareste sarebbero sia siano fossi fosse fossimo foste fossero essere esser essendo stato stata stati state`.split(/\s+/));
+const SKIPW = new Set("mi ti ci vi si lo la li le gli ne non già mai più appena sempre anche ancora proprio davvero solo poi bene forse".split(" "));
+const DETW = new Set(`il lo la l' i gli le un uno una un' del dello della dell' dei degli delle al allo alla all' ai agli alle dal dallo dalla dall' dai dagli dalle nel nello nella nell' nei negli nelle sul sullo sulla sull' sui sugli sulle col
+  questo questa questi queste quel quello quella quell' quei quegli quelle mio mia miei mie tuo tua tuoi tue suo sua suoi sue nostro nostra nostri nostre vostro vostra vostri vostre ogni qualche nessun nessuna`.split(/\s+/));
+const HOLES = new Set(["lieu", "qn", "mois", "âge", "nb"]);   // trous que le mot suivant permet de reconnaître
+const PREPW = new Set("a ad in da per con su fino tra fra".split(" "));
+const TONW = new Set("me te lui lei noi voi loro sé".split(" "));
+const MOISW = new Set("gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre".split(" "));
+const NUMW = /^(\d+|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|quindici|venti|trenta|quaranta|cinquanta|sessanta|settanta|ottanta|novanta|cento|mille)$/;
 function wordIndex() {
-  if (WIDX) return WIDX; WIDX = new Map();
-  const add = (w, ri, n) => { w = wkey(w); if (!w || w.includes(" ")) return; if (!WIDX.has(w)) WIDX.set(w, []); WIDX.get(w).push([ri, n]); };
+  if (WIDX) return WIDX; WIDX = new Map(); WMW = new Map();
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const cls = x._cls || famOf(r);
     if (cls === "expressions" || cls === "incises") return;
     if (x.k === "tpl" && String(x.it).split(" / ").some(t => (t.match(/\b(?:S|V|C)\d?(?:_[a-zàéè]+)?(?![’'\w])/g) || []).length > 1)) return;   // tournure à plusieurs trous : pas un mot
-    for (const a of altsOf(String(x.it).replace(/\(.*?\)/g, " "))) add(a, ri, n); }));
+    const geo = x.th === "geo", form = cls === "formes" || /\bparticipe\b/.test(x.fr), noun = cls === "noms" && !geo;
+    for (const raw of String(x.it).replace(/\(.*?\)/g, " ").split(/ \/ |\/|;/)) { const hole = holeOf(raw);
+      for (const a of altsOf(raw)) { const w = wkey(a); if (!w) continue;
+        if (w.includes(" ")) { if (geo) { const t = w.split(" "); if (!WMW.has(t[0])) WMW.set(t[0], []); WMW.get(t[0]).push({ t, ri, n }); } continue; }
+        if (!WIDX.has(w)) WIDX.set(w, []); WIDX.get(w).push({ ri, n, hole, form, noun, geo }); } } }));
   return WIDX;
 }
+function sentenceItems(x) {   // items vraiment portés par la phrase italienne : le contexte départage les trous (a C_lieu / a C_qn) et les homographes (fatto participe / il fatto)
+  const idx = wordIndex(), T = ctoks(x.eit), out = [], seen = new Set();
+  const lead = T.length > 1 && /o$/.test(T[0].w) && PREPW.has(T[1].w) && !/^\s*[^\s,;:!?.…]+\s*[,;:!?.…]/.test(x.eit);   // « Lavoro a Ginevra » : 1re personne, pas « il lavoro »
+  const push = e => { const k = e.ri + ":" + e.n; if (!seen.has(k)) { seen.add(k); out.push({ ri: e.ri, n: e.n }); } };
+  const placeAt = i => { if (!T[i]) return null;
+    for (const m of (WMW.get(T[i].w) || [])) if (m.t.every((w, j) => T[i + j] && T[i + j].w === w)) return m;
+    const c = (idx.get(T[i].w) || []).find(e => e.geo); return c ? { t: [T[i].w], ri: c.ri, n: c.n } : null; };
+  const ctxAt = i => { const t = T[i]; if (!t) return "";
+    if (placeAt(i)) return "lieu"; if (TONW.has(t.w) || t.cap) return "qn"; if (MOISW.has(t.w)) return "mois"; if (NUMW.test(t.w)) return "nb"; return ""; };
+  for (let i = 0; i < T.length; i++) {
+    const pl = placeAt(i); if (pl && pl.t.length > 1) { push(pl); i += pl.t.length - 1; continue; }
+    let C = idx.get(T[i].w); if (!C || !C.length) continue;
+    // 1. item à trou reconnaissable (a C_qn, a C_lieu, in C_mois, a C_âge) : seulement si le mot suivant remplit ce trou ; les autres trous (questo C, da C_moment…) comme avant
+    const ctx = ctxAt(i + 1), fill = h => h === ctx || (ctx === "nb" && (h === "âge" || h === "nb"));
+    C = C.filter(e => !HOLES.has(e.hole) || fill(e.hole));
+    // 2. nom propre ou nom commun : « a Mosca » (la ville) / « una mosca » (la mouche)
+    if (i > 0 && C.some(e => e.geo) && C.some(e => !e.geo)) C = C.filter(e => T[i].cap ? e.geo : !e.geo);
+    // 3. en tête de phrase, sans article, terminé en -o et suivi d'une préposition : un verbe à la 1re personne, pas le nom (« Lavoro a Ginevra », « Abito a Roma »)
+    if (i === 0 && lead && C.every(e => !e.form)) C = C.filter(e => !e.noun);
+    // 4. participe ou nom : après un auxiliaire (ha fatto, è stato), la forme verbale ; après un article ou un déterminant (il fatto, lo stato), le nom
+    const vb = C.filter(e => e.form), nn = C.filter(e => !e.form);
+    if (vb.length && nn.length) {
+      let k = i - 1; while (k >= 0 && SKIPW.has(T[k].w)) k--;
+      if (k >= 0 && AUXW.has(T[k].w)) C = vb.concat(nn.filter(e => !e.noun));
+      else if ((i > 0 && DETW.has(T[i - 1].w)) || (k >= 0 && (idx.get(T[k].w) || []).some(e => e.form))) C = nn;   // après « avuto » : ha avuto successo
+    }
+    C.forEach(push);
+  }
+  return out;
+}
 async function phraseWords(x) {   // items portés par les mots de la phrase italienne, avec ce qu'ils rapportent s'ils ne sont pas encore acquis
-  const idx = wordIndex(), seen = new Set(), out = [];
-  const words = wtok(x.eit);
-  for (const w of words) for (const [ri, n] of (idx.get(w) || [])) {
-    const key = ri + ":" + n; if (seen.has(key)) continue; seen.add(key);
+  const out = [];
+  for (const { ri, n } of sentenceItems(x)) {
     const c = await srsRoom(ri), y = R[ri].niches[n], ok = ty => c[n + ":" + ty] && c[n + ":" + ty].seen && c[n + ":" + ty].b >= 1;
     const w0 = counts(R[ri], y) ? (y.oi || 0) / 1e6 : 0, comp = ok("it") || ok("aud"), expr = ok("fr");
     out.push({ ri, n, it: y.it, fr: y.fr, w: w0, comp, expr });
@@ -1167,10 +1212,8 @@ async function fillPhraseWords(q, x) {
     <div class="phw-n">Si tu réussis cette phrase, tu gagnes la ${dir === "c" ? "compréhension" : "expression"} ; ${dir === "c" ? "l'expression se gagne en traduisant la phrase du français vers l'italien" : "la compréhension se gagne en traduisant la phrase de l'italien vers le français"}. C = pas encore compris, E = pas encore su dire.</div>`;
 }
 async function creditSentence(q, x) {   // phrase réussie : chaque mot qui la compose compte comme appris dans ce sens
-  const ty = q.ty === "phit" ? "it" : "fr", idx = wordIndex(), seen = new Set(), t = today(); let k = 0, g = 0;
-  const words = wtok(x.eit);
-  for (const w of words) for (const [ri, n] of (idx.get(w) || [])) {
-    const key = ri + ":" + n; if (seen.has(key)) continue; seen.add(key);
+  const ty = q.ty === "phit" ? "it" : "fr", t = today(); let k = 0, g = 0;
+  for (const { ri, n } of sentenceItems(x)) {
     const c = await srsRoom(ri), cur = c[n + ":" + ty];
     if (cur && cur.seen && cur.b >= 1) continue;
     if (ty === "it" && c[n + ":aud"] && c[n + ":aud"].seen && c[n + ":aud"].b >= 1) continue;

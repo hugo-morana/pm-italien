@@ -1,0 +1,7 @@
+Génération des mots italiens voix Hugo Pro (ElevenLabs, flow fNCWvlCwKizaU0X35lfF, v4, similarité 1, stabilité 0.5, it).
+Nœuds TTS : A = RdFjwrYMzsSpHKDrUB0U, B = ZGWLhv6YrDCz8EPw4Z0v (déjà réglés ; mettre seulement le prompt).
+Boucle par lot k (lots.json, 200 textes ; lots 3.. ) :
+  python3 prompt.py k  -> texte ; update_node(prompt) ; run_flow_nodes(generations_count=1) ; get_flow_run_status -> content_url
+  python3 cut_energy.py k 'content_url'   (découpage dp.py, écrit aud/enc/hp_*.mp3, hp_map.json, done_v4.json)
+Intégration : python3 /home/claude/pm_italien/tri/hugo_audio.py ; build_data ; publier les paquets changés.
+Total lots : 3..39 (len(lots.json)=40).

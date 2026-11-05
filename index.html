@@ -1850,7 +1850,8 @@ const fineBy = lg => lg === "it" ? fineI : fineF;
 /* Familles de fréquence : on range tous les mots du plus fréquent au plus rare et on cumule la compréhension qu'ils apportent ;
    la famille d'un mot = la tranche de compréhension (0-10 %, 10-20 %…) qu'on atteint en l'apprenant dans cet ordre. */
 const FBANDS = [50, 60, 70, 75, 80, 90, 100];
-const bandLabel = i => i === 0 ? "De 0 à 50 % de compréhension" : `De ${FBANDS[i - 1]} à ${FBANDS[i]} % de compréhension`;
+const bandWord = lg => lg === "fr" ? "d'expression" : "de compréhension";   // fréquence FR : ce qu'on sait dire ; fréquence IT : ce qu'on comprend
+const bandLabel = (i, lg = "it") => `De ${i ? FBANDS[i - 1] : 0} à ${FBANDS[i]} % ${bandWord(lg)}`;
 const FBAND = {};
 function freqBands(lg = "fr") {
   if (FBAND[lg]) return FBAND[lg];
@@ -1916,7 +1917,7 @@ async function renderLib() {
     const sorted = rows.slice().sort((a, b) => fineF(b.x) - fineF(a.x) || a.ri - b.ri || a.n - b.n), parts = [];
     const FB = freqBands(lg); let cur = -1, buf = [];
     const flush = () => { if (!buf.length) return; const got = buf.filter(([e]) => S.has(e.ri + ":" + e.n)).length;
-      parts.push(`${secOpen("f" + lg + cur)}${bandLabel(cur)} <small>${buf.length} mots · ${got} appris · rangs ${buf[0][1]} à ${buf[buf.length - 1][1]}</small></h2>` + buf.map(([e, k]) => row(e, k)).join("") + `</section>`); buf = []; };
+      parts.push(`${secOpen("f" + lg + cur)}${bandLabel(cur, lg)} <small>${buf.length} mots · ${got} appris · rangs ${buf[0][1]} à ${buf[buf.length - 1][1]}</small></h2>` + buf.map(([e, k]) => row(e, k)).join("") + `</section>`); buf = []; };
     sorted.forEach((e, j) => { const b = FB.get(e.ri + ":" + e.n); if (b !== cur) { flush(); cur = b; } buf.push([e, j + 1]); }); flush();
     $("#libList").innerHTML = parts.join("");
   } else if (ord === "theme") {   // par thème : un bloc par famille thématique, mots triés par fréquence
@@ -2015,7 +2016,7 @@ function buildVirtual(kind) {
     let c = 0, cur = null;
     for (const e of all) {
       let i = FBANDS.findIndex(t => c < t); if (i < 0) i = FBANDS.length - 1;
-      if (!cur || cur.band !== i) { const lo = i ? FBANDS[i - 1] : 0, hi = FBANDS[i]; cur = { band: i, key: `${lo}-${hi}`, fr: `De ${lo} à ${hi} % de compréhension`, it: `Dal ${lo} al ${hi} % di comprensione`, lab: `${lo}-${hi} %`, items: [] }; groups.push(cur); }
+      if (!cur || cur.band !== i) { const lo = i ? FBANDS[i - 1] : 0, hi = FBANDS[i]; cur = { band: i, key: `${lo}-${hi}`, fr: `De ${lo} à ${hi} % ${bandWord(kind === "freq" ? "fr" : "it")}`, it: `Dal ${lo} al ${hi} % di ${kind === "freq" ? "espressione" : "comprensione"}`, lab: `${lo}-${hi} %`, items: [] }; groups.push(cur); }
       cur.items.push(e); if (counts(CANON[e.ri], e.x)) c += (e.x.oi || 0) / 1e6;
     }
   }
@@ -2040,7 +2041,7 @@ function buildVirtual(kind) {
 }
 const PALTXT = { classe: "Palais par classe : une tour d'étages par classe de mots (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre.",
   freqit: "Palais par fréquence italienne : tous les mots, du plus fréquent au plus rare dans l'italien parlé, 100 par salle. C'est l'ordre qui fait monter le plus vite la compréhension de l'italien. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
-  freq: "Palais par fréquence française : tous les mots, du plus fréquent au plus rare dans le français parlé, 100 par salle. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
+  freq: "Palais par fréquence française : tous les mots, du plus fréquent au plus rare dans le français parlé, 100 par salle. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % d'expression) commence à un nouvel étage.",
   theme: "Palais par thème : une ou plusieurs salles par famille thématique (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème." };
 function choosePalace(v) { if (v === PAL) return; ls.set("palais", v); location.reload(); }
 

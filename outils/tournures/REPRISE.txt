@@ -1,5 +1,5 @@
-État (2026-11-05 ~15h) : crédits ElevenLabs épuisés (quota 423 000).
-FR coupés : lots 0-9 (909 clips, intégrés et publiés).
-FR générés mais pas transcrits : 10, 11, 12, 13, 16, 17 (aud_fr/raw/lot0XX.mp3) -> attach via fichier local (create_asset_upload) ou regénérer.
-FR à générer : 14, 15, 18, 19, 20.   IT à générer : 0..15 (passer language_code "it" sur les nœuds A RdFjwrYMzsSpHKDrUB0U, B ZGWLhv6YrDCz8EPw4Z0v, C ylgPgRce8XSIgSuQzWzp, D 4SkVzSB5ngnFR8AzS8uU).
-Par lot : prompt.py L k -> update_node -> run (1) -> get_generations -> curl raw -> attach_reference_file -> transcribe -> status (≥2) -> stt_extract.py -> PREFIX=tf_/ti_ cut_stt.py k ; puis apply.py et publier audio/t_*.mp3 + data3d.json.
+État (2026-11-05 ~17h) : crédits épuisés (quota 483 000).
+FR : terminé (1 914 clips). IT : lots 0-5 coupés (648 clips).
+IT lot 6 : audio dans aud_it/raw/lot006.mp3, nœud de transcription YlBlxPOZWKtdM8Lr3KSM à relancer (run_flow_nodes).
+IT lots 7-10 : prompts déjà posés sur A, B, C, D (tous en language_code it) -> relancer run_flow_nodes.
+IT lots 11-15 : à poser puis générer.  Extraction : python3 x_extract.py <fichier> it:k ... ; PREFIX=ti_ cut_stt.py k (dans aud_it) ; puis apply.py et publier.

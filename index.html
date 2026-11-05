@@ -328,6 +328,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h3>Lecture pendant la visite</h3>
   <div class="pills" role="group" aria-label="Lecture audio pendant la visite du palais"><button class="pill" type="button" data-sayopt="vF">🔊 Mot FR</button><button class="pill" type="button" data-sayopt="vI">🔊 Mot IT</button><button class="pill" type="button" data-sayopt="vEF">🔊 Exemple FR</button><button class="pill" type="button" data-sayopt="vEI">🔊 Exemple IT</button></div>
   <p class="pr" style="margin:0">À chaque niche atteinte (visite guidée ou libre), les sons cochés sont lus l'un après l'autre, dans cet ordre.</p>
+  <h3>Passage d'une niche à la suivante</h3>
+  <div class="pills" role="group" aria-label="Recul sur la pièce"><button class="pill" type="button" data-sayopt="recul">↩ Recul sur la vue de la pièce</button></div>
+  <p class="pr" style="margin:0">Quand on est zoomé sur une niche, la caméra recule sur toute la pièce le temps du fil, pour resituer la niche, puis revient. Décoché : elle passe directement d'une niche à l'autre.</p>
   <h3>Parcours mains libres</h3>
   <div class="pills" role="group" aria-label="Pause entre deux niches en mains libres"><button class="pill" type="button" data-hfpause="1.5">Pause 1,5 s</button><button class="pill" type="button" data-hfpause="3">Pause 3 s</button><button class="pill" type="button" data-hfpause="6">Pause 6 s</button><button class="pill" type="button" data-hfpause="10">Pause 10 s</button></div>
   <p class="pr" style="margin:0">Le bouton ▶ Mains libres du palais passe seul à la niche suivante, en suivant la chaîne : il lit les sons cochés ci-dessus, attend la pause, puis avance. Sans case cochée, il avance après la pause seulement. Un geste (toucher l'écran, une touche, un bouton) l'arrête ; l'écran reste allumé pendant le parcours.</p>
@@ -790,8 +793,8 @@ function goTo(ri, n, opts = {}) {
   if (fromChain) {
     showThread(ri, prev.n, n); banner("⟶ " + String(n).padStart(2, "0"), R[ri].niches[prev.n].li);
     anim.active = true; anim.kind = "thread"; anim.t = 0; anim.dur = .75; anim.then = () => flyTo(poseFor(st.zoom));
-    // la caméra recule un peu pendant le fil, si on était zoomé
-    if (st.zoom > 0) flyTo(overviewPose(ri), .35, () => { anim.active = true; anim.kind = "thread"; anim.t = 0; anim.dur = .75; anim.then = () => flyTo(poseFor(st.zoom)); });
+    // la caméra recule sur la vue de la pièce pendant le fil, si on était zoomé (réglage « Recul ») ; le mur de façade et les autres pièces sont masqués pendant le recul
+    if (st.zoom > 0 && prefs.recul !== false) { setOthersVisible(ri); flyTo(overviewPose(ri), .35, () => { anim.active = true; anim.kind = "thread"; anim.t = 0; anim.dur = .75; anim.then = () => flyTo(poseFor(st.zoom), .55, () => applyOverviewLook()); }); }
   } else flyTo(poseFor(st.zoom), opts.dur ?? .55);
 }
 function doorOut(r) { return toWorld(r, V3(0, EYE, D / 2 + 2)); }
@@ -952,7 +955,7 @@ function speak(text, src, btn, lang = "it") {
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, vF: false, vI: false, vEF: false, vEI: false, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, vF: false, vI: false, vEF: false, vEI: false, recul: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
 prefs.approach = AP_OF[PAL];   // l'approche d'apprentissage et la version du palais vont ensemble
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }

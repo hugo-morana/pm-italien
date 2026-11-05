@@ -1040,15 +1040,15 @@ function migrateLocal() {
   migrateRoomRefs(from);
 }
 function migrateRoomRefs(from) {   // salles fusionnées ou déplacées : pièces choisies pour les tests et position, par identifiant (palais par classe)
-  for (const step of (DATA.migr || [])) {
-    if (step.rev <= from || !step.ids) continue;
-    const idx = id => DATA.rooms.findIndex(r => r.id === id);
+  const steps = (DATA.migr || []).filter(s => s.rev > from && s.ids);
+  steps.forEach((step, j) => {
+    const after = j + 1 < steps.length ? steps[j + 1].ids : DATA.rooms.map(r => r.id), idx = id => after.indexOf(id);   // salles telles qu'après cette étape
     const where = (ri, n) => { const id = step.ids[ri]; if (id == null) return null; const to = (step.moves[id + ":" + n] || id + ":" + n).split(":"); const k = idx(to[0]); return k < 0 ? null : [k, +to[1]]; };
     const p = ls.get("prefs", null);
     if (p && Array.isArray(p.rooms)) { p.rooms = [...new Set(p.rooms.map(ri => (where(ri, 0) || [])[0]).filter(k => k != null))]; if (!p.rooms.length) p.rooms = [0]; ls.set("prefs", p); if (PAL === "classe") prefs.rooms = p.rooms; }
     const pos = ls.get("pos", null);
     if (pos) { const w = where(pos.r, pos.n); ls.set("pos", w ? Object.assign(pos, { r: w[0], n: w[1] }) : { r: 0, n: 0, zoom: 0 }); }
-  }
+  });
 }
 async function afterLogin() { // fusion de la progression locale et distante, puis envoi
   await loadHist();

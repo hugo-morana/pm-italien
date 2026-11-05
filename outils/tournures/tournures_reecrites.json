@@ -1,0 +1,9662 @@
+[
+{
+"key": "verbes:11",
+"fr": "faire faire qc à qn",
+"it": "far fare qcs a qcn"
+},
+{
+"key": "verbes:17",
+"fr": "dire qc à qn",
+"it": "dire qcs a qcn"
+},
+{
+"key": "verbes:25",
+"fr": "avoir à faire qc",
+"it": "dover fare qcs"
+},
+{
+"key": "verbes:44",
+"fr": "parler de qn",
+"it": "parlare di qcn"
+},
+{
+"key": "verbes:46",
+"fr": "aller bien à qn",
+"it": "stare bene a qcn"
+},
+{
+"key": "verbes:50",
+"fr": "avoir besoin de qc",
+"it": "avere bisogno di qcs"
+},
+{
+"key": "verbes:51",
+"fr": "avoir le temps de faire qc",
+"it": "avere il tempo di fare qcs"
+},
+{
+"key": "verbes:54",
+"fr": "être d'accord avec qn",
+"it": "essere d'accordo con qcn"
+},
+{
+"key": "verbes:59",
+"fr": "savoir que qn fait qc",
+"it": "sapere che qcn fa qcs"
+},
+{
+"key": "verbes:60",
+"fr": "sentir qc / avoir l'odeur de qc",
+"it": "sapere di qcs"
+},
+{
+"key": "verbes:63",
+"fr": "avoir tout le temps pour faire qc",
+"it": "avere tutto il tempo per fare qcs"
+},
+{
+"key": "verbes:71",
+"fr": "aider qn à faire qc",
+"it": "aiutare qcn a fare qcs"
+},
+{
+"key": "verbes:76",
+"fr": "trouver que qn fasse qc",
+"it": "trovare che qcn faccia qcs"
+},
+{
+"key": "verbes:77",
+"fr": "avoir du mal à faire qc",
+"it": "fare fatica a fare qcs"
+},
+{
+"key": "verbes:80",
+"fr": "aller mal à qn",
+"it": "stare male a qcn"
+},
+{
+"key": "verbes:87",
+"fr": "faire peur à qn",
+"it": "spaventare qcn"
+},
+{
+"key": "verbes:89",
+"fr": "venir de qqpart",
+"it": "venire da qualche parte"
+},
+{
+"key": "verbes:90",
+"fr": "venir qqpart",
+"it": "venire da qualche parte"
+},
+{
+"key": "verbes:93",
+"fr": "passer qqpart",
+"it": "passare da qualche parte"
+},
+{
+"key": "verbes:97",
+"fr": "avoir l'air beau",
+"it": "sembrare bello"
+},
+{
+"key": "adjectifs:0",
+"fr": "bien des choses",
+"it": "molti libri / molte cose"
+},
+{
+"key": "adjectifs:1",
+"fr": "ma chose",
+"it": "la mia cosa"
+},
+{
+"key": "adjectifs:2",
+"fr": "cette chose",
+"it": "questa cosa / quella cosa"
+},
+{
+"key": "adjectifs:4",
+"fr": "sa chose",
+"it": "la sua cosa"
+},
+{
+"key": "adjectifs:5",
+"fr": "ces choses",
+"it": "questi libri / quei libri"
+},
+{
+"key": "adjectifs:6",
+"fr": "ta chose",
+"it": "la tua cosa"
+},
+{
+"key": "adjectifs:7",
+"fr": "toutes les choses",
+"it": "tutti i libri / tutte le cose"
+},
+{
+"key": "adjectifs:8",
+"fr": "peu de choses",
+"it": "poco tempo / pochi libri"
+},
+{
+"key": "adjectifs:9",
+"fr": "mes choses",
+"it": "i miei libri / le mie cose"
+},
+{
+"key": "adjectifs:11",
+"fr": "encore des choses",
+"it": "altro tempo / altra cosa"
+},
+{
+"key": "adjectifs:16",
+"fr": "trop de choses",
+"it": "troppo tempo / troppi libri"
+},
+{
+"key": "adjectifs:17",
+"fr": "un peu plus de qc",
+"it": "un po' più di qcs"
+},
+{
+"key": "adjectifs:18",
+"fr": "vos choses",
+"it": "i vostri libri / le vostre cose"
+},
+{
+"key": "adjectifs:19",
+"fr": "beaucoup de choses",
+"it": "molto tempo / molti libri"
+},
+{
+"key": "adjectifs:20",
+"fr": "pas mal de qc",
+"it": "un sacco di qcs"
+},
+{
+"key": "adjectifs:21",
+"fr": "tes choses",
+"it": "i tuoi libri / le tue cose"
+},
+{
+"key": "adjectifs:24",
+"fr": "nos choses",
+"it": "i nostri libri / le nostre cose"
+},
+{
+"key": "adjectifs:25",
+"fr": "cet objet",
+"it": "questo specchio / quello specchio"
+},
+{
+"key": "adjectifs:28",
+"fr": "moins de qc",
+"it": "meno qcs"
+},
+{
+"key": "adjectifs:35",
+"fr": "l’ensemble des choses",
+"it": "l'insieme delle cose"
+},
+{
+"key": "adjectifs:36",
+"fr": "une partie de qc",
+"it": "una parte di qcs"
+},
+{
+"key": "adjectifs:43",
+"fr": "aucune chose",
+"it": "nessuna cosa"
+},
+{
+"key": "adjectifs:47",
+"fr": "qc non compris",
+"it": "qcs non compreso"
+},
+{
+"key": "adjectifs:48",
+"fr": "première qc",
+"it": "prima qcs"
+},
+{
+"key": "adjectifs:63",
+"fr": "plein de choses",
+"it": "un sacco di cose / tanti libri"
+},
+{
+"key": "adjectifs:65",
+"fr": "n'importe quelle chose",
+"it": "qualsiasi cosa"
+},
+{
+"key": "adjectifs:71",
+"fr": "autant de choses",
+"it": "tanto tempo / tanti libri"
+},
+{
+"key": "adjectifs:79",
+"fr": "une sorte de qc",
+"it": "una sorta di qcs"
+},
+{
+"key": "adjectifs:82",
+"fr": "un verre de qc",
+"it": "un bicchiere di qcs"
+},
+{
+"key": "determinants:5",
+"fr": "ce (livre-ci)",
+"it": "questo"
+},
+{
+"key": "determinants:6",
+"fr": "ce (livre-là)",
+"it": "quello"
+},
+{
+"key": "determinants:14",
+"fr": "ces (choses-là)",
+"it": "quei libri / quegli oggetti"
+},
+{
+"key": "pronoms:12",
+"fr": "qn fait ce que qn d'autre fait.",
+"it": "qcn fa quello che qcn altro fa"
+},
+{
+"key": "pronoms:21",
+"fr": "ce qui fait qc",
+"it": "ciò che fa qcs"
+},
+{
+"key": "pronoms:79",
+"fr": "auquel cas qn fait qc",
+"it": "nel qual caso qcn fa qcs"
+},
+{
+"key": "conjonctions:5",
+"fr": "si beau que qn d'autre fait qc",
+"it": "così bello che qcn altro fa qcs"
+},
+{
+"key": "conjonctions:6",
+"fr": "tout beau que qn soit, qn d'autre fait qc",
+"it": "per quanto bello sia qcn, qcn altro fa qcs"
+},
+{
+"key": "conjonctions:7",
+"fr": "fait que qn fait qc",
+"it": "fa sì che qcn faccia qcs"
+},
+{
+"key": "conjonctions:10",
+"fr": "quoi que qn fasse",
+"it": "qualunque cosa qcn faccia"
+},
+{
+"key": "conjonctions:11",
+"fr": "si bien que qn fait qc",
+"it": "cosicché qcn fa qcs"
+},
+{
+"key": "conjonctions:16",
+"fr": "comme si qn faisait qc",
+"it": "come se qcn facesse qcs"
+},
+{
+"key": "conjonctions:17",
+"fr": "qn fait qc c'est pourquoi qn d'autre fait qc.",
+"it": "qcn fa qcs ecco perché qcn altro fa qcs"
+},
+{
+"key": "conjonctions:18",
+"fr": "si ce n'est que qn fait qc",
+"it": "se non che qcn fa qcs"
+},
+{
+"key": "conjonctions:19",
+"fr": "du fait que qn fait qc",
+"it": "dal fatto che qcn fa qcs"
+},
+{
+"key": "conjonctions:21",
+"fr": "Si qn fait qc, fais qc.",
+"it": "Se qcn fa qcs, fai qcs"
+},
+{
+"key": "conjonctions:24",
+"fr": "maintenant que qn fait qc",
+"it": "adesso che qcn fa qcs"
+},
+{
+"key": "conjonctions:25",
+"fr": "qn fait qc ou bien qn d'autre fait qc",
+"it": "qcn fa qcs oppure qcn altro fa qcs"
+},
+{
+"key": "conjonctions:26",
+"fr": "si jamais qn fait qc",
+"it": "se mai qcn fa qcs"
+},
+{
+"key": "conjonctions:28",
+"fr": "encore que qn fait qc",
+"it": "anche se qcn fa qcs"
+},
+{
+"key": "conjonctions:29",
+"fr": "d'où le fait que qn fait qc",
+"it": "da qui il fatto che qcn fa qcs"
+},
+{
+"key": "conjonctions:30",
+"fr": "pour peu que qn fasse qc",
+"it": "per poco che qcn faccia qcs"
+},
+{
+"key": "conjonctions:31",
+"fr": "vu que qn fait qc",
+"it": "visto che qcn fa qcs"
+},
+{
+"key": "conjonctions:32",
+"fr": "sans que qn fasse qc",
+"it": "senza che qcn faccia qcs"
+},
+{
+"key": "conjonctions:34",
+"fr": "sans ça, qn fait qc",
+"it": "senza questo, qcn fa qcs"
+},
+{
+"key": "conjonctions:36",
+"fr": "même quand qn fait qc",
+"it": "anche quando qcn fa qcs"
+},
+{
+"key": "conjonctions:38",
+"fr": "quand bien même qn ferait qc",
+"it": "anche se qcn fa qcs"
+},
+{
+"key": "conjonctions:41",
+"fr": "à savoir que qn fait qc",
+"it": "cioè che qcn fa qcs"
+},
+{
+"key": "conjonctions:43",
+"fr": "à moins que qn fasse qc",
+"it": "a meno che qcn faccia qcs"
+},
+{
+"key": "conjonctions:44",
+"fr": "de peur que qn fasse qc",
+"it": "per paura che qcn faccia qcs"
+},
+{
+"key": "conjonctions:45",
+"fr": "du moment que qn fait qc",
+"it": "dal momento che qcn fa qcs"
+},
+{
+"key": "conjonctions:49",
+"fr": "à part que qn fait qc",
+"it": "a parte che qcn fa qcs"
+},
+{
+"key": "conjonctions:50",
+"fr": "tant que qn fait qc",
+"it": "finché qcn fa qcs"
+},
+{
+"key": "conjonctions:53",
+"fr": "à part le fait que qn fasse qc",
+"it": "a parte il fatto che qcn faccia qcs"
+},
+{
+"key": "conjonctions:54",
+"fr": "jusqu'à temps que qn fasse qc",
+"it": "finché qcn non faccia qcs"
+},
+{
+"key": "conjonctions:55",
+"fr": "seulement si qn fait qc",
+"it": "solo se qcn fa qcs"
+},
+{
+"key": "conjonctions:56",
+"fr": "si seulement qn faisait qc",
+"it": "se solo qcn facesse qcs"
+},
+{
+"key": "conjonctions:57",
+"fr": "qn fait qc, au sens où qn d'autre fait qc",
+"it": "qcn fa qcs nel senso che qcn altro fa qcs"
+},
+{
+"key": "conjonctions:58",
+"fr": "si et seulement si qn fait qc",
+"it": "se e solo se qcn fa qcs"
+},
+{
+"key": "conjonctions:60",
+"fr": "peu importe que qn fasse qc",
+"it": "non importa se qcn faccia qcs"
+},
+{
+"key": "conjonctions:61",
+"fr": "tellement que qn fait qc",
+"it": "così tanto che qcn fa qcs"
+},
+{
+"key": "conjonctions:62",
+"fr": "de façon à ce que qn fasse qc",
+"it": "in modo che qcn faccia qcs"
+},
+{
+"key": "conjonctions:63",
+"fr": "au point que qn fait qc",
+"it": "al punto che qcn fa qcs"
+},
+{
+"key": "conjonctions:64",
+"fr": "juste au cas où qn ferait qc",
+"it": "giusto nel caso in cui qcn faccia qcs"
+},
+{
+"key": "conjonctions:65",
+"fr": "jusqu'au moment où qn fait qc",
+"it": "fino al momento in cui qcn fa qcs"
+},
+{
+"key": "conjonctions:66",
+"fr": "jusqu'à tant que qn fasse qc",
+"it": "fintanto che qcn faccia qcs"
+},
+{
+"key": "conjonctions:67",
+"fr": "à partir du moment où qn fait qc",
+"it": "dal momento in cui qcn fa qcs"
+},
+{
+"key": "conjonctions:68",
+"fr": "à quel point qn fait qc ?",
+"it": "fino a che punto qcn fa qcs"
+},
+{
+"key": "conjonctions:70",
+"fr": "autant que qn fasse qc",
+"it": "tanto vale che qcn faccia qcs"
+},
+{
+"key": "conjonctions:71",
+"fr": "d'autant que qn fait qc",
+"it": "dato che qcn fa qcs"
+},
+{
+"key": "conjonctions:72",
+"fr": "d'autant plus que qn fait qc",
+"it": "tanto più che qcn fa qcs"
+},
+{
+"key": "conjonctions:75",
+"fr": "en sorte que qn fasse qc",
+"it": "in modo che qcn faccia qcs"
+},
+{
+"key": "conjonctions:78",
+"fr": "sauf que qn fait qc",
+"it": "solo che qcn fa qcs"
+},
+{
+"key": "conjonctions:79",
+"fr": "mis à part le fait que qn fait qc",
+"it": "a parte il fatto che qcn fa qcs"
+},
+{
+"key": "conjonctions:80",
+"fr": "d'autant mieux que qn fait qc",
+"it": "tanto meglio in quanto qcn fa qcs"
+},
+{
+"key": "conjonctions:81",
+"fr": "d'autant moins que qn fait qc",
+"it": "tanto meno in quanto qcn fa qcs"
+},
+{
+"key": "conjonctions:85",
+"fr": "selon que qn fasse qc",
+"it": "a seconda che qcn faccia qcs"
+},
+{
+"key": "conjonctions:86",
+"fr": "selon quoi qn fait qc",
+"it": "secondo cui qcn fa qcs"
+},
+{
+"key": "conjonctions:87",
+"fr": "de manière à ce que qn fasse qc",
+"it": "in modo che qcn faccia qcs"
+},
+{
+"key": "conjonctions:88",
+"fr": "si par exemple qn fait qc",
+"it": "se per esempio qcn fa qcs"
+},
+{
+"key": "conjonctions:89",
+"fr": "à tel point que qn fait qc",
+"it": "a tal punto che qcn fa qcs"
+},
+{
+"key": "conjonctions:91",
+"fr": "quitte à ce que qn fasse qc",
+"it": "anche se qcn faccia qcs"
+},
+{
+"key": "conjonctions:92",
+"fr": "lors même que qn fait qc",
+"it": "quand'anche qcn fa qcs"
+},
+{
+"key": "conjonctions:93",
+"fr": "en attendant que qn fasse qc",
+"it": "in attesa che qcn faccia qcs"
+},
+{
+"key": "conjonctions:94",
+"fr": "de telle façon que qn fait qc",
+"it": "in modo tale che qcn fa qcs"
+},
+{
+"key": "conjonctions:96",
+"fr": "qn fait qc malgré le fait que qn d'autre fait qc.",
+"it": "qcn fa qcs, nonostante il fatto che qcn altro fa qcs"
+},
+{
+"key": "conjonctions:97",
+"fr": "suivant que qn fait qc",
+"it": "a seconda che qcn faccia qcs"
+},
+{
+"key": "conjonctions:98",
+"fr": "dès lors que qn fait qc",
+"it": "dal momento che qcn fa qcs"
+},
+{
+"key": "conjonctions:99",
+"fr": "à mesure que qn fait qc, qn d'autre fait qc",
+"it": "man mano che qcn fa qcs, qcn altro fa qcs"
+},
+{
+"key": "prepositions:1",
+"fr": "à trente ans",
+"it": "a trent'anni"
+},
+{
+"key": "prepositions:4",
+"fr": "en mai",
+"it": "in maggio"
+},
+{
+"key": "prepositions:5",
+"fr": "de qc à qc",
+"it": "da qcs a qcs"
+},
+{
+"key": "prepositions:8",
+"fr": "plus de qc",
+"it": "più qcs"
+},
+{
+"key": "prepositions:9",
+"fr": "plus que qn",
+"it": "più di qcn"
+},
+{
+"key": "prepositions:12",
+"fr": "en plus de faire qc",
+"it": "oltre a fare qcs"
+},
+{
+"key": "prepositions:13",
+"fr": "comme pour qn",
+"it": "come per qcn"
+},
+{
+"key": "prepositions:14",
+"fr": "du fait de qc",
+"it": "a causa di qcs"
+},
+{
+"key": "prepositions:15",
+"fr": "d'où qc",
+"it": "da qui qcs"
+},
+{
+"key": "prepositions:16",
+"fr": "pour ne pas dire qc",
+"it": "per non dire qcs"
+},
+{
+"key": "prepositions:17",
+"fr": "à la merci de qc",
+"it": "in balia di qcs"
+},
+{
+"key": "prepositions:18",
+"fr": "de même que qn",
+"it": "così come qcn"
+},
+{
+"key": "prepositions:19",
+"fr": "autre que qn",
+"it": "altro che qcn"
+},
+{
+"key": "prepositions:20",
+"fr": "même pour faire qc",
+"it": "anche per fare qcs"
+},
+{
+"key": "prepositions:23",
+"fr": "vu qc",
+"it": "visto qcs"
+},
+{
+"key": "prepositions:24",
+"fr": "avant de faire qc",
+"it": "prima di fare qcs"
+},
+{
+"key": "prepositions:27",
+"fr": "d'après qn",
+"it": "secondo qcn"
+},
+{
+"key": "prepositions:28",
+"fr": "à l'avant de qc",
+"it": "davanti a qcs"
+},
+{
+"key": "prepositions:29",
+"fr": "en accord avec qc",
+"it": "d'accordo con qcs"
+},
+{
+"key": "prepositions:30",
+"fr": "de chez qn",
+"it": "da qcn"
+},
+{
+"key": "prepositions:31",
+"fr": "en même temps que qn",
+"it": "insieme a qcn"
+},
+{
+"key": "prepositions:32",
+"fr": "moins que qn",
+"it": "meno di qcn"
+},
+{
+"key": "prepositions:34",
+"fr": "à moins de faire qc",
+"it": "a meno di fare qcs"
+},
+{
+"key": "prepositions:35",
+"fr": "entre qn et qn",
+"it": "tra qcn e qcn"
+},
+{
+"key": "prepositions:36",
+"fr": "en raison de qc",
+"it": "a causa di qcs"
+},
+{
+"key": "prepositions:37",
+"fr": "au nom de qc",
+"it": "in nome di qcs"
+},
+{
+"key": "prepositions:38",
+"fr": "d'entre qn",
+"it": "tra qcn"
+},
+{
+"key": "prepositions:39",
+"fr": "de peur de faire qc",
+"it": "per paura di fare qcs"
+},
+{
+"key": "prepositions:41",
+"fr": "assez de qc",
+"it": "abbastanza qcs"
+},
+{
+"key": "prepositions:42",
+"fr": "dû à qc",
+"it": "dovuto a qcs"
+},
+{
+"key": "prepositions:45",
+"fr": "en tête de qc",
+"it": "in testa a qcs"
+},
+{
+"key": "prepositions:47",
+"fr": "de la part de qn",
+"it": "da parte di qcn"
+},
+{
+"key": "prepositions:48",
+"fr": "en tant que qn",
+"it": "come qcn"
+},
+{
+"key": "prepositions:51",
+"fr": "en cas de qc",
+"it": "in caso di qcs"
+},
+{
+"key": "prepositions:52",
+"fr": "histoire de faire qc",
+"it": "giusto per fare qcs"
+},
+{
+"key": "prepositions:53",
+"fr": "dans le cas de qc",
+"it": "nel caso di qcs"
+},
+{
+"key": "prepositions:54",
+"fr": "à l'aide de qc",
+"it": "con l'aiuto di qcs"
+},
+{
+"key": "prepositions:55",
+"fr": "à la place de qc",
+"it": "al posto di qcs"
+},
+{
+"key": "prepositions:56",
+"fr": "y compris qn",
+"it": "compreso qcn"
+},
+{
+"key": "prepositions:57",
+"fr": "de façon à faire qc",
+"it": "in modo da fare qcs"
+},
+{
+"key": "prepositions:58",
+"fr": "à l'attention de qn",
+"it": "all'attenzione di qcn"
+},
+{
+"key": "prepositions:60",
+"fr": "à la façon de qn",
+"it": "alla maniera di qcn"
+},
+{
+"key": "prepositions:61",
+"fr": "du côté de qc",
+"it": "dalle parti di qcs"
+},
+{
+"key": "prepositions:65",
+"fr": "à la suite de qc",
+"it": "in seguito a qcs"
+},
+{
+"key": "prepositions:66",
+"fr": "sur le point de faire qc",
+"it": "sul punto di fare qcs"
+},
+{
+"key": "prepositions:67",
+"fr": "juste à côté de qc",
+"it": "proprio accanto a qcs"
+},
+{
+"key": "prepositions:69",
+"fr": "en dehors de qc",
+"it": "al di fuori di qcs"
+},
+{
+"key": "prepositions:70",
+"fr": "à propos de qc",
+"it": "a proposito di qcs"
+},
+{
+"key": "prepositions:71",
+"fr": "en vue de faire qc",
+"it": "in vista di fare qcs"
+},
+{
+"key": "prepositions:72",
+"fr": "en cours de qc",
+"it": "in corso di qcs"
+},
+{
+"key": "prepositions:73",
+"fr": "de retour qqpart",
+"it": "di ritorno da qualche parte"
+},
+{
+"key": "prepositions:74",
+"fr": "au cours de qc",
+"it": "nel corso di qcs"
+},
+{
+"key": "prepositions:75",
+"fr": "faute de qc",
+"it": "in mancanza di qcs"
+},
+{
+"key": "prepositions:76",
+"fr": "en bas de qc",
+"it": "in fondo a qcs"
+},
+{
+"key": "prepositions:77",
+"fr": "au bas de qc",
+"it": "in fondo a qcs"
+},
+{
+"key": "prepositions:80",
+"fr": "au sujet de qc",
+"it": "riguardo a qcs"
+},
+{
+"key": "prepositions:82",
+"fr": "au moyen de qc",
+"it": "per mezzo di qcs"
+},
+{
+"key": "prepositions:83",
+"fr": "en haut de qc",
+"it": "in cima a qcs"
+},
+{
+"key": "prepositions:85",
+"fr": "face à qc",
+"it": "di fronte a qcs"
+},
+{
+"key": "prepositions:88",
+"fr": "du côté droit de qc",
+"it": "sul lato destro di qcs"
+},
+{
+"key": "prepositions:89",
+"fr": "en rapport avec qc",
+"it": "in rapporto con qcs"
+},
+{
+"key": "prepositions:90",
+"fr": "par rapport à qc",
+"it": "rispetto a qcs"
+},
+{
+"key": "prepositions:91",
+"fr": "à l'intérieur de qc",
+"it": "all'interno di qcs"
+},
+{
+"key": "prepositions:94",
+"fr": "par manque de qc",
+"it": "per mancanza di qcs"
+},
+{
+"key": "prepositions:95",
+"fr": "au prix de qc",
+"it": "a prezzo di qcs"
+},
+{
+"key": "prepositions:96",
+"fr": "à force de faire qc",
+"it": "a forza di fare qcs"
+},
+{
+"key": "prepositions:97",
+"fr": "d'un point de vue beau",
+"it": "da un punto di vista bello"
+},
+{
+"key": "prepositions:98",
+"fr": "du point de vue de qn",
+"it": "dal punto di vista di qcn"
+},
+{
+"key": "prepositions:99",
+"fr": "tout au long de qc",
+"it": "lungo qcs"
+},
+{
+"key": "adverbes:2",
+"fr": "qn ne fait que qc",
+"it": "qcn non fa altro che qcs"
+},
+{
+"key": "adverbes:7",
+"fr": "il y a longtemps",
+"it": "molto tempo fa"
+},
+{
+"key": "adverbes:17",
+"fr": "qn ne fait rien",
+"it": "qcn non fa niente"
+},
+{
+"key": "adverbes:19",
+"fr": "qn ne fait pas du tout",
+"it": "qcn non fa per niente"
+},
+{
+"key": "adverbes:20",
+"fr": "qn ne fait pas non plus qc.",
+"it": "qcn non fa neanche"
+},
+{
+"key": "adverbes:25",
+"fr": "pas très beau",
+"it": "non molto bello"
+},
+{
+"key": "adverbes:29",
+"fr": "qn ne fait jamais qc",
+"it": "qcn non fa mai"
+},
+{
+"key": "adverbes:43",
+"fr": "qn ne fait pas toujours qc",
+"it": "qcn non fa sempre"
+},
+{
+"key": "adverbes:94",
+"fr": "tant de choses",
+"it": "tanto tempo / tanti libri"
+},
+{
+"key": "courantes_1:0",
+"fr": "Que fait qn ?",
+"it": "Che cosa fa qcn?"
+},
+{
+"key": "courantes_1:1",
+"fr": "Et qn ?",
+"it": "E qcn?"
+},
+{
+"key": "courantes_1:2",
+"fr": "faire qc en faisant qc",
+"it": "fare qcs facendo qcs"
+},
+{
+"key": "courantes_1:3",
+"fr": "C'est qn.",
+"it": "È qcn"
+},
+{
+"key": "courantes_1:4",
+"fr": "Il est trois heures (heure).",
+"it": "Sono le tre"
+},
+{
+"key": "courantes_1:5",
+"fr": "Il est trois heures.",
+"it": "Sono le tre"
+},
+{
+"key": "courantes_1:7",
+"fr": "c'est de faire qc",
+"it": "si tratta di fare qcs"
+},
+{
+"key": "courantes_1:9",
+"fr": "Je suis italien.",
+"it": "Sono italiano"
+},
+{
+"key": "courantes_1:10",
+"fr": "Et si qn fait qc ?",
+"it": "E se qcn fa qcs?"
+},
+{
+"key": "courantes_1:11",
+"fr": "À qui est qc ?",
+"it": "Di chi è qcs?"
+},
+{
+"key": "courantes_1:12",
+"fr": "qn va faire qc.",
+"it": "qcn sta per fare qcs"
+},
+{
+"key": "courantes_1:13",
+"fr": "qn était beau",
+"it": "qcn era bello"
+},
+{
+"key": "courantes_1:16",
+"fr": "Ce n'est pas beau.",
+"it": "Non è bello"
+},
+{
+"key": "courantes_1:17",
+"fr": "Il y a qc.",
+"it": "C'è qcs / Ci sono qcs"
+},
+{
+"key": "courantes_1:19",
+"fr": "Et si on faisait qc ?",
+"it": "E se facessimo qcs?"
+},
+{
+"key": "courantes_1:22",
+"fr": "Pour moi, qn fait qc.",
+"it": "Per me, qcn fa qcs"
+},
+{
+"key": "courantes_1:23",
+"fr": "Est-ce beau ?",
+"it": "È bello?"
+},
+{
+"key": "courantes_1:24",
+"fr": "tout ce que qn fait",
+"it": "tutto quello che qcn fa"
+},
+{
+"key": "courantes_1:26",
+"fr": "Pourquoi qn fait qc ?",
+"it": "Perché qcn fa qcs?"
+},
+{
+"key": "courantes_1:28",
+"fr": "Est-ce que qn fait qc ?",
+"it": "qcn fa qcs? (intonation)"
+},
+{
+"key": "courantes_1:29",
+"fr": "Et si nous faisions qc ?",
+"it": "E se facessimo qcs?"
+},
+{
+"key": "courantes_1:31",
+"fr": "Où est qc ?",
+"it": "Dov'è qcs?"
+},
+{
+"key": "courantes_1:34",
+"fr": "Quand fait qn qc ?",
+"it": "Quando fa qcn qcs?"
+},
+{
+"key": "courantes_1:36",
+"fr": "tout ce qui fait qc (soutenu)",
+"it": "tutto ciò che fa qcs"
+},
+{
+"key": "courantes_1:38",
+"fr": "Comment fait qn qc ?",
+"it": "Come fa qcn qcs?"
+},
+{
+"key": "courantes_1:39",
+"fr": "Ce sont mes amis.",
+"it": "Sono i miei amici"
+},
+{
+"key": "courantes_1:40",
+"fr": "Qu'est-ce que qn fait ?",
+"it": "Che cosa qcn fa?"
+},
+{
+"key": "courantes_1:42",
+"fr": "Qu'est-ce que qn fait ?",
+"it": "Che cosa qcn fa?"
+},
+{
+"key": "courantes_1:43",
+"fr": "Comment est qc ?",
+"it": "Com'è qcs?"
+},
+{
+"key": "courantes_1:46",
+"fr": "Pourquoi on fait pas qc ?",
+"it": "Perché non facciamo?"
+},
+{
+"key": "courantes_1:50",
+"fr": "Je vais qqpart.",
+"it": "Vado da qualche parte"
+},
+{
+"key": "courantes_1:52",
+"fr": "On lui a fait qc.",
+"it": "Gli hanno fatto qcs"
+},
+{
+"key": "courantes_1:56",
+"fr": "Ça m'a fait faire qc.",
+"it": "Mi ha fatto fare qcs"
+},
+{
+"key": "courantes_1:59",
+"fr": "Il y a de quoi faire qc.",
+"it": "C'è di che fare qcs"
+},
+{
+"key": "courantes_1:66",
+"fr": "Je suis ici pour faire qc.",
+"it": "Sono qui per fare qcs"
+},
+{
+"key": "courantes_1:68",
+"fr": "Et maintenant, qn fait qc.",
+"it": "E adesso, qcn fa qcs"
+},
+{
+"key": "courantes_1:71",
+"fr": "Je t'ai pas dit ! qn fait qc.",
+"it": "Non ti ho detto? qcn fa qcs"
+},
+{
+"key": "courantes_1:74",
+"fr": "Je fais qc.",
+"it": "Faccio qcs"
+},
+{
+"key": "courantes_1:75",
+"fr": "Ça te va si qn fait qc ?",
+"it": "Ti va bene se qcn fa qcs?"
+},
+{
+"key": "courantes_1:77",
+"fr": "qn fait qc si ça te va.",
+"it": "qcn fa qcs, se ti va."
+},
+{
+"key": "courantes_1:83",
+"fr": "Et encore, qn fait qc.",
+"it": "E ancora, qcn fa qcs"
+},
+{
+"key": "courantes_1:84",
+"fr": "Où sont qc ?",
+"it": "Dove sono qcs?"
+},
+{
+"key": "courantes_1:94",
+"fr": "Il a besoin que qn fasse qc.",
+"it": "Ha bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_1:95",
+"fr": "J'ai besoin de qc.",
+"it": "Ho bisogno di qcs"
+},
+{
+"key": "courantes_1:96",
+"fr": "J'ai besoin de qc / Il me faut qc",
+"it": "Mi serve qcs"
+},
+{
+"key": "courantes_1:97",
+"fr": "On a besoin que qn fasse qc.",
+"it": "Abbiamo bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_1:98",
+"fr": "J'étais beau.",
+"it": "Ero bello"
+},
+{
+"key": "courantes_2:1",
+"fr": "J’ai besoin que qn fasse qc.",
+"it": "Ho bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_2:2",
+"fr": "Qu'est-ce que vous avez fait ?",
+"it": "Cosa avete fatto?"
+},
+{
+"key": "courantes_2:5",
+"fr": "Il y avait qc.",
+"it": "C'era qcs / C'erano qcs"
+},
+{
+"key": "courantes_2:7",
+"fr": "Elle a besoin que qn fasse qc.",
+"it": "Ha bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_2:9",
+"fr": "J'avais qc.",
+"it": "Avevo qcs"
+},
+{
+"key": "courantes_2:10",
+"fr": "Une fois que qn a fait qc, qn d'autre fera qc.",
+"it": "Una volta che qcn ha fatto qcs, qcn altro farà qcs"
+},
+{
+"key": "courantes_2:12",
+"fr": "qn fait qc, OK ?",
+"it": "qcn fa qcs, va bene?"
+},
+{
+"key": "courantes_2:16",
+"fr": "Avant tout, qn fait qc.",
+"it": "Innanzitutto, qcn fa qcs"
+},
+{
+"key": "courantes_2:17",
+"fr": "Tu as besoin que qn fasse qc.",
+"it": "Hai bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_2:18",
+"fr": "Je viens de qqpart.",
+"it": "Vengo da qualche parte"
+},
+{
+"key": "courantes_2:22",
+"fr": "Je suis sûr que qn fait qc.",
+"it": "Sono sicuro che qcn fa qcs"
+},
+{
+"key": "courantes_2:23",
+"fr": "Ça doit faire qc.",
+"it": "Deve fare qcs"
+},
+{
+"key": "courantes_2:36",
+"fr": "J'ai trente ans.",
+"it": "Ho trent'anni."
+},
+{
+"key": "courantes_2:37",
+"fr": "Quelle chose ?",
+"it": "Quale cosa? / Che cosa?"
+},
+{
+"key": "courantes_2:39",
+"fr": "J'aime bien qc.",
+"it": "Mi piace qcs"
+},
+{
+"key": "courantes_2:42",
+"fr": "Quelle chose fait qn ?",
+"it": "Quale cosa fa qcn?"
+},
+{
+"key": "courantes_2:45",
+"fr": "Vous avez besoin que qn fasse qc.",
+"it": "Avete bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_2:46",
+"fr": "Quel est qc ?",
+"it": "Qual è qcs?"
+},
+{
+"key": "courantes_2:52",
+"fr": "Si c'est vrai, qn fait qc.",
+"it": "Se è vero, qcn fa qcs"
+},
+{
+"key": "courantes_2:53",
+"fr": "Elle ne pense que qn fasse qc.",
+"it": "Non pensa che qcn faccia qcs"
+},
+{
+"key": "courantes_2:59",
+"fr": "d'ici le 3 mai avant le 3 mai",
+"it": "entro il 3 maggio"
+},
+{
+"key": "courantes_2:62",
+"fr": "beaucoup plus beau",
+"it": "molto più bello"
+},
+{
+"key": "courantes_2:66",
+"fr": "il y a dix ans (passé)",
+"it": "dieci anni fa"
+},
+{
+"key": "courantes_2:67",
+"fr": "Mon italien n'est pas très bon.",
+"it": "Il mio italiano non è molto buono."
+},
+{
+"key": "courantes_2:69",
+"fr": "Je ne sais pas comment le dire en italien.",
+"it": "Non so come dirlo in italiano"
+},
+{
+"key": "courantes_2:74",
+"fr": "Ça doit être qn.",
+"it": "Dev'essere qcn"
+},
+{
+"key": "courantes_2:77",
+"fr": "Que veut dire qc ?",
+"it": "Cosa vuol dire qcs?"
+},
+{
+"key": "courantes_2:80",
+"fr": "Depuis quand qn fait qc ?",
+"it": "Da quando qcn fa qcs?"
+},
+{
+"key": "courantes_2:81",
+"fr": "Ils ont besoin que qn fasse qc.",
+"it": "Hanno bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_2:90",
+"fr": "à moins que qn fasse qc",
+"it": "a meno che qcn non faccia qcs"
+},
+{
+"key": "courantes_2:94",
+"fr": "Regarde, qn fait qc.",
+"it": "Guarda, qcn fa qcs"
+},
+{
+"key": "courantes_2:95",
+"fr": "Mon nom est Paul.",
+"it": "Il mio nome è Paolo"
+},
+{
+"key": "courantes_3:4",
+"fr": "Je n'arrive pas à faire qc.",
+"it": "Non riesco a fare qcs"
+},
+{
+"key": "courantes_3:6",
+"fr": "Il doit y avoir qc.",
+"it": "Deve esserci qcs"
+},
+{
+"key": "courantes_3:7",
+"fr": "Ça a l'air beau.",
+"it": "Sembra bello"
+},
+{
+"key": "courantes_3:9",
+"fr": "De quelle couleur est qc ?",
+"it": "Di quale colore è qcs?"
+},
+{
+"key": "courantes_3:10",
+"fr": "Je ne peux pas être d'accord avec qn.",
+"it": "Non posso essere d'accordo con qcn"
+},
+{
+"key": "courantes_3:11",
+"fr": "Je vais prendre qc.",
+"it": "Prenderò qcs"
+},
+{
+"key": "courantes_3:12",
+"fr": "Maintenant que j'y pense, qn fait qc.",
+"it": "Ora che ci penso, qcn fa qcs"
+},
+{
+"key": "courantes_3:13",
+"fr": "Il a dit quelque chose comme qc.",
+"it": "Ha detto qualcosa come qcs"
+},
+{
+"key": "courantes_3:14",
+"fr": "Arrête de faire qc !",
+"it": "Smettila di fare qcs!"
+},
+{
+"key": "courantes_3:17",
+"fr": "jusqu'à ce que qn fasse qc / tant que qn fait qc",
+"it": "fino a quando qcn fa qcs"
+},
+{
+"key": "courantes_3:19",
+"fr": "Je parle italien.",
+"it": "Parlo italiano"
+},
+{
+"key": "courantes_3:21",
+"fr": "qn fait qc ou quelque chose comme ça.",
+"it": "qcn fa qcs o qualcosa del genere."
+},
+{
+"key": "courantes_3:29",
+"fr": "Je m'appelle Marco.",
+"it": "Mi chiamo Marco"
+},
+{
+"key": "courantes_3:31",
+"fr": "Je ne parle pas italien.",
+"it": "Non parlo italiano"
+},
+{
+"key": "courantes_3:35",
+"fr": "Tu connais qn ?",
+"it": "Conosci qcn?"
+},
+{
+"key": "courantes_3:37",
+"fr": "au moment où qn fait qc",
+"it": "nel momento in cui qcn fa qcs"
+},
+{
+"key": "courantes_3:38",
+"fr": "Je sens que qn fait qc.",
+"it": "Sento che qcn fa qcs"
+},
+{
+"key": "courantes_3:40",
+"fr": "J'aime beaucoup qc.",
+"it": "Mi piace molto qcs"
+},
+{
+"key": "courantes_3:43",
+"fr": "Nous avons besoin que qn fasse qc.",
+"it": "Abbiamo bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_3:49",
+"fr": "Le truc c'est de faire qc.",
+"it": "Il trucco è fare qcs"
+},
+{
+"key": "courantes_3:54",
+"fr": "Je me sens beau.",
+"it": "Mi sento bello"
+},
+{
+"key": "courantes_3:58",
+"fr": "se passer de qc",
+"it": "fare a meno di qcs"
+},
+{
+"key": "courantes_3:61",
+"fr": "Aujourd'hui on est le 3 mai. On est le 3 mai.",
+"it": "Oggi è il 3 maggio"
+},
+{
+"key": "courantes_3:64",
+"fr": "Je suis contre qc.",
+"it": "Sono contro qcs"
+},
+{
+"key": "courantes_3:68",
+"fr": "la seule chose que qn fait",
+"it": "l'unica cosa che qcn fa"
+},
+{
+"key": "courantes_3:71",
+"fr": "Ça va ça se passe bien qc ?",
+"it": "Come va qcs?"
+},
+{
+"key": "courantes_3:77",
+"fr": "Au fait, tu connais qn ?",
+"it": "A proposito, conosci qcn?"
+},
+{
+"key": "courantes_3:78",
+"fr": "Si je comprends bien, qn fait qc.",
+"it": "Se ho capito bene, qcn fa qcs"
+},
+{
+"key": "courantes_3:84",
+"fr": "Je parle un peu italien.",
+"it": "Parlo un po' d'italiano"
+},
+{
+"key": "courantes_3:86",
+"fr": "D'autre part, qn fait qc.",
+"it": "D'altra parte, qcn fa qcs"
+},
+{
+"key": "courantes_3:94",
+"fr": "Combien de temps fait qn qc ?",
+"it": "Quanto tempo fa qcn qcs?"
+},
+{
+"key": "courantes_3:95",
+"fr": "Je ne parle pas très bien italien.",
+"it": "Non parlo molto bene italiano"
+},
+{
+"key": "courantes_3:98",
+"fr": "ils étaient beaux.",
+"it": "erano belli"
+},
+{
+"key": "courantes_4:0",
+"fr": "Écoute, qn fait qc.",
+"it": "Senti, qcn fa qcs"
+},
+{
+"key": "courantes_4:8",
+"fr": "Est-ce que tu t'y connais en qc ?",
+"it": "Te ne intendi di qcs?"
+},
+{
+"key": "courantes_4:9",
+"fr": "Où est-ce que je peux trouver qc ?",
+"it": "Dove posso trovare qcs?"
+},
+{
+"key": "courantes_4:12",
+"fr": "Aujourd'hui je n'ai pas le temps de faire qc.",
+"it": "Oggi non ho tempo di fare qcs"
+},
+{
+"key": "courantes_4:16",
+"fr": "Et une dernière chose : qn fait qc.",
+"it": "E un'ultima cosa: qcn fa qcs"
+},
+{
+"key": "courantes_4:17",
+"fr": "De ce que j'ai compris, qn fait qc.",
+"it": "Da quello che ho capito, qcn fa qcs"
+},
+{
+"key": "courantes_4:19",
+"fr": "J'ai perdu qc.",
+"it": "Ho perso qcs"
+},
+{
+"key": "courantes_4:20",
+"fr": "Je suis en train de faire qc.",
+"it": "Sto facendo qcs (sto + gérondif)"
+},
+{
+"key": "courantes_4:24",
+"fr": "Comme vous le savez déjà, qn fait qc.",
+"it": "Come sapete già, qcn fa qcs"
+},
+{
+"key": "courantes_4:25",
+"fr": "Elles ont besoin que qn fasse qc.",
+"it": "Hanno bisogno che qcn faccia qcs"
+},
+{
+"key": "courantes_4:27",
+"fr": "J'espère que qn fait qc.",
+"it": "Spero che qcn faccia qcs"
+},
+{
+"key": "courantes_4:28",
+"fr": "On dirait que qn fait qc.",
+"it": "Sembra che qcn faccia qcs"
+},
+{
+"key": "courantes_4:39",
+"fr": "avoir affaire à qn / avoir à voir avec qn",
+"it": "avere a che fare con qcn"
+},
+{
+"key": "courantes_4:40",
+"fr": "à chaque fois que qn fait qc",
+"it": "ogni volta che qcn fa qcs"
+},
+{
+"key": "courantes_4:42",
+"fr": "Je suis en train de faire qc.",
+"it": "Sto facendo qcs"
+},
+{
+"key": "courantes_4:43",
+"fr": "Où se trouve qc ?",
+"it": "Dove si trova qcs?"
+},
+{
+"key": "courantes_4:44",
+"fr": "J'aimerais bien, mais qn fait qc.",
+"it": "Mi piacerebbe, ma qcn fa qcs"
+},
+{
+"key": "courantes_4:46",
+"fr": "Ça te dirait de faire qc ?",
+"it": "Ti andrebbe di fare qcs?"
+},
+{
+"key": "courantes_4:51",
+"fr": "d'un côté qc de l'autre qc",
+"it": "da un lato qcs dall'altro qcs"
+},
+{
+"key": "courantes_4:52",
+"fr": "qc, ou plutôt qc.",
+"it": "qcs, o piuttosto qcs"
+},
+{
+"key": "courantes_4:56",
+"fr": "Depuis combien de temps fait qn qc ?",
+"it": "Da quanto tempo fa qcn qcs?"
+},
+{
+"key": "courantes_4:62",
+"fr": "Est-ce qu'il y aura qc ?",
+"it": "Ci sarà qcs?"
+},
+{
+"key": "courantes_4:63",
+"fr": "À quelle heure qn fait qc ?",
+"it": "A che ora qcn fa qcs?"
+},
+{
+"key": "courantes_4:67",
+"fr": "Ça t'est déjà arrivé que qn fasse qc ?",
+"it": "Ti è mai capitato che qcn faccia qcs?"
+},
+{
+"key": "courantes_4:76",
+"fr": "Ben en fait, qn fait qc.",
+"it": "Beh, in realtà, qcn fa qcs"
+},
+{
+"key": "courantes_4:88",
+"fr": "J'aimerais mieux que qn fasse qc.",
+"it": "Preferirei che qcn facesse qcs"
+},
+{
+"key": "courantes_4:89",
+"fr": "Bon ben, qn fait qc.",
+"it": "Va beh, qcn fa qcs"
+},
+{
+"key": "courantes_4:93",
+"fr": "qc me semble beau.",
+"it": "qcs mi sembra bello"
+},
+{
+"key": "courantes_4:94",
+"fr": "Ça semble fait.",
+"it": "Sembra fatto"
+},
+{
+"key": "courantes_5:5",
+"fr": "J'adore qc.",
+"it": "Adoro qcs"
+},
+{
+"key": "courantes_5:8",
+"fr": "qn fait qc, OK ? qn fait qc, ça marche ?",
+"it": "qcn fa qcs, va bene?"
+},
+{
+"key": "courantes_5:9",
+"fr": "Ça me fait penser à qc.",
+"it": "Mi fa pensare a qcs"
+},
+{
+"key": "courantes_5:12",
+"fr": "Je travaille qqpart.",
+"it": "Lavoro da qualche parte"
+},
+{
+"key": "courantes_5:17",
+"fr": "On se fera qc.",
+"it": "Ci faremo qcs"
+},
+{
+"key": "courantes_5:18",
+"fr": "Je cherche qc.",
+"it": "Cerco qcs"
+},
+{
+"key": "courantes_5:21",
+"fr": "Cela t'est déjà arrivé de faire qc ?",
+"it": "Ti è mai capitato di fare qcs?"
+},
+{
+"key": "courantes_5:23",
+"fr": "J'aime autant faire qc.",
+"it": "Preferisco fare qcs"
+},
+{
+"key": "courantes_5:29",
+"fr": "Ni qn, ni qn.",
+"it": "Né qcn, né qcn."
+},
+{
+"key": "courantes_5:33",
+"fr": "Tu parles bien italien !",
+"it": "Parli bene l'italiano!"
+},
+{
+"key": "courantes_5:35",
+"fr": "Sauf si qn fait qc.",
+"it": "A meno che qcn faccia qcs"
+},
+{
+"key": "courantes_5:36",
+"fr": "Laisse-moi faire qc.",
+"it": "Lasciami fare qcs"
+},
+{
+"key": "courantes_5:41",
+"fr": "Est-ce que tu parles l'italien ?",
+"it": "Parli l'italiano?"
+},
+{
+"key": "courantes_5:45",
+"fr": "Qu'est-ce que ça fait si qn fait qc ? Et qu'est-ce que ça fait si qn fait qc ? Quel est le problème si qn fait qc ? Ça fait quoi si qn fait qc ? (fam)",
+"it": "Che importa se qcn fa qcs?"
+},
+{
+"key": "courantes_5:48",
+"fr": "À combien de temps se trouve qc ?",
+"it": "Quanto ci vuole per qcs?"
+},
+{
+"key": "courantes_5:55",
+"fr": "Pour commencer, qn fait qc.",
+"it": "Per cominciare, qcn fa qcs"
+},
+{
+"key": "courantes_5:56",
+"fr": "Pour revenir à qc.",
+"it": "Per tornare a qcs"
+},
+{
+"key": "courantes_5:64",
+"fr": "Je ne crois pas que qn ait raison.",
+"it": "Non credo che qcn abbia ragione."
+},
+{
+"key": "courantes_5:67",
+"fr": "Dis-moi si qn fait qc.",
+"it": "Dimmi se qcn fa qcs"
+},
+{
+"key": "courantes_5:68",
+"fr": "Où est-ce que tu as appris l'italien ?",
+"it": "Dove hai imparato l'italiano?"
+},
+{
+"key": "courantes_5:71",
+"fr": "Je déteste qc.",
+"it": "Odio qcs"
+},
+{
+"key": "courantes_5:76",
+"fr": "Vous n'aviez jamais fait qc ?",
+"it": "Non aveva mai fatto qcs?"
+},
+{
+"key": "courantes_5:79",
+"fr": "Il vaut mieux faire qc / C'est mieux",
+"it": "È meglio fare qcs"
+},
+{
+"key": "courantes_5:81",
+"fr": "Sur ce dernier point, qn fait qc.",
+"it": "Su quest'ultimo punto, qcn fa qcs"
+},
+{
+"key": "courantes_5:82",
+"fr": "Alors, qu'avez-vous pensé de qc ?",
+"it": "Allora, cosa ne ha pensato di qcs?"
+},
+{
+"key": "courantes_5:96",
+"fr": "J'ai l'impression que qn fait qc.",
+"it": "Ho l'impressione che qcn faccia qcs"
+},
+{
+"key": "courantes_6:0",
+"fr": "Je suis en effet d'accord avec qn.",
+"it": "Sono infatti d'accordo con qcn"
+},
+{
+"key": "courantes_6:2",
+"fr": "Bonjour, puis-je parler à qn ?",
+"it": "Buongiorno, posso parlare con qcn?"
+},
+{
+"key": "courantes_6:21",
+"fr": "J'essaye de faire qc.",
+"it": "Sto cercando di fare qcs"
+},
+{
+"key": "courantes_6:25",
+"fr": "On ne s'était pas déjà rencontré qqpart ?",
+"it": "Non ci siamo già visti da qualche parte?"
+},
+{
+"key": "courantes_6:43",
+"fr": "être capable de faire qc / être en mesure de faire qc",
+"it": "essere in grado di fare qcs"
+},
+{
+"key": "courantes_6:44",
+"fr": "Qu'est-ce que diable qn fait ? / Bon sang, qu'est-ce que qn fait ?",
+"it": "Che diavolo fa qcn?"
+},
+{
+"key": "courantes_6:60",
+"fr": "Vous avez l'air de vous y connaître en qc, non ?",
+"it": "Sembra che se ne intenda di qcs, no?"
+},
+{
+"key": "courantes_6:63",
+"fr": "Je dirais qc.",
+"it": "Direi qcs"
+},
+{
+"key": "courantes_6:67",
+"fr": "Je n'ai pas le même avis que vous au sujet de qc.",
+"it": "Non sono d'accordo con lei su qcs"
+},
+{
+"key": "courantes_6:74",
+"fr": "Je suis censé faire qc.",
+"it": "Dovrei fare qcs"
+},
+{
+"key": "courantes_6:76",
+"fr": "Ça paraît beau.",
+"it": "Sembra bello"
+},
+{
+"key": "courantes_6:77",
+"fr": "Ça te dérange si qn fait qc ?",
+"it": "Ti dà fastidio se qcn fa qcs?"
+},
+{
+"key": "courantes_6:84",
+"fr": "J'aime bien votre veste, où est-ce que vous l'avez achetée ?",
+"it": "Mi piace la sua giacca, dove l'ha comprata?"
+},
+{
+"key": "courantes_6:88",
+"fr": "À l'occasion, fais qc.",
+"it": "All'occorrenza, fai qcs"
+},
+{
+"key": "courantes_6:89",
+"fr": "qc a l'air intéressant.",
+"it": "qcs sembra interessante."
+},
+{
+"key": "courantes_6:90",
+"fr": "Je sais que ça paraît beau mais qn d'autre fait qc.",
+"it": "So che sembra bello ma qcn altro fa qcs"
+},
+{
+"key": "courantes_6:94",
+"fr": "Je vis qqpart.",
+"it": "Vivo da qualche parte"
+},
+{
+"key": "courantes_6:95",
+"fr": "Comment avez-vous connu qn ?",
+"it": "Come ha conosciuto qcn?"
+},
+{
+"key": "courantes_6:98",
+"fr": "Cela ne me dérange pas qu'il fasse qc.",
+"it": "Non mi dà fastidio che faccia qcs"
+},
+{
+"key": "courantes_7:1",
+"fr": "Que pensez-vous de qc ?",
+"it": "Che ne pensa di qcs?"
+},
+{
+"key": "courantes_7:7",
+"fr": "Tu ne trouves pas que qn fait qc ?",
+"it": "Non trovi che qcn faccia qcs?"
+},
+{
+"key": "courantes_7:11",
+"fr": "Savez-vous où je peux trouver qc ?",
+"it": "Sa dove posso trovare qcs?"
+},
+{
+"key": "courantes_7:18",
+"fr": "Je refuse de faire qc.",
+"it": "Mi rifiuto di fare qcs"
+},
+{
+"key": "courantes_7:22",
+"fr": "qn fait qc, vous ne trouvez pas ?",
+"it": "qcn fa qcs, non trova?"
+},
+{
+"key": "courantes_7:28",
+"fr": "J'ai failli faire qc.",
+"it": "Per poco non facevo qcs"
+},
+{
+"key": "courantes_7:31",
+"fr": "Quels sont qc ?",
+"it": "Quali sono qcs?"
+},
+{
+"key": "courantes_7:34",
+"fr": "Et que penses-tu de qc ?",
+"it": "E cosa pensi di qcs?"
+},
+{
+"key": "courantes_7:40",
+"fr": "Je me demandais si qn fait qc.",
+"it": "Mi chiedevo se qcn fa qcs"
+},
+{
+"key": "courantes_7:41",
+"fr": "Je suis né qqpart.",
+"it": "Sono nato da qualche parte"
+},
+{
+"key": "courantes_7:45",
+"fr": "Je serais ravi de faire qc.",
+"it": "Sarei felice di fare qcs"
+},
+{
+"key": "courantes_7:50",
+"fr": "Je suis né le 3 mai.",
+"it": "Sono nato il 3 maggio"
+},
+{
+"key": "courantes_7:51",
+"fr": "Quel est votre film préféré ?",
+"it": "Qual è il suo film preferito?"
+},
+{
+"key": "courantes_7:67",
+"fr": "À ma connaissance, qn fait qc.",
+"it": "Per quanto ne so, qcn fa qcs"
+},
+{
+"key": "courantes_7:70",
+"fr": "Je regrette que qn fasse qc.",
+"it": "Mi dispiace che qcn faccia qcs"
+},
+{
+"key": "courantes_7:73",
+"fr": "J'ai grandi qqpart (lieu).",
+"it": "Sono cresciuto da qualche parte"
+},
+{
+"key": "courantes_7:75",
+"fr": "Parlons plutôt de qn.",
+"it": "Parliamo piuttosto di qcn"
+},
+{
+"key": "courantes_7:77",
+"fr": "un paquet de qc (beaucoup de)",
+"it": "un sacco di qcs"
+},
+{
+"key": "courantes_7:82",
+"fr": "Ça nous dira si qn fait qc ou qc.",
+"it": "Ci dirà se qcn fa qcs o qcs."
+},
+{
+"key": "courantes_7:86",
+"fr": "un véritable qc / un vrai qc",
+"it": "un vero e proprio qcs"
+},
+{
+"key": "courantes_7:91",
+"fr": "Ça coûte dix euros.",
+"it": "Costa dieci euro."
+},
+{
+"key": "courantes_8:2",
+"fr": "Si je ne me trompe pas, qn fait qc.",
+"it": "Se non sbaglio, qcn fa qcs"
+},
+{
+"key": "courantes_8:7",
+"fr": "Un billet pour qc, s'il vous plaît.",
+"it": "Un biglietto per qcs, per favore."
+},
+{
+"key": "courantes_8:20",
+"fr": "Quant à moi, qn fait qc.",
+"it": "Quanto a me, qcn fa qcs"
+},
+{
+"key": "courantes_8:23",
+"fr": "Je suis entièrement d'accord avec qn.",
+"it": "Sono assolutamente d'accordo con qcn"
+},
+{
+"key": "courantes_8:25",
+"fr": "Je suis pas vraiment un expert, mais qn fait qc.",
+"it": "Non sono proprio un esperto, ma qcn fa qcs"
+},
+{
+"key": "courantes_8:29",
+"fr": "J'apprends l'italien.",
+"it": "Imparo l'italiano."
+},
+{
+"key": "courantes_8:34",
+"fr": "Je ne supporte pas de faire qc.",
+"it": "Non sopporto di fare qcs"
+},
+{
+"key": "courantes_8:38",
+"fr": "toutes sortes de qc",
+"it": "ogni sorta di qcs"
+},
+{
+"key": "courantes_8:49",
+"fr": "Parlez-vous italien ?",
+"it": "Parla italiano?"
+},
+{
+"key": "courantes_8:54",
+"fr": "Connaissez-vous qc ? (politesse)",
+"it": "Conosce qcs?"
+},
+{
+"key": "courantes_8:58",
+"fr": "J'en profite pour faire qc.",
+"it": "Ne approfitto per fare qcs"
+},
+{
+"key": "courantes_8:60",
+"fr": "qn fait qc, nan ?",
+"it": "qcn fa qcs, no?"
+},
+{
+"key": "courantes_8:62",
+"fr": "Comment va-t-on qqpart ?",
+"it": "Come si arriva da qualche parte?"
+},
+{
+"key": "courantes_8:63",
+"fr": "Combien coûte un billet pour qc ?",
+"it": "Quanto costa un biglietto per qcs?"
+},
+{
+"key": "courantes_8:81",
+"fr": "D'une manière générale, qn fait qc.",
+"it": "In generale, qcn fa qcs"
+},
+{
+"key": "courantes_8:88",
+"fr": "qc et qc sont presque pareils.",
+"it": "qcs e qcs sono quasi uguali."
+},
+{
+"key": "courantes_8:96",
+"fr": "N'hésite pas à faire qc.",
+"it": "Non esitare a fare qcs"
+},
+{
+"key": "courantes_9:5",
+"fr": "En l'état actuel, qn fait qc.",
+"it": "Allo stato attuale, qcn fa qcs"
+},
+{
+"key": "courantes_9:9",
+"fr": "en retrait de qc",
+"it": "arretrato rispetto a qcs"
+},
+{
+"key": "courantes_9:10",
+"fr": "Je préfèrerais que qn fasse qc.",
+"it": "Preferirei che qcn facesse qcs"
+},
+{
+"key": "courantes_9:17",
+"fr": "Connais-tu qc ?",
+"it": "Conosci qcs?"
+},
+{
+"key": "courantes_9:19",
+"fr": "J'approuve qc.",
+"it": "Approvo qcs"
+},
+{
+"key": "courantes_9:20",
+"fr": "Si ça peut te rassurer, qn fait qc.",
+"it": "Se può rassicurarti, qcn fa qcs"
+},
+{
+"key": "courantes_9:22",
+"fr": "Cela ne me dérangerait pas qu'il fasse qc.",
+"it": "Non mi dispiacerebbe se facesse qcs"
+},
+{
+"key": "courantes_9:40",
+"fr": "Comment dit-on cela en italien ?",
+"it": "Come si dice in italiano?"
+},
+{
+"key": "courantes_9:41",
+"fr": "Comment dit-on qc ?",
+"it": "Come si dice qcs?"
+},
+{
+"key": "courantes_9:42",
+"fr": "Comment dit-on qc en italien ?",
+"it": "Come si dice qcs in italiano?"
+},
+{
+"key": "courantes_9:43",
+"fr": "Désolé pour mon italien, je suis seulement débutant.",
+"it": "Scusate il mio italiano, sono solo un principiante."
+},
+{
+"key": "courantes_9:50",
+"fr": "Ne veulent-ils que qn fasse qc ?",
+"it": "Vogliono solo che qcn faccia qcs?"
+},
+{
+"key": "courantes_9:54",
+"fr": "Amenez-moi qqpart, s'il vous plaît.",
+"it": "Mi porti da qualche parte, per favore."
+},
+{
+"key": "courantes_9:58",
+"fr": "Doit-il faire qc ?",
+"it": "Deve fare qcs?"
+},
+{
+"key": "courantes_9:63",
+"fr": "J'ai confondu avec qn.",
+"it": "L'ho confuso con qcn"
+},
+{
+"key": "courantes_9:71",
+"fr": "Y aura-t-il qc ?",
+"it": "Ci sarà qcs?"
+},
+{
+"key": "courantes_9:78",
+"fr": "Je désapprouve qc.",
+"it": "Disapprovo qcs"
+},
+{
+"key": "courantes_9:81",
+"fr": "Je vais reformuler : qn fait qc.",
+"it": "Lascia che riformuli: qcn fa qcs"
+},
+{
+"key": "courantes_9:84",
+"fr": "Est-ce que t'as dejà fait qc ?",
+"it": "Hai mai fatto qcs?"
+},
+{
+"key": "courantes_9:91",
+"fr": "après avoir fait qc, qn a fait qc",
+"it": "dopo aver fatto qcs, qcn ha fatto qcs"
+},
+{
+"key": "courantes_9:92",
+"fr": "Sans indiscrétion, qn fait qc ? Sans être indiscret, qn fait qc ?",
+"it": "Senza essere indiscreto, qcn fa qcs?"
+},
+{
+"key": "courantes_10:3",
+"fr": "Je proposerais de faire qc.",
+"it": "Proporrei di fare qcs"
+},
+{
+"key": "courantes_10:7",
+"fr": "Pour ce qui est de qc. Côté qc. fam. Question qc. fam.",
+"it": "Per quanto riguarda qcs"
+},
+{
+"key": "courantes_10:9",
+"fr": "Cela vous dérangerait-il de faire qc ?",
+"it": "Le dispiacerebbe fare qcs?"
+},
+{
+"key": "courantes_10:11",
+"fr": "C'est un peu beau.",
+"it": "È un po' bello"
+},
+{
+"key": "courantes_10:13",
+"fr": "C'est comme qc.",
+"it": "È come qcs"
+},
+{
+"key": "courantes_10:15",
+"fr": "C'est peut être vrai, mais qn fait qc.",
+"it": "Forse è vero, ma qcn fa qcs"
+},
+{
+"key": "courantes_10:37",
+"fr": "C'est plus beau.",
+"it": "È piuttosto bello"
+},
+{
+"key": "courantes_10:52",
+"fr": "C'est une sorte de qc.",
+"it": "È una specie di qcs"
+},
+{
+"key": "courantes_10:63",
+"fr": "C'est ça qui me fait qc.",
+"it": "È questo che mi fa qcs"
+},
+{
+"key": "courantes_10:64",
+"fr": "C'est généralement vrai, mais qn fait qc.",
+"it": "In genere è vero, ma qcn fa qcs"
+},
+{
+"key": "courantes_10:79",
+"fr": "C'est pour cela que qn fait qc. C'est pour ça que qn fait qc.",
+"it": "È per questo che qcn fa qcs"
+},
+{
+"key": "courantes_10:88",
+"fr": "C'était beau de faire qc.",
+"it": "È stato bello fare qcs"
+},
+{
+"key": "courantes_10:93",
+"fr": "qn fait qc ?",
+"it": "qcn fa qcs? (intonation)"
+},
+{
+"key": "modales_1:0",
+"fr": "Il est beau.",
+"it": "È bello"
+},
+{
+"key": "modales_1:1",
+"fr": "On est beaux.",
+"it": "Siamo belli"
+},
+{
+"key": "modales_1:2",
+"fr": "Il a qc.",
+"it": "Ha qcs"
+},
+{
+"key": "modales_1:3",
+"fr": "Il a fait qc.",
+"it": "Ha fatto qcs (participe)"
+},
+{
+"key": "modales_1:4",
+"fr": "On a qc.",
+"it": "Abbiamo qcs"
+},
+{
+"key": "modales_1:5",
+"fr": "On a fait qc.",
+"it": "Abbiamo fatto qcs (participe)"
+},
+{
+"key": "modales_1:6",
+"fr": "J'ai qc.",
+"it": "Ho qcs"
+},
+{
+"key": "modales_1:7",
+"fr": "J'ai fait qc.",
+"it": "Ho fatto qcs (participe)"
+},
+{
+"key": "modales_1:8",
+"fr": "Elle est belle.",
+"it": "È bella"
+},
+{
+"key": "modales_1:9",
+"fr": "On vous a fait qc.",
+"it": "Vi hanno fatto qcs (participe)"
+},
+{
+"key": "modales_1:10",
+"fr": "Je suis beau.",
+"it": "Sono bello"
+},
+{
+"key": "modales_1:11",
+"fr": "Elle a qc.",
+"it": "Ha qcs"
+},
+{
+"key": "modales_1:12",
+"fr": "Elle a fait qc.",
+"it": "Ha fatto qcs (participe)"
+},
+{
+"key": "modales_1:13",
+"fr": "Il n'est pas beau.",
+"it": "Non è bello"
+},
+{
+"key": "modales_1:14",
+"fr": "On n'est pas beaux.",
+"it": "Non siamo belli"
+},
+{
+"key": "modales_1:15",
+"fr": "Je n'ai pas qc.",
+"it": "Non ho qcs"
+},
+{
+"key": "modales_1:16",
+"fr": "Tu as qc.",
+"it": "Hai qcs"
+},
+{
+"key": "modales_1:17",
+"fr": "Il n'a pas de qc.",
+"it": "Non ha qcs"
+},
+{
+"key": "modales_1:18",
+"fr": "Il était beau.",
+"it": "Era bello"
+},
+{
+"key": "modales_1:19",
+"fr": "Tu as fait qc.",
+"it": "Hai fatto qcs (participe)"
+},
+{
+"key": "modales_1:20",
+"fr": "Je sais faire qc.",
+"it": "So fare qcs"
+},
+{
+"key": "modales_1:21",
+"fr": "On nous a fait qc.",
+"it": "Ci hanno fatto qcs (participe)"
+},
+{
+"key": "modales_1:22",
+"fr": "Je ne suis pas beau.",
+"it": "Non sono bello"
+},
+{
+"key": "modales_1:23",
+"fr": "On n'a pas de qc.",
+"it": "Non abbiamo qcs"
+},
+{
+"key": "modales_1:24",
+"fr": "On était beaux.",
+"it": "Eravamo belli"
+},
+{
+"key": "modales_1:25",
+"fr": "Tu sais faire qc.",
+"it": "Sai fare qcs"
+},
+{
+"key": "modales_1:26",
+"fr": "Elle n'est pas belle.",
+"it": "Non è bella"
+},
+{
+"key": "modales_1:27",
+"fr": "On t'a fait qc.",
+"it": "Ti hanno fatto qcs (participe)"
+},
+{
+"key": "modales_1:28",
+"fr": "Je veux qc.",
+"it": "Voglio qcs"
+},
+{
+"key": "modales_1:29",
+"fr": "Je veux faire qc.",
+"it": "Voglio fare qcs"
+},
+{
+"key": "modales_1:30",
+"fr": "Je sais que qn fait qc.",
+"it": "So che qcn fa qcs"
+},
+{
+"key": "modales_1:31",
+"fr": "On m'a fait qc.",
+"it": "Mi hanno fatto qcs (participe)"
+},
+{
+"key": "modales_1:32",
+"fr": "Tu veux qc.",
+"it": "Vuoi qcs"
+},
+{
+"key": "modales_1:33",
+"fr": "Tu veux faire qc.",
+"it": "Vuoi fare qcs"
+},
+{
+"key": "modales_1:34",
+"fr": "Est-ce que qn fait qc ?",
+"it": "qcn fa qcs? (intonation)"
+},
+{
+"key": "modales_1:35",
+"fr": "Tu sais que qn fait qc.",
+"it": "Sai che qcn fa qcs"
+},
+{
+"key": "modales_1:36",
+"fr": "Je veux que qn fasse qc.",
+"it": "Voglio che qcn faccia qcs"
+},
+{
+"key": "modales_1:37",
+"fr": "Elle n'a pas de qc.",
+"it": "Non ha qcs"
+},
+{
+"key": "modales_1:38",
+"fr": "Elle était belle.",
+"it": "Era bella"
+},
+{
+"key": "modales_1:39",
+"fr": "Tu es beau.",
+"it": "Sei bello"
+},
+{
+"key": "modales_1:40",
+"fr": "Tu veux que qn fasse qc.",
+"it": "Vuoi che qcn faccia qcs"
+},
+{
+"key": "modales_1:41",
+"fr": "Je peux faire qc.",
+"it": "Posso fare qcs"
+},
+{
+"key": "modales_1:42",
+"fr": "Tu n'as pas qc.",
+"it": "Non hai qcs"
+},
+{
+"key": "modales_1:43",
+"fr": "Tu peux faire qc.",
+"it": "Puoi fare qcs"
+},
+{
+"key": "modales_1:44",
+"fr": "Je ne veux pas faire qc.",
+"it": "Non voglio fare qcs"
+},
+{
+"key": "modales_1:45",
+"fr": "Je vais faire qc.",
+"it": "Sto per fare qcs / (futur)"
+},
+{
+"key": "modales_1:46",
+"fr": "Il n'y a pas de qc.",
+"it": "Non c'è qcs / Non ci sono qcs"
+},
+{
+"key": "modales_1:47",
+"fr": "Je ne sais pas que qn fait qc.",
+"it": "Non so che qcn fa qcs"
+},
+{
+"key": "modales_1:48",
+"fr": "Vous avez qc.",
+"it": "Avete qcs"
+},
+{
+"key": "modales_1:49",
+"fr": "Tu ne veux pas faire qc.",
+"it": "Non vuoi fare qcs"
+},
+{
+"key": "modales_1:50",
+"fr": "Vous avez fait qc.",
+"it": "Avete fatto qcs (participe)"
+},
+{
+"key": "modales_1:51",
+"fr": "Vous avez fait qc. (pol)",
+"it": "Ha fatto qcs (participe, Lei)"
+},
+{
+"key": "modales_1:52",
+"fr": "Tu ne sais pas que qn fait qc.",
+"it": "Non sai che qcn fa qcs"
+},
+{
+"key": "modales_1:53",
+"fr": "On lui a fait qc.",
+"it": "Gli hanno fatto qcs (participe)"
+},
+{
+"key": "modales_1:54",
+"fr": "Je ne veux pas que qn fasse qc.",
+"it": "Non voglio che qcn faccia qcs"
+},
+{
+"key": "modales_1:56",
+"fr": "Tu ne veux pas que qn fasse qc.",
+"it": "Non vuoi che qcn faccia qcs"
+},
+{
+"key": "modales_1:57",
+"fr": "Je ne peux pas faire qc.",
+"it": "Non posso fare qcs"
+},
+{
+"key": "modales_1:58",
+"fr": "Tu n'es pas beau.",
+"it": "Non sei bello"
+},
+{
+"key": "modales_1:59",
+"fr": "Tu ne peux pas faire qc.",
+"it": "Non puoi fare qcs"
+},
+{
+"key": "modales_1:60",
+"fr": "Je ne vais pas faire qc.",
+"it": "Non farò qcs (futur)"
+},
+{
+"key": "modales_1:61",
+"fr": "Il n'y a plus de qc.",
+"it": "Non c'è più qcs"
+},
+{
+"key": "modales_1:62",
+"fr": "qc a été fait.",
+"it": "qcs è stato fatto (participe)"
+},
+{
+"key": "modales_1:63",
+"fr": "Ils sont beaux.",
+"it": "Sono belli"
+},
+{
+"key": "modales_1:64",
+"fr": "Vous n'avez pas de qc.",
+"it": "Non avete qcs"
+},
+{
+"key": "modales_1:65",
+"fr": "Il peut faire qc.",
+"it": "Può fare qcs"
+},
+{
+"key": "modales_1:66",
+"fr": "Vous êtes beaux.",
+"it": "Siete belli (Lei : è bello)"
+},
+{
+"key": "modales_1:67",
+"fr": "On peut faire qc.",
+"it": "Si può fare qcs / Possiamo fare qcs"
+},
+{
+"key": "modales_1:68",
+"fr": "Ils ont qc.",
+"it": "Hanno qcs"
+},
+{
+"key": "modales_1:69",
+"fr": "Ils ne sont pas beaux.",
+"it": "Non sono belli"
+},
+{
+"key": "modales_1:70",
+"fr": "Ils ont fait qc.",
+"it": "Hanno fatto qcs (participe)"
+},
+{
+"key": "modales_1:72",
+"fr": "Elle peut faire qc.",
+"it": "Può fare qcs"
+},
+{
+"key": "modales_1:73",
+"fr": "Il ne peut pas faire qc.",
+"it": "Non può fare qcs"
+},
+{
+"key": "modales_1:74",
+"fr": "Je dois faire qc.",
+"it": "Devo fare qcs"
+},
+{
+"key": "modales_1:75",
+"fr": "On ne peut pas faire qc.",
+"it": "Non si può fare qcs / Non possiamo fare qcs"
+},
+{
+"key": "modales_1:76",
+"fr": "Il avait qc.",
+"it": "Aveva qcs"
+},
+{
+"key": "modales_1:77",
+"fr": "Il faut faire qc.",
+"it": "Bisogna fare qcs"
+},
+{
+"key": "modales_1:78",
+"fr": "Est-ce que je peux faire qc ?",
+"it": "Posso fare qcs?"
+},
+{
+"key": "modales_1:79",
+"fr": "Vous n'êtes pas beaux.",
+"it": "Non siete belli"
+},
+{
+"key": "modales_1:80",
+"fr": "Tu dois faire qc.",
+"it": "Devi fare qcs"
+},
+{
+"key": "modales_1:81",
+"fr": "On avait qc.",
+"it": "Avevamo qcs"
+},
+{
+"key": "modales_1:82",
+"fr": "Il faut que qn fasse qc.",
+"it": "Bisogna che qcn faccia qcs"
+},
+{
+"key": "modales_1:83",
+"fr": "Il a besoin de qc.",
+"it": "Ha bisogno di qcs"
+},
+{
+"key": "modales_1:84",
+"fr": "Elle ne peut pas faire qc.",
+"it": "Non può fare qcs"
+},
+{
+"key": "modales_1:85",
+"fr": "Ils n'ont pas qc.",
+"it": "Non hanno qcs"
+},
+{
+"key": "modales_1:86",
+"fr": "On a besoin de qn.",
+"it": "Abbiamo bisogno di qcn"
+},
+{
+"key": "modales_1:87",
+"fr": "Elle avait qc.",
+"it": "Aveva qcs"
+},
+{
+"key": "modales_1:88",
+"fr": "J'ai besoin de faire qc.",
+"it": "Ho bisogno di fare qcs"
+},
+{
+"key": "modales_1:89",
+"fr": "Ils n'ont pas de qc.",
+"it": "Non hanno qcs"
+},
+{
+"key": "modales_1:90",
+"fr": "Tu étais beau.",
+"it": "Eri bello"
+},
+{
+"key": "modales_1:91",
+"fr": "Je n'ai pas encore fait qc.",
+"it": "Non ho ancora fatto qcs (participe)"
+},
+{
+"key": "modales_1:92",
+"fr": "Elle a besoin de qc.",
+"it": "Ha bisogno di qcs"
+},
+{
+"key": "modales_1:93",
+"fr": "Tu avais qc.",
+"it": "Avevi qcs"
+},
+{
+"key": "modales_1:94",
+"fr": "Il n'a pas besoin de qc.",
+"it": "Non ha bisogno di qcs"
+},
+{
+"key": "modales_1:95",
+"fr": "Je n'ai pas besoin de qc.",
+"it": "Non ho bisogno di qcs"
+},
+{
+"key": "modales_1:96",
+"fr": "Je pense que qn fait qc.",
+"it": "Penso che qcn faccia qcs"
+},
+{
+"key": "modales_1:97",
+"fr": "Tu crois que qn fait qc ?",
+"it": "Credi che qcn faccia qcs?"
+},
+{
+"key": "modales_1:98",
+"fr": "Il aime qc.",
+"it": "Gli piace qcs"
+},
+{
+"key": "modales_1:99",
+"fr": "Tu as besoin de qc.",
+"it": "Hai bisogno di qcs"
+},
+{
+"key": "modales_2:0",
+"fr": "On n'a pas besoin de qc.",
+"it": "Non abbiamo bisogno di qcs"
+},
+{
+"key": "modales_2:1",
+"fr": "Tu crois que qn fait qc.",
+"it": "Credi che qcn faccia qcs"
+},
+{
+"key": "modales_2:2",
+"fr": "Il aime faire qc.",
+"it": "Gli piace fare qcs"
+},
+{
+"key": "modales_2:3",
+"fr": "J'aime qc.",
+"it": "Mi piace qcs"
+},
+{
+"key": "modales_2:4",
+"fr": "J'aime faire qc.",
+"it": "Mi piace fare qcs"
+},
+{
+"key": "modales_2:5",
+"fr": "On aime qc.",
+"it": "Ci piace qcs"
+},
+{
+"key": "modales_2:6",
+"fr": "On aime faire qc.",
+"it": "Ci piace fare qcs"
+},
+{
+"key": "modales_2:7",
+"fr": "Je pense à qn.",
+"it": "Penso a qcn"
+},
+{
+"key": "modales_2:8",
+"fr": "Il doit faire qc.",
+"it": "Deve fare qcs"
+},
+{
+"key": "modales_2:9",
+"fr": "Il pense que qn fait qc.",
+"it": "Pensa che qcn faccia qcs"
+},
+{
+"key": "modales_2:10",
+"fr": "Il veut faire qc.",
+"it": "Vuole fare qcs"
+},
+{
+"key": "modales_2:11",
+"fr": "Il veut qc.",
+"it": "Vuole qcs"
+},
+{
+"key": "modales_2:12",
+"fr": "Il pense à qc.",
+"it": "Pensa a qcs"
+},
+{
+"key": "modales_2:13",
+"fr": "On doit faire qc.",
+"it": "Dobbiamo fare qcs"
+},
+{
+"key": "modales_2:14",
+"fr": "Elle n'a pas besoin de qc.",
+"it": "Non ha bisogno di qcs"
+},
+{
+"key": "modales_2:15",
+"fr": "Je ne crois pas que qn fasse qc.",
+"it": "Non credo che qcn faccia qcs"
+},
+{
+"key": "modales_2:16",
+"fr": "On pense que qn fait qc.",
+"it": "Pensiamo che qcn faccia qcs"
+},
+{
+"key": "modales_2:17",
+"fr": "On veut qc.",
+"it": "Vogliamo qcs"
+},
+{
+"key": "modales_2:18",
+"fr": "On veut faire qc.",
+"it": "Vogliamo fare qcs"
+},
+{
+"key": "modales_2:19",
+"fr": "On pense à qn.",
+"it": "Pensiamo a qcn"
+},
+{
+"key": "modales_2:20",
+"fr": "Elle aime qc.",
+"it": "Le piace qcs"
+},
+{
+"key": "modales_2:21",
+"fr": "Tu ne crois pas que qn fasse qc.",
+"it": "Non credi che qcn faccia qcs"
+},
+{
+"key": "modales_2:22",
+"fr": "Il veut que qn fasse qc.",
+"it": "Vuole che qcn faccia qcs"
+},
+{
+"key": "modales_2:23",
+"fr": "Elle aime faire qc.",
+"it": "Le piace fare qcs"
+},
+{
+"key": "modales_2:24",
+"fr": "On leur a fait qc.",
+"it": "Gli hanno fatto qcs (participe)"
+},
+{
+"key": "modales_2:25",
+"fr": "Je n'aime pas qc.",
+"it": "Non mi piace qcs"
+},
+{
+"key": "modales_2:26",
+"fr": "Je n'aime pas faire qc.",
+"it": "Non mi piace fare qcs"
+},
+{
+"key": "modales_2:27",
+"fr": "Tu n'as pas besoin de qc.",
+"it": "Non hai bisogno di qcs"
+},
+{
+"key": "modales_2:28",
+"fr": "Elle pense que qn fait qc.",
+"it": "Pensa che qcn faccia qcs"
+},
+{
+"key": "modales_2:29",
+"fr": "Je ne pense pas que qn fasse qc.",
+"it": "Non penso che qcn faccia qcs"
+},
+{
+"key": "modales_2:30",
+"fr": "On veut que qn fasse qc.",
+"it": "Vogliamo che qcn faccia qcs"
+},
+{
+"key": "modales_2:31",
+"fr": "Elle doit faire qc.",
+"it": "Deve fare qcs"
+},
+{
+"key": "modales_2:32",
+"fr": "Il ne pense pas que qn fasse qc.",
+"it": "Non pensa che qcn faccia qcs"
+},
+{
+"key": "modales_2:33",
+"fr": "Il ne veut pas qc.",
+"it": "Non vuole qcs"
+},
+{
+"key": "modales_2:34",
+"fr": "Il ne veut pas faire qc.",
+"it": "Non vuole fare qcs"
+},
+{
+"key": "modales_2:35",
+"fr": "Elle veut qc.",
+"it": "Vuole qcs"
+},
+{
+"key": "modales_2:36",
+"fr": "Elle veut faire qc.",
+"it": "Vuole fare qcs"
+},
+{
+"key": "modales_2:37",
+"fr": "Elle pense à qn.",
+"it": "Pensa a qcn"
+},
+{
+"key": "modales_2:38",
+"fr": "Vous avez besoin de qc.",
+"it": "Avete bisogno di qcs"
+},
+{
+"key": "modales_2:39",
+"fr": "On ne pense pas que qn fasse qc.",
+"it": "Non pensiamo che qcn faccia qcs"
+},
+{
+"key": "modales_2:40",
+"fr": "On ne veut pas qc.",
+"it": "Non vogliamo qcs"
+},
+{
+"key": "modales_2:41",
+"fr": "On ne veut pas faire qc.",
+"it": "Non vogliamo fare qcs"
+},
+{
+"key": "modales_2:42",
+"fr": "Il ne veut pas que qn fasse qc.",
+"it": "Non vuole che qcn faccia qcs"
+},
+{
+"key": "modales_2:43",
+"fr": "Elle veut que qn fasse qc.",
+"it": "Vuole che qcn faccia qcs"
+},
+{
+"key": "modales_2:44",
+"fr": "Elle ne pense pas que qn fasse qc.",
+"it": "Non pensa che qcn faccia qcs"
+},
+{
+"key": "modales_2:45",
+"fr": "On ne veut pas que qn fasse qc.",
+"it": "Non vogliamo che qcn faccia qcs"
+},
+{
+"key": "modales_2:46",
+"fr": "Elle ne veut pas qc.",
+"it": "Non vuole qcs"
+},
+{
+"key": "modales_2:47",
+"fr": "Elle ne veut pas faire qc.",
+"it": "Non vuole fare qcs"
+},
+{
+"key": "modales_2:48",
+"fr": "Elle ne veut pas que qn fasse qc.",
+"it": "Non vuole che qcn faccia qcs"
+},
+{
+"key": "modales_2:49",
+"fr": "Vous n'avez pas besoin de qc.",
+"it": "Non avete bisogno di qcs"
+},
+{
+"key": "modales_2:50",
+"fr": "Nous avons qc.",
+"it": "Abbiamo qcs"
+},
+{
+"key": "modales_2:51",
+"fr": "Nous avons fait qc.",
+"it": "Abbiamo fatto qcs (participe)"
+},
+{
+"key": "modales_2:52",
+"fr": "Ils ont besoin de qc.",
+"it": "Hanno bisogno di qcs"
+},
+{
+"key": "modales_2:53",
+"fr": "Nous n'avons pas de qc.",
+"it": "Non abbiamo qcs"
+},
+{
+"key": "modales_2:54",
+"fr": "Ils n'ont pas besoin de qn.",
+"it": "Non hanno bisogno di qcn"
+},
+{
+"key": "modales_2:55",
+"fr": "Vous voulez qc.",
+"it": "Volete qcs"
+},
+{
+"key": "modales_2:56",
+"fr": "Vous voulez faire qc.",
+"it": "Volete fare qcs"
+},
+{
+"key": "modales_2:57",
+"fr": "Vous voulez que qn fasse qc.",
+"it": "Volete che qcn faccia qcs"
+},
+{
+"key": "modales_2:58",
+"fr": "Vous savez faire qc.",
+"it": "Sapete fare qcs"
+},
+{
+"key": "modales_2:59",
+"fr": "Vous savez que qn fait qc.",
+"it": "Sapete che qcn fa qcs"
+},
+{
+"key": "modales_2:60",
+"fr": "Vous ne voulez pas qc.",
+"it": "Non volete qcs"
+},
+{
+"key": "modales_2:61",
+"fr": "Vous ne voulez pas faire qc.",
+"it": "Non volete fare qcs"
+},
+{
+"key": "modales_2:62",
+"fr": "qn a dû faire qc.",
+"it": "qcn ha dovuto fare qcs"
+},
+{
+"key": "modales_2:63",
+"fr": "Vous ne voulez pas que qn fasse qc.",
+"it": "Non volete che qcn faccia qcs"
+},
+{
+"key": "modales_2:64",
+"fr": "Il sait faire qc.",
+"it": "Sa fare qcs"
+},
+{
+"key": "modales_2:65",
+"fr": "On sait faire qc.",
+"it": "Sappiamo fare qcs"
+},
+{
+"key": "modales_2:66",
+"fr": "Il sait que qn fait qc.",
+"it": "Sa che qcn fa qcs"
+},
+{
+"key": "modales_2:67",
+"fr": "Nous sommes beaux.",
+"it": "Siamo belli"
+},
+{
+"key": "modales_2:68",
+"fr": "On sait que qn fait qc.",
+"it": "Si sa che qcn fa qcs / Sappiamo che qcn fa qcs"
+},
+{
+"key": "modales_2:69",
+"fr": "Vous ne savez pas que qn fait qc.",
+"it": "Non sapete che qcn fa qcs"
+},
+{
+"key": "modales_2:70",
+"fr": "Elle sait faire qc.",
+"it": "Sa fare qcs"
+},
+{
+"key": "modales_2:71",
+"fr": "Il ne sait pas que qn fait qc.",
+"it": "Non sa che qcn fa qcs"
+},
+{
+"key": "modales_2:72",
+"fr": "Elle sait que qn fait qc.",
+"it": "Sa che qcn fa qcs"
+},
+{
+"key": "modales_2:73",
+"fr": "Je connais qn.",
+"it": "Conosco qcn"
+},
+{
+"key": "modales_2:74",
+"fr": "On ne sait pas que qn fait qc.",
+"it": "Non si sa che qcn fa qcs / Non sappiamo che qcn fa qcs"
+},
+{
+"key": "modales_2:75",
+"fr": "Nous ne sommes pas beaux.",
+"it": "Non siamo belli"
+},
+{
+"key": "modales_2:76",
+"fr": "Elle ne sait pas que qn fait qc.",
+"it": "Non sa che qcn fa qcs"
+},
+{
+"key": "modales_2:77",
+"fr": "Vous pouvez faire qc.",
+"it": "Potete fare qcs (Lei : può fare qcs)"
+},
+{
+"key": "modales_2:78",
+"fr": "Je ne connais pas qc.",
+"it": "Non conosco qcs"
+},
+{
+"key": "modales_2:79",
+"fr": "Nous avons besoin de qc.",
+"it": "Abbiamo bisogno di qcs"
+},
+{
+"key": "modales_2:80",
+"fr": "Vous ne pouvez pas faire qc.",
+"it": "Non potete fare qcs"
+},
+{
+"key": "modales_2:81",
+"fr": "Nous n'avons pas besoin de qc.",
+"it": "Non abbiamo bisogno di qcs"
+},
+{
+"key": "modales_2:82",
+"fr": "Elles sont belles.",
+"it": "Sono belle"
+},
+{
+"key": "modales_2:83",
+"fr": "Je devrais faire qc.",
+"it": "Dovrei fare qcs"
+},
+{
+"key": "modales_2:84",
+"fr": "Elles ont qc.",
+"it": "Hanno qcs"
+},
+{
+"key": "modales_2:85",
+"fr": "Elles ne sont pas belles.",
+"it": "Non sono belle"
+},
+{
+"key": "modales_2:86",
+"fr": "Elles ont fait qc.",
+"it": "Hanno fatto qcs (participe)"
+},
+{
+"key": "modales_2:87",
+"fr": "Avez-vous qc ?",
+"it": "Avete qcs? (Lei : ha qcs?)"
+},
+{
+"key": "modales_2:88",
+"fr": "Elles n'ont pas de qc.",
+"it": "Non hanno qcs"
+},
+{
+"key": "modales_2:89",
+"fr": "Je pourrais faire qc.",
+"it": "Potrei fare qcs"
+},
+{
+"key": "modales_2:90",
+"fr": "Est-il beau ?",
+"it": "È bello?"
+},
+{
+"key": "modales_2:91",
+"fr": "Ils étaient beaux.",
+"it": "Erano belli"
+},
+{
+"key": "modales_2:92",
+"fr": "J'aimerais qc.",
+"it": "Vorrei qcs / Mi piacerebbe qcs"
+},
+{
+"key": "modales_2:93",
+"fr": "J'aimerais faire qc.",
+"it": "Mi piacerebbe fare qcs"
+},
+{
+"key": "modales_2:94",
+"fr": "As-tu qc ?",
+"it": "Hai qcs?"
+},
+{
+"key": "modales_2:95",
+"fr": "Est-ce que je pourrais faire qc ?",
+"it": "Potrei fare qcs?"
+},
+{
+"key": "modales_2:96",
+"fr": "Elles ont besoin de qc.",
+"it": "Hanno bisogno di qcs"
+},
+{
+"key": "modales_2:97",
+"fr": "J'espère que qn fait qc.",
+"it": "Spero che qcn faccia qcs"
+},
+{
+"key": "modales_2:98",
+"fr": "J'aimerais que qn fasse qc.",
+"it": "Vorrei che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_2:99",
+"fr": "Elles n'ont pas besoin de qn.",
+"it": "Non hanno bisogno di qcn"
+},
+{
+"key": "modales_3:0",
+"fr": "Avez-vous besoin de qc ?",
+"it": "Avete bisogno di qcs? (Lei : ha bisogno di qcs?)"
+},
+{
+"key": "modales_3:1",
+"fr": "J'aurais pu faire qc.",
+"it": "Avrei potuto fare qcs"
+},
+{
+"key": "modales_3:2",
+"fr": "J'aurais dû faire qc.",
+"it": "Avrei dovuto fare qcs"
+},
+{
+"key": "modales_3:3",
+"fr": "A-t-il qc ?",
+"it": "Ha qcs?"
+},
+{
+"key": "modales_3:4",
+"fr": "Y a-t-il qc ?",
+"it": "C'è qcs? / Ci sono qcs?"
+},
+{
+"key": "modales_3:5",
+"fr": "Vous devez faire qc.",
+"it": "Dovete fare qcs (Lei : deve fare qcs)"
+},
+{
+"key": "modales_3:6",
+"fr": "Tu penses que qn fait qc.",
+"it": "Pensi che qcn faccia qcs"
+},
+{
+"key": "modales_3:7",
+"fr": "Tu penses à qc.",
+"it": "Pensi a qcs"
+},
+{
+"key": "modales_3:8",
+"fr": "As-tu besoin de qc ?",
+"it": "Hai bisogno di qcs?"
+},
+{
+"key": "modales_3:9",
+"fr": "Vous ne devez pas faire qc.",
+"it": "Non dovete fare qcs"
+},
+{
+"key": "modales_3:10",
+"fr": "Tu ne penses pas que qn fasse qc.",
+"it": "Non pensi che qcn faccia qcs"
+},
+{
+"key": "modales_3:11",
+"fr": "A-t-il besoin de qc ?",
+"it": "Ha bisogno di qcs?"
+},
+{
+"key": "modales_3:12",
+"fr": "J'ai envie de faire qc.",
+"it": "Ho voglia di fare qcs"
+},
+{
+"key": "modales_3:13",
+"fr": "Êtes-vous beaux ?",
+"it": "Siete belli? (Lei : è bello?)"
+},
+{
+"key": "modales_3:14",
+"fr": "Je voudrais qc.",
+"it": "Vorrei qcs"
+},
+{
+"key": "modales_3:15",
+"fr": "Je voudrais faire qc.",
+"it": "Vorrei fare qcs"
+},
+{
+"key": "modales_3:16",
+"fr": "Es-tu beau ?",
+"it": "Sei bello?"
+},
+{
+"key": "modales_3:17",
+"fr": "Elles étaient belles.",
+"it": "Erano belle"
+},
+{
+"key": "modales_3:18",
+"fr": "Je voudrais que qn fasse qc.",
+"it": "Vorrei che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_3:19",
+"fr": "Vous étiez beaux.",
+"it": "Eravate belli"
+},
+{
+"key": "modales_3:20",
+"fr": "Ils peuvent faire qc.",
+"it": "Possono fare qcs"
+},
+{
+"key": "modales_3:21",
+"fr": "Tu aimes qc.",
+"it": "Ti piace qcs"
+},
+{
+"key": "modales_3:22",
+"fr": "Vous pensez que qn fait qc.",
+"it": "Pensate che qcn faccia qcs"
+},
+{
+"key": "modales_3:23",
+"fr": "Vous ne pensez pas que qn fasse qc.",
+"it": "Non pensate che qcn faccia qcs"
+},
+{
+"key": "modales_3:24",
+"fr": "Ils ne peuvent pas faire qc.",
+"it": "Non possono fare qcs"
+},
+{
+"key": "modales_3:25",
+"fr": "Puis-je faire qc ?",
+"it": "Posso fare qcs?"
+},
+{
+"key": "modales_3:26",
+"fr": "Tu aimes faire qc.",
+"it": "Ti piace fare qcs"
+},
+{
+"key": "modales_3:27",
+"fr": "Vous pensez à qc.",
+"it": "Pensate a qcs"
+},
+{
+"key": "modales_3:28",
+"fr": "Nous devons faire qc.",
+"it": "Dobbiamo fare qcs"
+},
+{
+"key": "modales_3:29",
+"fr": "J'allais faire qc.",
+"it": "Stavo per fare qcs"
+},
+{
+"key": "modales_3:30",
+"fr": "Ils veulent qc.",
+"it": "Vogliono qcs"
+},
+{
+"key": "modales_3:31",
+"fr": "Ils veulent faire qc.",
+"it": "Vogliono fare qcs"
+},
+{
+"key": "modales_3:32",
+"fr": "Ils veulent que qn fasse qc.",
+"it": "Vogliono che qcn faccia qcs"
+},
+{
+"key": "modales_3:33",
+"fr": "Ils ne veulent pas qc.",
+"it": "Non vogliono qcs"
+},
+{
+"key": "modales_3:34",
+"fr": "Ils ne veulent pas faire qc.",
+"it": "Non vogliono fare qcs"
+},
+{
+"key": "modales_3:35",
+"fr": "Ils ne veulent pas que qn fasse qc.",
+"it": "Non vogliono che qcn faccia qcs"
+},
+{
+"key": "modales_3:36",
+"fr": "Voulez-vous faire qc ?",
+"it": "Vuole fare qcs? (Lei)"
+},
+{
+"key": "modales_3:37",
+"fr": "Voulez-vous que qn fasse qc ?",
+"it": "Vuole che qcn faccia qcs? (Lei, subjonctif)"
+},
+{
+"key": "modales_3:38",
+"fr": "Voulez-vous qc ?",
+"it": "Vuole qcs? (Lei)"
+},
+{
+"key": "modales_3:39",
+"fr": "Voulez-vous que qn fasse qc ? (pluriel)",
+"it": "Volete che qcn faccia qcs?"
+},
+{
+"key": "modales_3:40",
+"fr": "Voulez-vous faire qc ? (pluriel)",
+"it": "Volete fare qcs?"
+},
+{
+"key": "modales_3:41",
+"fr": "Voulez-vous qc ? (plu)",
+"it": "Volete qcs?"
+},
+{
+"key": "modales_3:42",
+"fr": "Ne voulez-vous pas qc ?",
+"it": "Non volete qcs?"
+},
+{
+"key": "modales_3:43",
+"fr": "Ne voulez-vous pas faire qc ?",
+"it": "Non volete fare qcs?"
+},
+{
+"key": "modales_3:44",
+"fr": "Ne voulez-vous pas que qn fasse qc ?",
+"it": "Non volete che qcn faccia qcs?"
+},
+{
+"key": "modales_3:45",
+"fr": "Vous aviez qc. (plu)",
+"it": "Avevate qcs"
+},
+{
+"key": "modales_3:46",
+"fr": "Vous aviez qc. (pol)",
+"it": "Aveva qcs (Lei)"
+},
+{
+"key": "modales_3:47",
+"fr": "Elles peuvent faire qc.",
+"it": "Possono fare qcs"
+},
+{
+"key": "modales_3:48",
+"fr": "Ils avaient qc.",
+"it": "Avevano qcs"
+},
+{
+"key": "modales_3:49",
+"fr": "Ne veux-tu pas que qn fasse qc ?",
+"it": "Non vuoi che qcn faccia qcs?"
+},
+{
+"key": "modales_3:50",
+"fr": "Veux-tu qc ?",
+"it": "Vuoi qcs?"
+},
+{
+"key": "modales_3:51",
+"fr": "Veux-tu faire qc ?",
+"it": "Vuoi fare qcs?"
+},
+{
+"key": "modales_3:52",
+"fr": "Veux-tu que qn fasse qc ?",
+"it": "Vuoi che qcn faccia qcs?"
+},
+{
+"key": "modales_3:53",
+"fr": "Elles ne peuvent pas faire qc.",
+"it": "Non possono fare qcs"
+},
+{
+"key": "modales_3:54",
+"fr": "Ne veux-tu pas faire qc ?",
+"it": "Non vuoi fare qcs?"
+},
+{
+"key": "modales_3:55",
+"fr": "Vous connaissez qn.",
+"it": "Conoscete qcn (Lei : conosce qcn)"
+},
+{
+"key": "modales_3:56",
+"fr": "Elles veulent qc.",
+"it": "Vogliono qcs"
+},
+{
+"key": "modales_3:57",
+"fr": "Elles veulent faire qc.",
+"it": "Vogliono fare qcs"
+},
+{
+"key": "modales_3:58",
+"fr": "Elles veulent que qn fasse qc.",
+"it": "Vogliono che qcn faccia qcs"
+},
+{
+"key": "modales_3:59",
+"fr": "Elles ne veulent pas qc.",
+"it": "Non vogliono qcs"
+},
+{
+"key": "modales_3:60",
+"fr": "Elles ne veulent pas faire qc.",
+"it": "Non vogliono fare qcs"
+},
+{
+"key": "modales_3:61",
+"fr": "Elles ne veulent pas que qn fasse qc.",
+"it": "Non vogliono che qcn faccia qcs"
+},
+{
+"key": "modales_3:62",
+"fr": "Vous croyez que qn fait qc.",
+"it": "Credete che qcn faccia qcs"
+},
+{
+"key": "modales_3:63",
+"fr": "Vous ne croyez pas que qn fasse qc.",
+"it": "Non credete che qcn faccia qcs"
+},
+{
+"key": "modales_3:64",
+"fr": "Nous pouvons faire qc.",
+"it": "Possiamo fare qcs"
+},
+{
+"key": "modales_3:65",
+"fr": "Nous ne pouvons pas faire qc.",
+"it": "Non possiamo fare qcs"
+},
+{
+"key": "modales_3:66",
+"fr": "Ils doivent faire qc.",
+"it": "Devono fare qcs"
+},
+{
+"key": "modales_3:67",
+"fr": "Il connaît qc.",
+"it": "Conosce qcs"
+},
+{
+"key": "modales_3:68",
+"fr": "Elles avaient qc.",
+"it": "Avevano qcs"
+},
+{
+"key": "modales_3:69",
+"fr": "Elle connaît qn.",
+"it": "Conosce qcn"
+},
+{
+"key": "modales_3:70",
+"fr": "On connaît qc.",
+"it": "Conosciamo qcs"
+},
+{
+"key": "modales_3:71",
+"fr": "Pouvez-vous faire qc ?",
+"it": "Può fare qcs? (Lei) / Potete fare qcs?"
+},
+{
+"key": "modales_3:72",
+"fr": "Je préfère faire qc.",
+"it": "Preferisco fare qcs"
+},
+{
+"key": "modales_3:73",
+"fr": "Je préfère que qn fasse qc.",
+"it": "Preferisco che qcn faccia qcs"
+},
+{
+"key": "modales_3:74",
+"fr": "Elles doivent faire qc.",
+"it": "Devono fare qcs"
+},
+{
+"key": "modales_3:75",
+"fr": "Est-elle belle ?",
+"it": "È bella?"
+},
+{
+"key": "modales_3:76",
+"fr": "Ils savent que qn fait qc.",
+"it": "Sanno che qcn fa qcs"
+},
+{
+"key": "modales_3:77",
+"fr": "Ils savent faire qc.",
+"it": "Sanno fare qcs"
+},
+{
+"key": "modales_3:78",
+"fr": "Ils ne savent pas que qn fait qc.",
+"it": "Non sanno che qcn fa qcs"
+},
+{
+"key": "modales_3:79",
+"fr": "Nous étions beaux.",
+"it": "Eravamo belli"
+},
+{
+"key": "modales_3:80",
+"fr": "Savez-vous faire qc ?",
+"it": "Sa fare qcs? (Lei) / Sapete fare qcs?"
+},
+{
+"key": "modales_3:81",
+"fr": "Savez-vous que qn fait qc ?",
+"it": "Sa che qcn fa qcs? (Lei) / Sapete che qcn fa qcs?"
+},
+{
+"key": "modales_3:82",
+"fr": "Il croit que qn fait qc.",
+"it": "Crede che qcn faccia qcs"
+},
+{
+"key": "modales_3:83",
+"fr": "Elle croit que qn fait qc.",
+"it": "Crede che qcn faccia qcs"
+},
+{
+"key": "modales_3:84",
+"fr": "On croit que qn fait qc.",
+"it": "Crediamo che qcn faccia qcs"
+},
+{
+"key": "modales_3:85",
+"fr": "Il ne croit pas que qn fasse qc.",
+"it": "Non crede che qcn faccia qcs"
+},
+{
+"key": "modales_3:86",
+"fr": "Elle ne croit pas que qn fasse qc.",
+"it": "Non crede che qcn faccia qcs"
+},
+{
+"key": "modales_3:87",
+"fr": "On ne croit pas que qn fasse qc.",
+"it": "Non crediamo che qcn faccia qcs"
+},
+{
+"key": "modales_3:88",
+"fr": "Nous avions qc.",
+"it": "Avevamo qcs"
+},
+{
+"key": "modales_3:89",
+"fr": "Peux-tu faire qc ?",
+"it": "Puoi fare qcs?"
+},
+{
+"key": "modales_3:90",
+"fr": "Vous aimez qc.",
+"it": "Vi piace qcs"
+},
+{
+"key": "modales_3:91",
+"fr": "Vous aimez faire qc.",
+"it": "Vi piace fare qcs"
+},
+{
+"key": "modales_3:92",
+"fr": "Elles savent faire qc.",
+"it": "Sanno fare qcs"
+},
+{
+"key": "modales_3:93",
+"fr": "Elles savent que qn fait qc.",
+"it": "Sanno che qcn fa qcs"
+},
+{
+"key": "modales_3:94",
+"fr": "Elles ne savent pas que qn fait qc.",
+"it": "Non sanno che qcn fa qcs"
+},
+{
+"key": "modales_3:95",
+"fr": "Nous savons que qn fait qc.",
+"it": "Sappiamo che qcn fa qcs"
+},
+{
+"key": "modales_3:96",
+"fr": "Nous ne savons pas que qn fait qc.",
+"it": "Non sappiamo che qcn fa qcs"
+},
+{
+"key": "modales_3:97",
+"fr": "Nous savons faire qc.",
+"it": "Sappiamo fare qcs"
+},
+{
+"key": "modales_3:98",
+"fr": "Ai-je qc ?",
+"it": "Ho qcs?"
+},
+{
+"key": "modales_3:99",
+"fr": "Pensez-vous que qn fasse qc ?",
+"it": "Pensa che qcn faccia qcs? (Lei) / Pensate che qcn faccia qcs?"
+},
+{
+"key": "modales_4:0",
+"fr": "Ai-je besoin de qc ?",
+"it": "Ho bisogno di qcs?"
+},
+{
+"key": "modales_4:1",
+"fr": "Il faudrait que qn fasse qc.",
+"it": "Bisognerebbe che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_4:2",
+"fr": "Il faudrait faire qc.",
+"it": "Bisognerebbe fare qcs"
+},
+{
+"key": "modales_4:3",
+"fr": "qn fait qc, tu trouves pas ? qn fait qc, non ? qn fait qc, n'est-ce pas ?",
+"it": "qcn fa qcs, non trovi? / qcn fa qcs, no? / qcn fa qcs, vero?"
+},
+{
+"key": "modales_4:4",
+"fr": "Ils aiment qc.",
+"it": "Gli piace qcs / A loro piace qcs"
+},
+{
+"key": "modales_4:5",
+"fr": "Ils aiment faire qc.",
+"it": "Gli piace fare qcs"
+},
+{
+"key": "modales_4:6",
+"fr": "Suis-je beau ?",
+"it": "Sono bello?"
+},
+{
+"key": "modales_4:7",
+"fr": "Ils pensent que qn fait qc.",
+"it": "Pensano che qcn faccia qcs"
+},
+{
+"key": "modales_4:8",
+"fr": "Ils ne pensent pas que qn fasse qc.",
+"it": "Non pensano che qcn faccia qcs"
+},
+{
+"key": "modales_4:9",
+"fr": "Ils pensent à qc.",
+"it": "Pensano a qcs"
+},
+{
+"key": "modales_4:10",
+"fr": "Sais-tu faire qc ?",
+"it": "Sai fare qcs?"
+},
+{
+"key": "modales_4:11",
+"fr": "Sais-tu que qn fait qc ?",
+"it": "Sai che qcn fa qcs?"
+},
+{
+"key": "modales_4:12",
+"fr": "Elles aiment qc.",
+"it": "Gli piace qcs / A loro piace qcs"
+},
+{
+"key": "modales_4:13",
+"fr": "Dois-je faire qc ?",
+"it": "Devo fare qcs?"
+},
+{
+"key": "modales_4:14",
+"fr": "Elles aiment faire qc.",
+"it": "Gli piace fare qcs"
+},
+{
+"key": "modales_4:15",
+"fr": "Penses-tu que qn fasse qc ?",
+"it": "Pensi che qcn faccia qcs?"
+},
+{
+"key": "modales_4:16",
+"fr": "Que penses-tu de qc ?",
+"it": "Cosa ne pensi di qcs?"
+},
+{
+"key": "modales_4:17",
+"fr": "Elles pensent que qn fait qc.",
+"it": "Pensano che qcn faccia qcs"
+},
+{
+"key": "modales_4:18",
+"fr": "Elles ne pensent pas que qn fasse qc.",
+"it": "Non pensano che qcn faccia qcs"
+},
+{
+"key": "modales_4:19",
+"fr": "Elles pensent à qc.",
+"it": "Pensano a qcs"
+},
+{
+"key": "modales_4:20",
+"fr": "Nous voulons qc.",
+"it": "Vogliamo qcs"
+},
+{
+"key": "modales_4:21",
+"fr": "Nous voulons faire qc.",
+"it": "Vogliamo fare qcs"
+},
+{
+"key": "modales_4:22",
+"fr": "Nous voulons que qn fasse qc.",
+"it": "Vogliamo che qcn faccia qcs"
+},
+{
+"key": "modales_4:23",
+"fr": "Peut-on faire qc ?",
+"it": "Si può fare qcs?"
+},
+{
+"key": "modales_4:24",
+"fr": "Nous ne voulons pas qc.",
+"it": "Non vogliamo qcs"
+},
+{
+"key": "modales_4:25",
+"fr": "Nous ne voulons pas faire qc.",
+"it": "Non vogliamo fare qcs"
+},
+{
+"key": "modales_4:26",
+"fr": "Nous ne voulons pas que qn fasse qc.",
+"it": "Non vogliamo che qcn faccia qcs"
+},
+{
+"key": "modales_4:27",
+"fr": "Sont-ils beaux ?",
+"it": "Sono belli?"
+},
+{
+"key": "modales_4:28",
+"fr": "A-t-elle qc ?",
+"it": "Ha qcs?"
+},
+{
+"key": "modales_4:29",
+"fr": "A-t-elle besoin de qc ?",
+"it": "Ha bisogno di qcs?"
+},
+{
+"key": "modales_4:30",
+"fr": "Je regrette que qn fasse qc.",
+"it": "Mi dispiace che qcn faccia qcs"
+},
+{
+"key": "modales_4:31",
+"fr": "Ont-ils qc ?",
+"it": "Hanno qcs?"
+},
+{
+"key": "modales_4:32",
+"fr": "Pourriez-vous faire qc ?",
+"it": "Potrebbe fare qcs? (Lei) / Potreste fare qcs?"
+},
+{
+"key": "modales_4:33",
+"fr": "Ont-ils besoin de qc ?",
+"it": "Hanno bisogno di qcs?"
+},
+{
+"key": "modales_4:34",
+"fr": "Nous pourrions faire qc.",
+"it": "Potremmo fare qcs"
+},
+{
+"key": "modales_4:35",
+"fr": "Ils croient que qn fait qc.",
+"it": "Credono che qcn faccia qcs"
+},
+{
+"key": "modales_4:36",
+"fr": "Ils ne croient pas que qn fasse qc.",
+"it": "Non credono che qcn faccia qcs"
+},
+{
+"key": "modales_4:37",
+"fr": "Il aimerait qc.",
+"it": "Gli piacerebbe qcs / Vorrebbe qcs"
+},
+{
+"key": "modales_4:38",
+"fr": "Il aimerait faire qc.",
+"it": "Gli piacerebbe fare qcs"
+},
+{
+"key": "modales_4:39",
+"fr": "Il aimerait que qn fasse qc.",
+"it": "Vorrebbe che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_4:40",
+"fr": "Elle aimerait qc.",
+"it": "Le piacerebbe qcs / Vorrebbe qcs"
+},
+{
+"key": "modales_4:41",
+"fr": "Elle aimerait faire qc.",
+"it": "Le piacerebbe fare qcs"
+},
+{
+"key": "modales_4:42",
+"fr": "On aimerait qc.",
+"it": "Ci piacerebbe qcs / Vorremmo qcs"
+},
+{
+"key": "modales_4:43",
+"fr": "On aimerait faire qc.",
+"it": "Ci piacerebbe fare qcs"
+},
+{
+"key": "modales_4:44",
+"fr": "Elle aimerait que qn fasse qc.",
+"it": "Vorrebbe che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_4:45",
+"fr": "On aimerait que qn fasse qc.",
+"it": "Vorremmo che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_4:46",
+"fr": "Elles croient que qn fait qc.",
+"it": "Credono che qcn faccia qcs"
+},
+{
+"key": "modales_4:47",
+"fr": "Elles ne croient pas que qn fasse qc.",
+"it": "Non credono che qcn faccia qcs"
+},
+{
+"key": "modales_4:48",
+"fr": "Sommes-nous beaux ?",
+"it": "Siamo belli?"
+},
+{
+"key": "modales_4:49",
+"fr": "Il aurait fallu faire qc.",
+"it": "Sarebbe bisognato fare qcs / Avremmo dovuto fare qcs"
+},
+{
+"key": "modales_4:50",
+"fr": "Il aurait fallu que qn fasse qc.",
+"it": "Sarebbe bisognato che qcn facesse qcs (subjonctif plus-que-parfait)"
+},
+{
+"key": "modales_4:51",
+"fr": "Peut-il faire qc ?",
+"it": "Può fare qcs?"
+},
+{
+"key": "modales_4:52",
+"fr": "Pourrais-je faire qc ?",
+"it": "Potrei fare qcs?"
+},
+{
+"key": "modales_4:53",
+"fr": "Ils connaissent qc.",
+"it": "Conoscono qcs"
+},
+{
+"key": "modales_4:54",
+"fr": "Nous pensons que qn fait qc.",
+"it": "Pensiamo che qcn faccia qcs"
+},
+{
+"key": "modales_4:55",
+"fr": "Nous ne pensons pas que qn fasse qc.",
+"it": "Non pensiamo che qcn faccia qcs"
+},
+{
+"key": "modales_4:56",
+"fr": "Nous pensons à qn.",
+"it": "Pensiamo a qcn"
+},
+{
+"key": "modales_4:57",
+"fr": "Elles connaissent qc.",
+"it": "Conoscono qcs"
+},
+{
+"key": "modales_4:58",
+"fr": "Avons-nous qc ?",
+"it": "Abbiamo qcs?"
+},
+{
+"key": "modales_4:59",
+"fr": "Avons-nous besoin de qc ?",
+"it": "Abbiamo bisogno di qcs?"
+},
+{
+"key": "modales_4:60",
+"fr": "Crois-tu que qn fasse qc ?",
+"it": "Credi che qcn faccia qcs?"
+},
+{
+"key": "modales_4:61",
+"fr": "Pouvons-nous faire qc ?",
+"it": "Possiamo fare qcs?"
+},
+{
+"key": "modales_4:62",
+"fr": "Faut-il faire qc ?",
+"it": "Bisogna fare qcs?"
+},
+{
+"key": "modales_4:63",
+"fr": "Faut-il que qn fasse qc ?",
+"it": "Bisogna che qcn faccia qcs?"
+},
+{
+"key": "modales_4:64",
+"fr": "Croyez-vous que qn fasse qc ?",
+"it": "Crede che qcn faccia qcs? (Lei) / Credete che qcn faccia qcs?"
+},
+{
+"key": "modales_4:65",
+"fr": "Connaissez-vous qc ?",
+"it": "Conosce qcs? (Lei) / Conoscete qcs?"
+},
+{
+"key": "modales_4:66",
+"fr": "A-t-on besoin de qc ?",
+"it": "Abbiamo bisogno di qcs? / Serve qcs?"
+},
+{
+"key": "modales_4:67",
+"fr": "Pourrais-tu faire qc ?",
+"it": "Potresti fare qcs?"
+},
+{
+"key": "modales_4:68",
+"fr": "Nous connaissons qc. (plu)",
+"it": "Conosciamo qcs"
+},
+{
+"key": "modales_4:69",
+"fr": "Nous aimons qc.",
+"it": "Ci piace qcs"
+},
+{
+"key": "modales_4:70",
+"fr": "Nous aimons faire qc.",
+"it": "Ci piace fare qcs"
+},
+{
+"key": "modales_4:71",
+"fr": "Voudriez-vous faire qc ?",
+"it": "Vorrebbe fare qcs? (Lei) / Vorreste fare qcs?"
+},
+{
+"key": "modales_4:72",
+"fr": "Voudriez-vous que qn fasse qc ?",
+"it": "Vorrebbe che qcn facesse qcs? (Lei, subjonctif imparfait)"
+},
+{
+"key": "modales_4:73",
+"fr": "Voudriez-vous qc ?",
+"it": "Vorrebbe qcs? (Lei) / Vorreste qcs?"
+},
+{
+"key": "modales_4:74",
+"fr": "Vous aimeriez qc. (plu)",
+"it": "Vi piacerebbe qcs / Vorreste qcs"
+},
+{
+"key": "modales_4:75",
+"fr": "Vous aimeriez faire qc.",
+"it": "Vi piacerebbe fare qcs"
+},
+{
+"key": "modales_4:76",
+"fr": "Vous aimeriez qc.",
+"it": "Le piacerebbe qcs (Lei) / Vorrebbe qcs"
+},
+{
+"key": "modales_4:77",
+"fr": "Vous aimeriez faire qc. (pol)",
+"it": "Le piacerebbe fare qcs (Lei)"
+},
+{
+"key": "modales_4:78",
+"fr": "Vous aimeriez que qn fasse qc.",
+"it": "Vorreste che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_4:79",
+"fr": "Sont-elles belles ?",
+"it": "Sono belle?"
+},
+{
+"key": "modales_4:80",
+"fr": "Nous aimerions qc.",
+"it": "Vorremmo qcs"
+},
+{
+"key": "modales_4:81",
+"fr": "Nous aimerions faire qc.",
+"it": "Ci piacerebbe fare qcs"
+},
+{
+"key": "modales_4:82",
+"fr": "Nous aimerions que qn fasse qc.",
+"it": "Vorremmo che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_4:83",
+"fr": "Doit-on faire qc ?",
+"it": "Si deve fare qcs? / Dobbiamo fare qcs?"
+},
+{
+"key": "modales_4:84",
+"fr": "Voudrais-tu faire qc ?",
+"it": "Vorresti fare qcs?"
+},
+{
+"key": "modales_4:85",
+"fr": "Voudrais-tu que qn fasse qc ?",
+"it": "Vorresti che qcn facesse qcs? (subjonctif imparfait)"
+},
+{
+"key": "modales_4:86",
+"fr": "Peut-elle faire qc ?",
+"it": "Può fare qcs?"
+},
+{
+"key": "modales_4:87",
+"fr": "Veut-il qc ?",
+"it": "Vuole qcs?"
+},
+{
+"key": "modales_4:88",
+"fr": "Veut-il faire qc ?",
+"it": "Vuole fare qcs?"
+},
+{
+"key": "modales_4:89",
+"fr": "Veut-il que qn fasse qc ?",
+"it": "Vuole che qcn faccia qcs?"
+},
+{
+"key": "modales_4:90",
+"fr": "Ne veut-il pas qc ?",
+"it": "Non vuole qcs?"
+},
+{
+"key": "modales_4:91",
+"fr": "Ne veut-il pas que qn fasse qc ?",
+"it": "Non vuole che qcn faccia qcs?"
+},
+{
+"key": "modales_4:92",
+"fr": "Ne veut-il pas faire qc ?",
+"it": "Non vuole fare qcs?"
+},
+{
+"key": "modales_4:93",
+"fr": "Devons-nous faire qc ?",
+"it": "Dobbiamo fare qcs?"
+},
+{
+"key": "modales_4:94",
+"fr": "Nous croyons que qn fait qc.",
+"it": "Crediamo che qcn faccia qcs"
+},
+{
+"key": "modales_4:95",
+"fr": "Nous ne croyons pas que qn fasse qc.",
+"it": "Non crediamo che qcn faccia qcs"
+},
+{
+"key": "modales_4:96",
+"fr": "Aurais-tu qc ?",
+"it": "Avresti qcs?"
+},
+{
+"key": "modales_4:97",
+"fr": "Peuvent-ils faire qc ?",
+"it": "Possono fare qcs?"
+},
+{
+"key": "modales_4:98",
+"fr": "Aimez-vous qc ?",
+"it": "Le piace qcs? (Lei)"
+},
+{
+"key": "modales_4:99",
+"fr": "Aimez-vous faire qc ?",
+"it": "Le piace fare qcs? (Lei)"
+},
+{
+"key": "modales_5:0",
+"fr": "Aimez-vous faire qc ? (pluriel)",
+"it": "Vi piace fare qcs?"
+},
+{
+"key": "modales_5:1",
+"fr": "Sait-on que qn fait qc ?",
+"it": "Si sa che qcn fa qcs?"
+},
+{
+"key": "modales_5:2",
+"fr": "Aimeriez-vous faire qc ?",
+"it": "Le piacerebbe fare qcs? (Lei)"
+},
+{
+"key": "modales_5:3",
+"fr": "Aimeriez-vous que qn fasse qc ?",
+"it": "Vorrebbe che qcn facesse qcs? (Lei, subjonctif imparfait)"
+},
+{
+"key": "modales_5:4",
+"fr": "Sait-il que qn fait qc ?",
+"it": "Sa che qcn fa qcs?"
+},
+{
+"key": "modales_5:5",
+"fr": "Ils aimeraient qc.",
+"it": "Vorrebbero qcs / Gli piacerebbe qcs"
+},
+{
+"key": "modales_5:6",
+"fr": "Ils aimeraient faire qc.",
+"it": "Gli piacerebbe fare qcs"
+},
+{
+"key": "modales_5:7",
+"fr": "Ils aimeraient que qn fasse qc.",
+"it": "Vorrebbero che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_5:8",
+"fr": "Aimes-tu qc ?",
+"it": "Ti piace qcs?"
+},
+{
+"key": "modales_5:9",
+"fr": "Aimes-tu faire qc ?",
+"it": "Ti piace fare qcs?"
+},
+{
+"key": "modales_5:10",
+"fr": "Elles aimeraient qc.",
+"it": "Vorrebbero qcs / Gli piacerebbe qcs"
+},
+{
+"key": "modales_5:11",
+"fr": "Elles aimeraient faire qc.",
+"it": "Gli piacerebbe fare qcs"
+},
+{
+"key": "modales_5:12",
+"fr": "Elles aimeraient que qn fasse qc.",
+"it": "Vorrebbero che qcn facesse qcs (subjonctif imparfait)"
+},
+{
+"key": "modales_5:13",
+"fr": "Veulent-ils qc ?",
+"it": "Vogliono qcs?"
+},
+{
+"key": "modales_5:14",
+"fr": "Veulent-ils faire qc ?",
+"it": "Vogliono fare qcs?"
+},
+{
+"key": "modales_5:15",
+"fr": "Veulent-ils que qn fasse qc ?",
+"it": "Vogliono che qcn faccia qcs?"
+},
+{
+"key": "modales_5:16",
+"fr": "Ne veulent-ils pas qc ?",
+"it": "Non vogliono qcs?"
+},
+{
+"key": "modales_5:17",
+"fr": "Ne veulent-ils pas faire qc ?",
+"it": "Non vogliono fare qcs?"
+},
+{
+"key": "modales_5:18",
+"fr": "Ne veulent-ils pas que qn fasse qc ?",
+"it": "Non vogliono che qcn faccia qcs?"
+},
+{
+"key": "modales_5:19",
+"fr": "Ont-elles qc ?",
+"it": "Hanno qcs?"
+},
+{
+"key": "modales_5:20",
+"fr": "Ont-elles besoin de qc ?",
+"it": "Hanno bisogno di qcs?"
+},
+{
+"key": "modales_5:21",
+"fr": "Aimerais-tu faire qc ?",
+"it": "Ti piacerebbe fare qcs?"
+},
+{
+"key": "modales_5:22",
+"fr": "Dois-tu faire qc ?",
+"it": "Devi fare qcs?"
+},
+{
+"key": "modales_5:23",
+"fr": "Savons-nous que qn fait qc ?",
+"it": "Sappiamo che qcn fa qcs?"
+},
+{
+"key": "modales_5:24",
+"fr": "Veut-elle qc ?",
+"it": "Vuole qcs?"
+},
+{
+"key": "modales_5:25",
+"fr": "Veut-elle que qn fasse qc ?",
+"it": "Vuole che qcn faccia qcs?"
+},
+{
+"key": "modales_5:26",
+"fr": "Veut-elle faire qc ?",
+"it": "Vuole fare qcs?"
+},
+{
+"key": "modales_5:27",
+"fr": "Ne veut-elle pas qc ?",
+"it": "Non vuole qcs?"
+},
+{
+"key": "modales_5:28",
+"fr": "Ne veut-elle pas faire qc ?",
+"it": "Non vuole fare qcs?"
+},
+{
+"key": "modales_5:29",
+"fr": "Ne veut-elle pas que qn fasse qc ?",
+"it": "Non vuole che qcn faccia qcs?"
+},
+{
+"key": "modales_5:30",
+"fr": "Sait-elle que qn fait qc ?",
+"it": "Sa che qcn fa qcs?"
+},
+{
+"key": "modales_5:31",
+"fr": "Devez-vous faire qc ?",
+"it": "Dovete fare qcs? (Lei : deve fare qcs?)"
+},
+{
+"key": "modales_5:32",
+"fr": "Savent-ils que qn fait qc ?",
+"it": "Sanno che qcn fa qcs?"
+},
+{
+"key": "modales_5:33",
+"fr": "Sais-je que qn fait qc ?",
+"it": "So che qcn fa qcs?"
+},
+{
+"key": "modales_5:34",
+"fr": "Doit-elle faire qc ?",
+"it": "Deve fare qcs?"
+},
+{
+"key": "modales_5:35",
+"fr": "Faudrait-il faire qc ?",
+"it": "Bisognerebbe fare qcs?"
+},
+{
+"key": "modales_5:36",
+"fr": "Faudrait-il que qn fasse qc ?",
+"it": "Bisognerebbe che qcn facesse qcs? (subjonctif imparfait)"
+},
+{
+"key": "modales_5:37",
+"fr": "Sauriez-vous faire qc ?",
+"it": "Saprebbe fare qcs? (Lei) / Sapreste fare qcs?"
+},
+{
+"key": "modales_5:38",
+"fr": "Pense-t-il que qn fait qc ?",
+"it": "Pensa che qcn faccia qcs?"
+},
+{
+"key": "modales_5:39",
+"fr": "Peuvent-elles faire qc ?",
+"it": "Possono fare qcs?"
+},
+{
+"key": "modales_5:40",
+"fr": "Doivent-ils faire qc ?",
+"it": "Devono fare qcs?"
+},
+{
+"key": "modales_5:41",
+"fr": "Saurais-tu faire qc ?",
+"it": "Sapresti fare qcs?"
+},
+{
+"key": "modales_5:42",
+"fr": "Saurais-tu que qn fait qc ?",
+"it": "Sapresti se qcn fa qcs?"
+},
+{
+"key": "modales_5:43",
+"fr": "Voulons-nous qc ?",
+"it": "Vogliamo qcs?"
+},
+{
+"key": "modales_5:44",
+"fr": "Voulons-nous faire qc ?",
+"it": "Vogliamo fare qcs?"
+},
+{
+"key": "modales_5:45",
+"fr": "Voulons-nous que qn fasse qc ?",
+"it": "Vogliamo che qcn faccia qcs?"
+},
+{
+"key": "modales_5:46",
+"fr": "Ne voulons-nous pas qc ?",
+"it": "Non vogliamo qcs?"
+},
+{
+"key": "modales_5:47",
+"fr": "Ne voulons-nous pas faire qc ?",
+"it": "Non vogliamo fare qcs?"
+},
+{
+"key": "modales_5:48",
+"fr": "Ne voulons-nous pas que qn fasse qc ?",
+"it": "Non vogliamo che qcn faccia qcs?"
+},
+{
+"key": "modales_5:49",
+"fr": "Pensent-ils que qn fait qc ?",
+"it": "Pensano che qcn faccia qcs?"
+},
+{
+"key": "modales_5:50",
+"fr": "Veut-on qc ?",
+"it": "Vogliamo qcs?"
+},
+{
+"key": "modales_5:51",
+"fr": "Veut-on faire qc ?",
+"it": "Vogliamo fare qcs?"
+},
+{
+"key": "modales_5:52",
+"fr": "Veut-on que qn fasse qc ?",
+"it": "Vogliamo che qcn faccia qcs?"
+},
+{
+"key": "modales_5:53",
+"fr": "Ne veut-on pas qc ?",
+"it": "Non vogliamo qcs?"
+},
+{
+"key": "modales_5:54",
+"fr": "Ne veut-on pas faire qc ?",
+"it": "Non vogliamo fare qcs?"
+},
+{
+"key": "modales_5:55",
+"fr": "Ne veut-on pas que qn fasse qc ?",
+"it": "Non vogliamo che qcn faccia qcs?"
+},
+{
+"key": "modales_5:56",
+"fr": "Croit-il que qn fait qc ?",
+"it": "Crede che qcn faccia qcs?"
+},
+{
+"key": "modales_5:57",
+"fr": "Aime-t-il qc ?",
+"it": "Gli piace qcs?"
+},
+{
+"key": "modales_5:58",
+"fr": "Pense-t-elle que qn fait qc ?",
+"it": "Pensa che qcn faccia qcs?"
+},
+{
+"key": "modales_5:59",
+"fr": "Aime-t-elle qc ?",
+"it": "Le piace qcs?"
+},
+{
+"key": "modales_5:60",
+"fr": "Croient-ils que qn fait qc ?",
+"it": "Credono che qcn faccia qcs?"
+},
+{
+"key": "modales_5:61",
+"fr": "Pensons-nous que qn fasse qc ?",
+"it": "Pensiamo che qcn faccia qcs?"
+},
+{
+"key": "modales_5:62",
+"fr": "Aiment-ils qc ?",
+"it": "Gli piace qcs?"
+},
+{
+"key": "modales_5:63",
+"fr": "Croit-elle que qn fait qc ?",
+"it": "Crede che qcn faccia qcs?"
+},
+{
+"key": "modales_5:64",
+"fr": "Veulent-elles qc ?",
+"it": "Vogliono qcs?"
+},
+{
+"key": "modales_5:65",
+"fr": "Veulent-elles faire qc ?",
+"it": "Vogliono fare qcs?"
+},
+{
+"key": "modales_5:66",
+"fr": "Veulent-elles que qn fasse qc ?",
+"it": "Vogliono che qcn faccia qcs?"
+},
+{
+"key": "modales_5:67",
+"fr": "Ne veulent-elles pas qc ?",
+"it": "Non vogliono qcs?"
+},
+{
+"key": "modales_5:68",
+"fr": "Ne veulent-elles pas faire qc ?",
+"it": "Non vogliono fare qcs?"
+},
+{
+"key": "modales_5:69",
+"fr": "Ne veulent-elles pas que qn fasse qc ?",
+"it": "Non vogliono che qcn faccia qcs?"
+},
+{
+"key": "modales_5:70",
+"fr": "Aimons-nous qc ?",
+"it": "Ci piace qcs?"
+},
+{
+"key": "modales_5:71",
+"fr": "Doivent-elles faire qc ?",
+"it": "Devono fare qcs?"
+},
+{
+"key": "modales_5:72",
+"fr": "Pense-t-on que qn fait qc ?",
+"it": "Si pensa che qcn faccia qcs?"
+},
+{
+"key": "modales_5:73",
+"fr": "Savent-elles que qn fait qc ?",
+"it": "Sanno che qcn fa qcs?"
+},
+{
+"key": "modales_5:74",
+"fr": "Croit-on que qn fait qc ?",
+"it": "Si crede che qcn faccia qcs?"
+},
+{
+"key": "modales_5:75",
+"fr": "Croyons-nous que qn fait qc ?",
+"it": "Crediamo che qcn faccia qcs?"
+},
+{
+"key": "modales_5:76",
+"fr": "Aime-t-on qc ?",
+"it": "Ci piace qcs?"
+},
+{
+"key": "modales_5:77",
+"fr": "Crois-je que qn fait qc ?",
+"it": "Credo che qcn faccia qcs?"
+},
+{
+"key": "modales_5:78",
+"fr": "Aiment-elles qc ?",
+"it": "Gli piace qcs? / A loro piace qcs?"
+},
+{
+"key": "modales_5:79",
+"fr": "Croient-elles que qn fait qc ?",
+"it": "Credono che qcn faccia qcs?"
+},
+{
+"key": "modales_5:80",
+"fr": "Pensent-elles que qn fait qc ?",
+"it": "Pensano che qcn faccia qcs?"
+},
+{
+"key": "modales_5:81",
+"fr": "Pense-je que qn fait qc ?",
+"it": "Penso che qcn faccia qcs?"
+},
+{
+"key": "incises_1:0",
+"fr": "Et qn fait qc",
+"it": "E qcn fa qcs"
+},
+{
+"key": "incises_1:1",
+"fr": "Mais qn fait qc",
+"it": "Ma qcn fa qcs"
+},
+{
+"key": "incises_1:2",
+"fr": "qn fait qc, c'est ça",
+"it": "qcn fa qcs, è così."
+},
+{
+"key": "incises_1:3",
+"fr": "Bien que qn fasse qc",
+"it": "Sebbene qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_1:4",
+"fr": "De plus, qn fait qc",
+"it": "In più, qcn fa qcs"
+},
+{
+"key": "incises_1:5",
+"fr": "qn, de fait, fait qc",
+"it": "qcn, di fatto, fa qcs"
+},
+{
+"key": "incises_1:6",
+"fr": "qn fait qc, quoi",
+"it": "qcn fa qcs, insomma."
+},
+{
+"key": "incises_1:7",
+"fr": "qn fait qc, c'est tout",
+"it": "qcn fa qcs, tutto qui."
+},
+{
+"key": "incises_1:8",
+"fr": "En fait, qn fait qc",
+"it": "In realtà, qcn fa qcs"
+},
+{
+"key": "incises_1:9",
+"fr": "qn fait qc, en fait",
+"it": "qcn fa qcs, in realtà."
+},
+{
+"key": "incises_1:10",
+"fr": "C'est pour ça que qn fait qc",
+"it": "È per questo che qcn fa qcs"
+},
+{
+"key": "incises_1:11",
+"fr": "qn, tu sais, fait qc",
+"it": "qcn, sai, fa qcs"
+},
+{
+"key": "incises_1:12",
+"fr": "qn fait qc, et c'est tout",
+"it": "qcn fa qcs, e basta."
+},
+{
+"key": "incises_1:13",
+"fr": "qn fait qc, si c'est ça",
+"it": "qcn fa qcs, se è così."
+},
+{
+"key": "incises_1:14",
+"fr": "qn, qui plus est, fait qc",
+"it": "qcn, per di più, fa qcs"
+},
+{
+"key": "incises_1:15",
+"fr": "Oui mais qn fait qc",
+"it": "Sì, ma qcn fa qcs"
+},
+{
+"key": "incises_1:16",
+"fr": "qn fait qc, pourquoi pas",
+"it": "qcn fa qcs, perché no."
+},
+{
+"key": "incises_1:17",
+"fr": "qn, au fait, fait qc",
+"it": "qcn, a proposito, fa qcs"
+},
+{
+"key": "incises_1:18",
+"fr": "Mais en fait, qn fait qc",
+"it": "Ma in realtà, qcn fa qcs"
+},
+{
+"key": "incises_1:19",
+"fr": "qn fait qc, c'est comme ça",
+"it": "qcn fa qcs, è fatto così."
+},
+{
+"key": "incises_1:20",
+"fr": "On dit que qn fait qc",
+"it": "Si dice che qcn fa qcs"
+},
+{
+"key": "incises_1:21",
+"fr": "Ou qn fait qc",
+"it": "O qcn fa qcs (oppure)"
+},
+{
+"key": "incises_1:22",
+"fr": "qn fait qc, n'est-ce pas ?",
+"it": "qcn fa qcs, vero?"
+},
+{
+"key": "incises_1:23",
+"fr": "C'est comme ça que qn fait qc",
+"it": "È così che qcn fa qcs"
+},
+{
+"key": "incises_1:24",
+"fr": "Juste, qn fait qc",
+"it": "Solo, qcn fa qcs"
+},
+{
+"key": "incises_1:25",
+"fr": "qn fait qc, rien que ça",
+"it": "qcn fa qcs, niente meno."
+},
+{
+"key": "incises_1:26",
+"fr": "qn fait qc ou pas ?",
+"it": "qcn fa qcs o no?"
+},
+{
+"key": "incises_1:27",
+"fr": "Si tu veux, qn fait qc",
+"it": "Se vuoi, qcn fa qcs"
+},
+{
+"key": "incises_1:28",
+"fr": "qn fait qc, si tu veux",
+"it": "qcn fa qcs, se vuoi."
+},
+{
+"key": "incises_1:29",
+"fr": "qn fait qc, comme quoi",
+"it": "qcn fa qcs, il che dimostra."
+},
+{
+"key": "incises_1:30",
+"fr": "Je ne sais pas si qn fait qc",
+"it": "Non so se qcn fa qcs"
+},
+{
+"key": "incises_1:31",
+"fr": "qn fait qc, rien de plus",
+"it": "qcn fa qcs, niente di più."
+},
+{
+"key": "incises_1:32",
+"fr": "Et aussi qn fait qc",
+"it": "E anche qcn fa qcs"
+},
+{
+"key": "incises_1:33",
+"fr": "qn fait qc, on est bon ?",
+"it": "qcn fa qcs, ci siamo?"
+},
+{
+"key": "incises_1:34",
+"fr": "C'est juste que qn fait qc",
+"it": "È solo che qcn fa qcs"
+},
+{
+"key": "incises_1:35",
+"fr": "qn fait qc, comme tu veux",
+"it": "qcn fa qcs, come vuoi."
+},
+{
+"key": "incises_1:36",
+"fr": "Pour tout dire, qn fait qc",
+"it": "Per dirla tutta, qcn fa qcs"
+},
+{
+"key": "incises_1:37",
+"fr": "qn, comme on dit, fait qc",
+"it": "qcn, come si dice, fa qcs"
+},
+{
+"key": "incises_1:38",
+"fr": "qn fait qc, pour tout dire",
+"it": "qcn fa qcs, a dirla tutta."
+},
+{
+"key": "incises_1:39",
+"fr": "Pour te dire, qn fait qc",
+"it": "Per dirti, qcn fa qcs"
+},
+{
+"key": "incises_1:40",
+"fr": "qn fait qc, on va dire",
+"it": "qcn fa qcs, diciamo."
+},
+{
+"key": "incises_1:41",
+"fr": "Tout de même, qn fait qc",
+"it": "Comunque, qcn fa qcs (tuttavia)"
+},
+{
+"key": "incises_1:42",
+"fr": "Peut-être que qn fait qc",
+"it": "Forse qcn fa qcs"
+},
+{
+"key": "incises_1:43",
+"fr": "Donc qn fait qc",
+"it": "Quindi qcn fa qcs"
+},
+{
+"key": "incises_1:44",
+"fr": "qn fait qc, donc",
+"it": "qcn fa qcs, quindi."
+},
+{
+"key": "incises_1:45",
+"fr": "qn, comment dire, fait qc",
+"it": "qcn, come dire, fa qcs"
+},
+{
+"key": "incises_1:46",
+"fr": "Pour tout te dire, qn fait qc",
+"it": "A dirti la verità, qcn fa qcs"
+},
+{
+"key": "incises_1:47",
+"fr": "qn, à la fois, fait qc",
+"it": "qcn, nello stesso tempo, fa qcs (insieme)"
+},
+{
+"key": "incises_1:48",
+"fr": "Parce que qn fait qc",
+"it": "Perché qcn fa qcs"
+},
+{
+"key": "incises_1:49",
+"fr": "Ou alors qn fait qc",
+"it": "Oppure qcn fa qcs"
+},
+{
+"key": "incises_1:50",
+"fr": "Pas sûr que qn fasse qc",
+"it": "Non è detto che qcn faccia qcs"
+},
+{
+"key": "incises_1:51",
+"fr": "qn fait qc, c'est sûr",
+"it": "qcn fa qcs, sicuro."
+},
+{
+"key": "incises_1:52",
+"fr": "qn fait qc, on est d'accord ?",
+"it": "qcn fa qcs, siamo d'accordo?"
+},
+{
+"key": "incises_1:53",
+"fr": "Quand même, qn fait qc",
+"it": "Comunque, qcn fa qcs (però)"
+},
+{
+"key": "incises_1:54",
+"fr": "Il se peut que qn fasse qc",
+"it": "Può darsi che qcn faccia qcs"
+},
+{
+"key": "incises_1:55",
+"fr": "qn, je crois, fait qc",
+"it": "qcn, credo, fa qcs"
+},
+{
+"key": "incises_1:56",
+"fr": "qn fait qc, quand même",
+"it": "qcn fa qcs, però."
+},
+{
+"key": "incises_1:57",
+"fr": "C'est sûr que qn fait qc",
+"it": "Di sicuro qcn fa qcs"
+},
+{
+"key": "incises_1:58",
+"fr": "qn, je pense, fait qc",
+"it": "qcn, penso, fa qcs"
+},
+{
+"key": "incises_1:59",
+"fr": "Je crois que qn fait qc",
+"it": "Credo che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_1:60",
+"fr": "Ce que je veux dire, c'est que qn fait qc",
+"it": "Quello che voglio dire è che qcn fa qcs"
+},
+{
+"key": "incises_1:61",
+"fr": "Je pense que qn fait qc",
+"it": "Penso che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_1:62",
+"fr": "Tu sais très bien que qn fait qc",
+"it": "Sai benissimo che qcn fa qcs"
+},
+{
+"key": "incises_1:63",
+"fr": "qn fait qc, pas vrai ?",
+"it": "qcn fa qcs, no?"
+},
+{
+"key": "incises_1:64",
+"fr": "Bien sûr que qn fait qc",
+"it": "Certo che qcn fa qcs"
+},
+{
+"key": "incises_1:65",
+"fr": "qn fait qc, pas si sûr",
+"it": "qcn fa qcs, non è detto."
+},
+{
+"key": "incises_1:66",
+"fr": "Mais après, qn fait qc",
+"it": "Ma poi, qcn fa qcs"
+},
+{
+"key": "incises_1:67",
+"fr": "On peut dire que qn fait qc",
+"it": "Si può dire che qcn fa qcs"
+},
+{
+"key": "incises_1:68",
+"fr": "Après tout, qn fait qc",
+"it": "Dopotutto, qcn fa qcs"
+},
+{
+"key": "incises_1:69",
+"fr": "qn fait qc, après tout",
+"it": "qcn fa qcs, dopotutto."
+},
+{
+"key": "incises_1:70",
+"fr": "C'est vrai que qn fait qc",
+"it": "È vero che qcn fa qcs"
+},
+{
+"key": "incises_1:71",
+"fr": "qn fait qc, pour de vrai",
+"it": "qcn fa qcs, sul serio."
+},
+{
+"key": "incises_1:72",
+"fr": "D'après ce que qn fait qc",
+"it": "Da quello che qcn fa qcs"
+},
+{
+"key": "incises_1:73",
+"fr": "Faut dire que qn fait qc",
+"it": "Bisogna dire che qcn fa qcs"
+},
+{
+"key": "incises_1:74",
+"fr": "qn, il faut dire, fait qc",
+"it": "qcn, bisogna dire, fa qcs"
+},
+{
+"key": "incises_1:75",
+"fr": "Je dois dire que qn fait qc",
+"it": "Devo dire che qcn fa qcs"
+},
+{
+"key": "incises_1:76",
+"fr": "Je ne suis pas sûr que qn fasse qc",
+"it": "Non sono sicuro che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_1:77",
+"fr": "Je dis que qn fait qc",
+"it": "Dico che qcn fa qcs"
+},
+{
+"key": "incises_1:78",
+"fr": "qn fait qc, voilà",
+"it": "qcn fa qcs, ecco."
+},
+{
+"key": "incises_1:79",
+"fr": "Parce qu'en fait, qn fait qc",
+"it": "Perché in realtà, qcn fa qcs"
+},
+{
+"key": "incises_1:80",
+"fr": "D'après moi, qn fait qc",
+"it": "Secondo me, qcn fa qcs"
+},
+{
+"key": "incises_1:81",
+"fr": "qn, tu vois, fait qc",
+"it": "qcn, vedi, fa qcs"
+},
+{
+"key": "incises_1:82",
+"fr": "qn fait qc, tu vois ?",
+"it": "qcn fa qcs, vedi?"
+},
+{
+"key": "incises_1:83",
+"fr": "qn fait qc, il faut le dire",
+"it": "qcn fa qcs, bisogna dirlo."
+},
+{
+"key": "incises_1:84",
+"fr": "qn fait qc, d'après moi",
+"it": "qcn fa qcs, secondo me."
+},
+{
+"key": "incises_1:85",
+"fr": "qn fait qc, et voilà",
+"it": "qcn fa qcs, ed ecco."
+},
+{
+"key": "incises_1:86",
+"fr": "qn fait qc, si on veut",
+"it": "qcn fa qcs, se vogliamo."
+},
+{
+"key": "incises_1:87",
+"fr": "qn, en même temps, fait qc",
+"it": "qcn, allo stesso tempo, fa qcs"
+},
+{
+"key": "incises_1:88",
+"fr": "Mais j'y pense, qn fait qc",
+"it": "Ma ora che ci penso, qcn fa qcs"
+},
+{
+"key": "incises_1:89",
+"fr": "qn fait qc, voilà tout",
+"it": "qcn fa qcs, ecco tutto."
+},
+{
+"key": "incises_1:90",
+"fr": "A vrai dire, qn fait qc",
+"it": "A dire il vero, qcn fa qcs"
+},
+{
+"key": "incises_1:91",
+"fr": "qn fait qc, il va sans dire",
+"it": "qcn fa qcs, va da sé."
+},
+{
+"key": "incises_1:92",
+"fr": "Quelqu'un m'a dit que qn fait qc",
+"it": "Qualcuno mi ha detto che qcn fa qcs"
+},
+{
+"key": "incises_1:93",
+"fr": "Je suis désolé, mais qn fait qc",
+"it": "Mi dispiace, ma qcn fa qcs"
+},
+{
+"key": "incises_1:94",
+"fr": "Il va sans dire que qn fait qc",
+"it": "Va da sé che qcn fa qcs"
+},
+{
+"key": "incises_1:95",
+"fr": "Encore une fois, qn fait qc",
+"it": "Ancora una volta, qcn fa qcs"
+},
+{
+"key": "incises_1:96",
+"fr": "Voilà pourquoi qn fait qc",
+"it": "Ecco perché qcn fa qcs"
+},
+{
+"key": "incises_1:97",
+"fr": "Ça veut dire que qn fait qc",
+"it": "Vuol dire che qcn fa qcs"
+},
+{
+"key": "incises_1:98",
+"fr": "qn fait qc, encore une fois",
+"it": "qcn fa qcs, ancora una volta."
+},
+{
+"key": "incises_1:99",
+"fr": "qn fait qc, voilà pourquoi",
+"it": "qcn fa qcs, ecco perché."
+},
+{
+"key": "incises_2:0",
+"fr": "Je pense aussi que qn fait qc",
+"it": "Penso anche che qcn faccia qcs"
+},
+{
+"key": "incises_2:1",
+"fr": "Je pense vraiment que qn fait qc",
+"it": "Penso davvero che qcn faccia qcs"
+},
+{
+"key": "incises_2:2",
+"fr": "Cela dit, qn fait qc",
+"it": "Detto questo, qcn fa qcs"
+},
+{
+"key": "incises_2:3",
+"fr": "En fait de cela, qn fait qc",
+"it": "Quanto a ciò, qcn fa qcs"
+},
+{
+"key": "incises_2:4",
+"fr": "qn fait qc, voilà qui est fait",
+"it": "qcn fa qcs, ecco fatto."
+},
+{
+"key": "incises_2:5",
+"fr": "qn fait qc, du moins",
+"it": "qcn fa qcs, almeno."
+},
+{
+"key": "incises_2:6",
+"fr": "Entre nous, qn fait qc",
+"it": "Tra noi, qcn fa qcs"
+},
+{
+"key": "incises_2:7",
+"fr": "Pour ce qui est de cela, qn fait qc",
+"it": "Per quanto riguarda questo, qcn fa qcs"
+},
+{
+"key": "incises_2:8",
+"fr": "Du reste, qn fait qc",
+"it": "Del resto, qcn fa qcs"
+},
+{
+"key": "incises_2:9",
+"fr": "Quoi qu'il en soit, qn fait qc",
+"it": "Comunque sia, qcn fa qcs"
+},
+{
+"key": "incises_2:10",
+"fr": "qn, vous savez, fait qc",
+"it": "qcn, sapete, fa qcs"
+},
+{
+"key": "incises_2:11",
+"fr": "qn fait qc, quoi qu'il en soit",
+"it": "qcn fa qcs, comunque sia."
+},
+{
+"key": "incises_2:12",
+"fr": "Quoi qu'il arrive, qn fait qc",
+"it": "Qualunque cosa succeda, qcn fa qcs"
+},
+{
+"key": "incises_2:13",
+"fr": "Est-ce que ça veut dire que qn fait qc ?",
+"it": "Vuol dire che qcn fa qcs?"
+},
+{
+"key": "incises_2:14",
+"fr": "qn fait qc, quoi qu'il arrive",
+"it": "qcn fa qcs, qualunque cosa succeda."
+},
+{
+"key": "incises_2:15",
+"fr": "Si tu veux savoir, qn fait qc",
+"it": "Se vuoi saperlo, qcn fa qcs"
+},
+{
+"key": "incises_2:16",
+"fr": "qn fait qc, si tu veux savoir",
+"it": "qcn fa qcs, se vuoi saperlo."
+},
+{
+"key": "incises_2:17",
+"fr": "qn fait qc, donc, voilà",
+"it": "qcn fa qcs, quindi, ecco."
+},
+{
+"key": "incises_2:18",
+"fr": "Je ne voulais pas dire que qn fait qc",
+"it": "Non volevo dire che qcn fa qcs"
+},
+{
+"key": "incises_2:19",
+"fr": "qn fait qc, plus ou moins",
+"it": "qcn fa qcs, più o meno."
+},
+{
+"key": "incises_2:20",
+"fr": "Le truc c'est que qn fait qc",
+"it": "Il punto è che qcn fa qcs (il fatto è che)"
+},
+{
+"key": "incises_2:21",
+"fr": "Tout à fait entre nous, qn fait qc",
+"it": "Proprio tra noi, qcn fa qcs"
+},
+{
+"key": "incises_2:22",
+"fr": "Juste entre nous, qn fait qc",
+"it": "Solo tra noi, qcn fa qcs"
+},
+{
+"key": "incises_2:23",
+"fr": "qn fait qc, tu comprends ?",
+"it": "qcn fa qcs, capisci?"
+},
+{
+"key": "incises_2:24",
+"fr": "Dans un sens, qn fait qc",
+"it": "In un certo senso, qcn fa qcs"
+},
+{
+"key": "incises_2:25",
+"fr": "Bien entendu, qn fait qc",
+"it": "Ovviamente, qcn fa qcs"
+},
+{
+"key": "incises_2:26",
+"fr": "Du coup, qn fait qc",
+"it": "Perciò, qcn fa qcs (quindi)"
+},
+{
+"key": "incises_2:27",
+"fr": "À mon sens, qn fait qc",
+"it": "A mio avviso, qcn fa qcs"
+},
+{
+"key": "incises_2:28",
+"fr": "qn, pour le coup, fait qc",
+"it": "qcn, stavolta, fa qcs (in questo caso)"
+},
+{
+"key": "incises_2:29",
+"fr": "qn fait qc, à mon sens",
+"it": "qcn fa qcs, a mio avviso."
+},
+{
+"key": "incises_2:30",
+"fr": "qn fait qc, bien entendu",
+"it": "qcn fa qcs, ovviamente."
+},
+{
+"key": "incises_2:31",
+"fr": "Et du coup, qn fait qc",
+"it": "E quindi, qcn fa qcs"
+},
+{
+"key": "incises_2:32",
+"fr": "Pour ma part, qn fait qc",
+"it": "Per quanto mi riguarda, qcn fa qcs"
+},
+{
+"key": "incises_2:33",
+"fr": "qn fait qc, pour ma part",
+"it": "qcn fa qcs, per quanto mi riguarda."
+},
+{
+"key": "incises_2:34",
+"fr": "Tant qu'à faire, qn fait qc",
+"it": "Già che ci siamo, qcn fa qcs"
+},
+{
+"key": "incises_2:35",
+"fr": "qn, dans l'ensemble, fait qc",
+"it": "qcn, nel complesso, fa qcs"
+},
+{
+"key": "incises_2:36",
+"fr": "qn fait qc, tant qu'à faire",
+"it": "qcn fa qcs, già che ci siamo."
+},
+{
+"key": "incises_2:37",
+"fr": "Mais du coup, qn fait qc",
+"it": "Ma quindi, qcn fa qcs"
+},
+{
+"key": "incises_2:38",
+"fr": "Car qn fait qc",
+"it": "Perché qcn fa qcs (poiché)"
+},
+{
+"key": "incises_2:39",
+"fr": "qn, en partie, fait qc",
+"it": "qcn, in parte, fa qcs"
+},
+{
+"key": "incises_2:40",
+"fr": "qn, petit à petit, fait qc",
+"it": "qcn, piano piano, fa qcs"
+},
+{
+"key": "incises_2:41",
+"fr": "En tout cas, qn fait qc",
+"it": "In ogni caso, qcn fa qcs"
+},
+{
+"key": "incises_2:42",
+"fr": "Par contre, qn fait qc",
+"it": "Invece, qcn fa qcs (però)"
+},
+{
+"key": "incises_2:43",
+"fr": "Si je puis dire, qn fait qc",
+"it": "Se posso dire, qcn fa qcs"
+},
+{
+"key": "incises_2:44",
+"fr": "Juste un truc : qn fait qc",
+"it": "Solo una cosa: qcn fa qcs"
+},
+{
+"key": "incises_2:45",
+"fr": "qn fait qc, si je puis dire",
+"it": "qcn fa qcs, se posso dire."
+},
+{
+"key": "incises_2:46",
+"fr": "qn fait qc, en tout cas",
+"it": "qcn fa qcs, in ogni caso."
+},
+{
+"key": "incises_2:47",
+"fr": "Ni qn ne fait qc",
+"it": "Né qcn fa qcs"
+},
+{
+"key": "incises_2:48",
+"fr": "Je me demande si qn fait qc",
+"it": "Mi chiedo se qcn fa qcs"
+},
+{
+"key": "incises_2:49",
+"fr": "Ni que qn fasse qc",
+"it": "Né che qcn faccia qcs (né tantomeno)"
+},
+{
+"key": "incises_2:50",
+"fr": "Tu savais que qn fait qc ?",
+"it": "Lo sapevi che qcn fa qcs?"
+},
+{
+"key": "incises_2:51",
+"fr": "Cela va sans dire que qn fait qc",
+"it": "È ovvio che qcn fa qcs"
+},
+{
+"key": "incises_2:52",
+"fr": "qn, je trouve, fait qc",
+"it": "qcn, trovo, fa qcs"
+},
+{
+"key": "incises_2:53",
+"fr": "qn, entre autres, fait qc",
+"it": "qcn, tra l'altro, fa qcs"
+},
+{
+"key": "incises_2:54",
+"fr": "À côté de ça, qn fait qc",
+"it": "A parte questo, qcn fa qcs"
+},
+{
+"key": "incises_2:55",
+"fr": "qn, de mon côté, fait qc",
+"it": "qcn, da parte mia, fa qcs"
+},
+{
+"key": "incises_2:56",
+"fr": "qn fait qc, enfin",
+"it": "qcn fa qcs, insomma. (cioè)"
+},
+{
+"key": "incises_2:57",
+"fr": "qn fait qc, tant mieux",
+"it": "qcn fa qcs, meglio così."
+},
+{
+"key": "incises_2:58",
+"fr": "Soit dit entre nous, qn fait qc",
+"it": "Detto tra noi, qcn fa qcs"
+},
+{
+"key": "incises_2:59",
+"fr": "En gros, qn fait qc",
+"it": "In sostanza, qcn fa qcs (grosso modo)"
+},
+{
+"key": "incises_2:60",
+"fr": "qn fait qc, en gros",
+"it": "qcn fa qcs, in sostanza."
+},
+{
+"key": "incises_2:61",
+"fr": "qn fait qc, et puis voilà",
+"it": "qcn fa qcs, e poi ecco."
+},
+{
+"key": "incises_2:62",
+"fr": "qn fait qc, si ça se trouve",
+"it": "qcn fa qcs, magari."
+},
+{
+"key": "incises_2:63",
+"fr": "qn fait qc, on dirait bien",
+"it": "qcn fa qcs, sembrerebbe."
+},
+{
+"key": "incises_2:64",
+"fr": "C'est possible que qn fasse qc",
+"it": "È possibile che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_2:65",
+"fr": "qn, si possible, fait qc",
+"it": "qcn, se possibile, fa qcs"
+},
+{
+"key": "incises_2:66",
+"fr": "Je suis en train de dire que qn fait qc",
+"it": "Sto dicendo che qcn fa qcs"
+},
+{
+"key": "incises_2:67",
+"fr": "A propos, qn fait qc",
+"it": "A proposito, qcn fa qcs"
+},
+{
+"key": "incises_2:68",
+"fr": "En vérité, qn fait qc",
+"it": "In verità, qcn fa qcs"
+},
+{
+"key": "incises_2:69",
+"fr": "Tout compte fait, qn fait qc",
+"it": "Tutto sommato, qcn fa qcs"
+},
+{
+"key": "incises_2:70",
+"fr": "D'un autre côté, qn fait qc",
+"it": "D'altra parte, qcn fa qcs"
+},
+{
+"key": "incises_2:71",
+"fr": "A ce propos, qn fait qc",
+"it": "A questo proposito, qcn fa qcs"
+},
+{
+"key": "incises_2:72",
+"fr": "qn fait qc, ça marche",
+"it": "qcn fa qcs, va bene."
+},
+{
+"key": "incises_2:73",
+"fr": "Je ne sais pas si c'est vrai mais j'ai entendu que qn fait qc",
+"it": "Non so se è vero, ma ho sentito che qcn fa qcs"
+},
+{
+"key": "incises_2:74",
+"fr": "De toute façon, qn fait qc",
+"it": "Comunque, qcn fa qcs (tanto)"
+},
+{
+"key": "incises_2:75",
+"fr": "C'est fou mais qn fait qc",
+"it": "È pazzesco, ma qcn fa qcs"
+},
+{
+"key": "incises_2:76",
+"fr": "qn fait qc, de toute façon",
+"it": "qcn fa qcs, comunque."
+},
+{
+"key": "incises_2:77",
+"fr": "Je peux vraiment pas croire que qn fasse qc",
+"it": "Non riesco proprio a credere che qcn faccia qcs"
+},
+{
+"key": "incises_2:78",
+"fr": "C'est fou comme qn fait qc",
+"it": "È incredibile come qcn fa qcs"
+},
+{
+"key": "incises_2:79",
+"fr": "Ainsi, qn fait qc",
+"it": "Così, qcn fa qcs"
+},
+{
+"key": "incises_2:80",
+"fr": "Il me semble que qn fait qc",
+"it": "Mi sembra che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_2:81",
+"fr": "En un mot, qn fait qc",
+"it": "In una parola, qcn fa qcs"
+},
+{
+"key": "incises_2:82",
+"fr": "qn, il me semble, fait qc",
+"it": "qcn, mi sembra, fa qcs"
+},
+{
+"key": "incises_2:83",
+"fr": "qn, pour l'instant, fait qc",
+"it": "qcn, per ora, fa qcs"
+},
+{
+"key": "incises_2:84",
+"fr": "J'ai envie de dire que qn fait qc",
+"it": "Mi viene da dire che qcn fa qcs"
+},
+{
+"key": "incises_2:85",
+"fr": "qn fait qc, autant pour moi",
+"it": "qcn fa qcs, colpa mia."
+},
+{
+"key": "incises_2:86",
+"fr": "Autant dire que qn fait qc",
+"it": "Tanto vale dire che qcn fa qcs"
+},
+{
+"key": "incises_2:87",
+"fr": "Pour ainsi dire, qn fait qc",
+"it": "Per così dire, qcn fa qcs"
+},
+{
+"key": "incises_2:88",
+"fr": "À bien y penser, qn fait qc",
+"it": "A pensarci bene, qcn fa qcs"
+},
+{
+"key": "incises_2:89",
+"fr": "qn fait qc, pour ainsi dire",
+"it": "qcn fa qcs, per così dire."
+},
+{
+"key": "incises_2:90",
+"fr": "qn fait qc, autant dire",
+"it": "qcn fa qcs, tanto vale."
+},
+{
+"key": "incises_2:91",
+"fr": "qn, à peu de chose près, fait qc",
+"it": "qcn, più o meno, fa qcs"
+},
+{
+"key": "incises_2:92",
+"fr": "Ceci dit, qn fait qc",
+"it": "Detto ciò, qcn fa qcs"
+},
+{
+"key": "incises_2:93",
+"fr": "Pas de doute que qn fait qc",
+"it": "Non c'è dubbio che qcn fa qcs"
+},
+{
+"key": "incises_2:94",
+"fr": "Je doute que qn fasse qc",
+"it": "Dubito che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_2:95",
+"fr": "A mon avis, qn fait qc",
+"it": "Secondo me, qcn fa qcs (a mio parere)"
+},
+{
+"key": "incises_2:96",
+"fr": "Je suppose que qn fait qc",
+"it": "Suppongo che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_2:97",
+"fr": "Non mais sérieux, qn fait qc",
+"it": "No, ma sul serio, qcn fa qcs"
+},
+{
+"key": "incises_2:98",
+"fr": "En quelque sorte, qn fait qc",
+"it": "In un certo senso, qcn fa qcs (in qualche modo)"
+},
+{
+"key": "incises_2:99",
+"fr": "qn fait qc, en quelque sorte",
+"it": "qcn fa qcs, in qualche modo."
+},
+{
+"key": "incises_3:0",
+"fr": "qn fait qc, je suppose",
+"it": "qcn fa qcs, suppongo."
+},
+{
+"key": "incises_3:1",
+"fr": "Surtout que qn fait qc",
+"it": "Soprattutto perché qcn fa qcs"
+},
+{
+"key": "incises_3:2",
+"fr": "Surtout si qn fait qc",
+"it": "Soprattutto se qcn fa qcs"
+},
+{
+"key": "incises_3:3",
+"fr": "Sans doute que qn fait qc",
+"it": "Probabilmente qcn fa qcs (forse)"
+},
+{
+"key": "incises_3:4",
+"fr": "En fin de compte, qn fait qc",
+"it": "Alla fin fine, qcn fa qcs"
+},
+{
+"key": "incises_3:5",
+"fr": "qn fait qc, pas faux",
+"it": "qcn fa qcs, non è sbagliato."
+},
+{
+"key": "incises_3:6",
+"fr": "Ou sinon qn fait qc",
+"it": "Oppure, qcn fa qcs (se no)"
+},
+{
+"key": "incises_3:7",
+"fr": "qn, en effet, fait qc",
+"it": "qcn, infatti, fa qcs"
+},
+{
+"key": "incises_3:8",
+"fr": "qn, en général, fait qc",
+"it": "qcn, in genere, fa qcs"
+},
+{
+"key": "incises_3:9",
+"fr": "D'ailleurs, qn fait qc",
+"it": "Tra l'altro, qcn fa qcs (del resto)"
+},
+{
+"key": "incises_3:10",
+"fr": "qn fait qc, d'ailleurs",
+"it": "qcn fa qcs, tra l'altro."
+},
+{
+"key": "incises_3:11",
+"fr": "qn fait qc, tout simplement",
+"it": "qcn fa qcs, semplicemente."
+},
+{
+"key": "incises_3:12",
+"fr": "Pour finir, qn fait qc",
+"it": "Per finire, qcn fa qcs"
+},
+{
+"key": "incises_3:13",
+"fr": "Or qn fait qc",
+"it": "Ora, qcn fa qcs (orbene)"
+},
+{
+"key": "incises_3:14",
+"fr": "Au fond, qn fait qc",
+"it": "In fondo, qcn fa qcs"
+},
+{
+"key": "incises_3:15",
+"fr": "En clair, qn fait qc",
+"it": "In parole povere, qcn fa qcs (in chiaro)"
+},
+{
+"key": "incises_3:16",
+"fr": "qn fait qc, c'est clair",
+"it": "qcn fa qcs, è chiaro."
+},
+{
+"key": "incises_3:17",
+"fr": "qn fait qc, au fond",
+"it": "qcn fa qcs, in fondo."
+},
+{
+"key": "incises_3:18",
+"fr": "qn fait qc, dans le fond",
+"it": "qcn fa qcs, in fin dei conti."
+},
+{
+"key": "incises_3:19",
+"fr": "C'est clair que qn fait qc",
+"it": "È chiaro che qcn fa qcs"
+},
+{
+"key": "incises_3:20",
+"fr": "qn, comme d'habitude, fait qc",
+"it": "qcn, come al solito, fa qcs"
+},
+{
+"key": "incises_3:21",
+"fr": "qn fait qc, comme je disais",
+"it": "qcn fa qcs, come dicevo."
+},
+{
+"key": "incises_3:22",
+"fr": "Selon moi, qn fait qc",
+"it": "Secondo me, qcn fa qcs (per me)"
+},
+{
+"key": "incises_3:23",
+"fr": "Pour être exact, qn fait qc",
+"it": "Per essere esatti, qcn fa qcs"
+},
+{
+"key": "incises_3:24",
+"fr": "qn, je te jure, fait qc",
+"it": "qcn, te lo giuro, fa qcs"
+},
+{
+"key": "incises_3:25",
+"fr": "qn, par exemple, fait qc",
+"it": "qcn, per esempio, fa qcs"
+},
+{
+"key": "incises_3:26",
+"fr": "qn, sans blague, fait qc",
+"it": "qcn, senza scherzi, fa qcs"
+},
+{
+"key": "incises_3:27",
+"fr": "Je dirais que qn fait qc",
+"it": "Direi che qcn fa qcs"
+},
+{
+"key": "incises_3:28",
+"fr": "Pour ne rien te cacher, qn fait qc",
+"it": "A dirti la verità, qcn fa qcs (per non nasconderti niente)"
+},
+{
+"key": "incises_3:29",
+"fr": "qn fait qc, on verra bien",
+"it": "qcn fa qcs, vedremo."
+},
+{
+"key": "incises_3:30",
+"fr": "Je dirais même plus, qn fait qc",
+"it": "Direi di più, qcn fa qcs"
+},
+{
+"key": "incises_3:31",
+"fr": "Il paraît que qn fait qc",
+"it": "Pare che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_3:32",
+"fr": "qn fait qc, il paraît",
+"it": "qcn fa qcs, pare."
+},
+{
+"key": "incises_3:33",
+"fr": "J'ai cru comprendre que qn fait qc",
+"it": "Mi è sembrato di capire che qcn fa qcs"
+},
+{
+"key": "incises_3:34",
+"fr": "À ce qu'il paraît, qn fait qc",
+"it": "A quanto pare, qcn fa qcs"
+},
+{
+"key": "incises_3:35",
+"fr": "qn fait qc, à ce qu'il paraît",
+"it": "qcn fa qcs, a quanto pare."
+},
+{
+"key": "incises_3:36",
+"fr": "En réalité, qn fait qc",
+"it": "In realtà, qcn fa qcs (in effetti)"
+},
+{
+"key": "incises_3:37",
+"fr": "Pour être honnête, qn fait qc",
+"it": "Per essere onesti, qcn fa qcs"
+},
+{
+"key": "incises_3:38",
+"fr": "qn fait qc, ça revient au même",
+"it": "qcn fa qcs, è lo stesso."
+},
+{
+"key": "incises_3:39",
+"fr": "Finalement, qn fait qc",
+"it": "Alla fine, qcn fa qcs"
+},
+{
+"key": "incises_3:40",
+"fr": "qn fait qc, finalement",
+"it": "qcn fa qcs, alla fine."
+},
+{
+"key": "incises_3:41",
+"fr": "Pour tout arranger, qn fait qc",
+"it": "Come se non bastasse, qcn fa qcs"
+},
+{
+"key": "incises_3:42",
+"fr": "Au contraire, qn fait qc",
+"it": "Al contrario, qcn fa qcs"
+},
+{
+"key": "incises_3:43",
+"fr": "qn fait qc, tu trouves pas ?",
+"it": "qcn fa qcs, non trovi?"
+},
+{
+"key": "incises_3:44",
+"fr": "Disons qc",
+"it": "Diciamo qcs"
+},
+{
+"key": "incises_3:45",
+"fr": "Disons que qn fait qc",
+"it": "Diciamo che qcn fa qcs"
+},
+{
+"key": "incises_3:46",
+"fr": "qn fait qc, disons",
+"it": "qcn fa qcs, diciamo."
+},
+{
+"key": "incises_3:47",
+"fr": "Évidemment, qn fait qc",
+"it": "Ovviamente, qcn fa qcs"
+},
+{
+"key": "incises_3:48",
+"fr": "C'est marrant parce que qn fait qc",
+"it": "È buffo perché qcn fa qcs"
+},
+{
+"key": "incises_3:49",
+"fr": "Cela étant dit, qn fait qc",
+"it": "Ciò detto, qcn fa qcs"
+},
+{
+"key": "incises_3:50",
+"fr": "Bref, qn fait qc",
+"it": "Insomma, qcn fa qcs"
+},
+{
+"key": "incises_3:51",
+"fr": "En bref, qn fait qc",
+"it": "In breve, qcn fa qcs"
+},
+{
+"key": "incises_3:52",
+"fr": "qn fait qc, bref",
+"it": "qcn fa qcs, insomma."
+},
+{
+"key": "incises_3:53",
+"fr": "qn fait qc, justement",
+"it": "qcn fa qcs, appunto."
+},
+{
+"key": "incises_3:54",
+"fr": "Malgré ça, qn fait qc",
+"it": "Nonostante ciò, qcn fa qcs"
+},
+{
+"key": "incises_3:55",
+"fr": "qn, malgré tout, fait qc",
+"it": "qcn, nonostante tutto, fa qcs"
+},
+{
+"key": "incises_3:56",
+"fr": "qn fait qc, bref, voilà",
+"it": "qcn fa qcs, insomma, ecco."
+},
+{
+"key": "incises_3:57",
+"fr": "En ce qui me concerne, qn fait qc",
+"it": "Per quanto mi riguarda, qcn fa qcs"
+},
+{
+"key": "incises_3:58",
+"fr": "Franchement, qn fait qc",
+"it": "Francamente, qcn fa qcs (sinceramente)"
+},
+{
+"key": "incises_3:59",
+"fr": "Au passage, qn fait qc",
+"it": "Di passaggio, qcn fa qcs (tra parentesi)"
+},
+{
+"key": "incises_3:60",
+"fr": "Ceci étant, qn fait qc",
+"it": "Ciò premesso, qcn fa qcs"
+},
+{
+"key": "incises_3:61",
+"fr": "qn, crois-moi, fait qc",
+"it": "qcn, credimi, fa qcs"
+},
+{
+"key": "incises_3:62",
+"fr": "Autrement dit, qn fait qc",
+"it": "In altre parole, qcn fa qcs"
+},
+{
+"key": "incises_3:63",
+"fr": "En parlant de ça, qn fait qc",
+"it": "A proposito, qcn fa qcs"
+},
+{
+"key": "incises_3:64",
+"fr": "Si je peux me permettre, qn fait qc",
+"it": "Se posso permettermi, qcn fa qcs"
+},
+{
+"key": "incises_3:65",
+"fr": "qn fait qc, c'est évident",
+"it": "qcn fa qcs, è ovvio."
+},
+{
+"key": "incises_3:66",
+"fr": "Je reconnais que qn fait qc",
+"it": "Riconosco che qcn fa qcs"
+},
+{
+"key": "incises_3:67",
+"fr": "Cependant qn fait qc",
+"it": "Tuttavia, qcn fa qcs"
+},
+{
+"key": "incises_3:68",
+"fr": "D'une certaine manière, qn fait qc",
+"it": "In un certo modo, qcn fa qcs"
+},
+{
+"key": "incises_3:69",
+"fr": "qn fait qc, d'une certaine manière",
+"it": "qcn fa qcs, in un certo senso."
+},
+{
+"key": "incises_3:70",
+"fr": "Honnêtement, qn fait qc",
+"it": "Sinceramente, qcn fa qcs"
+},
+{
+"key": "incises_3:71",
+"fr": "Ça y'est, qn fait qc ?",
+"it": "Ecco, qcn fa qcs? (ci siamo)"
+},
+{
+"key": "incises_3:72",
+"fr": "En somme, qn fait qc",
+"it": "In somma, qcn fa qcs (insomma)"
+},
+{
+"key": "incises_3:73",
+"fr": "qn fait qc, en somme",
+"it": "qcn fa qcs, in breve."
+},
+{
+"key": "incises_3:74",
+"fr": "Je dois admettre que qn fait qc",
+"it": "Devo ammettere che qcn fa qcs"
+},
+{
+"key": "incises_3:75",
+"fr": "Ça va de soi que qn fait qc",
+"it": "Va da sé che qcn fa qcs"
+},
+{
+"key": "incises_3:76",
+"fr": "qn fait qc, ça va de soi",
+"it": "qcn fa qcs, è naturale."
+},
+{
+"key": "incises_3:77",
+"fr": "qn fait qc, tant pis",
+"it": "qcn fa qcs, pazienza."
+},
+{
+"key": "incises_3:78",
+"fr": "J'ai lu récemment que qn fait qc",
+"it": "Ho letto di recente che qcn fa qcs"
+},
+{
+"key": "incises_3:79",
+"fr": "Je suis convaincu que qn fait qc",
+"it": "Sono convinto che qcn faccia qcs"
+},
+{
+"key": "incises_3:80",
+"fr": "À la limite, qn fait qc",
+"it": "Al limite, qcn fa qcs"
+},
+{
+"key": "incises_3:81",
+"fr": "qn fait qc, à la limite",
+"it": "qcn fa qcs, al limite."
+},
+{
+"key": "incises_3:82",
+"fr": "C'est-à-dire que qn fait qc",
+"it": "Cioè qcn fa qcs"
+},
+{
+"key": "incises_3:83",
+"fr": "C'est-à-dire, qn fait qc",
+"it": "Vale a dire, qcn fa qcs"
+},
+{
+"key": "incises_3:84",
+"fr": "Personnellement, qn fait qc",
+"it": "Personalmente, qcn fa qcs"
+},
+{
+"key": "incises_3:85",
+"fr": "Espérons que qn fait qc",
+"it": "Speriamo che qcn faccia qcs"
+},
+{
+"key": "incises_3:86",
+"fr": "Pour être précis, qn fait qc",
+"it": "Per essere precisi, qcn fa qcs"
+},
+{
+"key": "incises_3:87",
+"fr": "qn fait qc, point final",
+"it": "qcn fa qcs, punto e basta."
+},
+{
+"key": "incises_3:88",
+"fr": "qn fait qc, pour être précis",
+"it": "qcn fa qcs, per essere precisi."
+},
+{
+"key": "incises_3:89",
+"fr": "J'avoue que qn fait qc",
+"it": "Confesso che qcn fa qcs"
+},
+{
+"key": "incises_3:90",
+"fr": "Il faut reconnaître que qn fait qc",
+"it": "Bisogna riconoscere che qcn fa qcs"
+},
+{
+"key": "incises_3:91",
+"fr": "qn, je l'avoue, fait qc",
+"it": "qcn, lo ammetto, fa qcs"
+},
+{
+"key": "incises_3:92",
+"fr": "Au risque de me répéter, qn fait qc",
+"it": "A costo di ripetermi, qcn fa qcs"
+},
+{
+"key": "incises_3:93",
+"fr": "Franchement parlant, qn fait qc",
+"it": "Francamente parlando, qcn fa qcs"
+},
+{
+"key": "incises_3:94",
+"fr": "De toute évidence, qn fait qc",
+"it": "Evidentemente, qcn fa qcs"
+},
+{
+"key": "incises_3:95",
+"fr": "Soit dit en passant, qn fait qc",
+"it": "Sia detto per inciso, qcn fa qcs (tra parentesi)"
+},
+{
+"key": "incises_3:96",
+"fr": "En d'autres termes, qn fait qc",
+"it": "In altri termini, qcn fa qcs"
+},
+{
+"key": "incises_3:97",
+"fr": "qn fait qc, si tu préfères",
+"it": "qcn fa qcs, se preferisci."
+},
+{
+"key": "incises_3:98",
+"fr": "Je considère que qn fait qc",
+"it": "Ritengo che qcn faccia qcs (+ subjonctif)"
+},
+{
+"key": "incises_3:99",
+"fr": "Nan mais qn fait qc",
+"it": "Ma no, qcn fa qcs"
+},
+{
+"key": "incises_4:0",
+"fr": "Plus précisément, qn fait qc",
+"it": "Più precisamente, qcn fa qcs"
+},
+{
+"key": "incises_4:1",
+"fr": "Effectivement, qn fait qc",
+"it": "In effetti, qcn fa qcs"
+},
+{
+"key": "incises_4:2",
+"fr": "Nan mais attends, qn fait qc",
+"it": "Ma aspetta, qcn fa qcs"
+},
+{
+"key": "incises_4:3",
+"fr": "En revanche, qn fait qc",
+"it": "Invece, qcn fa qcs (al contrario)"
+},
+{
+"key": "incises_4:4",
+"fr": "qn, en principe, fait qc",
+"it": "qcn, in teoria, fa qcs (in linea di principio)"
+},
+{
+"key": "incises_4:5",
+"fr": "qn, à ce moment-là, fait qc",
+"it": "qcn, in quel momento, fa qcs"
+},
+{
+"key": "incises_4:6",
+"fr": "Pour être franc, qn fait qc",
+"it": "Per essere sincero, qcn fa qcs"
+},
+{
+"key": "incises_4:7",
+"fr": "qn, si j'ose dire, fait qc",
+"it": "qcn, se così si può dire, fa qcs"
+},
+{
+"key": "incises_4:8",
+"fr": "J'estime que qn fait qc",
+"it": "Ritengo che qcn faccia qcs (stimo che)"
+},
+{
+"key": "incises_4:9",
+"fr": "En conclusion, qn fait qc",
+"it": "In conclusione, qcn fa qcs"
+},
+{
+"key": "incises_4:10",
+"fr": "Certes qn fait qc",
+"it": "Certo, qcn fa qcs"
+},
+{
+"key": "incises_4:11",
+"fr": "qn, vois-tu, fait qc",
+"it": "qcn, vedi, fa qcs (capisci)"
+},
+{
+"key": "incises_4:12",
+"fr": "Pour conclure, qn fait qc",
+"it": "Per concludere, qcn fa qcs"
+},
+{
+"key": "incises_4:13",
+"fr": "qn fait qc, pour conclure",
+"it": "qcn fa qcs, per concludere."
+},
+{
+"key": "incises_4:14",
+"fr": "Ça m'étonnerait que qn fasse qc",
+"it": "Mi stupirebbe che qcn facesse qcs"
+},
+{
+"key": "incises_4:15",
+"fr": "Sans déconner, qn fait qc",
+"it": "Senza scherzi, qcn fa qcs"
+},
+{
+"key": "incises_4:16",
+"fr": "En toute honnêteté, qn fait qc",
+"it": "In tutta onestà, qcn fa qcs"
+},
+{
+"key": "incises_4:17",
+"fr": "Néanmoins, qn fait qc",
+"it": "Ciononostante, qcn fa qcs"
+},
+{
+"key": "incises_4:18",
+"fr": "Par conséquent, qn fait qc",
+"it": "Di conseguenza, qcn fa qcs"
+},
+{
+"key": "incises_4:19",
+"fr": "Il est important de noter que qn fait qc",
+"it": "È importante notare che qcn fa qcs"
+},
+{
+"key": "incises_4:20",
+"fr": "Toutefois, qn fait qc",
+"it": "Tuttavia, qcn fa qcs (comunque)"
+},
+{
+"key": "incises_4:21",
+"fr": "En toute franchise, qn fait qc",
+"it": "In tutta franchezza, qcn fa qcs"
+},
+{
+"key": "incises_4:22",
+"fr": "Soyons clairs, qn fait qc",
+"it": "Mettiamo in chiaro una cosa: qcn fa qcs"
+},
+{
+"key": "incises_4:23",
+"fr": "En résumé, qn fait qc",
+"it": "Riassumendo, qcn fa qcs"
+},
+{
+"key": "incises_4:24",
+"fr": "qn fait qc, en résumé",
+"it": "qcn fa qcs, riassumendo."
+},
+{
+"key": "incises_4:25",
+"fr": "Sans vouloir te vexer, qn fait qc",
+"it": "Senza offesa, qcn fa qcs"
+},
+{
+"key": "incises_4:26",
+"fr": "Juste pour préciser, qn fait qc",
+"it": "Solo per precisare, qcn fa qcs"
+},
+{
+"key": "incises_4:27",
+"fr": "En guise de conclusion, qn fait qc",
+"it": "A mo' di conclusione, qcn fa qcs"
+},
+{
+"key": "incises_4:28",
+"fr": "Si on y réfléchit, qn fait qc",
+"it": "Se ci pensi, qcn fa qcs"
+},
+{
+"key": "incises_4:29",
+"fr": "Pour clarifier, qn fait qc",
+"it": "Per chiarire, qcn fa qcs"
+},
+{
+"key": "incises_4:30",
+"fr": "Pour résumer, qn fait qc",
+"it": "Per riassumere, qcn fa qcs"
+},
+{
+"key": "incises_4:31",
+"fr": "qn fait qc, pour résumer",
+"it": "qcn fa qcs, per riassumere."
+},
+{
+"key": "incises_4:32",
+"fr": "qn fait qc, à la rigueur",
+"it": "qcn fa qcs, a rigore."
+},
+{
+"key": "incises_4:33",
+"fr": "Notamment que qn fait qc",
+"it": "In particolare che qcn fa qcs"
+},
+{
+"key": "incises_4:34",
+"fr": "En définitive, qn fait qc",
+"it": "In definitiva, qcn fa qcs"
+},
+{
+"key": "incises_4:35",
+"fr": "Notamment, qn fait qc",
+"it": "In particolare, qcn fa qcs"
+},
+{
+"key": "incises_4:36",
+"fr": "qn, a priori, fait qc",
+"it": "qcn, a priori, fa qcs"
+},
+{
+"key": "incises_4:37",
+"fr": "qn, paraît-il, fait qc",
+"it": "qcn, pare, fa qcs"
+},
+{
+"key": "incises_4:38",
+"fr": "qn, semble-t-il, fait qc",
+"it": "qcn, a quanto sembra, fa qcs"
+},
+{
+"key": "incises_4:39",
+"fr": "Pour simplifier, qn fait qc",
+"it": "Per semplificare, qcn fa qcs"
+},
+{
+"key": "incises_4:40",
+"fr": "qn fait qc, pour simplifier",
+"it": "qcn fa qcs, per semplificare."
+},
+{
+"key": "incises_4:41",
+"fr": "Entre guillemets, qn fait qc",
+"it": "Tra virgolette, qcn fa qcs"
+},
+{
+"key": "incises_4:42",
+"fr": "En toute objectivité, qn fait qc",
+"it": "In tutta obiettività, qcn fa qcs"
+},
+{
+"key": "incises_4:43",
+"fr": "Entre parenthèses, qn fait qc",
+"it": "Tra parentesi, qcn fa qcs"
+},
+{
+"key": "incises_4:44",
+"fr": "qn fait qc, disons-le",
+"it": "qcn fa qcs, diciamolo."
+},
+{
+"key": "incises_4:45",
+"fr": "Je ne voulais pas sous-entendre que qn fait qc",
+"it": "Non intendevo insinuare che qcn fa qcs"
+},
+{
+"key": "incises_4:46",
+"fr": "Soulignons que qn fait qc",
+"it": "Sottolineiamo che qcn fa qcs"
+},
+{
+"key": "verbes_2:0",
+"fr": "avoir peur de qc",
+"it": "avere paura di qcs"
+},
+{
+"key": "verbes_2:1",
+"fr": "rester à faire qc",
+"it": "restare a fare qcs"
+},
+{
+"key": "verbes_2:10",
+"fr": "chercher à faire qc",
+"it": "cercare di fare qcs"
+},
+{
+"key": "verbes_2:29",
+"fr": "donner qc à qn",
+"it": "dare qcs a qcn"
+},
+{
+"key": "verbes_2:30",
+"fr": "se mettre à faire qc",
+"it": "mettersi a fare qcs"
+},
+{
+"key": "verbes_2:33",
+"fr": "passer du temps à faire qc",
+"it": "passare del tempo a fare qcs"
+},
+{
+"key": "verbes_2:41",
+"fr": "faire attention à qc",
+"it": "fare attenzione a qcs"
+},
+{
+"key": "verbes_2:43",
+"fr": "arrêter de faire qc",
+"it": "smettere di fare qcs"
+},
+{
+"key": "verbes_2:44",
+"fr": "passer son temps à faire qc",
+"it": "passare il tempo a fare qcs"
+},
+{
+"key": "verbes_2:47",
+"fr": "aller chercher qn",
+"it": "andare a prendere qcn"
+},
+{
+"key": "verbes_2:50",
+"fr": "être en train de faire qc",
+"it": "stare + gérondif"
+},
+{
+"key": "verbes_2:54",
+"fr": "poser qc qqpart",
+"it": "posare qcs da qualche parte"
+},
+{
+"key": "verbes_2:55",
+"fr": "demander qc à qn",
+"it": "chiedere qcs a qcn"
+},
+{
+"key": "verbes_2:56",
+"fr": "demander à qn de faire qc",
+"it": "chiedere a qcn di fare qcs"
+},
+{
+"key": "verbes_2:61",
+"fr": "jouer dans qc",
+"it": "recitare in qcs"
+},
+{
+"key": "verbes_2:71",
+"fr": "être prêt à faire qc",
+"it": "essere pronto a fare qcs"
+},
+{
+"key": "verbes_2:76",
+"fr": "faire confiance à qn",
+"it": "fidarsi di qcn"
+},
+{
+"key": "verbes_2:84",
+"fr": "amener qn",
+"it": "portare qcn"
+},
+{
+"key": "verbes_2:85",
+"fr": "arriver à faire qc / réussir à faire qc",
+"it": "riuscire a fare qcs"
+},
+{
+"key": "verbes_2:94",
+"fr": "s'attendre à qc",
+"it": "aspettarsi qcs"
+},
+{
+"key": "verbes_2:95",
+"fr": "faire tomber qc",
+"it": "far cadere qcs"
+},
+{
+"key": "verbes_2:96",
+"fr": "tomber sur qn",
+"it": "imbattersi in qcn"
+},
+{
+"key": "adjectifs_2:7",
+"fr": "une livre de qc",
+"it": "una libbra di qcs"
+},
+{
+"key": "adjectifs_2:33",
+"fr": "un pied de qc",
+"it": "un piede di qcs"
+},
+{
+"key": "adjectifs_2:49",
+"fr": "une boîte de qc",
+"it": "una scatola di qcs"
+},
+{
+"key": "adjectifs_2:61",
+"fr": "nulle chose",
+"it": "nessuna cosa"
+},
+{
+"key": "adjectifs_2:69",
+"fr": "d'une telle chose",
+"it": "di una tale cosa"
+},
+{
+"key": "adjectifs_2:73",
+"fr": "qc de base",
+"it": "qcs di base"
+},
+{
+"key": "adjectifs_2:84",
+"fr": "la plupart de qc",
+"it": "la maggior parte di qcs"
+},
+{
+"key": "adjectifs_2:85",
+"fr": "un tas de qc (beaucoup de)",
+"it": "un mucchio di qcs"
+},
+{
+"key": "adverbes_2:0",
+"fr": "Avant cela, qn fait qc.",
+"it": "Prima di questo, qcn fa qcs"
+},
+{
+"key": "adverbes_2:24",
+"fr": "soit qc soit qc",
+"it": "o qcs o qcs"
+},
+{
+"key": "adverbes_2:35",
+"fr": "en train de faire qc",
+"it": "stare + gerundio"
+},
+{
+"key": "adverbes_2:40",
+"fr": "ne fait point",
+"it": "non fa affatto"
+},
+{
+"key": "noms_3:43",
+"fr": "le marché des voitures",
+"it": "il mercato delle auto"
+},
+{
+"key": "verbes_3:7",
+"fr": "essayer de faire qc",
+"it": "provare a fare qcs"
+},
+{
+"key": "verbes_3:8",
+"fr": "penser à qn",
+"it": "pensare a qcn"
+},
+{
+"key": "verbes_3:9",
+"fr": "penser que qn fait qc",
+"it": "pensare che qcn faccia qcs"
+},
+{
+"key": "verbes_3:14",
+"fr": "avoir envie de faire qc",
+"it": "avere voglia di fare qcs"
+},
+{
+"key": "verbes_3:18",
+"fr": "travailler sur qc",
+"it": "lavorare su qcs"
+},
+{
+"key": "verbes_3:20",
+"fr": "rentrer qqpart",
+"it": "entrare da qualche parte"
+},
+{
+"key": "verbes_3:24",
+"fr": "revoir qn",
+"it": "rivedere qcn"
+},
+{
+"key": "verbes_3:29",
+"fr": "devoir qc à qn",
+"it": "dovere qcs a qcn"
+},
+{
+"key": "verbes_3:30",
+"fr": "rendre qc à qn",
+"it": "restituire qcs a qcn"
+},
+{
+"key": "verbes_3:34",
+"fr": "entendre dire que qn fait qc",
+"it": "sentire dire che qcn fa qcs"
+},
+{
+"key": "verbes_3:38",
+"fr": "payer qc à qn",
+"it": "pagare qcs a qcn"
+},
+{
+"key": "verbes_3:39",
+"fr": "montrer qc à qn",
+"it": "mostrare qcs a qcn"
+},
+{
+"key": "verbes_3:48",
+"fr": "entendre parler de qn",
+"it": "sentire parlare di qcn"
+},
+{
+"key": "verbes_3:51",
+"fr": "maintenir qc",
+"it": "mantenere qcs"
+},
+{
+"key": "verbes_3:60",
+"fr": "perdre du temps à faire qc",
+"it": "perdere tempo a fare qcs"
+},
+{
+"key": "verbes_3:67",
+"fr": "avoir des nouvelles de qn",
+"it": "avere notizie di qcn"
+},
+{
+"key": "verbes_3:71",
+"fr": "commencer à faire qc",
+"it": "cominciare a fare qcs"
+},
+{
+"key": "verbes_3:86",
+"fr": "être en rapport avec qc",
+"it": "riguardare qcs"
+},
+{
+"key": "verbes_3:91",
+"fr": "épouser qn",
+"it": "sposare qcn"
+},
+{
+"key": "adjectifs_3:5",
+"fr": "de nature beau",
+"it": "di natura bello"
+},
+{
+"key": "adjectifs_3:15",
+"fr": "telle chose",
+"it": "tale cosa"
+},
+{
+"key": "adjectifs_3:20",
+"fr": "d'une telle chose",
+"it": "di una tale cosa"
+},
+{
+"key": "adjectifs_3:38",
+"fr": "quelles choses",
+"it": "quali cose"
+},
+{
+"key": "adjectifs_3:44",
+"fr": "une bouteille de qc",
+"it": "una bottiglia di qcs"
+},
+{
+"key": "adjectifs_3:82",
+"fr": "tel ou tel objet",
+"it": "questo o quell'oggetto"
+},
+{
+"key": "adverbes_3:4",
+"fr": "depuis lundi",
+"it": "da lunedì"
+},
+{
+"key": "adverbes_3:85",
+"fr": "ne fait qc nulle part",
+"it": "non fa qcs da nessuna parte"
+},
+{
+"key": "prepositions_2:2",
+"fr": "à gauche de qc",
+"it": "a sinistra di qcs"
+},
+{
+"key": "prepositions_2:3",
+"fr": "en ligne avec qc",
+"it": "in linea con qcs"
+},
+{
+"key": "prepositions_2:4",
+"fr": "au risque de faire qc",
+"it": "a rischio di fare qcs"
+},
+{
+"key": "prepositions_2:5",
+"fr": "en réponse à qc",
+"it": "in risposta a qcs"
+},
+{
+"key": "prepositions_2:7",
+"fr": "à l'arrière de qc",
+"it": "sul retro di qcs"
+},
+{
+"key": "prepositions_2:8",
+"fr": "hors qc",
+"it": "fuori qcs"
+},
+{
+"key": "prepositions_2:9",
+"fr": "en avance sur qc",
+"it": "in anticipo su qcs"
+},
+{
+"key": "prepositions_2:10",
+"fr": "dans le but de faire qc",
+"it": "allo scopo di fare qcs"
+},
+{
+"key": "prepositions_2:12",
+"fr": "à droite de qc",
+"it": "a destra di qcs"
+},
+{
+"key": "prepositions_2:13",
+"fr": "au centre de qc",
+"it": "al centro di qcs"
+},
+{
+"key": "prepositions_2:14",
+"fr": "au travers de qc",
+"it": "attraverso qcs"
+},
+{
+"key": "prepositions_2:15",
+"fr": "de manière à faire qc",
+"it": "in modo da fare qcs"
+},
+{
+"key": "prepositions_2:16",
+"fr": "en relation avec qc",
+"it": "in relazione a qcs"
+},
+{
+"key": "prepositions_2:17",
+"fr": "en signe de qc",
+"it": "in segno di qcs"
+},
+{
+"key": "prepositions_2:19",
+"fr": "tel que qc",
+"it": "come qcs"
+},
+{
+"key": "prepositions_2:20",
+"fr": "en voie de qc",
+"it": "in via di qcs"
+},
+{
+"key": "prepositions_2:21",
+"fr": "du côté gauche de qc",
+"it": "sul lato sinistro di qcs"
+},
+{
+"key": "prepositions_2:22",
+"fr": "sur la base de qc",
+"it": "sulla base di qcs"
+},
+{
+"key": "prepositions_2:23",
+"fr": "proche de qc",
+"it": "vicino a qcs"
+},
+{
+"key": "prepositions_2:24",
+"fr": "lors de qc",
+"it": "durante qcs"
+},
+{
+"key": "prepositions_2:25",
+"fr": "quitte à faire qc",
+"it": "a costo di fare qcs"
+},
+{
+"key": "prepositions_2:26",
+"fr": "en direction de qc",
+"it": "in direzione di qcs"
+},
+{
+"key": "prepositions_2:27",
+"fr": "afin de faire qc",
+"it": "per fare qcs"
+},
+{
+"key": "prepositions_2:30",
+"fr": "en présence de qn",
+"it": "in presenza di qcn"
+},
+{
+"key": "prepositions_2:31",
+"fr": "en lien avec qc",
+"it": "in relazione a qcs"
+},
+{
+"key": "prepositions_2:32",
+"fr": "à compter du 3 mai",
+"it": "a partire dal 3 maggio"
+},
+{
+"key": "prepositions_2:33",
+"fr": "étant donné qc",
+"it": "dato qcs"
+},
+{
+"key": "prepositions_2:35",
+"fr": "en échange de qc",
+"it": "in cambio di qcs"
+},
+{
+"key": "prepositions_2:36",
+"fr": "sans compter qc",
+"it": "senza contare qcs"
+},
+{
+"key": "prepositions_2:37",
+"fr": "en faveur de qc",
+"it": "a favore di qcs"
+},
+{
+"key": "prepositions_2:38",
+"fr": "à la faveur de qc",
+"it": "grazie a qcs"
+},
+{
+"key": "prepositions_2:39",
+"fr": "à l'extérieur de qc",
+"it": "fuori da qcs"
+},
+{
+"key": "prepositions_2:40",
+"fr": "à la mode de qc",
+"it": "alla moda di qcs"
+},
+{
+"key": "prepositions_2:41",
+"fr": "en ce qui concerne qc",
+"it": "per quanto riguarda qcs"
+},
+{
+"key": "prepositions_2:42",
+"fr": "envers qn",
+"it": "verso qcn"
+},
+{
+"key": "prepositions_2:43",
+"fr": "en parlant de qc",
+"it": "parlando di qcs"
+},
+{
+"key": "prepositions_2:44",
+"fr": "auprès de qn",
+"it": "presso qcn"
+},
+{
+"key": "prepositions_2:45",
+"fr": "en dessous de qc",
+"it": "al di sotto di qcs"
+},
+{
+"key": "prepositions_2:46",
+"fr": "vis à vis de qn",
+"it": "nei confronti di qcn"
+},
+{
+"key": "prepositions_2:47",
+"fr": "au-delà de qc",
+"it": "oltre qcs"
+},
+{
+"key": "prepositions_2:48",
+"fr": "en liaison avec qn",
+"it": "in collegamento con qcn"
+},
+{
+"key": "prepositions_2:49",
+"fr": "sous réserve de qc",
+"it": "salvo qcs"
+},
+{
+"key": "prepositions_2:50",
+"fr": "quant à qn",
+"it": "quanto a qcn"
+},
+{
+"key": "prepositions_2:51",
+"fr": "à condition de faire qc",
+"it": "a condizione di fare qcs"
+},
+{
+"key": "prepositions_2:52",
+"fr": "en qualité de qn",
+"it": "in qualità di qcn"
+},
+{
+"key": "prepositions_2:53",
+"fr": "dans le domaine de qc",
+"it": "nel campo di qcs"
+},
+{
+"key": "prepositions_2:54",
+"fr": "en matière de qc",
+"it": "in materia di qcs"
+},
+{
+"key": "prepositions_2:55",
+"fr": "concernant qc",
+"it": "riguardo a qcs"
+},
+{
+"key": "prepositions_2:56",
+"fr": "au sein de qc",
+"it": "in seno a qcs"
+},
+{
+"key": "prepositions_2:57",
+"fr": "en termes de qc",
+"it": "in termini di qcs"
+},
+{
+"key": "prepositions_2:58",
+"fr": "jusqu'à qc",
+"it": "fino a qcs"
+},
+{
+"key": "prepositions_2:59",
+"fr": "à l'exception de qn",
+"it": "ad eccezione di qcn"
+},
+{
+"key": "prepositions_2:60",
+"fr": "en fonction de qc",
+"it": "in funzione di qcs"
+},
+{
+"key": "prepositions_2:61",
+"fr": "contrairement à qn",
+"it": "contrariamente a qcn"
+},
+{
+"key": "prepositions_2:62",
+"fr": "dans le cadre de qc",
+"it": "nell'ambito di qcs"
+},
+{
+"key": "prepositions_2:63",
+"fr": "à défaut de qc",
+"it": "in mancanza di qcs"
+},
+{
+"key": "prepositions_2:64",
+"fr": "en référence à qc",
+"it": "in riferimento a qcs"
+},
+{
+"key": "prepositions_2:65",
+"fr": "comparé à qc",
+"it": "rispetto a qcs"
+},
+{
+"key": "prepositions_2:66",
+"fr": "au ras de qc",
+"it": "raso qcs"
+},
+{
+"key": "prepositions_2:67",
+"fr": "aux environs de qc",
+"it": "nei dintorni di qcs"
+},
+{
+"key": "prepositions_2:68",
+"fr": "sous prétexte de faire qc",
+"it": "col pretesto di fare qcs"
+},
+{
+"key": "prepositions_2:69",
+"fr": "en vertu de qc",
+"it": "in virtù di qcs"
+},
+{
+"key": "prepositions_2:70",
+"fr": "à proximité de qc",
+"it": "in prossimità di qcs"
+},
+{
+"key": "prepositions_2:71",
+"fr": "aux alentours de qc",
+"it": "intorno a qcs"
+},
+{
+"key": "prepositions_2:72",
+"fr": "en guise de qc",
+"it": "a mo' di qcs"
+},
+{
+"key": "prepositions_2:73",
+"fr": "excepté qn",
+"it": "eccetto qcn"
+},
+{
+"key": "prepositions_2:74",
+"fr": "à l'égard de qn",
+"it": "nei riguardi di qcn"
+},
+{
+"key": "prepositions_2:75",
+"fr": "dans la perspective de qc",
+"it": "in vista di qcs"
+},
+{
+"key": "prepositions_2:76",
+"fr": "en dépit de qc",
+"it": "a dispetto di qcs"
+},
+{
+"key": "prepositions_2:77",
+"fr": "par l'intermédiaire de qn",
+"it": "tramite qcn"
+},
+{
+"key": "prepositions_2:78",
+"fr": "par opposition à qc",
+"it": "in opposizione a qcs"
+},
+{
+"key": "prepositions_2:79",
+"fr": "à l'encontre de qc",
+"it": "contro qcs"
+},
+{
+"key": "prepositions_2:80",
+"fr": "en comparaison avec qc",
+"it": "in confronto a qcs"
+},
+{
+"key": "prepositions_2:81",
+"fr": "hormis qn",
+"it": "tranne qcn"
+},
+{
+"key": "prepositions_2:82",
+"fr": "relativement à qc",
+"it": "relativamente a qcs"
+},
+{
+"key": "prepositions_2:83",
+"fr": "outre qc",
+"it": "oltre a qcs"
+},
+{
+"key": "prepositions_2:84",
+"fr": "à l'insu de qn",
+"it": "all'insaputa di qcn"
+},
+{
+"key": "prepositions_2:85",
+"fr": "combiné à qc",
+"it": "combinato con qcs"
+},
+{
+"key": "prepositions_2:86",
+"fr": "aux dépens de qn",
+"it": "a spese di qcn"
+},
+{
+"key": "prepositions_2:87",
+"fr": "conformément à qc",
+"it": "conformemente a qcs"
+},
+{
+"key": "prepositions_2:88",
+"fr": "en sus de qc",
+"it": "in aggiunta a qcs"
+},
+{
+"key": "prepositions_2:89",
+"fr": "indépendamment de qc",
+"it": "indipendentemente da qcs"
+},
+{
+"key": "prepositions_2:90",
+"fr": "par-delà qc",
+"it": "al di là di qcs"
+},
+{
+"key": "prepositions_2:91",
+"fr": "aux abords de qc",
+"it": "nei pressi di qcs"
+},
+{
+"key": "prepositions_2:92",
+"fr": "moyennant qc",
+"it": "dietro qcs"
+},
+{
+"key": "prepositions_2:93",
+"fr": "à l'instar de qn",
+"it": "sull'esempio di qcn"
+},
+{
+"key": "prepositions_2:94",
+"fr": "parallèlement à qc",
+"it": "parallelamente a qcs"
+},
+{
+"key": "prepositions_2:95",
+"fr": "en deçà de qc",
+"it": "al di qua di qcs"
+},
+{
+"key": "prepositions_2:96",
+"fr": "proportionnellement à qc",
+"it": "proporzionalmente a qcs"
+},
+{
+"key": "prepositions_2:97",
+"fr": "préalablement à qc",
+"it": "prima di qcs"
+},
+{
+"key": "prepositions_2:98",
+"fr": "à moins de dix",
+"it": "a meno di dieci"
+},
+{
+"key": "prepositions_2:99",
+"fr": "au prorata de qc",
+"it": "in proporzione a qcs"
+},
+{
+"key": "prepositions_3:0",
+"fr": "à qn",
+"it": "a qcn"
+},
+{
+"key": "prepositions_3:1",
+"fr": "à Rome (ville)",
+"it": "a Roma"
+},
+{
+"key": "prepositions_3:2",
+"fr": "en Italie / au Japon (pays, région)",
+"it": "in Italia / in Giappone"
+},
+{
+"key": "conjonctions_2:0",
+"fr": "dans la mesure où qn fait qc",
+"it": "nella misura in cui qcn fa qcs"
+},
+{
+"key": "conjonctions_2:3",
+"fr": "sous réserve que qn fasse qc",
+"it": "a condizione che qcn faccia qcs"
+},
+{
+"key": "conjonctions_2:6",
+"fr": "sachant que qn fait qc",
+"it": "sapendo che qcn fa qcs"
+},
+{
+"key": "conjonctions_2:7",
+"fr": "tandis que qn fait qc",
+"it": "mentre qcn fa qcs"
+},
+{
+"key": "conjonctions_2:8",
+"fr": "de crainte que qn fasse qc",
+"it": "per timore che qcn faccia qcs"
+},
+{
+"key": "conjonctions_2:9",
+"fr": "d'où la conclusion que qn fait qc",
+"it": "da cui la conclusione che qcn fa qcs"
+},
+{
+"key": "conjonctions_2:10",
+"fr": "pourvu que qn fasse qc",
+"it": "purché qcn faccia qcs"
+},
+{
+"key": "conjonctions_2:11",
+"fr": "aussitôt que qn fait qc",
+"it": "non appena qcn fa qcs"
+},
+{
+"key": "conjonctions_2:12",
+"fr": "ce qui nous amène à la conclusion que qn fait qc",
+"it": "il che ci porta alla conclusione che qcn fa qcs"
+},
+{
+"key": "conjonctions_2:13",
+"fr": "sous prétexte que qn fait qc",
+"it": "col pretesto che qcn fa qcs"
+},
+{
+"key": "conjonctions_2:14",
+"fr": "dans l'hypothèse où qn ferait qc",
+"it": "nell'ipotesi che qcn facesse qcs"
+},
+{
+"key": "conjonctions_2:15",
+"fr": "à supposer que qn fasse qc",
+"it": "supponendo che qcn faccia qcs"
+},
+{
+"key": "conjonctions_2:16",
+"fr": "supposons que qn fasse qc",
+"it": "supponiamo che qcn faccia qcs"
+},
+{
+"key": "conjonctions_2:17",
+"fr": "considérant que qn fait qc",
+"it": "considerando che qcn fa qcs"
+},
+{
+"key": "conjonctions_2:18",
+"fr": "sitôt que qn fait qc",
+"it": "non appena qcn fa qcs"
+},
+{
+"key": "conjonctions_2:19",
+"fr": "dans l'éventualité où qn fait qc",
+"it": "nell'eventualità che qcn faccia qcs"
+},
+{
+"key": "conjonctions_2:20",
+"fr": "au fur et à mesure que qn fait qc",
+"it": "man mano che qcn fa qcs"
+},
+{
+"key": "conjonctions_2:21",
+"fr": "en admettant que qn fasse qc",
+"it": "ammettendo che qcn faccia qcs"
+},
+{
+"key": "conjonctions_2:22",
+"fr": "C'est pas dit que qn fasse qc.",
+"it": "Non è detto che qcn faccia qcs"
+},
+{
+"key": "verbes_4:0",
+"fr": "apprendre à faire qc",
+"it": "imparare a fare qcs"
+},
+{
+"key": "verbes_4:1",
+"fr": "s'occuper de qc",
+"it": "occuparsi di qcs"
+},
+{
+"key": "verbes_4:15",
+"fr": "finir de faire qc",
+"it": "finire di fare qcs"
+},
+{
+"key": "verbes_4:19",
+"fr": "mettre en route qc",
+"it": "avviare qcs"
+},
+{
+"key": "verbes_4:35",
+"fr": "expliquer qc à qn",
+"it": "spiegare qcs a qcn"
+},
+{
+"key": "verbes_4:39",
+"fr": "se rendre compte de qc",
+"it": "rendersi conto di qcs"
+},
+{
+"key": "verbes_4:40",
+"fr": "charger qc",
+"it": "caricare qcs"
+},
+{
+"key": "verbes_4:43",
+"fr": "surveiller qn",
+"it": "sorvegliare qcn"
+},
+{
+"key": "verbes_4:45",
+"fr": "avoir l'habitude de qc",
+"it": "essere abituato a qcs"
+},
+{
+"key": "verbes_4:46",
+"fr": "avoir l'impression que qn fait qc",
+"it": "avere l'impressione che qcn faccia qcs"
+},
+{
+"key": "verbes_4:48",
+"fr": "tenir à qn",
+"it": "tenere a qcn"
+},
+{
+"key": "verbes_4:50",
+"fr": "envoyer qc à qn",
+"it": "mandare qcs a qcn"
+},
+{
+"key": "verbes_4:51",
+"fr": "vouloir que qn fasse qc",
+"it": "volere che qcn faccia qcs"
+},
+{
+"key": "verbes_4:52",
+"fr": "prévoir qc",
+"it": "prevedere qcs"
+},
+{
+"key": "verbes_4:55",
+"fr": "continuer à faire qc",
+"it": "continuare a fare qcs"
+},
+{
+"key": "verbes_4:56",
+"fr": "réaliser qc",
+"it": "realizzare qcs"
+},
+{
+"key": "verbes_4:57",
+"fr": "tenter qc",
+"it": "tentare qcs"
+},
+{
+"key": "verbes_4:58",
+"fr": "couvrir qn",
+"it": "coprire qcn"
+},
+{
+"key": "verbes_4:60",
+"fr": "partager qc",
+"it": "condividere qcs"
+},
+{
+"key": "verbes_4:65",
+"fr": "reposer qc qqpart",
+"it": "riporre qcs da qualche parte"
+},
+{
+"key": "verbes_4:69",
+"fr": "oublier de faire qc",
+"it": "dimenticare di fare qcs"
+},
+{
+"key": "verbes_4:74",
+"fr": "recommencer qc",
+"it": "ricominciare qcs"
+},
+{
+"key": "verbes_4:75",
+"fr": "se mettre long de qc",
+"it": "mettersi lungo qcs"
+},
+{
+"key": "verbes_4:76",
+"fr": "signifier qc / vouloir dire qc",
+"it": "significare qcs"
+},
+{
+"key": "verbes_4:77",
+"fr": "traverser qc",
+"it": "attraversare qcs"
+},
+{
+"key": "verbes_4:78",
+"fr": "deviner qc",
+"it": "indovinare qcs"
+},
+{
+"key": "verbes_4:80",
+"fr": "supporter qc",
+"it": "sopportare qcs"
+},
+{
+"key": "verbes_4:81",
+"fr": "accompagner qn",
+"it": "accompagnare qcn"
+},
+{
+"key": "verbes_4:82",
+"fr": "voler qc à qn",
+"it": "rubare qcs a qcn"
+},
+{
+"key": "verbes_4:84",
+"fr": "diriger qc",
+"it": "dirigere qcs"
+},
+{
+"key": "verbes_4:88",
+"fr": "vendre qc à qn",
+"it": "vendere qcs a qcn"
+},
+{
+"key": "verbes_4:91",
+"fr": "coûter dix euros",
+"it": "costare dieci euro"
+},
+{
+"key": "verbes_4:95",
+"fr": "engager qn",
+"it": "assumere qcn"
+},
+{
+"key": "verbes_4:98",
+"fr": "construire qc",
+"it": "costruire qcs"
+},
+{
+"key": "adjectifs_4:3",
+"fr": "qc à terme",
+"it": "qcs a termine"
+},
+{
+"key": "adjectifs_4:15",
+"fr": "différentes choses",
+"it": "varie cose"
+},
+{
+"key": "adjectifs_4:25",
+"fr": "un plat de qc",
+"it": "un piatto di qcs"
+},
+{
+"key": "adjectifs_4:60",
+"fr": "telle ou telle chose",
+"it": "questa o quella cosa"
+},
+{
+"key": "adjectifs_5:25",
+"fr": "un pot de qc",
+"it": "un barattolo di qcs"
+},
+{
+"key": "adjectifs_5:26",
+"fr": "une tasse de qc",
+"it": "una tazza di qcs"
+},
+{
+"key": "adjectifs_5:82",
+"fr": "de telles qc",
+"it": "tali qcs"
+},
+{
+"key": "adjectifs_5:85",
+"fr": "auquel qn fait qc",
+"it": "al quale qcn fa qcs"
+},
+{
+"key": "adjectifs_5:87",
+"fr": "de tels qc",
+"it": "tali qcs"
+},
+{
+"key": "adjectifs_5:89",
+"fr": "quelconque qc",
+"it": "qualunque qcs"
+},
+{
+"key": "adjectifs_5:92",
+"fr": "la majorité des gens",
+"it": "la maggioranza della gente"
+},
+{
+"key": "adjectifs_5:97",
+"fr": "précédent qc",
+"it": "qcs precedente"
+},
+{
+"key": "adjectifs_6:9",
+"fr": "une tonne de qc (beaucoup de)",
+"it": "una tonnellata di qcs"
+},
+{
+"key": "adjectifs_6:16",
+"fr": "une cuillère à café de qc",
+"it": "un cucchiaino di qcs"
+},
+{
+"key": "adjectifs_6:24",
+"fr": "une cuillère à soupe de qc",
+"it": "un cucchiaio di qcs"
+},
+{
+"key": "adjectifs_6:30",
+"fr": "un kilo de qc",
+"it": "un chilo di qcs"
+},
+{
+"key": "adjectifs_6:32",
+"fr": "auxquelles qn fait qc",
+"it": "alle quali qcn fa qcs"
+},
+{
+"key": "adjectifs_6:35",
+"fr": "auxquels qn fait qc",
+"it": "ai quali qcn fa qcs"
+},
+{
+"key": "adjectifs_6:38",
+"fr": "diverses choses",
+"it": "diversi libri / diverse cose"
+},
+{
+"key": "adjectifs_6:45",
+"fr": "maintes choses",
+"it": "molte cose"
+},
+{
+"key": "adjectifs_6:47",
+"fr": "un litre de qc",
+"it": "un litro di qcs"
+},
+{
+"key": "adjectifs_6:78",
+"fr": "maints objets",
+"it": "molti oggetti"
+},
+{
+"key": "adjectifs_6:82",
+"fr": "un kilogramme de qc",
+"it": "un chilogrammo di qcs"
+},
+{
+"key": "adverbes_4:5",
+"fr": "dans l'intention de faire qc",
+"it": "con l'intenzione di fare qcs"
+},
+{
+"key": "adverbes_4:35",
+"fr": "qn fait de telle manière",
+"it": "qcn fa in modo tale"
+},
+{
+"key": "adverbes_4:97",
+"fr": "Nan mais là, qn fait qc.",
+"it": "No ma adesso, qcn fa qcs"
+},
+{
+"key": "adverbes_5:15",
+"fr": "une quantité de qc",
+"it": "una quantità di qcs"
+},
+{
+"key": "adverbes_5:29",
+"fr": "qn ne fait guère qc.",
+"it": "qcn non fa quasi qcs"
+},
+{
+"key": "adverbes_5:99",
+"fr": "tantôt",
+"it": "ora qcs ora qcs"
+},
+{
+"key": "adverbes_6:44",
+"fr": "la minorité des gens",
+"it": "la minoranza della gente"
+},
+{
+"key": "adverbes_6:91",
+"fr": "ne fait aucunement",
+"it": "non fa affatto"
+},
+{
+"key": "adverbes_6:92",
+"fr": "ne fait nullement",
+"it": "non fa per nulla"
+},
+{
+"key": "noms_6:99",
+"fr": "la série de qc",
+"it": "la serie di qcs"
+},
+{
+"key": "noms_7:87",
+"fr": "l'arrêt de qc",
+"it": "l'arresto di qcs"
+},
+{
+"key": "noms_9:92",
+"fr": "des milliers de qc",
+"it": "migliaia di qcs"
+},
+{
+"key": "noms_12:19",
+"fr": "des centaines de qc",
+"it": "centinaia di qcs"
+},
+{
+"key": "verbes_5:0",
+"fr": "retenir qc",
+"it": "trattenere qcs"
+},
+{
+"key": "verbes_5:3",
+"fr": "réparer qc",
+"it": "riparare qcs"
+},
+{
+"key": "verbes_5:5",
+"fr": "servir à faire qc",
+"it": "servire a fare qcs"
+},
+{
+"key": "verbes_5:6",
+"fr": "étudier qc",
+"it": "studiare qcs"
+},
+{
+"key": "verbes_5:7",
+"fr": "oser faire qc",
+"it": "osare fare qcs"
+},
+{
+"key": "verbes_5:10",
+"fr": "atteindre qc",
+"it": "raggiungere qcs"
+},
+{
+"key": "verbes_5:15",
+"fr": "répondre à qc",
+"it": "rispondere a qcs"
+},
+{
+"key": "verbes_5:16",
+"fr": "nettoyer qc",
+"it": "pulire qcs"
+},
+{
+"key": "verbes_5:17",
+"fr": "causer qc",
+"it": "causare qcs"
+},
+{
+"key": "verbes_5:20",
+"fr": "se servir de qc",
+"it": "servirsi di qcs"
+},
+{
+"key": "verbes_5:25",
+"fr": "commander qc",
+"it": "ordinare qcs"
+},
+{
+"key": "verbes_5:29",
+"fr": "poser une question à qn",
+"it": "fare una domanda a qcn"
+},
+{
+"key": "verbes_5:33",
+"fr": "empêcher qn de faire qc",
+"it": "impedire a qcn di fare qcs"
+},
+{
+"key": "verbes_5:35",
+"fr": "prendre soin de qn",
+"it": "prendersi cura di qcn"
+},
+{
+"key": "verbes_5:36",
+"fr": "traîner qc",
+"it": "trascinare qcs"
+},
+{
+"key": "verbes_5:50",
+"fr": "baisser qc",
+"it": "abbassare qcs"
+},
+{
+"key": "verbes_5:51",
+"fr": "fatiguer qn",
+"it": "stancare qcn"
+},
+{
+"key": "verbes_5:52",
+"fr": "juger qn",
+"it": "giudicare qcn"
+},
+{
+"key": "verbes_5:54",
+"fr": "être censé faire qc",
+"it": "dovere fare qcs"
+},
+{
+"key": "verbes_5:60",
+"fr": "renvoyer qn",
+"it": "licenziare qcn"
+},
+{
+"key": "verbes_5:61",
+"fr": "se souvenir de qn",
+"it": "ricordarsi di qcn"
+},
+{
+"key": "verbes_5:63",
+"fr": "avoir le rôle de qn",
+"it": "avere il ruolo di qcn"
+},
+{
+"key": "verbes_5:64",
+"fr": "briser qc",
+"it": "rompere qcs"
+},
+{
+"key": "verbes_5:65",
+"fr": "présenter qn à qn",
+"it": "presentare qcn a qcn"
+},
+{
+"key": "verbes_5:66",
+"fr": "discuter de qc",
+"it": "discutere di qcs"
+},
+{
+"key": "verbes_5:68",
+"fr": "ennuyer qn",
+"it": "annoiare qcn"
+},
+{
+"key": "verbes_5:69",
+"fr": "s'assurer que qn fait qc",
+"it": "assicurarsi che qcn faccia qcs"
+},
+{
+"key": "verbes_5:71",
+"fr": "enterrer qn",
+"it": "seppellire qcn"
+},
+{
+"key": "verbes_5:72",
+"fr": "emporter qc",
+"it": "portare via qcs"
+},
+{
+"key": "verbes_5:73",
+"fr": "prouver qc à qn",
+"it": "dimostrare qcs a qcn"
+},
+{
+"key": "verbes_5:80",
+"fr": "déposer qn qqpart",
+"it": "lasciare qcn da qualche parte"
+},
+{
+"key": "verbes_5:81",
+"fr": "se fier à qn",
+"it": "fidarsi di qcn"
+},
+{
+"key": "verbes_5:83",
+"fr": "offrir qc à qn",
+"it": "offrire qcs a qcn"
+},
+{
+"key": "verbes_5:84",
+"fr": "rappeler qc à qn",
+"it": "ricordare qcs a qcn"
+},
+{
+"key": "verbes_5:85",
+"fr": "produire qc",
+"it": "produrre qcs"
+},
+{
+"key": "verbes_5:86",
+"fr": "se rappeler de qn",
+"it": "ricordarsi di qcn"
+},
+{
+"key": "verbes_5:87",
+"fr": "éteindre qc",
+"it": "spegnere qcs"
+},
+{
+"key": "verbes_5:89",
+"fr": "enfermer qn",
+"it": "rinchiudere qcn"
+},
+{
+"key": "verbes_5:94",
+"fr": "réfléchir à qc",
+"it": "pensare a qcs"
+},
+{
+"key": "verbes_5:95",
+"fr": "se préparer à qc",
+"it": "prepararsi a qcs"
+},
+{
+"key": "verbes_5:96",
+"fr": "placer qc qqpart",
+"it": "mettere qcs da qualche parte"
+},
+{
+"key": "verbes_5:97",
+"fr": "désirer qc",
+"it": "desiderare qcs"
+},
+{
+"key": "verbes_5:99",
+"fr": "organiser qc",
+"it": "organizzare qcs"
+},
+{
+"key": "verbes_6:1",
+"fr": "tenir qn au courant de qc",
+"it": "tenere qcn al corrente di qcs"
+},
+{
+"key": "verbes_6:2",
+"fr": "concerner qn",
+"it": "riguardare qcn"
+},
+{
+"key": "verbes_6:4",
+"fr": "rendre visite à qn",
+"it": "andare a trovare qcn"
+},
+{
+"key": "verbes_6:7",
+"fr": "habiller qn",
+"it": "vestire qcn"
+},
+{
+"key": "verbes_6:8",
+"fr": "allumer qc",
+"it": "accendere qcs"
+},
+{
+"key": "verbes_6:12",
+"fr": "crever qc",
+"it": "bucare qcs"
+},
+{
+"key": "verbes_6:13",
+"fr": "élever qc",
+"it": "sollevare qcs"
+},
+{
+"key": "verbes_6:14",
+"fr": "faire sauter qc",
+"it": "saltare qcs"
+},
+{
+"key": "verbes_6:17",
+"fr": "tomber amoureux de qn",
+"it": "innamorarsi di qcn"
+},
+{
+"key": "verbes_6:18",
+"fr": "haïr qc",
+"it": "odiare qcs"
+},
+{
+"key": "verbes_6:29",
+"fr": "annuler qc",
+"it": "annullare qcs"
+},
+{
+"key": "verbes_6:30",
+"fr": "nourrir qn",
+"it": "nutrire qcn"
+},
+{
+"key": "verbes_6:32",
+"fr": "rechercher qn",
+"it": "cercare qcn"
+},
+{
+"key": "verbes_6:38",
+"fr": "jouer le rôle de qn",
+"it": "interpretare il ruolo di qcn"
+},
+{
+"key": "verbes_6:41",
+"fr": "mêler qc",
+"it": "mescolare qcs"
+},
+{
+"key": "verbes_6:43",
+"fr": "joindre qn",
+"it": "raggiungere qcn"
+},
+{
+"key": "verbes_6:45",
+"fr": "interroger qn",
+"it": "interrogare qcn"
+},
+{
+"key": "verbes_6:46",
+"fr": "serrer qc",
+"it": "stringere qcs"
+},
+{
+"key": "verbes_6:48",
+"fr": "frapper à qc",
+"it": "bussare a qcs"
+},
+{
+"key": "verbes_6:49",
+"fr": "s'amuser à faire qc",
+"it": "divertirsi a fare qcs"
+},
+{
+"key": "verbes_6:50",
+"fr": "contacter qn",
+"it": "contattare qcn"
+},
+{
+"key": "verbes_6:52",
+"fr": "résoudre qc",
+"it": "risolvere qcs"
+},
+{
+"key": "verbes_6:53",
+"fr": "étonner qn",
+"it": "stupire qcn"
+},
+{
+"key": "verbes_6:56",
+"fr": "posséder qc",
+"it": "possedere qcs"
+},
+{
+"key": "verbes_6:61",
+"fr": "louer qc",
+"it": "affittare qcs"
+},
+{
+"key": "verbes_6:64",
+"fr": "garder un œil sur qn",
+"it": "tenere d'occhio qcn"
+},
+{
+"key": "verbes_6:70",
+"fr": "avoir le goût de qc",
+"it": "sapere di qcs"
+},
+{
+"key": "verbes_6:71",
+"fr": "ranger qc",
+"it": "mettere in ordine qcs"
+},
+{
+"key": "verbes_6:72",
+"fr": "raconter qc à qn",
+"it": "raccontare qcs a qcn"
+},
+{
+"key": "verbes_6:73",
+"fr": "soigner qn",
+"it": "curare qcn"
+},
+{
+"key": "verbes_6:75",
+"fr": "nommer qn",
+"it": "nominare qcn"
+},
+{
+"key": "verbes_6:76",
+"fr": "avoir l'intention de faire qc",
+"it": "avere intenzione di fare qcs"
+},
+{
+"key": "verbes_6:78",
+"fr": "marquer qc",
+"it": "segnare qcs"
+},
+{
+"key": "verbes_6:79",
+"fr": "presser qc",
+"it": "spremere qcs"
+},
+{
+"key": "verbes_6:81",
+"fr": "déplacer qc qqpart",
+"it": "spostare qcs da qualche parte"
+},
+{
+"key": "verbes_6:87",
+"fr": "être obligé de faire qc",
+"it": "essere obbligato a fare qcs"
+},
+{
+"key": "verbes_6:88",
+"fr": "soutenir qn",
+"it": "sostenere qcn"
+},
+{
+"key": "verbes_6:89",
+"fr": "déclarer qc",
+"it": "dichiarare qcs"
+},
+{
+"key": "verbes_6:90",
+"fr": "observer qc",
+"it": "osservare qcs"
+},
+{
+"key": "verbes_6:94",
+"fr": "décider de faire qc",
+"it": "decidere di fare qcs"
+},
+{
+"key": "verbes_6:95",
+"fr": "s'agir de faire qc",
+"it": "trattarsi di fare qcs"
+},
+{
+"key": "verbes_7:4",
+"fr": "se décider à faire qc",
+"it": "decidersi a fare qcs"
+},
+{
+"key": "verbes_7:5",
+"fr": "imaginer que qn fait qc",
+"it": "immaginare che qcn faccia qcs"
+},
+{
+"key": "verbes_7:6",
+"fr": "apporter qc à qn",
+"it": "portare qcs a qcn"
+},
+{
+"key": "verbes_7:8",
+"fr": "appuyer qn",
+"it": "appoggiare qcn"
+},
+{
+"key": "verbes_7:9",
+"fr": "tenir compagnie à qn",
+"it": "fare compagnia a qcn"
+},
+{
+"key": "verbes_7:10",
+"fr": "falloir que qn fasse qc",
+"it": "bisognare che qcn faccia qcs"
+},
+{
+"key": "verbes_7:12",
+"fr": "former qn",
+"it": "addestrare qcn"
+},
+{
+"key": "verbes_7:13",
+"fr": "abattre qc",
+"it": "abbattere qcs"
+},
+{
+"key": "verbes_7:16",
+"fr": "échapper à qc",
+"it": "sfuggire a qcs"
+},
+{
+"key": "verbes_7:17",
+"fr": "prévenir qn de qc",
+"it": "avvisare qcn di qcs"
+},
+{
+"key": "verbes_7:25",
+"fr": "s'inquiéter de qc",
+"it": "preoccuparsi di qcs"
+},
+{
+"key": "verbes_7:26",
+"fr": "indiquer qc",
+"it": "indicare qcs"
+},
+{
+"key": "verbes_7:30",
+"fr": "ramasser qc",
+"it": "raccogliere qcs"
+},
+{
+"key": "verbes_7:32",
+"fr": "saisir qc",
+"it": "afferrare qcs"
+},
+{
+"key": "verbes_7:39",
+"fr": "relever qc",
+"it": "rialzare qcs"
+},
+{
+"key": "verbes_7:44",
+"fr": "convaincre qn de faire qc",
+"it": "convincere qcn a fare qcs"
+},
+{
+"key": "verbes_7:45",
+"fr": "effrayer qn",
+"it": "spaventare qcn"
+},
+{
+"key": "verbes_7:47",
+"fr": "manquer à qn",
+"it": "mancare a qcn"
+},
+{
+"key": "verbes_7:48",
+"fr": "pendre qc",
+"it": "appendere qcs"
+},
+{
+"key": "verbes_7:49",
+"fr": "viser qc",
+"it": "mirare qcs"
+},
+{
+"key": "verbes_7:50",
+"fr": "manquer de qc",
+"it": "mancare di qcs"
+},
+{
+"key": "verbes_7:55",
+"fr": "goûter qc",
+"it": "assaggiare qcs"
+},
+{
+"key": "verbes_7:57",
+"fr": "rattraper qn",
+"it": "raggiungere qcn"
+},
+{
+"key": "verbes_7:66",
+"fr": "lancer qc",
+"it": "lanciare qcs"
+},
+{
+"key": "verbes_7:67",
+"fr": "saluer qn",
+"it": "salutare qcn"
+},
+{
+"key": "verbes_7:75",
+"fr": "faire semblant de faire qc",
+"it": "fare finta di fare qcs"
+},
+{
+"key": "verbes_7:76",
+"fr": "assassiner qn",
+"it": "assassinare qcn"
+},
+{
+"key": "verbes_7:79",
+"fr": "retirer qc de qc",
+"it": "togliere qcs da qcs"
+},
+{
+"key": "verbes_7:83",
+"fr": "augmenter qc",
+"it": "aumentare qcs"
+},
+{
+"key": "verbes_7:84",
+"fr": "réserver qc",
+"it": "prenotare qcs"
+},
+{
+"key": "verbes_7:91",
+"fr": "avaler qc",
+"it": "inghiottire qcs"
+},
+{
+"key": "verbes_7:93",
+"fr": "donner naissance à qn",
+"it": "dare alla luce qcn"
+},
+{
+"key": "verbes_7:94",
+"fr": "contenir qc",
+"it": "contenere qcs"
+},
+{
+"key": "verbes_7:95",
+"fr": "subir qc",
+"it": "subire qcs"
+},
+{
+"key": "verbes_7:97",
+"fr": "avoir hâte de faire qc",
+"it": "non vedere l'ora di fare qcs"
+},
+{
+"key": "verbes_7:98",
+"fr": "permettre à qn de faire qc",
+"it": "permettere a qcn di fare qcs"
+},
+{
+"key": "verbes_8:0",
+"fr": "accueillir qn",
+"it": "accogliere qcn"
+},
+{
+"key": "verbes_8:4",
+"fr": "effacer qc",
+"it": "cancellare qcs"
+},
+{
+"key": "verbes_8:8",
+"fr": "fixer qc",
+"it": "fissare qcs"
+},
+{
+"key": "verbes_8:16",
+"fr": "jeter un coup d'œil à qc",
+"it": "dare un'occhiata a qcs"
+},
+{
+"key": "verbes_8:18",
+"fr": "apercevoir qc",
+"it": "scorgere qcs"
+},
+{
+"key": "verbes_8:20",
+"fr": "exiger qc",
+"it": "esigere qcs"
+},
+{
+"key": "verbes_8:21",
+"fr": "armer qn",
+"it": "armare qcn"
+},
+{
+"key": "verbes_8:22",
+"fr": "croiser qn qqpart",
+"it": "incrociare qcn da qualche parte"
+},
+{
+"key": "verbes_8:30",
+"fr": "fermer à clé qc",
+"it": "chiudere a chiave qcs"
+},
+{
+"key": "verbes_8:31",
+"fr": "exprimer qc",
+"it": "esprimere qcs"
+},
+{
+"key": "verbes_8:33",
+"fr": "pousser qn à faire qc",
+"it": "spingere qcn a fare qcs"
+},
+{
+"key": "verbes_8:38",
+"fr": "interrompre qn",
+"it": "interrompere qcn"
+},
+{
+"key": "verbes_8:45",
+"fr": "décrire qc",
+"it": "descrivere qcs"
+},
+{
+"key": "verbes_8:55",
+"fr": "traiter qn avec qc",
+"it": "trattare qcn con qcs"
+},
+{
+"key": "verbes_8:58",
+"fr": "inviter qn à qc",
+"it": "invitare qcn a qcs"
+},
+{
+"key": "verbes_8:63",
+"fr": "améliorer qc",
+"it": "migliorare qcs"
+},
+{
+"key": "verbes_8:64",
+"fr": "profiter de qc",
+"it": "approfittare di qcs"
+},
+{
+"key": "verbes_8:65",
+"fr": "déchirer qc",
+"it": "strappare qcs"
+},
+{
+"key": "verbes_8:71",
+"fr": "verser qc",
+"it": "versare qcs"
+},
+{
+"key": "verbes_8:74",
+"fr": "accomplir qc",
+"it": "compiere qcs"
+},
+{
+"key": "verbes_8:76",
+"fr": "tendre qc",
+"it": "tendere qcs"
+},
+{
+"key": "verbes_8:81",
+"fr": "suivre la trace de qn",
+"it": "seguire le tracce di qcn"
+},
+{
+"key": "verbes_8:82",
+"fr": "recommencer à faire qc",
+"it": "ricominciare a fare qcs"
+},
+{
+"key": "verbes_8:89",
+"fr": "conseiller à qn de faire qc",
+"it": "consigliare a qcn di fare qcs"
+},
+{
+"key": "verbes_8:91",
+"fr": "exécuter qc",
+"it": "eseguire qcs"
+},
+{
+"key": "verbes_8:92",
+"fr": "vaincre qn",
+"it": "vincere qcn"
+},
+{
+"key": "verbes_8:99",
+"fr": "nier qc",
+"it": "negare qcs"
+},
+{
+"key": "verbes_9:0",
+"fr": "réussir à faire qc",
+"it": "riuscire a fare qcs"
+},
+{
+"key": "verbes_9:1",
+"fr": "entourer qc",
+"it": "circondare qcs"
+},
+{
+"key": "verbes_9:2",
+"fr": "pardonner qc à qn",
+"it": "perdonare qcs a qcn"
+},
+{
+"key": "verbes_9:5",
+"fr": "tenter de faire qc",
+"it": "tentare di fare qcs"
+},
+{
+"key": "verbes_9:12",
+"fr": "renverser qc",
+"it": "rovesciare qcs"
+},
+{
+"key": "verbes_9:16",
+"fr": "remplacer qc par qc",
+"it": "sostituire qcs con qcs"
+},
+{
+"key": "verbes_9:26",
+"fr": "se nourrir de qc",
+"it": "nutrirsi di qcs"
+},
+{
+"key": "verbes_9:30",
+"fr": "transporter qc",
+"it": "trasportare qcs"
+},
+{
+"key": "verbes_9:31",
+"fr": "développer qc",
+"it": "sviluppare qcs"
+},
+{
+"key": "verbes_9:38",
+"fr": "s'engager à faire qc",
+"it": "impegnarsi a fare qcs"
+},
+{
+"key": "verbes_9:39",
+"fr": "soulever qc",
+"it": "sollevare qcs"
+},
+{
+"key": "verbes_9:43",
+"fr": "remplir qc de qc",
+"it": "riempire qcs di qcs"
+},
+{
+"key": "verbes_9:44",
+"fr": "attirer qn vers qc",
+"it": "attirare qcn verso qcs"
+},
+{
+"key": "verbes_9:45",
+"fr": "avouer qc à qn",
+"it": "confessare qcs a qcn"
+},
+{
+"key": "verbes_9:51",
+"fr": "peser qc",
+"it": "pesare qcs"
+},
+{
+"key": "verbes_9:58",
+"fr": "cuire qc",
+"it": "cuocere qcs"
+},
+{
+"key": "verbes_9:62",
+"fr": "étendre qc",
+"it": "stendere qcs"
+},
+{
+"key": "verbes_9:66",
+"fr": "concevoir qc",
+"it": "concepire qcs"
+},
+{
+"key": "verbes_9:67",
+"fr": "ajouter qc à qc",
+"it": "aggiungere qcs a qcs"
+},
+{
+"key": "verbes_9:68",
+"fr": "refuser de faire qc",
+"it": "rifiutare di fare qcs"
+},
+{
+"key": "verbes_9:69",
+"fr": "forcer qn à faire qc",
+"it": "costringere qcn a fare qcs"
+},
+{
+"key": "verbes_9:70",
+"fr": "ralentir qc",
+"it": "rallentare qcs"
+},
+{
+"key": "verbes_9:74",
+"fr": "réclamer qc",
+"it": "reclamare qcs"
+},
+{
+"key": "verbes_9:76",
+"fr": "consulter qn",
+"it": "consultare qcn"
+},
+{
+"key": "verbes_9:81",
+"fr": "franchir qc",
+"it": "varcare qcs"
+},
+{
+"key": "verbes_9:83",
+"fr": "mettre en œuvre qc",
+"it": "attuare qcs"
+},
+{
+"key": "verbes_9:84",
+"fr": "baigner qn",
+"it": "fare il bagno a qcn"
+},
+{
+"key": "verbes_9:85",
+"fr": "éloigner qn de qc",
+"it": "allontanare qcn da qcs"
+},
+{
+"key": "verbes_9:86",
+"fr": "avoir des conséquences sur qc",
+"it": "avere conseguenze su qcs"
+},
+{
+"key": "verbes_9:89",
+"fr": "emprunter qc à qn",
+"it": "prendere in prestito qcs da qcn"
+},
+{
+"key": "verbes_9:91",
+"fr": "livrer qc à qn",
+"it": "consegnare qcs a qcn"
+},
+{
+"key": "verbes_9:93",
+"fr": "répandre qc",
+"it": "spargere qcs"
+},
+{
+"key": "verbes_9:98",
+"fr": "achever qc",
+"it": "finire qcs"
+},
+{
+"key": "verbes_9:99",
+"fr": "user qc",
+"it": "consumare qcs"
+},
+{
+"key": "verbes_10:0",
+"fr": "se déplacer en qc",
+"it": "spostarsi in qcs"
+},
+{
+"key": "verbes_10:1",
+"fr": "éprouver qc / ressentir qc",
+"it": "provare qcs"
+},
+{
+"key": "verbes_10:6",
+"fr": "analyser qc",
+"it": "analizzare qcs"
+},
+{
+"key": "verbes_10:8",
+"fr": "adopter qn",
+"it": "adottare qcn"
+},
+{
+"key": "verbes_10:12",
+"fr": "transformer qc en qc",
+"it": "trasformare qcs in qcs"
+},
+{
+"key": "verbes_10:17",
+"fr": "emménager qqpart",
+"it": "trasferirsi da qualche parte"
+},
+{
+"key": "verbes_10:23",
+"fr": "mesurer qc",
+"it": "misurare qcs"
+},
+{
+"key": "verbes_10:24",
+"fr": "affirmer qc",
+"it": "affermare qcs"
+},
+{
+"key": "verbes_10:25",
+"fr": "justifier qc",
+"it": "giustificare qcs"
+},
+{
+"key": "verbes_10:31",
+"fr": "démolir qc",
+"it": "demolire qcs"
+},
+{
+"key": "verbes_10:32",
+"fr": "rêver de qc",
+"it": "sognare qcs"
+},
+{
+"key": "verbes_10:37",
+"fr": "pencher qc",
+"it": "inclinare qcs"
+},
+{
+"key": "verbes_10:38",
+"fr": "parcourir qc",
+"it": "percorrere qcs"
+},
+{
+"key": "verbes_10:39",
+"fr": "fonder qc",
+"it": "fondare qcs"
+},
+{
+"key": "verbes_10:42",
+"fr": "manipuler qn",
+"it": "manipolare qcn"
+},
+{
+"key": "verbes_10:44",
+"fr": "traduire qc",
+"it": "tradurre qcs"
+},
+{
+"key": "verbes_10:46",
+"fr": "espérer que qn fait qc",
+"it": "sperare che qcn faccia qcs"
+},
+{
+"key": "verbes_10:47",
+"fr": "cuisiner qc pour qn",
+"it": "cucinare qcs per qcn"
+},
+{
+"key": "verbes_10:49",
+"fr": "féliciter qn",
+"it": "congratularsi con qcn"
+},
+{
+"key": "verbes_10:51",
+"fr": "éclairer qc",
+"it": "illuminare qcs"
+},
+{
+"key": "verbes_10:52",
+"fr": "plaire à qn",
+"it": "piacere a qcn"
+},
+{
+"key": "verbes_10:55",
+"fr": "être fâché contre qn",
+"it": "essere arrabbiato con qcn"
+},
+{
+"key": "verbes_10:56",
+"fr": "assister à qc",
+"it": "assistere a qcs"
+},
+{
+"key": "verbes_10:57",
+"fr": "dresser qc",
+"it": "addestrare qcs"
+},
+{
+"key": "verbes_10:58",
+"fr": "mélanger qc",
+"it": "mescolare qcs"
+},
+{
+"key": "verbes_10:62",
+"fr": "pratiquer qc",
+"it": "praticare qcs"
+},
+{
+"key": "verbes_10:65",
+"fr": "plaindre qn à propos de qc",
+"it": "compatire qcn per qcs"
+},
+{
+"key": "verbes_10:66",
+"fr": "griller qc",
+"it": "grigliare qcs"
+},
+{
+"key": "verbes_10:67",
+"fr": "creuser qc dans qc",
+"it": "scavare qcs in qcs"
+},
+{
+"key": "verbes_10:68",
+"fr": "réchauffer qc",
+"it": "riscaldare qcs"
+},
+{
+"key": "verbes_10:69",
+"fr": "arracher qc à qn",
+"it": "strappare qcs a qcn"
+},
+{
+"key": "verbes_10:70",
+"fr": "plier qc",
+"it": "piegare qcs"
+},
+{
+"key": "verbes_10:71",
+"fr": "supprimer qc",
+"it": "eliminare qcs"
+},
+{
+"key": "verbes_10:73",
+"fr": "ressembler à qn",
+"it": "assomigliare a qcn"
+},
+{
+"key": "verbes_10:74",
+"fr": "déménager qqpart",
+"it": "trasferirsi da qualche parte"
+},
+{
+"key": "verbes_10:77",
+"fr": "dominer qc",
+"it": "dominare qcs"
+},
+{
+"key": "verbes_10:83",
+"fr": "rembourser qc à qn",
+"it": "rimborsare qcs a qcn"
+},
+{
+"key": "verbes_10:84",
+"fr": "isoler qn",
+"it": "isolare qcn"
+},
+{
+"key": "verbes_10:85",
+"fr": "abîmer qc",
+"it": "rovinare qcs"
+},
+{
+"key": "verbes_10:87",
+"fr": "douter de qc",
+"it": "dubitare di qcs"
+},
+{
+"key": "verbes_10:89",
+"fr": "imiter qn",
+"it": "imitare qcn"
+},
+{
+"key": "verbes_10:90",
+"fr": "troubler qn",
+"it": "turbare qcn"
+},
+{
+"key": "verbes_10:95",
+"fr": "entretenir qc",
+"it": "mantenere qcs"
+},
+{
+"key": "verbes_10:97",
+"fr": "enquêter sur qc",
+"it": "indagare su qcs"
+},
+{
+"key": "verbes_10:98",
+"fr": "renoncer à qc",
+"it": "rinunciare a qcs"
+},
+{
+"key": "verbes_10:99",
+"fr": "tracer qc",
+"it": "tracciare qcs"
+},
+{
+"key": "verbes_11:1",
+"fr": "mépriser qc",
+"it": "disprezzare qcs"
+},
+{
+"key": "verbes_11:2",
+"fr": "découper qc",
+"it": "tagliare qcs"
+},
+{
+"key": "verbes_11:6",
+"fr": "aborder qc",
+"it": "affrontare qcs"
+},
+{
+"key": "verbes_11:10",
+"fr": "gaspiller qc",
+"it": "sprecare qcs"
+},
+{
+"key": "verbes_11:11",
+"fr": "effectuer qc",
+"it": "effettuare qcs"
+},
+{
+"key": "verbes_11:12",
+"fr": "avertir qn de qc",
+"it": "avvertire qcn di qcs"
+},
+{
+"key": "verbes_11:14",
+"fr": "se mêler de qc",
+"it": "immischiarsi in qcs"
+},
+{
+"key": "verbes_11:15",
+"fr": "mêler qn à qc",
+"it": "coinvolgere qcn in qcs"
+},
+{
+"key": "verbes_11:17",
+"fr": "s'intéresser à qc",
+"it": "interessarsi a qcs"
+},
+{
+"key": "verbes_11:18",
+"fr": "promettre qc à qn",
+"it": "promettere qcs a qcn"
+},
+{
+"key": "verbes_11:19",
+"fr": "demeurer beau",
+"it": "rimanere bello"
+},
+{
+"key": "verbes_11:20",
+"fr": "stopper qc",
+"it": "fermare qcs"
+},
+{
+"key": "verbes_11:22",
+"fr": "rapporter qc qqpart",
+"it": "riportare qcs da qualche parte"
+},
+{
+"key": "verbes_11:26",
+"fr": "précipiter qc",
+"it": "precipitare qcs"
+},
+{
+"key": "verbes_11:27",
+"fr": "caresser qc",
+"it": "accarezzare qcs"
+},
+{
+"key": "verbes_11:28",
+"fr": "prêter qc à qn",
+"it": "prestare qcs a qcn"
+},
+{
+"key": "verbes_11:30",
+"fr": "fournir qc à qn",
+"it": "fornire qcs a qcn"
+},
+{
+"key": "verbes_11:31",
+"fr": "cesser de faire qc",
+"it": "smettere di fare qcs"
+},
+{
+"key": "verbes_11:34",
+"fr": "accrocher qc à qc",
+"it": "appendere qcs a qcs"
+},
+{
+"key": "verbes_11:35",
+"fr": "inclure qc",
+"it": "includere qcs"
+},
+{
+"key": "verbes_11:36",
+"fr": "confier qc à qn",
+"it": "affidare qcs a qcn"
+},
+{
+"key": "verbes_11:37",
+"fr": "enfiler qc",
+"it": "infilare qcs"
+},
+{
+"key": "verbes_11:39",
+"fr": "veiller à ce que qn fasse qc",
+"it": "fare in modo che qcn faccia qcs"
+},
+{
+"key": "verbes_11:40",
+"fr": "échanger qc contre qc",
+"it": "scambiare qcs con qcs"
+},
+{
+"key": "verbes_11:43",
+"fr": "prétendre que qn fait qc",
+"it": "sostenere che qcn fa qcs"
+},
+{
+"key": "verbes_11:46",
+"fr": "accorder qc à qn",
+"it": "concedere qcs a qcn"
+},
+{
+"key": "verbes_11:47",
+"fr": "se figurer qc",
+"it": "figurarsi qcs"
+},
+{
+"key": "verbes_11:49",
+"fr": "faire cuire qc",
+"it": "cuocere qcs"
+},
+{
+"key": "verbes_11:50",
+"fr": "essuyer qc",
+"it": "asciugare qcs"
+},
+{
+"key": "verbes_11:52",
+"fr": "appuyer sur qc",
+"it": "premere su qcs"
+},
+{
+"key": "verbes_11:63",
+"fr": "se moquer de qn",
+"it": "prendere in giro qcn"
+},
+{
+"key": "verbes_11:65",
+"fr": "attacher qc à qc",
+"it": "legare qcs a qcs"
+},
+{
+"key": "verbes_11:66",
+"fr": "dévoiler qc",
+"it": "svelare qcs"
+},
+{
+"key": "verbes_11:67",
+"fr": "dégager qc de qqpart",
+"it": "liberare qcs da qualche parte"
+},
+{
+"key": "verbes_11:68",
+"fr": "tirer profit de qc",
+"it": "trarre profitto da qcs"
+},
+{
+"key": "verbes_11:72",
+"fr": "être dérangé par qc",
+"it": "essere disturbato da qcs"
+},
+{
+"key": "verbes_11:76",
+"fr": "décharger qc",
+"it": "scaricare qcs"
+},
+{
+"key": "verbes_11:77",
+"fr": "s'habituer à qc",
+"it": "abituarsi a qcs"
+},
+{
+"key": "verbes_11:84",
+"fr": "copier qc",
+"it": "copiare qcs"
+},
+{
+"key": "verbes_11:85",
+"fr": "transmettre qc à qn",
+"it": "trasmettere qcs a qcn"
+},
+{
+"key": "verbes_11:88",
+"fr": "égarer qc",
+"it": "smarrire qcs"
+},
+{
+"key": "verbes_11:89",
+"fr": "négliger qc",
+"it": "trascurare qcs"
+},
+{
+"key": "verbes_11:90",
+"fr": "résumer qc",
+"it": "riassumere qcs"
+},
+{
+"key": "verbes_11:91",
+"fr": "définir qc",
+"it": "definire qcs"
+},
+{
+"key": "verbes_11:92",
+"fr": "habiter qqpart",
+"it": "abitare da qualche parte"
+},
+{
+"key": "verbes_11:98",
+"fr": "afficher qc",
+"it": "affiggere qcs"
+},
+{
+"key": "verbes_11:99",
+"fr": "repousser qc à lundi",
+"it": "rimandare qcs a lunedì"
+},
+{
+"key": "verbes_12:4",
+"fr": "comparer qc avec qc",
+"it": "confrontare qcs con qcs"
+},
+{
+"key": "verbes_12:9",
+"fr": "menacer qn de faire qc",
+"it": "minacciare qcn di fare qcs"
+},
+{
+"key": "verbes_12:10",
+"fr": "percevoir qc",
+"it": "percepire qcs"
+},
+{
+"key": "verbes_12:13",
+"fr": "évaluer qn",
+"it": "valutare qcn"
+},
+{
+"key": "verbes_12:16",
+"fr": "investir dans qc",
+"it": "investire in qcs"
+},
+{
+"key": "verbes_12:20",
+"fr": "s'exposer à qc",
+"it": "esporsi a qcs"
+},
+{
+"key": "verbes_12:23",
+"fr": "promouvoir qn",
+"it": "promuovere qcn"
+},
+{
+"key": "verbes_12:24",
+"fr": "intégrer qn à qc",
+"it": "integrare qcn in qcs"
+},
+{
+"key": "verbes_12:27",
+"fr": "déployer qc",
+"it": "spiegare qcs"
+},
+{
+"key": "verbes_12:31",
+"fr": "brosser qc",
+"it": "spazzolare qcs"
+},
+{
+"key": "verbes_12:32",
+"fr": "imposer qc à qn",
+"it": "imporre qcs a qcn"
+},
+{
+"key": "verbes_12:33",
+"fr": "pénétrer qqpart",
+"it": "penetrare da qualche parte"
+},
+{
+"key": "verbes_12:34",
+"fr": "céder qc à qn",
+"it": "cedere qcs a qcn"
+},
+{
+"key": "verbes_12:35",
+"fr": "s'étouffer avec qc",
+"it": "strozzarsi con qcs"
+},
+{
+"key": "verbes_12:37",
+"fr": "obliger qn à faire qc",
+"it": "obbligare qcn a fare qcs"
+},
+{
+"key": "verbes_12:40",
+"fr": "animer qc",
+"it": "animare qcs"
+},
+{
+"key": "verbes_12:41",
+"fr": "encourager qn à faire qc",
+"it": "incoraggiare qcn a fare qcs"
+},
+{
+"key": "verbes_12:44",
+"fr": "être composé de qc",
+"it": "essere composto da qcs"
+},
+{
+"key": "verbes_12:47",
+"fr": "se soulever contre qn",
+"it": "ribellarsi a qcn"
+},
+{
+"key": "verbes_12:50",
+"fr": "accoucher de qn",
+"it": "partorire qcn"
+},
+{
+"key": "verbes_12:51",
+"fr": "fendre qc",
+"it": "spaccare qcs"
+},
+{
+"key": "verbes_12:52",
+"fr": "parvenir à qc",
+"it": "riuscire a qcs"
+},
+{
+"key": "verbes_12:54",
+"fr": "adresser qc à qn",
+"it": "rivolgere qcs a qcn"
+},
+{
+"key": "verbes_12:56",
+"fr": "s'écarter de qc",
+"it": "allontanarsi da qcs"
+},
+{
+"key": "verbes_12:58",
+"fr": "enfoncer qc dans qc",
+"it": "conficcare qcs in qcs"
+},
+{
+"key": "verbes_12:62",
+"fr": "vêtir qn",
+"it": "vestire qcn"
+},
+{
+"key": "verbes_12:63",
+"fr": "précéder qc",
+"it": "precedere qcs"
+},
+{
+"key": "verbes_12:71",
+"fr": "envelopper qc",
+"it": "avvolgere qcs"
+},
+{
+"key": "verbes_12:72",
+"fr": "rassurer qn sur qc",
+"it": "rassicurare qcn su qcs"
+},
+{
+"key": "verbes_12:73",
+"fr": "multiplier qc",
+"it": "moltiplicare qcs"
+},
+{
+"key": "verbes_12:74",
+"fr": "suggérer qc à qn",
+"it": "suggerire qcs a qcn"
+},
+{
+"key": "verbes_12:76",
+"fr": "soumettre qc à qn",
+"it": "sottoporre qcs a qcn"
+},
+{
+"key": "verbes_12:80",
+"fr": "stabiliser qc",
+"it": "stabilizzare qcs"
+},
+{
+"key": "verbes_12:81",
+"fr": "licencier qn",
+"it": "licenziare qcn"
+},
+{
+"key": "verbes_12:83",
+"fr": "compenser qc",
+"it": "compensare qcs"
+},
+{
+"key": "verbes_12:86",
+"fr": "taquiner qn",
+"it": "stuzzicare qcn"
+},
+{
+"key": "verbes_12:87",
+"fr": "suffire à faire qc",
+"it": "bastare a fare qcs"
+},
+{
+"key": "verbes_12:89",
+"fr": "consoler qn de qc",
+"it": "consolare qcn di qcs"
+},
+{
+"key": "verbes_12:91",
+"fr": "disposer de qc",
+"it": "disporre di qcs"
+},
+{
+"key": "verbes_12:96",
+"fr": "se méfier de qn",
+"it": "diffidare di qcn"
+},
+{
+"key": "verbes_12:97",
+"fr": "nécessiter qc",
+"it": "richiedere qcs"
+},
+{
+"key": "verbes_12:98",
+"fr": "admirer qn pour qc",
+"it": "ammirare qcn per qcs"
+},
+{
+"key": "verbes_13:2",
+"fr": "critiquer qn pour qc",
+"it": "criticare qcn per qcs"
+},
+{
+"key": "verbes_13:4",
+"fr": "savourer qc",
+"it": "gustare qcs"
+},
+{
+"key": "verbes_13:6",
+"fr": "cirer qc",
+"it": "lucidare qcs"
+},
+{
+"key": "verbes_13:7",
+"fr": "se traduire par qc",
+"it": "tradursi in qcs"
+},
+{
+"key": "verbes_13:8",
+"fr": "s'opposer à qc",
+"it": "opporsi a qcs"
+},
+{
+"key": "verbes_13:9",
+"fr": "recharger qc",
+"it": "ricaricare qcs"
+},
+{
+"key": "verbes_13:10",
+"fr": "détacher qc de qc",
+"it": "staccare qcs da qcs"
+},
+{
+"key": "verbes_13:11",
+"fr": "affirmer que qn fait qc",
+"it": "affermare che qcn fa qcs"
+},
+{
+"key": "verbes_13:12",
+"fr": "être en désaccord avec qn sur qc",
+"it": "essere in disaccordo con qcn su qcs"
+},
+{
+"key": "verbes_13:13",
+"fr": "se mettre short de qc",
+"it": "andare corto su qcs"
+},
+{
+"key": "verbes_13:16",
+"fr": "influencer qn dans qc",
+"it": "influenzare qcn in qcs"
+},
+{
+"key": "verbes_13:18",
+"fr": "faire allusion à qc",
+"it": "alludere a qcs"
+},
+{
+"key": "verbes_13:22",
+"fr": "hésiter à faire qc",
+"it": "esitare a fare qcs"
+},
+{
+"key": "verbes_13:24",
+"fr": "distinguer qc de qc",
+"it": "distinguere qcs da qcs"
+},
+{
+"key": "verbes_13:25",
+"fr": "régner sur qc",
+"it": "regnare su qcs"
+},
+{
+"key": "verbes_13:28",
+"fr": "faire bouillir qc",
+"it": "far bollire qcs"
+},
+{
+"key": "verbes_13:29",
+"fr": "diviser qc en qc",
+"it": "dividere qcs in qcs"
+},
+{
+"key": "verbes_13:31",
+"fr": "se fâcher avec qn",
+"it": "litigare con qcn"
+},
+{
+"key": "verbes_13:35",
+"fr": "se fâcher contre qn",
+"it": "arrabbiarsi con qcn"
+},
+{
+"key": "verbes_13:38",
+"fr": "divulguer qc",
+"it": "divulgare qcs"
+},
+{
+"key": "verbes_13:39",
+"fr": "interviewer qn",
+"it": "intervistare qcn"
+},
+{
+"key": "verbes_13:40",
+"fr": "confondre qn avec qn",
+"it": "confondere qcn con qcn"
+},
+{
+"key": "verbes_13:44",
+"fr": "éplucher qc",
+"it": "sbucciare qcs"
+},
+{
+"key": "verbes_13:47",
+"fr": "nouer qc",
+"it": "annodare qcs"
+},
+{
+"key": "verbes_13:50",
+"fr": "être disposé à faire qc",
+"it": "essere disposto a fare qcs"
+},
+{
+"key": "verbes_13:51",
+"fr": "appartenir à qn",
+"it": "appartenere a qcn"
+},
+{
+"key": "verbes_13:53",
+"fr": "se préoccuper de qc",
+"it": "preoccuparsi di qcs"
+},
+{
+"key": "verbes_13:55",
+"fr": "mémoriser qc",
+"it": "memorizzare qcs"
+},
+{
+"key": "verbes_13:60",
+"fr": "recueillir qc par qc",
+"it": "raccogliere qcs con qcs"
+},
+{
+"key": "verbes_13:61",
+"fr": "retomber sur qn",
+"it": "ricadere su qcn"
+},
+{
+"key": "verbes_13:62",
+"fr": "se fouler qc",
+"it": "slogarsi qcs"
+},
+{
+"key": "verbes_13:63",
+"fr": "correspondre à qc",
+"it": "corrispondere a qcs"
+},
+{
+"key": "verbes_13:65",
+"fr": "commenter qc",
+"it": "commentare qcs"
+},
+{
+"key": "verbes_13:71",
+"fr": "teindre qc",
+"it": "tingere qcs"
+},
+{
+"key": "verbes_13:73",
+"fr": "diminuer qc de qc",
+"it": "ridurre qcs di qcs"
+},
+{
+"key": "verbes_13:74",
+"fr": "étreindre qn",
+"it": "stringere qcn"
+},
+{
+"key": "verbes_13:75",
+"fr": "raccourcir qc",
+"it": "accorciare qcs"
+},
+{
+"key": "verbes_13:77",
+"fr": "rénover qc",
+"it": "ristrutturare qcs"
+},
+{
+"key": "verbes_13:78",
+"fr": "entrevoir qc",
+"it": "intravedere qcs"
+},
+{
+"key": "verbes_13:81",
+"fr": "songer à faire qc",
+"it": "pensare di fare qcs"
+},
+{
+"key": "verbes_13:83",
+"fr": "faire l'éloge de qn",
+"it": "elogiare qcn"
+},
+{
+"key": "verbes_13:85",
+"fr": "réprimer qc",
+"it": "reprimere qcs"
+},
+{
+"key": "verbes_13:88",
+"fr": "minimiser qc",
+"it": "minimizzare qcs"
+},
+{
+"key": "verbes_13:91",
+"fr": "courber qc",
+"it": "curvare qcs"
+},
+{
+"key": "verbes_13:92",
+"fr": "censurer qc",
+"it": "censurare qcs"
+},
+{
+"key": "verbes_13:93",
+"fr": "dépendre de qn",
+"it": "dipendere da qcn"
+},
+{
+"key": "verbes_13:94",
+"fr": "désigner qn comme qc",
+"it": "designare qcn come qcs"
+},
+{
+"key": "verbes_13:97",
+"fr": "sucrer qc",
+"it": "zuccherare qcs"
+},
+{
+"key": "verbes_13:98",
+"fr": "peigner qn",
+"it": "pettinare qcn"
+},
+{
+"key": "verbes_14:1",
+"fr": "inciter qn à faire qc",
+"it": "spingere qcn a fare qcs"
+},
+{
+"key": "verbes_14:2",
+"fr": "déduire qc de qc",
+"it": "dedurre qcs da qcs"
+},
+{
+"key": "verbes_14:6",
+"fr": "forer qc",
+"it": "trivellare qcs"
+},
+{
+"key": "verbes_14:7",
+"fr": "lisser qc",
+"it": "lisciare qcs"
+},
+{
+"key": "verbes_14:8",
+"fr": "décourager qn de faire qc",
+"it": "scoraggiare qcn dal fare qcs"
+},
+{
+"key": "verbes_14:9",
+"fr": "s'abstenir de faire qc",
+"it": "astenersi dal fare qcs"
+},
+{
+"key": "verbes_14:12",
+"fr": "évincer qn",
+"it": "estromettere qcn"
+},
+{
+"key": "verbes_14:14",
+"fr": "postuler à qc",
+"it": "candidarsi a qcs"
+},
+{
+"key": "verbes_14:15",
+"fr": "boutonner qc",
+"it": "abbottonare qcs"
+},
+{
+"key": "verbes_14:16",
+"fr": "préférer qc à qc",
+"it": "preferire qcs a qcs"
+},
+{
+"key": "verbes_14:17",
+"fr": "chagriner qn",
+"it": "addolorare qcn"
+},
+{
+"key": "verbes_14:22",
+"fr": "suspecter de qc",
+"it": "sospettare di qcs"
+},
+{
+"key": "verbes_14:23",
+"fr": "argumenter qc",
+"it": "argomentare qcs"
+},
+{
+"key": "verbes_14:24",
+"fr": "rallonger qc",
+"it": "allungare qcs"
+},
+{
+"key": "verbes_14:26",
+"fr": "chausser qc",
+"it": "calzare qcs"
+},
+{
+"key": "verbes_14:27",
+"fr": "déboutonner qc",
+"it": "sbottonare qcs"
+},
+{
+"key": "verbes_14:28",
+"fr": "se lamenter sur qc",
+"it": "lamentarsi di qcs"
+},
+{
+"key": "verbes_14:34",
+"fr": "se résigner à faire qc",
+"it": "rassegnarsi a fare qcs"
+},
+{
+"key": "verbes_14:36",
+"fr": "soustraire qc à qc",
+"it": "sottrarre qcs da qcs"
+},
+{
+"key": "verbes_14:37",
+"fr": "râper qc",
+"it": "grattugiare qcs"
+},
+{
+"key": "verbes_14:38",
+"fr": "diversifier qc",
+"it": "diversificare qcs"
+},
+{
+"key": "verbes_14:47",
+"fr": "se goinfrer de qc",
+"it": "abbuffarsi di qcs"
+},
+{
+"key": "verbes_14:48",
+"fr": "insonoriser qc",
+"it": "insonorizzare qcs"
+},
+{
+"key": "verbes_14:50",
+"fr": "induire qn en erreur",
+"it": "trarre qcn in inganno"
+},
+{
+"key": "verbes_14:51",
+"fr": "savonner qc",
+"it": "insaponare qcs"
+},
+{
+"key": "verbes_14:52",
+"fr": "décongeler qc",
+"it": "scongelare qcs"
+},
+{
+"key": "verbes_14:53",
+"fr": "mettre qc sur un cintre",
+"it": "appendere qcs a una gruccia"
+},
+{
+"key": "verbes_14:54",
+"fr": "consentir à faire qc",
+"it": "acconsentire a fare qcs"
+},
+{
+"key": "verbes_14:57",
+"fr": "assouplir qc",
+"it": "ammorbidire qcs"
+},
+{
+"key": "verbes_14:60",
+"fr": "assaisonner qc",
+"it": "condire qcs"
+},
+{
+"key": "verbes_14:61",
+"fr": "structurer qc",
+"it": "strutturare qcs"
+},
+{
+"key": "verbes_14:65",
+"fr": "différer de qc",
+"it": "differire da qcs"
+},
+{
+"key": "verbes_14:68",
+"fr": "pocher qc",
+"it": "cuocere in camicia qcs"
+},
+{
+"key": "verbes_14:70",
+"fr": "persister à faire qc",
+"it": "ostinarsi a fare qcs"
+},
+{
+"key": "verbes_14:71",
+"fr": "galérer à faire qc",
+"it": "faticare a fare qcs"
+},
+{
+"key": "verbes_14:72",
+"fr": "résulter de qc",
+"it": "risultare da qcs"
+},
+{
+"key": "verbes_14:74",
+"fr": "s'abonner à qc",
+"it": "abbonarsi a qcs"
+},
+{
+"key": "verbes_14:76",
+"fr": "allouer qc à qc",
+"it": "stanziare qcs per qcs"
+},
+{
+"key": "verbes_14:82",
+"fr": "consister à faire qc",
+"it": "consistere nel fare qcs"
+},
+{
+"key": "verbes_14:83",
+"fr": "consister en qc",
+"it": "consistere in qcs"
+}
+]

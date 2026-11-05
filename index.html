@@ -863,7 +863,7 @@ function vsOne(text, src, lang, tok) {
     let guard = null, over = false; const done = () => { if (over) return; over = true; clearTimeout(guard); res(); }, arm = ms => { clearTimeout(guard); guard = setTimeout(done, ms); };
     const tts = () => { const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice; if (!s || !v || tok !== vsTok) return done();
       arm(3000 + 120 * text.length);
-      try { const u = vsUtt = new SpeechSynthesisUtterance(text.replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u); } catch (e) { done(); } };
+      try { const u = vsUtt = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u); } catch (e) { done(); } };
     if (!src) return tts();
     arm(15000);
     clipUrl(src).then(u => { if (tok !== vsTok) return done(); const a = vsPlayer(); a.onended = done; a.onerror = () => { a.onerror = null; tts(); };
@@ -922,7 +922,7 @@ function ficheHTML(ri, n) {
       <div><dt>Scène</dt><dd>${esc(x.sc)}</dd></div>
       <div><dt>Décryptage</dt><dd class="exfr">${esc(x.de)}</dd></div>
       ${x.fo ? `<div><dt>Formes</dt><dd class="exfr">${esc(x.fo)}</dd></div>` : ""}
-      ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter avec tes propres mots. S = sujet, V = verbe (V_inf infinitif, V_sub subjonctif, V_pp participe passé, V_imper impératif, V_cond conditionnel, V_fut futur, V_ger gérondif), C = complément (C_lieu, C_date, C_adj… précisent sa nature) ; 2 = second sujet, verbe ou complément." : x.k === "col" ? "Collocation : une association de mots que l'italien préfère. Le sens se devine, mais c'est cette combinaison qu'on emploie (et pas une autre)." : x.k === "loc" ? `Locution ${LOCLAB[x._cls || famOf(R[ri])] || ""} : plusieurs mots qui fonctionnent ensemble comme un seul ${CLSING[x._cls || famOf(R[ri])] || "mot"}.` : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
+      ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter avec tes propres mots. qn / qcn = quelqu'un (qualcuno), qc / qcs = quelque chose (qualcosa), qqpart = quelque part (da qualche parte) ; « faire / fare » tient la place de n'importe quel verbe, à la forme voulue (fait, fera, fasse, fait au participe… / fa, farà, faccia, fatto…)." : x.k === "col" ? "Collocation : une association de mots que l'italien préfère. Le sens se devine, mais c'est cette combinaison qu'on emploie (et pas une autre)." : x.k === "loc" ? `Locution ${LOCLAB[x._cls || famOf(R[ri])] || ""} : plusieurs mots qui fonctionnent ensemble comme un seul ${CLSING[x._cls || famOf(R[ri])] || "mot"}.` : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
       ${x.co && x.co.length ? `<div><dt>Collocations</dt><dd class="colls">${x.co.map(([c, f, inp]) => `<button class="say colc${inp ? " inp" : ""}" type="button" data-say="${esc(c)}" data-src="" title="${inp ? "déjà dans le palais · " : ""}${Math.round(f).toLocaleString("fr-FR")} fois / 100 M mots">${esc(c)}${inp ? " ✓" : ""}</button>`).join("")}<span class="exfr" style="display:block;font-size:12px;margin-top:2px">Les associations les plus fréquentes dans les sous-titres ; ✓ = déjà dans le palais. Touche pour écouter.</span></dd></div>` : ""}
       ${x.t && x.t.length ? `<div><dt>Étiquettes</dt><dd class="tags">${x.t.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</dd></div>` : ""}
       ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence en français" : PAL === "freqit" ? "par fréquence en italien" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
@@ -955,7 +955,7 @@ function speak(text, src, btn, lang = "it") {
   const tts = () => {
     const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice;
     if (!s || !v) { done(); toast(lang === "fr" ? "Aucune voix française sur cet appareil" : "Aucune voix italienne sur cet appareil"); return; }
-    s.cancel(); const u = new SpeechSynthesisUtterance(text.replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u);
+    s.cancel(); const u = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u);
   };
   if (src) { clipUrl(src).then(u => { const a = new Audio(u); a.onended = done; return a.play(); }).catch(() => tts()); return; }
   tts();
@@ -1233,6 +1233,9 @@ const repLang = ty => (ty === "it" || ty === "aud" || ty === "img" || ty === "ph
 function lev(a, b) { const m = a.length, n = b.length; if (!m) return n; if (!n) return m; let p = Array.from({ length: n + 1 }, (_, j) => j);
   for (let i = 1; i <= m; i++) { const c = [i]; for (let j = 1; j <= n; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; } return p[n]; }
 const close = (a, b) => { a = norm(a).trim(); b = norm(b).trim(); if (!a || !b) return false; return a === b || lev(a, b) <= Math.max(1, Math.floor(Math.min(a.length, b.length) * 0.2)); };
+const rawIt = x => x.ito || x.it, rawFr = x => x.fro || x.fr;   // tournure d'origine (S V C…) ; x.it / x.fr : forme affichée (qn fait qc…)
+const sayable = (t, lang) => String(t || "").replace(lang === "fr" ? /\bqqpart\b/g : /\bda qlc parte\b/g, lang === "fr" ? "quelque part" : "da qualche parte")
+  .replace(lang === "fr" ? /\bqn\b/g : /\bqcn\b/g, lang === "fr" ? "quelqu'un" : "qualcuno").replace(lang === "fr" ? /\bqc\b/g : /\bqcs\b/g, lang === "fr" ? "quelque chose" : "qualcosa");
 const altsOf = s => String(s || "").replace(/\b(?:S|V|C)\d?(?:_[a-zàéè]+)?(?![’'\w])/g, " ").split(/ \/ |\/|;|,/).map(t => t.replace(/[!?.…]/g, " ").replace(/\s+/g, " ").trim()).filter(Boolean);
 function startMic() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition, q = quizState.q;
@@ -1275,9 +1278,9 @@ function wordIndex() {
   if (WIDX) return WIDX; WIDX = new Map(); WMW = new Map();
   R.forEach((r, ri) => r.niches.forEach((x, n) => { if (!x) return; const cls = x._cls || famOf(r);
     if (cls === "expressions" || cls === "incises") return;
-    if (x.k === "tpl" && String(x.it).split(" / ").some(t => (t.match(/\b(?:S|V|C)\d?(?:_[a-zàéè]+)?(?![’'\w])/g) || []).length > 1)) return;   // tournure à plusieurs trous : pas un mot
+    if (x.k === "tpl" && String(rawIt(x)).split(" / ").some(t => (t.match(/\b(?:S|V|C)\d?(?:_[a-zàéè]+)?(?![’'\w])/g) || []).length > 1)) return;   // tournure à plusieurs trous : pas un mot
     const geo = x.th === "geo", form = cls === "formes" || /\bparticipe\b/.test(x.fr), noun = cls === "noms" && !geo;
-    for (const raw of String(x.it).replace(/\(.*?\)/g, " ").split(/ \/ |\/|;/)) { const hole = holeOf(raw);
+    for (const raw of String(rawIt(x)).replace(/\(.*?\)/g, " ").split(/ \/ |\/|;/)) { const hole = holeOf(raw);
       for (const a of altsOf(raw)) { const w = wkey(a); if (!w) continue;
         if (w.includes(" ")) { if (geo) { const t = w.split(" "); if (!WMW.has(t[0])) WMW.set(t[0], []); WMW.get(t[0]).push({ t, ri, n }); } continue; }
         if (!WIDX.has(w)) WIDX.set(w, []); WIDX.get(w).push({ ri, n, hole, form, noun, geo }); } } }));
@@ -1362,11 +1365,11 @@ function revealCore() {
   let ans, okGuess = null;
   if (q.ty === "num") ans = x;
   if (q.ty === "img") { ans = x; if (rep) okGuess = parseInt(rep, 10) === q.n; }
-  if (q.ty === "fr" || q.ty === "num") { if (rep) okGuess = reps.some(r => altsOf(x.it).some(c => close(c, r))); }
-  if (q.ty === "it" || q.ty === "aud") { if (rep) okGuess = reps.some(r => altsOf(x.fr).some(c => close(c, r)) || (norm(r).trim().length > 2 && norm(x.fr).includes(norm(r).trim()))); }
+  if (q.ty === "fr" || q.ty === "num") { if (rep) okGuess = reps.some(r => altsOf(rawIt(x)).concat(altsOf(x.it)).some(c => close(c, r))); }
+  if (q.ty === "it" || q.ty === "aud") { if (rep) okGuess = reps.some(r => altsOf(rawFr(x)).concat(altsOf(x.fr)).some(c => close(c, r)) || (norm(r).trim().length > 2 && norm(x.fr).includes(norm(r).trim()))); }
   if (q.ty === "phit" || q.ty === "phfr") return revealPhrase(q, x, reps);
   let shown = x, extra = "";
-  if (q.ty === "suite" || q.ty === "chaine") { shown = R[q.target.r].niches[q.target.n]; extra = `<span class="pr">⟶ ${esc(x.li)}</span>`; if (rep) okGuess = reps.some(r => altsOf(shown.it).some(c => close(c, r)) || close(shown.fr, r)); }
+  if (q.ty === "suite" || q.ty === "chaine") { shown = R[q.target.r].niches[q.target.n]; extra = `<span class="pr">⟶ ${esc(x.li)}</span>`; if (rep) okGuess = reps.some(r => altsOf(rawIt(shown)).concat(altsOf(shown.it)).some(c => close(c, r)) || close(shown.fr, r)); }
   texturizeRoom(q.ri, null); st.zoom = 0;
   if (q.ty === "suite" || q.ty === "chaine") goTo(q.target.r, q.target.n, { thread: true }); else { goTo(q.ri, q.n); placeRing(q.ri, q.n); }
   renderFiche();

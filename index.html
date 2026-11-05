@@ -118,6 +118,8 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 .btns { display:flex; flex-wrap:wrap; gap:8px }
 .btn { border:1px solid var(--fg); background:var(--fg); color:var(--surface); border-radius:8px; padding:9px 14px; font:600 14px var(--body) }
 .btn.alt { background:var(--surface); color:var(--fg) }
+.btn.danger { background:#a3301f; border-color:#a3301f; color:#fff }
+.warnbox { margin:0; padding:12px 14px; border-radius:10px; border:1px solid #a3301f; background:color-mix(in srgb, #a3301f 10%, var(--surface)); line-height:1.45 }
 .btn.ok { background:var(--ok); border-color:var(--ok) }
 .btn.ko { background:var(--ko); border-color:var(--ko) }
 .hfreps { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:8px 14px; margin:2px 0 6px }
@@ -302,6 +304,13 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms et longe les salles de mots. Chaque classe forme une tour d'étages desservie par l'escalier, du mot le plus fréquent (rez-de-chaussée) au moins fréquent (dernier étage). La boucle revient par la rangée d'en face (expressions basiques, courantes, modales, incises), monte ensuite étage par étage, puis redescend aux noms.</p>
 </div></div>
 
+<div class="sheet" id="resetSheet" hidden><div role="alertdialog" aria-labelledby="resetT" aria-describedby="resetX">
+  <div class="shead"><h2 id="resetT">Tout effacer ?</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
+  <p id="resetX" class="warnbox">⚠ Toute ta progression sera perdue : <b id="resetN">les mots appris</b>, les révisions prévues et l'historique du carnet. Cette action est définitive et ne peut pas être annulée<span id="resetSync"></span>.</p>
+  <p class="pr" style="margin:0">Les réglages, la position dans le palais et les sons ne changent pas.</p>
+  <div class="btns"><button class="btn alt" type="button" data-close>Annuler</button><button class="btn danger" type="button" id="resetGo">Oui, tout effacer</button></div>
+</div></div>
+
 <div class="sheet" id="accountSheet" hidden><div>
   <div class="shead"><h2>Mon compte</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
   <div id="accountBody" style="display:flex;flex-direction:column;gap:12px"></div>
@@ -369,6 +378,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="frow"><label for="mapType">Afficher</label><select id="mapType"></select></div>
   <div class="map" id="map"></div>
   <div class="legend"><span>vide = libre</span><span>gris = jamais vu</span><span>du rose au vert = boîte 1 à 5</span></div>
+  <h3>Recommencer à zéro</h3>
+  <div class="btns"><button class="btn danger" type="button" id="resetBtn">Effacer les résultats des tests…</button></div>
+  <p class="pr" style="margin:0">Efface toutes les cartes de révision et l'historique du carnet, pour reprendre les tests depuis le début. Une confirmation est demandée.</p>
 </div></section>
 
 <section class="view" id="carnet" hidden aria-label="Carnet de bord"><div class="in">
@@ -1029,10 +1041,13 @@ function migrateLocal() {
 async function afterLogin() { // fusion de la progression locale et distante, puis envoi
   await loadHist();
   const rev = DATA.rev || 1, meta = await remoteGet("meta"), from = (meta && meta.rev) || 1, remAll = {};
+  if (meta && meta.reset && meta.reset > ls.get("resetAt", 0)) {   // progression effacée depuis un autre appareil : on oublie aussi la copie locale
+    for (const id of allRoomIds()) ls.set("srs_" + id, {}); ls.set("hist", []); HIST = []; ls.set("resetAt", meta.reset); store.cache = {};
+  }
   for (const id of (from < rev ? allRoomIds() : CR().map(r => r.id))) { const rem = await remoteGet("srs_" + id); remAll[id] = (rem && rem.cards) || {}; }
   const remM = from < rev ? migrateCards(remAll, from) : remAll;
   for (let ri = 0; ri < CR().length; ri++) { const id = CR()[ri].id, local = ls.get("srs_" + id, {}), rc = remM[id] || {}; const m = mergeCards(local, rc); store.cache[id] = m; ls.set("srs_" + id, m); if (JSON.stringify(m) !== JSON.stringify(remAll[id] || {})) remoteSet("srs_" + id, { cards: m, maj: Date.now() }); }
-  if (from < rev) { for (const id of allRoomIds()) if (!CR().some(r => r.id === id) && Object.keys(remAll[id] || {}).length) remoteSet("srs_" + id, { cards: {}, maj: Date.now() }); remoteSet("meta", { rev }); }
+  if (from < rev) { for (const id of allRoomIds()) if (!CR().some(r => r.id === id) && Object.keys(remAll[id] || {}).length) remoteSet("srs_" + id, { cards: {}, maj: Date.now() }); remoteSet("meta", Object.assign({}, meta, { rev })); }
   if (HIST.length) remoteSet("historique", { pts: HIST });
 }
 async function srsById(id) {
@@ -1062,6 +1077,25 @@ function srsSaveId(id) {
   const cards = store.cache[id]; ls.set("srs_" + id, cards);
   if (!store.kind) return; clearTimeout(store.timers[id]);
   store.timers[id] = setTimeout(() => remoteSet("srs_" + id, { cards, maj: Date.now() }), 1200);
+}
+/* Remise à zéro des résultats des tests (cartes de révision + historique), ici et sur le compte */
+async function openReset() {
+  let n = 0; for (const r of CR()) { const c = store.cache[r.id] || ls.get("srs_" + r.id, {}); for (const k in c) if (c[k] && c[k].seen) n++; }
+  $("#resetN").textContent = n ? n.toLocaleString("fr-FR") + " carte(s) déjà vue(s)" : "les cartes déjà vues";
+  $("#resetSync").textContent = store.kind ? ", sur cet appareil comme sur ton compte (les autres appareils seront remis à zéro à leur prochaine ouverture)" : "";
+  $("#resetSheet").hidden = false; $("#resetSheet .btn.alt").focus();
+}
+async function doReset() {
+  const b = $("#resetGo"); b.disabled = true; b.textContent = "Effacement…";
+  const now = Date.now(); for (const id in store.timers) clearTimeout(store.timers[id]); clearTimeout(updateHist.t);
+  const ids = allRoomIds(); for (const id of ids) { store.cache[id] = {}; ls.set("srs_" + id, {}); }
+  for (const k in VPROXY) delete VPROXY[k];
+  HIST = []; ls.set("hist", []); ls.set("resetAt", now);
+  if (store.kind) {
+    const meta = (await remoteGet("meta")) || {};
+    await Promise.all(ids.map(id => remoteSet("srs_" + id, { cards: {}, maj: now })).concat([remoteSet("historique", { pts: [] }), remoteSet("meta", Object.assign({}, meta, { rev: DATA.rev || 1, reset: now }))]));
+  }
+  toast("Progression effacée : on repart de zéro"); setTimeout(() => location.reload(), 700);
 }
 /* Fenêtre « Compte » (version GitHub Pages) */
 function renderAccount(step) {
@@ -1627,6 +1661,7 @@ function bindUI() {
   $("#eye").onclick = () => { st.ui = !st.ui; document.body.classList.toggle("hidden-ui", !st.ui); $("#eye").setAttribute("aria-label", st.ui ? "Masquer les menus" : "Afficher les menus"); measureDrawer(); setTimeout(onResize, 50); };
   $("#dhead").onclick = () => setDrawer(!st.drawerOpen);
   $("#planBtn").onclick = () => { $("#planSheet").hidden = false; renderPlan(); };
+  $("#resetBtn").onclick = openReset; $("#resetGo").onclick = doReset;
   $("#accountBtn").onclick = () => { $("#accountSheet").hidden = false; renderAccount(); };
   $("#accountSheet").addEventListener("click", e => { const id = e.target.id; if (id === "sbSend") sbSend(); if (id === "sbVerify") sbVerify(); if (id === "sbBack") renderAccount(); if (id === "sbOut") sbOut(); });
   $("#accountSheet").addEventListener("keydown", e => { if (e.key !== "Enter") return; if (e.target.id === "sbEmail") sbSend(); if (e.target.id === "sbCode") sbVerify(); });

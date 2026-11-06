@@ -975,9 +975,19 @@ function speak(text, src, btn, lang = "it") {
     if (!s || !v) { done(); toast(lang === "fr" ? "Aucune voix française sur cet appareil" : "Aucune voix italienne sur cet appareil"); return; }
     s.cancel(); const u = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u);
   };
-  if (src) { clipUrl(src).then(u => { const a = new Audio(u); a.onended = done; return a.play(); }).catch(() => tts()); return; }
+  if (src) { clipUrl(src).then(u => { const a = spPlayer(); a.onended = done; a.onerror = null; a.src = u; return a.play(); }).catch(() => tts()); return; }
   tts();
 }
+/* iPhone : un son lancé après une attente (enregistrement de la note, chargement du paquet) n'est plus « dans le geste » et Safari le bloque.
+   On garde donc un seul lecteur, débloqué au premier toucher, et on « réveille » la synthèse vocale au même moment. */
+let spAudio = null, spReady = false;
+const spPlayer = () => spAudio || (spAudio = new Audio());
+function spUnlock() {
+  if (spReady) return; const a = spPlayer();
+  if (!a.src || a.paused) { a.src = SILENCE; const p = a.play(); if (p && p.then) p.then(() => { spReady = true; }).catch(() => {}); else spReady = true; }
+  if (window.speechSynthesis) { try { const u = new SpeechSynthesisUtterance(" "); u.volume = 0; speechSynthesis.speak(u); } catch (e) {} }
+}
+["touchend", "click", "keydown"].forEach(ev => document.addEventListener(ev, spUnlock, true));
 
 /* ============ Persistance : préférences (navigateur) + répétition espacée (db par utilisateur) ============ */
 /* Trois palais sur les mêmes niches : par classe (le palais d'origine), par fréquence, par thème. La progression est commune :

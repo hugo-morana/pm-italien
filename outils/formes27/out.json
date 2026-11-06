@@ -1,0 +1,3808 @@
+{
+ "skip": [
+  "adjectifs:63",
+  "determinants:13",
+  "determinants:35",
+  "determinants:39",
+  "pronoms:7",
+  "pronoms:28",
+  "pronoms:43",
+  "prepositions:33",
+  "adverbes:13",
+  "adverbes:59",
+  "adverbes:71",
+  "adverbes_2:30",
+  "adverbes_2:88",
+  "adverbes_3:45",
+  "verbes_4:68",
+  "adjectifs_5:12",
+  "adjectifs_5:70",
+  "adjectifs_6:5",
+  "adverbes_4:0",
+  "adverbes_4:34",
+  "adverbes_4:47",
+  "adverbes_5:53",
+  "noms_16:62"
+ ],
+ "items": [
+  {
+   "from": [
+    "determinants:0"
+   ],
+   "primary": "determinants:0",
+   "it": "il",
+   "fr": "le (devant consonne)",
+   "pr": "IL",
+   "api": "/il/",
+   "mc": "« il » (un roi)",
+   "sc": "Un roi coiffé d'une couronne marquée « IL » ouvre le défilé.",
+   "de": "il = le ; article masculin singulier",
+   "fo": "devant un nom masculin commençant par une consonne : il libro, il tavolo ; pl. i",
+   "efr": "Le livre est sur la table.",
+   "efm": "Le",
+   "eit": "Il libro è sul tavolo.",
+   "eim": "Il"
+  },
+  {
+   "from": [
+    "determinants:0"
+   ],
+   "primary": null,
+   "it": "lo",
+   "fr": "le (devant s+consonne, z, gn, ps…)",
+   "pr": "LO",
+   "api": "/lo/",
+   "mc": "lot",
+   "sc": "Un zèbre gagne le gros lot à la loterie et brandit son ticket.",
+   "de": "lo = le devant s + consonne, z, gn, ps, x, y",
+   "fo": "lo studente, lo zio, lo zaino, lo gnomo, lo psicologo ; pl. gli",
+   "efr": "Le zoo est fermé le lundi.",
+   "efm": "Le",
+   "eit": "Lo zoo è chiuso il lunedì.",
+   "eim": "Lo"
+  },
+  {
+   "from": [
+    "determinants:0",
+    "determinants:2"
+   ],
+   "primary": null,
+   "it": "l'",
+   "fr": "le / la (devant voyelle)",
+   "pr": "L' (lié au mot)",
+   "api": "/l/",
+   "mc": "aile",
+   "sc": "Un ange déploie une seule aile au-dessus d'un ami et d'une amie (l'amico, l'amica).",
+   "de": "l' = lo ou la élidé devant voyelle",
+   "fo": "masc. : l'amico, l'uomo (pl. gli) ; fém. : l'acqua, l'isola (pl. le)",
+   "efr": "L'eau est froide.",
+   "efm": "L'",
+   "eit": "L'acqua è fredda.",
+   "eim": "L'"
+  },
+  {
+   "from": [
+    "determinants:2"
+   ],
+   "primary": "determinants:2",
+   "it": "la",
+   "fr": "la (devant consonne)",
+   "pr": "LA",
+   "api": "/la/",
+   "mc": "note la",
+   "sc": "Une reine chante la note « la » à pleine voix.",
+   "de": "la = la, article féminin singulier ; devient l' devant voyelle",
+   "fo": "la casa, la donna ; pl. le",
+   "efr": "La maison est grande.",
+   "efm": "La",
+   "eit": "La casa è grande.",
+   "eim": "La"
+  },
+  {
+   "from": [
+    "determinants:1"
+   ],
+   "primary": "determinants:1",
+   "it": "un",
+   "fr": "un",
+   "pr": "OUN",
+   "api": "/un/",
+   "mc": "« un »",
+   "sc": "Un doigt levé, tout seul : un.",
+   "de": "un = un ; jamais d'apostrophe au masculin (un amico)",
+   "fo": "un libro, un amico ; devant s + consonne, z… : uno",
+   "efr": "J'ai un frère.",
+   "efm": "un",
+   "eit": "Ho un fratello.",
+   "eim": "un"
+  },
+  {
+   "from": [
+    "determinants:1"
+   ],
+   "primary": null,
+   "it": "uno",
+   "fr": "un (devant s+consonne, z, gn, ps…)",
+   "pr": "OU-no",
+   "api": "/ˈuno/",
+   "mc": "Uno (le jeu de cartes)",
+   "sc": "Un zèbre abat sa dernière carte en criant « Uno ! ».",
+   "de": "uno = un devant s + consonne, z… ; c'est aussi le chiffre 1",
+   "fo": "uno zaino, uno studente, uno zio ; uno, due, tre…",
+   "efr": "Il porte un sac à dos rouge.",
+   "efm": "un",
+   "eit": "Porta uno zaino rosso.",
+   "eim": "uno"
+  },
+  {
+   "from": [
+    "determinants:1"
+   ],
+   "primary": null,
+   "it": "una",
+   "fr": "une (devant consonne)",
+   "pr": "OU-na",
+   "api": "/ˈuna/",
+   "mc": "la une (du journal)",
+   "sc": "Une femme fait la une du journal, sa photo étalée en première page.",
+   "de": "una = une ; féminin de uno",
+   "fo": "una casa, una ragazza, una stella ; devant voyelle : un'",
+   "efr": "J'habite dans une petite maison.",
+   "efm": "une",
+   "eit": "Abito in una piccola casa.",
+   "eim": "una"
+  },
+  {
+   "from": [
+    "determinants:1"
+   ],
+   "primary": null,
+   "it": "un'",
+   "fr": "une (devant voyelle)",
+   "pr": "OUN' (lié au mot)",
+   "api": "/un/",
+   "mc": "un + apostrophe",
+   "sc": "Une amie (un'amica) porte une apostrophe géante en guise de boucle d'oreille.",
+   "de": "un' = una élidé devant voyelle ; l'apostrophe signale le féminin",
+   "fo": "un'amica, un'idea, un'ora ; au masculin, pas d'apostrophe : un amico",
+   "efr": "J'ai une idée !",
+   "efm": "une",
+   "eit": "Ho un'idea!",
+   "eim": "un'"
+  },
+  {
+   "from": [
+    "determinants:3"
+   ],
+   "primary": "determinants:3",
+   "it": "i",
+   "fr": "les (masc., devant consonne)",
+   "pr": "I",
+   "api": "/i/",
+   "mc": "point sur le i",
+   "sc": "Une rangée de garçons au garde-à-vous, chacun avec un gros point au-dessus de la tête, comme des i.",
+   "de": "i = les ; pluriel de il",
+   "fo": "i libri, i bambini ; devant voyelle, s + consonne, z… : gli",
+   "efr": "Les enfants jouent.",
+   "efm": "Les",
+   "eit": "I bambini giocano.",
+   "eim": "I"
+  },
+  {
+   "from": [
+    "determinants:3"
+   ],
+   "primary": null,
+   "it": "gli",
+   "fr": "les (masc., devant voyelle, s+consonne, z…)",
+   "pr": "LLI (l mouillé)",
+   "api": "/ʎi/",
+   "mc": "Lily",
+   "sc": "Lily, la maîtresse, fait entrer en rang les élèves et leurs oncles (gli studenti, gli zii).",
+   "de": "gli = les ; pluriel de lo et de l' masculin ; se prononce « lli » (l mouillé)",
+   "fo": "gli amici, gli studenti, gli zii, gli gnomi",
+   "efr": "Les amis arrivent ce soir.",
+   "efm": "Les",
+   "eit": "Gli amici arrivano stasera.",
+   "eim": "Gli"
+  },
+  {
+   "from": [
+    "determinants:3"
+   ],
+   "primary": null,
+   "it": "le",
+   "fr": "les (fém.)",
+   "pr": "LÉ",
+   "api": "/le/",
+   "mc": "laies",
+   "sc": "Une file de laies (femelles du sanglier) traverse la route, suivie des marcassins.",
+   "de": "le = les ; pluriel de la et de l' féminin ; jamais élidé",
+   "fo": "le case, le amiche, le donne",
+   "efr": "Les maisons sont blanches.",
+   "efm": "Les",
+   "eit": "Le case sono bianche.",
+   "eim": "Le"
+  },
+  {
+   "from": [
+    "determinants:8"
+   ],
+   "primary": "determinants:8",
+   "it": "del",
+   "fr": "du (devant consonne)",
+   "pr": "DÈL",
+   "api": "/del/",
+   "mc": "« d'elle »",
+   "sc": "Une carafe verse du vin dans le verre d'elle.",
+   "de": "del = di + il ; partitif : un peu de",
+   "fo": "del pane, del vino ; aussi « du » = de + le : il libro del professore",
+   "efr": "Tu veux du pain ?",
+   "efm": "du",
+   "eit": "Vuoi del pane?",
+   "eim": "del"
+  },
+  {
+   "from": [
+    "determinants:8"
+   ],
+   "primary": null,
+   "it": "dello",
+   "fr": "du (devant s+consonne, z…)",
+   "pr": "DÈL-lo",
+   "api": "/ˈdello/",
+   "mc": "Dell (ordinateur)",
+   "sc": "On renverse du sucre (dello zucchero) sur le clavier d'un ordinateur Dell.",
+   "de": "dello = di + lo",
+   "fo": "dello zucchero, dello spazio, dello zenzero",
+   "efr": "Il faut du sucre.",
+   "efm": "du",
+   "eit": "Ci vuole dello zucchero.",
+   "eim": "dello"
+  },
+  {
+   "from": [
+    "determinants:8"
+   ],
+   "primary": null,
+   "it": "della",
+   "fr": "de la (devant consonne)",
+   "pr": "DÈL-la",
+   "api": "/ˈdella/",
+   "mc": "Della (prénom)",
+   "sc": "Tante Della plonge les mains dans un sac de farine (della farina).",
+   "de": "della = di + la",
+   "fo": "della farina, della frutta ; aussi « de la » = possession : la casa della nonna",
+   "efr": "J'achète de la farine.",
+   "efm": "de la",
+   "eit": "Compro della farina.",
+   "eim": "della"
+  },
+  {
+   "from": [
+    "determinants:8"
+   ],
+   "primary": null,
+   "it": "dell'",
+   "fr": "de l' (devant voyelle)",
+   "pr": "DÈL (lié au mot)",
+   "api": "/del/",
+   "mc": "délavé",
+   "sc": "D'un vieux robinet délavé coule de l'eau (dell'acqua).",
+   "de": "dell' = di + l' ; masculin ou féminin",
+   "fo": "dell'acqua, dell'olio, dell'aceto",
+   "efr": "Tu veux de l'eau ?",
+   "efm": "de l'",
+   "eit": "Vuoi dell'acqua?",
+   "eim": "dell'"
+  },
+  {
+   "from": [
+    "determinants:7"
+   ],
+   "primary": "determinants:7",
+   "it": "dei",
+   "fr": "des (masc., devant consonne)",
+   "pr": "DÉ-i",
+   "api": "/ˈdei/",
+   "mc": "dés",
+   "sc": "Deux dés roulent sur la table : « des ! ».",
+   "de": "dei = di + i ; souvent omis en italien (ho amici)",
+   "fo": "dei libri, dei ragazzi",
+   "efr": "J'ai acheté des livres.",
+   "efm": "des",
+   "eit": "Ho comprato dei libri.",
+   "eim": "dei"
+  },
+  {
+   "from": [
+    "determinants:7"
+   ],
+   "primary": null,
+   "it": "degli",
+   "fr": "des (masc., devant voyelle, s+consonne, z…)",
+   "pr": "DÉ-lli",
+   "api": "/ˈdeʎʎi/",
+   "mc": "délit",
+   "sc": "Des amis (degli amici) sont pris en flagrant délit, la bouche pleine de gâteau volé.",
+   "de": "degli = di + gli",
+   "fo": "degli amici, degli studenti, degli zii",
+   "efr": "J'ai des amis à Rome.",
+   "efm": "des",
+   "eit": "Ho degli amici a Roma.",
+   "eim": "degli"
+  },
+  {
+   "from": [
+    "determinants:7"
+   ],
+   "primary": null,
+   "it": "delle",
+   "fr": "des (fém.)",
+   "pr": "DÈL-lé",
+   "api": "/ˈdelle/",
+   "mc": "« d'elles »",
+   "sc": "Trois danseuses brandissent des roses : « Ce sont les roses d'elles ! ».",
+   "de": "delle = di + le",
+   "fo": "delle case, delle amiche, delle domande",
+   "efr": "J'ai des questions.",
+   "efm": "des",
+   "eit": "Ho delle domande.",
+   "eim": "delle"
+  },
+  {
+   "from": [
+    "determinants:4"
+   ],
+   "primary": "determinants:4",
+   "it": "il mio",
+   "fr": "mon",
+   "pr": "il MI-o",
+   "api": "/il ˈmio/",
+   "mc": "« mi, oh ! »",
+   "sc": "Un ténor se tape la poitrine en chantant « MI-O ! ».",
+   "de": "mio ≈ « mi(en) » ; avec l'article : il mio",
+   "fo": "il mio libro ; sans article pour la famille au singulier : mio padre ; pronom : il mio = le mien",
+   "efr": "C'est mon livre.",
+   "efm": "mon",
+   "eit": "È il mio libro.",
+   "eim": "il mio"
+  },
+  {
+   "from": [
+    "determinants:4",
+    "adjectifs:9"
+   ],
+   "primary": "adjectifs:9",
+   "it": "i miei",
+   "fr": "mes (masc.)",
+   "pr": "i MIÈ-i",
+   "api": "/i ˈmjɛi/",
+   "mc": "miettes",
+   "sc": "Mes garçons picorent les miettes sur la nappe.",
+   "de": "miei = pluriel irrégulier de mio",
+   "fo": "i miei amici ; i miei tout seul = mes parents",
+   "efr": "Mes amis arrivent.",
+   "efm": "Mes",
+   "eit": "I miei amici arrivano.",
+   "eim": "I miei"
+  },
+  {
+   "from": [
+    "determinants:4",
+    "adjectifs:9"
+   ],
+   "primary": null,
+   "it": "le mie",
+   "fr": "mes (fém.)",
+   "pr": "lé MI-é",
+   "api": "/le ˈmie/",
+   "mc": "mie (de pain)",
+   "sc": "Mes sœurs se partagent la mie d'une énorme miche de pain.",
+   "de": "mie = pluriel de mia",
+   "fo": "le mie cose, le mie amiche",
+   "efr": "Où sont mes clés ?",
+   "efm": "mes",
+   "eit": "Dove sono le mie chiavi?",
+   "eim": "le mie"
+  },
+  {
+   "from": [
+    "determinants:10"
+   ],
+   "primary": "determinants:10",
+   "it": "il tuo",
+   "fr": "ton",
+   "pr": "il TOU-o",
+   "api": "/il ˈtuo/",
+   "mc": "« tu… oh ! »",
+   "sc": "Un doigt pointé vers toi : « TU-O ! ».",
+   "de": "tuo ≈ tu → ton",
+   "fo": "il tuo telefono ; sans article : tuo padre ; pronom : il tuo = le tien",
+   "efr": "C'est ton téléphone ?",
+   "efm": "ton",
+   "eit": "È il tuo telefono?",
+   "eim": "il tuo"
+  },
+  {
+   "from": [
+    "determinants:10",
+    "adjectifs:21"
+   ],
+   "primary": "adjectifs:21",
+   "it": "i tuoi",
+   "fr": "tes (masc.)",
+   "pr": "i TOUO-i",
+   "api": "/i ˈtwɔi/",
+   "mc": "« tu oies »",
+   "sc": "Tes oies cacardent dans la cour.",
+   "de": "tuoi = pluriel irrégulier de tuo",
+   "fo": "i tuoi amici ; i tuoi tout seul = tes parents",
+   "efr": "Tes parents sont là ?",
+   "efm": "Tes",
+   "eit": "I tuoi genitori ci sono?",
+   "eim": "I tuoi"
+  },
+  {
+   "from": [
+    "determinants:10",
+    "adjectifs:21"
+   ],
+   "primary": null,
+   "it": "le tue",
+   "fr": "tes (fém.)",
+   "pr": "lé TOU-é",
+   "api": "/le ˈtue/",
+   "mc": "« tu es »",
+   "sc": "Tes sœurs pointent toutes un doigt vers toi : « Tu es là ! ».",
+   "de": "tue = pluriel de tua",
+   "fo": "le tue scarpe, le tue amiche",
+   "efr": "Tes chaussures sont sales.",
+   "efm": "Tes",
+   "eit": "Le tue scarpe sono sporche.",
+   "eim": "Le tue"
+  },
+  {
+   "from": [
+    "determinants:9"
+   ],
+   "primary": "determinants:9",
+   "it": "il suo",
+   "fr": "son",
+   "pr": "il SOU-o",
+   "api": "/il ˈsuo/",
+   "mc": "« sou… oh ! »",
+   "sc": "Un sou tombe de sa poche : « SOU-O ! ».",
+   "de": "suo ≈ sien → son (à lui ou à elle) ; il Suo = votre (politesse)",
+   "fo": "il suo zaino ; sans article : suo fratello ; pronom : il suo = le sien",
+   "efr": "C'est son sac à dos.",
+   "efm": "son",
+   "eit": "È il suo zaino.",
+   "eim": "il suo"
+  },
+  {
+   "from": [
+    "determinants:9"
+   ],
+   "primary": null,
+   "it": "i suoi",
+   "fr": "ses (masc.)",
+   "pr": "i SOUO-i",
+   "api": "/i ˈswɔi/",
+   "mc": "« sous, oie ! »",
+   "sc": "Une oie picore ses sous éparpillés par terre : « Ses sous, oie ! ».",
+   "de": "suoi = pluriel irrégulier de suo",
+   "fo": "i suoi amici ; i suoi tout seul = ses parents",
+   "efr": "Ses parents habitent à Milan.",
+   "efm": "Ses",
+   "eit": "I suoi genitori abitano a Milano.",
+   "eim": "I suoi"
+  },
+  {
+   "from": [
+    "determinants:9"
+   ],
+   "primary": null,
+   "it": "le sue",
+   "fr": "ses (fém.)",
+   "pr": "lé SOU-é",
+   "api": "/le ˈsue/",
+   "mc": "sueur",
+   "sc": "Ses filles finissent un marathon, ruisselantes de sueur.",
+   "de": "sue = pluriel de sua",
+   "fo": "le sue amiche, le sue idee",
+   "efr": "Ses idées sont bonnes.",
+   "efm": "Ses",
+   "eit": "Le sue idee sono buone.",
+   "eim": "Le sue"
+  },
+  {
+   "from": [
+    "determinants:12"
+   ],
+   "primary": "determinants:12",
+   "it": "il nostro",
+   "fr": "notre (masc.)",
+   "pr": "il NOS-tro",
+   "api": "/il ˈnɔstro/",
+   "mc": "« nos trophées »",
+   "sc": "Notre équipe brandit nos trophées.",
+   "de": "nostro ≈ « nos tro(phées) » (latin noster)",
+   "fo": "il nostro appartamento ; sans article : nostro padre ; pronom : il nostro = le nôtre",
+   "efr": "Notre appartement est petit.",
+   "efm": "Notre",
+   "eit": "Il nostro appartamento è piccolo.",
+   "eim": "Il nostro"
+  },
+  {
+   "from": [
+    "determinants:12"
+   ],
+   "primary": null,
+   "it": "la nostra",
+   "fr": "notre (fém.)",
+   "pr": "la NOS-tra",
+   "api": "/la ˈnɔstra/",
+   "mc": "Nostradamus",
+   "sc": "Nostradamus lit l'avenir de notre maison dans une boule de cristal.",
+   "de": "nostra = féminin de nostro",
+   "fo": "la nostra casa ; sans article : nostra madre",
+   "efr": "C'est notre maison.",
+   "efm": "notre",
+   "eit": "È la nostra casa.",
+   "eim": "la nostra"
+  },
+  {
+   "from": [
+    "determinants:12",
+    "adjectifs:24"
+   ],
+   "primary": "adjectifs:24",
+   "it": "i nostri",
+   "fr": "nos (masc.)",
+   "pr": "i NOS-tri",
+   "api": "/i ˈnɔstri/",
+   "mc": "nostalgie",
+   "sc": "Nos vieilles photos de garçons en culottes courtes donnent la nostalgie.",
+   "de": "nostri = pluriel de nostro",
+   "fo": "i nostri amici, i nostri figli",
+   "efr": "Nos voisins sont sympas.",
+   "efm": "Nos",
+   "eit": "I nostri vicini sono simpatici.",
+   "eim": "I nostri"
+  },
+  {
+   "from": [
+    "determinants:12",
+    "adjectifs:24"
+   ],
+   "primary": null,
+   "it": "le nostre",
+   "fr": "nos (fém.)",
+   "pr": "lé NOS-tré",
+   "api": "/le ˈnɔstre/",
+   "mc": "nos trèfles",
+   "sc": "Nos filles cherchent des trèfles à quatre feuilles dans le pré.",
+   "de": "nostre = pluriel de nostra",
+   "fo": "le nostre vacanze, le nostre figlie",
+   "efr": "Nos vacances commencent demain.",
+   "efm": "Nos",
+   "eit": "Le nostre vacanze cominciano domani.",
+   "eim": "Le nostre"
+  },
+  {
+   "from": [
+    "determinants:11"
+   ],
+   "primary": "determinants:11",
+   "it": "il vostro",
+   "fr": "votre (masc.)",
+   "pr": "il VOS-tro",
+   "api": "/il ˈvɔstro/",
+   "mc": "« vos trophées »",
+   "sc": "L'équipe d'en face vous vole et brandit vos trophées.",
+   "de": "vostro = à vous (plusieurs) ; politesse au singulier : il Suo",
+   "fo": "il vostro treno ; sans article : vostro padre ; pronom : il vostro = le vôtre",
+   "efr": "Votre train part à huit heures.",
+   "efm": "Votre",
+   "eit": "Il vostro treno parte alle otto.",
+   "eim": "Il vostro"
+  },
+  {
+   "from": [
+    "determinants:11"
+   ],
+   "primary": null,
+   "it": "la vostra",
+   "fr": "votre (fém.)",
+   "pr": "la VOS-tra",
+   "api": "/la ˈvɔstra/",
+   "mc": "vos tracts",
+   "sc": "Des militants collent vos tracts sur la porte de votre chambre.",
+   "de": "vostra = féminin de vostro",
+   "fo": "la vostra camera ; sans article : vostra madre",
+   "efr": "C'est votre chambre.",
+   "efm": "votre",
+   "eit": "È la vostra camera.",
+   "eim": "la vostra"
+  },
+  {
+   "from": [
+    "determinants:11",
+    "adjectifs:18"
+   ],
+   "primary": "adjectifs:18",
+   "it": "i vostri",
+   "fr": "vos (masc.)",
+   "pr": "i VOS-tri",
+   "api": "/i ˈvɔstri/",
+   "mc": "vos tris",
+   "sc": "Vos tris de déchets débordent : vos poubelles sont pleines.",
+   "de": "vostri = pluriel de vostro",
+   "fo": "i vostri figli, i vostri amici",
+   "efr": "Vos enfants sont gentils.",
+   "efm": "Vos",
+   "eit": "I vostri figli sono gentili.",
+   "eim": "I vostri"
+  },
+  {
+   "from": [
+    "determinants:11",
+    "adjectifs:18"
+   ],
+   "primary": null,
+   "it": "le vostre",
+   "fr": "vos (fém.)",
+   "pr": "lé VOS-tré",
+   "api": "/le ˈvɔstre/",
+   "mc": "vos tresses",
+   "sc": "Vos filles se font des tresses devant le miroir.",
+   "de": "vostre = pluriel de vostra",
+   "fo": "le vostre valigie, le vostre figlie",
+   "efr": "Vos valises sont prêtes ?",
+   "efm": "Vos",
+   "eit": "Le vostre valigie sono pronte?",
+   "eim": "Le vostre"
+  },
+  {
+   "from": [
+    "determinants:26"
+   ],
+   "primary": "determinants:26",
+   "it": "il loro",
+   "fr": "leur (masc.)",
+   "pr": "il LO-ro",
+   "api": "/il ˈloro/",
+   "mc": "« l'or, oh ! »",
+   "sc": "Deux jumeaux se disputent leur lingot : « L'or, oh ! ».",
+   "de": "loro = leur, invariable, toujours avec l'article (même pour la famille : il loro padre)",
+   "fo": "il loro figlio ; pronom : il loro = le leur",
+   "efr": "C'est leur fils.",
+   "efm": "leur",
+   "eit": "È il loro figlio.",
+   "eim": "il loro"
+  },
+  {
+   "from": [
+    "determinants:26"
+   ],
+   "primary": null,
+   "it": "la loro",
+   "fr": "leur (fém.)",
+   "pr": "la LO-ro",
+   "api": "/la ˈloro/",
+   "mc": "laurier",
+   "sc": "Deux sœurs se partagent leur couronne de laurier.",
+   "de": "loro ne change pas ; seul l'article marque le féminin",
+   "fo": "la loro casa, la loro madre",
+   "efr": "Leur maison est grande.",
+   "efm": "Leur",
+   "eit": "La loro casa è grande.",
+   "eim": "La loro"
+  },
+  {
+   "from": [
+    "determinants:26"
+   ],
+   "primary": null,
+   "it": "i loro",
+   "fr": "leurs (masc.)",
+   "pr": "i LO-ro",
+   "api": "/i ˈloro/",
+   "mc": "« y a l'or ! »",
+   "sc": "Des chercheurs d'or crient « Y a l'or ! » en montrant leurs tamis pleins de pépites.",
+   "de": "i loro = leurs + nom masculin pluriel",
+   "fo": "i loro figli, i loro amici",
+   "efr": "Leurs enfants sont adorables.",
+   "efm": "Leurs",
+   "eit": "I loro figli sono adorabili.",
+   "eim": "I loro"
+  },
+  {
+   "from": [
+    "determinants:26"
+   ],
+   "primary": null,
+   "it": "le loro",
+   "fr": "leurs (fém.)",
+   "pr": "lé LO-ro",
+   "api": "/le ˈloro/",
+   "mc": "les loriots",
+   "sc": "Deux vieilles dames nourrissent leurs loriots jaunes sur le balcon.",
+   "de": "le loro = leurs + nom féminin pluriel",
+   "fo": "le loro figlie, le loro idee",
+   "efr": "Leurs idées sont bizarres.",
+   "efm": "Leurs",
+   "eit": "Le loro idee sono strane.",
+   "eim": "Le loro"
+  },
+  {
+   "from": [
+    "adjectifs:25",
+    "adjectifs:2"
+   ],
+   "primary": "adjectifs:25",
+   "it": "quest'",
+   "fr": "ce / cet / cette (devant voyelle)",
+   "pr": "KouÈST (lié au mot)",
+   "api": "/kwest/",
+   "mc": "quête",
+   "sc": "Une quête au pied de cet arbre : on tend le chapeau aux passants.",
+   "de": "quest' = questo ou questa élidé devant voyelle",
+   "fo": "quest'uomo, quest'anno, quest'estate ; l'élision est facultative à l'écrit",
+   "efr": "Cet homme est mon père.",
+   "efm": "Cet",
+   "eit": "Quest'uomo è mio padre.",
+   "eim": "Quest'"
+  },
+  {
+   "from": [
+    "adjectifs:2"
+   ],
+   "primary": "adjectifs:2",
+   "it": "questa",
+   "fr": "cette (…-ci)",
+   "pr": "KouÈS-ta",
+   "api": "/ˈkwesta/",
+   "mc": "questeur",
+   "sc": "Un questeur en uniforme montre du doigt cette porte-ci.",
+   "de": "questa = féminin de questo",
+   "fo": "questa casa, questa sera (stasera) ; devant voyelle : quest'",
+   "efr": "Cette porte est fermée.",
+   "efm": "Cette",
+   "eit": "Questa porta è chiusa.",
+   "eim": "Questa"
+  },
+  {
+   "from": [
+    "adjectifs:25"
+   ],
+   "primary": null,
+   "it": "quel",
+   "fr": "ce …-là (masc., devant consonne)",
+   "pr": "KouÈL",
+   "api": "/kwel/",
+   "mc": "« quel ! »",
+   "sc": "Un touriste montre un château au loin : « Quel château ! », ce château-là.",
+   "de": "quel = forme de quello devant consonne (comme il)",
+   "fo": "quel libro, quel ragazzo ; pl. quei",
+   "efr": "Tu vois ce garçon-là ?",
+   "efm": "ce garçon-là",
+   "eit": "Vedi quel ragazzo?",
+   "eim": "quel"
+  },
+  {
+   "from": [
+    "adjectifs:25",
+    "adjectifs:2"
+   ],
+   "primary": null,
+   "it": "quell'",
+   "fr": "ce …-là / cette …-là (devant voyelle)",
+   "pr": "KouÈL (lié au mot)",
+   "api": "/kwell/",
+   "mc": "« quelle aile ! »",
+   "sc": "Au loin, un aigle déploie une aile immense : « Quelle aile ! ».",
+   "de": "quell' = quello ou quella élidé devant voyelle (comme l')",
+   "fo": "quell'uomo, quell'amica, quell'anno",
+   "efr": "Cet homme-là est bizarre.",
+   "efm": "Cet homme-là",
+   "eit": "Quell'uomo è strano.",
+   "eim": "Quell'"
+  },
+  {
+   "from": [
+    "adjectifs:2"
+   ],
+   "primary": null,
+   "it": "quella",
+   "fr": "cette …-là (devant consonne)",
+   "pr": "KouÈL-la",
+   "api": "/ˈkwella/",
+   "mc": "« quel lama ! »",
+   "sc": "Sur la colline d'en face, un lama géant : « Quel lama, cette bête-là ! ».",
+   "de": "quella = féminin de quello",
+   "fo": "quella ragazza, quella volta ; devant voyelle : quell'",
+   "efr": "Cette fille-là est ma sœur.",
+   "efm": "Cette fille-là",
+   "eit": "Quella ragazza è mia sorella.",
+   "eim": "Quella"
+  },
+  {
+   "from": [
+    "adjectifs:5"
+   ],
+   "primary": "adjectifs:5",
+   "it": "questi",
+   "fr": "ces (…-ci, masc.)",
+   "pr": "KouÈS-ti",
+   "api": "/ˈkwesti/",
+   "mc": "questions",
+   "sc": "Ces élèves-ci, au premier rang, posent des questions.",
+   "de": "questi = pluriel de questo",
+   "fo": "questi libri, questi giorni",
+   "efr": "Ces livres sont à moi.",
+   "efm": "Ces",
+   "eit": "Questi libri sono miei.",
+   "eim": "Questi"
+  },
+  {
+   "from": [
+    "adjectifs:5"
+   ],
+   "primary": null,
+   "it": "queste",
+   "fr": "ces (…-ci, fém.)",
+   "pr": "KouÈS-té",
+   "api": "/ˈkweste/",
+   "mc": "« qu'est-ce, thé ? »",
+   "sc": "Ces tasses-ci fument sur la table : « Qu'est-ce, thé ? ».",
+   "de": "queste = pluriel de questa",
+   "fo": "queste sedie, queste cose",
+   "efr": "Ces chaises sont neuves.",
+   "efm": "Ces",
+   "eit": "Queste sedie sono nuove.",
+   "eim": "Queste"
+  },
+  {
+   "from": [
+    "determinants:14",
+    "adjectifs:5"
+   ],
+   "primary": "determinants:14",
+   "it": "quei",
+   "fr": "ces …-là (masc., devant consonne)",
+   "pr": "KouÉÏ",
+   "api": "/ˈkwei/",
+   "mc": "quai",
+   "sc": "Sur le quai d'en face, ces gens-là attendent le dernier train.",
+   "de": "quei = pluriel de quel (comme i)",
+   "fo": "quei libri, quei ragazzi",
+   "efr": "Ces gens-là sont fous.",
+   "efm": "Ces gens-là",
+   "eit": "Quei tizi sono pazzi.",
+   "eim": "Quei"
+  },
+  {
+   "from": [
+    "determinants:14",
+    "adjectifs:5"
+   ],
+   "primary": null,
+   "it": "quegli",
+   "fr": "ces …-là (masc., devant voyelle, s+consonne, z…)",
+   "pr": "KouÉ-lli",
+   "api": "/ˈkweʎʎi/",
+   "mc": "cueillir",
+   "sc": "Au fond du verger, ces amis-là (quegli amici) cueillent des pommes.",
+   "de": "quegli = pluriel de quello / quell' (comme gli)",
+   "fo": "quegli amici, quegli studenti, quegli zii",
+   "efr": "Ces étudiants-là sont sympas.",
+   "efm": "Ces étudiants-là",
+   "eit": "Quegli studenti sono simpatici.",
+   "eim": "Quegli"
+  },
+  {
+   "from": [
+    "adjectifs:5"
+   ],
+   "primary": null,
+   "it": "quelle",
+   "fr": "ces …-là (fém.)",
+   "pr": "KouÈL-lé",
+   "api": "/ˈkwelle/",
+   "mc": "querelle",
+   "sc": "Là-bas, au marché, ces femmes-là se querellent pour une salade.",
+   "de": "quelle = pluriel de quella",
+   "fo": "quelle case, quelle amiche",
+   "efr": "Ces maisons-là sont anciennes.",
+   "efm": "Ces maisons-là",
+   "eit": "Quelle case sono antiche.",
+   "eim": "Quelle"
+  },
+  {
+   "from": [
+    "adjectifs:19"
+   ],
+   "primary": "adjectifs:19",
+   "it": "molto",
+   "fr": "beaucoup de (masc. sg.)",
+   "pr": "MOL-to",
+   "api": "/ˈmolto/",
+   "mc": "molle",
+   "sc": "Une montagne molle : beaucoup de gelée tremble dans l'assiette.",
+   "de": "molto ≈ « molle » ; s'accorde quand il est suivi d'un nom",
+   "fo": "molto tempo, molto lavoro ; adverbe invariable : molto bello = très beau",
+   "efr": "J'ai beaucoup de travail.",
+   "efm": "beaucoup de travail",
+   "eit": "Ho molto lavoro.",
+   "eim": "molto"
+  },
+  {
+   "from": [
+    "adjectifs:19"
+   ],
+   "primary": null,
+   "it": "molta",
+   "fr": "beaucoup de (fém. sg.)",
+   "pr": "MOL-ta",
+   "api": "/ˈmolta/",
+   "mc": "Malte",
+   "sc": "Sur une plage de Malte, beaucoup de monde se presse sous les parasols.",
+   "de": "molta = féminin de molto",
+   "fo": "molta gente, molta pazienza",
+   "efr": "Il faut beaucoup de patience.",
+   "efm": "beaucoup de patience",
+   "eit": "Ci vuole molta pazienza.",
+   "eim": "molta"
+  },
+  {
+   "from": [
+    "adjectifs:19",
+    "adjectifs:0"
+   ],
+   "primary": "adjectifs:0",
+   "it": "molti",
+   "fr": "beaucoup de / bien des (masc. pl.)",
+   "pr": "MOL-ti",
+   "api": "/ˈmolti/",
+   "mc": "mollets",
+   "sc": "Beaucoup de cyclistes exhibent leurs mollets musclés sur la ligne de départ.",
+   "de": "molti = pluriel de molto",
+   "fo": "molti libri, molti amici ; pronom : molti pensano che… = beaucoup pensent que…",
+   "efr": "J'ai beaucoup d'amis.",
+   "efm": "beaucoup d'amis",
+   "eit": "Ho molti amici.",
+   "eim": "molti"
+  },
+  {
+   "from": [
+    "adjectifs:19",
+    "adjectifs:0"
+   ],
+   "primary": null,
+   "it": "molte",
+   "fr": "beaucoup de / bien des (fém. pl.)",
+   "pr": "MOL-té",
+   "api": "/ˈmolte/",
+   "mc": "molle + thé",
+   "sc": "Une foule molle de vieilles dames, bien des tasses de thé à la main, s'affale dans les fauteuils.",
+   "de": "molte = pluriel de molta",
+   "fo": "molte persone, molte cose, molte volte",
+   "efr": "Bien des gens pensent ça.",
+   "efm": "Bien des gens",
+   "eit": "Molte persone lo pensano.",
+   "eim": "Molte"
+  },
+  {
+   "from": [
+    "adjectifs:8"
+   ],
+   "primary": "adjectifs:8",
+   "it": "poco",
+   "fr": "peu de (masc. sg.)",
+   "pr": "PO-ko",
+   "api": "/ˈpɔko/",
+   "mc": "pot",
+   "sc": "Un petit pot presque vide : il reste peu de miel au fond.",
+   "de": "poco ≈ « pot » (un petit pot = peu)",
+   "fo": "poco tempo, poco zucchero ; adverbe : poco = peu ; un po' di = un peu de",
+   "efr": "J'ai peu de temps.",
+   "efm": "peu de temps",
+   "eit": "Ho poco tempo.",
+   "eim": "poco"
+  },
+  {
+   "from": [
+    "adjectifs:8"
+   ],
+   "primary": null,
+   "it": "poca",
+   "fr": "peu de (fém. sg.)",
+   "pr": "PO-ka",
+   "api": "/ˈpɔka/",
+   "mc": "poker",
+   "sc": "Au poker, une joueuse n'a plus que peu de jetons devant elle.",
+   "de": "poca = féminin de poco",
+   "fo": "poca gente, poca voglia",
+   "efr": "Il y a peu de monde.",
+   "efm": "peu de monde",
+   "eit": "C'è poca gente.",
+   "eim": "poca"
+  },
+  {
+   "from": [
+    "adjectifs:8"
+   ],
+   "primary": null,
+   "it": "pochi",
+   "fr": "peu de (masc. pl.)",
+   "pr": "PO-ki",
+   "api": "/ˈpɔki/",
+   "mc": "poke (bowl)",
+   "sc": "Un poke bowl presque vide : il reste peu de grains de riz.",
+   "de": "pochi = pluriel de poco (le h garde le son k)",
+   "fo": "pochi soldi, pochi amici",
+   "efr": "Il a peu d'amis.",
+   "efm": "peu d'amis",
+   "eit": "Ha pochi amici.",
+   "eim": "pochi"
+  },
+  {
+   "from": [
+    "adjectifs:8"
+   ],
+   "primary": null,
+   "it": "poche",
+   "fr": "peu de (fém. pl.)",
+   "pr": "PO-ké",
+   "api": "/ˈpɔke/",
+   "mc": "poche",
+   "sc": "Une poche trouée : il ne reste que peu de pièces dedans.",
+   "de": "poche = pluriel de poca (le h garde le son k)",
+   "fo": "poche persone, poche volte",
+   "efr": "Peu de personnes le savent.",
+   "efm": "Peu de personnes",
+   "eit": "Poche persone lo sanno.",
+   "eim": "Poche"
+  },
+  {
+   "from": [
+    "adjectifs:16"
+   ],
+   "primary": "adjectifs:16",
+   "it": "troppo",
+   "fr": "trop de (masc. sg.)",
+   "pr": "TROP-po",
+   "api": "/ˈtrɔppo/",
+   "mc": "trop",
+   "sc": "Un verre qui déborde : trop de vin.",
+   "de": "troppo ≈ « trop »",
+   "fo": "troppo rumore, troppo tempo ; adverbe invariable : troppo caro = trop cher",
+   "efr": "Il y a trop de bruit.",
+   "efm": "trop de bruit",
+   "eit": "C'è troppo rumore.",
+   "eim": "troppo"
+  },
+  {
+   "from": [
+    "adjectifs:16"
+   ],
+   "primary": null,
+   "it": "troppa",
+   "fr": "trop de (fém. sg.)",
+   "pr": "TROP-pa",
+   "api": "/ˈtrɔppa/",
+   "mc": "trappe",
+   "sc": "Une trappe cède sous une montagne de farine : trop de farine !",
+   "de": "troppa = féminin de troppo",
+   "fo": "troppa gente, troppa fretta",
+   "efr": "Il y a trop de monde.",
+   "efm": "trop de monde",
+   "eit": "C'è troppa gente.",
+   "eim": "troppa"
+  },
+  {
+   "from": [
+    "adjectifs:16"
+   ],
+   "primary": null,
+   "it": "troppi",
+   "fr": "trop de (masc. pl.)",
+   "pr": "TROP-pi",
+   "api": "/ˈtrɔppi/",
+   "mc": "tropiques",
+   "sc": "Sous les tropiques, trop de moustiques tournent autour de la lampe.",
+   "de": "troppi = pluriel de troppo",
+   "fo": "troppi soldi, troppi turisti",
+   "efr": "Il y a trop de touristes.",
+   "efm": "trop de touristes",
+   "eit": "Ci sono troppi turisti.",
+   "eim": "troppi"
+  },
+  {
+   "from": [
+    "adjectifs:16"
+   ],
+   "primary": null,
+   "it": "troppe",
+   "fr": "trop de (fém. pl.)",
+   "pr": "TROP-pé",
+   "api": "/ˈtrɔppe/",
+   "mc": "troupeau",
+   "sc": "Un troupeau de chèvres envahit la cuisine : trop de chèvres !",
+   "de": "troppe = pluriel de troppa",
+   "fo": "troppe cose, troppe domande",
+   "efr": "Tu poses trop de questions.",
+   "efm": "trop de questions",
+   "eit": "Fai troppe domande.",
+   "eim": "troppe"
+  },
+  {
+   "from": [
+    "adjectifs:11"
+   ],
+   "primary": "adjectifs:11",
+   "it": "altra",
+   "fr": "autre / encore de (fém. sg.)",
+   "pr": "AL-tra",
+   "api": "/ˈaltra/",
+   "mc": "« halte-là ! »",
+   "sc": "Un garde crie « Halte-là ! » à une autre voiture qui veut encore passer.",
+   "de": "altra = féminin de altro",
+   "fo": "un'altra volta = une autre fois ; altra acqua = encore de l'eau",
+   "efr": "Je voudrais une autre bière.",
+   "efm": "autre",
+   "eit": "Vorrei un'altra birra.",
+   "eim": "altra"
+  },
+  {
+   "from": [
+    "adjectifs:11"
+   ],
+   "primary": null,
+   "it": "altri",
+   "fr": "d'autres / encore de (masc. pl.)",
+   "pr": "AL-tri",
+   "api": "/ˈaltri/",
+   "mc": "alto (voix)",
+   "sc": "Un chœur d'altos réclame d'autres partitions, encore d'autres !",
+   "de": "altri = pluriel de altro",
+   "fo": "altri libri = d'autres livres ; avec article : gli altri = les autres",
+   "efr": "Tu as d'autres doutes ?",
+   "efm": "d'autres",
+   "eit": "Hai altri dubbi?",
+   "eim": "altri"
+  },
+  {
+   "from": [
+    "adjectifs:71",
+    "adverbes:94"
+   ],
+   "primary": "adjectifs:71",
+   "it": "tanto",
+   "fr": "tant de / autant de (masc. sg.)",
+   "pr": "TANN-to",
+   "api": "/ˈtanto/",
+   "mc": "tango",
+   "sc": "Un danseur de tango enchaîne autant de pas que sa partenaire.",
+   "de": "tanto = tant de ; tanto… quanto = autant… que",
+   "fo": "tanto tempo, tanto lavoro ; adverbe invariable : tanto = tellement",
+   "efr": "Je n'ai jamais eu autant de travail.",
+   "efm": "autant de travail",
+   "eit": "Non ho mai avuto tanto lavoro.",
+   "eim": "tanto"
+  },
+  {
+   "from": [
+    "adjectifs:71",
+    "adverbes:94"
+   ],
+   "primary": null,
+   "it": "tanta",
+   "fr": "tant de / autant de (fém. sg.)",
+   "pr": "TANN-ta",
+   "api": "/ˈtanta/",
+   "mc": "tente",
+   "sc": "Sous une tente de cirque géante : jamais vu autant de monde !",
+   "de": "tanta = féminin de tanto",
+   "fo": "tanta gente, tanta fortuna",
+   "efr": "J'ai jamais vu autant de monde.",
+   "efm": "autant de monde",
+   "eit": "Non ho mai visto tanta gente.",
+   "eim": "tanta"
+  },
+  {
+   "from": [
+    "adjectifs:71",
+    "adverbes:94"
+   ],
+   "primary": null,
+   "it": "tanti",
+   "fr": "tant de / autant de (masc. pl.)",
+   "pr": "TANN-ti",
+   "api": "/ˈtanti/",
+   "mc": "tentacules",
+   "sc": "Une pieuvre agite tant de tentacules qu'on ne peut plus les compter.",
+   "de": "tanti = pluriel de tanto",
+   "fo": "tanti amici ; tanti auguri = meilleurs vœux",
+   "efr": "Il a tant d'amis !",
+   "efm": "tant d'amis",
+   "eit": "Ha tanti amici!",
+   "eim": "tanti"
+  },
+  {
+   "from": [
+    "adverbes:94",
+    "adjectifs:71"
+   ],
+   "primary": "adverbes:94",
+   "it": "tante",
+   "fr": "tant de / autant de (fém. pl.)",
+   "pr": "TANN-té",
+   "api": "/ˈtante/",
+   "mc": "tante",
+   "sc": "Ma tante porte tant de chapeaux empilés qu'elle ne passe plus la porte.",
+   "de": "tante = pluriel de tanta (≠ « tante » en français : la zia)",
+   "fo": "tante cose, tante volte",
+   "efr": "J'ai tant de choses à faire.",
+   "efm": "tant de",
+   "eit": "Ho tante cose da fare.",
+   "eim": "tante"
+  },
+  {
+   "from": [
+    "adjectifs:7"
+   ],
+   "primary": "adjectifs:7",
+   "it": "tutti i",
+   "fr": "tous les (masc., devant consonne)",
+   "pr": "TOUT-ti i",
+   "api": "/ˈtutti i/",
+   "mc": "tutu",
+   "sc": "Tous les danseurs portent un tutu.",
+   "de": "tutti i = tous les ; tutti + article i",
+   "fo": "tutti i giorni = tous les jours ; au singulier : tutto il giorno = toute la journée",
+   "efr": "Tous les jours, je cours.",
+   "efm": "Tous les jours",
+   "eit": "Tutti i giorni corro.",
+   "eim": "Tutti i"
+  },
+  {
+   "from": [
+    "adjectifs:7"
+   ],
+   "primary": null,
+   "it": "tutti gli",
+   "fr": "tous les (masc., devant voyelle, s+consonne, z…)",
+   "pr": "TOUT-ti lli",
+   "api": "/ˈtutti ʎi/",
+   "mc": "« tout tilleul »",
+   "sc": "Tous les étudiants boivent en même temps une tasse de tilleul.",
+   "de": "tutti gli = tutti + gli (devant voyelle, s + consonne, z…)",
+   "fo": "tutti gli amici, tutti gli studenti, tutti gli anni",
+   "efr": "Tous les ans, on va à la mer.",
+   "efm": "Tous les ans",
+   "eit": "Tutti gli anni andiamo al mare.",
+   "eim": "Tutti gli"
+  },
+  {
+   "from": [
+    "adjectifs:7"
+   ],
+   "primary": null,
+   "it": "tutte le",
+   "fr": "toutes les",
+   "pr": "TOUT-té lé",
+   "api": "/ˈtutte le/",
+   "mc": "tutelle",
+   "sc": "Toutes les nonnes du couvent marchent en file sous la tutelle de la mère supérieure.",
+   "de": "tutte le = toutes les",
+   "fo": "tutte le sere = tous les soirs ; tutte le volte = toutes les fois",
+   "efr": "Toutes les filles dansent.",
+   "efm": "Toutes les filles",
+   "eit": "Tutte le ragazze ballano.",
+   "eim": "Tutte le"
+  },
+  {
+   "from": [
+    "pronoms:23"
+   ],
+   "primary": "pronoms:23",
+   "it": "gli",
+   "fr": "lui (COI, masc.) / leur",
+   "pr": "LLI",
+   "api": "/ʎi/",
+   "mc": "lys",
+   "sc": "On offre un lys au vieux monsieur : on lui donne la fleur.",
+   "de": "gli = à lui ; à l'oral, gli = aussi « à eux / leur »",
+   "fo": "gli dico = je lui dis ; gli parlo = je leur parle (oral) ; glielo = le lui",
+   "efr": "Je lui dis la vérité.",
+   "efm": "lui",
+   "eit": "Gli dico la verità.",
+   "eim": "Gli"
+  },
+  {
+   "from": [
+    "pronoms:23"
+   ],
+   "primary": null,
+   "it": "le",
+   "fr": "lui (COI, à elle)",
+   "pr": "LÉ",
+   "api": "/le/",
+   "mc": "lait",
+   "sc": "On sert un grand verre de lait à la petite fille : on lui donne à boire.",
+   "de": "le = à elle ; Le (majuscule) = à vous (politesse)",
+   "fo": "le parlo = je lui parle (à elle) ; le scrivo = je lui écris",
+   "efr": "Je lui parle tous les jours.",
+   "efm": "lui",
+   "eit": "Le parlo tutti i giorni.",
+   "eim": "Le"
+  },
+  {
+   "from": [
+    "pronoms:31"
+   ],
+   "primary": "pronoms:31",
+   "it": "li",
+   "fr": "les (COD, masc.)",
+   "pr": "LI",
+   "api": "/li/",
+   "mc": "lit",
+   "sc": "On les couche tous les deux dans le même lit : « LI ».",
+   "de": "li = les (masc.) ; pluriel de lo",
+   "fo": "li conosco = je les connais ; li ho visti = je les ai vus",
+   "efr": "Je les connais.",
+   "efm": "les",
+   "eit": "Li conosco.",
+   "eim": "Li"
+  },
+  {
+   "from": [
+    "pronoms:31"
+   ],
+   "primary": null,
+   "it": "le",
+   "fr": "les (COD, fém.)",
+   "pr": "LÉ",
+   "api": "/le/",
+   "mc": "« les » (en français)",
+   "sc": "Deux sœurs se cachent derrière une pancarte « LES » : je les vois quand même.",
+   "de": "le = les (fém.) ; pluriel de la ; se prononce comme « les »",
+   "fo": "le vedo = je les vois ; le ho viste = je les ai vues",
+   "efr": "Je les vois demain.",
+   "efm": "les",
+   "eit": "Le vedo domani.",
+   "eim": "Le"
+  },
+  {
+   "from": [
+    "pronoms:34"
+   ],
+   "primary": "pronoms:34",
+   "it": "l'altro",
+   "fr": "l'autre (masc.)",
+   "pr": "LAL-tro",
+   "api": "/ˈlaltro/",
+   "mc": "altruiste",
+   "sc": "Un altruiste tend son parapluie à l'autre passant.",
+   "de": "l'altro = l'autre (pronom)",
+   "fo": "l'uno e l'altro = l'un et l'autre ; l'altro ieri = avant-hier",
+   "efr": "Je prends l'autre.",
+   "efm": "l'autre",
+   "eit": "Prendo l'altro.",
+   "eim": "l'altro"
+  },
+  {
+   "from": [
+    "pronoms:34"
+   ],
+   "primary": null,
+   "it": "l'altra",
+   "fr": "l'autre (fém.)",
+   "pr": "LAL-tra",
+   "api": "/ˈlaltra/",
+   "mc": "la latte",
+   "sc": "Une menuisière arrache une latte du parquet, puis l'autre.",
+   "de": "l'altra = l'autre (pronom féminin)",
+   "fo": "l'una o l'altra = l'une ou l'autre",
+   "efr": "Pas cette jupe, l'autre.",
+   "efm": "l'autre",
+   "eit": "Non questa gonna, l'altra.",
+   "eim": "l'altra"
+  },
+  {
+   "from": [
+    "pronoms:34"
+   ],
+   "primary": null,
+   "it": "gli altri",
+   "fr": "les autres (masc.)",
+   "pr": "lli AL-tri",
+   "api": "/ʎi ˈaltri/",
+   "mc": "autruches",
+   "sc": "Les autres arrivent : une bande d'autruches déboule en courant.",
+   "de": "gli altri = les autres (pronom masc. pl.)",
+   "fo": "gli altri = aussi « autrui » (pensare agli altri)",
+   "efr": "Les autres arrivent.",
+   "efm": "Les autres",
+   "eit": "Gli altri arrivano.",
+   "eim": "Gli altri"
+  },
+  {
+   "from": [
+    "pronoms:34"
+   ],
+   "primary": null,
+   "it": "le altre",
+   "fr": "les autres (fém.)",
+   "pr": "lé AL-tré",
+   "api": "/le ˈaltre/",
+   "mc": "haltères",
+   "sc": "Les autres sportives soulèvent toutes des haltères en rythme.",
+   "de": "le altre = les autres (pronom fém. pl.)",
+   "fo": "le altre sono già partite",
+   "efr": "Les autres sont déjà parties.",
+   "efm": "Les autres",
+   "eit": "Le altre sono già partite.",
+   "eim": "Le altre"
+  },
+  {
+   "from": [
+    "pronoms:36"
+   ],
+   "primary": "pronoms:36",
+   "it": "quelle",
+   "fr": "celles (-là)",
+   "pr": "KouÈL-lé",
+   "api": "/ˈkwelle/",
+   "mc": "« quel lait ! »",
+   "sc": "Une fermière montre deux bouteilles : « Celles-là ? Quel lait ! ».",
+   "de": "quelle = celles ; pluriel de quella ; quelle che = celles qui / que",
+   "fo": "quelle che preferisco = celles que je préfère",
+   "efr": "Je préfère celles-là.",
+   "efm": "celles-là",
+   "eit": "Preferisco quelle.",
+   "eim": "quelle"
+  },
+  {
+   "from": [
+    "pronoms:39"
+   ],
+   "primary": "pronoms:39",
+   "it": "entrambi",
+   "fr": "tous les deux",
+   "pr": "enn-TRAMM-bi",
+   "api": "/enˈtrambi/",
+   "mc": "en tram, bis",
+   "sc": "Deux jumeaux montent en tram et crient « bis ! » tous les deux.",
+   "de": "entrambi ≈ « en tram, bis »",
+   "fo": "avec un nom : entrambi i fratelli = les deux frères",
+   "efr": "Ils sont venus tous les deux.",
+   "efm": "tous les deux",
+   "eit": "Sono venuti entrambi.",
+   "eim": "entrambi"
+  },
+  {
+   "from": [
+    "pronoms:39"
+   ],
+   "primary": null,
+   "it": "entrambe",
+   "fr": "toutes les deux",
+   "pr": "enn-TRAMM-bé",
+   "api": "/enˈtrambe/",
+   "mc": "en trombe",
+   "sc": "Deux sœurs arrivent en trombe, toutes les deux sur le même vélo.",
+   "de": "entrambe = féminin de entrambi",
+   "fo": "entrambe le sorelle = les deux sœurs",
+   "efr": "Elles sont venues toutes les deux.",
+   "efm": "toutes les deux",
+   "eit": "Sono venute entrambe.",
+   "eim": "entrambe"
+  },
+  {
+   "from": [
+    "pronoms:41"
+   ],
+   "primary": "pronoms:41",
+   "it": "tutti",
+   "fr": "tous (pronom)",
+   "pr": "TOUT-ti",
+   "api": "/ˈtutti/",
+   "mc": "« tutti » (musique)",
+   "sc": "Tous les musiciens jouent ensemble : tutti !",
+   "de": "tutti = tous (aussi en musique)",
+   "fo": "tutti e due = tous les deux ; tutti = aussi « tout le monde »",
+   "efr": "Ils sont tous là.",
+   "efm": "tous",
+   "eit": "Ci sono tutti.",
+   "eim": "tutti"
+  },
+  {
+   "from": [
+    "pronoms:41"
+   ],
+   "primary": null,
+   "it": "tutte",
+   "fr": "toutes (pronom)",
+   "pr": "TOUT-té",
+   "api": "/ˈtutte/",
+   "mc": "toutou",
+   "sc": "Toutes les mamies promènent leur toutou à la même heure.",
+   "de": "tutte = toutes ; féminin pluriel de tutti",
+   "fo": "tutte e due = toutes les deux",
+   "efr": "Elles sont toutes parties.",
+   "efm": "toutes",
+   "eit": "Sono partite tutte.",
+   "eim": "tutte"
+  },
+  {
+   "from": [
+    "pronoms:71"
+   ],
+   "primary": "pronoms:71",
+   "it": "voi stessi",
+   "fr": "vous-mêmes (pluriel)",
+   "pr": "VOÏ STÉS-si",
+   "api": "/ˈvoi ˈstessi/",
+   "mc": "voie + steak",
+   "sc": "Sur la voie ferrée, une bande d'amis grille ses steaks : faites-le vous-mêmes !",
+   "de": "voi stessi = vous-mêmes ; stessi = pluriel de stesso",
+   "fo": "au féminin : voi stesse",
+   "efr": "Faites-le vous-mêmes.",
+   "efm": "vous-mêmes",
+   "eit": "Fatelo voi stessi.",
+   "eim": "voi stessi"
+  },
+  {
+   "from": [
+    "pronoms:71"
+   ],
+   "primary": null,
+   "it": "Lei stesso",
+   "fr": "vous-même (politesse)",
+   "pr": "LÈÏ STÉS-so",
+   "api": "/ˈlɛi ˈstesso/",
+   "mc": "laisse + steak",
+   "sc": "Un majordome tend la laisse et un steak à son maître : « Nourrissez le chien vous-même, Monsieur. ».",
+   "de": "Lei stesso = vous-même (vouvoiement, à un homme)",
+   "fo": "à une femme : Lei stessa ; avec Lei, le verbe est à la 3e personne (lo faccia)",
+   "efr": "Faites-le vous-même.",
+   "efm": "vous-même",
+   "eit": "Lo faccia Lei stesso.",
+   "eim": "Lei stesso"
+  },
+  {
+   "from": [
+    "pronoms:91"
+   ],
+   "primary": "pronoms:91",
+   "it": "dal quale",
+   "fr": "duquel / d'où (provenance)",
+   "pr": "dal KouA-lé",
+   "api": "/dal ˈkwale/",
+   "mc": "quai",
+   "sc": "Le quai duquel on voit la mer, et d'où partent les bateaux.",
+   "de": "dal quale = da + il quale (provenance, point de vue)",
+   "fo": "dalla quale, dai quali, dalle quali",
+   "efr": "Le pont duquel on voit la mer.",
+   "efm": "duquel",
+   "eit": "Il ponte dal quale si vede il mare.",
+   "eim": "dal quale"
+  },
+  {
+   "from": [
+    "pronoms:91"
+   ],
+   "primary": null,
+   "it": "del quale",
+   "fr": "duquel / dont",
+   "pr": "dèl KouA-lé",
+   "api": "/del ˈkwale/",
+   "mc": "« d'elle, koala »",
+   "sc": "Un koala dort sur une branche : c'est celui duquel elle parle sans arrêt.",
+   "de": "del quale = di + il quale ; plus courant à l'oral : di cui",
+   "fo": "della quale, dei quali, delle quali ; l'uomo del quale parlo = l'homme dont je parle",
+   "efr": "Le livre dont je parle est épuisé.",
+   "efm": "dont",
+   "eit": "Il libro del quale parlo è esaurito.",
+   "eim": "del quale"
+  },
+  {
+   "from": [
+    "noms:0"
+   ],
+   "primary": "noms:0",
+   "it": "il segretario",
+   "fr": "le secrétaire",
+   "pr": "il sé-gré-TA-rio",
+   "api": "/il seɡreˈtarjo/",
+   "mc": "secrétaire",
+   "sc": "Un secrétaire en costume tape à la machine à toute vitesse.",
+   "de": "segretario ≈ « secrétaire »",
+   "fo": "pl. i segretari ; aussi le secrétaire d'un parti",
+   "efr": "Le secrétaire a appelé.",
+   "efm": "secrétaire",
+   "eit": "Il segretario ha chiamato.",
+   "eim": "segretario"
+  },
+  {
+   "from": [
+    "noms:0"
+   ],
+   "primary": null,
+   "it": "la segretaria",
+   "fr": "la secrétaire",
+   "pr": "la sé-gré-TA-ria",
+   "api": "/la seɡreˈtarja/",
+   "mc": "secrétaire",
+   "sc": "Une secrétaire en talons hauts range une pile de dossiers dans une armoire.",
+   "de": "segretaria = féminin de segretario",
+   "fo": "pl. le segretarie",
+   "efr": "Ma secrétaire est absente.",
+   "efm": "secrétaire",
+   "eit": "La mia segretaria è assente.",
+   "eim": "segretaria"
+  },
+  {
+   "from": [
+    "adjectifs:30"
+   ],
+   "primary": "adjectifs:30",
+   "it": "da solo",
+   "fr": "tout seul",
+   "pr": "da SO-lo",
+   "api": "/da ˈsolo/",
+   "mc": "de solo",
+   "sc": "Un musicien joue son solo tout seul sur scène.",
+   "de": "da solo ≈ « de solo » (sans l'aide de personne)",
+   "fo": "pl. da soli ; solo tout court = seul",
+   "efr": "Je l'ai fait tout seul.",
+   "efm": "tout seul",
+   "eit": "L'ho fatto da solo.",
+   "eim": "da solo"
+  },
+  {
+   "from": [
+    "adjectifs:30"
+   ],
+   "primary": null,
+   "it": "da sola",
+   "fr": "toute seule",
+   "pr": "da SO-la",
+   "api": "/da ˈsola/",
+   "mc": "solarium",
+   "sc": "Une femme bronze toute seule dans un solarium désert.",
+   "de": "da sola = féminin de da solo",
+   "fo": "pl. da sole",
+   "efr": "Elle vit toute seule.",
+   "efm": "toute seule",
+   "eit": "Vive da sola.",
+   "eim": "da sola"
+  },
+  {
+   "from": [
+    "noms_3:50"
+   ],
+   "primary": "noms_3:50",
+   "it": "il migliore amico",
+   "fr": "le meilleur ami",
+   "pr": "il mi-LLIO-ré a-MI-ko",
+   "api": "/il miʎˈʎore aˈmiko/",
+   "mc": "million + ami",
+   "sc": "Mon meilleur ami me tend un chèque d'un million.",
+   "de": "migliore = meilleur ; souvent avec le possessif : il mio migliore amico",
+   "fo": "aussi : il miglior amico",
+   "efr": "C'est mon meilleur ami.",
+   "efm": "meilleur ami",
+   "eit": "È il mio migliore amico.",
+   "eim": "migliore amico"
+  },
+  {
+   "from": [
+    "noms_3:50"
+   ],
+   "primary": null,
+   "it": "la migliore amica",
+   "fr": "la meilleure amie",
+   "pr": "la mi-LLIO-ré a-MI-ka",
+   "api": "/la miʎˈʎore aˈmika/",
+   "mc": "« meilleure » + amica",
+   "sc": "Deux meilleures amies se partagent un gâteau en forme de cœur.",
+   "de": "migliore ne change pas au féminin ; seul amica s'accorde",
+   "fo": "pl. le migliori amiche",
+   "efr": "Ma meilleure amie !",
+   "efm": "meilleure amie",
+   "eit": "È la mia migliore amica!",
+   "eim": "migliore amica"
+  },
+  {
+   "from": [
+    "adjectifs:29"
+   ],
+   "primary": "adjectifs:29",
+   "it": "buona",
+   "fr": "bonne",
+   "pr": "BouO-na",
+   "api": "/buˈɔna/",
+   "mc": "bonne (de maison)",
+   "sc": "Une bonne en tablier sert une tarte délicieuse.",
+   "de": "buona = féminin de buono",
+   "fo": "buona notte, buona fortuna, una buona idea",
+   "efr": "Bonne chance !",
+   "efm": "Bonne",
+   "eit": "Buona fortuna!",
+   "eim": "Buona"
+  },
+  {
+   "from": [
+    "adjectifs_2:1"
+   ],
+   "primary": "adjectifs_2:1",
+   "it": "sicura",
+   "fr": "sûre",
+   "pr": "si-KOU-ra",
+   "api": "/siˈkura/",
+   "mc": "six cœurs",
+   "sc": "Une reine tient six cœurs dans ses mains : elle est sûre d'elle.",
+   "de": "sicura = féminin de sicuro",
+   "fo": "sicura di sé = sûre d'elle ; la sicurezza = la sécurité",
+   "efr": "Tu es sûre ?",
+   "efm": "sûre",
+   "eit": "Sei sicura?",
+   "eim": "sicura"
+  },
+  {
+   "from": [
+    "adjectifs_3:51"
+   ],
+   "primary": "adjectifs_3:51",
+   "it": "contenta",
+   "fr": "contente",
+   "pr": "konn-TÈNN-ta",
+   "api": "/konˈtenta/",
+   "mc": "content + tente",
+   "sc": "Une campeuse ravie danse devant sa tente : contente !",
+   "de": "contenta = féminin de contento",
+   "fo": "contenta di + nom ou infinitif",
+   "efr": "Elle est contente de son travail.",
+   "efm": "contente",
+   "eit": "È contenta del suo lavoro.",
+   "eim": "contenta"
+  },
+  {
+   "from": [
+    "adjectifs_4:86"
+   ],
+   "primary": "adjectifs_4:86",
+   "it": "aperta",
+   "fr": "ouverte",
+   "pr": "a-PÈR-ta",
+   "api": "/aˈpɛrta/",
+   "mc": "apéro",
+   "sc": "Une serveuse ouvre grand la porte du bar : l'apéro est servi, c'est ouvert !",
+   "de": "aperta = féminin de aperto (verbe aprire)",
+   "fo": "all'aperto = en plein air",
+   "efr": "La porte est ouverte.",
+   "efm": "ouverte",
+   "eit": "La porta è aperta.",
+   "eim": "aperta"
+  },
+  {
+   "from": [
+    "adjectifs_5:0"
+   ],
+   "primary": "adjectifs_5:0",
+   "it": "vecchia",
+   "fr": "vieille",
+   "pr": "VÈK-kia",
+   "api": "/ˈvɛkkja/",
+   "mc": "vécu",
+   "sc": "Une vieille dame ridée raconte tout ce qu'elle a vécu.",
+   "de": "vecchia = féminin de vecchio",
+   "fo": "una vecchia amica = une vieille amie",
+   "efr": "C'est une vieille maison.",
+   "efm": "vieille",
+   "eit": "È una casa vecchia.",
+   "eim": "vecchia"
+  },
+  {
+   "from": [
+    "adjectifs_6:2"
+   ],
+   "primary": "adjectifs_6:2",
+   "it": "furba",
+   "fr": "futée",
+   "pr": "FOUR-ba",
+   "api": "/ˈfurba/",
+   "mc": "fourbe",
+   "sc": "Une renarde fourbe chipe le fromage du corbeau.",
+   "de": "furba = féminin de furbo",
+   "fo": "fare la furba = faire la maligne",
+   "efr": "Ta sœur est très futée.",
+   "efm": "futée",
+   "eit": "Tua sorella è molto furba.",
+   "eim": "furba"
+  },
+  {
+   "from": [
+    "adjectifs_6:7"
+   ],
+   "primary": "adjectifs_6:7",
+   "it": "straniera",
+   "fr": "étrangère",
+   "pr": "stra-NIÈ-ra",
+   "api": "/straˈnjɛra/",
+   "mc": "étrange",
+   "sc": "Une étrangère au chapeau étrange descend du train, valise à la main.",
+   "de": "straniera = féminin de straniero",
+   "fo": "una lingua straniera = une langue étrangère",
+   "efr": "J'apprends une langue étrangère.",
+   "efm": "étrangère",
+   "eit": "Imparo una lingua straniera.",
+   "eim": "straniera"
+  },
+  {
+   "from": [
+    "adjectifs_6:14"
+   ],
+   "primary": "adjectifs_6:14",
+   "it": "complicata",
+   "fr": "compliquée",
+   "pr": "komm-pli-KA-ta",
+   "api": "/kompliˈkata/",
+   "mc": "compliqué",
+   "sc": "Une cheffe d'orchestre s'emmêle dans une partition compliquée.",
+   "de": "complicata = féminin de complicato",
+   "fo": "una situazione complicata",
+   "efr": "La situation est compliquée.",
+   "efm": "compliquée",
+   "eit": "La situazione è complicata.",
+   "eim": "complicata"
+  },
+  {
+   "from": [
+    "adjectifs_6:15"
+   ],
+   "primary": "adjectifs_6:15",
+   "it": "brutta",
+   "fr": "laide",
+   "pr": "BROUT-ta",
+   "api": "/ˈbrutta/",
+   "mc": "brute",
+   "sc": "Une sorcière si laide que même la brute du village s'enfuit.",
+   "de": "brutta = féminin de brutto ; aussi « mauvaise » (una brutta notizia)",
+   "fo": "la brutta copia = le brouillon",
+   "efr": "Cette jupe est laide.",
+   "efm": "laide",
+   "eit": "Questa gonna è brutta.",
+   "eim": "brutta"
+  },
+  {
+   "from": [
+    "adjectifs_4:14"
+   ],
+   "primary": "adjectifs_4:14",
+   "it": "preciso",
+   "fr": "précis",
+   "pr": "pré-TCHI-zo",
+   "api": "/preˈtʃizo/",
+   "mc": "précis",
+   "sc": "Un horloger règle une montre à la seconde près : précis.",
+   "de": "preciso ≈ « précis »",
+   "fo": "alle tre precise = à trois heures pile ; anglais : accurate",
+   "efr": "C'est un chiffre précis.",
+   "efm": "précis",
+   "eit": "È un numero preciso.",
+   "eim": "preciso"
+  },
+  {
+   "from": [
+    "adjectifs_4:14"
+   ],
+   "primary": null,
+   "it": "precisa",
+   "fr": "précise",
+   "pr": "pré-TCHI-za",
+   "api": "/preˈtʃiza/",
+   "mc": "précise",
+   "sc": "Une archère plante sa flèche en plein centre de la cible : précise.",
+   "de": "precisa = féminin de preciso",
+   "fo": "una risposta precisa",
+   "efr": "Elle est très précise.",
+   "efm": "précise",
+   "eit": "È molto precisa.",
+   "eim": "precisa"
+  },
+  {
+   "from": [
+    "adjectifs_4:73"
+   ],
+   "primary": "adjectifs_4:73",
+   "it": "magro",
+   "fr": "mince (masc.)",
+   "pr": "MA-gro",
+   "api": "/ˈmaɡro/",
+   "mc": "maigre",
+   "sc": "Un homme maigre flotte dans son pantalon trop grand.",
+   "de": "magro ≈ « maigre »",
+   "fo": "aussi « maigre » : carne magra = viande maigre ; anglais : slim",
+   "efr": "Mon frère est mince.",
+   "efm": "mince",
+   "eit": "Mio fratello è magro.",
+   "eim": "magro"
+  },
+  {
+   "from": [
+    "adjectifs_4:73"
+   ],
+   "primary": null,
+   "it": "magra",
+   "fr": "mince (fém.)",
+   "pr": "MA-gra",
+   "api": "/ˈmaɡra/",
+   "mc": "maigrichonne",
+   "sc": "Un mannequin maigrichon défile sur un podium étroit.",
+   "de": "magra = féminin de magro",
+   "fo": "magra consolazione = maigre consolation",
+   "efr": "Elle est très mince.",
+   "efm": "mince",
+   "eit": "È molto magra.",
+   "eim": "magra"
+  },
+  {
+   "from": [
+    "adjectifs_4:85"
+   ],
+   "primary": "adjectifs_4:85",
+   "it": "rotto",
+   "fr": "cassé",
+   "pr": "ROT-to",
+   "api": "/ˈrotto/",
+   "mc": "rot",
+   "sc": "Un rot si fort que le verre est cassé.",
+   "de": "rotto ≈ « rot » ; participe de rompere (casser)",
+   "fo": "anglais : broken",
+   "efr": "Mon téléphone est cassé.",
+   "efm": "cassé",
+   "eit": "Il mio telefono è rotto.",
+   "eim": "rotto"
+  },
+  {
+   "from": [
+    "adjectifs_4:85"
+   ],
+   "primary": null,
+   "it": "rotta",
+   "fr": "cassée",
+   "pr": "ROT-ta",
+   "api": "/ˈrotta/",
+   "mc": "rotin",
+   "sc": "Une chaise en rotin, cassée en deux sous le poids d'un piano.",
+   "de": "rotta = féminin de rotto",
+   "fo": "la rotta = aussi la route (d'un navire)",
+   "efr": "La chaise est cassée.",
+   "efm": "cassée",
+   "eit": "La sedia è rotta.",
+   "eim": "rotta"
+  },
+  {
+   "from": [
+    "adjectifs_5:45"
+   ],
+   "primary": "adjectifs_5:45",
+   "it": "biondo",
+   "fr": "blond",
+   "pr": "BIONN-do",
+   "api": "/ˈbjondo/",
+   "mc": "bijou blond",
+   "sc": "Un garçon aux cheveux blonds porte un bijou doré dans les cheveux.",
+   "de": "biondo ≈ « blond »",
+   "fo": "anglais : blond",
+   "efr": "Il est blond.",
+   "efm": "blond",
+   "eit": "È biondo.",
+   "eim": "biondo"
+  },
+  {
+   "from": [
+    "adjectifs_5:45"
+   ],
+   "primary": null,
+   "it": "bionda",
+   "fr": "blonde",
+   "pr": "BIONN-da",
+   "api": "/ˈbjonda/",
+   "mc": "blonde (bière)",
+   "sc": "Une serveuse aux cheveux blonds verse une bière blonde.",
+   "de": "bionda = féminin de biondo",
+   "fo": "una birra bionda = une bière blonde",
+   "efr": "Ma sœur est blonde.",
+   "efm": "blonde",
+   "eit": "Mia sorella è bionda.",
+   "eim": "bionda"
+  },
+  {
+   "from": [
+    "adjectifs_5:55"
+   ],
+   "primary": "adjectifs_5:55",
+   "it": "largo",
+   "fr": "large (masc.)",
+   "pr": "LAR-go",
+   "api": "/ˈlarɡo/",
+   "mc": "large",
+   "sc": "Un géant enjambe un fleuve très large.",
+   "de": "largo ≈ « large »",
+   "fo": "pl. larghi ; stare alla larga = se tenir à l'écart ; anglais : wide",
+   "efr": "Le fleuve est large.",
+   "efm": "large",
+   "eit": "Il fiume è largo.",
+   "eim": "largo"
+  },
+  {
+   "from": [
+    "adjectifs_5:55"
+   ],
+   "primary": null,
+   "it": "larga",
+   "fr": "large (fém.)",
+   "pr": "LAR-ga",
+   "api": "/ˈlarɡa/",
+   "mc": "larguer",
+   "sc": "Un avion largue des colis sur une route large de dix voies.",
+   "de": "larga = féminin de largo",
+   "fo": "pl. larghe",
+   "efr": "La route est large.",
+   "efm": "large",
+   "eit": "La strada è larga.",
+   "eim": "larga"
+  },
+  {
+   "from": [
+    "adjectifs_5:74"
+   ],
+   "primary": "adjectifs_5:74",
+   "it": "rotondo",
+   "fr": "rond",
+   "pr": "ro-TONN-do",
+   "api": "/roˈtondo/",
+   "mc": "rotonde",
+   "sc": "Un manège tourne sous une rotonde toute ronde.",
+   "de": "rotondo ≈ « rotonde »",
+   "fo": "synonyme : tondo",
+   "efr": "Le ballon est rond.",
+   "efm": "rond",
+   "eit": "Il pallone è rotondo.",
+   "eim": "rotondo"
+  },
+  {
+   "from": [
+    "adjectifs_5:74"
+   ],
+   "primary": null,
+   "it": "rotonda",
+   "fr": "ronde",
+   "pr": "ro-TONN-da",
+   "api": "/roˈtonda/",
+   "mc": "la Rotonda (villa de Palladio)",
+   "sc": "Une danseuse tourne en cercle sous la coupole de la villa La Rotonda.",
+   "de": "rotonda = féminin de rotondo",
+   "fo": "la rotonda = aussi la rotonde (bâtiment)",
+   "efr": "La Terre est ronde.",
+   "efm": "ronde",
+   "eit": "La Terra è rotonda.",
+   "eim": "rotonda"
+  },
+  {
+   "from": [
+    "adjectifs_5:84"
+   ],
+   "primary": "adjectifs_5:84",
+   "it": "chiuso",
+   "fr": "fermé",
+   "pr": "KIOU-zo",
+   "api": "/ˈkjuzo/",
+   "mc": "kiosque",
+   "sc": "Un kiosque à journaux fermé, rideau baissé.",
+   "de": "chiuso ≈ « kiosque » ; participe de chiudere (fermer)",
+   "fo": "anglais : closed",
+   "efr": "Le magasin est fermé.",
+   "efm": "fermé",
+   "eit": "Il negozio è chiuso.",
+   "eim": "chiuso"
+  },
+  {
+   "from": [
+    "adjectifs_5:84"
+   ],
+   "primary": null,
+   "it": "chiusa",
+   "fr": "fermée",
+   "pr": "KIOU-za",
+   "api": "/ˈkjuza/",
+   "mc": "écluse",
+   "sc": "Une écluse fermée bloque une péniche sur le canal.",
+   "de": "chiusa = féminin de chiuso",
+   "fo": "la chiusa = aussi l'écluse",
+   "efr": "La porte est fermée.",
+   "efm": "fermée",
+   "eit": "La porta è chiusa.",
+   "eim": "chiusa"
+  },
+  {
+   "from": [
+    "adjectifs_5:86"
+   ],
+   "primary": "adjectifs_5:86",
+   "it": "bagnato",
+   "fr": "mouillé",
+   "pr": "ba-GNA-to",
+   "api": "/baɲˈɲato/",
+   "mc": "bagne",
+   "sc": "Un bagnard trempé sous la pluie : mouillé.",
+   "de": "bagnato ≈ « bagne » ; bagnare = mouiller",
+   "fo": "anglais : wet",
+   "efr": "Je suis tout mouillé.",
+   "efm": "mouillé",
+   "eit": "Sono tutto bagnato.",
+   "eim": "bagnato"
+  },
+  {
+   "from": [
+    "adjectifs_5:86"
+   ],
+   "primary": null,
+   "it": "bagnata",
+   "fr": "mouillée",
+   "pr": "ba-GNA-ta",
+   "api": "/baɲˈɲata/",
+   "mc": "baignade",
+   "sc": "Une nageuse sort de la baignade, toute mouillée.",
+   "de": "bagnata = féminin de bagnato",
+   "fo": "la strada è bagnata = la route est mouillée",
+   "efr": "Elle est toute mouillée.",
+   "efm": "mouillée",
+   "eit": "È tutta bagnata.",
+   "eim": "bagnata"
+  },
+  {
+   "from": [
+    "adjectifs_5:91"
+   ],
+   "primary": "adjectifs_5:91",
+   "it": "lento",
+   "fr": "lent",
+   "pr": "LÈNN-to",
+   "api": "/ˈlɛnto/",
+   "mc": "lent",
+   "sc": "Un escargot lent traverse le chemin.",
+   "de": "lento ≈ « lent »",
+   "fo": "anglais : slow",
+   "efr": "Il est lent.",
+   "efm": "lent",
+   "eit": "È lento.",
+   "eim": "lento"
+  },
+  {
+   "from": [
+    "adjectifs_5:91"
+   ],
+   "primary": null,
+   "it": "lenta",
+   "fr": "lente",
+   "pr": "LÈNN-ta",
+   "api": "/ˈlɛnta/",
+   "mc": "lentille",
+   "sc": "Une limace si lente qu'elle met une heure à manger une lentille.",
+   "de": "lenta = féminin de lento",
+   "fo": "una connessione lenta",
+   "efr": "La connexion est lente.",
+   "efm": "lente",
+   "eit": "La connessione è lenta.",
+   "eim": "lenta"
+  },
+  {
+   "from": [
+    "adjectifs_5:93"
+   ],
+   "primary": "adjectifs_5:93",
+   "it": "amaro",
+   "fr": "amer",
+   "pr": "a-MA-ro",
+   "api": "/aˈmaro/",
+   "mc": "amaretto",
+   "sc": "Un homme grimace en buvant un amaretto trop amer.",
+   "de": "amaro ≈ « amaretto » (latin amarus)",
+   "fo": "l'amaro = digestif amer ; caffè amaro = café sans sucre ; anglais : bitter",
+   "efr": "Le café est amer.",
+   "efm": "amer",
+   "eit": "Il caffè è amaro.",
+   "eim": "amaro"
+  },
+  {
+   "from": [
+    "adjectifs_5:93"
+   ],
+   "primary": null,
+   "it": "amara",
+   "fr": "amère",
+   "pr": "a-MA-ra",
+   "api": "/aˈmara/",
+   "mc": "amarre",
+   "sc": "Une marinière grimace en buvant une tisane amère, accrochée à l'amarre.",
+   "de": "amara = féminin de amaro",
+   "fo": "una verità amara",
+   "efr": "La vérité est amère.",
+   "efm": "amère",
+   "eit": "La verità è amara.",
+   "eim": "amara"
+  },
+  {
+   "from": [
+    "adjectifs_5:94"
+   ],
+   "primary": "adjectifs_5:94",
+   "it": "complesso",
+   "fr": "complexe (masc.)",
+   "pr": "komm-PLÈS-so",
+   "api": "/komˈplɛsso/",
+   "mc": "complexe",
+   "sc": "Un marin s'arrache les cheveux devant un nœud complexe.",
+   "de": "complesso ≈ « complexe »",
+   "fo": "il complesso = aussi le groupe (de musique), l'ensemble ; anglais : complex",
+   "efr": "Ce problème est complexe.",
+   "efm": "complexe",
+   "eit": "Questo problema è complesso.",
+   "eim": "complesso"
+  },
+  {
+   "from": [
+    "adjectifs_5:94"
+   ],
+   "primary": null,
+   "it": "complessa",
+   "fr": "complexe (fém.)",
+   "pr": "komm-PLÈS-sa",
+   "api": "/komˈplɛssa/",
+   "mc": "compresse",
+   "sc": "Une infirmière applique une compresse sur une blessure complexe.",
+   "de": "complessa = féminin de complesso",
+   "fo": "una situazione complessa",
+   "efr": "C'est une situation complexe.",
+   "efm": "complexe",
+   "eit": "È una situazione complessa.",
+   "eim": "complessa"
+  },
+  {
+   "from": [
+    "adjectifs_5:95"
+   ],
+   "primary": "adjectifs_5:95",
+   "it": "spesso",
+   "fr": "épais",
+   "pr": "SPÉS-so",
+   "api": "/ˈspesso/",
+   "mc": "épais",
+   "sc": "Un maçon tape sur un mur épais.",
+   "de": "spesso ≈ « épais »",
+   "fo": "spesso = aussi « souvent » (adverbe invariable) ; anglais : thick",
+   "efr": "Le livre est épais.",
+   "efm": "épais",
+   "eit": "Il libro è spesso.",
+   "eim": "spesso"
+  },
+  {
+   "from": [
+    "adjectifs_5:95"
+   ],
+   "primary": null,
+   "it": "spessa",
+   "fr": "épaisse",
+   "pr": "SPÉS-sa",
+   "api": "/ˈspessa/",
+   "mc": "espèce",
+   "sc": "Une espèce de crème épaisse colle à la cuillère.",
+   "de": "spessa = féminin de spesso",
+   "fo": "una nebbia spessa = un brouillard épais",
+   "efr": "La neige est épaisse.",
+   "efm": "épaisse",
+   "eit": "La neve è spessa.",
+   "eim": "spessa"
+  },
+  {
+   "from": [
+    "adjectifs_5:98"
+   ],
+   "primary": "adjectifs_5:98",
+   "it": "severo",
+   "fr": "sévère (masc.)",
+   "pr": "sé-VÈ-ro",
+   "api": "/seˈvɛro/",
+   "mc": "sévère",
+   "sc": "Un juge sévère frappe son marteau.",
+   "de": "severo ≈ « sévère »",
+   "fo": "",
+   "efr": "Le prof est sévère.",
+   "efm": "sévère",
+   "eit": "Il professore è severo.",
+   "eim": "severo"
+  },
+  {
+   "from": [
+    "adjectifs_5:98"
+   ],
+   "primary": null,
+   "it": "severa",
+   "fr": "sévère (fém.)",
+   "pr": "sé-VÈ-ra",
+   "api": "/seˈvɛra/",
+   "mc": "Séverine",
+   "sc": "Séverine, la directrice, tape sur son bureau avec sa règle.",
+   "de": "severa = féminin de severo",
+   "fo": "",
+   "efr": "Ma mère est sévère.",
+   "efm": "sévère",
+   "eit": "Mia madre è severa.",
+   "eim": "severa"
+  },
+  {
+   "from": [
+    "adjectifs_5:99"
+   ],
+   "primary": "adjectifs_5:99",
+   "it": "stretto",
+   "fr": "étroit",
+   "pr": "STRÉT-to",
+   "api": "/ˈstretto/",
+   "mc": "détroit",
+   "sc": "Un bateau se faufile dans un détroit étroit.",
+   "de": "stretto ≈ « détroit » ; lo stretto = le détroit",
+   "fo": "anglais : narrow",
+   "efr": "Le couloir est étroit.",
+   "efm": "étroit",
+   "eit": "Il corridoio è stretto.",
+   "eim": "stretto"
+  },
+  {
+   "from": [
+    "adjectifs_5:99"
+   ],
+   "primary": null,
+   "it": "stretta",
+   "fr": "étroite",
+   "pr": "STRÉT-ta",
+   "api": "/ˈstretta/",
+   "mc": "stretching",
+   "sc": "Une ruelle si étroite qu'une gymnaste fait du stretching pour s'y glisser.",
+   "de": "stretta = féminin de stretto",
+   "fo": "una stretta di mano = une poignée de main",
+   "efr": "La rue est étroite.",
+   "efm": "étroite",
+   "eit": "La strada è stretta.",
+   "eim": "stretta"
+  },
+  {
+   "from": [
+    "adjectifs_6:0"
+   ],
+   "primary": "adjectifs_6:0",
+   "it": "allergico",
+   "fr": "allergique (masc.)",
+   "pr": "al-LÈR-dji-ko",
+   "api": "/alˈlɛrdʒiko/",
+   "mc": "allergie",
+   "sc": "Un homme éternue, le nez rouge, devant un chat : allergique.",
+   "de": "allergico ≈ « allergie »",
+   "fo": "pl. allergici ; anglais : allergic",
+   "efr": "Je suis allergique aux chats.",
+   "efm": "allergique",
+   "eit": "Sono allergico ai gatti.",
+   "eim": "allergico"
+  },
+  {
+   "from": [
+    "adjectifs_6:0"
+   ],
+   "primary": null,
+   "it": "allergica",
+   "fr": "allergique (fém.)",
+   "pr": "al-LÈR-dji-ka",
+   "api": "/alˈlɛrdʒika/",
+   "mc": "allergie",
+   "sc": "Une femme couverte de boutons repousse un bouquet de roses.",
+   "de": "allergica = féminin de allergico",
+   "fo": "pl. allergiche",
+   "efr": "Ma fille est allergique aux noix.",
+   "efm": "allergique",
+   "eit": "Mia figlia è allergica alle noci.",
+   "eim": "allergica"
+  },
+  {
+   "from": [
+    "adjectifs_6:1"
+   ],
+   "primary": "adjectifs_6:1",
+   "it": "identico",
+   "fr": "identique (masc.)",
+   "pr": "i-DÈNN-ti-ko",
+   "api": "/iˈdɛntiko/",
+   "mc": "identique",
+   "sc": "Deux jumeaux identiques en costume se regardent comme dans un miroir.",
+   "de": "identico ≈ « identique »",
+   "fo": "pl. identici",
+   "efr": "C'est identique.",
+   "efm": "identique",
+   "eit": "È identico.",
+   "eim": "identico"
+  },
+  {
+   "from": [
+    "adjectifs_6:1"
+   ],
+   "primary": null,
+   "it": "identica",
+   "fr": "identique (fém.)",
+   "pr": "i-DÈNN-ti-ka",
+   "api": "/iˈdɛntika/",
+   "mc": "identité",
+   "sc": "Deux sœurs jumelles tendent deux cartes d'identité identiques.",
+   "de": "identica = féminin de identico",
+   "fo": "pl. identiche",
+   "efr": "Ta voix est identique à celle de ta mère.",
+   "efm": "identique",
+   "eit": "La tua voce è identica a quella di tua madre.",
+   "eim": "identica"
+  },
+  {
+   "from": [
+    "adjectifs_6:4"
+   ],
+   "primary": "adjectifs_6:4",
+   "it": "minuscolo",
+   "fr": "minuscule (masc.)",
+   "pr": "mi-NOUS-ko-lo",
+   "api": "/miˈnuskolo/",
+   "mc": "minuscule",
+   "sc": "Un hamster minuscule tient dans le creux d'une main.",
+   "de": "minuscolo ≈ « minuscule »",
+   "fo": "anglais : tiny",
+   "efr": "C'est minuscule.",
+   "efm": "minuscule",
+   "eit": "È minuscolo.",
+   "eim": "minuscolo"
+  },
+  {
+   "from": [
+    "adjectifs_6:4"
+   ],
+   "primary": null,
+   "it": "minuscola",
+   "fr": "minuscule (fém.)",
+   "pr": "mi-NOUS-ko-la",
+   "api": "/miˈnuskola/",
+   "mc": "minuscule",
+   "sc": "Un petit « a » minuscule se cache derrière un énorme « A » majuscule.",
+   "de": "minuscola = féminin de minuscolo",
+   "fo": "la minuscola = la lettre minuscule",
+   "efr": "J'habite dans une chambre minuscule.",
+   "efm": "minuscule",
+   "eit": "Abito in una camera minuscola.",
+   "eim": "minuscola"
+  },
+  {
+   "from": [
+    "adjectifs_6:8"
+   ],
+   "primary": "adjectifs_6:8",
+   "it": "rumoroso",
+   "fr": "bruyant",
+   "pr": "rou-mo-RO-zo",
+   "api": "/rumoˈrozo/",
+   "mc": "rumeur",
+   "sc": "Une rumeur bruyante enfle dans un bar bondé.",
+   "de": "rumoroso ≈ « rumeur » ; il rumore = le bruit",
+   "fo": "anglais : noisy",
+   "efr": "Le bar est bruyant.",
+   "efm": "bruyant",
+   "eit": "Il bar è rumoroso.",
+   "eim": "rumoroso"
+  },
+  {
+   "from": [
+    "adjectifs_6:8"
+   ],
+   "primary": null,
+   "it": "rumorosa",
+   "fr": "bruyante",
+   "pr": "rou-mo-RO-za",
+   "api": "/rumoˈroza/",
+   "mc": "rue + rose",
+   "sc": "Une rue jonchée de roses où défile une fanfare bruyante.",
+   "de": "rumorosa = féminin de rumoroso",
+   "fo": "",
+   "efr": "La rue est bruyante.",
+   "efm": "bruyante",
+   "eit": "La strada è rumorosa.",
+   "eim": "rumorosa"
+  },
+  {
+   "from": [
+    "adjectifs_6:11"
+   ],
+   "primary": "adjectifs_6:11",
+   "it": "rosso",
+   "fr": "roux",
+   "pr": "ROS-so",
+   "api": "/ˈrosso/",
+   "mc": "rosse",
+   "sc": "Un garçon roux chevauche une vieille rosse.",
+   "de": "rosso = rouge ; pour les cheveux : roux",
+   "fo": "capelli rossi = cheveux roux ; anglais : red",
+   "efr": "Il est roux.",
+   "efm": "roux",
+   "eit": "È rosso di capelli.",
+   "eim": "rosso"
+  },
+  {
+   "from": [
+    "adjectifs_6:11"
+   ],
+   "primary": null,
+   "it": "rossa",
+   "fr": "rousse",
+   "pr": "ROS-sa",
+   "api": "/ˈrossa/",
+   "mc": "rousse",
+   "sc": "Une fille rousse croque une tomate bien rouge.",
+   "de": "rossa = féminin de rosso",
+   "fo": "una rossa = une rousse",
+   "efr": "Elle est rousse.",
+   "efm": "rousse",
+   "eit": "È rossa di capelli.",
+   "eim": "rossa"
+  },
+  {
+   "from": [
+    "adjectifs_6:12"
+   ],
+   "primary": "adjectifs_6:12",
+   "it": "nervoso",
+   "fr": "énervé",
+   "pr": "nèr-VO-zo",
+   "api": "/nerˈvozo/",
+   "mc": "nerveux",
+   "sc": "Un homme nerveux et énervé tape du poing sur la table.",
+   "de": "nervoso ≈ « nerveux » ; sens courant : énervé, irrité",
+   "fo": "anglais : angry",
+   "efr": "Il est énervé.",
+   "efm": "énervé",
+   "eit": "È nervoso.",
+   "eim": "nervoso"
+  },
+  {
+   "from": [
+    "adjectifs_6:12"
+   ],
+   "primary": null,
+   "it": "nervosa",
+   "fr": "énervée",
+   "pr": "nèr-VO-za",
+   "api": "/nerˈvoza/",
+   "mc": "nerveuse",
+   "sc": "Une conductrice énervée klaxonne sans arrêt dans les bouchons.",
+   "de": "nervosa = féminin de nervoso",
+   "fo": "",
+   "efr": "Ma mère est énervée aujourd'hui.",
+   "efm": "énervée",
+   "eit": "Mia madre è nervosa oggi.",
+   "eim": "nervosa"
+  },
+  {
+   "from": [
+    "adjectifs_6:17"
+   ],
+   "primary": "adjectifs_6:17",
+   "it": "calvo",
+   "fr": "chauve (masc.)",
+   "pr": "KAL-vo",
+   "api": "/ˈkalvo/",
+   "mc": "calvitie",
+   "sc": "Un crâne chauve brille comme un miroir sous le soleil.",
+   "de": "calvo ≈ « calvitie »",
+   "fo": "anglais : bald",
+   "efr": "Il est chauve.",
+   "efm": "chauve",
+   "eit": "È calvo.",
+   "eim": "calvo"
+  },
+  {
+   "from": [
+    "adjectifs_6:17"
+   ],
+   "primary": null,
+   "it": "calva",
+   "fr": "chauve (fém.)",
+   "pr": "KAL-va",
+   "api": "/ˈkalva/",
+   "mc": "calvaire",
+   "sc": "Sur un calvaire, une tête chauve de statue brille au soleil.",
+   "de": "calva = féminin de calvo",
+   "fo": "la testa calva = la tête chauve",
+   "efr": "Il a la tête chauve.",
+   "efm": "chauve",
+   "eit": "Ha la testa calva.",
+   "eim": "calva"
+  },
+  {
+   "from": [
+    "adjectifs_6:18"
+   ],
+   "primary": "adjectifs_6:18",
+   "it": "grigliato",
+   "fr": "grillé",
+   "pr": "gri-LLIA-to",
+   "api": "/ɡriʎˈʎato/",
+   "mc": "grille",
+   "sc": "Un poisson posé sur une grille : grillé.",
+   "de": "grigliato ≈ « grille »",
+   "fo": "anglais : grilled",
+   "efr": "J'aime le poisson grillé.",
+   "efm": "grillé",
+   "eit": "Mi piace il pesce grigliato.",
+   "eim": "grigliato"
+  },
+  {
+   "from": [
+    "adjectifs_6:18"
+   ],
+   "primary": null,
+   "it": "grigliata",
+   "fr": "grillée",
+   "pr": "gri-LLIA-ta",
+   "api": "/ɡriʎˈʎata/",
+   "mc": "grillade",
+   "sc": "Une grillade entre amis : des saucisses grillées fument au barbecue.",
+   "de": "grigliata = féminin de grigliato",
+   "fo": "la grigliata = aussi le barbecue, la grillade",
+   "efr": "J'aime la viande grillée.",
+   "efm": "grillée",
+   "eit": "Mi piace la carne grigliata.",
+   "eim": "grigliata"
+  },
+  {
+   "from": [
+    "adjectifs_6:19"
+   ],
+   "primary": "adjectifs_6:19",
+   "it": "educato",
+   "fr": "poli",
+   "pr": "é-dou-KA-to",
+   "api": "/eduˈkato/",
+   "mc": "éduqué",
+   "sc": "Un petit garçon bien éduqué retire sa casquette pour dire bonjour : poli.",
+   "de": "educato ≈ « éduqué » (faux ami : = poli)",
+   "fo": "maleducato = impoli ; anglais : polite",
+   "efr": "Il est très poli.",
+   "efm": "poli",
+   "eit": "È molto educato.",
+   "eim": "educato"
+  },
+  {
+   "from": [
+    "adjectifs_6:19"
+   ],
+   "primary": null,
+   "it": "educata",
+   "fr": "polie",
+   "pr": "é-dou-KA-ta",
+   "api": "/eduˈkata/",
+   "mc": "éduquée",
+   "sc": "Une petite fille éduquée fait la révérence.",
+   "de": "educata = féminin de educato",
+   "fo": "",
+   "efr": "Ta fille est très polie.",
+   "efm": "polie",
+   "eit": "Tua figlia è molto educata.",
+   "eim": "educata"
+  },
+  {
+   "from": [
+    "adjectifs_6:20"
+   ],
+   "primary": "adjectifs_6:20",
+   "it": "obbligatorio",
+   "fr": "obligatoire (masc.)",
+   "pr": "ob-bli-ga-TO-rio",
+   "api": "/obbliɡaˈtɔrjo/",
+   "mc": "obligatoire",
+   "sc": "Un panneau rond et bleu impose le casque : obligatoire.",
+   "de": "obbligatorio ≈ « obligatoire »",
+   "fo": "pl. obbligatori ; anglais : mandatory",
+   "efr": "C'est obligatoire.",
+   "efm": "obligatoire",
+   "eit": "È obbligatorio.",
+   "eim": "obbligatorio"
+  },
+  {
+   "from": [
+    "adjectifs_6:20"
+   ],
+   "primary": null,
+   "it": "obbligatoria",
+   "fr": "obligatoire (fém.)",
+   "pr": "ob-bli-ga-TO-ria",
+   "api": "/obbliɡaˈtɔrja/",
+   "mc": "obligatoire",
+   "sc": "Une gardienne de musée tend des chaussons aux visiteurs : tenue obligatoire.",
+   "de": "obbligatoria = féminin de obbligatorio",
+   "fo": "pl. obbligatorie",
+   "efr": "La présence est obligatoire.",
+   "efm": "obligatoire",
+   "eit": "La presenza è obbligatoria.",
+   "eim": "obbligatoria"
+  },
+  {
+   "from": [
+    "adjectifs_6:21"
+   ],
+   "primary": "adjectifs_6:21",
+   "it": "stressato",
+   "fr": "stressé",
+   "pr": "strès-SA-to",
+   "api": "/stresˈsato/",
+   "mc": "stress",
+   "sc": "Un cadre stressé court avec trois téléphones qui sonnent.",
+   "de": "stressato ≈ « stress »",
+   "fo": "anglais : stressed",
+   "efr": "Je suis stressé.",
+   "efm": "stressé",
+   "eit": "Sono stressato.",
+   "eim": "stressato"
+  },
+  {
+   "from": [
+    "adjectifs_6:21"
+   ],
+   "primary": null,
+   "it": "stressata",
+   "fr": "stressée",
+   "pr": "strès-SA-ta",
+   "api": "/stresˈsata/",
+   "mc": "stress",
+   "sc": "Une mère stressée court avec trois enfants et des sacs de courses.",
+   "de": "stressata = féminin de stressato",
+   "fo": "",
+   "efr": "Elle est très stressée.",
+   "efm": "stressée",
+   "eit": "È molto stressata.",
+   "eim": "stressata"
+  },
+  {
+   "from": [
+    "adjectifs_6:23"
+   ],
+   "primary": "adjectifs_6:23",
+   "it": "permaloso",
+   "fr": "susceptible (masc.)",
+   "pr": "pèr-ma-LO-zo",
+   "api": "/permaˈlozo/",
+   "mc": "permanente + losange",
+   "sc": "Un homme à la permanente en losange se vexe dès qu'on la regarde.",
+   "de": "permaloso ≈ « permanente + losange »",
+   "fo": "anglais : touchy",
+   "efr": "Il est très susceptible.",
+   "efm": "susceptible",
+   "eit": "È molto permaloso.",
+   "eim": "permaloso"
+  },
+  {
+   "from": [
+    "adjectifs_6:23"
+   ],
+   "primary": null,
+   "it": "permalosa",
+   "fr": "susceptible (fém.)",
+   "pr": "pèr-ma-LO-za",
+   "api": "/permaˈloza/",
+   "mc": "permanente",
+   "sc": "Une dame boude dans son coin parce qu'on a critiqué sa permanente.",
+   "de": "permalosa = féminin de permaloso",
+   "fo": "",
+   "efr": "Ne sois pas si susceptible !",
+   "efm": "susceptible",
+   "eit": "Non essere così permalosa!",
+   "eim": "permalosa"
+  },
+  {
+   "from": [
+    "adjectifs_6:26"
+   ],
+   "primary": "adjectifs_6:26",
+   "it": "massimo",
+   "fr": "maximum (masc.)",
+   "pr": "MAS-si-mo",
+   "api": "/ˈmassimo/",
+   "mc": "massif",
+   "sc": "Un alpiniste plante son drapeau au sommet d'un massif : le maximum.",
+   "de": "massimo ≈ « massif » ; il massimo = le maximum",
+   "fo": "al massimo = au maximum",
+   "efr": "C'est le maximum.",
+   "efm": "maximum",
+   "eit": "È il massimo.",
+   "eim": "massimo"
+  },
+  {
+   "from": [
+    "adjectifs_6:26"
+   ],
+   "primary": null,
+   "it": "massima",
+   "fr": "maximale",
+   "pr": "MAS-si-ma",
+   "api": "/ˈmassima/",
+   "mc": "maxime",
+   "sc": "Une institutrice écrit une maxime au tableau, en lettres de taille maximale.",
+   "de": "massima = féminin de massimo",
+   "fo": "la massima = aussi la maxime ; la temperatura massima",
+   "efr": "La vitesse maximale est de 50.",
+   "efm": "maximale",
+   "eit": "La velocità massima è 50.",
+   "eim": "massima"
+  },
+  {
+   "from": [
+    "adjectifs_6:28"
+   ],
+   "primary": "adjectifs_6:28",
+   "it": "chiacchierone",
+   "fr": "bavard",
+   "pr": "kiak-kié-RO-né",
+   "api": "/kjakkjeˈrone/",
+   "mc": "« quiaqui »",
+   "sc": "Un perroquet bavard répète « quiaqui » sans s'arrêter.",
+   "de": "chiacchierone ≈ « quiaqui » ; chiacchierare = bavarder",
+   "fo": "pl. chiacchieroni ; anglais : talkative",
+   "efr": "Il est bavard.",
+   "efm": "bavard",
+   "eit": "È chiacchierone.",
+   "eim": "chiacchierone"
+  },
+  {
+   "from": [
+    "adjectifs_6:28"
+   ],
+   "primary": null,
+   "it": "chiacchierona",
+   "fr": "bavarde",
+   "pr": "kiak-kié-RO-na",
+   "api": "/kjakkjeˈrona/",
+   "mc": "« qui a qui ? »",
+   "sc": "Une concierge bavarde demande à chaque passant « qui aime qui ? ».",
+   "de": "chiacchierona = féminin de chiacchierone",
+   "fo": "pl. chiacchierone",
+   "efr": "Ma voisine est très bavarde.",
+   "efm": "bavarde",
+   "eit": "La mia vicina è molto chiacchierona.",
+   "eim": "chiacchierona"
+  },
+  {
+   "from": [
+    "adjectifs_6:33"
+   ],
+   "primary": "adjectifs_6:33",
+   "it": "acido",
+   "fr": "acide (masc.)",
+   "pr": "A-tchi-do",
+   "api": "/ˈatʃido/",
+   "mc": "acide",
+   "sc": "Un enfant grimace en mordant un citron acide.",
+   "de": "acido ≈ « acide »",
+   "fo": "anglais : acidic",
+   "efr": "C'est acide.",
+   "efm": "acide",
+   "eit": "È acido.",
+   "eim": "acido"
+  },
+  {
+   "from": [
+    "adjectifs_6:33"
+   ],
+   "primary": null,
+   "it": "acida",
+   "fr": "acide (fém.)",
+   "pr": "A-tchi-da",
+   "api": "/ˈatʃida/",
+   "mc": "acide",
+   "sc": "Une langue de vipère : une femme lance des remarques acides qui fument.",
+   "de": "acida = féminin de acido ; aussi « aigre, désagréable » (persona acida)",
+   "fo": "",
+   "efr": "Cette pomme est acide.",
+   "efm": "acide",
+   "eit": "Questa mela è acida.",
+   "eim": "acida"
+  },
+  {
+   "from": [
+    "adjectifs_6:34"
+   ],
+   "primary": "adjectifs_6:34",
+   "it": "stimato",
+   "fr": "estimé",
+   "pr": "sti-MA-to",
+   "api": "/stiˈmato/",
+   "mc": "estimé",
+   "sc": "Un notable estimé salue la foule depuis le balcon de la mairie.",
+   "de": "stimato ≈ « estimé » ; stimare = estimer",
+   "fo": "",
+   "efr": "C'est un homme estimé.",
+   "efm": "estimé",
+   "eit": "È un uomo stimato.",
+   "eim": "stimato"
+  },
+  {
+   "from": [
+    "adjectifs_6:34"
+   ],
+   "primary": null,
+   "it": "stimata",
+   "fr": "estimée",
+   "pr": "sti-MA-ta",
+   "api": "/stiˈmata/",
+   "mc": "estimée",
+   "sc": "Une doctoresse estimée reçoit une médaille sous les applaudissements.",
+   "de": "stimata = féminin de stimato",
+   "fo": "",
+   "efr": "C'est une femme très estimée.",
+   "efm": "estimée",
+   "eit": "È una donna molto stimata.",
+   "eim": "stimata"
+  },
+  {
+   "from": [
+    "adjectifs_6:38"
+   ],
+   "primary": "adjectifs_6:38",
+   "it": "diversi",
+   "fr": "plusieurs / divers (masc. pl.)",
+   "pr": "di-VÈR-si",
+   "api": "/diˈvɛrsi/",
+   "mc": "divers",
+   "sc": "Un étal de marché couvert de fruits divers, plusieurs de chaque sorte.",
+   "de": "diversi + nom = plusieurs ; après le nom = différents",
+   "fo": "diverso (sg.) = différent ; anglais : various",
+   "efr": "Il y a plusieurs problèmes.",
+   "efm": "plusieurs",
+   "eit": "Ci sono diversi problemi.",
+   "eim": "diversi"
+  },
+  {
+   "from": [
+    "adjectifs_6:38"
+   ],
+   "primary": null,
+   "it": "diverse",
+   "fr": "plusieurs / diverses (fém. pl.)",
+   "pr": "di-VÈR-sé",
+   "api": "/diˈvɛrse/",
+   "mc": "diverses",
+   "sc": "Un vase rempli de fleurs diverses, toutes de couleurs différentes.",
+   "de": "diverse = féminin pluriel de diversi",
+   "fo": "diverse volte = plusieurs fois",
+   "efr": "Il y a diverses raisons.",
+   "efm": "diverses",
+   "eit": "Ci sono diverse ragioni.",
+   "eim": "diverse"
+  },
+  {
+   "from": [
+    "adjectifs_6:40"
+   ],
+   "primary": "adjectifs_6:40",
+   "it": "sereno",
+   "fr": "serein",
+   "pr": "sé-RÉ-no",
+   "api": "/seˈreno/",
+   "mc": "serein",
+   "sc": "Un moine serein médite sous un ciel sans nuage.",
+   "de": "sereno ≈ « serein »",
+   "fo": "cielo sereno = ciel dégagé ; anglais : calm",
+   "efr": "Je suis serein.",
+   "efm": "serein",
+   "eit": "Sono sereno.",
+   "eim": "sereno"
+  },
+  {
+   "from": [
+    "adjectifs_6:40"
+   ],
+   "primary": null,
+   "it": "serena",
+   "fr": "sereine",
+   "pr": "sé-RÉ-na",
+   "api": "/seˈrena/",
+   "mc": "sirène",
+   "sc": "Une sirène sereine se repose sur un rocher au soleil.",
+   "de": "serena = féminin de sereno",
+   "fo": "",
+   "efr": "Elle est sereine.",
+   "efm": "sereine",
+   "eit": "È serena.",
+   "eim": "serena"
+  },
+  {
+   "from": [
+    "adjectifs_6:42"
+   ],
+   "primary": "adjectifs_6:42",
+   "it": "fritto",
+   "fr": "frit",
+   "pr": "FRIT-to",
+   "api": "/ˈfritto/",
+   "mc": "frite",
+   "sc": "Un poisson frit, tout doré, entouré de frites.",
+   "de": "fritto ≈ « frite » ; friggere = frire",
+   "fo": "il fritto misto = la friture ; anglais : fried",
+   "efr": "J'aime le poisson frit.",
+   "efm": "frit",
+   "eit": "Mi piace il pesce fritto.",
+   "eim": "fritto"
+  },
+  {
+   "from": [
+    "adjectifs_6:42"
+   ],
+   "primary": null,
+   "it": "fritta",
+   "fr": "frite",
+   "pr": "FRIT-ta",
+   "api": "/ˈfritta/",
+   "mc": "friteuse",
+   "sc": "Une cuisinière plonge une tranche de polenta dans la friteuse bouillante.",
+   "de": "fritta = féminin de fritto",
+   "fo": "patate fritte = frites",
+   "efr": "J'aime la polenta frite.",
+   "efm": "frite",
+   "eit": "Mi piace la polenta fritta.",
+   "eim": "fritta"
+  },
+  {
+   "from": [
+    "adjectifs_6:43"
+   ],
+   "primary": "adjectifs_6:43",
+   "it": "relativo",
+   "fr": "relatif",
+   "pr": "ré-la-TI-vo",
+   "api": "/relaˈtivo/",
+   "mc": "relatif",
+   "sc": "Einstein tire la langue : tout est relatif.",
+   "de": "relativo ≈ « relatif »",
+   "fo": "anglais : relative",
+   "efr": "C'est relatif.",
+   "efm": "relatif",
+   "eit": "È relativo.",
+   "eim": "relativo"
+  },
+  {
+   "from": [
+    "adjectifs_6:43"
+   ],
+   "primary": null,
+   "it": "relativa",
+   "fr": "relative",
+   "pr": "ré-la-TI-va",
+   "api": "/relaˈtiva/",
+   "mc": "relative",
+   "sc": "Une professeure souligne en rouge une proposition relative au tableau.",
+   "de": "relativa = féminin de relativo",
+   "fo": "relativa a = relative à",
+   "efr": "C'est une question relative au budget.",
+   "efm": "relative",
+   "eit": "È una questione relativa al bilancio.",
+   "eim": "relativa"
+  },
+  {
+   "from": [
+    "adjectifs_6:44"
+   ],
+   "primary": "adjectifs_6:44",
+   "it": "finanziario",
+   "fr": "financier",
+   "pr": "fi-nann-TSIA-rio",
+   "api": "/finanˈtsjarjo/",
+   "mc": "finance",
+   "sc": "Un banquier de la finance compte des liasses de billets.",
+   "de": "finanziario ≈ « finance »",
+   "fo": "anglais : financial",
+   "efr": "C'est un problème financier.",
+   "efm": "financier",
+   "eit": "È un problema finanziario.",
+   "eim": "finanziario"
+  },
+  {
+   "from": [
+    "adjectifs_6:44"
+   ],
+   "primary": null,
+   "it": "finanziaria",
+   "fr": "financière",
+   "pr": "fi-nann-TSIA-ria",
+   "api": "/finanˈtsjarja/",
+   "mc": "finance",
+   "sc": "Une trader en tailleur regarde une crise financière s'afficher en rouge sur ses écrans.",
+   "de": "finanziaria = féminin de finanziario",
+   "fo": "la finanziaria = aussi la loi de finances",
+   "efr": "C'est une crise financière.",
+   "efm": "financière",
+   "eit": "È una crisi finanziaria.",
+   "eim": "finanziaria"
+  },
+  {
+   "from": [
+    "adjectifs_6:48"
+   ],
+   "primary": "adjectifs_6:48",
+   "it": "fastidioso",
+   "fr": "embêtant",
+   "pr": "fas-ti-DIO-zo",
+   "api": "/fastiˈdjozo/",
+   "mc": "fastidieux",
+   "sc": "Un moustique fastidieux bourdonne à l'oreille d'un dormeur.",
+   "de": "fastidioso ≈ « fastidieux » (sens courant : embêtant, agaçant)",
+   "fo": "anglais : annoying",
+   "efr": "C'est embêtant.",
+   "efm": "embêtant",
+   "eit": "È fastidioso.",
+   "eim": "fastidioso"
+  },
+  {
+   "from": [
+    "adjectifs_6:48"
+   ],
+   "primary": null,
+   "it": "fastidiosa",
+   "fr": "embêtante",
+   "pr": "fas-ti-DIO-za",
+   "api": "/fastiˈdjoza/",
+   "mc": "fastidieuse",
+   "sc": "Une mouche embêtante se pose sans arrêt sur le nez d'une lectrice.",
+   "de": "fastidiosa = féminin de fastidioso",
+   "fo": "",
+   "efr": "Cette mouche est embêtante !",
+   "efm": "embêtante",
+   "eit": "Questa mosca è fastidiosa!",
+   "eim": "fastidiosa"
+  },
+  {
+   "from": [
+    "adjectifs_6:51"
+   ],
+   "primary": "adjectifs_6:51",
+   "it": "annullato",
+   "fr": "annulé",
+   "pr": "ann-noul-LA-to",
+   "api": "/annulˈlato/",
+   "mc": "annulé",
+   "sc": "Un billet d'avion tamponné « annulé » en rouge.",
+   "de": "annullato ≈ « annulé »",
+   "fo": "anglais : cancelled",
+   "efr": "Le vol est annulé.",
+   "efm": "annulé",
+   "eit": "Il volo è annullato.",
+   "eim": "annullato"
+  },
+  {
+   "from": [
+    "adjectifs_6:51"
+   ],
+   "primary": null,
+   "it": "annullata",
+   "fr": "annulée",
+   "pr": "ann-noul-LA-ta",
+   "api": "/annulˈlata/",
+   "mc": "annulée",
+   "sc": "Une affiche « réunion annulée » barrée d'une grande croix rouge.",
+   "de": "annullata = féminin de annullato",
+   "fo": "",
+   "efr": "La réunion est annulée.",
+   "efm": "annulée",
+   "eit": "La riunione è annullata.",
+   "eim": "annullata"
+  },
+  {
+   "from": [
+    "adjectifs_6:52"
+   ],
+   "primary": "adjectifs_6:52",
+   "it": "frustrato",
+   "fr": "frustré",
+   "pr": "frous-TRA-to",
+   "api": "/frusˈtrato/",
+   "mc": "frustré",
+   "sc": "Un joueur frustré tape du pied après un but raté.",
+   "de": "frustrato ≈ « frustré »",
+   "fo": "",
+   "efr": "Je suis frustré.",
+   "efm": "frustré",
+   "eit": "Sono frustrato.",
+   "eim": "frustrato"
+  },
+  {
+   "from": [
+    "adjectifs_6:52"
+   ],
+   "primary": null,
+   "it": "frustrata",
+   "fr": "frustrée",
+   "pr": "frous-TRA-ta",
+   "api": "/frusˈtrata/",
+   "mc": "frustrée",
+   "sc": "Une joueuse de tennis frustrée fracasse sa raquette sur le court.",
+   "de": "frustrata = féminin de frustrato",
+   "fo": "",
+   "efr": "Elle se sent frustrée.",
+   "efm": "frustrée",
+   "eit": "Si sente frustrata.",
+   "eim": "frustrata"
+  },
+  {
+   "from": [
+    "adjectifs_6:54"
+   ],
+   "primary": "adjectifs_6:54",
+   "it": "stupito",
+   "fr": "étonné",
+   "pr": "stou-PI-to",
+   "api": "/stuˈpito/",
+   "mc": "stupéfait",
+   "sc": "Un homme stupéfait en reste bouche bée : étonné.",
+   "de": "stupito ≈ « stupéfait »",
+   "fo": "anglais : surprised",
+   "efr": "Je suis étonné.",
+   "efm": "étonné",
+   "eit": "Sono stupito.",
+   "eim": "stupito"
+  },
+  {
+   "from": [
+    "adjectifs_6:54"
+   ],
+   "primary": null,
+   "it": "stupita",
+   "fr": "étonnée",
+   "pr": "stou-PI-ta",
+   "api": "/stuˈpita/",
+   "mc": "stupéfaite",
+   "sc": "Une femme stupéfaite lâche son sac en voyant un éléphant dans sa cuisine.",
+   "de": "stupita = féminin de stupito",
+   "fo": "",
+   "efr": "Je suis étonnée.",
+   "efm": "étonnée",
+   "eit": "Sono stupita.",
+   "eim": "stupita"
+  },
+  {
+   "from": [
+    "adjectifs_6:59"
+   ],
+   "primary": "adjectifs_6:59",
+   "it": "ordinato",
+   "fr": "ordonné",
+   "pr": "or-di-NA-to",
+   "api": "/ordiˈnato/",
+   "mc": "ordonné",
+   "sc": "Un majordome ordonné aligne les fourchettes au millimètre.",
+   "de": "ordinato ≈ « ordonné » ; aussi « commandé » (ordinare)",
+   "fo": "anglais : tidy",
+   "efr": "Il est très ordonné.",
+   "efm": "ordonné",
+   "eit": "È molto ordinato.",
+   "eim": "ordinato"
+  },
+  {
+   "from": [
+    "adjectifs_6:59"
+   ],
+   "primary": null,
+   "it": "ordinata",
+   "fr": "ordonnée",
+   "pr": "or-di-NA-ta",
+   "api": "/ordiˈnata/",
+   "mc": "ordonnée",
+   "sc": "Une bibliothécaire ordonnée range les livres par couleur.",
+   "de": "ordinata = féminin de ordinato",
+   "fo": "",
+   "efr": "Sa chambre est très ordonnée.",
+   "efm": "ordonnée",
+   "eit": "La sua camera è molto ordinata.",
+   "eim": "ordinata"
+  },
+  {
+   "from": [
+    "adjectifs_6:63"
+   ],
+   "primary": "adjectifs_6:63",
+   "it": "caloroso",
+   "fr": "chaleureux",
+   "pr": "ka-lo-RO-zo",
+   "api": "/kaloˈrozo/",
+   "mc": "calorie",
+   "sc": "Un poêle bourré de calories réchauffe un hôte chaleureux.",
+   "de": "caloroso ≈ « calorie » ; il calore = la chaleur",
+   "fo": "anglais : warm, welcoming",
+   "efr": "Il est très chaleureux.",
+   "efm": "chaleureux",
+   "eit": "È molto caloroso.",
+   "eim": "caloroso"
+  },
+  {
+   "from": [
+    "adjectifs_6:63"
+   ],
+   "primary": null,
+   "it": "calorosa",
+   "fr": "chaleureuse",
+   "pr": "ka-lo-RO-za",
+   "api": "/kaloˈroza/",
+   "mc": "calorifère",
+   "sc": "Une grand-mère chaleureuse comme un calorifère ouvre grand les bras.",
+   "de": "calorosa = féminin de caloroso",
+   "fo": "un'accoglienza calorosa = un accueil chaleureux",
+   "efr": "Elle est très chaleureuse.",
+   "efm": "chaleureuse",
+   "eit": "È molto calorosa.",
+   "eim": "calorosa"
+  },
+  {
+   "from": [
+    "adjectifs_6:66"
+   ],
+   "primary": "adjectifs_6:66",
+   "it": "pigro",
+   "fr": "paresseux",
+   "pr": "PI-gro",
+   "api": "/ˈpiɡro/",
+   "mc": "pigeon",
+   "sc": "Un pigeon paresseux marche au lieu de voler.",
+   "de": "pigro ≈ « pigeon »",
+   "fo": "anglais : lazy",
+   "efr": "Il est paresseux.",
+   "efm": "paresseux",
+   "eit": "È pigro.",
+   "eim": "pigro"
+  },
+  {
+   "from": [
+    "adjectifs_6:66"
+   ],
+   "primary": null,
+   "it": "pigra",
+   "fr": "paresseuse",
+   "pr": "PI-gra",
+   "api": "/ˈpiɡra/",
+   "mc": "pie grasse",
+   "sc": "Une pie grasse et paresseuse refuse de quitter son nid.",
+   "de": "pigra = féminin de pigro",
+   "fo": "",
+   "efr": "Ma sœur est paresseuse.",
+   "efm": "paresseuse",
+   "eit": "Mia sorella è pigra.",
+   "eim": "pigra"
+  },
+  {
+   "from": [
+    "adjectifs_6:68"
+   ],
+   "primary": "adjectifs_6:68",
+   "it": "sistematico",
+   "fr": "systématique (masc.)",
+   "pr": "sis-té-MA-ti-ko",
+   "api": "/sisteˈmatiko/",
+   "mc": "système",
+   "sc": "Un robot répète le même geste à chaque fois : systématique.",
+   "de": "sistematico ≈ « système »",
+   "fo": "pl. sistematici",
+   "efr": "C'est systématique.",
+   "efm": "systématique",
+   "eit": "È sistematico.",
+   "eim": "sistematico"
+  },
+  {
+   "from": [
+    "adjectifs_6:68"
+   ],
+   "primary": null,
+   "it": "sistematica",
+   "fr": "systématique (fém.)",
+   "pr": "sis-té-MA-ti-ka",
+   "api": "/sisteˈmatika/",
+   "mc": "système",
+   "sc": "Une détective coche chaque case de sa liste, une par une.",
+   "de": "sistematica = féminin de sistematico",
+   "fo": "pl. sistematiche",
+   "efr": "Elle fait une vérification systématique.",
+   "efm": "systématique",
+   "eit": "Fa una verifica sistematica.",
+   "eim": "sistematica"
+  },
+  {
+   "from": [
+    "adjectifs_6:71"
+   ],
+   "primary": "adjectifs_6:71",
+   "it": "aspro",
+   "fr": "aigre (masc.)",
+   "pr": "AS-pro",
+   "api": "/ˈaspro/",
+   "mc": "âpre",
+   "sc": "Un vigneron recrache un vin âpre et aigre.",
+   "de": "aspro ≈ « âpre »",
+   "fo": "aussi « âpre, rude » ; anglais : sour",
+   "efr": "Le lait est aigre.",
+   "efm": "aigre",
+   "eit": "Il latte è aspro.",
+   "eim": "aspro"
+  },
+  {
+   "from": [
+    "adjectifs_6:71"
+   ],
+   "primary": null,
+   "it": "aspra",
+   "fr": "aigre (fém.)",
+   "pr": "AS-pra",
+   "api": "/ˈaspra/",
+   "mc": "« âpre, ah ! »",
+   "sc": "Une femme mord une orange verte et crie « Ah ! », la bouche tordue.",
+   "de": "aspra = féminin de aspro",
+   "fo": "una lotta aspra = une lutte âpre",
+   "efr": "Cette orange est aigre.",
+   "efm": "aigre",
+   "eit": "Quest'arancia è aspra.",
+   "eim": "aspra"
+  },
+  {
+   "from": [
+    "adjectifs_6:72"
+   ],
+   "primary": "adjectifs_6:72",
+   "it": "disordinato",
+   "fr": "désordonné",
+   "pr": "di-zor-di-NA-to",
+   "api": "/dizordiˈnato/",
+   "mc": "désordre",
+   "sc": "Un garçon dort au milieu d'une chambre en désordre.",
+   "de": "disordinato ≈ « désordre »",
+   "fo": "anglais : messy",
+   "efr": "Il est désordonné.",
+   "efm": "désordonné",
+   "eit": "È disordinato.",
+   "eim": "disordinato"
+  },
+  {
+   "from": [
+    "adjectifs_6:72"
+   ],
+   "primary": null,
+   "it": "disordinata",
+   "fr": "désordonnée",
+   "pr": "di-zor-di-NA-ta",
+   "api": "/dizordiˈnata/",
+   "mc": "désordonnée",
+   "sc": "Une adolescente cherche son téléphone sous une montagne de vêtements.",
+   "de": "disordinata = féminin de disordinato",
+   "fo": "",
+   "efr": "Sa chambre est désordonnée.",
+   "efm": "désordonnée",
+   "eit": "La sua camera è disordinata.",
+   "eim": "disordinata"
+  },
+  {
+   "from": [
+    "adjectifs_6:76"
+   ],
+   "primary": "adjectifs_6:76",
+   "it": "semplificato",
+   "fr": "simplifié",
+   "pr": "sémm-pli-fi-KA-to",
+   "api": "/semplifiˈkato/",
+   "mc": "simplifié",
+   "sc": "Un architecte efface la moitié de son plan : simplifié.",
+   "de": "semplificato ≈ « simplifié »",
+   "fo": "anglais : simplified",
+   "efr": "C'est un schéma simplifié.",
+   "efm": "simplifié",
+   "eit": "È uno schema semplificato.",
+   "eim": "semplificato"
+  },
+  {
+   "from": [
+    "adjectifs_6:76"
+   ],
+   "primary": null,
+   "it": "semplificata",
+   "fr": "simplifiée",
+   "pr": "sémm-pli-fi-KA-ta",
+   "api": "/semplifiˈkata/",
+   "mc": "simplifiée",
+   "sc": "Une recette de grand-mère réduite à trois lignes sur un post-it.",
+   "de": "semplificata = féminin de semplificato",
+   "fo": "",
+   "efr": "C'est une version simplifiée.",
+   "efm": "simplifiée",
+   "eit": "È una versione semplificata.",
+   "eim": "semplificata"
+  },
+  {
+   "from": [
+    "adjectifs_6:81"
+   ],
+   "primary": "adjectifs_6:81",
+   "it": "interessato",
+   "fr": "intéressé",
+   "pr": "inn-té-rès-SA-to",
+   "api": "/interesˈsato/",
+   "mc": "intérêt",
+   "sc": "Un banquier à l'œil brillant calcule ses intérêts.",
+   "de": "interessato ≈ « intérêt »",
+   "fo": "interessato a = intéressé par ; anglais : interested",
+   "efr": "Je suis intéressé.",
+   "efm": "intéressé",
+   "eit": "Sono interessato.",
+   "eim": "interessato"
+  },
+  {
+   "from": [
+    "adjectifs_6:81"
+   ],
+   "primary": null,
+   "it": "interessata",
+   "fr": "intéressée",
+   "pr": "inn-té-rès-SA-ta",
+   "api": "/interesˈsata/",
+   "mc": "intéressée",
+   "sc": "Une étudiante intéressée lève la main au premier rang.",
+   "de": "interessata = féminin de interessato",
+   "fo": "",
+   "efr": "Elle est intéressée par le poste.",
+   "efm": "intéressée",
+   "eit": "È interessata al posto.",
+   "eim": "interessata"
+  }
+ ],
+ "reuse": [
+  {
+   "from": [
+    "determinants:4"
+   ],
+   "key": "adjectifs:1",
+   "form": "la mia"
+  },
+  {
+   "from": [
+    "determinants:10"
+   ],
+   "key": "adjectifs:6",
+   "form": "la tua"
+  },
+  {
+   "from": [
+    "determinants:9"
+   ],
+   "key": "adjectifs:4",
+   "form": "la sua"
+  },
+  {
+   "from": [
+    "adjectifs:25"
+   ],
+   "key": "determinants:5",
+   "form": "questo"
+  },
+  {
+   "from": [
+    "adjectifs:25"
+   ],
+   "key": "determinants:6",
+   "form": "quello"
+  },
+  {
+   "from": [
+    "adjectifs:11"
+   ],
+   "key": "determinants:18",
+   "form": "altro"
+  },
+  {
+   "from": [
+    "adjectifs:11"
+   ],
+   "key": "adjectifs:52",
+   "form": "altre"
+  },
+  {
+   "from": [
+    "pronoms:36"
+   ],
+   "key": "pronoms:59",
+   "form": "quello"
+  },
+  {
+   "from": [
+    "pronoms:36"
+   ],
+   "key": "pronoms:66",
+   "form": "quella"
+  },
+  {
+   "from": [
+    "pronoms:36"
+   ],
+   "key": "pronoms:45",
+   "form": "quelli"
+  },
+  {
+   "from": [
+    "adjectifs:29"
+   ],
+   "key": "adjectifs:3",
+   "form": "buono"
+  },
+  {
+   "from": [
+    "adjectifs_2:1"
+   ],
+   "key": "adjectifs:12",
+   "form": "sicuro"
+  },
+  {
+   "from": [
+    "adjectifs_3:51"
+   ],
+   "key": "adjectifs:67",
+   "form": "contento"
+  },
+  {
+   "from": [
+    "adjectifs_4:86"
+   ],
+   "key": "adjectifs_3:31",
+   "form": "aperto"
+  },
+  {
+   "from": [
+    "adjectifs_5:0"
+   ],
+   "key": "adjectifs:46",
+   "form": "vecchio"
+  },
+  {
+   "from": [
+    "adjectifs_6:2"
+   ],
+   "key": "adjectifs_3:67",
+   "form": "furbo"
+  },
+  {
+   "from": [
+    "adjectifs_6:7"
+   ],
+   "key": "adjectifs_4:6",
+   "form": "straniero"
+  },
+  {
+   "from": [
+    "adjectifs_6:14"
+   ],
+   "key": "adjectifs_4:35",
+   "form": "complicato"
+  },
+  {
+   "from": [
+    "adjectifs_6:15"
+   ],
+   "key": "adjectifs_4:66",
+   "form": "brutto"
+  }
+ ],
+ "delete": [
+  "noms:0",
+  "adjectifs:0",
+  "adjectifs:2",
+  "adjectifs:5",
+  "adjectifs:7",
+  "adjectifs:8",
+  "adjectifs:9",
+  "adjectifs:11",
+  "adjectifs:16",
+  "adjectifs:18",
+  "adjectifs:19",
+  "adjectifs:21",
+  "adjectifs:24",
+  "adjectifs:25",
+  "adjectifs:29",
+  "adjectifs:30",
+  "adjectifs:71",
+  "determinants:0",
+  "determinants:1",
+  "determinants:2",
+  "determinants:3",
+  "determinants:4",
+  "determinants:7",
+  "determinants:8",
+  "determinants:9",
+  "determinants:10",
+  "determinants:11",
+  "determinants:12",
+  "determinants:14",
+  "determinants:26",
+  "pronoms:23",
+  "pronoms:31",
+  "pronoms:34",
+  "pronoms:36",
+  "pronoms:39",
+  "pronoms:41",
+  "pronoms:71",
+  "pronoms:91",
+  "adverbes:94",
+  "adjectifs_2:1",
+  "noms_3:50",
+  "adjectifs_3:51",
+  "adjectifs_4:14",
+  "adjectifs_4:73",
+  "adjectifs_4:85",
+  "adjectifs_4:86",
+  "adjectifs_5:0",
+  "adjectifs_5:45",
+  "adjectifs_5:55",
+  "adjectifs_5:74",
+  "adjectifs_5:84",
+  "adjectifs_5:86",
+  "adjectifs_5:91",
+  "adjectifs_5:93",
+  "adjectifs_5:94",
+  "adjectifs_5:95",
+  "adjectifs_5:98",
+  "adjectifs_5:99",
+  "adjectifs_6:0",
+  "adjectifs_6:1",
+  "adjectifs_6:2",
+  "adjectifs_6:4",
+  "adjectifs_6:7",
+  "adjectifs_6:8",
+  "adjectifs_6:11",
+  "adjectifs_6:12",
+  "adjectifs_6:14",
+  "adjectifs_6:15",
+  "adjectifs_6:17",
+  "adjectifs_6:18",
+  "adjectifs_6:19",
+  "adjectifs_6:20",
+  "adjectifs_6:21",
+  "adjectifs_6:23",
+  "adjectifs_6:26",
+  "adjectifs_6:28",
+  "adjectifs_6:33",
+  "adjectifs_6:34",
+  "adjectifs_6:38",
+  "adjectifs_6:40",
+  "adjectifs_6:42",
+  "adjectifs_6:43",
+  "adjectifs_6:44",
+  "adjectifs_6:48",
+  "adjectifs_6:51",
+  "adjectifs_6:52",
+  "adjectifs_6:54",
+  "adjectifs_6:59",
+  "adjectifs_6:63",
+  "adjectifs_6:66",
+  "adjectifs_6:68",
+  "adjectifs_6:71",
+  "adjectifs_6:72",
+  "adjectifs_6:76",
+  "adjectifs_6:81"
+ ]
+}

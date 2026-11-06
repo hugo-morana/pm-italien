@@ -1720,7 +1720,7 @@ function bindUI() {
   // glisser le doigt : à droite = réussi, à gauche = raté (révèle d'abord la réponse si besoin)
   { const Q = $("#quiz"); let sw = null, swUsed = false;
     const tags = () => { if (!Q.querySelector(".swtag")) Q.insertAdjacentHTML("beforeend", `<span class="swtag ko">RATÉ</span><span class="swtag ok">RÉUSSI</span>`); };
-    const hint = () => { if (!quizState.on || Q.querySelector(".swhint")) return; Q.insertAdjacentHTML("beforeend", (quizState.q && quizState.q.ty === "present" ? `<div class="swhint">← glisser pour passer →</div>` : `<div class="swhint">← raté · glisser · réussi →</div>`)); };
+    const hint = () => { if (!quizState.on || Q.querySelector(".swhint")) return; Q.insertAdjacentHTML("beforeend", (quizState.q && quizState.q.ty === "present" ? `<div class="swhint">← glisser pour passer →</div>` : `<div class="swhint">toucher : révéler · glisser : ← raté · réussi →</div>`)); };
     new MutationObserver(() => { if (!Q.hidden) { hint(); tags(); } }).observe(Q, { childList: true });
     const reset = () => { Q.classList.remove("drag", "sw-ok", "sw-ko"); Q.style.setProperty("--sx", "0px"); Q.style.setProperty("--sr", "0deg"); Q.querySelectorAll(".swtag").forEach(t => t.style.opacity = 0); };
     Q.addEventListener("pointerdown", e => { if (!quizState.on || e.button > 0 || e.target.closest("input,textarea,select")) return; sw = { x: e.clientX, y: e.clientY, id: e.pointerId, dx: 0, h: null }; });
@@ -1747,6 +1747,12 @@ function bindUI() {
     };
     Q.addEventListener("pointerup", end); Q.addEventListener("pointercancel", end);
     Q.addEventListener("click", e => { if (swUsed) { e.stopPropagation(); e.preventDefault(); } }, true);
+    // toucher la carte (hors boutons et champs) = révéler
+    Q.addEventListener("click", e => {
+      if (swUsed || !quizState.on || quizState.revealed || !Q.querySelector("[data-reveal]")) return;
+      if (e.target.closest("button,input,textarea,select,a,label,summary,.say")) return;
+      reveal();
+    });
   }
   $("#quiz").addEventListener("keydown", e => { if (e.key !== "Enter") return; if (!quizState.revealed) reveal(); else { const s = $("#quiz [data-suggest]"); if (s) s.click(); } });
   $("#allR").onclick = () => { prefs.rooms = R.map((_, i) => i); savePrefs(); renderTests(); };

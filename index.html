@@ -159,8 +159,14 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 #planSvg text { font:500 8px var(--mono); fill:var(--fg) }
 
 /* Test en cours */
-#quiz { position:fixed; z-index:15; left:50%; transform:translateX(-50%); top:calc(env(safe-area-inset-top,0px) + 12px); width:min(560px, calc(100% - 24px));
+#quiz { position:fixed; z-index:15; left:50%; transform:translateX(calc(-50% + var(--sx, 0px))) rotate(var(--sr, 0deg)); transition:transform .25s ease, border-color .15s; top:calc(env(safe-area-inset-top,0px) + 12px); width:min(560px, calc(100% - 24px));
   background:var(--surface); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow); padding:14px 16px; display:flex; flex-direction:column; gap:10px }
+#quiz.drag { transition:none }
+#quiz.sw-ok { border-color:var(--ok, #2e9d5b); box-shadow:0 0 0 3px color-mix(in srgb, var(--ok, #2e9d5b) 35%, transparent), var(--shadow) }
+#quiz.sw-ko { border-color:var(--ko, #c8463c); box-shadow:0 0 0 3px color-mix(in srgb, var(--ko, #c8463c) 35%, transparent), var(--shadow) }
+#quiz .swhint { font:500 11px var(--mono); color:var(--muted); text-align:center; margin-top:-2px }
+#quiz .swtag { position:absolute; bottom:10px; font:700 13px var(--mono); padding:3px 8px; border-radius:6px; opacity:0; pointer-events:none; color:#fff }
+#quiz .swtag.ok { right:12px; background:var(--ok, #2e9d5b) } #quiz .swtag.ko { left:12px; background:var(--ko, #c8463c) }
 #quiz .qh { display:flex; align-items:center; gap:8px; font:500 11px var(--mono); color:var(--muted) }
 #quiz .qq { font:600 22px/1.2 var(--display); text-wrap:balance }
 #quiz .qa { font-size:15px; display:flex; flex-direction:column; gap:4px }
@@ -1711,6 +1717,37 @@ function bindUI() {
     if (t.closest("[data-say-q]")) { const q = quizState.q, x = q.target && quizState.revealed ? R[q.target.r].niches[q.target.n] : R[q.ri].niches[q.n]; return speak(x.it, asrc(x.ai, x.am)); }
     if (t.closest("[data-zoomq]")) return setZoom((st.zoom + 1) % 3);
   });
+  // glisser le doigt : à droite = réussi, à gauche = raté (révèle d'abord la réponse si besoin)
+  { const Q = $("#quiz"); let sw = null, swUsed = false;
+    const tags = () => { if (!Q.querySelector(".swtag")) Q.insertAdjacentHTML("beforeend", `<span class="swtag ko">RATÉ</span><span class="swtag ok">RÉUSSI</span>`); };
+    const hint = () => { if (!quizState.on || Q.querySelector(".swhint")) return; Q.insertAdjacentHTML("beforeend", (quizState.q && quizState.q.ty === "present" ? `<div class="swhint">← glisser pour passer →</div>` : `<div class="swhint">← raté · glisser · réussi →</div>`)); };
+    new MutationObserver(() => { if (!Q.hidden) { hint(); tags(); } }).observe(Q, { childList: true });
+    const reset = () => { Q.classList.remove("drag", "sw-ok", "sw-ko"); Q.style.setProperty("--sx", "0px"); Q.style.setProperty("--sr", "0deg"); Q.querySelectorAll(".swtag").forEach(t => t.style.opacity = 0); };
+    Q.addEventListener("pointerdown", e => { if (!quizState.on || e.button > 0 || e.target.closest("input,textarea,select")) return; sw = { x: e.clientX, y: e.clientY, id: e.pointerId, dx: 0, h: null }; });
+    Q.addEventListener("pointermove", e => {
+      if (!sw || e.pointerId !== sw.id) return; const dx = e.clientX - sw.x, dy = e.clientY - sw.y;
+      if (sw.h == null) { if (Math.hypot(dx, dy) < 10) return; sw.h = Math.abs(dx) > Math.abs(dy) * 1.2; if (!sw.h) { sw = null; return; } try { Q.setPointerCapture(e.pointerId); } catch (_) {} Q.classList.add("drag"); tags(); }
+      sw.dx = dx; Q.style.setProperty("--sx", dx + "px"); Q.style.setProperty("--sr", (dx / 30) + "deg");
+      const lim = Math.min(110, innerWidth * 0.22), f = Math.min(1, Math.abs(dx) / lim);
+      Q.classList.toggle("sw-ok", dx > lim); Q.classList.toggle("sw-ko", dx < -lim);
+      Q.querySelector(".swtag.ok").style.opacity = dx > 0 ? f : 0; Q.querySelector(".swtag.ko").style.opacity = dx < 0 ? f : 0;
+    });
+    const end = e => {
+      if (!sw || e.pointerId !== sw.id) return; const s0 = sw; sw = null; if (!s0.h) return;
+      swUsed = true; setTimeout(() => swUsed = false, 50);
+      const lim = Math.min(110, innerWidth * 0.22);
+      if (Math.abs(s0.dx) < lim || e.type === "pointercancel") return reset();
+      const ok = s0.dx > 0; Q.classList.remove("drag"); Q.style.setProperty("--sx", (ok ? 1 : -1) * innerWidth + "px");
+      setTimeout(async () => {
+        reset(); const q = quizState.q; if (!quizState.on || !q) return;
+        if (q.ty === "present") return learnNext();
+        if (!quizState.revealed) { reveal(); Q.classList.add(ok ? "sw-ok" : "sw-ko"); await new Promise(r => setTimeout(r, 900)); Q.classList.remove("sw-ok", "sw-ko"); if (quizState.q !== q) return; }
+        onGrade(ok);
+      }, 180);
+    };
+    Q.addEventListener("pointerup", end); Q.addEventListener("pointercancel", end);
+    Q.addEventListener("click", e => { if (swUsed) { e.stopPropagation(); e.preventDefault(); } }, true);
+  }
   $("#quiz").addEventListener("keydown", e => { if (e.key !== "Enter") return; if (!quizState.revealed) reveal(); else { const s = $("#quiz [data-suggest]"); if (s) s.click(); } });
   $("#allR").onclick = () => { prefs.rooms = R.map((_, i) => i); savePrefs(); renderTests(); };
   $("#noR").onclick = () => { prefs.rooms = []; savePrefs(); renderTests(); };

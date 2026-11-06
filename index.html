@@ -50,6 +50,13 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
   bottom:calc(var(--tb) + var(--drawer-h, 64px) + 12px) }
 .rb { width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow); font:600 18px/1 var(--mono); display:grid; place-items:center }
 .rb.big { width:56px; height:56px; font-size:12px; background:var(--fg); color:var(--surface); border-color:var(--fg) }
+#zoom { display:flex; gap:2px; padding:3px; border-radius:16px; border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow) }
+#zoom button { width:48px; height:48px; border:0; border-radius:13px; background:transparent; color:var(--fg); display:grid; place-items:center; align-content:center; gap:2px; padding:0; cursor:pointer }
+#zoom button svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linejoin:round; stroke-linecap:round }
+#zoom button span { font:600 9px/1 var(--mono); letter-spacing:.02em }
+#zoom button[aria-pressed="true"] { background:var(--fg); color:var(--surface) }
+@media (max-width:560px) { #nav { left:max(10px, env(safe-area-inset-left,0px)); transform:none; gap:6px } #nav .rb { width:40px; height:40px; font-size:16px } #zoom button { width:44px; height:44px } }
+@media (max-width:380px) { #nav { gap:4px } #nav .rb { width:36px; height:36px } #zoom button { width:40px } #zoom button span { font-size:8px } }
 #eye { position:fixed; z-index:7; right:max(12px, env(safe-area-inset-right,0px)); bottom:calc(var(--tb) + var(--drawer-h, 64px) + 12px) }
 
 /* Tiroir de fiche */
@@ -280,7 +287,11 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 <div id="nav">
   <button class="rb" id="pd" type="button" title="Dizaine précédente" aria-label="Dizaine précédente">«</button>
   <button class="rb" id="pv" type="button" title="Précédent" aria-label="Précédent">‹</button>
-  <button class="rb big" id="zoom" type="button" title="Zoom : pièce, panneau, emplacement" aria-label="Zoom">pièce</button>
+  <div id="zoom" role="group" aria-label="Cadrage de la vue">
+    <button type="button" data-z="0" title="Vue de toute la pièce" aria-label="Vue : pièce"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v16H3z"/><path d="M7.5 8h9v6.5h-9z"/><path d="M3 4l4.5 4M21 4l-4.5 4M3 20l4.5-5.5M21 20l-4.5-5.5"/></svg><span>Pièce</span></button>
+    <button type="button" data-z="1" title="Vue du panneau (10 niches)" aria-label="Vue : panneau"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 12h18M6.6 5v14M10.2 5v14M13.8 5v14M17.4 5v14"/></svg><span>Panneau</span></button>
+    <button type="button" data-z="2" title="Vue rapprochée de la niche" aria-label="Vue : niche"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8.5 8.5h7v7h-7z" fill="currentColor" stroke="none"/></svg><span>Niche</span></button>
+  </div>
   <button class="rb" id="nx" type="button" title="Suivant" aria-label="Suivant">›</button>
   <button class="rb" id="nd" type="button" title="Dizaine suivante" aria-label="Dizaine suivante">»</button>
 </div>
@@ -461,7 +472,7 @@ const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
 /* ============ État ============ */
 let DATA, R = [];            // pièces
-const st = { r: 0, n: 0, zoom: 0, mode: "guide", ui: true, drawerOpen: false };
+const st = { r: 0, n: 0, zoom: 1, mode: "guide", ui: true, drawerOpen: false };
 let renderer, scene, camera, clock;
 const anim = { active: false };   // animation de caméra en cours
 const walls2d = [];               // segments de collision {a:[x,z], b:[x,z], lv}
@@ -848,6 +859,7 @@ function renderFiche() {
   if (q) { $("#dbody").innerHTML = ""; return; }
   $("#dbody").innerHTML = ficheHTML(st.r, st.n);
   visitSay();
+  zoomUI();
 }
 /* Lecture pendant la visite (réglage Palais) : sons cochés, l'un après l'autre, à chaque nouvelle niche */
 let vsKey = null, vsTok = 0, vsAudio = null, vsTimer = null, vsDone = Promise.resolve(), vsFin = null;
@@ -970,7 +982,7 @@ const AP_OF = { classe: "classe", freq: "freqfr", freqit: "freqit", theme: "them
 const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, vF: false, vI: false, vEF: false, vEI: false, recul: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
 prefs.approach = AP_OF[PAL];   // l'approche d'apprentissage et la version du palais vont ensemble
-function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom }); }
+function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom, zv: 2 }); }   // zv : cadrage choisi après le passage au « panneau » par défaut
 /* Deux comptes possibles : le compte Claude (capacité db) quand la page tourne dans Claude,
    ou un compte e-mail Supabase (code à 6 chiffres) sur la version GitHub Pages. Sinon : navigateur seulement. */
 const SBCFG = window.PM_CONFIG || {};
@@ -1658,13 +1670,14 @@ function renderRooms() {
   const cur = $("#rooms").querySelector('[aria-current="true"]'); cur && cur.scrollIntoView({ inline: "center", block: "nearest" });
 }
 const ZL = ["pièce", "panneau", "niche"];
-function setZoom(z) { st.zoom = z; $("#zoom").textContent = ZL[z]; save(); if (st.mode === "guide") { applyOverviewLook(); arrow.visible = ring.visible && z === 0; flyTo(poseFor(z)); } }
+function zoomUI() { document.querySelectorAll("#zoom [data-z]").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.z === st.zoom))); }
+function setZoom(z) { st.zoom = z; zoomUI(); save(); if (st.mode === "guide") { applyOverviewLook(); arrow.visible = ring.visible && z === 0; flyTo(poseFor(z)); } }
 function bindUI() {
   $("#nx").onclick = () => { if (st.mode === "free") leaveFree(); const [r, n] = stepN(1); goTo(r, n, { thread: true }); };
   $("#pv").onclick = () => { if (st.mode === "free") leaveFree(); const [r, n] = stepN(-1); goTo(r, n); };
   $("#nd").onclick = () => { if (st.mode === "free") leaveFree(); const [r, n] = stepDecade(1); goTo(r, n); };
   $("#pd").onclick = () => { if (st.mode === "free") leaveFree(); const [r, n] = stepDecade(-1); goTo(r, n); };
-  $("#zoom").onclick = () => { if (st.mode === "free") leaveFree(); setZoom((st.zoom + 1) % 3); };
+  $("#zoom").onclick = e => { const b = e.target.closest("[data-z]"); if (!b) return; if (st.mode === "free") leaveFree(); setZoom(+b.dataset.z); };
   $("#modeBtn").onclick = () => st.mode === "free" ? leaveFree() : enterFree();
   $("#hfBtn").onclick = () => hfSet(!hf.on);
   // un geste de l'utilisateur arrête le parcours (sauf dans la fiche, qu'on peut lire et faire défiler)
@@ -2062,8 +2075,8 @@ async function start() {
   R.forEach((_, i) => buildRoom(i));
   const mark0 = scene.children.length; buildCorridors(); corrObjs = scene.children.slice(mark0);
   buildMarkers();
-  const pos = ls.get(PK("pos"), null); if (pos && R[pos.r]) { st.r = pos.r; st.n = R[pos.r].niches[pos.n] ? pos.n : filled(pos.r)[0]; st.zoom = pos.zoom || 0; }
-  $("#zoom").textContent = ZL[st.zoom];
+  const pos = ls.get(PK("pos"), null); if (pos && R[pos.r]) { st.r = pos.r; st.n = R[pos.r].niches[pos.n] ? pos.n : filled(pos.r)[0]; st.zoom = pos.zv === 2 ? (pos.zoom || 0) : 1; }   // ancienne position : on repart sur « panneau »
+  zoomUI();
   bindUI(); bindViews(); renderRooms(); onResize();
   texturizeRoom(st.r); placeRing(st.r, st.n); applyOverviewLook(); renderFiche();
   const p = poseFor(st.zoom); camera.position.copy(p.pos); camTarget.copy(p.target); camera.up.copy(p.up); camera.lookAt(camTarget);

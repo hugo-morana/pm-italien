@@ -140,6 +140,8 @@ for r in D["rooms"]:
     for n, x in enumerate(r["niches"]):
         if not x: continue
         x.pop("frd", None); x.pop("itd", None)
+        if x.get("frp"):   # patrons syntaxiques : schéma fourni tel quel
+            x["frd"], x["itd"] = x["frp"], x["itp"]; continue
         for L in ("fr", "it"):   # points de suspension perdus (« neC pas » pour « ne… pas »)
             if re.search(r"[a-zàèéìòù]C(\b| )", x[L]) and x[L] != "la série TV": x[L] = re.sub(r"(?<=[a-zàèéìòù])C(?=\b| |$)", "…", x[L])
         if x["fr"] == "combiene ? (quanto, féminin)": x["fr"] = "combien (de) ? (quanto, féminin)"

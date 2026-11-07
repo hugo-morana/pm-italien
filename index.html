@@ -169,6 +169,7 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 #quiz .swtag.ok { right:12px; background:var(--ok, #2e9d5b) } #quiz .swtag.ko { left:12px; background:var(--ko, #c8463c) }
 #quiz .qh { display:flex; align-items:center; gap:8px; font:500 11px var(--mono); color:var(--muted) }
 #quiz .qq { font:600 22px/1.2 var(--display); text-wrap:balance }
+.ph { color:var(--muted); font-weight:500; font-family:var(--mono); font-size:.72em; letter-spacing:0; white-space:nowrap }
 #quiz .qa { font-size:15px; display:flex; flex-direction:column; gap:4px }
 #quiz .qa .it { font:600 26px/1.1 var(--display); color:var(--accent) }
 .phw-box { display:grid; gap:6px; margin:6px 0 }
@@ -701,8 +702,8 @@ function panelCanvas(ri, pi, maskN) {
     if (!it) { g.fillStyle = "#b9ab98"; g.font = "italic 26px 'Source Serif 4', Georgia, serif"; g.textAlign = "center"; g.fillText("libre", x + cell / 2, y + cell / 2 + 12); continue; }
     if (maskN === n || maskN === "all") { g.fillStyle = "#2a211d"; g.fillRect(x + 14, y + 56, cell - 28, cell - 74); g.fillStyle = "#f6efe2"; g.font = "600 60px 'Cormorant SC', Georgia, serif"; g.textAlign = "center"; g.fillText("?", x + cell / 2, y + 140); continue; }
     g.textAlign = "center"; g.fillStyle = "#9c3d22";
-    fitText(g, it.it.replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + 112, cell - 24, 46, "600", "'Cormorant SC', Georgia, serif");
-    g.fillStyle = "#2a211d"; fitText(g, it.fr, x + cell / 2, y + 160, cell - 24, 26, "400", "'Source Serif 4', Georgia, serif");
+    fitText(g, dI(it).replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + 112, cell - 24, 46, "600", "'Cormorant SC', Georgia, serif");
+    g.fillStyle = "#2a211d"; fitText(g, dF(it), x + cell / 2, y + 160, cell - 24, 26, "400", "'Source Serif 4', Georgia, serif");
   }
   return c;
 }
@@ -861,7 +862,7 @@ function renderFiche() {
   $("#where").textContent = `${r.it.toUpperCase()} · ${SURF[pi]}`;
   if (!x) { $("#dfr").textContent = "libre"; $("#dit").textContent = ""; $("#dbody").innerHTML = ""; return; }
   const q = quizState.on && !quizState.revealed;
-  $("#dfr").textContent = q && quizState.hideFr ? "?" : x.fr; $("#dit").textContent = q ? "?" : x.it;
+  $("#dfr").textContent = q && quizState.hideFr ? "?" : dF(x); $("#dit").textContent = q ? "?" : dI(x);
   if (q) { $("#dbody").innerHTML = ""; return; }
   $("#dbody").innerHTML = ficheHTML(st.r, st.n);
   visitSay();
@@ -929,8 +930,8 @@ async function hfLoop(tok) {
 function ficheHTML(ri, n) {
   const x = R[ri].niches[n], [nr, nn] = stepFrom(ri, n, 1), nx = R[nr].niches[nn], [pr, pn] = stepFrom(ri, n, -1), px = R[pr].niches[pn];
   return `<div class="fiche">
-    <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter le mot">🔊</button><span>${esc(x.it)}</span></div>
-    <div class="frw"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.fr)}" data-src="${esc(asrc(x.af))}" aria-label="Écouter le mot en français">🔊</button><span>${esc(x.fr)}</span><span class="lg">FR</span></div>
+    <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter le mot">🔊</button><span>${escP(dI(x))}</span></div>
+    <div class="frw"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.fr)}" data-src="${esc(asrc(x.af))}" aria-label="Écouter le mot en français">🔊</button><span>${escP(dF(x))}</span><span class="lg">FR</span></div>
     <div class="phon"><span class="ipa" lang="it-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
     <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(x.ap || "")}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.efr)}" aria-label="Écouter la phrase en français">🔊</button>${mark(x.efr, x.efm)}</p></div></div>
     ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" data-src="${esc(asrc(e[3]))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(e[0])}" data-src="${esc(asrc(e[2]))}" aria-label="Écouter la phrase en français">🔊</button>${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
@@ -945,7 +946,7 @@ function ficheHTML(ri, n) {
       ${x.t && x.t.length ? `<div><dt>Étiquettes</dt><dd class="tags">${x.t.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</dd></div>` : ""}
       ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence en français" : PAL === "freqit" ? "par fréquence en italien" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
     </dl>
-    ${px ? `<details class="prev"><summary>⟵ depuis ${String(pn).padStart(2, "0")} · ${esc(px.it)}</summary><p class="exfr" style="margin:6px 0 0">${esc(px.li)}</p></details>` : ""}
+    ${px ? `<details class="prev"><summary>⟵ depuis ${String(pn).padStart(2, "0")} · ${escP(dI(px))}</summary><p class="exfr" style="margin:6px 0 0">${esc(px.li)}</p></details>` : ""}
   </div>`;
 }
 function setDrawer(open) { st.drawerOpen = open; $("#drawer").classList.toggle("open", open); $("#dbody").hidden = !open; $("#dhead").setAttribute("aria-expanded", open); measureDrawer(); }
@@ -1227,7 +1228,7 @@ function present(a) {
   const x = R[a.ri].niches[a.n], p = R[a.ri].niches[a.n - 1];
   $("#quiz").hidden = false;
   $("#quiz").innerHTML = `<div class="qh"><span>NOUVEAU · ${esc(shortName(R[a.ri]))} ${String(a.n).padStart(2, "0")}</span><span class="spacer"></span><button class="chip" type="button" data-quit>Quitter le test</button></div>
-    <div class="qa"><span class="it">${esc(x.it)}</span><span>${esc(x.fr)} · <span class="pr">${esc(x.pr)}</span></span><span class="exfr">${esc(x.sc)}</span>${p ? `<span class="pr">⟵ ${esc(p.li)}</span>` : ""}</div>
+    <div class="qa"><span class="it">${escP(dI(x))}</span><span>${escP(dF(x))} · <span class="pr">${esc(x.pr)}</span></span><span class="exfr">${esc(x.sc)}</span>${p ? `<span class="pr">⟵ ${esc(p.li)}</span>` : ""}</div>
     <div class="btns"><button class="btn" type="button" data-say-q>🔊 Écouter</button><button class="btn alt" type="button" data-next>J'ai mémorisé</button></div>`;
   speak(x.it, asrc(x.ai, x.am));
 }
@@ -1236,19 +1237,19 @@ function ask(q) {
   quizState.q = q; quizState.revealed = false; const x = R[q.ri].niches[q.n], num = String(q.n).padStart(2, "0"), room = shortName(R[q.ri]);
   const IM = prefs.inMode || "clavier"; let text = "", input = IM !== "aucun", mask = q.n; quizState.hideFr = false;
   if (q.ty === "num") text = `${room} · emplacement ${num} : quel mot ?`;
-  if (q.ty === "img") { text = `Où se trouve « ${x.it} » (${x.fr}) ? Donne le numéro.`; mask = null; }
-  if (q.ty === "fr") text = `Traduis : ${x.fr}`;
-  if (q.ty === "it") { text = `Que veut dire : ${x.it} ?`; quizState.hideFr = true; mask = null; }
+  if (q.ty === "img") { text = `Où se trouve « ${dI(x)} » (${dF(x)}) ? Donne le numéro.`; mask = null; }
+  if (q.ty === "fr") text = `Traduis : ${dF(x)}`;
+  if (q.ty === "it") { text = `Que veut dire : ${dI(x)} ?`; quizState.hideFr = true; mask = null; }
   if (q.ty === "aud") { text = "Écoute, puis donne le sens en français."; quizState.hideFr = true; }
   if (q.ty === "phit") { text = `Traduis en français : « ${x.eit} »`; quizState.hideFr = true; mask = null; }
   if (q.ty === "phfr") { text = `Traduis en italien : « ${x.efr} »`; mask = null; }
-  if (q.ty === "suite" || q.ty === "chaine") { const nx = nextOf(q.ri, q.n); q.target = nx; text = `Après « ${x.it} » (${num}), quel mot vient ensuite ?`; mask = nx.r === q.ri ? nx.n : null; }
+  if (q.ty === "suite" || q.ty === "chaine") { const nx = nextOf(q.ri, q.n); q.target = nx; text = `Après « ${dI(x)} » (${num}), quel mot vient ensuite ?`; mask = nx.r === q.ri ? nx.n : null; }
   $("#voile").hidden = !(q.ty === "img" || q.ty === "aud" || q.ty === "fr" || q.ty === "it" || q.ty === "phit" || q.ty === "phfr");
   const focusN = q.ty === "suite" || q.ty === "chaine" ? q.n : q.n;
   st.zoom = 0; goTo(q.ri, focusN, { mask, dur: .45 }); if (q.ty === "img") { ring.visible = arrow.visible = false; }
   $("#quiz").hidden = false;
   $("#quiz").innerHTML = `<div class="qh"><span>${esc(TYPES.find(t => t[0] === q.ty)[1].toUpperCase())}${quizState.list.length ? ` · ${quizState.idx + 1}/${quizState.list.length}` : ""}</span><span class="spacer"></span><button class="chip" type="button" data-quit>Quitter le test</button></div>
-    <div class="qq">${esc(text)}</div>
+    <div class="qq">${escP(text)}</div>
     ${q.ty === "aud" ? `<div class="btns"><button class="btn" type="button" data-say-q>🔊 Réécouter</button></div>` : ""}
     ${q.ty === "phit" ? `<div class="btns"><button class="btn alt" type="button" data-say-ph>🔊 Écouter la phrase</button></div>` : ""}
     ${input ? `<input id="rep" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${IM === "voix" ? "Touche 🎤 et parle (ou dicte au clavier)" : "Ta réponse"}" lang="${repLang(q.ty).slice(0, 2)}">` : ""}
@@ -1261,6 +1262,8 @@ const repLang = ty => (ty === "it" || ty === "aud" || ty === "img" || ty === "ph
 function lev(a, b) { const m = a.length, n = b.length; if (!m) return n; if (!n) return m; let p = Array.from({ length: n + 1 }, (_, j) => j);
   for (let i = 1; i <= m; i++) { const c = [i]; for (let j = 1; j <= n; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; } return p[n]; }
 const close = (a, b) => { a = norm(a).trim(); b = norm(b).trim(); if (!a || !b) return false; return a === b || lev(a, b) <= Math.max(1, Math.floor(Math.min(a.length, b.length) * 0.2)); };
+const dI = x => (x && (x.itd || x.it)) || "", dF = x => (x && (x.frd || x.fr)) || "";   // affichage paramétrique : il mio [n], [qn] [v] [qc]… (le son et la correction gardent it / fr)
+const escP = s => esc(s).replace(/\[([^\]]+)\]/g, '<span class="ph">[$1]</span>');
 const rawIt = x => x.ito || x.it, rawFr = x => x.fro || x.fr;   // tournure d'origine (S V C…) ; x.it / x.fr : forme affichée (qn fait qc…)
 const sayable = (t, lang) => String(t || "").replace(lang === "fr" ? /\bqqpart\b/g : /\bda qlc parte\b/g, lang === "fr" ? "quelque part" : "da qualche parte")
   .replace(lang === "fr" ? /\bqn\b/g : /\bqcn\b/g, lang === "fr" ? "quelqu'un" : "qualcuno").replace(lang === "fr" ? /\bqc\b/g : /\bqcs\b/g, lang === "fr" ? "quelque chose" : "qualcosa");
@@ -1378,7 +1381,7 @@ async function creditSentence(q, x) {   // phrase réussie : chaque mot qui la c
 function revealPhrase(q, x, reps) {
   const exp = q.ty === "phit" ? x.efr : x.eit, okGuess = reps.length ? reps.some(r => sentOk(exp, r)) : null;
   texturizeRoom(q.ri, null); st.zoom = 0; goTo(q.ri, q.n); placeRing(q.ri, q.n); renderFiche();
-  $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${esc(x.eit)}</span><span>${esc(x.efr)}</span><span class="exfr">mot de la niche : ${esc(x.it)} · ${esc(x.fr)}</span></div><div id="phWords" class="phw-box"><span class="pr">…</span></div>
+  $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${esc(x.eit)}</span><span>${esc(x.efr)}</span><span class="exfr">mot de la niche : ${escP(dI(x))} · ${escP(dF(x))}</span></div><div id="phWords" class="phw-box"><span class="pr">…</span></div>
     ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta traduction correspond." : "Ta traduction ne correspond pas."}</span>`}
     ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
       ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-ph>🔊</button></div>`
@@ -1401,7 +1404,7 @@ function revealCore() {
   texturizeRoom(q.ri, null); st.zoom = 0;
   if (q.ty === "suite" || q.ty === "chaine") goTo(q.target.r, q.target.n, { thread: true }); else { goTo(q.ri, q.n); placeRing(q.ri, q.n); }
   renderFiche();
-  $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${esc(shown.it)}</span><span>${esc(shown.fr)} · <span class="mono">${String(q.ty === "suite" || q.ty === "chaine" ? q.target.n : q.n).padStart(2, "0")}</span></span><span class="exfr">${esc(shown.sc)}</span>${extra}</div>
+  $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${escP(dI(shown))}</span><span>${escP(dF(shown))} · <span class="mono">${String(q.ty === "suite" || q.ty === "chaine" ? q.target.n : q.n).padStart(2, "0")}</span></span><span class="exfr">${esc(shown.sc)}</span>${extra}</div>
     ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta réponse correspond." : "Ta réponse ne correspond pas."}</span>`}
     ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
       ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-q>🔊</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`
@@ -1588,7 +1591,7 @@ async function renderTests() {
   const pool = poolItems(); $("#poolInfo").textContent = `${pool.length} mot(s) dans la sélection`;
   const due = await dueList(); $("#srsInfo").textContent = `Révision du jour : ${due.length} carte(s) à revoir.` + (store.kind === "claude" ? " Progression enregistrée sur votre compte Claude." : store.kind === "sb" ? ` Progression enregistrée sur le compte ${store.email}.` : " Progression enregistrée sur cet appareil." + (store.sb ? " Connecte-toi (bouton Compte) pour la garder sur tous tes appareils." : ""));
   const c = await srsRoom(st.r);
-  $("#map").innerHTML = R[st.r].niches.map((x, n) => { if (!x) return `<span class="vide">${n}</span>`; const k = c[n + ":" + prefs.mapType]; return `<span class="${k && k.seen ? "b" + Math.max(1, k.b) : ""}" title="${esc(x.fr)}">${n}</span>`; }).join("");
+  $("#map").innerHTML = R[st.r].niches.map((x, n) => { if (!x) return `<span class="vide">${n}</span>`; const k = c[n + ":" + prefs.mapType]; return `<span class="${k && k.seen ? "b" + Math.max(1, k.b) : ""}" title="${esc(dF(x))}">${n}</span>`; }).join("");
 }
 function renderPlan() {
   const svg = $("#planSvg"), sc = 2.3, pad = 10, w0 = (Math.max(...layout.xmax) + 18) * sc, h0 = 30 * sc;
@@ -1976,7 +1979,7 @@ async function renderLib() {
   $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? ` · du plus fréquent au plus rare (${lg === "it" ? "italien" : "français"} parlé)` : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe grammaticale, dans l'ordre du palais par classe") + " · touche une ligne pour la fiche complète";
   const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
     `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
-    `<span class="lfr">${esc(x.fr)}${x.k ? `<small class="kind ${x.k}">${x.k === "tpl" ? "à trous" : x.k === "loc" ? "locution" : x.k === "col" ? "collocation" : "figée"}</small>` : ""}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${esc(x.it)}</span>${lg === "it" ? `<span class="lz" title="Zipf parlé italien (score grossier)">${x.zi != null ? (x.ax ? "≈" : "") + x.zi.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
+    `<span class="lfr">${escP(dF(x))}${x.k ? `<small class="kind ${x.k}">${x.k === "tpl" ? "à trous" : x.k === "loc" ? "locution" : x.k === "col" ? "collocation" : "figée"}</small>` : ""}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${escP(dI(x))}</span>${lg === "it" ? `<span class="lz" title="Zipf parlé italien (score grossier)">${x.zi != null ? (x.ax ? "≈" : "") + x.zi.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
     `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; };
   if (!rows.length) { $("#libList").innerHTML = `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`; return; }
   if (freq) {   // ordre purement fréquentiel : toutes classes mêlées, par tranches de 250 rangs

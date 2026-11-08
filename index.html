@@ -244,7 +244,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .lroomtag { display:block; font:500 10px var(--mono); color:var(--muted); letter-spacing:.03em; margin-top:1px }
 .lrow .lit { flex:1 1 40%; min-width:0; font:600 17px/1.2 var(--display); color:var(--accent); overflow-wrap:anywhere }
 .lrow .lo { flex:none; font:500 11px var(--mono); color:var(--fg); width:7.5em; text-align:right; font-variant-numeric:tabular-nums }
-.lrow .lz { flex:none; font:500 11px var(--mono); color:var(--muted); width:3.2em; text-align:right; font-variant-numeric:tabular-nums }
+.lrow .lz { flex:none; font:500 11px var(--mono); color:var(--muted); width:6.8em; text-align:right; font-variant-numeric:tabular-nums }
 .lrow .say { width:30px; height:30px; font-size:13px }
 .dotb { flex:none; width:10px; height:10px; border-radius:50%; border:1px solid var(--line); background:transparent }
 .dotb.b1 { background:#e6b9a5; border-color:#e6b9a5 } .dotb.b2 { background:#e0cf8f; border-color:#e0cf8f } .dotb.b3 { background:#b7d39a; border-color:#b7d39a } .dotb.b4 { background:#86c08f; border-color:#86c08f } .dotb.b5 { background:#4f9c63; border-color:#4f9c63 }
@@ -390,7 +390,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="pills" id="decP"></div>
   <h3>Filtres</h3>
   <div class="frow"><label for="tagSel">Sous-catégorie</label><select id="tagSel"><option value="">toutes</option></select></div>
-  <div class="frow"><label for="zmin">Fréquence FR minimale (Zipf)</label><input type="range" id="zmin" min="1" max="7" step="0.1" value="1"><span class="mono" id="zminV">1.0</span></div>
+  <div class="frow"><label for="zmin">Gain d'expression FR minimal</label><input type="range" id="zmin" min="1" max="7" step="0.1" value="1"><span class="mono" id="zminV">aucun</span></div>
   <div class="frow" id="poolInfo"></div>
   <h3>Progression · pièce actuelle</h3>
   <div class="frow"><label for="mapType">Afficher</label><select id="mapType"></select></div>
@@ -853,9 +853,13 @@ function walkToRoom(ri, n, opts) {
 function banner(t, x) { $("#bandT").textContent = t; $("#bandX").textContent = x || ""; $("#bandeau").hidden = !x; clearTimeout(banner.t); banner.t = setTimeout(() => $("#bandeau").hidden = true, 4200); }
 
 /* ============ Fiche ============ */
-function zipfBar(label, z, occ, ax) {
-  if (z == null) return `<span>${label}</span><span class="bv">—</span>`;
-  return `<span>${label}</span><span style="display:flex;gap:8px;align-items:center"><span class="bar" style="flex:1"><i style="width:${Math.max(0, (z - 1) / 6 * 100)}%"></i></span><span class="bv">${ax ? "≈" : ""}${z.toFixed(1)}</span><span class="bv" style="min-width:7.5em;text-align:right">${occ ? occ.toLocaleString("fr-FR") : "—"}</span></span>`;
+// Gain d'une niche, en % : part des mots entendus (IT, compréhension) ou dits (FR, expression) qu'elle couvre une fois apprise
+// = occurrences par 100 M de mots / 1 000 000. Tournures (expressions, incises, patrons) : part de la masse « tournures » du palais.
+const gainOf = (r, x, lg) => { if (!x) return 0; if (counts(r, x)) return ((lg === "fr" ? x.of : x.oi) || 0) / 1e6; if (!CURVES) buildCurves(); return CURVES.TT ? tvOf(r, x) / CURVES.TT * 100 : 0; };
+const gainUnit = (r, x) => counts(r, x) ? "des mots" : tvOf(r, x) > 0 ? "des tournures" : "";
+function gainBar(label, g, unit, occ, ax) {
+  const w = g > 0 ? Math.max(2, Math.min(100, (Math.log10(g) + 5) / 6 * 100)) : 0;   // échelle log : 0,00001 % → 10 %
+  return `<span>${label}</span><span style="display:flex;gap:8px;align-items:center"><span class="bar" style="flex:1"><i style="width:${w}%"></i></span><span class="bv" style="min-width:6.5em;text-align:right" title="${unit ? "gain : part " + unit : ax ? "ses mots sont déjà comptés à part" : "structure : pas de fréquence propre"}">${unit ? fmtGain(g) : ax ? "inclus" : "—"}</span><span class="bv" style="min-width:7.5em;text-align:right" title="occurrences par 100 millions de mots">${occ ? (ax ? "≈ " : "") + Math.round(occ).toLocaleString("fr-FR") : "—"}</span></span>`;
 }
 function renderFiche() {
   const r = R[st.r], x = r.niches[st.n], pi = Math.floor(st.n / 10);
@@ -936,7 +940,7 @@ function ficheHTML(ri, n) {
     <div class="phon"><span class="ipa" lang="it-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
     <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(asrc(x.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.efr)}" data-src="${esc(asrc(x.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(x.efr, x.efm)}</p></div></div>
     ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" data-src="${esc(asrc(e[3]))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(e[0])}" data-src="${esc(asrc(e[2]))}" aria-label="Écouter la phrase en français">🔊</button>${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
-    <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Zipf parlé</span><span>rang ${x.rk} · occ./100 M</span></span>${zipfBar("FR", x.zf, x.of, x.ax)}${zipfBar("IT", x.zi, x.oi, x.ax)}</div>
+    <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Gain une fois appris</span><span>${x.rk != null ? "rang " + x.rk + " · " : ""}occ./100 M</span></span>${gainBar("Compréhension IT", gainOf(R[ri], x, "it"), gainUnit(R[ri], x), x.oi, x.ax)}${gainBar("Expression FR", gainOf(R[ri], x, "fr"), gainUnit(R[ri], x), x.of, x.ax)}</div>
     <dl>
       <div><dt>Mot-clé</dt><dd><em>${esc(x.mc)}</em></dd></div>
       <div><dt>Scène</dt><dd>${esc(x.sc)}</dd></div>
@@ -1354,17 +1358,18 @@ async function phraseWords(x) {   // items portés par les mots de la phrase ita
   const out = [];
   for (const { ri, n } of sentenceItems(x)) {
     const c = await srsRoom(ri), y = R[ri].niches[n], ok = ty => c[n + ":" + ty] && c[n + ":" + ty].seen && c[n + ":" + ty].b >= 1;
-    const w0 = counts(R[ri], y) ? (y.oi || 0) / 1e6 : 0, comp = ok("it") || ok("aud"), expr = ok("fr");
-    out.push({ ri, n, it: y.it, fr: y.fr, w: w0, comp, expr });
+    const w0 = counts(R[ri], y) ? (y.oi || 0) / 1e6 : 0, we = counts(R[ri], y) ? (y.of || 0) / 1e6 : 0, comp = ok("it") || ok("aud"), expr = ok("fr");
+    out.push({ ri, n, it: y.it, fr: y.fr, w: w0, we, comp, expr });
   }
   return out;
 }
-const fmtGain = v => "+" + (v >= 0.1 ? v.toFixed(2) : v >= 0.001 ? v.toFixed(3) : v > 0 ? "<0,001" : "0").replace(".", ",") + " %";
+const zminTxt = z => z <= 1 ? "aucun" : fmtGain(Math.pow(10, z - 7));   // Zipf z ⇔ gain 10^(z−7) %
+const fmtGain = v => "+" + (v >= 0.1 ? v.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : v > 0 ? v.toLocaleString("fr-FR", { maximumSignificantDigits: 2 }) : "0") + " %";   // 2 chiffres significatifs sous 0,1 %
 async function fillPhraseWords(q, x) {
   const box = $("#phWords"); if (!box) return;
   const L = await phraseWords(x); if (!$("#phWords")) return;
   if (!L.length) { box.innerHTML = `<span class="pr">Aucun mot de la phrase n'est encore dans le palais.</span>`; return; }
-  const gc = L.filter(o => !o.comp).reduce((a, o) => a + o.w, 0), ge = L.filter(o => !o.expr).reduce((a, o) => a + o.w, 0), dir = q.ty === "phit" ? "c" : "e";
+  const gc = L.filter(o => !o.comp).reduce((a, o) => a + o.w, 0), ge = L.filter(o => !o.expr).reduce((a, o) => a + o.we, 0), dir = q.ty === "phit" ? "c" : "e";
   const nn = L.filter(o => dir === "c" ? !o.comp : !o.expr).length;
   box.innerHTML = `<div class="phw-h">Mots de la phrase · ${nn ? `${nn} à apprendre` : "tous déjà acquis dans ce sens"}</div>
     <div class="phw-l">${L.map(o => { const nw = dir === "c" ? !o.comp : !o.expr; return `<span class="phw${nw ? " new" : ""}" title="${nw ? "nouveau dans ce sens" : "déjà acquis dans ce sens"}"><b>${esc(o.it)}</b> ${esc(o.fr)}${o.comp ? "" : ` <i class="g c">C</i>`}${o.expr ? "" : ` <i class="g e">E</i>`}</span>`; }).join("")}</div>
@@ -1377,7 +1382,7 @@ async function creditSentence(q, x) {   // phrase réussie : chaque mot qui la c
     const c = await srsRoom(ri), cur = c[n + ":" + ty];
     if (cur && cur.seen && cur.b >= 1) continue;
     if (ty === "it" && c[n + ":aud"] && c[n + ":aud"].seen && c[n + ":aud"].b >= 1) continue;
-    c[n + ":" + ty] = { b: 1, d: t + BOXDAYS[1], seen: 1 }; srsSave(ri); k++; const y = R[ri].niches[n]; g += counts(R[ri], y) ? (y.oi || 0) / 1e6 : 0;
+    c[n + ":" + ty] = { b: 1, d: t + BOXDAYS[1], seen: 1 }; srsSave(ri); k++; const y = R[ri].niches[n]; g += counts(R[ri], y) ? ((ty === "fr" ? y.of : y.oi) || 0) / 1e6 : 0;
   }
   if (k) { updateHist(); toast(`+${k} mot(s) appris · ${ty === "it" ? "compréhension" : "expression"} ${fmtGain(g)}`); }
 }
@@ -1466,9 +1471,9 @@ async function learnedStats() {
     const cards = await srsRoom(ri), got = new Set(), comp = new Set(), expr = new Set();
     for (const k in cards) { const v = cards[k]; if (!(v && v.seen && v.b >= 1)) continue; const [m, ty] = k.split(":"); got.add(+m); if (ty === "it" || ty === "aud") comp.add(+m); if (ty === "fr") expr.add(+m); }
     for (const m of got) { const x = R[ri].niches[m]; if (!x) continue; n++;
-      const w = counts(R[ri], x) ? (x.oi || 0) / 1e6 : 0;
+      const w = counts(R[ri], x) ? (x.oi || 0) / 1e6 : 0, wf = counts(R[ri], x) ? (x.of || 0) / 1e6 : 0;
       if (comp.has(m)) { nc++; c += w; if (!w && CURVES.TT) t += tvOf(R[ri], x) / CURVES.TT * 100; }
-      if (expr.has(m)) { ne++; e += w; } }
+      if (expr.has(m)) { ne++; e += wf; } }
   }
   return { n, c, t, e, nc, ne };
 }
@@ -1589,7 +1594,7 @@ async function renderTests() {
   $("#decP").innerHTML = [...Array(10).keys()].map(d => `<button class="pill" type="button" data-dec="${d}" aria-pressed="${prefs.decs.includes(d)}" style="border-color:${COLS[d]}">${d}x</button>`).join("");
   const tags = new Set(); for (const ri of prefs.rooms) for (const x of R[ri].niches) if (x) (x.t || []).forEach(t => tags.add(t));
   $("#tagSel").innerHTML = `<option value="">toutes</option>` + [...tags].sort().map(t => `<option ${t === prefs.tag ? "selected" : ""}>${esc(t)}</option>`).join("");
-  $("#zmin").value = prefs.zmin; $("#zminV").textContent = (+prefs.zmin).toFixed(1); $("#newN").value = prefs.newN;
+  $("#zmin").value = prefs.zmin; $("#zminV").textContent = zminTxt(prefs.zmin); $("#newN").value = prefs.newN;
   $("#mapType").innerHTML = TYPES.filter(t => t[0] !== "chaine").map(([k, l]) => `<option value="${k}" ${k === prefs.mapType ? "selected" : ""}>${l}</option>`).join("");
   const pool = poolItems(); $("#poolInfo").textContent = `${pool.length} mot(s) dans la sélection`;
   const due = await dueList(); $("#srsInfo").textContent = `Révision du jour : ${due.length} carte(s) à revoir.` + (store.kind === "claude" ? " Progression enregistrée sur votre compte Claude." : store.kind === "sb" ? ` Progression enregistrée sur le compte ${store.email}.` : " Progression enregistrée sur cet appareil." + (store.sb ? " Connecte-toi (bouton Compte) pour la garder sur tous tes appareils." : ""));
@@ -1775,7 +1780,7 @@ function bindUI() {
   $("#noR").onclick = () => { prefs.rooms = []; savePrefs(); renderTests(); };
   $("#curR").onclick = () => { prefs.rooms = [st.r]; savePrefs(); renderTests(); };
   $("#tagSel").onchange = e => { prefs.tag = e.target.value; savePrefs(); renderTests(); };
-  $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = prefs.zmin.toFixed(1); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
+  $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = zminTxt(prefs.zmin); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
   document.addEventListener("click", e => { const b = e.target.closest("[data-sayopt]"); if (!b) return; const k = b.dataset.sayopt; prefs[k] = !prefs[k]; savePrefs(); renderSayOpts(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-tmode]"); if (!b) return; prefs.testMode = b.dataset.tmode; savePrefs(); renderTMode(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-approach]"); if (!b) return; prefs.approach = b.dataset.approach; savePrefs(); renderApproach(); choosePalace(PAL_OF[b.dataset.approach]); });
@@ -1982,7 +1987,7 @@ async function renderLib() {
   $("#libInfo").textContent = (rows.length === LIB.length ? `${rows.length} entrées` : `${rows.length} entrée(s) sur ${LIB.length}`) + (freq ? ` · du plus fréquent au plus rare (${lg === "it" ? "italien" : "français"} parlé)` : ord === "theme" ? " · par thème, du plus fréquent au plus rare dans chaque thème" : " · par classe grammaticale, dans l'ordre du palais par classe") + " · touche une ligne pour la fiche complète";
   const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
     `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
-    `<span class="lfr">${escP(dF(x))}${x.k ? `<small class="kind ${x.k}">${x.k === "tpl" ? "à trous" : x.k === "loc" ? "locution" : x.k === "col" ? "collocation" : "figée"}</small>` : ""}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${escP(dI(x))}</span>${lg === "it" ? `<span class="lz" title="Zipf parlé italien (score grossier)">${x.zi != null ? (x.ax ? "≈" : "") + x.zi.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Zipf parlé français (score grossier)">${x.zf != null ? (x.ax ? "≈" : "") + x.zf.toFixed(1) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
+    `<span class="lfr">${escP(dF(x))}${x.k ? `<small class="kind ${x.k}">${x.k === "tpl" ? "à trous" : x.k === "loc" ? "locution" : x.k === "col" ? "collocation" : "figée"}</small>` : ""}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}</span><span class="lit" lang="it">${escP(dI(x))}</span>${lg === "it" ? `<span class="lz" title="Gain de compréhension de l'italien parlé une fois appris">${gainUnit(R[ri], x) ? fmtGain(gainOf(R[ri], x, "it")) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Gain d'expression en français parlé une fois appris">${gainUnit(R[ri], x) ? fmtGain(gainOf(R[ri], x, "fr")) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
     `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; };
   if (!rows.length) { $("#libList").innerHTML = `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`; return; }
   if (freq) {   // ordre purement fréquentiel : toutes classes mêlées, par tranches de 250 rangs

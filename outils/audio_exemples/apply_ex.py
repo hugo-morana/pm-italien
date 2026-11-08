@@ -14,20 +14,27 @@ def pack(name, items):
     pi = next((i for i, u in enumerate(D["packs"]) if u.split("?")[0] == name), None)
     if pi is None: D["packs"].append(url); pi = len(D["packs"]) - 1
     else: D["packs"][pi] = url
-    for x, f, off, ln in refs: x[f] = [pi, off, ln]
+    for x, f, off, ln in refs:
+        if callable(f): f([pi, off, ln])
+        else: x[f] = [pi, off, ln]
+NH = {(a, b, c) for a, b, c, *_ in json.load(open(S + "../non_hp.json"))}   # sons Anki (autre voix) à remplacer
 ne = nw = 0
 for r in D["rooms"]:
     ex, wd = [], []
-    for x in r["niches"]:
+    for ni, x in enumerate(r["niches"]):
         if not x: continue
         if x.get("frp"): x["ae"], x["ap"] = x.get("af"), x.get("ai"); continue
         for L, k, f in (("fr", "efr", "ae"), ("it", "eit", "ap")):
             fn = M[L].get(clean(x.get(k)))
             if fn: ex.append((x, f, fn))
         for L, k, f in (("fr", "fr", "af"), ("it", "it", "ai")):
-            if not x.get(f) or (isinstance(x.get(f), list) and D["packs"][x[f][0]].startswith("audio/w29_")):
+            if not x.get(f) or (r["id"], ni, f) in NH or (isinstance(x.get(f), list) and D["packs"][x[f][0]].startswith("audio/w29_")):
                 fn = M[L].get(say(x[k]))
                 if fn and fn.startswith("w"): wd.append((x, f, fn))
+        for e in x.get("px") or []:
+            for L, i, j in (("fr", 0, 2), ("it", 1, 3)):
+                fn = M[L].get(clean(e[i]))
+                if e[j] and fn and fn.startswith("w"): wd.append((x, (lambda v, e=e, j=j: e.__setitem__(j, v)), fn))
     if ex: pack(f"audio/ex_{r['id']}.mp3", ex); ne += len(ex)
     if wd: pack(f"audio/w29_{r['id']}.mp3", wd); nw += len(wd)
 json.dump(D, open(P, "w"), ensure_ascii=False, separators=(",", ":"))

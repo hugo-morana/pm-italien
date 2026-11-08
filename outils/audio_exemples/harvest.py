@@ -28,5 +28,5 @@ for t in d.get("transcripts", []):
 subprocess.run(["python3", "sync_lots.py"], check=True)
 for k in got:
     lg = L[k]["L"]
-    subprocess.run(f"cd aud_{lg} && PREFIX={'exf_' if lg == 'fr' else 'exi_'} python3 cut_stt.py {k}", shell=True, check=True)
+    subprocess.run(f"cd aud_{lg} && PREFIX={('wf_' if lg == 'fr' else 'wi_') if k >= 163 else ('exf_' if lg == 'fr' else 'exi_')} python3 cut_stt.py {k}", shell=True, check=True)
 subprocess.run(["python3", "normenc.py"], check=True)

@@ -9,3 +9,4 @@
   (télécharge, découpe, normalise -18 LUFS) ; puis apply_ex.py et publier.
 - Niveau : loud.py (-18 LUFS, crête -1,5 dBFS) ; normenc.py (clips enc/) ; normpacks.py (paquets des mots, cache seg_cache/).
 - fix_after_norm.json : correction efr verbes:94 à appliquer sur data3d après normpacks.
+- 08/11 : voix Anki remplacées (lots 165-177, non_hp.json : 1 201 FR + 271 IT + 92 « autres exemples ») → paquets w29_*. Nœuds E et H passés en FR.

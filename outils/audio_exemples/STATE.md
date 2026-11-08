@@ -1,6 +1,6 @@
 # Audio des phrases d'exemple — état
 - lots.json : 163 lots (0-162) + 163/164 (mots sans voix). pair = fr, impair = it (vérifier via prompt.py).
-- FAITS : 0-27 sauf 28 ; 29 ; 163 ; 164.  À FAIRE : 28, 30-162 (~134 lots, ~450 k crédits).
+- FAITS : 0-35 sauf 36 ; 37 ; 163-177.  À FAIRE : 36, 38-162 (next.py choisit). Quota épuisé le 08/11 à 11h40 (723 000).
 - Quota ElevenLabs épuisé le 08/11 (663 000, reste 967). Reprendre quand Hugo recharge.
 - Nœuds TTS (langue FIXÉE, ne passer que `prompt`) : FR = A RdFjwrYMzsSpHKDrUB0U, B ZGWLhv6YrDCz8EPw4Z0v, C ylgPgRce8XSIgSuQzWzp,
   D 4SkVzSB5ngnFR8AzS8uU ; IT = E KbSS24qGwhvFEPSVXkNZ, F p3hz4yqnek9VHnXoBIDE, G 1EZRyPmrpIlRFhhQHO5r, H fXc7CQUx2pgKKWlwbZV8.

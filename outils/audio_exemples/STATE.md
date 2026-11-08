@@ -16,3 +16,7 @@
 ## 08/11 — lots 60–117 générés (Hugo Pro, -18 LUFS), publiés v111
 - 46 lots d'exemples restants (116, 118–162). queue.json : taken = lots faits uniquement.
 - Correction : ", Un Buco Nero." → "Un buco nero." (data3d + lots.json).
+
+## 08/11 soir — lots 116–155 générés (sauf 152, 154), publiés v113
+- Quota épuisé (1 143 000). Restent 9 lots : 152, 154, 156, 157, 158, 159, 160, 161, 162.
+- Prompts déjà prêts dans les nœuds : A=156, B=158, E=159, F=161 ; C=152, D=154, H=157 (échec quota, relancer tels quels).

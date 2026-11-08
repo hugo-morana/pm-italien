@@ -1,0 +1,11 @@
+# Audio des phrases d'exemple — état
+- lots.json : 163 lots (0-162) + 163/164 (mots sans voix). pair = fr, impair = it (vérifier via prompt.py).
+- FAITS : 0-27 sauf 28 ; 29 ; 163 ; 164.  À FAIRE : 28, 30-162 (~134 lots, ~450 k crédits).
+- Quota ElevenLabs épuisé le 08/11 (663 000, reste 967). Reprendre quand Hugo recharge.
+- Nœuds TTS (langue FIXÉE, ne passer que `prompt`) : FR = A RdFjwrYMzsSpHKDrUB0U, B ZGWLhv6YrDCz8EPw4Z0v, C ylgPgRce8XSIgSuQzWzp,
+  D 4SkVzSB5ngnFR8AzS8uU ; IT = E KbSS24qGwhvFEPSVXkNZ, F p3hz4yqnek9VHnXoBIDE, G 1EZRyPmrpIlRFhhQHO5r, H fXc7CQUx2pgKKWlwbZV8.
+- Boucle (max 5 TTS simultanés) : prompt.py k ; update_node(prompt) ; run (generations_count 1) ; quand fini :
+  transcribe connect_from = nœud TTS ; get_flow_run_status(sessions TTS + transcriptions) ; `python3 harvest.py last`
+  (télécharge, découpe, normalise -18 LUFS) ; puis apply_ex.py et publier.
+- Niveau : loud.py (-18 LUFS, crête -1,5 dBFS) ; normenc.py (clips enc/) ; normpacks.py (paquets des mots, cache seg_cache/).
+- fix_after_norm.json : correction efr verbes:94 à appliquer sur data3d après normpacks.

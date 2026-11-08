@@ -899,8 +899,8 @@ function visitSay() {
     const seq = [], add = (k, item) => { if (!prefs[k]) return; const n = hf.on ? Math.max(1, Math.min(5, (prefs.hfRep || {})[k] || 1)) : 1; for (let i = 0; i < n; i++) seq.push(item); };
     add("vF", [x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", "fr"]);
     add("vI", [x.it, asrc(x.ai, x.am), "it"]);
-    add("vEF", [x.efr, "", "fr"]);
-    add("vEI", [x.eit, x.ap || "", "it"]);
+    add("vEF", [x.efr, asrc(x.ae), "fr"]);
+    add("vEI", [x.eit, asrc(x.ap), "it"]);
     for (const [t, src, lg] of seq) { if (tok !== vsTok) break; await vsOne(t, src, lg, tok); await new Promise(r => setTimeout(r, 350)); }
     if (tok === vsTok && vsFin) { vsFin(); vsFin = null; }
   }, 450);
@@ -934,7 +934,7 @@ function ficheHTML(ri, n) {
     <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter le mot">🔊</button><span>${escP(dI(x))}</span></div>
     <div class="frw"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.fr)}" data-src="${esc(asrc(x.af))}" aria-label="Écouter le mot en français">🔊</button><span>${escP(dF(x))}</span><span class="lg">FR</span></div>
     <div class="phon"><span class="ipa" lang="it-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
-    <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(x.ap || "")}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.efr)}" aria-label="Écouter la phrase en français">🔊</button>${mark(x.efr, x.efm)}</p></div></div>
+    <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(asrc(x.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.efr)}" data-src="${esc(asrc(x.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(x.efr, x.efm)}</p></div></div>
     ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" data-src="${esc(asrc(e[3]))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(e[0])}" data-src="${esc(asrc(e[2]))}" aria-label="Écouter la phrase en français">🔊</button>${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
     <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Zipf parlé</span><span>rang ${x.rk} · occ./100 M</span></span>${zipfBar("FR", x.zf, x.of, x.ax)}${zipfBar("IT", x.zi, x.oi, x.ax)}</div>
     <dl>
@@ -1561,15 +1561,15 @@ function sayQuestion(q) {   // lit la question à son affichage (réglage « Lir
   if (!prefs.sayQ || !q) return; const x = R[q.ri].niches[q.n];
   if (q.ty === "fr") speak(x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", null, "fr");
   else if (q.ty === "it" || q.ty === "img" || q.ty === "suite" || q.ty === "chaine") speak(x.it, asrc(x.ai, x.am));
-  else if (q.ty === "phit") speak(x.eit, asrc(null, x.ap));
-  else if (q.ty === "phfr") speak(x.efr, "", null, "fr");
+  else if (q.ty === "phit") speak(x.eit, asrc(x.ap));
+  else if (q.ty === "phfr") speak(x.efr, asrc(x.ae), null, "fr");
 }
 function sayAnswer(q) {   // lit la réponse quand on la découvre (réglage « Lire la réponse »)
   if (!prefs.sayA || !q) return; const x = R[q.ri].niches[q.n];
   if (q.ty === "fr" || q.ty === "num" || q.ty === "img") speak(x.it, asrc(x.ai, x.am));
   else if (q.ty === "it" || q.ty === "aud") speak(x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", null, "fr");
-  else if (q.ty === "phit") speak(x.efr, "", null, "fr");
-  else if (q.ty === "phfr") speak(x.eit, asrc(null, x.ap));
+  else if (q.ty === "phit") speak(x.efr, asrc(x.ae), null, "fr");
+  else if (q.ty === "phfr") speak(x.eit, asrc(x.ap));
   else if ((q.ty === "suite" || q.ty === "chaine") && q.target) { const y = R[q.target.r].niches[q.target.n]; speak(y.it, asrc(y.ai, y.am)); }
 }
 function renderTMode() {
@@ -1728,7 +1728,7 @@ function bindUI() {
     if (t.closest("[data-reveal]")) return reveal();
     if (t.closest("[data-grade]")) return onGrade(t.closest("[data-grade]").dataset.grade === "1");
     if (t.closest("[data-mic]")) return startMic();
-    if (t.closest("[data-say-ph]")) { const x = R[quizState.q.ri].niches[quizState.q.n]; return speak(x.eit, asrc(null, x.ap)); }
+    if (t.closest("[data-say-ph]")) { const x = R[quizState.q.ri].niches[quizState.q.n]; return speak(x.eit, asrc(x.ap)); }
     if (t.closest("[data-next]")) return learnNext();
     if (t.closest("[data-say-q]")) { const q = quizState.q, x = q.target && quizState.revealed ? R[q.target.r].niches[q.target.n] : R[q.ri].niches[q.n]; return speak(x.it, asrc(x.ai, x.am)); }
     if (t.closest("[data-zoomq]")) return setZoom((st.zoom + 1) % 3);

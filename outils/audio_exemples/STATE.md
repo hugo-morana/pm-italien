@@ -12,3 +12,7 @@
 - 08/11 : voix Anki remplacées (lots 165-177, non_hp.json : 1 201 FR + 271 IT + 92 « autres exemples ») → paquets w29_*. Nœuds E et H passés en FR.
 - 08/11 14h : 149 exemples FR mal formés « X » · Y corrigés (préfixe retiré dans data3d et lots.json) ; souvent la phrase n'illustre pas le mot (à signaler / revoir).
 - Attente TTS : utiliser Bash run_in_background `sleep 100` plutôt que poller le statut TTS seul (sortie énorme).
+
+## 08/11 — lots 60–117 générés (Hugo Pro, -18 LUFS), publiés v111
+- 46 lots d'exemples restants (116, 118–162). queue.json : taken = lots faits uniquement.
+- Correction : ", Un Buco Nero." → "Un buco nero." (data3d + lots.json).

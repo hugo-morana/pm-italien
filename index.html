@@ -87,6 +87,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 .ex p { margin:0 }
 .exit { font-weight:600 }
 .exfr { color:var(--muted); font-style:italic; font-size:14px }
+#quiz .qex { margin:8px 0 4px; padding-top:8px; border-top:1px solid var(--line) }
 .more-ex summary { cursor:pointer; font-size:14px; color:var(--muted); margin:2px 0 6px }
 .more-ex .ex { margin:8px 0 }
 .more-ex .exit { font-weight:500 }
@@ -374,6 +375,8 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h3>Réponse</h3>
   <div class="pills" role="group" aria-label="Mode de réponse"><button class="pill" type="button" data-inmode="aucun">Aucune · je m'auto-évalue</button><button class="pill" type="button" data-inmode="clavier">Clavier · je tape</button><button class="pill" type="button" data-inmode="voix">Voix · je parle</button></div>
   <p class="pr" id="inModeTxt" style="margin:0"></p>
+  <div class="pills" role="group" aria-label="Exemple à la révélation"><button class="pill" type="button" data-sayopt="showEx">📖 Afficher l'exemple avec la réponse</button></div>
+  <p class="pr" style="margin:0">Quand tu découvres la réponse, la phrase d'exemple de la niche s'affiche dessous, en italien et en français, avec ses boutons d'écoute.</p>
   <h3>Voix</h3>
   <div class="pills" role="group" aria-label="Lecture audio pendant les tests"><button class="pill" type="button" data-sayopt="sayQ">🔊 Lire la question</button><button class="pill" type="button" data-sayopt="sayA">🔊 Lire la réponse</button></div>
   <p class="pr" style="margin:0">La question est lue dès qu'elle s'affiche (le mot ou la phrase à traduire, dans sa langue) ; la réponse est lue quand tu la découvres.</p>
@@ -1001,7 +1004,7 @@ function spUnlock() {
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, vF: true, vI: true, vEF: false, vEI: false, recul: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, showEx: true, vF: true, vI: true, vEF: false, vEI: false, recul: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 // lecture du mot FR et du mot IT pendant la visite : activée par défaut (appliquée une fois aux réglages déjà enregistrés)
 if (!prefs.vDef1) { prefs.vF = true; prefs.vI = true; prefs.vDef1 = 1; }
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
@@ -1413,6 +1416,7 @@ function revealCore() {
   if (q.ty === "suite" || q.ty === "chaine") goTo(q.target.r, q.target.n, { thread: true }); else { goTo(q.ri, q.n); placeRing(q.ri, q.n); }
   renderFiche();
   $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${escP(dI(shown))}</span><span>${escP(dF(shown))} · <span class="mono">${String(q.ty === "suite" || q.ty === "chaine" ? q.target.n : q.n).padStart(2, "0")}</span></span><span class="exfr">${esc(shown.sc)}</span>${extra}</div>
+    ${prefs.showEx !== false && shown.eit ? `<div class="ex qex"><button class="say" type="button" data-say="${esc(shown.eit)}" data-src="${esc(asrc(shown.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(shown.eit, shown.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(shown.efr)}" data-src="${esc(asrc(shown.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(shown.efr, shown.efm)}</p></div></div>` : ""}
     ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta réponse correspond." : "Ta réponse ne correspond pas."}</span>`}
     ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
       ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-q>🔊</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`

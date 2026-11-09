@@ -1012,7 +1012,7 @@ function spUnlock() {
 const PAL = ["classe", "freq", "freqit", "theme"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const PK = k => PAL === "classe" ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, showEx: true, vF: true, vI: true, vEF: false, vEI: false, recul: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, showEx: true, vF: true, vI: true, vEF: true, vEI: true, recul: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 // lecture du mot FR et du mot IT pendant la visite : activée par défaut (appliquée une fois aux réglages déjà enregistrés)
 if (!prefs.vDef1) { prefs.vF = true; prefs.vI = true; prefs.vDef1 = 1; }
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
@@ -1571,6 +1571,7 @@ async function renderCurve() {
 
 /* ============ Feuilles : tests, plan ============ */
 function closeSheets() { document.querySelectorAll(".sheet").forEach(s => s.hidden = true); }
+if ((prefs.pv || 0) < 2) { prefs.vEF = true; prefs.vEI = true; prefs.pv = 2; try { ls.set("prefs", prefs); } catch {} }   // nov. 2026 : exemples FR/IT lus par défaut pendant la visite
 function savePrefs() { ls.set("prefs", prefs); if (PAL !== "classe") ls.set(PK("prefs"), { rooms: prefs.rooms, decs: prefs.decs }); }
 const INTXT = { aucun: "Pas de saisie : tu révèles la réponse puis tu dis toi-même si c'était réussi ou raté.",
   clavier: "Tu tapes ta réponse ; elle est corrigée automatiquement (petites fautes tolérées). Tu peux toujours corriger le verdict.",

@@ -87,6 +87,8 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 .ex p { margin:0 }
 .exit { font-weight:600 }
 .exfr { color:var(--muted); font-style:italic; font-size:14px }
+.qq .qitem { display:block; margin-top:4px; font-size:1.15em; font-weight:600; color:var(--accent) }
+.note { width:100%; box-sizing:border-box; font:14px/1.4 var(--body); color:var(--fg); background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:6px 8px; resize:vertical; -webkit-user-select:text; user-select:text; touch-action:auto }
 #quiz .qex { margin:8px 0 4px; padding-top:8px; border-top:1px solid var(--line) }
 .more-ex summary { cursor:pointer; font-size:14px; color:var(--muted); margin:2px 0 6px }
 .more-ex .ex { margin:8px 0 }
@@ -478,7 +480,11 @@ const ls = { get(k, d) { try { const v = localStorage.getItem("pmit:" + k); retu
 const today = () => Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
 const norm = s => String(s || "").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/\(.*?\)/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\b(il|lo|la|i|gli|le|l|un|una|uno|le|les|de|du|des)\b/g, " ").replace(/\s+/g, " ").trim();
 function toast(t) { const e = $("#toast"); e.textContent = t; e.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => e.hidden = true, 2200); }
-function mark(s, m) { if (!m) return esc(s); const k = s.toLowerCase().indexOf(m.toLowerCase()); return k < 0 ? esc(s) : esc(s.slice(0, k)) + "<mark>" + esc(s.slice(k, k + m.length)) + "</mark>" + esc(s.slice(k + m.length)); }
+function mark(s, m) {   // m : un ou plusieurs segments « a|b|c » surlignés dans l'ordre (mot fixe + paramètres [v], [n]…)
+  if (!m) return esc(s); const L = s.toLowerCase(); let out = "", at = 0;
+  for (const seg of m.split("|")) { if (!seg) continue; const k = L.indexOf(seg.toLowerCase(), at); if (k < 0) continue; out += esc(s.slice(at, k)) + "<mark>" + esc(s.slice(k, k + seg.length)) + "</mark>"; at = k + seg.length; }
+  return out + esc(s.slice(at));
+}
 const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
 /* ============ État ============ */
@@ -945,9 +951,11 @@ function ficheHTML(ri, n) {
     ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" data-src="${esc(asrc(e[3]))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(e[0])}" data-src="${esc(asrc(e[2]))}" aria-label="Écouter la phrase en français">🔊</button>${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
     <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Gain une fois appris</span><span>${x.rk != null ? "rang " + x.rk + " · " : ""}occ./100 M</span></span>${gainBar("Compréhension IT", gainOf(R[ri], x, "it"), gainUnit(R[ri], x), x.oi, x.ax)}${gainBar("Expression FR", gainOf(R[ri], x, "fr"), gainUnit(R[ri], x), x.of, x.ax)}</div>
     <dl>
-      <div><dt>Mot-clé</dt><dd><em>${esc(x.mc)}</em></dd></div>
+      <div><dt>Mnémo</dt><dd><em>${esc(x.mc)}</em></dd></div>
       <div><dt>Scène</dt><dd>${esc(x.sc)}</dd></div>
       <div><dt>Décryptage</dt><dd class="exfr">${esc(x.de)}</dd></div>
+      ${x.cm ? `<div><dt>Commentaire</dt><dd class="exfr">${esc(x.cm)}</dd></div>` : ""}
+      <div><dt>Ma note</dt><dd><textarea class="note" data-note="${esc(noteKey(x))}" rows="2" placeholder="Ajouter une précision, un souvenir, une nuance…">${esc(NOTES[noteKey(x)] || "")}</textarea></dd></div>
       ${x.fo ? `<div><dt>Formes</dt><dd class="exfr">${esc(x.fo)}</dd></div>` : ""}
       ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter avec tes propres mots. qn / qcn = quelqu'un (qualcuno), qc / qcs = quelque chose (qualcosa), qqpart = quelque part (da qualche parte) ; « faire / fare » tient la place de n'importe quel verbe, à la forme voulue (fait, fera, fasse, fait au participe… / fa, farà, faccia, fatto…)." : x.k === "col" ? "Collocation : une association de mots que l'italien préfère. Le sens se devine, mais c'est cette combinaison qu'on emploie (et pas une autre)." : x.k === "loc" ? `Locution ${LOCLAB[x._cls || famOf(R[ri])] || ""} : plusieurs mots qui fonctionnent ensemble comme un seul ${CLSING[x._cls || famOf(R[ri])] || "mot"}.` : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
       ${x.co && x.co.length ? `<div><dt>Collocations</dt><dd class="colls">${x.co.map(([c, f, inp]) => `<button class="say colc${inp ? " inp" : ""}" type="button" data-say="${esc(c)}" data-src="" title="${inp ? "déjà dans le palais · " : ""}${Math.round(f).toLocaleString("fr-FR")} fois / 100 M mots">${esc(c)}${inp ? " ✓" : ""}</button>`).join("")}<span class="exfr" style="display:block;font-size:12px;margin-top:2px">Les associations les plus fréquentes dans les sous-titres ; ✓ = déjà dans le palais. Touche pour écouter.</span></dd></div>` : ""}
@@ -1089,8 +1097,16 @@ function migrateRoomRefs(from) {   // salles fusionnées ou déplacées : pièce
     if (pos) { const w = where(pos.r, pos.n); ls.set("pos", w ? Object.assign(pos, { r: w[0], n: w[1] }) : { r: 0, n: 0, zoom: 0 }); }
   });
 }
+/* Notes personnelles par niche : clé stable (fr|it) pour survivre aux re-tris ; locale + compte */
+let NOTES = ls.get("notes", {});
+const noteKey = x => (x.fr || "") + "|" + (x.it || "");
+function saveNote(k, v) {
+  v = v.trim(); if (v) NOTES[k] = v; else delete NOTES[k]; ls.set("notes", NOTES);
+  clearTimeout(store.timers.notes); store.timers.notes = setTimeout(() => remoteSet("notes", { notes: NOTES, maj: Date.now() }), 800);
+}
 async function afterLogin() { // fusion de la progression locale et distante, puis envoi
   await loadHist();
+  { const rn = await remoteGet("notes"); if (rn && rn.notes) { NOTES = Object.assign({}, rn.notes, NOTES); ls.set("notes", NOTES); } if (Object.keys(NOTES).length) remoteSet("notes", { notes: NOTES, maj: Date.now() }); }
   const rev = DATA.rev || 1, meta = await remoteGet("meta"), from = (meta && meta.rev) || 1, remAll = {};
   if (meta && meta.reset && meta.reset > ls.get("resetAt", 0)) {   // progression effacée depuis un autre appareil : on oublie aussi la copie locale
     for (const id of allRoomIds()) ls.set("srs_" + id, {}); ls.set("hist", []); HIST = []; ls.set("resetAt", meta.reset); store.cache = {};
@@ -1248,8 +1264,8 @@ function ask(q) {
   const IM = prefs.inMode || "clavier"; let text = "", input = IM !== "aucun", mask = q.n; quizState.hideFr = false;
   if (q.ty === "num") text = `${room} · emplacement ${num} : quel mot ?`;
   if (q.ty === "img") { text = `Où se trouve « ${dI(x)} » (${dF(x)}) ? Donne le numéro.`; mask = null; }
-  if (q.ty === "fr") text = `Traduis : ${dF(x)}`;
-  if (q.ty === "it") { text = `Que veut dire : ${dI(x)} ?`; quizState.hideFr = true; mask = null; }
+  if (q.ty === "fr") text = `Traduis :\n${dF(x)}`;
+  if (q.ty === "it") { text = `Que veut dire ?\n${dI(x)}`; quizState.hideFr = true; mask = null; }
   if (q.ty === "aud") { text = "Écoute, puis donne le sens en français."; quizState.hideFr = true; }
   if (q.ty === "phit") { text = `Traduis en français : « ${x.eit} »`; quizState.hideFr = true; mask = null; }
   if (q.ty === "phfr") { text = `Traduis en italien : « ${x.efr} »`; mask = null; }
@@ -1259,7 +1275,7 @@ function ask(q) {
   st.zoom = 0; goTo(q.ri, focusN, { mask, dur: .45 }); if (q.ty === "img") { ring.visible = arrow.visible = false; }
   $("#quiz").hidden = false;
   $("#quiz").innerHTML = `<div class="qh"><span>${esc(TYPES.find(t => t[0] === q.ty)[1].toUpperCase())}${quizState.list.length ? ` · ${quizState.idx + 1}/${quizState.list.length}` : ""}</span><span class="spacer"></span><button class="chip" type="button" data-quit>Quitter le test</button></div>
-    <div class="qq">${escP(text)}</div>
+    <div class="qq">${text.split("\n").map((t, i) => i ? `<span class="qitem">${escP(t)}</span>` : escP(t)).join("")}</div>
     ${q.ty === "aud" ? `<div class="btns"><button class="btn" type="button" data-say-q>🔊 Réécouter</button></div>` : ""}
     ${q.ty === "phit" ? `<div class="btns"><button class="btn alt" type="button" data-say-ph>🔊 Écouter la phrase</button></div>` : ""}
     ${input ? `<input id="rep" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${IM === "voix" ? "Touche 🎤 et parle (ou dicte au clavier)" : "Ta réponse"}" lang="${repLang(q.ty).slice(0, 2)}">` : ""}
@@ -1395,8 +1411,8 @@ function revealPhrase(q, x, reps) {
   $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${esc(x.eit)}</span><span>${esc(x.efr)}</span><span class="exfr">mot de la niche : ${escP(dI(x))} · ${escP(dF(x))}</span></div><div id="phWords" class="phw-box"><span class="pr">…</span></div>
     ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta traduction correspond." : "Ta traduction ne correspond pas."}</span>`}
     ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
-      ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-ph>🔊</button></div>`
-      : `<div class="btns"><button class="btn ${okGuess ? "ok" : "ko"}" type="button" data-grade="${okGuess ? 1 : 0}" data-suggest>Continuer · ${okGuess ? "réussi" : "raté"}</button><button class="btn alt" type="button" data-grade="${okGuess ? 0 : 1}">Compter ${okGuess ? "raté" : "réussi"}</button><button class="btn alt" type="button" data-say-ph>🔊</button></div>`}`;
+      ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-a>🔊 Réponse</button></div>`
+      : `<div class="btns"><button class="btn ${okGuess ? "ok" : "ko"}" type="button" data-grade="${okGuess ? 1 : 0}" data-suggest>Continuer · ${okGuess ? "réussi" : "raté"}</button><button class="btn alt" type="button" data-grade="${okGuess ? 0 : 1}">Compter ${okGuess ? "raté" : "réussi"}</button><button class="btn alt" type="button" data-say-a>🔊 Réponse</button></div>`}`;
   fillPhraseWords(q, x);
 }
 
@@ -1419,8 +1435,8 @@ function revealCore() {
     ${prefs.showEx !== false && shown.eit ? `<div class="ex qex"><button class="say" type="button" data-say="${esc(shown.eit)}" data-src="${esc(asrc(shown.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(shown.eit, shown.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(shown.efr)}" data-src="${esc(asrc(shown.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(shown.efr, shown.efm)}</p></div></div>` : ""}
     ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta réponse correspond." : "Ta réponse ne correspond pas."}</span>`}
     ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
-      ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-q>🔊</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`
-      : `<div class="btns"><button class="btn ${okGuess ? "ok" : "ko"}" type="button" data-grade="${okGuess ? 1 : 0}" data-suggest>Continuer · ${okGuess ? "réussi" : "raté"}</button><button class="btn alt" type="button" data-grade="${okGuess ? 0 : 1}">Compter ${okGuess ? "raté" : "réussi"}</button><button class="btn alt" type="button" data-say-q>🔊</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`}`;
+      ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-a>🔊 Réponse</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`
+      : `<div class="btns"><button class="btn ${okGuess ? "ok" : "ko"}" type="button" data-grade="${okGuess ? 1 : 0}" data-suggest>Continuer · ${okGuess ? "réussi" : "raté"}</button><button class="btn alt" type="button" data-grade="${okGuess ? 0 : 1}">Compter ${okGuess ? "raté" : "réussi"}</button><button class="btn alt" type="button" data-say-a>🔊 Réponse</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`}`;
 }
 async function onGrade(ok) {
   const q = quizState.q; quizState.stats[ok ? "ok" : "ko"]++;
@@ -1573,8 +1589,8 @@ function sayQuestion(q) {   // lit la question à son affichage (réglage « Lir
   else if (q.ty === "phit") speak(x.eit, asrc(x.ap));
   else if (q.ty === "phfr") speak(x.efr, asrc(x.ae), null, "fr");
 }
-function sayAnswer(q) {   // lit la réponse quand on la découvre (réglage « Lire la réponse »)
-  if (!prefs.sayA || !q) return; const x = R[q.ri].niches[q.n];
+function sayAnswer(q, force) {   // lit la réponse quand on la découvre (réglage « Lire la réponse ») ; force : bouton « 🔊 Réponse »
+  if ((!prefs.sayA && !force) || !q) return; const x = R[q.ri].niches[q.n];
   if (q.ty === "fr" || q.ty === "num" || q.ty === "img") speak(x.it, asrc(x.ai, x.am));
   else if (q.ty === "it" || q.ty === "aud") speak(x.fr.replace(/ \/ /g, ", "), x.af ? asrc(x.af) : "", null, "fr");
   else if (q.ty === "phit") speak(x.efr, asrc(x.ae), null, "fr");
@@ -1715,6 +1731,7 @@ function bindUI() {
   addEventListener("pointerdown", e => { if (hf.on && !e.target.closest("#hfBtn, #drawer")) hfSet(false); }, true);
   addEventListener("keydown", () => { if (hf.on) hfSet(false); }, true);
   document.addEventListener("visibilitychange", () => { if (hf.on && document.visibilityState === "visible" && navigator.wakeLock) navigator.wakeLock.request("screen").then(l => hf.lock = l).catch(() => {}); });
+  document.addEventListener("input", e => { const t = e.target.closest("textarea[data-note]"); if (t) saveNote(t.dataset.note, t.value); });
   document.addEventListener("change", e => { const b = e.target.closest("[data-hfrep]"); if (!b) return; prefs.hfRep = Object.assign({}, prefs.hfRep, { [b.dataset.hfrep]: +b.value }); savePrefs(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-hfpause]"); if (!b) return; prefs.hfPause = +b.dataset.hfpause; savePrefs(); renderSayOpts(); });
   $("#eye").onclick = () => { st.ui = !st.ui; document.body.classList.toggle("hidden-ui", !st.ui); $("#eye").setAttribute("aria-label", st.ui ? "Masquer les menus" : "Afficher les menus"); measureDrawer(); setTimeout(onResize, 50); };
@@ -1739,6 +1756,7 @@ function bindUI() {
     if (t.closest("[data-mic]")) return startMic();
     if (t.closest("[data-say-ph]")) { const x = R[quizState.q.ri].niches[quizState.q.n]; return speak(x.eit, asrc(x.ap)); }
     if (t.closest("[data-next]")) return learnNext();
+    if (t.closest("[data-say-a]")) return sayAnswer(quizState.q, true);
     if (t.closest("[data-say-q]")) { const q = quizState.q, x = q.target && quizState.revealed ? R[q.target.r].niches[q.target.n] : R[q.ri].niches[q.n]; return speak(x.it, asrc(x.ai, x.am)); }
     if (t.closest("[data-zoomq]")) return setZoom((st.zoom + 1) % 3);
   });
@@ -1794,7 +1812,7 @@ function bindUI() {
   $("#goTest").onclick = () => startAuto();
   // clavier
   addEventListener("keydown", e => {
-    if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+    if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT" || e.target.tagName === "TEXTAREA") return;
     if (st.mode === "free") { free.keys[e.code] = true; return; }
     if (e.key === "ArrowRight") $("#nx").click(); if (e.key === "ArrowLeft") $("#pv").click();
     if (e.key === "PageDown") $("#nd").click(); if (e.key === "PageUp") $("#pd").click();

@@ -117,11 +117,31 @@ def det_fr(s):
     alts = [addn(a) for a in main.split(" / ")]
     if suf: alts = [a if a.endswith(("-ci", "-là")) else a + "-" + suf for a in alts]
     return " / ".join(alts) + (" ?" if q else "") + (f" ({rest})" if rest else "")
+
+# --- adverbes de degré (devant un adjectif), négations, prépositions
+ADJ_ADV = ["più", "troppo", "meno", "abbastanza", "alquanto", "piuttosto", "poco", "estremamente", "particolarmente", "terribilmente",
+           "incredibilmente", "relativamente", "eccessivamente", "sufficientemente", "infinitamente", "leggermente", "notevolmente", "ragionevolmente"]
+SPECIAL = {("molto", "très / beaucoup"): ("molto [adj]", "très [adj] / [v] beaucoup"), ("talmente (così)", "tellement"): ("talmente [adj] (così [adj])", "tellement [adj]"),
+           ("proprio / davvero", "drôlement (très)"): ("proprio [adj] / davvero [adj]", "drôlement [adj] (très)"), ("iper", "hyper"): ("iper[adj]", "hyper [adj]"),
+           ("non", "pas"): ("non [v]", "[v] pas"), ("non", "ne… pas"): ("non [v]", "ne [v] pas"), ("mai", "jamais"): ("non [v] mai", "ne [v] jamais"), ("affatto", "nullement"): ("non [v] affatto", "ne [v] nullement"),
+           ("mica", "pas du tout (familier)"): ("non [v] mica", "ne [v] pas du tout (familier)"), ("più", "plus (davantage)"): ("più [adj]", "plus [adj] (davantage)"),
+           ("prima (di)", "avant"): ("prima di [n]", "avant [n]"), ("davanti (a)", "devant"): ("davanti a [n]", "devant [n]"), ("fuori (da)", "hors de"): ("fuori da [n]", "hors de [n]"),
+           ("da (fin da)", "dès"): ("da [n] (fin da [n])", "dès [n]"), ("fra", "entre, parmi (variante de tra)"): ("fra [n]", "entre [n], parmi [n] (variante de tra)")}
+def prep_fr(s):
+    m = re.match(r"^(.*?)\s*(\([^()]*\))?$", s); return " / ".join(addn(a) for a in m.group(1).split(" / ")) + (" " + m.group(2) if m.group(2) else "")
+def adv_prep(r, x):
+    k = (x["it"], x["fr"])
+    if k in SPECIAL: return SPECIAL[k]
+    if r["fam"] == "prepositions" and not x.get("k") and len(x["it"].split()) <= 3 and "qcs" not in x["it"]: return det_it(x["it"]), prep_fr(x["fr"])
+    if r["fam"] == "adverbes" and not x.get("k") and x["it"] in ADJ_ADV: return det_it(x["it"], "adj"), det_it(x["fr"], "adj")
+    return None
 nt = nd = 0; ex = []
 for r in D["rooms"]:
     for n, x in enumerate(r["niches"]):
         if not x: continue
         x.pop("frd", None); x.pop("itd", None)
+        if x.get("frp"):   # patrons syntaxiques : schéma fourni tel quel
+            x["frd"], x["itd"] = x["frp"], x["itp"]; continue
         for L in ("fr", "it"):   # points de suspension perdus (« neC pas » pour « ne… pas »)
             if re.search(r"[a-zàèéìòù]C(\b| )", x[L]) and x[L] != "la série TV": x[L] = re.sub(r"(?<=[a-zàèéìòù])C(?=\b| |$)", "…", x[L])
         if x["fr"] == "combiene ? (quanto, féminin)": x["fr"] = "combien (de) ? (quanto, féminin)"
@@ -135,6 +155,8 @@ for r in D["rooms"]:
             if w in DET_IT or POSS.match(w): fd, id_ = det_fr(x["fr"]), det_it(x["it"]); nd += 1
         if r["fam"] == "pronoms" and not x.get("k") and re.sub(r"\(.*?\)", "", x["it"]).strip() in CLIT: fd, id_ = cl_fr(x["fr"]), det_it(x["it"], "v"); nd += 1
         if x["it"] == "questo o quell'oggetto": id_ = "questo o quell'[n]"
+        ap = adv_prep(r, x)
+        if ap and not x.get("itd") and id_ == x["it"]: id_, fd = ap; nd += 1
         NEG = {"ne… pas": "ne [v] pas", "ne… plus": "ne [v] plus", "nessuno… più": None}
         if r["id"].startswith("adverbes") and x["fr"] in ("ne… pas", "ne… plus"): fd = x["fr"].replace("…", " [v]")
         if r["id"].startswith("adverbes") and x["it"] == "non… più": id_ = "non [v] più"

@@ -1,0 +1,100 @@
+verbes:0|est-ce rêve ?|Un dormeur flotte au-dessus de son lit, ébloui d'être là : « Est-ce rêve ? » — Oui, il EST, il est bien vivant : être.
+prepositions:0|dis !|Une fillette tire la manche de sa mère devant une vitrine : « Dis ! c'est la maison DE qui ? »
+verbes:1|avare|Un avare a tout : il serre contre lui un coffre qui déborde et ricane : « J'AI, j'ai, j'ai tout ! » — avoir.
+pronoms:0|yo-yo|Un yo-yo marqué « JE » remonte toujours vers la main de son maître : moi, moi, moi.
+adverbes:0|nonne|Une nonne traverse la neige en laissant des traces de PAS, l'index levé : « NON, pas ça ! »
+adverbes:1|nonne|Une nonne pose le pied sur la dalle du couvent et fait un PAS en arrière : « C'est NON, pas ça ! »
+adjectifs:0|la (note)|Une diva au féminin tient la note « LA » : seule devant le micro, LA chanteuse.
+pronoms:1|toux|Quelqu'un tousse dans ton dos ; tu te retournes : « C'est TOI, TU tousses ! »
+pronoms:2|voix|Un chœur entier chante à pleine VOIX vers le public : « VOUS, tous ! »
+pronoms:3|laid|Un majordome très poli s'incline devant un marquis LAID comme un pou : « VOUS désirez, monsieur ? »
+pronoms:4|vie|Un vieux sage lève son verre : « À VOUS, longue VIE ! »
+conjonctions:0|hé !|Deux amis bras dessus bras dessous : « HÉ, toi ET moi ! »
+prepositions:2|ah !|Un touriste pointe un panneau « ROMA » : « AH ! À Rome ! »
+adjectifs:1|île|Un roi pose LE pied sur une ÎLE minuscule : il plante LE drapeau, seul maître DE L'île.
+adjectifs:2|un|Un doigt levé, tout seul : UN.
+pronoms:5|Louis|Dans un bureau, une femme montre Louis, penché sur son clavier : « LUI, il bosse ! »
+pronoms:6|quai|Sur le QUAI, le livre QUE tu lisais t'échappe et tombe sur les rails.
+verbes:2|Andorre|Un randonneur, sac au dos, VA tout droit vers le panneau « ANDORRE » : il y ALLER, coûte que coûte.
+verbes:3|phare|Un gardien FAIT tourner la lampe du PHARE : tout ce qui se FAIT la nuit, c'est lui.
+pronoms:7|scie|Dans un atelier, ON SCIE : une foule anonyme répond en chœur « SI, on scie ! »
+pronoms:8|qu'est-ce tôt ?|Au réveil, un doigt pointe un objet bizarre sur la table : « Qu'est-ce, tôt ? — ÇA ? »
+pronoms:9|tir|Au stand de TIR, une flèche file vers TOI : « Je TE vise ! »
+prepositions:5|père|Un PÈRE emballe un cadeau POUR son fils.
+prepositions:6|hein ?|Un voyageur endormi se réveille : « Hein ? On est EN train ? EN France ? »
+adjectifs:3|la une|UNE femme fait la UNE du journal : sa photo étalée en première page.
+adjectifs:4|il, miaou !|Un chat se frotte à mes jambes : « MON chat ! » — il fait « mi-aou » : il mio.
+adjectifs:5|qu'est-ce, tôt ?|Au réveil, un doigt tout près d'un objet : « Qu'est-ce, tôt, CE truc-CI ? »
+adjectifs:6|quel lot !|Au loin, un doigt pointe un tas de cadeaux : « Quel lot, CE lot-LÀ ! »
+verbes:4|dire|Une bouche géante articule « DI-RE » en grosses lettres : dire, c'est pareil !
+pronoms:10|l'eau|Un gamin attrape son frère et LE jette à L'EAU : « Plouf ! »
+verbes:5|pote, hé !|Un POTE costaud soulève une voiture d'une main : « Hé ! Je PEUX ! » — pouvoir.
+pronoms:11|scie|Une SCIE maladroite SE coupe elle-même : « Aïe, je ME suis coupée ! »
+verbes:6|vole, lait !|Un enfant pousse une bouteille de lait du balcon : « VOLE, LAIT ! » — il VEUT qu'elle vole.
+pronoms:13|chaud, quai|CE QUI est CHAUD reste posé sur le QUAI : personne n'ose le toucher.
+conjonctions:1|mât|Un MÂT de bateau barre le chemin : « Je veux passer… MAIS ce mât ! »
+adjectifs:7|lot|Un zèbre gagne LE gros LOT à la loterie et brandit son ticket rayé.
+pronoms:14|mi (note)|Un pianiste frappe la note MI et la sent vibrer en MOI : « Elle ME touche ! »
+verbes:7|sapé|Un savant bien SAPÉ, costume trois pièces, SAIT toutes les réponses.
+pronoms:15|lait|ELLE boit un grand bol de LAIT, une moustache blanche sur la lèvre.
+pronoms:16|noix|NOUS cassons des NOIX ensemble autour de la table.
+pronoms:17|tchi-tchi|Un serveur NOUS sert le champagne en trinquant « tchin-tchin » : tchi !
+adverbes:3|bénit|Un prêtre BÉNIT la maison : tout ira BIEN.
+pronoms:18|tchi-tchi|Un serveur montre la terrasse : « On Y va trinquer ? Tchin-tchin ! »
+adverbes:4|nô|Un acteur de théâtre NÔ secoue son masque : NON, NON !
+adverbes:5|piou-piou|Un poussin réclame : « PLUS de grains, piou-piou ! PLUS ! »
+verbes:8|vidéo|Un œil collé à l'écran VOIT une VIDÉO en boucle.
+adjectifs:8|lait|Des fermières alignent LES bidons de LAIT : toutes LES vaches ont donné.
+prepositions:7|cône|Une glace AVEC un CÔNE, et une boule de plus AVEC.
+prepositions:8|hein ?|On frappe : « Hein ? Il y a quelqu'un DANS la maison ? »
+verbes:9|dos vert|Un débiteur au DOS VERT de honte porte sa dette sur le dos : il DOIT payer.
+pronoms:19|mée (mémé)|La mémé se désigne du doigt : « C'est MOI, la mémé ! »
+adjectifs:9|i (lettre)|Une rangée de garçons au garde-à-vous, chacun avec un point sur la tête comme LES I.
+adverbes:6|scie|« Tu ne coupes plus ? » demande-t-on à la SCIE. Elle se redresse, vexée : « SI ! »
+adjectifs:10|il tue, oh !|Un doigt pointé vers TON chien : « Il TUE, oh ! TON chien tue les poules ! »
+pronoms:21|quai|Le train QUI arrive au QUAI siffle à pleins poumons.
+adjectifs:11|dé|Plusieurs DÉS roulent sur la table : DES six partout !
+adjectifs:12|lame|Un ami barbu (L'amico) tranche LE gâteau avec une LAME : L', collé au mot.
+pronoms:22|nez|Un NEZ renifle un bocal de bonbons : « Tu EN veux ? J'EN prends ! »
+pronoms:23|l'or|ILS se ruent sur un tas d'OR : « Ils ont tout pris ! »
+adjectifs:13|lame|Une amie (L'amica) coupe LA tarte avec une LAME : L', collé au mot.
+prepositions:11|sou|Un SOU posé SUR la table, bien en évidence.
+adjectifs:14|il sue, oh !|Un coureur s'arrête : « Il SUE, oh ! SON maillot est trempé ! »
+verbes:10|venez, Nicole !|Une mère crie depuis la porte : « VENEZ, Nicole ! » et tout le monde VIENT en courant.
+pronoms:26|thé|On TE tend une tasse de THÉ : « Pour TOI ! »
+adverbes:8|qui ?|« Qui ? » — « Toi ! Viens ICI ! »
+adverbes:9|scie|Une SCIE hoche la lame de haut en bas : « OUI, oui ! »
+pronoms:27|nié, en thé|Il a tout NIÉ, EN buvant son THÉ : « Je n'ai RIEN fait ! »
+adjectifs:16|d'elle|Une carafe verse DU vin dans le verre D'ELLE.
+adjectifs:17|d'elles|Trois danseuses brandissent DES roses : « Ce sont les roses D'ELLES ! »
+adverbes:11|lit|LÀ, sur le LIT : le chat dort.
+pronoms:30|lait|On donne un grand verre de LAIT à la petite : on LUI sert à boire.
+adverbes:12|perche, quai|POURQUOI une PERCHE plantée sur le QUAI ? Personne ne sait.
+verbes:12|parloir|Deux prisonniers PARLENT au PARLOIR, de chaque côté de la vitre.
+noms:0|Cosaque|Un COSAQUE danse en jonglant avec une CHOSE mystérieuse marquée d'un point d'interrogation.
+pronoms:31|Louis|Dans une foule, un doigt désigne Louis : « LUI, c'est LUI ! »
+verbes:13|prends des raies|Au marché, un pêcheur PREND DES RAIES à pleines mains : prendre.
+conjonctions:12|quand d'eau|QUAND le barrage cède, une vague d'EAU déferle.
+conjonctions:15|à l'aurore|À L'AURORE, ALORS le coq chante.
+verbes:14|pensée|Le Penseur de Rodin, une bulle de PENSÉE au-dessus de la tête : il PENSE.
+verbes:15|crédule|Un CRÉDULE CROIT tout ce qu'on lui dit, même que la Lune est en fromage.
+verbes:16|amarre|Deux amoureux sont AMARRÉS l'un à l'autre par une corde : ils S'AIMENT.
+conjonctions:20|sait|SI on SAIT, on gagne : un quiz, et le candidat appuie sur le buzzer.
+conjonctions:21|seau|Un SEAU parle : « SI tu as soif, bois ! »
+prepositions:16|dada|Un tableau signé « peint PAR DADA » : un cheval de bois tient encore le pinceau.
+adjectifs:20|bouh, oh non !|Un plat si BON qu'un fantôme fait « bouh ! », puis « oh non, je reprends ! »
+pronoms:34|dôme, vé|La ville OÙ un grand DÔME brille : on le repère de loin.
+conjonctions:22|oh !|Une vigie hésite entre deux îles : « Oh ! celle-ci OU celle-là ? »
+adjectifs:21|Della|Tante DELLA plonge les mains dans DE LA farine (della farina).
+adverbes:20|mole, tôt|Le beurre est déjà MOLle, TÔT le matin : il fait TRÈS chaud.
+adjectifs:22|lys|Lily, la maîtresse, offre un LYS à chacun DES élèves en rang : LES oncles, LES étudiants (gli zii, gli studenti).
+verbes:18|bisou, gnon|IL FAUT choisir : un BISOU ou un GNON ?
+verbes:19|passe, sa raie|Un poissonnier PASSE sa raie par-dessus le comptoir : passer.
+verbes:20|succède|Les catastrophes SE SUCCÈDENT : qu'est-ce qui SE PASSE ?
+verbes:21|trouvère|Un TROUVÈRE TROUVE un trésor caché sous son luth.
+adverbes:22|hanche|Moi AUSSI, j'ai mal à la HANCHE !
+adverbes:24|mai|En MAI, JAMAIS de neige.
+adjectifs:23|alcool|QUELQUES bouteilles d'ALCOOL sur l'étagère, pas plus.
+verbes:22|aspic|Un ASPIC ATTEND patiemment, enroulé autour d'une montre.
+adjectifs:25|vos trophées|L'équipe adverse brandit VOS TROPHÉES : « VOTRE coupe, merci ! »
+verbes:23|arrivée|Un coureur franchit la ligne d'ARRIVÉE : il ARRIVE !

@@ -66,13 +66,13 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 #dhead .n { font:500 13px var(--mono); border:3px solid var(--fc,#ccc); border-radius:4px; padding:1px 6px; font-variant-numeric:tabular-nums }
 #dhead .t { flex:1; min-width:0; display:flex; flex-direction:column }
 #dhead .t span:first-child { font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
-#dhead .t span:last-child { font:600 18px/1.1 var(--display); color:var(--accent); overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+#dhead .t span:last-child { font:600 17px/1.15 var(--body); color:var(--accent); overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
 #dhead .chev { color:var(--muted); transition:transform .2s }
 #drawer.open #dhead .chev { transform:rotate(180deg) }
 #dbody { overflow-y:auto; padding:0 max(16px, env(safe-area-inset-right,0px)) 16px max(16px, env(safe-area-inset-left,0px)); -webkit-user-select:text; user-select:text; touch-action:pan-y }
 #dbody[hidden] { display:none }
 .fiche { max-width:680px; margin:0 auto; display:flex; flex-direction:column; gap:10px }
-.big-it { display:flex; align-items:center; gap:10px; font:600 32px/1.05 var(--display); color:var(--accent); letter-spacing:.02em }
+.big-it { display:flex; align-items:center; gap:10px; font:600 28px/1.1 var(--body); color:var(--accent); letter-spacing:.02em }
 .say { width:36px; height:36px; flex:none; border-radius:50%; border:1px solid var(--line); background:var(--bg); font-size:16px; line-height:1 }
 .say.on { border-color:var(--accent) }
 .say.colc { width:auto; height:auto; border-radius:999px; padding:2px 9px; margin:0 4px 4px 0; font:13px/1.5 var(--body, inherit); font-style:italic }
@@ -174,7 +174,7 @@ details.prev summary { font:500 11px var(--mono); color:var(--muted); cursor:poi
 #quiz .qq { font:600 22px/1.2 var(--display); text-wrap:balance }
 .ph { color:var(--muted); font-weight:500; font-family:var(--mono); font-size:.72em; letter-spacing:0; white-space:nowrap }
 #quiz .qa { font-size:15px; display:flex; flex-direction:column; gap:4px }
-#quiz .qa .it { font:600 26px/1.1 var(--display); color:var(--accent) }
+#quiz .qa .it { font:600 24px/1.15 var(--body); color:var(--accent) }
 .phw-box { display:grid; gap:6px; margin:6px 0 }
 .phw-h { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted) }
 .phw-l { display:flex; flex-wrap:wrap; gap:4px }
@@ -607,7 +607,7 @@ function buildRoom(ri) {
   // enseigne au-dessus de la porte, côté couloir
   const sign = quad(4.6, 1.15, new THREE.MeshBasicMaterial({ map: canvasTex(920, 230, (gg, w, h) => {
     gg.fillStyle = "#2a211d"; gg.fillRect(0, 0, w, h); gg.strokeStyle = "#c9a24a"; gg.lineWidth = 8; gg.strokeRect(8, 8, w - 16, h - 16);
-    gg.fillStyle = "#f3e6cf"; gg.textAlign = "center"; gg.font = "600 64px 'Cormorant SC', Georgia, serif"; gg.fillText(r.it, w / 2, 98);
+    gg.fillStyle = "#f3e6cf"; gg.textAlign = "center"; fitText(gg, r.it, w / 2, 98, w - 60, 58, "600", "'Source Serif 4', Georgia, serif");
     gg.fillStyle = "#c9a24a"; gg.font = "500 34px 'IBM Plex Mono', monospace"; gg.fillText(r.fr.toUpperCase(), w / 2, 168);
   }) }));
   placeQuad(sign, V3(0, dh + .95, D / 2 + .03), V3(1, 0, 0), V3(0, 1, 0)); r.front.add(sign); r.signMesh = sign;
@@ -712,7 +712,7 @@ function panelCanvas(ri, pi, maskN) {
     if (!it) { g.fillStyle = "#b9ab98"; g.font = "italic 26px 'Source Serif 4', Georgia, serif"; g.textAlign = "center"; g.fillText("libre", x + cell / 2, y + cell / 2 + 12); continue; }
     if (maskN === n || maskN === "all") { g.fillStyle = "#2a211d"; g.fillRect(x + 14, y + 56, cell - 28, cell - 74); g.fillStyle = "#f6efe2"; g.font = "600 60px 'Cormorant SC', Georgia, serif"; g.textAlign = "center"; g.fillText("?", x + cell / 2, y + 140); continue; }
     g.textAlign = "center"; g.fillStyle = "#9c3d22";
-    fitText(g, dI(it).replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + 112, cell - 24, 46, "600", "'Cormorant SC', Georgia, serif");
+    fitText(g, dI(it).replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + 112, cell - 24, 42, "600", "'Source Serif 4', Georgia, serif");
     g.fillStyle = "#2a211d"; fitText(g, dF(it), x + cell / 2, y + 160, cell - 24, 26, "400", "'Source Serif 4', Georgia, serif");
   }
   return c;
@@ -2159,7 +2159,7 @@ async function start() {
   scene = new THREE.Scene(); scene.background = new THREE.Color("#2a211d"); scene.fog = new THREE.Fog("#2a211d", 40, 140);
   camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, .05, 400); clock = new THREE.Clock();
   scene.add(new THREE.HemisphereLight(0xfff6e8, 0xcdb89c, .8)); scene.add(new THREE.AmbientLight(0xffffff, .28)); const sun = new THREE.DirectionalLight(0xffffff, .35); sun.position.set(20, 40, 30); scene.add(sun);
-  try { await document.fonts.ready; await Promise.all(["600 40px 'Cormorant SC'", "500 20px 'IBM Plex Mono'", "400 20px 'Source Serif 4'"].map(f => document.fonts.load(f))); } catch (e) {}
+  try { await document.fonts.ready; await Promise.all(["600 40px 'Cormorant SC'", "500 20px 'IBM Plex Mono'", "400 20px 'Source Serif 4'", "600 40px 'Source Serif 4'"].map(f => document.fonts.load(f))); } catch (e) {}
   const before = scene.children.length;
   R.forEach((_, i) => buildRoom(i));
   const mark0 = scene.children.length; buildCorridors(); corrObjs = scene.children.slice(mark0);

@@ -654,7 +654,7 @@ function landmark(kind) {
    devient une pièce familière d'une maison, chaque fois différente : entrée, salon, cuisine, chambres, salle de bain,
    toilettes, grenier, cave, garage, jardin, piscine, terrasse… Les 10 surfaces deviennent 10 objets typiques de la
    pièce (« il divano · le canapé »), modélisés à côté de leur panneau : on accroche chaque dizaine à un objet. */
-const HOMES = [
+const HOMES = [   // dans l'ordre de la visite : on entre, on fait le tour de la zone de jour (côté sud), on sort au jardin, puis on revient par la zone de nuit (côté nord)
   { k: "ingresso", fr: "Entrée", it: "L'ingresso", wall: "#d9c7a6", floor: ["damier", "#2b2b2b", "#e8e2d4"], ceil: "#f2ece0", land: "plante", o: [
     ["l'appendiabiti · le portemanteau", "portemanteau", "T"], ["la console · la console", "console"], ["la porta d'ingresso · la porte d'entrée", "porte", "T"], ["la scarpiera · le meuble à chaussures", "scarpiera"], ["l'orologio a pendolo · l'horloge", "horloge", "T"],
     ["lo zerbino · le paillasson", "paillasson"], ["il pacco · le colis", "cartons"], ["il portaombrelli · le porte-parapluie", "parapluies"], ["la plafoniera · le plafonnier", "plafonnier"], ["il rilevatore di fumo · le détecteur de fumée", "detecteur"]] },
@@ -670,49 +670,57 @@ const HOMES = [
   { k: "lavanderia", fr: "Buanderie", it: "La lavanderia", wall: "#a9d3df", floor: ["carreaux", "#d6dde0", "#9fb0b8"], ceil: "#eef4f6", land: "aspirateur", o: [
     ["la lavatrice · le lave-linge", "lavelinge"], ["il detersivo · la lessive", "bidons"], ["l'asciugatrice · le sèche-linge", "sechelinge"], ["il cesto della biancheria · le panier à linge", "panier"], ["la caldaia · le chauffe-eau", "chaudiere", "T"],
     ["il ferro da stiro · le fer à repasser", "fer"], ["la bacinella · la bassine", "bassine"], ["la scopa · le balai", "balai"], ["lo stendino · l'étendoir", "etendoir"], ["le mollette · les pinces à linge", "pinces"]] },
-  { k: "studio", fr: "Bureau", it: "Lo studio", wall: "#3f6273", floor: ["parquet", "#4a3524", "#5a412c"], ceil: "#e8e4dc", land: "lampadaire", o: [
-    ["la scrivania · le bureau", "bureau"], ["la stampante · l'imprimante", "imprimante"], ["lo scaffale · l'étagère", "biblio", "T"], ["il mappamondo · le globe", "globe"], ["la cassettiera · le caisson", "caisson"],
-    ["la sedia girevole · le fauteuil de bureau", "fauteuilbureau"], ["il tappeto · le tapis", "tapis"], ["il cestino · la corbeille", "poubelle"], ["i faretti · les spots", "spots"], ["il condizionatore · le climatiseur", "clim"]] },
-  { k: "camera", fr: "Chambre des parents", it: "La camera da letto", wall: "#b9a3c9", floor: ["moquette", "#cdb9a6", "#bca792"], ceil: "#f5f0f7", land: "valise", o: [
-    ["l'armadio · l'armoire", "armoire", "T"], ["il comodino · la table de chevet", "chevet"], ["la testiera · la tête de lit", "tetelit"], ["la toeletta · la coiffeuse", "coiffeuse"], ["il cassettone · la commode", "commode"],
-    ["le pantofole · les chaussons", "chaussons"], ["il letto matrimoniale · le lit double", "lit"], ["lo scendiletto · la descente de lit", "tapis"], ["il lampadario · le lustre", "lustre"], ["la zanzariera · la moustiquaire", "moustiquaire"]] },
-  { k: "cameretta", fr: "Chambre d'enfant", it: "La cameretta", wall: "#8fd0a8", floor: ["damier", "#f2c84b", "#5aa0d8"], ceil: "#cfe6ff", land: "trottinette", o: [
-    ["la cassapanca dei giochi · le coffre à jouets", "coffre"], ["l'orsacchiotto · l'ours en peluche", "ours"], ["la casa delle bambole · la maison de poupée", "maisonpoupee"], ["il cavallo a dondolo · le cheval à bascule", "cheval"], ["il letto a castello · les lits superposés", "litsup", "T"],
-    ["il pallone · le ballon", "ballon"], ["il tappeto puzzle · le tapis puzzle", "tapispuzzle"], ["il trenino · le petit train", "train"], ["la giostrina · le mobile", "mobile"], ["le stelle · les étoiles", "etoiles"]] },
-  { k: "bagno", fr: "Salle de bain", it: "Il bagno", wall: "#8fcbe0", floor: ["damier", "#ffffff", "#2f6f9a"], ceil: "#f7fbfc", land: "plante", o: [
-    ["la vasca da bagno · la baignoire", "baignoire"], ["il portasciugamani · le porte-serviettes", "radiateur"], ["il lavandino · le lavabo", "lavabo"], ["lo spazzolino · la brosse à dents", "verre"], ["la doccia · la douche", "douche", "T"],
-    ["la bilancia · la balance", "balance"], ["il tappetino · le tapis de bain", "tapisbain"], ["il cesto · le panier à linge", "panier"], ["il neon · le néon", "neon"], ["la tenda della doccia · le rideau de douche", "rideaudouche"]] },
-  { k: "gabinetto", fr: "Toilettes", it: "Il gabinetto", wall: "#2e6b4f", floor: ["damier", "#1e1e1e", "#d0d0d0"], ceil: "#f0f0ea", land: "plante", o: [
-    ["il water · la cuvette", "wc"], ["la carta igienica · le papier toilette", "papier"], ["lo sciacquone · la chasse d'eau", "chasse"], ["lo scopino · la balayette", "balayette"], ["il lavamani · le lave-mains", "lavabo"],
-    ["le riviste · les magazines", "magazines"], ["il deodorante · le désodorisant", "spray"], ["il tappetino · le tapis", "tapisbain"], ["la lampadina · l'ampoule", "ampoule"], ["la finestrella · la lucarne", "lucarne"]] },
-  { k: "soffitta", fr: "Grenier", it: "La soffitta", wall: "#9b7a55", floor: ["planches", "#7b5a3a", "#6a4c30"], ceil: "#5a4030", land: "velo", o: [
-    ["il baule · la malle", "malle"], ["le scatole · les cartons", "cartons"], ["l'abbaino · la lucarne", "fenetre", "T"], ["la sedia a dondolo · le rocking-chair", "fauteuil"], ["il manichino · le mannequin", "mannequin", "T"],
-    ["il grammofono · le gramophone", "gramo"], ["il tappeto arrotolato · le tapis roulé", "rouleau"], ["la bambola · la poupée", "poupee"], ["la trave · la poutre", "poutre"], ["la ragnatela · la toile d'araignée", "toile"]] },
-  { k: "cantina", fr: "Cave", it: "La cantina", wall: "#6b6460", floor: ["pierre", "#5e5751", "#4a4440"], ceil: "#3d3732", land: "tonneau", o: [
-    ["la rastrelliera · le casier à bouteilles", "vins", "T"], ["la botte · le tonneau", "tonneau"], ["la caldaia · la chaudière", "chaudiere", "T"], ["il secchio · le seau", "seau"], ["gli scaffali · les étagères", "etagere", "T"],
-    ["le casse d'acqua · les packs d'eau", "cartons"], ["la cassetta di mele · la cagette de pommes", "cagette"], ["la trappola per topi · la tapette à souris", "tapette"], ["il prosciutto appeso · le jambon suspendu", "jambon"], ["la lampadina · l'ampoule nue", "ampoule"]] },
   { k: "garage", fr: "Garage", it: "Il garage", wall: "#9a9a9a", floor: ["beton", "#8f8f8c", "#7a7a77"], ceil: "#cfcfcf", land: "velo", o: [
     ["il pannello degli attrezzi · le panneau à outils", "outils"], ["la tanica · le bidon d'essence", "bidon"], ["la saracinesca · la porte de garage", "portegarage", "T"], ["la scala · l'escabeau", "escabeau"], ["la macchina · la voiture", "voiture", "T"],
     ["la cassetta degli attrezzi · la caisse à outils", "caisse"], ["il banco da lavoro · l'établi", "etabli"], ["le gomme · les pneus", "pneus"], ["il neon · le néon", "neon"], ["la bici appesa · le vélo suspendu", "velosusp"]] },
+  { k: "cantina", fr: "Cave", it: "La cantina", wall: "#6b6460", floor: ["pierre", "#5e5751", "#4a4440"], ceil: "#3d3732", land: "tonneau", o: [
+    ["la rastrelliera · le casier à bouteilles", "vins", "T"], ["la botte · le tonneau", "tonneau"], ["la caldaia · la chaudière", "chaudiere", "T"], ["il secchio · le seau", "seau"], ["gli scaffali · les étagères", "etagere", "T"],
+    ["le casse d'acqua · les packs d'eau", "cartons"], ["la cassetta di mele · la cagette de pommes", "cagette"], ["la trappola per topi · la tapette à souris", "tapette"], ["il prosciutto appeso · le jambon suspendu", "jambon"], ["la lampadina · l'ampoule nue", "ampoule"]] },
+  { k: "terrazza", fr: "Terrasse", it: "La terrazza", out: true, wall: "#e7c9a0", floor: ["planches", "#a07850", "#8a6440"], ceil: "#f4c58a", land: "plante", o: [
+    ["il limone in vaso · le citronnier en pot", "citronnier"], ["l'amaca · le hamac", "hamac"], ["la ringhiera · la rambarde", "rambarde"], ["la lanterna · la lanterne", "lanterne"], ["il dondolo · la balancelle", "balancelle"],
+    ["i cuscini · les coussins", "coussins"], ["il tavolino · la petite table", "tablebasse"], ["l'annaffiatoio · l'arrosoir", "arrosoir"], ["la tenda da sole · le store banne", "store"], ["la luna · la lune", "lune"]] },
   { k: "giardino", fr: "Jardin", it: "Il giardino", out: true, wall: "#4f7f3a", floor: ["gazon", "#5f9a3f", "#4d8434"], ceil: "#9cc8ec", land: "arrosoir", o: [
     ["la siepe · la haie", "haie"], ["la cuccia · la niche du chien", "niche"], ["l'albero · l'arbre", "arbre", "T"], ["il nano da giardino · le nain de jardin", "nain"], ["il barbecue · le barbecue", "bbq"],
     ["l'aiuola · le parterre de fleurs", "fleurs"], ["il tavolo da giardino · la table de jardin", "tablejardin"], ["la carriola · la brouette", "brouette"], ["il sole · le soleil", "soleil"], ["la nuvola · le nuage", "nuage"]] },
   { k: "piscina", fr: "Piscine", it: "La piscina", out: true, wall: "#dfe9ee", floor: ["carreaux", "#e6eef0", "#bcd3da"], ceil: "#a8d8f4", land: "plante", o: [
     ["la doccia esterna · la douche extérieure", "douche", "T"], ["l'asciugamano · la serviette", "serviette"], ["il trampolino · le plongeoir", "plongeoir"], ["il salvagente · la bouée", "bouee"], ["la sdraio · le transat", "transat"],
     ["il materassino · le matelas gonflable", "matelas"], ["la vasca · le bassin", "bassin"], ["la scaletta · l'échelle de piscine", "echelle"], ["l'ombrellone · le parasol", "parasol"], ["il gabbiano · la mouette", "oiseau"]] },
-  { k: "terrazza", fr: "Terrasse", it: "La terrazza", out: true, wall: "#e7c9a0", floor: ["planches", "#a07850", "#8a6440"], ceil: "#f4c58a", land: "plante", o: [
-    ["il limone in vaso · le citronnier en pot", "citronnier"], ["l'amaca · le hamac", "hamac"], ["la ringhiera · la rambarde", "rambarde"], ["la lanterna · la lanterne", "lanterne"], ["il dondolo · la balancelle", "balancelle"],
-    ["i cuscini · les coussins", "coussins"], ["il tavolino · la petite table", "tablebasse"], ["l'annaffiatoio · l'arrosoir", "arrosoir"], ["la tenda da sole · le store banne", "store"], ["la luna · la lune", "lune"]] }
+  { k: "soffitta", fr: "Grenier", it: "La soffitta", wall: "#9b7a55", floor: ["planches", "#7b5a3a", "#6a4c30"], ceil: "#5a4030", land: "velo", o: [
+    ["il baule · la malle", "malle"], ["le scatole · les cartons", "cartons"], ["l'abbaino · la lucarne", "fenetre", "T"], ["la sedia a dondolo · le rocking-chair", "fauteuil"], ["il manichino · le mannequin", "mannequin", "T"],
+    ["il grammofono · le gramophone", "gramo"], ["il tappeto arrotolato · le tapis roulé", "rouleau"], ["la bambola · la poupée", "poupee"], ["la trave · la poutre", "poutre"], ["la ragnatela · la toile d'araignée", "toile"]] },
+  { k: "cameretta", fr: "Chambre d'enfant", it: "La cameretta", wall: "#8fd0a8", floor: ["damier", "#f2c84b", "#5aa0d8"], ceil: "#cfe6ff", land: "trottinette", o: [
+    ["la cassapanca dei giochi · le coffre à jouets", "coffre"], ["l'orsacchiotto · l'ours en peluche", "ours"], ["la casa delle bambole · la maison de poupée", "maisonpoupee"], ["il cavallo a dondolo · le cheval à bascule", "cheval"], ["il letto a castello · les lits superposés", "litsup", "T"],
+    ["il pallone · le ballon", "ballon"], ["il tappeto puzzle · le tapis puzzle", "tapispuzzle"], ["il trenino · le petit train", "train"], ["la giostrina · le mobile", "mobile"], ["le stelle · les étoiles", "etoiles"]] },
+  { k: "bagno", fr: "Salle de bain", it: "Il bagno", wall: "#8fcbe0", floor: ["damier", "#ffffff", "#2f6f9a"], ceil: "#f7fbfc", land: "plante", o: [
+    ["la vasca da bagno · la baignoire", "baignoire"], ["il portasciugamani · le porte-serviettes", "radiateur"], ["il lavandino · le lavabo", "lavabo"], ["lo spazzolino · la brosse à dents", "verre"], ["la doccia · la douche", "douche", "T"],
+    ["la bilancia · la balance", "balance"], ["il tappetino · le tapis de bain", "tapisbain"], ["il cesto · le panier à linge", "panier"], ["il neon · le néon", "neon"], ["la tenda della doccia · le rideau de douche", "rideaudouche"]] },
+  { k: "camera", fr: "Chambre des parents", it: "La camera da letto", wall: "#b9a3c9", floor: ["moquette", "#cdb9a6", "#bca792"], ceil: "#f5f0f7", land: "valise", o: [
+    ["l'armadio · l'armoire", "armoire", "T"], ["il comodino · la table de chevet", "chevet"], ["la testiera · la tête de lit", "tetelit"], ["la toeletta · la coiffeuse", "coiffeuse"], ["il cassettone · la commode", "commode"],
+    ["le pantofole · les chaussons", "chaussons"], ["il letto matrimoniale · le lit double", "lit"], ["lo scendiletto · la descente de lit", "tapis"], ["il lampadario · le lustre", "lustre"], ["la zanzariera · la moustiquaire", "moustiquaire"]] },
+  { k: "studio", fr: "Bureau", it: "Lo studio", wall: "#3f6273", floor: ["parquet", "#4a3524", "#5a412c"], ceil: "#e8e4dc", land: "lampadaire", o: [
+    ["la scrivania · le bureau", "bureau"], ["la stampante · l'imprimante", "imprimante"], ["lo scaffale · l'étagère", "biblio", "T"], ["il mappamondo · le globe", "globe"], ["la cassettiera · le caisson", "caisson"],
+    ["la sedia girevole · le fauteuil de bureau", "fauteuilbureau"], ["il tappeto · le tapis", "tapis"], ["il cestino · la corbeille", "poubelle"], ["i faretti · les spots", "spots"], ["il condizionatore · le climatiseur", "clim"]] },
+  { k: "gabinetto", fr: "Toilettes", it: "Il gabinetto", wall: "#2e6b4f", floor: ["damier", "#1e1e1e", "#d0d0d0"], ceil: "#f0f0ea", land: "plante", o: [
+    ["il water · la cuvette", "wc"], ["la carta igienica · le papier toilette", "papier"], ["lo sciacquone · la chasse d'eau", "chasse"], ["lo scopino · la balayette", "balayette"], ["il lavamani · le lave-mains", "lavabo"],
+    ["le riviste · les magazines", "magazines"], ["il deodorante · le désodorisant", "spray"], ["il tappetino · le tapis", "tapisbain"], ["la lampadina · l'ampoule", "ampoule"], ["la finestrella · la lucarne", "lucarne"]] }
 ];
 // une teinte et un style par appartement (étage), pour que deux salons ne se confondent pas
 const HSTYLES = [["classique", "#ffffff", 0], ["provençal", "#f2b56b", .22], ["scandinave", "#ffffff", .35], ["bord de mer", "#6fb3d9", .22], ["montagne", "#8a5a33", .22], ["années 70", "#e0892b", .28], ["art déco", "#1f3b4d", .2]];
 function mixHex(a, b, t) { const p = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)); const A = p(a), B = p(b); return "#" + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, "0")).join(""); }
-function applyLisa() {   // pièces de la maison, 16 par étage (8 de chaque côté du couloir), dans l'ordre du palais par classe
+/* Plan d'un étage (une maison de plain-pied), le couloir faisant office de hall, de l'ouest (porte d'entrée) à l'est (jardin) :
+   nord  : entrée · toilettes · bureau · chambre parents · salle de bain · chambre enfant · grenier · piscine
+   sud   : salon · salle à manger · cuisine · buanderie · garage · cave · terrasse · jardin
+   La visite suit une boucle : entrée → zone de jour au sud → extérieur au bout → zone de nuit au nord, retour vers l'entrée. */
+const HPLAN_POS = [["N", 0], ["S", 0], ["S", 1], ["S", 2], ["S", 3], ["S", 4], ["S", 5], ["S", 6], ["S", 7], ["N", 7], ["N", 6], ["N", 5], ["N", 4], ["N", 3], ["N", 2], ["N", 1]];
+let HPLAN = [];
+const HABBR = { ingresso: "entr", soggiorno: "salon", pranzo: "s.à m", cucina: "cuis", lavanderia: "buand", garage: "gar", cantina: "cave", terrazza: "terr", giardino: "jard", piscina: "pisc", soffitta: "gren", cameretta: "ch.enf", bagno: "sdb", camera: "ch.par", studio: "bur", gabinetto: "wc" };
+function applyLisa() {
+  HPLAN = R.map((r, ri) => { const [side, x] = HPLAN_POS[ri % 16]; return { floor: Math.floor(ri / 16), side, x }; });   // pièces de la maison, 16 par étage (8 de chaque côté du couloir), dans l'ordre du palais par classe
   R.forEach((r, ri) => {
     const fl = Math.floor(ri / 16), j = ri % 16, H = HOMES[j], st = HSTYLES[fl % HSTYLES.length];
     r.home = Object.assign({}, H, { wall: mixHex(H.wall, st[1], st[2]), style: st[0], apt: fl + 1 });
-    r.cls = { fr: r.fr, it: r.it }; r.fr = `${H.fr} — ${r.fr}`; r.it = H.it; r.blocs = H.o.map(o => o[0]);
-    r.slot = { floor: fl, side: j < 8 ? "N" : "S", x: j % 8 };
+    r.cls = { fr: r.fr, it: r.it }; r.code = HABBR[H.k]; r.fr = `${H.fr} — ${r.fr}`; r.it = H.it; r.blocs = H.o.map(o => o[0]);
+    r.slot = HPLAN[ri];
   });
 }
 /* --- mobilier : primitives [type, a, b, c, couleur, x, y, z, rx, ry, rz] ; b = boîte l×h×p, c = cylindre r1 r2 h, s = sphère r, k = cône r h, t = tore R r
@@ -899,9 +907,10 @@ function buildCorridors() {
   const corrM = mat({ map: plasterTex("#d8cdbd", 4) }), ceilM = mat({ map: plasterTex("#efe4d2", 4), side: THREE.BackSide });
   for (let lv = 0; lv < NL; lv++) {
     const y = lv * 10, xmax = layout.xmax[lv], len = xmax + 6;
-    const f = quad(len, 4, mat({ map: floorTex("terrazzo", "#cdbca2", "#8a7458") })); f.rotation.x = -Math.PI / 2; f.position.set((xmax - 6) / 2, y + .001, 0); f.userData.floor = lv; scene.add(f); floorsForRay.push(f);
+    const f = quad(len, 4, mat({ map: PAL === "lisa" ? floorTex("parquet", "#b58a5a", "#9c7448") : floorTex("terrazzo", "#cdbca2", "#8a7458") }));   // Lisa : le couloir est le hall parqueté de la maison f.rotation.x = -Math.PI / 2; f.position.set((xmax - 6) / 2, y + .001, 0); f.userData.floor = lv; scene.add(f); floorsForRay.push(f);
     const c = quad(len, 4, ceilM); c.rotation.x = -Math.PI / 2; c.position.set((xmax - 6) / 2, y + H, 0); scene.add(c);
-    const end = quad(4, H, corrM); placeQuad(end, V3(xmax, y + H / 2, 0), V3(0, 0, 1), V3(0, 1, 0)); scene.add(end);
+    const end = quad(4, H, PAL === "lisa" ? new THREE.MeshBasicMaterial({ map: canvasTex(256, 400, (g, w, h) => { g.fillStyle = "#9cc8ec"; g.fillRect(0, 0, w, h); g.fillStyle = "#5f9a3f"; g.fillRect(0, h * .72, w, h); g.strokeStyle = "#f4f1ea"; g.lineWidth = 14; g.strokeRect(7, 7, w - 14, h - 14); g.beginPath(); g.moveTo(w / 2, 0); g.lineTo(w / 2, h); g.moveTo(0, h * .45); g.lineTo(w, h * .45); g.stroke(); }) }) : corrM);   // Lisa : baie vitrée sur le jardin au bout du hall
+    placeQuad(end, V3(xmax, y + H / 2, 0), V3(0, 0, 1), V3(0, 1, 0)); scene.add(end);
     walls2d.push({ a: [xmax, -2], b: [xmax, 2], lv });
     // murs du couloir entre les portes : collisions (les façades des pièces font office de murs visibles)
     const rooms = R.filter(r => r.floor === lv);
@@ -2330,7 +2339,7 @@ async function renderCarnet() {
 function bindViews() {
   document.querySelectorAll("[data-palais]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.palais === PAL)));
   $("#palTxt").textContent = PALTXT[PAL] + " Ta progression est la même dans toutes les versions.";
-  if (PAL === "lisa") $("#planSheet p.pr:not(#palTxt)").textContent = "Touchez une pièce pour y aller. Chaque étage est un appartement de 16 pièces dans le même ordre : entrée, salon, salle à manger, cuisine, buanderie, bureau, chambres, salle de bain, toilettes, grenier, cave, garage, jardin, piscine, terrasse.";
+  if (PAL === "lisa") $("#planSheet p.pr:not(#palTxt)").textContent = "Touchez une pièce pour y aller. Chaque étage est une maison de plain-pied ; le couloir est son hall. On entre à l'ouest par l'entrée, on fait le tour de la zone de jour au sud (salon, salle à manger, cuisine, buanderie, garage, cave), on sort à l'est sur la terrasse, le jardin et la piscine, puis on revient par la zone de nuit au nord (grenier, chambre d'enfant, salle de bain, chambre des parents, bureau, toilettes).";
   else if (PAL !== "classe") $("#planSheet p.pr:not(#palTxt)").textContent = "Touchez une pièce pour y aller. L'escalier, à l'ouest, dessert tous les étages ; chaque étage compte 8 salles de chaque côté du couloir.";
   document.addEventListener("click", e => { const b = e.target.closest("[data-palais]"); if (b) choosePalace(b.dataset.palais); });
   $("#tabs").addEventListener("click", e => { const b = e.target.closest("[data-view]"); if (!b) return; if (b.dataset.view === "test") startAuto(); else setView(b.dataset.view); });
@@ -2394,7 +2403,7 @@ function buildVirtual(kind) {
 const PALTXT = { classe: "Palais par classe : une tour d'étages par classe de mots (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre.",
   freqit: "Palais par fréquence italienne : tous les mots, du plus fréquent au plus rare dans l'italien parlé, 100 par salle. C'est l'ordre qui fait monter le plus vite la compréhension de l'italien. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
   freq: "Palais par fréquence française : tous les mots, du plus fréquent au plus rare dans le français parlé, 100 par salle. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % d'expression) commence à un nouvel étage.",
-  lisa: "Palais Lisa : le contenu et l'ordre du palais par classe, rangés dans une maison familiale. Chaque salle est une pièce bien distincte (entrée, salon, cuisine, chambre des parents, chambre d'enfant, salle de bain, toilettes, grenier, cave, garage, jardin, piscine, terrasse…) et chaque dizaine est accrochée à un objet typique de la pièce : le canapé, le frigo, la baignoire… Un étage = un appartement, chacun dans son style.",
+  lisa: "Palais Lisa : le contenu et l'ordre du palais par classe, rangés dans une maison familiale. Chaque salle est une pièce bien distincte (entrée, salon, cuisine, chambre des parents, chambre d'enfant, salle de bain, toilettes, grenier, cave, garage, jardin, piscine, terrasse…) et chaque dizaine est accrochée à un objet typique de la pièce : le canapé, le frigo, la baignoire… Chaque étage est une maison complète, disposée comme une vraie : entrée près de la porte, zone de jour d'un côté du hall (salon, salle à manger, cuisine, buanderie, garage, cave), extérieur au bout (terrasse, jardin, piscine), zone de nuit de l'autre côté (chambres, salle de bain, bureau, toilettes). Chaque maison a son style.",
   theme: "Palais par thème : une ou plusieurs salles par famille thématique (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème." };
 function choosePalace(v) { if (v === PAL) return; ls.set("palais", v); location.reload(); }
 

@@ -1,0 +1,43 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+36 | عاجبني الصبر اللي عندك معاه. | 3ajebni s-sber elli 3andek m3ah.
+41 | خمّمت في حاجة. | Khammemt f 7aja.
+41 | عندي حاجة نسقسيك عليها. | 3andi 7aja nsa9sik 3liha.
+41 | هاد السميّة تقولّك حاجة؟ | Had s-smiya t9oullek 7aja?
+41 | نقدر نسقسيك على حاجة؟ | N9der nsa9sik 3la 7aja?
+41 | راكم تحوّسو على حاجة؟ | Rakom t7awsou 3la 7aja?
+41 | صرالك حاجة؟ | Sralek 7aja?
+49 | باين عليك تعرف ڨاع الناس هنا. | Bayen 3lik ta3ref ga3 n-nas hna.
+49 | صباح الخير ڨاع! | Sba7 l-khir ga3!
+49 | وين رانا رايحين لوكان ڨاع الناس يديرو هاكا؟ | Win rana ray7in lokan ga3 n-nas ydirou haka?
+49 | هادي تصرا لڨاع الناس. | Hadi tesra l ga3 n-nas.
+77 | تفكّرني في واحد، بصّح ما بقيتش نعرف شكون. | Tfakkarni f wa7ed, bessa7 ma b9itch na3ref chkoun.
+77 | وأخيرا واحد يخمّم كيفي! | W akhiran wa7ed ykhammem kifi!
+77 | واش خلّاك تقول هاكا؟ | Wach khallak t9oul haka?
+77 | واش بيك؟ | Wach bik?
+77 | شكون راك تحسبني؟ | Chkoun rak t7asbni?
+77 | نسقسي روحي شكون دار هادي. | Nsa9si rou7i chkoun dar hadi.
+77 | واش بيك؟ راكي مقلوبة ڨاع. | Wach bik? Raki m9louba ga3.
+77 | شكون كان يخمّم فيها؟ | Chkoun kan ykhammem fiha?
+77 | شكون عندو لابريوريتي في هاد الرّومبوان؟ | Chkoun 3andou la priorité f had r-rompoint?
+77 | ماشي كلّ ما يلمع ذهب. | Machi koul ma ylma3 dheb.
+77 | اللي خلاصتو مليحة، كلّش مليح. | Elli khlastou mli7a, koullech mli7.
+77 | هاد الكلب تاع شكون؟ | Had l-kelb ta3 chkoun?
+77 | شكون الكاتب اللي تحبّو كثر؟ | Chkoun l-kateb elli t7abbou ktar?
+77 | شكون الأكتور اللي تحبّو كثر؟ | Chkoun l-acteur elli t7abbou ktar?
+77 | واش اللي ما راهش مليح؟ | Wach elli ma rahch mli7?
+77 | شكون كان يقول هاكا؟ | Chkoun kan y9oul haka?
+77 | شكون راك تحسبني بالضبط؟ | Chkoun rak t7asbni b dh-dhabt?
+77 | اللي يضحك في اللّخر يضحك مليح. | Elli yedh7ak f l-lekher yedh7ak mli7.
+77 | الإيكيب اللي تربح ما تبدّلهاش. | L-équipe elli terba7 ma tbeddelhach.
+77 | لقى اللي يوقّفلو. | L9a elli ywa99eflou.
+77 | اللي يهمّني هو يعترف بالغلطة تاعو. | Elli yhemmni houwa ya3tarf b l-ghalta ta3ou.
+77 | وين القميجة اللي مكتوبة فيها سميتي؟ | Win l-9mija elli mektouba fiha smiti?
+77 | ما نعرف حتّى واحد يعاون كيفو. | Ma na3ref 7atta wa7ed y3awen kifou.
+77 | شكون سمحلك تركب البيسكلات تاعي؟ | Chkoun sma7lek terkeb l-bisklett ta3i?
+77 | غير الخطوة اللّولة اللي صعيبة. | Ghir l-khatwa l-lowla elli s3iba.
+77 | كاين حاجة ما راهيش مليحة. | Kayen 7aja ma rahich mli7a.
+93 | ما بقى غير الظلّ تاعو. | Ma b9a ghir dh-dhell ta3ou.
+93 | راجلها صلّح التيليفيزيون بيدّو. | Rajelha salla7 t-télévision b yeddou.
+94 | كاين اللي ما يحبّوش مجتمع الاستهلاك. | Kayen elli ma y7abbouch moujtama3 l-istihlak.
+94 | كاين سلعة تتصنع في آسيا. | Kayen sel3a tetsna3 f Asia.
+99 | ورّيني هادي، يرحم والديك. | Warrini hadi, yer7em waldik.

@@ -1,3 +1,15 @@
+# Dar ed-Darja (branche pm-algerien)
+
+Version **darija algérien** (parler d'Alger) du palais mental 3D : réplique complète du Palazzo dell'italiano (104 salles, 9 581 niches), avec les mêmes phrases d'exemple françaises.
+
+- Chaque niche : mot en écriture arabe + translittération latine (arabizi : 3 = ع, 7 = ح, 9 = ق), prononciation, API, mot-clé sonore français, scène, phrase d'exemple darija et exemples supplémentaires.
+- Sources de la traduction : `sources/darija/rNNN_darija.txt` et `rNNN_px.txt` (une paire par salle), guide de traduction `GUIDE_DARIJA.md`, construction de `data3d.json` avec `build_darija.py` (à partir du `data3d.json` italien) et adaptation de la page avec `patch_app.py`.
+- Pas de fréquences darija (aucun corpus fiable) : les vues « fréquence DZ » sont masquées. Le darija est lu par la voix arabe de l'appareil ; les sons français sont ceux du palais italien.
+- Progression séparée de l'italien (préfixe `pmdz:` en local, `dz_` dans Supabase).
+- Relecture par un locuteur natif algérois à faire : les doutes et mots-clés faibles sont signalés dans les décryptages.
+
+---
+
 # Palazzo dell'italiano
 
 Palais mental 3D pour apprendre le vocabulaire italien depuis le français (méthode des loci).

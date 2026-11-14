@@ -1,0 +1,13 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+0 | راني سحاق المعاونة تاعك. | Rani s7a9 l-m3awna ta3ek.
+0 | راني سحاق الفيشة تاع الخلصة تاعك. | Rani s7a9 l-fiche ta3 l-khalsa ta3ek.
+3 | ما نظنّش راني نبالغ كي نقول هكّا. | Ma ndhonnch rani nbalegh ki n9oul hakka.
+8 | ما تخمّمش، ما يموتش منها! | Ma tkhammemch, ma ymoutch menha!
+27 | تحبّ حاجة أخرى؟ | T7ebb 7aja okhra?
+27 | هادا برك، ولّا تحبّ حاجة أخرى؟ | Hada berk, wella t7ebb 7aja okhra?
+34 | يا ربّي! | Ya rebbi!
+35 | مارانيش متأكّد بلّي فهمت مليح. | Ma ranich met2akked belli fhemt mli7.
+49 | واش هي الماكلة تاع اليوم؟ | Wach hiya l-makla ta3 l-youm?
+56 | ماشي صحّ كامل. | Machi sa77 kamel.
+79 | مسيو جونز يسلّم عليك. | Monsieur Jones ysellem 3lik.
+79 | سلّملي على ناس الدار! | Sellemli 3la nas d-dar!

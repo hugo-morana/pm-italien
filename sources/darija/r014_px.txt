@@ -1,0 +1,8 @@
+# idx | arabe | latin
+20 | بشحال هادي؟ | Bech7al hadi?
+27 | ردّ بالك كي تقطع الطريق. | Redd balek ki te9ta3 t-tri9.
+30 | نقدرو نديرو دورة بالبشكليطة، واش رايك؟ | N9edrou ndirou dora b l-bechklita, wach rayek?
+49 | ماشي غريبة، راهي الشوشو تاع الأستاذ. | Machi ghriba, rahi ch-chouchou ta3 l-oustadh.
+58 | توحّشتك بزّاف. | Twa77echtek bezzaf.
+58 | ديما راني نخمّم فيك وتوحّشتك بزّاف. | Dima rani nkhemmem fik w twa77echtek bezzaf.
+97 | راهي سخانة برّا، ياك؟ | Rahi skhana berra, yak?

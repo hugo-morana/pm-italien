@@ -1,0 +1,9 @@
+# idx | phrase arabe | phrase latine
+55 | نظنّ صرا شويّة سوء تفاهم. | Ndhonn sra chwiya sou2 tafahom.
+59 | نظنّ بلّي عندكم الحقّ. | Ndhonn belli 3andkoum l-7a9.
+59 | نظنّ بلّي كنت نيّة بزّاف. | Ndhonn belli kount niyya bezzaf.
+59 | نظنّ بلّي شفتو وسط الغاشي. | Ndhonn belli chouftou west l-ghachi.
+67 | نقدرو نقولو بلّي خلطتوها مليح! | N9adrou n9oulou belli khalattouha mli7!
+67 | نقدرو نقولو بلّي هادي برّدت الجوّ. | N9adrou n9oulou belli hadi berrdet j-jaww.
+68 | في اللّخر، هادي موتة مليحة. | F l-lekher, hadi mouta mli7a.
+75 | لازم نقول بلّي هاد القرار صعاب عليّا بزّاف. | Lazem n9oul belli had l-9arar s3ab 3liya bezzaf.

@@ -1,0 +1,2 @@
+# idx | phrase arabe | phrase latine
+34 | فكّرني، واش اسمو؟ | Fekkerni, wach ismou?

@@ -1,0 +1,31 @@
+0 | راهو مليح عاوتاني. | Rahou mli7 3awtani.
+8 | نعاونك؟ | N3awnek?
+8 | خلعتني! | Khal3etni!
+8 | راني فشلان شويّة. | Rani fechlan chwiya.
+8 | هادا ياكل كي الغول. | Hada yakoul ki l-ghoul.
+16 | يلزم تصبر شويّة. | Ylzem tesber chwiya.
+19 | مازال تقدر تستنّى مدّة طويلة. | Mazal t9der tstenna medda twila.
+19 | هادي مدّة! | Hadi medda!
+22 | هادي ما تصراش كلّ يوم. | Hadi ma tesrach koul youm.
+25 | لا، ڨاع! | La, ga3!
+36 | راني غير نشوف برك. | Rani ghir nchouf berk.
+38 | هادي مدّة وأنا نستنّى هادي. | Hadi medda w ana nestenna hadi.
+44 | ضرك زدتوها بزّاف! | Dork zedtouha bezzaf!
+44 | النظرية تاعو ما تدّيش بعيد. | En-nadhariya ta3ou ma teddich b3id.
+45 | راك مقلّق اليوم الصباح. | Rak m9alle9 l-youm s-sbah.
+45 | من الصباح والطريق مبلوكية. | Men s-sbah w t-tri9 mblokya.
+53 | هو الأحسن، ما كانش اللّي كيفو. | Houwa l-a7san, ma kanch elli kifou.
+55 | راني جاي، راني جاي فيسع. | Rani jay, rani jay fissa3.
+55 | دقيقة ونولّي. | D9i9a w nwelli.
+55 | ستنّاني، راني جاي فيسع. ستنّاني شويّة، راني جاي. | Stennani, rani jay fissa3. Stennani chwiya, rani jay.
+55 | قبلت الاقتراح تاعو طول. | 9belt l-i9tira7 ta3ou toul.
+55 | كنت عيّان بزّاف، رقدت طول. | Kount 3eyyan bezzaf, r9adt toul.
+59 | واش درت البارح؟ | Wach dert l-bare7?
+65 | في كلّ مرّة يخلّوني نعمّر ورقة. | F koul merra ykhelliwni n3ammer wer9a.
+81 | قعدنا قريب ساعتين في الطابور. | 9a3adna 9rib sa3tin f t-tabour.
+86 | على قريب يفوت الوقت. | 3la 9rib yfout el-wa9t.
+86 | قريب تكمّل؟ | 9rib tkemmel?
+86 | واش، قريب تكمّل؟ | Wach, 9rib tkemmel?
+94 | الخبر طاح ضرك برك. | L-khbar ta7 dork berk.
+97 | وما راهوش فرحان كثر بسبّتها. | W ma rahouch fer7an ktar b sebbetha.
+98 | ساعات نسقسي روحي كيفاش وصلت. | Sa3at nse9si rou7i kifach wselt.

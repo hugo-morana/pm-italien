@@ -1,0 +1,8 @@
+# idx | arabe | latin
+5 | روح من وجهي! | Rou7 men wejhi!
+6 | إلا سحقيت المعاونة، كليكي على المونو الفوق على ليسار تاع الإكران. | Ila s7a9it l-m3awna, cliqui 3la l-menu l-fou9 3la lisar ta3 l-ecran.
+10 | يبان بلّي نسى الرونديفو. | Yban belli nsa r-rondivou.
+10 | حسب الخبراء، الحالة زادت تخلات. | 7sab l-khobara, l-7ala zadet tkhlat.
+76 | ساكنة حذا الڨار. | Sakna 7dha l-gar.
+82 | نوصلّها رغم كلّش. | Nwasselha roghm koulech.
+83 | عرفتها على يدّ بوب. | 3reftha 3la yedd Bob.

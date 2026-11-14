@@ -1,0 +1,68 @@
+# idx | arabe | latin
+2 | دوك نرجع. | Dok nerja3.
+7 | راجلها يخدم عند فورد. | Rajelha yekhdem 3and Ford.
+7 | راجلها يقدّم الأخبار في التّلفزيون. | Rajelha y9addem l-akhbar fe t-televizyoun.
+7 | راجلها يتفرّج في التّلفزيون باش يقتل الوقت. | Rajelha yetfarrej fe t-televizyoun bach y9tel l-wa9t.
+7 | تحبّ راجلها يسيرفيها. | T7ebb rajelha ysirviha.
+7 | راجلها من عايلة لاباس عليها. | Rajelha men 3ayla labas 3liha.
+10 | ما نروحش، وخلاص! | Ma nro7ch, w khlas!
+14 | نحبّ نتفرّج الأفلام. | N7ebb netfarrej l-aflam.
+15 | عندي خبر مليح ليك. | 3andi khbar mli7 lik.
+15 | هو اللّوّل اللّي سمع الخبر. | Houwa l-lewwel elli sme3 l-khbar.
+18 | هاد التّصويرة دّيناها هادي زوج ولّا تلت سنين. | Had t-tsawira ddinaha hadi zouj wella tlet snin.
+20 | عندك صاحب؟ | 3andek sa7eb?
+27 | مات موتة خايبة. | Mat mouta khayba.
+29 | الشّاف تاع الرّايون راجل تاع ثيقة. | Ech-chef ta3 r-rayon rajel ta3 thi9a.
+38 | راهو يحوّس بالكلب. | Rahou y7awwes b l-kelb.
+38 | الكلب تاع الجار بقى ينبح الليل كامل. | L-kelb ta3 j-jar b9a yenba7 l-lil kamel.
+41 | ماشي نتا اللّي تعطيني الأوامر! | Machi nta elli t3tini l-awamer!
+42 | الصّحّ يخلعو. | S-sa77 ykhal3ou.
+43 | ديما يطيح واقف. | Dima yti7 wa9ef.
+44 | ما عنديش الخاطر ڨاع. | Ma 3andich el-khater gaa3.
+44 | تحبّ تروح للسّينما؟ | T7ebb tro7 l s-sinima?
+46 | أنا نخدم في البيرو. | Ana nekhdem fel-biro.
+48 | الكلام اللّي قلتو برّدلو قلبو. | L-kelam elli 9oltou barredlou 9albou.
+49 | هادا كلّش يخلّيني نتوحّش البلاد. | Hada kollech ykhallini netwa77ech l-blad.
+51 | نهار شباب، صحّ؟ | Nhar chbab, sa77?
+51 | من بعد نهار الخدمة، ما يحوّس غير على الرّاحة. | Men ba3d nhar l-khedma, ma y7awwes ghir 3la r-ra7a.
+54 | عمري ما نديرها وأنا في الخدمة. | 3omri ma ndirha w ana fel-khedma.
+54 | ما راهش يخدم الليلة. | Ma rahch yekhdem l-lila.
+54 | السّيرفيس والضّريبة داخلين في السّومة. | S-servis w d-dariba dakhlin fe s-souma.
+55 | ما كانش علاش تطلب السّماح. | Makanch 3lach totlob s-sma7.
+55 | ما بقاتش تستاهل. | Ma b9atch testahel.
+55 | ما كانتش تستاهل. | Ma kantch testahel.
+55 | ما كانش علاش تقولها. | Makanch 3lach t9oulha.
+55 | عطى كلّ ما عندو. | 3ta koul ma 3andou.
+55 | ما تستاهلش نهدرو عليها. | Ma testahelch nehedrou 3liha.
+55 | ما جاتش ساهلة. | Ma jatch sahla.
+56 | ما عنديش الثّيقة فيه. | Ma 3andich t-ti9a fih.
+57 | يعطيك الصّحّة على المعاونة. | Y3tik s-sa77a 3la l-m3awna.
+60 | أرواح نورّيلك الدّار كاملة. | Arwa7 nwarrilek d-dar kamla.
+63 | البورطابل تاعي ما بقاش يخدم. التّيليفون البورطابل تاعي ما بقاش يخدم. | L-portabl ta3i ma b9ach yekhdem. T-tilifoun l-portabl ta3i ma b9ach yekhdem.
+63 | أرواح بالزّربة، يمّاك في التّيليفون. | Arwa7 bez-zerba, yemmak fe t-tilifoun.
+64 | هو وحدو اللّي صاب النّيميروات الرّابحين. | Houwa wa7dou elli sab n-nimirouwat r-rab7in.
+66 | حطّوه في بلاصة آمنة. | 7attouh f blasa amna.
+69 | راك تتصوّر؟ | Rak tetsawwer?
+69 | لازم تحسب حساب واش يقولولك. | Lazem t7seb 7sab wach y9oulou lek.
+69 | قيّدها عليّا. | 9ayyedha 3liya.
+69 | قال بلّي راح يخلّصهالو. | 9al belli ra7 ykhallas-halou.
+71 | راح يوصّلك وهو فرحان. | Ra7 ywasslek w houwa fer7an.
+74 | كمّل الكاس تاعك، راهم يستنّاو فينا. | Kemmel l-kas ta3ek, rahoum yestennaw fina.
+75 | بقى في الفراش سمانة. | B9a fel-frach smana.
+75 | يقرا بزّاف تاع الكتوبة. | Ye9ra bezzaf ta3 l-ktouba.
+76 | ماشي ذنبك. | Machi dhenbek.
+85 | راسك قاسح بزّاف. | Rassek 9ase7 bezzaf.
+85 | تشوف بلّي عقلو معوّج. | Tchouf belli 3a9lou m3awwej.
+86 | رد بالك من الدّرجة! | Redd balek men d-darja!
+89 | نرجع من هنا لخمسطاش يوم. | Nerja3 men hna l khmasta3ch youm.
+90 | كيفاش شفت المسرحيّة؟ | Kifach chefti l-mesra7iya?
+90 | ما بقاوش الپياس دي روشانج. | Ma b9awch l-pyass de rechange.
+92 | هاهي الكارطة تاعي. | Hahi l-karta ta3i.
+92 | تقبلو الكارطة البنكيّة؟ | T9eblou l-karta l-bankiya?
+92 | يخلّص واش يشري بالكارطة. | Ykhalles wach yechri bel-karta.
+93 | ديما يهدر كلام قاسح. | Dima yehder kelam 9ase7.
+97 | شفت منام خايب. | Cheft mnam khayeb.
+97 | البارح في الليل شفت منام غريب. | L-bare7 fel-lil cheft mnam ghrib.
+97 | الحلم تاعي نخلّي الدّنيا خير. | L-7olm ta3i nkhalli d-dounya khir.
+97 | يحلم يولّي نجم. | Ye7lem ywalli nejm.
+99 | حكمو بوليسي وهو داير فيها. | 7akmou poulisi w houwa dayer fiha.

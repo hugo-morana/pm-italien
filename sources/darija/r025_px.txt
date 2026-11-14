@@ -1,0 +1,13 @@
+# idx | phrase arabe | phrase latine
+6 | هادي تبقى بيني وبينك. | Hadi tab9a bini w binek.
+48 | نسقسي روحي إذا ممكن. | Nsa9si rou7i ida mumkin.
+52 | نشوفها خسارة. | Nchoufha khsara.
+52 | نشوفها ماشي في بلاصتها. | Nchoufha machi f blastha.
+52 | نشوفها مشبوهة بزّاف. | Nchoufha machbouha bezzaf.
+52 | نشوف الفيلم يقلّق شويّة. | Nchouf l-film y9alle9 chwiya.
+52 | نشوف بلّي طوّلت بزّاف. | Nchouf belli tawwlet bezzaf.
+52 | نشوف بلّي زادو فيها شويّة. | Nchouf belli zadou fiha chwiya.
+52 | نشوف هاد الشّتا اللّي ما حبّتش تحبس تضيّق الخاطر. | Nchouf had ch-chta lli ma 7abbetch te7bes tdayye9 l-khater.
+57 | ما يقدرش يجي؟ حسن! | Ma y9derch yji? 7sen!
+69 | في اللّخر، ما كانش خامج بزّاف. | F l-lekher, ma kanch khamej bezzaf.
+96 | نتصوّر بلّي فات الوقت ديجا. | Ntsawwer belli fat l-wa9t déjà.

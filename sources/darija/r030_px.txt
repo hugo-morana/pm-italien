@@ -1,0 +1,62 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+0 | ما بقاش صغير. | Ma b9ach sghir.
+2 | ما عندي حتّى فكرة عليها. | Ma 3andi 7atta fekra 3liha.
+2 | ما عندها حتّى تأثير عليه. | Ma 3andha 7atta ta2thir 3lih.
+2 | ما كاين حتّى حشمة كي تعترف بيها. | Ma kayen 7atta 7echma ki ta3taref biha.
+5 | الزيارة مع الڨيد في المدينة القديمة عجبتني بزّاف. | Ez-zyara m3a l-guide f l-mdina l-9dima 3ejbetni bezzaf.
+9 | احمد ربّي. | A7med rebbi.
+9 | راهي تستنّى مولود. | Rahi testenna mouloud.
+9 | راني فرحان بزّاف. | Rani fer7an bezzaf.
+10 | راهي في أحسن حالة. | Rahi f a7sen 7ala.
+13 | زاد لقدّام بزّاف. | Zad l 9eddam bezzaf.
+13 | ما عندك حتّى حاجة أهمّ تديرها؟ | Ma 3andek 7atta 7aja ahamm tdirha?
+13 | يبان كلّي والو، بصّح راهي مهمّة. | Ybane kelli walou, bessa7 rahi mouhimma.
+18 | عاودت الشتا تصبّ. | 3awdet ech-chta tsobb.
+18 | عندي شهور ما سمعت عليه والو. | 3andi chhour ma sma3t 3lih walou.
+20 | مات وهو في عزّ شبابو. | Mat w houwa f 3ezz chbabou.
+21 | عمري ما كنت نظنّ بلّي هادي ممكنة. | 3omri ma kont ndhonn belli hadi moumkna.
+28 | راكم ظراف بزّاف. | Rakom dhraf bezzaf.
+29 | دارها من راسو. | Darha men rasou.
+32 | عمرو ما يعجبو حال. | 3omrou ma y3ajbou 7al.
+32 | تقدر تكون فرحان. | T9der tkoun fer7an.
+32 | فرحتلك بزّاف. | Fre7tlek bezzaf.
+34 | راني فرحان بالعطلة الجاية في الثلج. | Rani fer7an b l-3otla j-jaya f t-telj.
+38 | ماشي ساهلة كيما تظنّ. | Machi sahla kima tdhonn.
+39 | راني قدّام خدمة صعيبة. | Rani 9eddam khedma sa3iba.
+40 | حنا عايلة تاع ربعة. | 7na 3ayla ta3 reb3a.
+40 | طاح على ظهرو. | Ta7 3la dhahrou.
+42 | ڨريف طويل كيما هاكا ما يتصوّرش في ألمانيا. | Grève twil kima haka ma yetsawwarch f Almanya.
+42 | صحاب من بكري. | S7ab men bekri.
+46 | هاد الكاتب خارج من عايلة زوالية. | Had el-kateb kharej men 3ayla zawaliya.
+48 | راك تضحّك بزّاف. | Rak tdhe77ek bezzaf.
+49 | ما كنتش نستنّى هادي. ما كنتش نستنّى حاجة كيما هاكا. | Ma kountch nestenna hadi. Ma kountch nestenna 7aja kima haka.
+49 | عمري ما شفت حاجة كيما هادي. | 3omri ma cheft 7aja kima hadi.
+51 | نحبّ نشرب كاس حليب. | N7ebb nechreb kas 7lib.
+51 | نحبّ كاس شراب أحمر. | N7ebb kas chrab a7mer.
+51 | نشرب كاس بيرة بالخاطر. | Nechreb kas birra b l-khater.
+55 | دار روحو مريض. | Dar rou7ou mridh.
+55 | هادي تمرّضني. | Hadi tmarradhni.
+55 | راك مهبول ولّا واش؟ | Rak mahboul wella wach?
+56 | ما تقيسش التصاور، يدّيك موسّخين. | Ma t9isch t-tsawer, yeddik mwessekhin.
+56 | واش من طبع خايب! | Wach men tab3 khayeb!
+57 | ماشي خطيرة لهاد الدرجة. | Machi khtira l had d-daraja.
+58 | الجملة تاعك غالطة. | El-jomla ta3ek ghalta.
+58 | واش راك تقول غلط، وانت تعرف. | Wach rak t9oul ghlet, w enta ta3ref.
+59 | خلّيها تكون واضحة! | Khalliha tkoun wadh7a!
+59 | راني فاهم اللعبة تاعو. | Rani fahem el-lo3ba ta3ou.
+64 | عندو سنين وهو يتدرّب ستّ سوايع في النهار. | 3andou snin w houwa yetdarreb sett swaye3 f n-nhar.
+64 | جويس قعد كثر من ستّ سنين باش كتب أوليس. | Joyce 9a3ed kter men sett snin bach kteb Ulysse.
+67 | بالصّحّ راك تقول؟ | B s-sa77 rak t9oul?
+67 | ما ديتش التحذير تاعو بالصّحّ. | Ma ditch et-ta7dhir ta3ou b s-sa77.
+75 | ما نعطيش فيه دورو. | Ma na3tich fih dourou.
+78 | خويا عندو غير عشر سنين. | Khouya 3andou ghir 3achr snin.
+83 | ردّ بالك! تقدر تكون خطيرة. | Redd balek! T9der tkoun khtira.
+84 | راني نستنّى الأقبح. | Rani nestenna l-a9be7.
+85 | كاين شويّة البرد برّا. | Kayen chwiya l-berd berra.
+85 | لزمني نستنّى سوايع برّا في البرد. | Lzemni nestenna swaye3 berra f l-berd.
+87 | ماشي أطرش؛ ما يلزمش تعيّط هاكا. | Machi atrech; ma ylzemch t3ayyet haka.
+87 | يقولو عليه هو أقوى واحد في الحزب. | Y9oulou 3lih houwa a9wa wa7ed f l-7izb.
+87 | اللي عندو القوّة عندو الحقّ. | Elli 3andou l-9ouwwa 3andou l-7a9.
+89 | كان عندنا جوّ هايل. | Kan 3andna jaw hayel.
+90 | راني مغبون بزّاف. | Rani maghboun bezzaf.
+92 | هادي تزعّفني. | Hadi tza33afni.

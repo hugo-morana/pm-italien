@@ -1,0 +1,9 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+2 | هادي باينة. | Hadi bayna.
+4 | حبّت بالسّيف تخلّص هي بنفسها. | 7abbet b s-sif tkhalles hiya b nefsha.
+5 | وليدهم عاود دار لاكسيدون. | Wlidhom 3awed dar l'accident.
+5 | وليدهم غرق في الدّيون. | Wlidhom ghre9 f d-dyoun.
+5 | بنتهم فوندوز في حانوت تاع اللّبسة. | Bent'hom vendeuse f 7anout ta3 l-lebsa.
+5 | دفنو الحلم تاعهم تاع العدالة الاجتماعيّة. | Dafnou l-7oulm ta3hom ta3 l-3adala l-ijtima3iya.
+5 | رفضولهم الطّلب تاع الإعانة الاجتماعيّة. | Rafdoulhom t-talab ta3 l-i3ana l-ijtima3iya.
+5 | الدار تاعهم للبيع. | D-dar ta3hom l l-bi3.

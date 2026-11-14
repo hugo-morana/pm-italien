@@ -1,0 +1,54 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+1 | الماكلة اللّي نفضّلها هي الهامبورڨر. | El-makla elli nfaddelha hiya l-hamburger.
+3 | السرّاق غبر وسط الناس. | Es-serra9 ghber wesst en-nas.
+4 | جات الساعة باش نرقدو. | Jat es-sa3a bach ner9dou.
+4 | ما واليتش نرقد معطّل هاكدا. | Ma walitch ner9ed m3attel hakda.
+6 | نعرّفك بكلاوس، صاحبي من زمان. | N3arfek b Klaus, sa7bi men zman.
+7 | ساهل عليه يقول ما كانش يعرف. | Sahel 3lih y9oul ma kanch ya3ref.
+8 | نقدر نوصّلك للڨار. | N9der nwasslek l l-gare.
+10 | فكّرني نّدّي المفاتح تاعي. | Fakkarni nddi l-mfate7 ta3i.
+14 | ما نقدرش نسمح لروحي بهادي. | Ma n9derch nesma7 l rou7i b hadi.
+14 | حبّو يشوفو البيرمي تاعي. | 7abbou ychoufou l-permis ta3i.
+17 | هادي مازال بعيدة باش تكمّل. | Hadi mazal b3ida bach tkemmel.
+17 | أقعد، الفيلم مازال ما كمّلش. | O93od, el-film mazal ma kemmelch.
+18 | حبس ما تبكيش. ما تبكيش. | 7bes ma tebkich. Ma tebkich.
+24 | فرحت كي عاودت شفتك! | Fra7t ki 3awedt cheftek!
+24 | فرّحتني بزّاف كي عاودت شفتك. | Farra7tni bezzaf ki 3awedt cheftek.
+26 | نقدرو نحسبوها هاكدا. | N9edrou ne7sbouha hakda.
+28 | جريت قدّ ما قدرت. | Jrit 9add ma 9dert.
+35 | ما رانيش نشكّ فيها. ما رانيش نعاود نحطّها في السؤال. | Ma ranich nchekk fiha. Ma ranich n3awed n7ottha fi s-sou2al.
+38 | راهو مستعدّ يدير كلّش باش ينجح. | Rahou mesta3edd ydir koulech bach yenja7.
+39 | ما يحبّ حتّى تبديلة. | Ma y7ebb 7atta tebdila.
+47 | نظنّ راكم غالطين. | Ndhonn rakom ghaltin.
+47 | هاد المرّة ما غلطتش. | Had el-merra ma ghlettch.
+47 | صحّحني إذا غلطت. | Sa77a7ni ida ghlett.
+47 | حبسني إذا راني غالط. | 7besni ida rani ghalet.
+48 | ماشي أنا، والله! | Machi ana, wallah!
+49 | ما تهمّنيش بزّاف. | Ma thammnich bezzaf.
+49 | ما يهمّنيش. | Ma yhammnich.
+58 | تموت وما تعترفش. | Tmout w ma ta3terefch.
+64 | مازال تقدر تخمّم فيها. | Mazal t9der tkhemmem fiha.
+65 | حتّى ما حاولتش نمنعو. | 7atta ma 7awelt nemn3ou.
+65 | هادي ما تمنعنيش نرقد. | Hadi ma temna3nich ner9ed.
+66 | إذا ما يقلّقكش. | Ida ma y9alle9kch.
+75 | ما نقدرش نقرّر باش نڨّز. | Ma n9derch n9arrer bach neggez.
+76 | رح تضحك: حتّى أنا درتها. | Ra7 tedh7ek: 7atta ana dertha.
+76 | علاش راك تضحك؟ | 3lach rak tedh7ek?
+76 | موّتتهم بالضحك. | Mawwettehom b dh-dh7ek.
+76 | كنّا ميّتين بالضحك. | Konna mayytin b dh-dh7ek.
+76 | قال هاكدا؟ بلا ما تضحك عليّا! | 9al hakda? Bla ma tedh7ek 3liya!
+76 | حاجة صغيرة تضحّكها. | 7aja sghira tdha77akha.
+77 | نشكرك على كلّ واش درتلي. | Nechkrek 3la koul wach dertli.
+78 | الوقاية خير من العلاج. | El-wi9aya khir men el-3ilaj.
+79 | ڨاع غوّطنا من الفرحة. | Ga3 ghawwatna men el-fer7a.
+80 | عرضت صاحبي ياكل عندي. | 3radt sa7bi yakoul 3andi.
+82 | نقدر نأكّدهالك. | N9der n2ekkedhalek.
+82 | راكم غالطين الطريق، نأكّدلكم. | Rakom ghaltin et-tri9, n2ekkedlkom.
+86 | البارح حكمني البرد. | El-bare7 7kemni l-berd.
+89 | نخاف ما يقدرش عليها. | Nkhaf ma y9derch 3liha.
+89 | نخاف يكون كذب عليك. | Nkhaf ykoun kdeb 3lik.
+92 | زوّج بوحدة من البلاد. | Zawwej b wa7da men el-blad.
+97 | أحلم برك! | A7lem berk!
+98 | تبان تندار. يبانلي تندار. | Tban tendar. Ybanli tendar.
+98 | هادي تبان مشبوهة شويّة. | Hadi tban mechbouha chwiya.
+99 | دار المستحيل باش يدّي هاد الخدمة. | Dar el-mosta7il bach yeddi had l-khedma.

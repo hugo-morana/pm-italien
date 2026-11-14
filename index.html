@@ -1,5 +1,10 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="manifest" href="manifest.json"><meta name="apple-mobile-web-app-title" content="Palazzo"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#2a211d"></head><body>
-<title>Palazzo dell'italiano</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+[lang="ar"]{font-family:"Noto Naskh Arabic","Geeza Pro","Arabic Typesetting","Segoe UI","Tahoma",sans-serif;unicode-bidi:isolate}
+.big-it span[lang="ar"]{font-size:1.25em}
+.dz-lt{display:block;direction:ltr;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:.62em;letter-spacing:.02em;opacity:.8;margin-top:2px}
+.dz-elt{direction:ltr;font-size:13px;margin:2px 0 0;opacity:.85;font-family:var(--mono,'IBM Plex Mono',monospace)}
+</style><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="manifest" href="manifest.json"><meta name="apple-mobile-web-app-title" content="Palazzo"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#2a211d"></head><body>
+<title>Dar ed-Darja</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
@@ -275,14 +280,19 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 .hist th:first-child, .hist td:first-child { text-align:left }
 @media (prefers-reduced-motion: reduce) { * { transition:none !important } }
 @media (min-width: 900px) { #drawer { left:auto; right:16px; bottom:calc(var(--tb) + 16px); width:420px; border-radius:12px; max-height:calc(100% - 200px) } #nav { bottom:calc(var(--tb) + 20px); left:calc(50% - 210px) } #eye { bottom:calc(var(--tb) + 20px); right:452px } #joy { bottom:calc(var(--tb) + 30px) } }
+
+[lang="ar"]{font-family:"Noto Naskh Arabic","Geeza Pro","Arabic Typesetting","Segoe UI","Tahoma",sans-serif;unicode-bidi:isolate}
+.big-it span[lang="ar"]{font-size:1.25em}
+.dz-lt{display:block;direction:ltr;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:.62em;letter-spacing:.02em;opacity:.8;margin-top:2px}
+.dz-elt{direction:ltr;font-size:13px;margin:2px 0 0;opacity:.85;font-family:var(--mono,'IBM Plex Mono',monospace)}
 </style>
 
 <canvas id="scene" aria-label="Palais mental 3D"></canvas>
-<div id="chargement">Palazzo dell'italiano<small>Construction des pièces…</small></div>
+<div id="chargement">Dar ed-Darja<small>Construction des pièces…</small></div>
 
 <header id="top">
   <div class="row1">
-    <div class="brand">Palazzo dell'italiano<small id="where">—</small></div>
+    <div class="brand">Dar ed-Darja<small id="where">—</small></div>
     <span class="spacer"></span>
     <button class="chip" id="hfBtn" type="button" aria-pressed="false" title="Parcours mains libres : le palais avance seul de niche en niche" aria-label="Parcours mains libres"><b id="hfIc">▶</b><span class="hfl"> Mains libres</span></button>
     <button class="chip" id="modeBtn" type="button" aria-pressed="false" title="Visite libre">Libre</button>
@@ -319,7 +329,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 <div class="sheet" id="planSheet" hidden><div>
   <div class="shead"><h2>Plan du palais</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
   <h3>Version du palais</h3>
-  <div class="pills" role="group" aria-label="Version du palais"><button class="pill" type="button" data-palais="classe">Par classe</button><button class="pill" type="button" data-palais="freq">Par fréquence FR</button><button class="pill" type="button" data-palais="freqit">Par fréquence IT</button><button class="pill" type="button" data-palais="theme">Par thème</button><button class="pill" type="button" data-palais="lisa">Lisa · la maison</button></div>
+  <div class="pills" role="group" aria-label="Version du palais"><button class="pill" type="button" data-palais="classe">Par classe</button><button class="pill" type="button" data-palais="freq">Par fréquence FR</button><button class="pill" type="button" data-palais="freqit" hidden>Par fréquence DZ</button><button class="pill" type="button" data-palais="theme">Par thème</button><button class="pill" type="button" data-palais="lisa">Lisa · la maison</button></div>
   <p id="palTxt" style="margin:0;font:500 11px var(--mono);color:var(--muted);letter-spacing:.05em"></p>
   <svg id="planSvg" role="img" aria-label="Plan des deux étages"></svg>
   <p class="pr" style="margin:0">Touchez une pièce pour y aller. La boucle part des noms et longe les salles de mots. Chaque classe forme une tour d'étages desservie par l'escalier, du mot le plus fréquent (rez-de-chaussée) au moins fréquent (dernier étage). La boucle revient par la rangée d'en face (expressions courantes, modales, incises), monte ensuite étage par étage, puis redescend aux noms.</p>
@@ -340,13 +350,13 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
 <section class="view" id="lib" hidden aria-label="Bibliothèque"><div class="in">
   <h1>Bibliothèque <small id="libCount"></small></h1>
   <div class="ltool">
-    <input type="search" id="libQ" placeholder="Chercher un mot, en français ou en italien…" aria-label="Chercher" autocomplete="off">
+    <input type="search" id="libQ" placeholder="Chercher un mot, en français, en darija (arabe ou latin)…" aria-label="Chercher" autocomplete="off">
     <select id="libFam" aria-label="Classe"></select>
     <select id="libTag" aria-label="Sous-catégorie"></select>
     <select id="libTh" aria-label="Thème"></select>
     <select id="libKind" aria-label="Type"><option value="">mots et tournures</option><option value="fig">expressions figées</option><option value="loc">locutions</option><option value="col">collocations</option><option value="tpl">tournures à trous (…)</option><option value="mot">mots seuls</option></select>
     <select id="libSt" aria-label="Statut"><option value="">tous les statuts</option><option value="new">jamais vus</option><option value="seen">appris</option><option value="due">à réviser aujourd'hui</option><option value="weak">fragiles (boîtes 1-2)</option></select>
-    <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Fréquence FR</button><button class="pill" type="button" data-liborder="freqit" aria-pressed="false">Fréquence IT</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button><button class="pill" type="button" data-liborder="theme" aria-pressed="false">Par thème</button></div>
+    <div class="pills" role="group" aria-label="Ordre de la liste"><button class="pill" type="button" data-liborder="freq" aria-pressed="true">Fréquence FR</button><button class="pill" type="button" data-liborder="freqit" aria-pressed="false" hidden>Fréquence DZ</button><button class="pill" type="button" data-liborder="classe" aria-pressed="false">Par classe</button><button class="pill" type="button" data-liborder="theme" aria-pressed="false">Par thème</button></div>
     <span id="libInfo"></span> <button class="pill" type="button" id="libFold" style="margin-left:6px">Tout replier</button> <button class="pill" type="button" id="libFoldSub" hidden>Replier les sous-catégories</button>
   </div>
   <div id="libList"></div>
@@ -356,7 +366,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h1>Réglages</h1>
   <h2 style="margin:4px 0 0">Palais</h2>
   <h3>Lecture pendant la visite</h3>
-  <div class="pills" role="group" aria-label="Lecture audio pendant la visite du palais"><button class="pill" type="button" data-sayopt="vF">🔊 Mot FR</button><button class="pill" type="button" data-sayopt="vI">🔊 Mot IT</button><button class="pill" type="button" data-sayopt="vEF">🔊 Exemple FR</button><button class="pill" type="button" data-sayopt="vEI">🔊 Exemple IT</button></div>
+  <div class="pills" role="group" aria-label="Lecture audio pendant la visite du palais"><button class="pill" type="button" data-sayopt="vF">🔊 Mot FR</button><button class="pill" type="button" data-sayopt="vI">🔊 Mot DZ</button><button class="pill" type="button" data-sayopt="vEF">🔊 Exemple FR</button><button class="pill" type="button" data-sayopt="vEI">🔊 Exemple DZ</button></div>
   <p class="pr" style="margin:0">À chaque niche atteinte (visite guidée ou libre), les sons cochés sont lus l'un après l'autre, dans cet ordre.</p>
   <h3>Passage d'une niche à la suivante</h3>
   <div class="pills" role="group" aria-label="Recul sur la pièce"><button class="pill" type="button" data-sayopt="recul">↩ Recul sur la vue de la pièce</button></div>
@@ -365,7 +375,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="pills" role="group" aria-label="Pause entre deux niches en mains libres"><button class="pill" type="button" data-hfpause="1.5">Pause 1,5 s</button><button class="pill" type="button" data-hfpause="3">Pause 3 s</button><button class="pill" type="button" data-hfpause="6">Pause 6 s</button><button class="pill" type="button" data-hfpause="10">Pause 10 s</button></div>
   <p class="pr" style="margin:0">Le bouton ▶ Mains libres du palais passe seul à la niche suivante, en suivant la chaîne : il lit les sons cochés ci-dessus, attend la pause, puis avance. Sans case cochée, il avance après la pause seulement. Un geste (toucher l'écran, une touche, un bouton) l'arrête ; l'écran reste allumé pendant le parcours.</p>
   <h3>Répétitions en mains libres</h3>
-  <div class="hfreps"><label class="hfr"><span>Mot FR</span><select data-hfrep="vF" aria-label="Répétitions : Mot FR"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></label><label class="hfr"><span>Mot IT</span><select data-hfrep="vI" aria-label="Répétitions : Mot IT"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></label><label class="hfr"><span>Exemple FR</span><select data-hfrep="vEF" aria-label="Répétitions : Exemple FR"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></label><label class="hfr"><span>Exemple IT</span><select data-hfrep="vEI" aria-label="Répétitions : Exemple IT"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></label></div>
+  <div class="hfreps"><label class="hfr"><span>Mot FR</span><select data-hfrep="vF" aria-label="Répétitions : Mot FR"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></label><label class="hfr"><span>Mot DZ</span><select data-hfrep="vI" aria-label="Répétitions : Mot DZ"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></label><label class="hfr"><span>Exemple FR</span><select data-hfrep="vEF" aria-label="Répétitions : Exemple FR"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></label><label class="hfr"><span>Exemple DZ</span><select data-hfrep="vEI" aria-label="Répétitions : Exemple DZ"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option><option value="5">5×</option></select></label></div>
   <p class="pr" style="margin:0">Nombre de fois que chaque son coché est lu, à la suite, avant de passer au son suivant (en mains libres seulement ; en visite normale, chaque son est lu une fois).</p>
   <h2 style="margin:18px 0 0">Tests et révisions</h2>
 
@@ -378,12 +388,12 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="pills" role="group" aria-label="Mode de réponse"><button class="pill" type="button" data-inmode="aucun">Aucune · je m'auto-évalue</button><button class="pill" type="button" data-inmode="clavier">Clavier · je tape</button><button class="pill" type="button" data-inmode="voix">Voix · je parle</button></div>
   <p class="pr" id="inModeTxt" style="margin:0"></p>
   <div class="pills" role="group" aria-label="Exemple à la révélation"><button class="pill" type="button" data-sayopt="showEx">📖 Afficher l'exemple avec la réponse</button></div>
-  <p class="pr" style="margin:0">Quand tu découvres la réponse, la phrase d'exemple de la niche s'affiche dessous, en italien et en français, avec ses boutons d'écoute.</p>
+  <p class="pr" style="margin:0">Quand tu découvres la réponse, la phrase d'exemple de la niche s'affiche dessous, en darija et en français, avec ses boutons d'écoute.</p>
   <h3>Voix</h3>
   <div class="pills" role="group" aria-label="Lecture audio pendant les tests"><button class="pill" type="button" data-sayopt="sayQ">🔊 Lire la question</button><button class="pill" type="button" data-sayopt="sayA">🔊 Lire la réponse</button></div>
   <p class="pr" style="margin:0">La question est lue dès qu'elle s'affiche (le mot ou la phrase à traduire, dans sa langue) ; la réponse est lue quand tu la découvres.</p>
   <h3>Approche d'apprentissage</h3>
-  <div class="pills" role="group" aria-label="Approche d'apprentissage"><button class="pill" type="button" data-approach="freqfr">Fréquence FR</button><button class="pill" type="button" data-approach="freqit">Fréquence IT</button><button class="pill" type="button" data-approach="theme">Par thème</button><button class="pill" type="button" data-approach="classe">Par classe</button></div>
+  <div class="pills" role="group" aria-label="Approche d'apprentissage"><button class="pill" type="button" data-approach="freqfr">Fréquence FR</button><button class="pill" type="button" data-approach="freqit" hidden>Fréquence DZ</button><button class="pill" type="button" data-approach="theme">Par thème</button><button class="pill" type="button" data-approach="classe">Par classe</button></div>
   <p class="pr" id="approachTxt" style="margin:0"></p>
   <div class="frow">Nouveaux par séance <input type="number" id="newN" min="1" max="30" value="10" style="width:4.5em"></div>
   <h3>Questions</h3>
@@ -415,7 +425,7 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="ckey" aria-hidden="true"><span><i style="border-color:var(--s1)"></i><b id="ckey1" style="font-weight:500">dans l'ordre du palais</b></span><span><i style="border-color:var(--s2);border-top-style:dashed"></i>ordre optimal</span><span><i style="border-color:var(--s3)"></i>ta progression</span><span id="ckeyExt" hidden><i style="border-color:var(--muted);border-top-style:dotted"></i>au-delà du palais</span></div>
   <div class="pills" role="group" aria-label="Étendue de la courbe"><button class="pill" type="button" data-cscale="pal" aria-pressed="true">Palais</button><button class="pill" type="button" data-cscale="full" aria-pressed="false">Jusqu'à 100 %</button></div>
   <div class="pills" role="group" aria-label="Mesure" style="margin-top:6px"><button class="pill" type="button" data-cmes="mots" aria-pressed="true">Mots</button><button class="pill" type="button" data-cmes="tour" aria-pressed="false">Tournures</button></div>
-  <div class="pills" role="group" aria-label="Ordre d'apprentissage de la courbe" style="margin-top:6px"><button class="pill" type="button" data-corder="pal" aria-pressed="true">Ordre du palais</button><button class="pill" type="button" data-corder="fr" aria-pressed="false">Fréquence FR</button><button class="pill" type="button" data-corder="it" aria-pressed="false">Fréquence IT</button></div>
+  <div class="pills" role="group" aria-label="Ordre d'apprentissage de la courbe" style="margin-top:6px"><button class="pill" type="button" data-corder="pal" aria-pressed="true">Ordre du palais</button><button class="pill" type="button" data-corder="fr" aria-pressed="false">Fréquence FR</button><button class="pill" type="button" data-corder="it" aria-pressed="false">Fréquence DZ</button></div>
   <div class="curvebox"><svg id="curve" viewBox="0 0 640 400" role="img" aria-label="Pourcentage de compréhension selon le nombre de mots appris"></svg><div id="ctip" hidden></div></div>
   <p id="curveTxt"></p>
   </div>
@@ -469,16 +479,16 @@ const code = r => r.code || ({ noms: "n", verbes: "v", adjectifs: "adj", determi
 const SUP = n => String(n).split("").map(c => "⁰¹²³⁴⁵⁶⁷⁸⁹"[+c]).join("");
 const BASE = { noms: "Noms", verbes: "Verbes", adjectifs: "Adj.", adverbes: "Adverbes", pronoms: "Pronoms", conjonctions: "Conj.", prepositions: "Prép.", courantes: "Courantes", basiques: "Basiques", modales: "Modales", incises: "Incises", formes: "Formes", accords: "Accords" };
 const shortName = r => r.short || SHORT[r.id] || ((m => m && BASE[m[1]] ? BASE[m[1]] + " " + SUP(m[2]) : r.id)(r.id.match(/^(\w+?)_(\d+)$/)));
-const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → IT"], ["it", "IT → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"], ["phit", "Phrase IT → FR"], ["phfr", "Phrase FR → IT"]];
+const TYPES = [["num", "N° → mot"], ["img", "Mot → n°"], ["fr", "FR → DZ"], ["it", "DZ → FR"], ["aud", "Écoute → sens"], ["suite", "Suite"], ["chaine", "Chaîne"], ["phit", "Phrase DZ → FR"], ["phfr", "Phrase FR → DZ"]];
 const BOXDAYS = [0, 1, 2, 4, 8, 16];
 
 /* ============ Petits outils ============ */
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const ls = { get(k, d) { try { const v = localStorage.getItem("pmit:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
-             set(k, v) { try { localStorage.setItem("pmit:" + k, JSON.stringify(v)); } catch {} } };
+const ls = { get(k, d) { try { const v = localStorage.getItem("pmdz:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+             set(k, v) { try { localStorage.setItem("pmdz:" + k, JSON.stringify(v)); } catch {} } };
 const today = () => Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
-const norm = s => String(s || "").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/\(.*?\)/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\b(il|lo|la|i|gli|le|l|un|una|uno|le|les|de|du|des)\b/g, " ").replace(/\s+/g, " ").trim();
+const norm = s => String(s || "").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/\(.*?\)/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\b(el|l|le|la|les|un|une|de|du|des)\b/g, " ").replace(/\s+/g, " ").trim();
 function toast(t) { const e = $("#toast"); e.textContent = t; e.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => e.hidden = true, 2200); }
 function mark(s, m) {   // m : un ou plusieurs segments « a|b|c » surlignés dans l'ordre (mot fixe + paramètres [v], [n]…)
   if (!m) return esc(s); const L = s.toLowerCase(); let out = "", at = 0;
@@ -530,7 +540,7 @@ function layout() { // chaque pièce a un emplacement : étage, côté du couloi
     r.floor = sl.floor; r.o = V3(sl.x * GAP, sl.floor * 10, sl.side === "N" ? -2 - D / 2 : 2 + D / 2); r.rot = sl.side === "N" ? 0 : Math.PI;
     layout.xmax[sl.floor] = Math.max(layout.xmax[sl.floor] ?? 6.5, sl.x * GAP + 6.5);
   }
-  NL = layout.xmax.length;
+  NL = layout.xmax.length; for (let i = 0; i < NL; i++) if (layout.xmax[i] == null) layout.xmax[i] = 6.5;
 }
 function toWorld(r, v) { return v.clone().applyAxisAngle(V3(0, 1, 0), r.rot).add(r.o); }
 function dirWorld(r, v) { return v.clone().applyAxisAngle(V3(0, 1, 0), r.rot); }
@@ -1153,7 +1163,7 @@ function vsOne(text, src, lang, tok) {
     let guard = null, over = false; const done = () => { if (over) return; over = true; clearTimeout(guard); res(); }, arm = ms => { clearTimeout(guard); guard = setTimeout(done, ms); };
     const tts = () => { const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice; if (!s || !v || tok !== vsTok) return done();
       arm(3000 + 120 * text.length);
-      try { const u = vsUtt = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u); } catch (e) { done(); } };
+      try { const u = vsUtt = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : (v.lang || "ar-DZ"); u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u); } catch (e) { done(); } };
     if (!src) return tts();
     arm(15000);
     clipUrl(src).then(u => { if (tok !== vsTok) return done(); const a = vsPlayer(); a.onended = done; a.onerror = () => { a.onerror = null; tts(); };
@@ -1201,12 +1211,12 @@ async function hfLoop(tok) {
 function ficheHTML(ri, n) {
   const x = R[ri].niches[n], [nr, nn] = stepFrom(ri, n, 1), nx = R[nr].niches[nn], [pr, pn] = stepFrom(ri, n, -1), px = R[pr].niches[pn];
   return `<div class="fiche">
-    <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter le mot">🔊</button><span>${escP(dI(x))}</span></div>
+    <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter le mot">🔊</button><span lang="ar" dir="rtl">${escP(dI(x))}${x.lt ? `<span class="dz-lt" lang="fr">${esc(x.lt)}</span>` : ""}</span></div>
     <div class="frw"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.fr)}" data-src="${esc(asrc(x.af))}" aria-label="Écouter le mot en français">🔊</button><span>${escP(dF(x))}</span><span class="lg">FR</span></div>
-    <div class="phon"><span class="ipa" lang="it-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
-    <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(asrc(x.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.efr)}" data-src="${esc(asrc(x.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(x.efr, x.efm)}</p></div></div>
-    ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" data-src="${esc(asrc(e[3]))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(e[0])}" data-src="${esc(asrc(e[2]))}" aria-label="Écouter la phrase en français">🔊</button>${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
-    <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Gain une fois appris</span><span>${x.rk != null ? "rang " + x.rk + " · " : ""}occ./100 M</span></span>${gainBar("Compréhension IT", gainOf(R[ri], x, "it"), gainUnit(R[ri], x), x.oi, x.ax)}${gainBar("Expression FR", gainOf(R[ri], x, "fr"), gainUnit(R[ri], x), x.of, x.ax)}</div>
+    <div class="phon"><span class="ipa" lang="ar-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
+    <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(asrc(x.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="ar" dir="rtl">${mark(x.eit, x.eim)}</p>${x.elt ? `<p class="dz-elt">${esc(x.elt)}</p>` : ""}<p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.efr)}" data-src="${esc(asrc(x.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(x.efr, x.efm)}</p></div></div>
+    ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" data-src="${esc(asrc(e[3]))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="ar" dir="rtl">${esc(e[1])}</p>${e[4] ? `<p class="dz-elt">${esc(e[4])}</p>` : ""}<p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(e[0])}" data-src="${esc(asrc(e[2]))}" aria-label="Écouter la phrase en français">🔊</button>${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
+    <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Gain une fois appris</span><span>${x.rk != null ? "rang " + x.rk + " · " : ""}occ./100 M</span></span>${gainBar("Compréhension DZ", gainOf(R[ri], x, "it"), gainUnit(R[ri], x), x.oi, x.ax)}${gainBar("Expression FR", gainOf(R[ri], x, "fr"), gainUnit(R[ri], x), x.of, x.ax)}</div>
     <dl>
       <div><dt>Mnémo</dt><dd><em>${esc(x.mc)}</em></dd></div>
       <div><dt>Scène</dt><dd>${esc(x.sc)}</dd></div>
@@ -1214,10 +1224,10 @@ function ficheHTML(ri, n) {
       ${x.cm ? `<div><dt>Commentaire</dt><dd class="exfr">${esc(x.cm)}</dd></div>` : ""}
       <div><dt>Ma note</dt><dd><textarea class="note" data-note="${esc(noteKey(x))}" rows="2" placeholder="Ajouter une précision, un souvenir, une nuance…">${esc(NOTES[noteKey(x)] || "")}</textarea></dd></div>
       ${x.fo ? `<div><dt>Formes</dt><dd class="exfr">${esc(x.fo)}</dd></div>` : ""}
-      ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter avec tes propres mots. qn / qcn = quelqu'un (qualcuno), qc / qcs = quelque chose (qualcosa), qqpart = quelque part (da qualche parte) ; « faire / fare » tient la place de n'importe quel verbe, à la forme voulue (fait, fera, fasse, fait au participe… / fa, farà, faccia, fatto…)." : x.k === "col" ? "Collocation : une association de mots que l'italien préfère. Le sens se devine, mais c'est cette combinaison qu'on emploie (et pas une autre)." : x.k === "loc" ? `Locution ${LOCLAB[x._cls || famOf(R[ri])] || ""} : plusieurs mots qui fonctionnent ensemble comme un seul ${CLSING[x._cls || famOf(R[ri])] || "mot"}.` : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
+      ${x.k ? `<div><dt>Type</dt><dd class="exfr">${x.k === "tpl" ? "Tournure à trous : un modèle à compléter avec tes propres mots. qn / qcn = quelqu'un (qualcuno), qc / qcs = quelque chose (qualcosa), qqpart = quelque part (da qualche parte) ; « faire / fare » tient la place de n'importe quel verbe, à la forme voulue (fait, fera, fasse, fait au participe… / fa, farà, faccia, fatto…)." : x.k === "col" ? "Collocation : une association de mots que le darija préfère. Le sens se devine, mais c'est cette combinaison qu'on emploie (et pas une autre)." : x.k === "loc" ? `Locution ${LOCLAB[x._cls || famOf(R[ri])] || ""} : plusieurs mots qui fonctionnent ensemble comme un seul ${CLSING[x._cls || famOf(R[ri])] || "mot"}.` : "Expression figée : à apprendre telle quelle, en bloc."}</dd></div>` : ""}
       ${x.co && x.co.length ? `<div><dt>Collocations</dt><dd class="colls">${x.co.map(([c, f, inp]) => `<button class="say colc${inp ? " inp" : ""}" type="button" data-say="${esc(c)}" data-src="" title="${inp ? "déjà dans le palais · " : ""}${Math.round(f).toLocaleString("fr-FR")} fois / 100 M mots">${esc(c)}${inp ? " ✓" : ""}</button>`).join("")}<span class="exfr" style="display:block;font-size:12px;margin-top:2px">Les associations les plus fréquentes dans les sous-titres ; ✓ = déjà dans le palais. Touche pour écouter.</span></dd></div>` : ""}
       ${x.t && x.t.length ? `<div><dt>Étiquettes</dt><dd class="tags">${x.t.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</dd></div>` : ""}
-      ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence en français" : PAL === "freqit" ? "par fréquence en italien" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
+      ${x.li ? "" : `<div class="lien"><dt>⟶</dt><dd class="exfr">Les liens de chaîne sont écrits pour le palais par classe ; ici les mots se suivent ${PAL === "freq" ? "par fréquence en français" : PAL === "freqit" ? "par fréquence en darija" : "par thème, du plus fréquent au plus rare"}.<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}${!x.li ? "" : `<div class="lien"><dt>⟶ ${nr === ri ? String(nn).padStart(2, "0") : esc(shortName(R[nr])) + " " + String(nn).padStart(2, "0")}</dt><dd>${esc(x.li)}<br><span class="pr">suivant : ${esc(nx ? nx.it + " · " + nx.fr : "")}</span></dd></div>`}
     </dl>
     ${px ? `<details class="prev"><summary>⟵ depuis ${String(pn).padStart(2, "0")} · ${escP(dI(px))}</summary><p class="exfr" style="margin:6px 0 0">${esc(px.li)}</p></details>` : ""}
   </div>`;
@@ -1229,7 +1239,7 @@ function applyOffset() { if (!camera) return; const wide = innerWidth >= 900 && 
 /* ============ Audio ============ */
 let voice = null;
 let voiceFr = null;
-function pickVoice() { const s = window.speechSynthesis; if (!s) return; const all = s.getVoices(), vs = all.filter(v => /^it/i.test(v.lang)), vf = all.filter(v => /^fr/i.test(v.lang)); voice = vs.find(v => /it-IT/i.test(v.lang) && v.localService) || vs[0] || null; voiceFr = vf.find(v => /fr-FR/i.test(v.lang) && v.localService) || vf[0] || null; document.body.classList.toggle("novoice", !voice); }
+function pickVoice() { const s = window.speechSynthesis; if (!s) return; const all = s.getVoices(), vs = all.filter(v => /^ar/i.test(v.lang)), vf = all.filter(v => /^fr/i.test(v.lang)); voice = vs.find(v => /ar-DZ/i.test(v.lang)) || vs.find(v => /ar-(MA|TN|LY)/i.test(v.lang)) || vs.find(v => v.localService) || vs[0] || null; voiceFr = vf.find(v => /fr-FR/i.test(v.lang) && v.localService) || vf[0] || null; document.body.classList.toggle("novoice", !voice); }
 /* Sons Anki : paquets mp3 par salle ; « pk:paquet:début:longueur » */
 const asrc = (ref, alt) => ref ? "pk:" + ref.join(":") : (alt || "");
 const PACKS = {}, CLIPS = {};
@@ -1246,8 +1256,8 @@ function speak(text, src, btn, lang = "it") {
   if (btn) btn.classList.add("on"); const done = () => btn && btn.classList.remove("on");
   const tts = () => {
     const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice;
-    if (!s || !v) { done(); toast(lang === "fr" ? "Aucune voix française sur cet appareil" : "Aucune voix italienne sur cet appareil"); return; }
-    s.cancel(); const u = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u);
+    if (!s || !v) { done(); toast(lang === "fr" ? "Aucune voix française sur cet appareil" : "Aucune voix arabe sur cet appareil"); return; }
+    s.cancel(); const u = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : (v.lang || "ar-DZ"); u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u);
   };
   if (src) { clipUrl(src).then(u => { const a = spPlayer(); a.onended = done; a.onerror = null; a.src = u; return a.play(); }).catch(() => tts()); return; }
   tts();
@@ -1266,7 +1276,7 @@ function spUnlock() {
 /* ============ Persistance : préférences (navigateur) + répétition espacée (db par utilisateur) ============ */
 /* Trois palais sur les mêmes niches : par classe (le palais d'origine), par fréquence, par thème. La progression est commune :
    elle reste rangée sous les salles du palais par classe (salles « canoniques »). */
-const PAL = ["classe", "freq", "freqit", "theme", "lisa"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
+const PAL = ["classe", "freq", "theme", "lisa"].includes(ls.get("palais", "classe")) ? ls.get("palais", "classe") : "classe";
 const CLASSE = PAL === "classe" || PAL === "lisa";   // Lisa : même contenu et même progression que le palais par classe, décor de maison
 const PK = k => CLASSE ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", lisa: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
@@ -1282,6 +1292,7 @@ const SBCFG = window.PM_CONFIG || {};
 const store = { kind: null, db: null, sb: null, uid: null, email: "", cache: {}, timers: {} };
 const mergeCards = (a, b) => { const o = Object.assign({}, a); for (const k in b) { const x = o[k], y = b[k]; if (!x || (y.seen || 0) > (x.seen || 0) || (y.d || 0) > (x.d || 0) || ((y.d || 0) === (x.d || 0) && (y.b || 0) > (x.b || 0))) o[k] = y; } return o; };
 async function remoteGet(key) {
+  key = "dz_" + key;   // progression darija séparée de l'italien
   try {
     if (store.kind === "claude") { const s = await store.db.doc(`data/users/${store.uid}/${key}`).get(); return s.exists ? s.data() : null; }
     if (store.kind === "sb") { const { data, error } = await store.sb.from("progress").select("data").eq("key", key).maybeSingle(); if (error) throw error; return data ? data.data : null; }
@@ -1289,6 +1300,7 @@ async function remoteGet(key) {
   return null;
 }
 async function remoteSet(key, data) {
+  key = "dz_" + key;
   try {
     if (store.kind === "claude") await store.db.doc(`data/users/${store.uid}/${key}`).set(data);
     if (store.kind === "sb") { const { error } = await store.sb.from("progress").upsert({ user_id: store.uid, key, data, updated_at: new Date().toISOString() }); if (error) throw error; }
@@ -1526,7 +1538,7 @@ function ask(q) {
   if (q.ty === "it") { text = `Que veut dire ?\n${dI(x)}`; quizState.hideFr = true; mask = null; }
   if (q.ty === "aud") { text = "Écoute, puis donne le sens en français."; quizState.hideFr = true; }
   if (q.ty === "phit") { text = `Traduis en français : « ${x.eit} »`; quizState.hideFr = true; mask = null; }
-  if (q.ty === "phfr") { text = `Traduis en italien : « ${x.efr} »`; mask = null; }
+  if (q.ty === "phfr") { text = `Traduis en darija : « ${x.efr} »`; mask = null; }
   if (q.ty === "suite" || q.ty === "chaine") { const nx = nextOf(q.ri, q.n); q.target = nx; text = `Après « ${dI(x)} » (${num}), quel mot vient ensuite ?`; mask = nx.r === q.ri ? nx.n : null; }
   $("#voile").hidden = !(q.ty === "img" || q.ty === "aud" || q.ty === "fr" || q.ty === "it" || q.ty === "phit" || q.ty === "phfr");
   const focusN = q.ty === "suite" || q.ty === "chaine" ? q.n : q.n;
@@ -1542,7 +1554,7 @@ function ask(q) {
   if (q.ty === "aud") speak(x.it, asrc(x.ai, x.am)); else sayQuestion(q);
   renderFiche();
 }
-const repLang = ty => (ty === "it" || ty === "aud" || ty === "img" || ty === "phit") ? "fr-FR" : "it-IT";
+const repLang = ty => (ty === "it" || ty === "aud" || ty === "img" || ty === "phit") ? "fr-FR" : "ar-DZ";
 function lev(a, b) { const m = a.length, n = b.length; if (!m) return n; if (!n) return m; let p = Array.from({ length: n + 1 }, (_, j) => j);
   for (let i = 1; i <= m; i++) { const c = [i]; for (let j = 1; j <= n; j++) c[j] = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = c; } return p[n]; }
 const close = (a, b) => { a = norm(a).trim(); b = norm(b).trim(); if (!a || !b) return false; return a === b || lev(a, b) <= Math.max(1, Math.floor(Math.min(a.length, b.length) * 0.2)); };
@@ -1571,7 +1583,7 @@ function sentOk(expected, answer) {   // part des mots attendus retrouvés dans 
   const hit = E.filter(w => A.some(a => a === w || (w.length > 3 && lev(a, w) <= Math.floor(w.length * 0.25)))).length;
   return hit / E.length >= 0.75;
 }
-let WIDX = null, WMW = null;   // forme italienne exacte → items qui la portent (une forme conjuguée ou accordée compte pour son propre item, pas pour l'infinitif ni le mot de base) ; WMW : lieux en plusieurs mots (Stati Uniti)
+let WIDX = null, WMW = null;   // forme darija exacte → items qui la portent (une forme conjuguée ou accordée compte pour son propre item, pas pour l'infinitif ni le mot de base) ; WMW : lieux en plusieurs mots (Stati Uniti)
 // forme exacte, accents gardés (« là » ≠ « la », « è » ≠ « e ») ; article initial retiré des items (« la fame » → fame)
 const wtok = s => String(s || "").normalize("NFC").toLowerCase().replace(/\(.*?\)/g, " ").replace(/[’`]/g, "'").replace(/'/g, "' ").replace(/[^a-zà-öø-ÿ' ]/g, " ").split(/\s+/).map(w => w.replace(/^'+/, "")).filter(Boolean);
 const wkey = s => { const t = wtok(s); if (t.length > 1 && /^(il|lo|la|i|gli|le|l'|un|una|uno|un')$/.test(t[0])) t.shift(); return t.join(" "); };
@@ -1601,7 +1613,7 @@ function wordIndex() {
         if (!WIDX.has(w)) WIDX.set(w, []); WIDX.get(w).push({ ri, n, hole, form, noun, geo }); } } }));
   return WIDX;
 }
-function sentenceItems(x) {   // items vraiment portés par la phrase italienne : le contexte départage les trous (a C_lieu / a C_qn) et les homographes (fatto participe / il fatto)
+function sentenceItems(x) {   // items vraiment portés par la phrase en darija : le contexte départage les trous (a C_lieu / a C_qn) et les homographes (fatto participe / il fatto)
   const idx = wordIndex(), T = ctoks(x.eit), out = [], seen = new Set();
   const lead = T.length > 1 && /o$/.test(T[0].w) && PREPW.has(T[1].w) && !/^\s*[^\s,;:!?.…]+\s*[,;:!?.…]/.test(x.eit);   // « Lavoro a Ginevra » : 1re personne, pas « il lavoro »
   const push = e => { const k = e.ri + ":" + e.n; if (!seen.has(k)) { seen.add(k); out.push({ ri: e.ri, n: e.n }); } };
@@ -1631,7 +1643,7 @@ function sentenceItems(x) {   // items vraiment portés par la phrase italienne 
   }
   return out;
 }
-async function phraseWords(x) {   // items portés par les mots de la phrase italienne, avec ce qu'ils rapportent s'ils ne sont pas encore acquis
+async function phraseWords(x) {   // items portés par les mots de la phrase en darija, avec ce qu'ils rapportent s'ils ne sont pas encore acquis
   const out = [];
   for (const { ri, n } of sentenceItems(x)) {
     const c = await srsRoom(ri), y = R[ri].niches[n], ok = ty => c[n + ":" + ty] && c[n + ":" + ty].seen && c[n + ":" + ty].b >= 1;
@@ -1650,8 +1662,8 @@ async function fillPhraseWords(q, x) {
   const nn = L.filter(o => dir === "c" ? !o.comp : !o.expr).length;
   box.innerHTML = `<div class="phw-h">Mots de la phrase · ${nn ? `${nn} à apprendre` : "tous déjà acquis dans ce sens"}</div>
     <div class="phw-l">${L.map(o => { const nw = dir === "c" ? !o.comp : !o.expr; return `<span class="phw${nw ? " new" : ""}" title="${nw ? "nouveau dans ce sens" : "déjà acquis dans ce sens"}"><b>${esc(o.it)}</b> ${esc(o.fr)}${o.comp ? "" : ` <i class="g c">C</i>`}${o.expr ? "" : ` <i class="g e">E</i>`}</span>`; }).join("")}</div>
-    <div class="phw-g"><span class="${dir === "c" ? "cur" : ""}">Compréhension IT → FR <b>${fmtGain(gc)}</b></span><span class="${dir === "e" ? "cur" : ""}">Expression FR → IT <b>${fmtGain(ge)}</b></span></div>
-    <div class="phw-n">Si tu réussis cette phrase, tu gagnes la ${dir === "c" ? "compréhension" : "expression"} ; ${dir === "c" ? "l'expression se gagne en traduisant la phrase du français vers l'italien" : "la compréhension se gagne en traduisant la phrase de l'italien vers le français"}. C = pas encore compris, E = pas encore su dire.</div>`;
+    <div class="phw-g"><span class="${dir === "c" ? "cur" : ""}">Compréhension DZ → FR <b>${fmtGain(gc)}</b></span><span class="${dir === "e" ? "cur" : ""}">Expression FR → DZ <b>${fmtGain(ge)}</b></span></div>
+    <div class="phw-n">Si tu réussis cette phrase, tu gagnes la ${dir === "c" ? "compréhension" : "expression"} ; ${dir === "c" ? "l'expression se gagne en traduisant la phrase du français vers le darija" : "la compréhension se gagne en traduisant la phrase du darija vers le français"}. C = pas encore compris, E = pas encore su dire.</div>`;
 }
 async function creditSentence(q, x) {   // phrase réussie : chaque mot qui la compose compte comme appris dans ce sens
   const ty = q.ty === "phit" ? "it" : "fr", t = today(); let k = 0, g = 0;
@@ -1681,16 +1693,16 @@ function revealCore() {
   let ans, okGuess = null;
   if (q.ty === "num") ans = x;
   if (q.ty === "img") { ans = x; if (rep) okGuess = parseInt(rep, 10) === q.n; }
-  if (q.ty === "fr" || q.ty === "num") { if (rep) okGuess = reps.some(r => altsOf(rawIt(x)).concat(altsOf(x.it)).some(c => close(c, r))); }
+  if (q.ty === "fr" || q.ty === "num") { if (rep) okGuess = reps.some(r => altsOf(rawIt(x)).concat(altsOf(x.it), altsOf(x.lt || "")).some(c => close(c, r))); }
   if (q.ty === "it" || q.ty === "aud") { if (rep) okGuess = reps.some(r => altsOf(rawFr(x)).concat(altsOf(x.fr)).some(c => close(c, r)) || (norm(r).trim().length > 2 && norm(x.fr).includes(norm(r).trim()))); }
   if (q.ty === "phit" || q.ty === "phfr") return revealPhrase(q, x, reps);
   let shown = x, extra = "";
-  if (q.ty === "suite" || q.ty === "chaine") { shown = R[q.target.r].niches[q.target.n]; extra = `<span class="pr">⟶ ${esc(x.li)}</span>`; if (rep) okGuess = reps.some(r => altsOf(rawIt(shown)).concat(altsOf(shown.it)).some(c => close(c, r)) || close(shown.fr, r)); }
+  if (q.ty === "suite" || q.ty === "chaine") { shown = R[q.target.r].niches[q.target.n]; extra = `<span class="pr">⟶ ${esc(x.li)}</span>`; if (rep) okGuess = reps.some(r => altsOf(rawIt(shown)).concat(altsOf(shown.it), altsOf(shown.lt || "")).some(c => close(c, r)) || close(shown.fr, r)); }
   texturizeRoom(q.ri, null); st.zoom = 0;
   if (q.ty === "suite" || q.ty === "chaine") goTo(q.target.r, q.target.n, { thread: true }); else { goTo(q.ri, q.n); placeRing(q.ri, q.n); }
   renderFiche();
   $("#quiz").querySelector("[data-reveal]").parentElement.outerHTML = `<div class="qa"><span class="it">${escP(dI(shown))}</span><span>${escP(dF(shown))} · <span class="mono">${String(q.ty === "suite" || q.ty === "chaine" ? q.target.n : q.n).padStart(2, "0")}</span></span><span class="exfr">${esc(shown.sc)}</span>${extra}</div>
-    ${prefs.showEx !== false && shown.eit ? `<div class="ex qex"><button class="say" type="button" data-say="${esc(shown.eit)}" data-src="${esc(asrc(shown.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(shown.eit, shown.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(shown.efr)}" data-src="${esc(asrc(shown.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(shown.efr, shown.efm)}</p></div></div>` : ""}
+    ${prefs.showEx !== false && shown.eit ? `<div class="ex qex"><button class="say" type="button" data-say="${esc(shown.eit)}" data-src="${esc(asrc(shown.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="ar" dir="rtl">${mark(shown.eit, shown.eim)}</p>${shown.elt ? `<p class="dz-elt">${esc(shown.elt)}</p>` : ""}<p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(shown.efr)}" data-src="${esc(asrc(shown.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(shown.efr, shown.efm)}</p></div></div>` : ""}
     ${okGuess == null ? "" : `<span class="verdict ${okGuess ? "ok" : "ko"}">${okGuess ? "Ta réponse correspond." : "Ta réponse ne correspond pas."}</span>`}
     ${okGuess == null || (prefs.inMode || "clavier") === "aucun"
       ? `<div class="btns"><button class="btn ko" type="button" data-grade="0">Raté</button><button class="btn ok" type="button" data-grade="1">Réussi</button><button class="btn alt" type="button" data-say-a>🔊 Réponse</button><button class="btn alt" type="button" data-zoomq>Zoom</button></div>`
@@ -1721,7 +1733,7 @@ function endQuiz(msg) {
 }
 
 /* ============ Courbe de compréhension ============ */
-// Compréhension = part des mots d'une conversation italienne (sous-titres OpenSubtitles) couverte par les mots appris :
+// Compréhension = part des mots d'une conversation en darija (sous-titres OpenSubtitles) couverte par les mots appris :
 // somme des occurrences par 100 M de mots (lemme, parlé IT). Les expressions et incises n'ajoutent rien : leurs mots sont déjà comptés.
 let CURVES = null, HIST = ls.get("hist", []);
 const isWordRoom = r => r.fam !== "expressions" && r.fam !== "incises" && r.fam !== "patrons";
@@ -1743,7 +1755,7 @@ function buildCurves() {
 }
 async function learnedStats() {
   if (!CURVES) buildCurves();
-  // compréhension = réussi dans le sens IT → FR (ou à l'écoute) ; expression = réussi dans le sens FR → IT
+  // compréhension = réussi dans le sens DZ → FR (ou à l'écoute) ; expression = réussi dans le sens FR → DZ
   let n = 0, c = 0, t = 0, e = 0, nc = 0, ne = 0;
   for (let ri = 0; ri < R.length; ri++) {
     const cards = await srsRoom(ri), got = new Set(), comp = new Set(), expr = new Set();
@@ -1773,11 +1785,11 @@ async function renderCurve() {
   document.querySelectorAll("[data-cmes]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.cmes === "tour") === tour)));
   document.querySelectorAll("[data-cscale]").forEach(b => b.disabled = tour);
   document.querySelectorAll("[data-corder]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.corder === ord)));
-  $("#ckey1").textContent = ord === "fr" ? "par fréquence française" : ord === "it" ? "par fréquence italienne" : "dans l'ordre du palais";
+  $("#ckey1").textContent = ord === "fr" ? "par fréquence française" : ord === "it" ? "par fréquence darija" : "dans l'ordre du palais";
   document.querySelectorAll("[data-cscale]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.cscale === "full") === full)));
   $("#ckeyExt").hidden = !full;
   const me0 = await updateHist(), me = { n: me0.nc, c: tour ? me0.t : me0.c }, HP = HIST.filter(p => !tour || p.t != null).map(p => ({ d: p.d, n: p.n, c: tour ? p.t : p.c })), svg = $("#curve"), Wd = svg.parentElement.clientWidth < 520 ? 400 : 640, Hd = 400, L = 44, Rm = 18, T = 14, B = 52;
-  // au-delà du palais : mots suivants de l'italien parlé, la part restante (100 % − fin du palais) se remplit selon les sous-titres
+  // au-delà du palais : mots suivants du darija parlé, la part restante (100 % − fin du palais) se remplit selon les sous-titres
   const extPts = ext.map(([k, f]) => [N0 + k, P0 + f * (100 - P0)]), NMAX = full && extPts.length ? extPts[extPts.length - 1][0] : N0;
   const lx = n => Math.log10(Math.max(1, n));
   const X = full ? n => L + lx(n) / lx(NMAX) * (Wd - L - Rm) : n => L + n / N0 * (Wd - L - Rm), Y = v => T + (1 - v / 100) * (Hd - T - B);
@@ -1812,8 +1824,8 @@ async function renderCurve() {
   g += `<line class="xh" id="xh" y1="${T}" y2="${y0}" x1="-10" x2="-10"/>`;
   svg.innerHTML = g;
   const nextWords = C1.find(p => p[0] > me.n && p[1] > me.c + 5), p95 = extPts.find(z => z[1] >= 95);
-  $("#curveTxt").textContent = tour ? `Tournures : tu maîtrises ${me.c.toFixed(1)} % des tournures du palais, pondérées par leur fréquence. Chaque expression, locution ou incise vaut sa fréquence comme bloc dans l'italien parlé, mesurée sur 200 millions de mots de sous-titres de films et séries (OpenSubtitles) ; seules les expressions à trou dont la partie fixe est un seul mot (« E …? ») sont estimées. Les ${CURVES.tours.toLocaleString("fr-FR")} tournures du palais font 100 % ; les mots seuls n'y comptent pas, ils sont dans la courbe « Mots ».` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence italienne" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") : `Tu reconnais ${me0.nc} mot(s) ou expression(s) dans le sens italien → français (au moins une réussite en IT → FR ou à l'écoute) : ils couvrent environ ${me.c.toFixed(1)} % des mots entendus dans une conversation en italien. Les ${N0.toLocaleString("fr-FR")} niches du palais en couvrent ${P0.toFixed(0)} % ; les expressions et locutions n'ajoutent pas de pourcentage, car leurs mots sont déjà comptés, mais elles aident à comprendre les tournures.` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence italienne" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") +
-    (full ? ` Au-delà du palais, la courbe pointillée prolonge avec les mots suivants de l'italien parlé (sous-titres de films), par fréquence : ${p95 ? `95 % vers ${Math.round(p95[0] / 1000)} 000 mots ; ` : ""}les derniers pour cent sont surtout des noms propres et des mots très rares.` : "");
+  $("#curveTxt").textContent = tour ? `Tournures : tu maîtrises ${me.c.toFixed(1)} % des tournures du palais, pondérées par leur fréquence. Chaque expression, locution ou incise vaut sa fréquence comme bloc dans le darija parlé, mesurée sur 200 millions de mots de sous-titres de films et séries (OpenSubtitles) ; seules les expressions à trou dont la partie fixe est un seul mot (« E …? ») sont estimées. Les ${CURVES.tours.toLocaleString("fr-FR")} tournures du palais font 100 % ; les mots seuls n'y comptent pas, ils sont dans la courbe « Mots ».` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence darija" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") : `Tu reconnais ${me0.nc} mot(s) ou expression(s) dans le sens italien → français (au moins une réussite en DZ → FR ou à l'écoute) : ils couvrent environ ${me.c.toFixed(1)} % des mots entendus dans une conversation en darija. Les ${N0.toLocaleString("fr-FR")} niches du palais en couvrent ${P0.toFixed(0)} % ; les expressions et locutions n'ajoutent pas de pourcentage, car leurs mots sont déjà comptés, mais elles aident à comprendre les tournures.` + (nextWords ? ` En suivant ${ord === "fr" ? "la fréquence française" : ord === "it" ? "la fréquence darija" : "l'ordre du palais"}, +5 % arrivent vers ${nextWords[0]} niches.` : "") +
+    (full ? ` Au-delà du palais, la courbe pointillée prolonge avec les mots suivants du darija parlé (sous-titres de films), par fréquence : ${p95 ? `95 % vers ${Math.round(p95[0] / 1000)} 000 mots ; ` : ""}les derniers pour cent sont surtout des noms propres et des mots très rares.` : "");
   const valAt = (pts, n) => { if (n <= 0) return 0; let lo = 0, hi = pts.length - 1; if (n >= pts[hi][0]) return pts[hi][1]; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (pts[m][0] <= n) lo = m; else hi = m; } return pts[lo][1]; };
   const tip = $("#ctip");
   svg.onpointermove = e => {
@@ -1821,7 +1833,7 @@ async function renderCurve() {
     const t = (vx - L) / (Wd - L - Rm), n = Math.max(full ? 1 : 0, Math.round(full ? 10 ** (t * lx(NMAX)) : t * N0));
     const pa = n <= N0 ? C1[n][1] : valAt(extPts, n), fq = n <= N0 ? CS.fq[n][1] : pa;
     $("#xh").setAttribute("x1", X(n)); $("#xh").setAttribute("x2", X(n));
-    tip.hidden = false; tip.textContent = n <= N0 ? `${n.toLocaleString("fr-FR")} appris · ${ord === "pal" ? "palais" : ord === "fr" ? "fréq. FR" : "fréq. IT"} ${pa.toFixed(1)} % · optimal ${fq.toFixed(1)} %` : `${n.toLocaleString("fr-FR")} mots · ≈ ${pa.toFixed(1)} % (au-delà du palais)`;
+    tip.hidden = false; tip.textContent = n <= N0 ? `${n.toLocaleString("fr-FR")} appris · ${ord === "pal" ? "palais" : ord === "fr" ? "fréq. FR" : "fréq. DZ"} ${pa.toFixed(1)} % · optimal ${fq.toFixed(1)} %` : `${n.toLocaleString("fr-FR")} mots · ≈ ${pa.toFixed(1)} % (au-delà du palais)`;
     const half = tip.offsetWidth / 2; tip.style.left = Math.max(half, Math.min(b.width - half, X(n) / Wd * b.width)) + "px"; tip.style.top = (Y(pa) / Hd * b.height) + "px";
   };
   svg.onpointerleave = () => { tip.hidden = true; $("#xh").setAttribute("x1", -10); $("#xh").setAttribute("x2", -10); };
@@ -1833,10 +1845,10 @@ if ((prefs.pv || 0) < 2) { prefs.vEF = true; prefs.vEI = true; prefs.pv = 2; try
 function savePrefs() { ls.set("prefs", prefs); if (!CLASSE) ls.set(PK("prefs"), { rooms: prefs.rooms, decs: prefs.decs }); }
 const INTXT = { aucun: "Pas de saisie : tu révèles la réponse puis tu dis toi-même si c'était réussi ou raté.",
   clavier: "Tu tapes ta réponse ; elle est corrigée automatiquement (petites fautes tolérées). Tu peux toujours corriger le verdict.",
-  voix: "Tu touches 🎤 et tu dis ta réponse (en italien pour FR → IT, en français pour IT → FR) ; elle est corrigée automatiquement. Si le micro n'est pas disponible ici, utilise la dictée du clavier de l'iPhone (🎤 du clavier)." };
+  voix: "Tu touches 🎤 et tu dis ta réponse (en darija pour FR → DZ, en français pour DZ → FR) ; elle est corrigée automatiquement. Si le micro n'est pas disponible ici, utilise la dictée du clavier de l'iPhone (🎤 du clavier)." };
 const APTXT = {
   freqfr: "Palais par fréquence FR : les nouveaux mots arrivent du plus fréquent au plus rare en français parlé, toutes classes mêlées.",
-  freqit: "Palais par fréquence IT : les nouveaux mots arrivent du plus fréquent au plus rare en italien parlé ; c'est l'ordre qui fait monter le plus vite ta compréhension.",
+  freqit: "Palais par fréquence DZ : les nouveaux mots arrivent du plus fréquent au plus rare en darija parlé ; c'est l'ordre qui fait monter le plus vite ta compréhension.",
   theme: "Palais par thème : les nouveaux mots arrivent thème par thème (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème.",
   classe: "Palais par classe : les nouveaux mots arrivent classe par classe (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre." };
 const TMTXT = { auto: "les cartes à réviser aujourd'hui, puis de nouveaux mots", revue: "uniquement les cartes à réviser aujourd'hui", learn: "uniquement de nouveaux mots", libre: "30 questions au hasard, sans tenir compte des révisions", exemple: "20 phrases d'exemple, mots pas encore appris d'abord" };
@@ -2191,7 +2203,7 @@ let LIB = null;
 function libIndex() {
   if (LIB) return LIB;
   LIB = [];
-  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) LIB.push({ ri, n, x, fam: x._cls || famOf(r), q: nrm(x.fr + " | " + x.it + " | " + x.mc) }); }));
+  R.forEach((r, ri) => r.niches.forEach((x, n) => { if (x) LIB.push({ ri, n, x, fam: x._cls || famOf(r), q: nrm(x.fr + " | " + x.it + " | " + (x.lt || "") + " | " + x.mc) }); }));
   const fams = [...new Set(LIB.map(e => e.fam))], TH = DATA.themes || {};
   $("#libTh").innerHTML = `<option value="">tous les thèmes</option>` + Object.keys(TH).map(k => `<option value="${k}">${esc(TH[k])}</option>`).join("");
   $("#libFam").innerHTML = `<option value="">toutes les classes</option>` + fams.map(f => `<option value="${f}">${FAML[f] || f}</option>`).join("");
@@ -2203,12 +2215,12 @@ function libTags() {
   $("#libTag").innerHTML = `<option value="">toutes les sous-catégories</option>` + [...tags].sort().map(t => `<option ${t === cur ? "selected" : ""}>${esc(t)}</option>`).join("");
 }
 const fineF = x => x.tv != null ? x.tv : x.of || (x.zf != null ? Math.pow(10, x.zf - 1) : 0);   // fréquence fine (occ./100 M), à défaut tirée du Zipf
-const fineI = x => x.tv != null ? x.tv : x.oi || (x.zi != null ? Math.pow(10, x.zi - 1) : 0);   // idem, italien parlé
+const fineI = x => x.tv != null ? x.tv : x.oi || (x.zi != null ? Math.pow(10, x.zi - 1) : 0);   // idem, darija parlé
 const fineBy = lg => lg === "it" ? fineI : fineF;
 /* Familles de fréquence : on range tous les mots du plus fréquent au plus rare et on cumule la compréhension qu'ils apportent ;
    la famille d'un mot = la tranche de compréhension (0-10 %, 10-20 %…) qu'on atteint en l'apprenant dans cet ordre. */
 const FBANDS = [50, 60, 70, 75, 80, 90, 100];
-const bandWord = lg => lg === "fr" ? "d'expression" : "de compréhension";   // fréquence FR : ce qu'on sait dire ; fréquence IT : ce qu'on comprend
+const bandWord = lg => lg === "fr" ? "d'expression" : "de compréhension";   // fréquence FR : ce qu'on sait dire ; fréquence DZ : ce qu'on comprend
 const bandLabel = (i, lg = "it") => `De ${i ? FBANDS[i - 1] : 0} à ${FBANDS[i]} % ${bandWord(lg)}`;
 const FBAND = {};
 function freqBands(lg = "fr") {
@@ -2269,8 +2281,8 @@ async function renderLib() {
   const row = ({ ri, n, x }, rank) => { const o = S.get(ri + ":" + n); return `<details class="lrow" data-ri="${ri}" data-n="${n}" style="--fc:${COLS[Math.floor(n / 10)]}"><summary>` +
     `<span class="ln${rank ? " rk" : ""}">${rank ? rank : String(n).padStart(2, "0")}</span><span class="dotb${o ? " b" + o.b : ""}${o && o.due ? " due" : ""}" title="${o ? "boîte " + o.b + (o.due ? " · à réviser" : "") : "jamais vu"}"></span>` +
     (() => { const tags = `${x.k ? `<small class="kind ${x.k}">${x.k === "tpl" ? "à trous" : x.k === "loc" ? "locution" : x.k === "col" ? "collocation" : "figée"}</small>` : ""}${rank ? `<small class="lroomtag">${esc(shortName(R[ri]))} ${String(n).padStart(2, "0")}</small>` : ""}`;
-      // en fréquence IT, l'italien passe en tête (au-dessus sur mobile) et le français en dessous
-      return lg === "it" && freq ? `<span class="lit l1" lang="it">${escP(dI(x))}${tags}</span><span class="lfr l2">${escP(dF(x))}</span>` : `<span class="lfr l1">${escP(dF(x))}${tags}</span><span class="lit l2" lang="it">${escP(dI(x))}</span>`; })() + `${lg === "it" ? `<span class="lz" title="Gain de compréhension de l'italien parlé une fois appris">${gainUnit(R[ri], x) ? fmtGain(gainOf(R[ri], x, "it")) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Gain d'expression en français parlé une fois appris">${gainUnit(R[ri], x) ? fmtGain(gainOf(R[ri], x, "fr")) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
+      // en fréquence DZ, le darija passe en tête (au-dessus sur mobile) et le français en dessous
+      return lg === "it" && freq ? `<span class="lit l1" lang="ar" dir="rtl">${escP(dI(x))}${tags}</span><span class="lfr l2">${escP(dF(x))}</span>` : `<span class="lfr l1">${escP(dF(x))}${tags}</span><span class="lit l2" lang="ar" dir="rtl">${escP(dI(x))}</span>`; })() + `${lg === "it" ? `<span class="lz" title="Gain de compréhension du darija parlé une fois appris">${gainUnit(R[ri], x) ? fmtGain(gainOf(R[ri], x, "it")) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé italien (score fin)">${x.oi ? (x.ax ? "≈ " : "") + x.oi.toLocaleString("fr-FR") : ""}</span>` : `<span class="lz" title="Gain d'expression en français parlé une fois appris">${gainUnit(R[ri], x) ? fmtGain(gainOf(R[ri], x, "fr")) : ""}</span><span class="lo" title="Occurrences par 100 millions de mots, parlé français (score fin)">${x.of ? (x.ax ? "≈ " : "") + x.of.toLocaleString("fr-FR") : ""}</span>`}` +
     `<button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter ${esc(x.it)}">🔊</button></summary><div class="lbody"></div></details>`; };
   if (!rows.length) { $("#libList").innerHTML = `<p class="pr">Aucun mot ne correspond à ces filtres.</p>`; return; }
   if (freq) {   // ordre purement fréquentiel : toutes classes mêlées, par tranches de 250 rangs
@@ -2312,8 +2324,8 @@ async function renderCarnet() {
   $("#cbStore").textContent = store.kind === "claude" ? "progression sur ton compte Claude" : store.kind === "sb" ? "progression sur " + store.email : "progression sur cet appareil";
   $("#kpis").innerHTML = [
     [me.n, "mots appris", `sur ${CURVES.total} niches`],
-    [me.c.toFixed(1) + " %", "compréhension · IT → FR", `de l'italien parlé courant · ${me.nc} mot(s) reconnu(s)`],
-    [(me.e || 0).toFixed(1) + " %", "expression · FR → IT", `des mots d'une conversation · ${me.ne} mot(s) que tu sais dire`],
+    [me.c.toFixed(1) + " %", "compréhension · DZ → FR", `du darija parlé courant · ${me.nc} mot(s) reconnu(s)`],
+    [(me.e || 0).toFixed(1) + " %", "expression · FR → DZ", `des mots d'une conversation · ${me.ne} mot(s) que tu sais dire`],
     [(me.t || 0).toFixed(1) + " %", "tournures", `des ${CURVES.tours} tournures du palais (pondérées)`],
     [due, "cartes à réviser", due ? "aujourd'hui" : "rien d'urgent"],
     [streak, "jours d'affilée", `${days.size} jour(s) d'étude au total`]
@@ -2401,7 +2413,7 @@ function buildVirtual(kind) {
   return rooms;
 }
 const PALTXT = { classe: "Palais par classe : une tour d'étages par classe de mots (noms, verbes, adjectifs…), avec les liens de chaîne d'une niche à l'autre.",
-  freqit: "Palais par fréquence italienne : tous les mots, du plus fréquent au plus rare dans l'italien parlé, 100 par salle. C'est l'ordre qui fait monter le plus vite la compréhension de l'italien. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
+  freqit: "Palais par fréquence darija : tous les mots, du plus fréquent au plus rare dans le darija parlé, 100 par salle. C'est l'ordre qui fait monter le plus vite la compréhension du darija. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % de compréhension) commence à un nouvel étage.",
   freq: "Palais par fréquence française : tous les mots, du plus fréquent au plus rare dans le français parlé, 100 par salle. Chaque famille de fréquence (0-50 %, 50-60 %, 60-70 %, 70-75 %, 75-80 % d'expression) commence à un nouvel étage.",
   lisa: "Palais Lisa : le contenu et l'ordre du palais par classe, rangés dans une maison familiale. Chaque salle est une pièce bien distincte (entrée, salon, cuisine, chambre des parents, chambre d'enfant, salle de bain, toilettes, grenier, cave, garage, jardin, piscine, terrasse…) et chaque dizaine est accrochée à un objet typique de la pièce : le canapé, le frigo, la baignoire… Chaque étage est une maison complète, disposée comme une vraie : entrée près de la porte, zone de jour d'un côté du hall (salon, salle à manger, cuisine, buanderie, garage, cave), extérieur au bout (terrasse, jardin, piscine), zone de nuit de l'autre côté (chambres, salle de bain, bureau, toilettes). Chaque maison a son style.",
   theme: "Palais par thème : une ou plusieurs salles par famille thématique (nourriture, corps, maison…), du plus fréquent au plus rare dans chaque thème." };

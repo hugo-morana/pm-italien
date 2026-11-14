@@ -1,0 +1,7 @@
+# idx | phrase arabe | phrase latine
+16 | هاد البلايص ممنوع فيهم الدّخان. | Had l-blayes mamnou3 fihom d-doukhan.
+30 | تحبّ نديرلك فنجال تاي؟ | T7ebb ndirlek fenjal tay?
+30 | تحبّ فنجال تاي؟ | T7ebb fenjal tay?
+69 | ديك السّاعة، كان عندو خمستاش سنة برك. | Dik s-sa3a, kan 3andou khmestach sna berk.
+72 | ما يكونش كاين قبل سمانة. | Ma ykounch kayen 9bel smana.
+79 | عندو قريب تلاتين سنة. | 3andou 9rib tlatin sna.

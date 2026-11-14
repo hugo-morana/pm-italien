@@ -1,11 +1,11 @@
-/* Service worker du Palazzo dell'italiano : mode hors-ligne.
+/* Service worker du Dar ed-Darja : mode hors-ligne.
    - l'app (page, données, three.js, icônes) est gardée dans un cache versionné ;
    - la page et data3d.json passent d'abord par le réseau (pour recevoir les mises à jour), puis par le cache ;
    - les sons (paquets mp3 par salle, versionnés par ?v=) restent dans un cache à part, gardé d'une version à l'autre ;
    - les polices et scripts externes sont servis depuis le cache puis rafraîchis en arrière-plan ;
    - la synchronisation de progression (Supabase) ne passe jamais par le cache. */
 const VERSION = "e1989908b1";
-const CORE = "pmit-core-" + VERSION, EXT = "pmit-ext", AUDIO = "pmit-audio";
+const CORE = "pmdz-core-" + VERSION, EXT = "pmdz-ext", AUDIO = "pmdz-audio";
 const FILES = ["./", "index.html", "data3d.json", "config.js", "offline.js", "manifest.json", "vendor/three.min.js",
   "validation.html", "apple-touch-icon.png", "icon-512.png", "favicon-32.png", "logo.svg"];
 
@@ -13,7 +13,7 @@ self.addEventListener("install", ev => {
   ev.waitUntil(caches.open(CORE).then(c => Promise.all(FILES.map(u => c.add(new Request(u, { cache: "reload" })).catch(() => null)))).then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", ev => {
-  ev.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("pmit-core-") && k !== CORE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  ev.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("pmdz-core-") && k !== CORE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
 
 const timeout = (p, ms) => Promise.race([p, new Promise((_, ko) => setTimeout(() => ko(new Error("lent")), ms))]);

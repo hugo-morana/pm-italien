@@ -1,0 +1,89 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires italiens)
+2 | عندك الوقت؟ | 3andek el-wa9t?
+2 | جاتني مع الوقت. | Jatni m3a l-wa9t.
+3 | واش تخدم في حياتك؟ | Wach tekhdem f 7yatek?
+3 | عمرها ما تكون! | 3omrha ma tkoun!
+3 | ماشي حتّى في المنام! | Machi 7atta f l-mnam!
+4 | راني هنا غير نهار واحد. | Rani hna ghir nhar wa7ed.
+5 | سرّحت الخدّامة تاعها. | Sarr7at l-khaddama ta3ha.
+8 | مرّة برك ما تضرّش. | Merra berk ma tdorrch.
+8 | نقولهالك للمرّة الألف. | N9oulhalek l l-merra l-alf.
+11 | تقول عليه ملاك. | T9oul 3lih mlak.
+16 | راح عند واحد صاحبو. | Ra7 3and wa7ed sa7bou.
+16 | عندها بزّاف صحاب. | 3andha bezzaf s7ab.
+16 | صحابو نصحوه يردّ بالو. | S7abou nas7ouh yrodd balou.
+20 | عندي ساعة وأنا نستنّى فيك. | 3andi sa3a w ana nestenna fik.
+20 | جات الساعة. | Jat s-sa3a.
+20 | الكار لازم يوصل على الجوج. | L-kar lazem youssel 3la j-jouj.
+27 | بتّ الليلة في واحد لوبيرج تاع الشباب. | Bett l-lila f wa7ed l'auberge ta3 ch-chbab.
+31 | ما تخلعنيش. | Ma tkhal3nich.
+31 | كان يرعد بالخوف. | Kan yer3ed b l-khouf.
+32 | وين راحو الدراهم؟ | Win ra7ou d-drahem?
+32 | عندكم الدراهم؟ | 3andkom d-drahem?
+32 | ما يحوّس غير على الكرسي والدراهم. | Ma y7aws ghir 3la l-koursi w d-drahem.
+33 | علاش؟ | 3lach?
+33 | كي نخمّم مليح، عندو الحقّ. | Ki nkhemmem mli7, 3andou l-7a9.
+33 | علاش ديما تعطيلو الحقّ؟ | 3lach dima ta3tilou l-7a9?
+35 | الطوموبيلات يوسّخو الهوا. | Et-tomobilat ywasskhou l-hwa.
+35 | كاين ريحة المدابزة. | Kayen ri7et l-mdabza.
+35 | باين عليه نيّة، بصّح ما يتغلّبش. | Bayen 3lih niya, bessa7 ma yetghallebch.
+35 | الديسير باين بنين. | Ed-dessert bayen bnin.
+38 | بطّل الزيارة تاعو في آخر لحظة. | Battel z-zyara ta3ou f akher la7dha.
+42 | ما عندو لا راس لا رجلين. | Ma 3andou la ras la rjlin.
+42 | ما تكسّرش راسك على واش يقولو الناس. | Ma tkasserch rassek 3la wach y9oulou n-nas.
+42 | ما عرفش وين يضرب راسو. | Ma 3rafch win yodrob rassou.
+44 | الطوموبيل تاعي دارت لابان في لوطوروت. | T-tomobil ta3i dart la panne f l'autoroute.
+45 | قلقتني بالأسئلة تاعك. | 9la9tni b l-as2ila ta3ek.
+45 | يدير روحو ما سمعش السؤال. | Ydir rou7ou ma sma3ch s-sou2al.
+46 | التجارة تجارة. | Et-tijara tijara.
+50 | جاتني فكرة. | Jatni fekra.
+50 | كيفاش جاتك هاد الفكرة؟ | Kifach jatek had l-fekra?
+50 | عندي غير فكرة صغيرة عليها. | 3andi ghir fekra sghira 3liha.
+50 | خير لك تنحّي هاد الفكرة من راسك. | Khir lek tna77i had l-fekra men rassek.
+51 | درك عايلة على جوج عندها پيسي. | Dork 3ayla 3la zouj 3andha PC.
+53 | كان عندو الزّهر. | Kan 3andou z-zhar.
+53 | عطيني فرصة أخرى. | 3tini forsa okhra.
+54 | راهم جايين في أيّ دقيقة. | Rahom jayin f ay d9i9a.
+56 | خير لكم تحطّو عينكم عليه. | Khir lkom t7ottou 3inkom 3lih.
+57 | خوه قرا في جامعة غلاسكو. | Khouh 9ra f jami3at Glasgow.
+57 | لازم خلطتو مع خوه. | Lazem khaltou m3a khouh.
+58 | يقول بلّي هادي حكاية صحيحة. | Y9oul belli hadi 7kaya s7i7a.
+58 | كانت قعدة بلا مشاكل. | Kanet 9a3da bla machakil.
+62 | حتّى واحد ما خلّاك بالسّيف. | 7atta wa7ed ma khallak b s-sif.
+62 | النجاح تاعي، ما نسالو لحتّى واحد. | N-naja7 ta3i, ma nsalou l 7atta wa7ed.
+62 | ما تقولها لحتّى واحد. | Ma t9oulha l 7atta wa7ed.
+62 | حتّى واحد ما يعرف واش صرالو. | 7atta wa7ed ma ya3ref wach sralou.
+62 | مهما قال، حتّى واحد ما حبّ يصدّقو. | Mahma 9al, 7atta wa7ed ma 7abb ysadd9ou.
+62 | بالله عليك ما تقولها لحتّى واحد. | Billah 3lik ma t9oulha l 7atta wa7ed.
+63 | رح يخلّص الدّيون تاعو، أنا نضمنو. | Ra7 ykhalles d-dyoun ta3ou, ana nedmenou.
+66 | جمّدلي الدّم. | Jammedli d-demm.
+69 | رح نقعد هنا سيمانة. | Ra7 n93ad hna simana.
+76 | لازم تعطي قيمة لواش يقولولك. | Lazem ta3ti 9ima l wach y9oulou-lek.
+77 | راسي يوجعني. | Rassi youja3ni.
+77 | يوجعني بزّاف هنا. | Youja3ni bezzaf hna.
+77 | ما نظنّش درت حاجة ماشي مليحة. | Ma ndhonnch dert 7aja machi mli7a.
+77 | صعيبة عليّ نخلّيها. | S3iba 3liya nkhalliha.
+77 | ما يضرّش حتّى ذبّانة. | Ma ydorrch 7atta dhebbana.
+77 | الڨرجومة توجعني. | L-gerjouma touja3ni.
+77 | تعب بزّاف على جالك. | T3ab bezzaf 3la jalek.
+79 | لو كنت في بلاصتك، ما نتردّدش. | Law kount f blastek, ma ntraddadch.
+79 | لو كنت في بلاصتك، ما نديرهاش. | Law kount f blastek, ma ndirhach.
+79 | ما نحبّش نكون في بلاصتو. | Ma n7abbch nkoun f blastou.
+79 | لو كنت في بلاصتك، نخلّيها. | Law kount f blastek, nkhalliha.
+79 | هاد البلاصة فيها واحد؟ | Had l-blassa fiha wa7ed?
+79 | ما نحبّش نكون في بلاصتك. | Ma n7abbch nkoun f blastek.
+79 | باقيين بلايص في البالكون؟ | Ba9yin blayes f l-balcon?
+81 | التحقيق تاع البوليس ما جاب والو. | Et-ta7qi9 ta3 l-bolis ma jab walou.
+86 | بقات فاتحة فمها. | B9at fat7a foumha.
+86 | ما عادي ولّا ما غازوز؟ | Ma 3adi wella ma gazouz?
+88 | واش معناها هاد الكلمة؟ | Wach ma3naha had l-kelma?
+88 | نشدّو من كلمتو. | Nchoddou men kelmtou.
+88 | ديما يلقى الكلمة اللّي تليق. | Dima yel9a l-kelma lli tli9.
+88 | ديما يحبّ يقول الكلمة اللّخرة. | Dima y7abb y9oul l-kelma l-lekhra.
+88 | نسيت كلمة السرّ تاعي. | Nsit kelmet s-serr ta3i.
+88 | غير قول كلمة وترجع. | Ghir 9oul kelma w terja3.
+90 | تكري بيت لطالب. | Tekri bit l taleb.
+91 | من الصباح للعشيّة. | Men s-sba7 l l-3chiya.
+91 | يخدم من الصباح للعشيّة. | Yekhdem men s-sba7 l l-3chiya.
+91 | يتمحّن من الصباح لليل باش يوكّل عايلتو. | Yetma77en men s-sba7 l l-lil bach ywakkel 3ayltou.
+98 | هادي أوّل مرّة تجي لهاد النوع تاع المناسبات؟ | Hadi awwel merra tji l had n-nou3 ta3 l-mounasabat?

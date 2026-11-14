@@ -1,0 +1,89 @@
+# idx | arabe | latin
+0 | عندك صاحبة؟ | 3andek sa7ba?
+0 | عندك صاحب؟ | 3andek sa7eb?
+0 | تدابزت مع صاحبها مرّة خرى. | Tdabzet m3a sa7beha merra okhra.
+6 | ما عندها حتّى علاقة. | Ma 3andha 7atta 3ala9a.
+7 | ما عندكش الصّحّة باش تتقابل معاه. | Ma 3andekch s-sa77a bach tet9abel m3ah.
+11 | شحال عندك من خاوة؟ | Ch7al 3andek men khawa?
+11 | عندي أخت كبيرة عليّا وخو صغير عليّا. | 3andi okht kbira 3liya w khou sghir 3liya.
+11 | ختي سمنت في العطلة. | Khti semnet fel-3otla.
+11 | ختو تتدرّب زوج سوايع في النّهار. | Khtou tetdarreb zouj swaye3 fe n-nhar.
+11 | ما يوصلش حتّى لصبع ختو. | Ma youslech 7atta l sbe3 khtou.
+16 | وصلتك البريّة تاعي ولّا مازال؟ | Waslatek l-brayya ta3i wella mazal?
+16 | قعدت نكتب البراوات الصّباح كامل. | 9a3adt nekteb l-brawat s-sba7 kamel.
+19 | الخلعة كانت باينة على وجهو. | L-khal3a kanet bayna 3la wejhou.
+20 | غير زوج ثواني. | Ghir zouj twani.
+20 | الشّوط الثّاني كان خير بزّاف من اللّوّل. | Ech-chout et-tani kan khir bezzaf men l-lewwel.
+21 | ما تنساش تسكّر الباب بالمفتاح. | Ma tensach tsakker l-bab bel-mefta7.
+23 | نرجعو للموضوع تاعنا. | Nerj3ou l l-mawdou3 ta3na.
+24 | باباه في السّبيطار. | Babah fe s-sbitar.
+24 | هزّوه بالزّربة للسّبيطار. | Hezzouh bez-zerba l s-sbitar.
+25 | راك دير غلطة كبيرة. | Rak dir ghalta kbira.
+25 | فقت بالغلطة تاعي في اللّخر. | Fe9t bel-ghalta ta3i fel-lekher.
+25 | على حساب رايي، غلط. | 3la 7sab rayi, ghlet.
+26 | ما بقيتش نقدر نحرّك ذراعي. | Ma b9itch n9der n7errek dhra3i.
+27 | سقساني على رايي. | Sa9sani 3la rayi.
+27 | حتّى نتا هاد الرّاي تاعك؟ | 7atta nta had r-ray ta3ek?
+27 | في هاد النّقطة، ما راناش متّفقين. | F had n-no9ta, ma ranach mettaf9in.
+27 | على حساب رايي، راهم حاصلين في البوشون. | 3la 7sab rayi, rahoum 7aslin fel-bouchon.
+27 | ما نبدّلش رايي. | Ma nbeddelch rayi.
+30 | قدّاش في عمرك؟ | 9eddach f 3omrek?
+30 | كبرت على هاد الصّوالح. | Kbert 3la had s-swale7.
+30 | شحال تعطيه في عمرو؟ | Ch7al ta3tih f 3omrou?
+30 | وصل الوقت باش تقبل عمرك. | Wsel l-wa9t bach te9bel 3omrek.
+30 | قدّاش تعطيوه في عمرو؟ | 9eddach ta3tiwh f 3omrou?
+32 | قرّرت نولّي طبيب. | 9arrart nwelli tbib.
+34 | خلّيلو ميساج في الرّيبوندور. | Khallilou mesaj fe r-repondeur.
+35 | ما كانش عندي خيار آخر. | Makanch 3andi khyar akhor.
+35 | راني قدّام خيار صعيب. | Rani 9oddam khyar s3ib.
+35 | ما عندكش الخيار. | Ma 3andekch l-khyar.
+36 | قالها ديريكت، بلا ما يدوّر. | 9alha dirikt, bla ma ydawwer.
+36 | تلاقيت بصاحبي في الثّنيّة وأنا راجع. | Tla9it b sa7bi fe t-tniya w ana raje3.
+36 | وصل بعيد من وقت اللّي كان يسكن هنا. | Wsel b3id men wa9t elli kan yesken hna.
+42 | الصّالة تاع الطّبيب كانت عامرة بزّاف. | S-sala ta3 t-tbib kanet 3amra bezzaf.
+43 | هاد القضيّة مخلّطة على الآخر. | Had l-9adiya mkhallta 3la l-akher.
+47 | راني نحاول نلحّق واش فاتني. | Rani n7awel nla77e9 wach fatni.
+47 | راحنا نعطّلو. | Ra7na n3attlou.
+47 | التّران تاع بريستول معطّل زوج سوايع. | T-tran ta3 Bristol m3attal zouj swaye3.
+48 | الطّريقة تاعنا جرّبناها وخدمت. | T-tari9a ta3na jarrbnaha w khedmet.
+56 | ما خلّاوهش يهدر ڨاع. | Ma khallawhch yehder gaa3.
+59 | الليل راهو طاح، شعّل الضّو. | L-lil rahou ta7, cha33el d-daw.
+60 | ما نشكّش في النّيّة تاعو. | Ma nchekkch fe n-niya ta3ou.
+67 | تفاهمنا على السّومة. | Tfahamna 3la s-souma.
+67 | السّومات راهي طالعة أكثر من الشّهريّات. | S-soumat rahi tal3a aktar men ch-chahriyat.
+67 | ما تقدرش تطلب هاد السّومة! | Ma t9derch totlob had s-souma!
+67 | السّومة تاع الپيليكول داخل فيها الدّيفلوبمون. | S-souma ta3 l-pellicule dakhel fiha d-développement.
+68 | من داك النّهار وهو ديما رادّ بالو. | Men dak n-nhar w houwa dima radd balou.
+68 | ڨاع التّحذيرات ما نفعو والو. | Gaa3 t-ta7dhirat ma nef3ou walou.
+68 | ديما يكتب سميتو في الصّفحة اللّوّلة. | Dima yekteb smitou fe s-saf7a l-lewla.
+68 | راني خابيهالو. | Rani khabihalou.
+69 | ماشي هو العود الخايب. | Machi houwa l-3oud l-khayeb.
+72 | درنا سفريّة شابّة بزّاف. | Dirna safriya chabba bezzaf.
+72 | هاد العام نسافرو في الخريف. | Had l-3am nsafrou fel-khrif.
+73 | عمّو خلّص من جيبو. | 3ammou khalles men jibou.
+74 | دخلت مع جماعة تاع السّوّاح. | Dkhelt m3a jma3a ta3 s-swa7.
+75 | في اللّوّل ما صدّقتش. | Fel-lewwel ma sadda9tch.
+75 | شكّيت فيها من اللّوّل. | Chakkit fiha men l-lewwel.
+76 | المحاربة تاع الجريمة هي اللّوّلة. | L-m7arba ta3 l-jarima hiya l-lewla.
+82 | مازال لازم يطبّقو القانون. | Mazal lazem ytab9ou l-9anoun.
+83 | نشرب على صحّتك ونجاحك. | Nechreb 3la sa77tek w nja7ek.
+83 | لا يعيشك، نشرب القهوة بلا سكّر. | La y3ichek, nechreb l-9ahwa bla sokkar.
+83 | راح يشوف شكون أنا! | Ra7 ychouf chkoun ana!
+85 | تقدر توجّد الطّابلة؟ | T9der twejjed t-tabla?
+85 | تقدر تنحّي من الطّابلة؟ | T9der tna77i men t-tabla?
+85 | حجزت طابلة لتلت عباد. | 7jezt tabla l tlet 3bad.
+86 | نشوف بلّي القضيّة راحت. | Nchouf belli l-9adiya ra7et.
+86 | راهو يحاول يبقى متحكّم في الأمور. | Rahou y7awel yeb9a mt7akkem fel-oumour.
+88 | حتّى واحد ما صاب الجواب الصّحيح. | 7atta wa7ed ma sab j-jwab s-s7i7.
+89 | ديما نباتو في نفس الأوطيل. | Dima nbatou f nefs l-otel.
+90 | ديما جيعان. | Dima ji3an.
+90 | مازال راك جيعان؟ | Mazal rak ji3an?
+90 | ما بقيتش جيعان. | Ma b9itch ji3an.
+90 | ما رانيش جيعان. | Ma ranich ji3an.
+90 | لازم ناكل حاجة، راني ميّت بالجوع. | Lazem nakol 7aja, rani mayyet bel-jou3.
+93 | راني على بالي من قبل. | Rani 3la bali men 9bel.
+93 | نقولّك واش يصرا. | N9ollek wach ysra.
+93 | الكوران مقطوع. | L-kouran ma9tou3.
+93 | وهو كان على بالو! | W houwa kan 3la balou!
+98 | لازم نسڨّم الكواغط تاعي. | Lazem nsaggem l-kwaghet ta3i.
+99 | هزّ يدّيه للسّما. | Hezz yeddih l s-sma.

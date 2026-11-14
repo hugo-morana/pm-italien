@@ -1,0 +1,5 @@
+# idx | phrase arabe | phrase latine
+3 | الهدرة كيما هادي، خلّيها عندك. | El-hedra kima hadi, khalliha 3andek.
+24 | هادي حاجة عمرها ما صرات من قبل. | Hadi 7aja 3omorha ma sret men 9bel.
+26 | كاين بزّاف تاع الطّرق باش تديرها. | Kayen bezzaf ta3 t-torou9 bach tdirha.
+32 | عمري ما شفت حاجة كيما هادي. | 3omri ma chouft 7aja kima hadi.

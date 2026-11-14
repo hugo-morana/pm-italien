@@ -1,0 +1,43 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+6 | بالنسبة ليه، هادي شينوا. | B n-nesba lih, hadi chinwa.
+7 | عييت من المشاكل تاعهم اللّي ما يكمّلوش. | 3yit men l-machakil ta3hom elli ma ykammlouch.
+15 | ماشي هادي هي المسألة. | Machi hadi hiya l-mes2ala.
+15 | على راحتك، ماشي مزروب. | 3la ra7tek, machi mazroub.
+15 | ماشي مليحة منّو. | Machi mli7a mennou.
+15 | ماشي هادا كامل واش حبّيت نقول. | Machi hada kamel wach 7abbit n9oul.
+15 | هدّن روحك، ماشي مصيبة! | Hedden rou7ek, machi msiba!
+19 | ماشي ليّا، صحّيت. | Machi liya, sa77it.
+27 | وين راكم رايحين؟ | Win rakoum ray7in?
+34 | ما نعرفش واش معناها. | Ma na3refch wach ma3naha.
+34 | ما نعرفش كيفاش نستعمل هاد الكلمة. | Ma na3refch kifach nesta3mel had l-kelma.
+37 | هادا غير خرطي. | Hada ghir khorti.
+38 | واش رايكم؟ | Wach raykoum?
+38 | واش رايك؟ | Wach rayek?
+38 | واش تقصد بهادي؟ | Wach t9sod b hadi?
+38 | واش معناها هادي؟ | Wach ma3naha hadi?
+38 | واش عندك معايا؟ | Wach 3andek m3aya?
+38 | واش راك دير هاد الويكاند؟ | Wach rak dir had l-weekend?
+38 | ياخي، واش تقول؟ | Yakhi, wach t9oul?
+38 | واش تقول فيها؟ | Wach t9oul fiha?
+38 | واش لازم ندير؟ | Wach lazem ndir?
+38 | واش تحبّ تاكل؟ | Wach t7ebb takol?
+38 | واش تنصحوني؟ | Wach tensa7ouni?
+38 | واش درت؟ | Wach dert?
+38 | واش قلت درك؟ | Wach 9olt dork?
+38 | ومن بعد، واش فيها؟ | W men ba3d, wach fiha?
+38 | واش راكم تدبّرو؟ | Wach rakoum ddebbrou?
+38 | واش راك دير؟ | Wach rak dir?
+45 | صحّيت كي فكّرت فيّا. | Sa77it ki fekkart fiya.
+45 | لاباس، صحّيت. | Labas, sa77it.
+54 | ما بقيتش نعرف كيفاش نخرج منها. | Ma b9itch na3ref kifach nokhrej menha.
+58 | كاين واش يضحّك. | Kayen wach yd77ak.
+64 | راني مليح، صحّيت، ونتوما؟ | Rani mli7, sa77it, w ntouma?
+64 | راني مليح، صحّيت، ونتا؟ | Rani mli7, sa77it, w nta?
+66 | تفكّرك في حاجة؟ | Tfekkrek f 7aja?
+67 | راني هنا على جال الخدمة. | Rani hna 3la jal l-khedma.
+72 | يتفاهمو مليح بزّاف. | Ytfahmou mli7 bezzaf.
+72 | نقدر نعيش بلاها مليح. | N9der n3ich blaha mli7.
+84 | ماكان والو باش تضحك. | Makan walou bach tod7ok.
+87 | وين راهم الطواليت؟ | Win rahoum t-twalet?
+87 | وين راهم البوليسية في هاد المكتبة؟ | Win rahoum l-boulisiya f had l-maktba?
+91 | كيراهي العايلة؟ | Kirahi l-3ayla?

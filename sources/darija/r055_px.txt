@@ -1,0 +1,3 @@
+# idx | arabe | latin
+32 | كاين حاجة ماشي مليحة. | Kayen 7aja machi mli7a.
+40 | نقولها هاكا برك. | N9oulha haka berk.

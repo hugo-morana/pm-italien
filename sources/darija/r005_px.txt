@@ -1,0 +1,12 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+22 | راني دير ريجيم بلا سكّر. | Rani dir rijim bla sokkar.
+22 | حتّى حاجة ما تجي بلا تعب. | 7atta 7aja ma tji bla ta3ab.
+25 | من بعدي الطوفان! | Men ba3di t-toufan!
+26 | كان لازم تقولها من قبل. | Kan lazem t9oulha men 9bel.
+38 | الحفلة تبطّلت بسبّة الشتا. | El-7afla tbettlet b sebbet ch-chta.
+49 | تدير فيّا مزيّة إلا عاونتني في هاد الخدمة. | Tdir fiya mziya ila 3awentni f had l-khedma.
+72 | ما تحشمش قدّامي. | Ma t7chemch 9oddami.
+72 | عندو الوقت قدّامو. | 3andou l-wa9t 9oddamou.
+74 | عندي واحد الحكاية شابّة على هادي. | 3andi wa7ed l-7kaya chabba 3la hadi.
+79 | ماشي الغلطة تاع حتّى واحد. | Machi l-ghalta ta3 7atta wa7ed.
+85 | السفر دام قريب عشر سوايع. | S-safar dam 9rib 3cher swaye3.

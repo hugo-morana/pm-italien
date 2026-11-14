@@ -1,0 +1,4 @@
+# idx | phrase arabe | phrase latine
+5 | استقبلوه بالصفير. | Ste9blouh bes-sfir.
+45 | ما يعرفش يعوم، كان قريب يغرق. | Ma ya3refch y3oum, kan 9rib yeghre9.
+59 | رسملي كبش. | Rsemli kebch.

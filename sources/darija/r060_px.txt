@@ -1,0 +1,3 @@
+# idx | phrase arabe | phrase latine
+88 | عندي السخانة. | 3andi s-skhana.
+88 | عندي تسعة وتلاتين تاع السخانة. | 3andi tes3a w tlatin ta3 s-skhana.

@@ -1,0 +1,25 @@
+# idx | phrase arabe | phrase latine
+0 | قدّاش تحبّ من وقت؟ | 9eddach t7ebb men wa9t?
+0 | قدّاش باقي؟ | 9eddach ba9i?
+0 | قدّاش باقية تدوم هاد الحكاية؟ | 9eddach ba9ya tdoum had l-7kaya?
+0 | قدّاش راكم قاعدين هنا؟ | 9eddach rakoum 9a3din hna?
+3 | نخلّيك دير. | Nkhallik dir.
+12 | واش ما تقول، ما يهمّنيش. | Wach ma t9oul, ma yhemmnich.
+23 | تلفلي الباسبور. | Tlefli l-passeport.
+23 | تلفلي البزطام. | Tlefli l-bezztam.
+33 | نتمنّى الأمور يتحسّنو قريب. | Netmenna l-oumour yet7assnou 9rib.
+33 | إن شاء الله تمشي! | Inchallah temchi!
+35 | راني تالف. تلفت. | Rani talef. Tleft.
+39 | جاين؟ ماشي معقول! | Jane? Machi ma39oul!
+43 | آه لا، ماشي ممكن! | Ah la, machi momkin!
+48 | وين راهو الرّايون تاع الكوسميتيك؟ | Win rahou r-rayon ta3 l-cosmétique?
+48 | وين راهي لاكيس؟ | Win rahi la caisse?
+48 | وين راهو السبيطار؟ | Win rahou s-sbitar?
+48 | وين كاينة أقرب فارماسي؟ | Win kayna a9rab pharmacie?
+54 | كي يكون الجوّ شباب، نتغدّاو في الجردة. | Ki ykoun j-jaw chbab, netghaddaw fel jerda.
+65 | ما نعرفش بالضّبط. | Ma na3refch bedh-dhabt.
+65 | إيه، هادي هي بالضّبط. | Ih, hadi hiya bedh-dhabt.
+65 | نعرف بالضّبط واش راك رايح تقول. | Na3ref bedh-dhabt wach rak ray7 t9oul.
+70 | على شحال تحبّ تفطر؟ | 3la ch7al t7ebb tefter?
+70 | على شحال يهزّو البريد المرّة الجاية؟ | 3la ch7al yhezzou l-brid l-merra j-jaya?
+88 | سمحلي، عندي ريزيرفاسيون. عندي ريزيرفاسيون. | Sma7li, 3andi réservation. 3andi réservation.

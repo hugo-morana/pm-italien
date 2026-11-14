@@ -1,0 +1,45 @@
+# idx | arabe | latin
+10 | عمري ما نسامح روحي. | 3omri ma nsame7 rou7i.
+10 | عمري ما نسامحو كي ضحّك عليّا الناس. | 3omri ma nsam7ou ki d7ak 3liya n-nas.
+11 | هاد الزنقة توصّل للڨار؟ | Had ez-zen9a twassel l l-gar?
+11 | هادي ما توصّل لحتّى حاجة. | Hadi ma twassel l 7atta 7aja.
+15 | بزّاف ناس راهم يتعذّبو بالجوع. | Bezzaf nas rahom yet3addbou b l-jou3.
+15 | هادي سنين وهو يتعذّب بقلّة النوم. | Hadi snin w houwa yet3addeb b 9illet n-noum.
+17 | روح ضرك، نلحقك من بعد. | Rou7 dork, nel7a9ek men ba3d.
+18 | ما يستاهلش هادي. | Ma yestahelch hadi.
+18 | ما لقاش القيمة اللّي يستاهلها. | Ma l9ach el-9ima elli yestahelha.
+18 | ما تقدرش تديرلو هكّا. ما يستاهلهاش. | Ma t9derch tdirlou hakka. Ma yestahelhach.
+21 | ساكنة في آخر الزنقة. | Sakna f akher ez-zen9a.
+21 | ساكنة من جيهة النيميروات الفرديّة. | Sakna men jiht en-nimirowat el-fardiya.
+22 | نهدرو على هاد القضيّة غدوة. | Nehedrou 3la had el-9adhiya ghodwa.
+23 | مازال كي شعّلتها. | Mazal ki cha33eltha.
+27 | عندي الحقّ، بصّح ما نقدرش نبيّنهولك. | 3andi l-7a9, bessa7 ma n9derch nbayyenhoulek.
+30 | الضوّ بقى شاعل الليل كامل. | Ed-dhaw b9a cha3el l-lil kamel.
+40 | شحال من مرّة نعاودها؟ | Ch7al men merra n3awedha?
+40 | شحال من مرّة لازم نعاودهالك؟ | Ch7al men merra lazem n3awedhalek?
+40 | التاريخ عمرو ما يعاود روحو. | Et-tarikh 3omrou ma y3awed rou7ou.
+46 | خير لك تسكت! | Khir lek tesket!
+53 | ربّي يعاونك! الله يعطيك ما تحبّ. | Rebbi y3awnek! Allah y3tik ma t7ebb.
+53 | نتمنّى نروح لهنا. | Netmenna nrou7 l hna.
+53 | نتمنّالك عام سعيد ومبروك. | Netmennalek 3am sa3id w mabrouk.
+56 | تعرفو واش راهو متوقّع من بعد؟ | Ta3rfou wach rahou metwa99a3 men ba3d?
+56 | هاد المشكل ما كانش متوقّع. | Had el-mouchkil ma kanch metwa99a3.
+56 | كلّش مشى كيما كان متوقّع. | Koulech mcha kima kan metwa99a3.
+59 | ما نقدرش نزيد نعاونك. | Ma n9derch nzid n3awnek.
+60 | في اللّخر حقّق الحلم تاعو. | Fi l-lekher 7a99e9 l-7olm ta3ou.
+63 | قلتها غير نتمسخر. | 9eltha ghir netmeskher.
+63 | ما راهيش عندي لا تمسخير. | Ma rahich 3andi la tmeskhir.
+64 | قالتلو نقسمو الحساب. | 9aletlou n9esmou l-7sab.
+65 | حتّى واحد ما تفطّن بلّي غاب. | 7atta wa7ed ma tfetten belli ghab.
+65 | تفطّنت كيفاش كان محشوم؟ | Tfettent kifach kan ma7choum?
+65 | خرج بلا ما حدّ يتفطّنلو. | Khrej bla ma 7add ytfettenlou.
+67 | يالله نرتاحو عشر دقايق. | Yallah nerta7ou 3achr d9aye9.
+72 | يكيّف كيما المدخنة. | Ykayyef kima l-medkhna.
+72 | ما لازمش تكيّف بزّاف هكّا! | Ma lazemch tkayyef bezzaf hakka!
+73 | ما تندمش. | Ma tendamch.
+73 | سمحلي، بصّح هادي بزّاف! | Sma7li, bessa7 hadi bezzaf!
+73 | سمحلي، بصّح واش راك تطلب ما يتقبّلش. | Sma7li, bessa7 wach rak tetlob ma yet9ebbelch.
+80 | راحنا نقطعو في بلاصة محميّة. | Ra7na n9at3ou f blasa m7emiya.
+81 | قول شكون عيّط ضرك! | 9oul chkoun 3ayyet dork!
+83 | ما نقدرش نحملو. | Ma n9derch ne7mlou.
+99 | بناو هاد الدار في وقت قياسي. | Bnaw had ed-dar f wa9t 9iyasi.

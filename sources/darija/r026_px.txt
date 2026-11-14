@@ -1,0 +1,11 @@
+# idx | phrase arabe | phrase latine
+0 | نتصوّر بلّي رايح يحبس المشروع تاعو قريب. | Ntsawwer belli raye7 ye7bes l-machrou3 ta3ou 9rib.
+4 | واش بقالنا في اللّخر؟ | Wach b9alna f l-lekher?
+7 | فعلاً، ما نقدر ندير والو. | Fe3lan, ma n9der ndir walou.
+14 | في الأصل، ما دار الشّرّ لحتّى واحد. | Fi l-asl, ma dar ch-charr l 7atta wa7ed.
+14 | في الأصل، كيف كيف عليّا ڨاع. | Fi l-asl, kif kif 3liya ga3.
+24 | والله. نحلفلك بالله. | Wallah. N7elfelek b llah.
+38 | أصلاً، كيف كيف. | Asslan, kif kif.
+61 | تيّقني: نحبّو بزّاف. | Tayya9ni: n7ebbou bezzaf.
+61 | تيّقني: كي تبكّر خير. | Tayya9ni: ki tbekker khir.
+70 | لازم نعترف بالمعقول بلّي ما خمّمتش فيها. | Lazem n3taref b l-ma39oul belli ma khammemtch fiha.

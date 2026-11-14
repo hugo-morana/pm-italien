@@ -1,0 +1,66 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+3 | واش تحبّ تشرب؟ | Wach t7ebb tochrob?
+3 | خلّى روحو يتجرّ للشّراب. | Khalla rou7ou yetjarr l ch-chrab.
+6 | ما نربحش قدّ باش نلمّ الدراهم. | Ma nerba7ch 9add bach nlemm d-drahem.
+9 | مازال تتفكّرو؟ | Mazal tetfekkrou?
+14 | كتبتها مرّة وحدة. | Ktebtha merra wa7da.
+15 | ما يمكنش تكمّل هاكا. | Ma ymkench tkemmel haka.
+17 | هادي ما تنفع والو. | Hadi ma tenfa3 walou.
+17 | تكونلو درس. | Tkounlou dars.
+17 | ما تتنرفاش هاكا، ما تنفع والو. | Ma tetnervach haka, ma tenfa3 walou.
+17 | ما تنفع والو تتنرفا هاكا. | Ma tenfa3 walou tetnerva haka.
+17 | ما تنفع والو! | Ma tenfa3 walou!
+18 | واش تحبّ تشري؟ | Wach t7ebb techri?
+18 | نشري منّك الأورديناتور القديم تاعك. | Nechri mennek l-ordinateur l-9dim ta3ek.
+20 | لقيت بزّاف تاع الصّعوبات. | L9it bezzaf ta3 s-sou3oubat.
+23 | ڨاع الذراري يقراو البيدي. | Ga3 dh-dhrari ye9raw les BD.
+23 | قبل كلّش، لازم ديما تقرا كيفاش يتخدم. | 9bel koullech, lazem dima te9ra kifach yetkhdem.
+23 | ما نقراش الجرايد تاع الفضايح. | Ma ne9rach j-jrayed ta3 l-fdhaye7.
+27 | كان يمكن ينجّيوه. | Kan ymken ynejjiwh.
+36 | غير هادي اللي كانت ناقصة! | Ghir hadi elli kanet na9sa!
+36 | راسو ماشي مليح! | Rasou machi mli7!
+36 | غير هادي اللي كانت ناقصة! | Ghir hadi elli kanet na9sa!
+37 | الله يخلّيك سمحلي. | Allah ykhallik sma7li.
+37 | حتّى « سمحلي » ما قالهاش. | 7atta « sma7li » ma 9alhach.
+38 | نقدر نديك للاڨار. | N9der nddik l la-gare.
+39 | جاوبت ديراكت. | Jawbet direct.
+39 | مازال ما ردّش. | Mazal ma raddch.
+39 | وواش جاوبو؟ | W wach jawbou?
+40 | سرقولي البزطام تاعي. | Sar9ouli l-bezdam ta3i.
+41 | كان لازم تستعمل الڨرون أونڨل تاعك. | Kan lazem testa3mel le grand angle ta3ek.
+44 | رح تحبس التشكّي ولّا لا؟ | Ra7 te7bes t-tchekki wella la?
+46 | تفضّلو اقعدو هنا. | Tfaddlou o93dou hna.
+47 | تزوّجو بلا عرس، غير بيناتهم. | Tzewjou bla 3ors, ghir binathom.
+49 | ما تخمّموش على هادي. | Ma tkhemmmouch 3la hadi.
+53 | خمّمت بلّي خير ندّي الكار. | Khemmemt belli khir neddi l-kar.
+53 | جابتلي بزّاف تاع المشاكل. | Jabetli bezzaf ta3 l-machakil.
+53 | خير تجي معطّل ولا ما تجيش. | Khir tji m3attal wala ma tjich.
+53 | زوج احتياطات خير من وحدة. | Zouj i7tiyatat khir men wa7da.
+54 | كنت نسقسي روحي. | Kount nsa9si rou7i.
+54 | خلّاتو يستنّى وما جاتش. | Khallatou yestenna w ma jatch.
+58 | ما تخرّطش عليّا! | Ma tkharretch 3liya!
+58 | ما تقولش الهبال! | Ma t9oulch l-hbal!
+58 | غير يخرّط. | Ghir ykharret.
+59 | نقدرو نعوّلو عليه. | N9edrou n3awlou 3lih.
+60 | دافع على روحو مليح. | Dafa3 3la rou7ou mli7.
+63 | بالصّحّ بركا عليّا. عييت بالصّحّ. | B s-sa77 barka 3liya. 3yit b s-sa77.
+63 | يكفي تضغط على البوطون. | Ykfi tedghot 3la l-bouton.
+64 | ما رقدتش ڨاع الليل. | Ma r9edtch ga3 l-lil.
+66 | ما قدرتش نبيعها. | Ma 9dertch nbi3ha.
+66 | سمحلي، هادي ماشي للبيع. | Sma7li, hadi machi l l-bi3.
+67 | عمري ما نكذب. | 3omri ma nkedheb.
+67 | راني متأكّد بلّي كذب. | Rani mt2akked belli kdheb.
+68 | لا، واش راك تتخيّل؟ | La, wach rak tetkhayyel?
+68 | نقدر نتخيّل كيفاش حسّيت. | N9der netkhayyel kifach 7assit.
+70 | وين ما يتخبّى، نلقاه. | Win ma yetkhabba, nel9ah.
+74 | استقبلنا بقلب مفتوح. | Sta9belna b 9alb meftou7.
+74 | استقبلنا ببرودة. | Sta9belna b broda.
+74 | استقبلونا مليح بزّاف. | Sta9blouna mli7 bezzaf.
+76 | ماشي هادي هي القضيّة. | Machi hadi hiya l-9adiya.
+81 | رح تخلط. | Ra7 tekhlat.
+81 | الفيلم تصوّر في أثينا. | L-film tsawwar f Athina.
+82 | ما تزيدش الزّيت على النّار. | Ma tzidch z-zit 3la n-nar.
+83 | ما نعرفش كيفاش نشرح. | Ma na3refch kifach nchra7.
+89 | وعدني بلّي يجي يزورنا في الفاكانس. | W3edni belli yji yzourna f l-vacances.
+90 | لوكان أنا في بلاصتك، ما نقبلش. | Lokan ana f blastek, ma n9belch.
+93 | ما نقبلش هادي. | Ma n9belch hadi.

@@ -1,0 +1,20 @@
+# idx | arabe | latin   (même ordre que les exemples supplémentaires)
+19 | درت غير واش لازم عليّا. | Dert ghir wach lazem 3liya.
+39 | ياخي علاش ما تدافعش على روحك؟ | Yakhi 3lach ma tdafe3ch 3la rou7ek?
+51 | نقول هاكا برك. | N9oul haka berk.
+51 | علاش راك تشوف فيّا هاكا؟ | 3lach rak tchouf fiya haka?
+51 | كيما ديما، دار واش حبّ. | Kima dima, dar wach 7abb.
+51 | كيفاش تتجرّا تهدر معايا هاكا؟ | Kifach tetjerra tehder m3aya haka?
+51 | في الصّيف، نخدم ڨيد. | F s-sif, nekhdem guide.
+51 | لازم تدّي النّاس كيما راهم. | Lazem teddi n-nas kima rahom.
+51 | راهي تنقّز كي البرغوث. | Rahi tne99ez ki l-berghout.
+51 | كيما ديما، دارتلو واش حبّت. | Kima dima, daretlou wach 7abbet.
+51 | راهو محصول كي الفار. | Rahou ma7soul ki l-far.
+56 | لوكان غير نعرف. | Loukan ghir na3ref.
+56 | لوكان غير تكون ممكنة! | Loukan ghir tkoun moumkna!
+56 | لوكان غير تحبس الكذب. | Loukan ghir t7bes l-kdheb.
+56 | لوكان غير عرفتها. لوكان غير عرفت. | Loukan ghir 3reftha. Loukan ghir 3reft.
+74 | على حساب ما نعرف، الكارط ديدونتيتي تكفي. | 3la 7sab ma na3ref, l-kart d'identité tekfi.
+77 | زرب روحك، وإلّا يفوتك التّران. | Zreb rou7ek, w illa yfoutek t-tran.
+88 | ومع هادا كنت قتلك ردّ بالك. | W m3a hada kount 9otlek redd balek.
+88 | ومع هادا كنت قتلك ردّ بالك منّو. | W m3a hada kount 9otlek redd balek mennou.

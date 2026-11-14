@@ -1,0 +1,4 @@
+# idx | arabe | latin
+22 | سوناو، حلّ الباب يعيشك. | Sounaw, 7ell l-bab y3aychek.
+65 | راهي حابّة تصبّ اليوم؟ | Rahi 7abba tsobb l-youm?
+70 | إذا هادي تهنّيك. | Ida hadi thennik.

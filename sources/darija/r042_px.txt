@@ -1,0 +1,15 @@
+# idx | phrase arabe | phrase latine
+8 | ما تكونش فضولي هكّا! | Ma tkounch fdouli hakka!
+10 | شفتك، ماشي عمى أنا! | Choftek, machi 3ma ana!
+15 | كاين شكون يهدر بالنّڨليزية؟ | Kayen chkoun yehder b n-ngliziya?
+15 | بزّاف تاع النّڨليز يفوّتو الصّيف في فرانسا. | Bezzaf ta3 n-ngliz yfewwtou s-sif f Fransa.
+25 | باباه يهدر الألمانية والنّڨليزية مليح بزّاف. | Babah yehder l-almaniya w n-ngliziya mli7 bezzaf.
+30 | سرقولي البشكليطة تاعي للمرّة التّالتة. | Ser9ouli l-bichklita ta3i l l-merra t-talta.
+31 | واحد مسكين آخر! | Wa7ed meskin akhor!
+38 | ماشي معقّد، وكلّش يعجبو. | Machi m3a99ed, w koullech y3ejbou.
+57 | عندي جلدة حسّاسة بزّاف. | 3andi jelda 7assasa bezzaf.
+58 | ما لاحظت حتّى حاجة غريبة. | Ma la7edht 7atta 7aja ghriba.
+68 | في عشرين سنة، تقدر تعيش غير بالحبّ والما البارد. | Fi 3achrin sna, t9der t3ich ghir b l-7obb w l-ma l-bared.
+71 | بابا رايح يزعف: كسّرتلو الطوموبيل. | Baba ray7 yez3ef: kessertlou t-tomobil.
+77 | زادو دارو لاڨريف بلا ما يخبّرو! | Zadou darou la grève bla ma ykhabrou!
+78 | هادي ماشي حاجة رسمية. | Hadi machi 7aja rasmiya.

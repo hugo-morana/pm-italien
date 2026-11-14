@@ -1,0 +1,13 @@
+# idx | arabe | latin
+6 | دوّزت نهار مليح؟ | Dawwezt nhar mli7?
+6 | دوّزتو نهار مليح؟ | Dawweztou nhar mli7?
+12 | هادا ڨاع ما عندو حتّى معنى. حتّى حاجة من هادي ما عندها معنى. | Hada ga3 ma 3andou 7atta ma3na. 7atta 7aja men hadi ma 3andha ma3na.
+20 | راني فرحان بلّي تعرّفت عليك. | Rani fer7an belli t3arraft 3lik.
+22 | نخدم في سونطر كوميرسيال. | Nekhdem f sontr komersyal.
+22 | نخدم في سبيطار. | Nekhdem f sbitar.
+23 | وين رحت البارح في الليل؟ | Win ro7t l-bare7 f l-lil?
+23 | وين تزاديت؟ | Win tzadit?
+23 | وين راك مخبّي؟ | Win rak mkhebbi?
+26 | قولو واش تحبّو، هادي غريبة. | 9oulou wach t7ebbou, hadi ghriba.
+66 | لالا، ماشي اليوم ڨاع! | Lala, machi l-youm ga3!
+91 | نكره هاد البنادم كيما السمّ. | Nekreh had el-bnadem kima s-semm.

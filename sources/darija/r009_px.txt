@@ -1,0 +1,31 @@
+# idx | phrase arabe | phrase latine
+3 | ما قدرتش نكونيكطي. | Ma 9dertch nconnecti.
+3 | هاد الوجه نعرفو، بصّح ما قدرتش نتفكّر واش سميتو. | Had l-wejh na3arfou, bessa7 ma 9dertch netfekker wach smitou.
+3 | ما قدرتش نصيبو. | Ma 9dertch nsibou.
+3 | ما قدرتش نتفكّر وين شفتها. | Ma 9dertch netfekker win cheftha.
+4 | أكيد عندك الحقّ، بصّح حتّى هو نفهمو. | Akid 3andek l-7a9, bessa7 7atta houwa nefehmou.
+12 | ندّي هادي. | Neddi hadi.
+15 | بركا ما تقول الخرطي. | Baraka ma t9oul l-khorti.
+22 | الأمور ما راهيش خايبة. | L-oumour ma rahich khayba.
+37 | طابلة لجوج، يعيشك. | Tabla l zouj, y3ichek.
+37 | تجيبلنا لاديسيون، يعيشك؟ | Tjiblna l'addition, y3ichek?
+37 | واحد بواحد، يعيشكم. | Wa7ed b wa7ed, y3ichkoum.
+37 | دخّلهم، يعيشك. | Dakhkhelhoum, y3ichek.
+37 | كتبها، يعيشك. | Ktebha, y3ichek.
+37 | جوج دجاجات مقليين، يعيشك. | Zouj djajat me9liyin, y3ichek.
+37 | لاديسيون، يعيشك. | L'addition, y3ichek.
+37 | زيدني شويّة، يعيشك. | Zidni chwiya, y3ichek.
+37 | ديرلي لوبلان، يعيشك. | Dirli le plein, y3ichek.
+37 | نقدر نقعد معاكم، يعيشكم؟ | N9der n9a3ed m3akoum, y3ichkoum?
+37 | جوج بيّات تاع الرّوحة برك للوندر، يعيشك. | Zouj biyyat ta3 r-rou7a berk l Londres, y3ichek.
+48 | نفهم واش راك تحسّ. | Nefhem wach rak t7ess.
+50 | نفهّمهالك من بعد. | Nfahhemhalek men ba3d.
+54 | نخلّوها لمن بعد، إذا ما يقلّقكش. | Nkhallouha l men ba3d, ida ma y9alle9kch.
+56 | نحسّ روحي مرتاح بالصّح. | N7ess rou7i merta7 bessa7.
+56 | نحسّ روحي وحدي بزّاف. | N7ess rou7i wa7di bezzaf.
+56 | نحسّ روحي مريض. | N7ess rou7i mrid.
+56 | نحسّ روحي مليح. | N7ess rou7i mli7.
+56 | نحسّ روحي رجعتلي الروح. | N7ess rou7i rje3tli r-rou7.
+58 | ما فهمتش هاد الكلمة. | Ma fhemtch had l-kelma.
+58 | ما فهمتش واش تحبّ تقول. | Ma fhemtch wach t7ebb t9oul.
+79 | راني مريض، ما رانيش لاباس قاع. | Rani mrid, ma ranich labas ga3.

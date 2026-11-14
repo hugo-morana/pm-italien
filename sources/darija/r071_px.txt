@@ -1,0 +1,4 @@
+# idx | phrase arabe | phrase latine
+45 | غشّ، شفتو. | Ghachch, cheftou.
+49 | فرحتلك بالنجاح تاعك. | Fre7tlek b n-nja7 ta3ek.
+55 | رح تخسّر كرشك. | Ra7 tkhesser kerchek.

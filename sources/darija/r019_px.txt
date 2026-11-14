@@ -1,0 +1,22 @@
+# idx | arabe | latin
+10 | يحبّ ديما يكون عندو الحقّ. | Y7ebb dima ykoun 3andou l-7a9.
+10 | ما يعرفش واش يحبّ. | Ma ya3refch wach y7ebb.
+10 | يحبّ يدير مليح. | Y7ebb ydir mli7.
+10 | يحبّ الموديل الكبير. | Y7ebb l-model l-kbir.
+10 | خلّيه يدير واش يحبّ. | Khallih ydir wach y7ebb.
+52 | درنا كريفي. | Derna crevi.
+52 | لقينا مقاومة قويّة. | L9ina mou9awama 9wiya.
+52 | زرنا القصر تاع ليدز. | Zorna l-9asr ta3 Leeds.
+52 | زدنا سمانة في العطلة تاعنا. | Zedna simana f l-3otla ta3na.
+70 | يعرف بلّي الشانص تاعو باش ينجح قليل بزّاف. | Ya3ref belli ch-chance ta3ou bach yenja7 9lil bezzaf.
+71 | مازال الطريق طويل علينا. | Mazal t-tri9 twil 3lina.
+71 | رحنا في الطريق الغالطة. | Ro7na f t-tri9 l-ghalta.
+80 | ما نعرفش بزّاف ناس هنا، على هادي حابّ نعرّف بروحي. | Ma na3refch bezzaf nas hna, 3la hadi 7abb n3arref b rou7i.
+80 | ما نعرفش هاد الكلمة. | Ma na3refch had l-kelma.
+85 | كرشي راهي توجع فيّا، واش لازم ندير؟ | Kerchi rahi touja3 fiya, wach lazem ndir?
+89 | رقدتو مليح؟ | R9adtou mli7?
+89 | عندكم الصرف؟ | 3andkoum s-sarf?
+95 | شحال ديت دراهم كاش؟ | Ch7al ddit drahem cash?
+95 | سمعت لاميتيو؟ | Sma3t la météo?
+95 | عندك واش تقول على هادي؟ | 3andek wach t9oul 3la hadi?
+95 | وين لقيت هاد الحرز؟ | Win l9it had l-7erz?

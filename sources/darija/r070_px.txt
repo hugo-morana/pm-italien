@@ -1,0 +1,2 @@
+# idx | phrase arabe | phrase latine
+3 | ما زلت ما تغلبتش. | Ma zelt ma tghlebtch.

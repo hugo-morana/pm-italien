@@ -1,0 +1,30 @@
+# idx | arabe | latin
+10 | راني حابّ نعرف النتيجة بالزربة. | Rani 7abb na3ref n-natija b z-zerba.
+24 | الكلمة راهي في راس لساني. راهي في راس لساني. | L-kelma rahi f ras lsani. Rahi f ras lsani.
+25 | صحّ، نعترف: الحلّ تاعك فيه فوايد. | Sa77, n3taref: l-7all ta3ek fih fwayed.
+25 | لازم تشوف حلّ آخر. | Lazem tchouf 7all akhor.
+25 | ما تكسّرش راسك، عندي الحلّ. | Ma tkessarch rasek, 3andi l-7all.
+30 | خاصّك تستغلّ الفرصة. | Khassek testaghell l-forsa.
+30 | ما تضيّعوش هاد الفرصة. | Ma tdhay3ouch had l-forsa.
+31 | راهي مريضة، عطاوها كونجي. | Rahi mrida, 3tawha konji.
+56 | السرّاق هدّد الكيسيي بالموس. | S-serra9 hedded l-kisyi b l-mous.
+56 | كنت كي الدجاجة اللي صابت موس. | Kount ki d-djaja lli sabet mous.
+57 | ما كانوش عندي الدراهم باش نركب طاكسي. | Ma kanouch 3andi d-drahem bach nerkeb taksi.
+61 | رد بالك حتّى واحد ما يشوفك! | Redd balek 7atta wa7ed ma ychoufek!
+62 | راك عارف بلّي ما نعطيهاش أهميّة. | Rak 3aref belli ma na3tihach ahammiya.
+68 | روح جيب قرعة من لاكاف. | Rou7 jib 9ar3a men la kav.
+69 | الحلم تاعي ولّى حقيقة. | L-7oulm ta3i walla 7a9i9a.
+86 | راكم عارفين واش كاين في البرنامج الليلة؟ | Rakoum 3arfin wach kayen f l-barnamej l-lila?
+86 | الضو كي تقطّع، ما كانش في البرنامج. | D-dou ki t9atta3, ma kanch f l-barnamej.
+90 | واحد صاحب بابا جابلي تيكيات باش ندخل. | Wa7ed sa7eb baba jabli tikiyat bach nedkhol.
+93 | طعمو مسّوس. ما عندو حتّى طعم. | Ta3mou messous. Ma 3andou 7atta ta3m.
+93 | طعمو قوي. | Ta3mou 9wi.
+95 | ما قاليش واش في نيّتو. | Ma 9alich wach f niytou.
+95 | ما تفهمونيش غالط، نيّتي مليحة. | Ma tefhmounich ghalet, niyti mli7a.
+97 | قال العكس. | 9al l-3aks.
+97 | حتّى واحد ما يقدر يقول العكس. | 7atta wa7ed ma y9der y9oul l-3aks.
+98 | زاد مزهور. | Zad mazhour.
+99 | كاين شكون يحبّ الخبز؟ | Kayen chkoun y7ebb l-khobz?
+99 | عطيني الخبز يعيشك. | 3tini l-khobz y3ichek.
+99 | كليت طرف خبز بالفرماج. | Kalit tref khobz b l-fromaj.
+99 | الخبز راهو قليل عندنا شويّة. | L-khobz rahou 9lil 3andna chwiya.

@@ -1,0 +1,22 @@
+# idx | phrase arabe | phrase latine
+9 | نشري تقريبا كلّش من حانوت تاع البيو. | Nechri ta9riban koulech men 7anout ta3 l-bio.
+9 | حالتو تقريبا مسدودة. | 7altou ta9riban mesdouda.
+10 | ماشي صعيبة بزّاف. | Machi s3iba bezzaf.
+10 | ماشي حادڨ بزّاف. | Machi 7adeg bezzaf.
+16 | نخدم في المعدّل تسع سوايع في النهار. | Nekhdem f l-mo3addal tsa3 swaye3 f n-nhar.
+19 | راهو حاليّا في حالة صعيبة. | Rahou 7aliyan f 7ala s3iba.
+19 | درك، عندي هموم أخرين. | Dork, 3andi hmoum okhrin.
+29 | نرجع على الأكثر في خمستاش يوم. | Nerja3 3la l-aktar f khamstach youm.
+29 | هادي خمستاش يوم، لا كتب لا عيّط. | Hadi khamstach youm, la kteb la 3ayyet.
+33 | يا حسرة، راك غالط. | Ya 7asra, rak ghalet.
+36 | نلقطو حبّ الملوك في شهر جوان. | Nle9tou 7abb l-mlouk f chhar jwan.
+39 | راني عيّان موت. | Rani 3ayyan mout.
+40 | يبان بلّي حبس نهائيّا. | Ybane belli 7bes nihā2iyan.
+47 | عرفتو طول من صوتو. | 3reftou toul men soutou.
+48 | قلبو البيت راسها على عقبها. | 9lebou l-bit rasha 3la 39abha.
+64 | جرّبت بلا فايدة. | Jarrebt bla fayda.
+68 | على حساب ما يقول، راهو مريض. | 3la 7sab ma y9oul, rahou mrid.
+75 | تلاقيت بيه ساعات عند صحابي. | Tla9it bih sa3at 3and s7abi.
+78 | بعد غدوة على الأكثر. | Ba3d ghodwa 3la l-aktar.
+78 | نأكّدهالك بعد غدوة. | Nakkedhalek ba3d ghodwa.
+78 | إذا كان الجوّ مليح، نروحو بعد غدوة. | Ida kan j-jaw mli7, nro7ou ba3d ghodwa.

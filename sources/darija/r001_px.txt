@@ -1,0 +1,70 @@
+18 | ما يلزمش نحقروه. | Ma ylzemch n7a9rouh.
+18 | رح يلزم ندبّرو راسنا بواش عندنا. | Ra7 ylzem ndebbrou rasna b wach 3andna.
+19 | واش راهو صاري؟ | Wach rahou sari?
+21 | نشوفو مشبوه بزّاف. | Nchoufou mechbouh bezzaf.
+22 | كانت باينة. | Kanet bayna.
+22 | ما كنتش نستنّاها. | Ma kountch nestennaha.
+23 | عمري ما نوصل. | 3omri ma nwassel.
+23 | إذا وصلت لهنا، نديرو حاجة. | Ida wselt l hna, ndirou 7aja.
+23 | ما يجيش حتّى في صبعو. | Ma yjich 7atta f seb3ou.
+29 | ماشي شغلك. | Machi chghlek.
+29 | ماشي شغلي. | Machi chghli.
+30 | غير درك مشى. | Ghir dork mcha.
+37 | ما عندو حتّى حدود. | Ma 3andou 7atta 7doud.
+38 | حتّى واحد ما سقساك! | 7atta wa7ed ma sa9sak!
+38 | حتّى أنا راني نسقسي روحي. | 7atta ana rani nsa9si rou7i.
+38 | طلب زيادة تاع الخضرة. | Tleb zyada ta3 l-khodra.
+40 | راك تسلّك؟ | Rak tsellek?
+45 | لازم تجرّب طريقة أخرى. | Lazem tjarreb tri9a okhra.
+47 | راك تقدر تعاوني؟ | Rak t9der t3awenni?
+47 | نشوف بلّي واجب عليّ نعاونو. | Nchouf belli wajeb 3liya n3awnou.
+48 | تحوّس تنسى في النعاس. | T7awwes tensa f n-n3as.
+49 | ما نيش مصدّق! | Manich msadde9!
+52 | ما راهاش تكمل. | Ma rahach tekmel.
+53 | ما تضيّعش الوقت. | Ma tdayya3ch l-wa9t.
+53 | وين ضيّعت البورتابل تاعك؟ | Win dayya3t l-portable ta3ek?
+53 | وزيد عليها، ضيّع الباسبور تاعو. | W zid 3liha, dayya3 l-passeport ta3ou.
+53 | ما تضيّعش وقتك تستنّى فيه. | Ma tdayya3ch wa9tek testenna fih.
+55 | ما عجبتنيش. | Ma 3jbatnich.
+55 | عجبك ولّا ما عجبكش. | 3jbek wella ma 3jbekch.
+55 | ما حسبش الدراهم باش يعجبها. | Ma 7sebch d-drahem bach ya3jebha.
+56 | جاتك النوبة. | Jatek n-nouba.
+56 | التغشاش ماشي لعب! | Et-teghchach machi la3b!
+56 | جاتكم النوبة. | Jatkom n-nouba.
+58 | واش تخدم؟ | Wach tekhdem?
+58 | يخدم في الليل. | Yekhdem f l-lil.
+58 | وين تخدم؟ | Win tekhdem?
+60 | كان لازم تسمع كلام باباك. | Kan lazem tesma3 klam babak.
+61 | يهبّلني. | Yhabbelni.
+61 | وقتاش تردّلي الدراهم تاعي؟ | Wa9tach troddli d-drahem ta3i?
+61 | ردّتلو حياتو جهنّم. | Raddetlou 7yatou jahannam.
+63 | عندها غير باش تعيش بالروتريت تاعها. | 3andha ghir bach t3ich b r-retraite ta3ha.
+65 | جا الوقت. | Ja l-wa9t.
+65 | راني بديت نقلق. | Rani bdit n9la9.
+65 | بدا يقلّقني. | Bda y9alle9ni.
+65 | بديت تقلّقني. | Bdit t9alle9ni.
+65 | بدات تصبّ الشتا. | Bdat tsobb ech-chta.
+67 | نسيت سميتك. | Nsit smitek.
+67 | كاين حاجة ما لازمش تنساها: عندو الوقت. | Kayen 7aja ma lazemch tensaha: 3andou l-wa9t.
+67 | نراهن بلّي نسى يحطّ المنبّه. | Nrahen belli nsa y7ott l-mnabbeh.
+71 | تحبّ تاكل حاجة؟ | T7ebb takoul 7aja?
+71 | كلينا على الواقف. | Klina 3la l-wa9ef.
+71 | ما راناش ناكلو، رانا نذوّقو برك. | Ma ranach nakoulou, rana ndawwgou berk.
+72 | في وسط المدينة، الكرا ولّى غالي بزّاف. | F wast l-mdina, l-kra wella ghali bezzaf.
+73 | حاولت تبدّلو الجوّ. | 7awlet tbeddlou j-jaw.
+73 | ما تقدر تبدّل والو. | Ma t9der tbeddel walou.
+73 | تبدّل للخير. | Tbeddel l l-khir.
+78 | عمري ما نخلّيك. | 3omri ma nkhallik.
+78 | نهار، رح يتنسى. | Nhar, ra7 yetnsa.
+78 | ما يضحك عليه حتّى واحد. | Ma yed7ak 3lih 7atta wa7ed.
+82 | نخلّصلك قهوة. | Nkhallaslek 9ahwa.
+82 | جرّبتها في راسي. | Jarrebtha f rassi.
+82 | على حساب المحلّ! | 3la 7sab l-ma7all!
+85 | راني مشغول بزّاف. | Rani mechghoul bezzaf.
+88 | هاد الريسطورون محلول 24 على 24. | Had r-restaurant ma7loul 24 3la 24.
+91 | وين تعلّمتها؟ | Win t3allemtha?
+91 | راهي تتعلّم الكلاكيت. | Rahi tet3allem les claquettes.
+95 | راكم تضحكو عليّ! | Rakom td7kou 3liya!
+97 | رقدت مليح؟ | R9adt mli7?
+97 | ما قدرتش نرقد. | Ma 9dertch nor9od.
+97 | كانت راقدة كي الميّتة. | Kanet ra9da ki l-mayta.

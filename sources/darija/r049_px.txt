@@ -1,0 +1,4 @@
+# idx | phrase arabe | phrase latine
+8 | خير ليّا نروح بالسرقة. | Khir liya nrou7 bes-ser9a.
+35 | نقدرو نخلّصو كلّ واحد وحدو؟ | N9edrou nkhallsou koul wa7ed wa7dou?
+49 | ما دارهاش بالعاني. | Ma darhach bel-3ani.

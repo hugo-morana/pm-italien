@@ -1,0 +1,29 @@
+# idx | phrase arabe | phrase latine
+5 | وقتاش راك رايح للعطلة؟ | Wa9tach rak raye7 l l-3otla?
+5 | راني هنا في العطلة. | Rani hna f l-3otla.
+7 | على ما يبان، راك مقلّق. | 3la ma ybane, rak m9alle9.
+14 | واش راك دير اليوم العشيّة؟ | Wach rak dir l-youm l-3chiya?
+15 | نفوت نشوفك غدوة العشيّة. | Nfout nchoufek ghodwa l-3chiya.
+18 | عندك الصحّ ميا بالميا. | 3andek s-sa77 miya bel-miya.
+30 | نخرجو كلّ سبت في الليل. | Nokhorjou koul sebt f l-lil.
+30 | نروح كلّ سبت لبرايتون بالستوب. | Nrou7 koul sebt l Brighton bes-stop.
+31 | يا سبحان الله، بالصدفة اليوم بالذات! | Ya sob7an Allah, bes-sodfa l-youm b dhat!
+31 | سمعنا الخبر بالصدفة برك. | Sma3na l-khbar bes-sodfa berk.
+31 | ما تعرفش بالصدفة واحد في ميونيخ؟ | Ma ta3refch bes-sodfa wa7ed f Munich?
+36 | كلّ حدّ، يهديلها بوكي تاع النوّار. | Koul 7add, yahdilha bouquet ta3 n-nouwar.
+36 | الدخول بلاش نهار الحدّ وأيّام العطلة. | Ed-dkhoul blech nhar l-7add w iyyam l-3otla.
+36 | نهار الحدّ، نقدر نرقد حتّى نشبع. | Nhar l-7add, n9der nor9od 7atta nechba3.
+37 | خلّيني نقولها بطريقة أخرى. | Khallini n9oulha b tri9a okhra.
+37 | ما قدرتش ندير غير هاكّا. | Ma 9dertch ndir ghir hakka.
+37 | في هادي، عندي رأي آخر. | F hadi, 3andi ra2y akhor.
+37 | المرّة الجاية، نديرها بطريقة أخرى. | L-merra j-jaya, ndirha b tri9a okhra.
+42 | ما نقدرش نقرّر هاكّا بالزربة. | Ma n9derch n9arrer hakka bez-zerba.
+52 | هاد النوع تاع الحوايج ما يتلقاش بالساهل. | Had n-nou3 ta3 l-7wayej ma ytel9ach bes-sahel.
+54 | ما تقطعليش الهدرة كلّ شويّة. | Ma t9at3lich l-hadra koul chwiya.
+57 | ماشي لازم. | Machi lazem.
+58 | شفت يوتوب قريب. | Cheft YouTube 9rib.
+63 | حالتو تبدّلت بين عشيّة وضحاها. | 7altou tbeddlet bin 3chiya w d7aha.
+70 | بالشويّة شويّة، يرحم والديك. | Bech-chwiya chwiya, yer7em waldik.
+85 | بكري كنت نجمع التامبرات. | Bekri kount nejma3 t-tambrat.
+86 | على غفلة، ما شدّيتش روحي وطحت. | 3la ghafla, ma cheddit-ch rou7i w ta7t.
+89 | داك الكلام اللي قلتو جرحو بزّاف. | Dak l-klam elli 9oultou jer7ou bezzaf.

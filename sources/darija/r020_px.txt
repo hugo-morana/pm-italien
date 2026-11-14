@@ -1,0 +1,59 @@
+5 | لازم تهبطو في الأرّي الجاي. | Lazem tahbtou f l-arrêt j-jay.
+16 | مع هاد البرد، تشهّيت ناكل لابيري. | M3a had l-berd, tchahhit nakoul la purée.
+17 | علاش راكم هنا؟ | 3lach rakom hna?
+17 | راك مشغول في الخدمة؟ | Rak mechghoul f l-khedma?
+17 | في واش راك تخدم؟ | F wach rak tekhdem?
+18 | نحبّ نرجّع هادي. | N7ebb nraje3 hadi.
+18 | نحبّ نبعث كولي. | N7ebb neb3at colis.
+18 | نحبّ ناكل سلاطة. | N7ebb nakoul slata.
+18 | نحبّ ناكل لامقارونة. نحبّ ناكل النواصر. | N7ebb nakoul la ma9arouna. N7ebb nakoul n-nwaser.
+18 | نحبّ ناكل شوربة. | N7ebb nakoul chorba.
+18 | نحبّ نشري بلان تاع المدينة. | N7ebb nechri plan ta3 l-mdina.
+18 | نحبّ نصرّف الدولار لليورو. | N7ebb nsarref d-dollar l l-euro.
+18 | نحبّ نزيد شويّة كلمات. | N7ebb nzid chwiya klemat.
+20 | راك مزوّج؟ راك مزوّج؟ مزوّج نتا؟ | Rak mzawwej? Rak mzawwej? Mzawwej nta?
+20 | كيفاش وصلت لهاد النتيجة؟ | Kifach wselt l had n-natija?
+20 | علاش راك صعيب هكذا؟ | 3lach rak s3ib hakda?
+25 | واش عجبك فيها؟ | Wach 3jbek fiha?
+25 | تحبّ تشرب الشراب؟ | T7ebb tochrob ech-chrab?
+29 | نقدر نشوف المنيو؟ | N9der nchouf le menu?
+29 | نقدر نسقسيك سؤال؟ | N9der nsa9sik sou2al?
+29 | نقدر نسقسيك على حاجة، يعيّشك؟ | N9der nsa9sik 3la 7aja, y3ayyechk?
+29 | نقدر ندّي كاس تاع ما معدني؟ | N9der neddi kas ta3 ma ma3dani?
+29 | نقدر نسقسيك سؤال، مسيو؟ | N9der nsa9sik sou2al, monsieur?
+29 | نقدر ندّي ريسو؟ | N9der neddi reçu?
+29 | وين نلقى الديسترو؟ | Win nel9a d-distributeur?
+29 | نقدر نوصّلك للدار؟ | N9der nwasslek l d-dar?
+29 | عندك الوقيد، يعيّشك؟ | 3andek l-wa9id, y3ayyechk?
+29 | نقدر نعيّط بالتيليفون تاعك؟ | N9der n3ayyet b t-téléphone ta3ek?
+40 | تحبّ تشرب حاجة؟ | T7ebb tochrob 7aja?
+40 | واش تحبّ نديرولها؟ | Wach t7ebb ndiroulha?
+40 | يالله ندخلو في الصحّ، واش قلت؟ | Yallah nedkhlou f s-sa77, wach 9olt?
+41 | تحبّ نهزّلك الفاليزة؟ | T7ebb nhezzlek la valise?
+56 | تقدر تديرلي خدمة؟ | T9der tdirli khedma?
+56 | وين حاب توصل؟ | Win 7ab tousel?
+58 | تحبّ نجي نجيبك؟ | T7ebb nji njibek?
+72 | ما كان حتّى مشكل، نقدرو نرقّدوكم عندنا. | Ma kan 7atta mochkil, n9edrou nr9doukom 3andna.
+78 | حتّى حنا نعرفو الغنية! | 7atta 7na na3rfou l-ghenya!
+79 | نفضّل نسكت. | Nfaddel neskot.
+79 | نفضّل نقعد في الدار. | Nfaddel n9a3ed f d-dar.
+79 | نفضّل ندّي البارابلوي. | Nfaddel neddi le parapluie.
+79 | نفضّل ما نقول والو. | Nfaddel ma n9oul walou.
+79 | نفضّل ما نعرفش واش راهو يستنّى فيّا. | Nfaddel ma na3refch wach rahou yestenna fiya.
+79 | نفضّل ندّي الكار. | Nfaddel neddi l-car.
+79 | نفضّل ما ندخلش في التفاصيل. | Nfaddel ma nedkholch f t-tafasil.
+93 | كنّا وجّدنا هاد السفرة مليح. | Kenna wajjedna had s-safra mli7.
+93 | كنّا في مشاكل كبار. | Kenna f machakil kbar.
+94 | تقدر تستنّى شويّة؟ | T9der testenna chwiya?
+94 | تقدر تديرلي خدمة؟ | T9der tdirli khedma?
+94 | تقدر تهدر بالشويّة، يعيّشك؟ | T9der tehder b ech-chwiya, y3ayyechk?
+94 | تقدر تعاود الجملة، يعيّشك؟ | T9der t3awed l-jomla, y3ayyechk?
+94 | تقدر تعاود، يعيّشك؟ | T9der t3awed, y3ayyechk?
+94 | تقدر تكتبها، يعيّشك؟ | T9der tektebha, y3ayyechk?
+94 | تقدر تهجّيلي هاد الكلمة، يعيّشك؟ | T9der thajjili had l-kelma, y3ayyechk?
+94 | تقدر تفهّمني واش معناها هاد الكلمة، يعيّشك؟ | T9der tfahhemni wach ma3naha had l-kelma, y3ayyechk?
+94 | تقدر تعاونّي؟ تقدر تعاونّي؟ | T9der t3awenni? T9der t3awenni?
+94 | تقدر تعيّط للانبيلانس، يعيّشك؟ | T9der t3ayyet l l-ambulance, y3ayyechk?
+94 | تقدر تفوت عندي غدوة الصباح؟ | T9der tfout 3andi ghodwa s-sbe7?
+94 | راني خارج شويّة، تقدر تعسّلي على الفاليزة؟ | Rani kharej chwiya, t9der t3assli 3la la valise?
+94 | تقدر تسلّفلي البومبة تاع الأنتيجال تاعك؟ | T9der tsallefli la bombe ta3 l'antigel ta3ek?

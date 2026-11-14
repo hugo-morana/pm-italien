@@ -1,0 +1,16 @@
+# idx | arabe | latin
+2 | رايح نتلاها أنا بروحي. | Ray7 ntelaha ana brou7i.
+7 | هادي ماشي صحّ ڨاع. | Hadi machi sa77 ga3.
+7 | ما نيش متعجّب ڨاع. | Manich mt3ajjeb ga3.
+7 | ما يقلقنيش ڨاع. | Ma y9el9nich ga3.
+7 | ما كانش منها ڨاع. | Ma kanch menha ga3.
+7 | ماشي مستحيل ڨاع، يقدر يصرا. | Machi mousta7il ga3, y9der ysra.
+7 | يقدر يعاودو المرض، ماشي مستحيل ڨاع. | Y9der y3awdou l-mard, machi mousta7il ga3.
+8 | طريق السلامة لڨاع! | Tri9 s-slama l ga3!
+10 | نمشي غدوة الصباح. | Nemchi ghodwa s-sba7.
+13 | ما نسمعش واش تقول. | Ma nesma3ch wach t9oul.
+31 | ومن غير هادي، واش كاين جديد؟ | W men ghir hadi, wach kayen jdid?
+41 | ضميري مرتاح، قلبي صافي. | Dhamiri mreta7, 9albi safi.
+56 | واش راكم ديرو درك؟ | Wach rakoum dirou dork?
+59 | تحبّ نعاونك نوجّدو الطابلة؟ | T7ebb n3aounek nwajjdou t-tabla?
+87 | عتقوني، سرقولي البزطام تاعي! | 3et9ouni, sar9ouli l-bezztam ta3i!

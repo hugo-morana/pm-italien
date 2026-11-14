@@ -1,0 +1,69 @@
+# idx | arabe | latin
+14 | الفافوري ما يجيوهش ڨاع. | L-favoris ma yjiwhch ga3.
+17 | راني متّفق معاك مية بالمية. | Rani mettafe9 m3ak mya b l-mya.
+17 | ماشي بالضبط. | Machi bedh-dhabt.
+17 | الخوف تاعي كان عندو شويّة الحقّ. | L-khouf ta3i kan 3andou chwiya l-7a9.
+17 | هاد البنو طلع مليح بالحقّ. | Had l-pneu tla3 mli7 b l-7a9.
+17 | راني معاها مية بالمية. | Rani m3aha mya b l-mya.
+22 | وأنا تاني نخمّم هكّا. | W ana tani nkhemmem hakka.
+24 | ما تعرفش واش يصرا. | Ma ta3refch wach ysra.
+24 | دّيوه، ما تعرفوش واش يصرا. | Ddiwh, ma ta3refouch wach ysra.
+24 | عمري ما خمّمت فيها. | 3omri ma khemmemt fiha.
+24 | عمري ما نديرها. | 3omri ma ndirha.
+24 | عمرو ما قبل بالمكتوب تاعو. | 3omrou ma 9bel b l-mektoub ta3ou.
+30 | بالصّح راك تخمّم هكّا؟ | B s-sa77 rak tkhemmem hakka?
+30 | إذا راك تخمّم هكّا بالصّح. | Ida rak tkhemmem hakka b s-sa77.
+30 | بالصّح ما عندكش الزهر. بالصّح زهرك ماشي مليح. | B s-sa77 ma 3andekch z-zhar. B s-sa77 zahrek machi mli7.
+33 | ديما قتلك. | Dima 9otlek.
+33 | ديما يلقى سبّة مليحة. | Dima yel9a sebba mli7a.
+33 | في الشتا، ديما نروحو للألب. | F ch-chta, dima nro7ou l les Alpes.
+33 | ديما كان فيّا حنان تاع الأب. | Dima kan fiya 7nan ta3 l-ab.
+33 | الوعود، ديما الوعود! | L-wou3oud, dima l-wou3oud!
+35 | مازال ما جرّبناش ڨاع الحلول. | Mazal ma jerrebnach ga3 l-7loul.
+36 | مازال ما فهمش. | Mazal ma fhemch.
+38 | راك تشوف؟ فهمت واش نقصد؟ | Rak tchouf? Fhemt wach ne9sed?
+38 | فهمت واش حابّ نقول؟ | Fhemt wach 7abb n9oul?
+38 | فهمتو واش نقصد؟ | Fhemtou wach ne9sed?
+42 | انت بالاك، بصّح ماشي أنا. | Nta balak, bessa7 machi ana.
+42 | بالاك نروح للبلاد. | Balak nrou7 l l-blad.
+45 | كيفاش تنطقو هادي؟ | Kifach tenet9ou hadi?
+45 | كيفاش راك حاسّ روحك؟ | Kifach rak 7ass rou7ek?
+45 | كيفاش تقراو هاد الحرف؟ | Kifach te9raw had l-7arf?
+45 | كيفاش عرفت؟ | Kifach 3reft?
+45 | كيفاش تكتبو هادي؟ | Kifach tektbou hadi?
+49 | راك موافق؟ | Rak mwaf9?
+50 | اللّحم طاب بزّاف عاوتاني! | L-l7am tab bezzaf 3awtani!
+58 | شوف إذا الفاكتور فات ولّا مازال. | Chouf ida l-facteur fat wella mazal.
+62 | ندير جهدي. | Ndir jehdi.
+62 | دارت جهدها باش توصل. | Dart jehdha bach toussel.
+67 | لازم نروّح للدار. | Lazem nrawwa7 l d-dar.
+67 | في العشيّة، ديما نكون في الدار. | F l-3chiya, dima nkoun f d-dar.
+69 | كان قدّي جوج مرّات. | Kan 9addi zouj merrat.
+71 | ما عنديش واش نلبس الليلة. | Ma 3andich wach nelbes l-lila.
+71 | واش حابّ تاكل الليلة؟ | Wach 7abb takoul l-lila?
+71 | لازم نرجعوه قبل الليلة. | Lazem nerej3ouh 9bel l-lila.
+78 | راكم تهدرو بالزربة بزّاف. | Rakom tehedrou b z-zerba bezzaf.
+78 | توصلولها بالزربة. | Toussloulha b z-zerba.
+79 | درك ما عندناش الوقت نهدرو على هاد الموضوع. | Dork ma 3andnach l-wa9t nehedrou 3la had l-mawdou3.
+81 | على الأقلّ دير روحك. | 3la l-a9all dir rou7ek.
+81 | على الأقلّ اطلب السماح. | 3la l-a9all otlob s-sma7.
+82 | ما نقدرش نخلّصها هاد الوقت. | Ma n9derch nkhallasha had l-wa9t.
+82 | راك مشغول هاد الوقت؟ | Rak machghoul had l-wa9t?
+82 | ما عنديش صاحبي هاد الوقت. | Ma 3andich sa7bi had l-wa9t.
+83 | شبعت؟ | Chba3t?
+83 | شبعت. وانت؟ | Chba3t. W nta?
+83 | درك، عييت بالصّح! | Dork, 3yit b s-sa77!
+86 | ما تكسّروش راسكم بزّاف. | Ma tkessrouch raskom bezzaf.
+90 | واش راك دير غدوة؟ واش تدير غدوة؟ واش راح تدير غدوة؟ واش تدير غدوة؟ | Wach rak dir ghodwa? Wach tdir ghodwa? Wach ra7 tdir ghodwa? Wach tdir ghodwa?
+90 | واش حابّ دير غدوة؟ | Wach 7abb dir ghodwa?
+90 | غدوة، حابّ نشوف بابا. | Ghodwa, 7abb nchouf baba.
+90 | غدوة، نبعثلك إيمايل. | Ghodwa, nab3athlek e-mail.
+91 | لا اليوم، لا غدوة. | La l-youm, la ghodwa.
+91 | كيفاش الجوّ اليوم؟ | Kifach j-jaw l-youm?
+91 | واش راك دير اليوم؟ واش تدير اليوم؟ | Wach rak dir l-youm? Wach tdir l-youm?
+91 | الجوّ شباب بزّاف اليوم. | J-jaw chbab bezzaf l-youm.
+94 | درتها على الخفّ. | Dertha 3la l-khef.
+95 | قبل ما يفوت الحال. | 9bel ma yfout l-7al.
+95 | ما بقيتش نستنّاك في هاد الوقت. | Ma b9itch nestennak f had l-wa9t.
+95 | تفرهد مليح، بصّح ما تعطّلش. | Tferhed mli7, bessa7 ma t3attelch.
+97 | ماشي لهاد الدرجة. | Machi l had d-daraja.

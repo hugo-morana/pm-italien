@@ -1,0 +1,72 @@
+# idx | arabe | latin
+2 | مازال كي قريتها في الجورنال. | Mazal ki 9ritha f j-journal.
+3 | يبان بلّي نسى الرونديفو. | Yban belli nsa r-rondivou.
+3 | ما نقدرش، عندي رونديفو مع صاحبي. | Ma n9derch, 3andi rondivou m3a sa7bi.
+3 | لازم تعيّط باش تدّي رونديفو. | Lazem t3ayyet bach teddi rondivou.
+5 | اليوم كاين الشمس. | El-youm kayen ech-chems.
+5 | نحبّ نشوف الشمس كي تغرب. | N7ebb nchouf ech-chems ki teghrob.
+5 | العام اللّي فات كسّرت المرايات تاع الشمس. | L-3am elli fat kassart l-mrayat ta3 ech-chems.
+6 | عندي نفس الراي. | 3andi nefs er-ray.
+6 | ما عنديش نفس الراي. | Ma 3andich nefs er-ray.
+6 | ما رانيش معاك في الراي تاعك. | Ma ranich m3ak f er-ray ta3ek.
+6 | نحبّ نعرف واش هو الراي تاعك. | N7ebb na3ref wach houwa r-ray ta3ek.
+9 | كسّرت رجلي وأنا نزلق في الثلج. | Kassart rejli w ana nzle9 f t-telj.
+9 | ما وليتش نحسّ برجليّا. | Ma wellitch n7ess b rejlia.
+9 | ما تخلّيهش يدوّخلك راسك بالهدرة. | Ma tkhallihch ydawwekhlek rasek b l-hedra.
+13 | طعنتو بالموس في ظهرو. | Ta3natou b l-mous f dhahrou.
+16 | طاح قبل خطّ الوصول بشويّة. | Ta7 9bel khatt l-wsoul b chwiya.
+22 | رقّد عليها الليلة، الصباح يجيب الراي. | Ra99ed 3liha l-lila, s-sba7 yjib er-ray.
+22 | خلّي نصايحك عندك! | Khalli nsaye7ek 3andek!
+22 | يعطيك الصحّة على النصايح تاعك، ما ننساهالكش. | Y3tik s-sa77a 3la n-nsaye7 ta3ek, ma nensahalekch.
+33 | هادي ما لازمش تغيب على بالنا. | Hadi ma lazemch tghib 3la balna.
+33 | ما بقيناش نتلاقاو. | Ma b9inach net9aw.
+34 | نحسّ روحي راني نضيّع في الوقت. | N7ess rou7i rani ndhayya3 fi l-wa9t.
+35 | نتوما من هنا؟ | Ntouma men hna?
+35 | نعرف الحومة كيما نعرف جيبي. | Na3ref l-7ouma kima na3ref jibi.
+35 | كاين تاكسيفون هنا قريب؟ | Kayen taxiphone hna 9rib?
+44 | الكلّ يعرف بلّي باباه عندو المعريفة. | El-koul ya3ref belli babah 3andou l-ma3rifa.
+45 | راك فاهم واش راك تقول؟ | Rak fahem wach rak t9oul?
+45 | هدر بكلام ما كانش يقصدو. | Hder b klam ma kanch ye9sdou.
+45 | فهمت كلامي بالعكس. | Fhemt klami b l-3aks.
+45 | نعطيك كلمتي. | Na3tik kelmti.
+50 | واش هو النيميرو تاعكم؟ | Wach houwa n-nimirou ta3kom?
+50 | واش هو النيميرو تاعك؟ | Wach houwa n-nimirou ta3ek?
+59 | لازم نسمّيو الحوايج بأسماءها. | Lazem nsammiw l-7wayej b asma2ha.
+59 | كي يغيب المشّ، يلعبو الفيران. | Ki yghib l-mechch, yel3bou l-firan.
+59 | عندو ما يدير غير هادي. | 3andou ma ydir ghir hadi.
+61 | الشاذّ يثبّت القاعدة. | Ech-chadh ythabbet l-9a3ida.
+61 | يمشي وحدو، هادي هي القاعدة تاعو. | Yemchi wa7dou, hadi hiya l-9a3ida ta3ou.
+62 | التقبة في الأوزون كبرت. | T-te9ba fi l-ozon kebret.
+62 | كنت محبوس في بلاد مقطوعة. | Kount ma7bous f blad ma9tou3a.
+62 | كان ساكن في جحر بالصحّ. | Kan sakn f je7r b s-sa77.
+62 | يشرب بلا حساب. | Yechrob bla 7sab.
+68 | كيفاش نروح للبوسطة؟ | Kifach nrou7 l l-bosta?
+69 | دارتلي مزيّة. | Daretli mziya.
+70 | تعشّينا في البلاد. | T3achina f l-blad.
+71 | يقول بلّي الإلب يصبّ في بحر الشمال. | Y9oul belli l-Elbe ysobb f b7er ech-chmal.
+72 | سمعلي بلا ما يهدر. | Sme3li bla ma yehder.
+81 | واش تحبّ لعيد ميلادك؟ | Wach t7ebb l 3id miladek?
+81 | غدوة عيد ميلادي. | Ghodwa 3id miladi.
+81 | هاد العام ما نحبّش نحتفل بعيد ميلادي. | Had l-3am ma n7ebbch ne7tafel b 3id miladi.
+81 | عيد ميلاد سعيد! | 3id milad sa3id!
+81 | غدوة عيد ميلادي، عرضت صحابي. | Ghodwa 3id miladi, 3radt s7abi.
+83 | بابا يطيّب قريب كيما يمّا. | Baba ytayyeb 9rib kima yemma.
+83 | البريّة فوق الطابلة تاع الكوزينة. | El-briya fou9 t-tabla ta3 l-kouzina.
+84 | بالدوفيز تلقى كلّش في السوق السودا. | B d-dovise tal9a koulech f s-sou9 s-souda.
+85 | نقدر نحلّ الطاقة؟ | N9der n7ell t-ta9a?
+85 | دخلو للدار من الطاقة. | Dekhlou l d-dar men t-ta9a.
+86 | غير شويّة، يعيّشك. | Ghir chwiya, y3ayychek.
+86 | ما حرّكش صبعو باش يعاونّا. | Ma 7arrakch sob3ou bach y3awenna.
+87 | بالصحّة! | B s-sa77a!
+87 | ما نحبّش نهلك صحّتي. | Ma n7ebbch nhlek sa77ti.
+87 | راهو يتفرقع بالصحّة! | Rahou ytfer9a3 b s-sa77a!
+87 | راني مقلّق على صحّتو. | Rani m9alle9 3la sa77tou.
+88 | بهاد الحسّ، ما نقدرش نركّز. | B had l-7ess, ma n9derch nrakkez.
+93 | خلّيتها للّخر. | Khallitha l l-lekher.
+93 | ريقي راهو يسيل. | Ri9i rahou ysil.
+94 | بيرّة وحدة ما تضرّنيش. | Birra wa7da ma tdhorrnich.
+95 | عمّرو حتّى للحافّة. | 3ammrou 7atta l l-7affa.
+96 | هو مع الطريقة القاسحة. | Houwa m3a t-tri9a l-9as7a.
+96 | علاش هاد التحشام كامل؟ | 3lach had et-te7cham kamel?
+97 | دّي مثال على صاحبك بوب. | Ddi mithal 3la sa7bek Bob.
+97 | نقدر نعطي مثال؟ | N9der na3ti mithal?

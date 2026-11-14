@@ -1,0 +1,66 @@
+# idx | arabe | latin
+2 | شرات روبة تاع الحمل. | Chrat rouba ta3 l-7aml.
+3 | شكون دّا هاد القرار؟ | Chkoun dda had l-9rar?
+3 | يقول بلّي دّا القرار وحدو. | Y9oul belli dda l-9rar wa7dou.
+3 | ما بقالنا غير نستنّاو القرار تاعو. | Ma b9alna ghir nestennaw l-9rar ta3ou.
+4 | نحسّ روحي ما نقدر ندير والو. | N7ess rou7i ma n9der ndir walou.
+5 | واش هو الحيوان اللّي تحبّو كثر؟ أنا، الكلب. | Wach houwa l-7aywan elli t7ebbou ktar? Ana, l-kelb.
+5 | القطّ هو الحيوان اللّي يحبّوه الذراري كثر. | L-9ett houwa l-7aywan elli y7ebbouh ed-dherari ktar.
+13 | هاد التجليد كامل بالجلد؟ | Had et-tajlid kamel b j-jeld?
+14 | نقدر نشوف الكارت تاع الشراب؟ | N9der nchouf l-kart ta3 ech-chrab?
+16 | ديما نشوفوه مع ناس ماشي ملاح. | Dima nchoufouh m3a nas machi mla7.
+16 | تقول هرب عليكم. | T9oul hreb 3likoum.
+23 | في الدشرة، ڨاع الناس يعرفو بعضاهم. | F d-dachra, ga3 en-nas ya3erfou ba3dahoum.
+23 | الرجال يتلمّو في قهوة الدشرة. | Er-rjal yetlammou f 9ahwet d-dachra.
+26 | عندك برامج للكونجي تاع الصيف؟ | 3andek bramej l l-konji ta3 es-sif?
+28 | حابّ نسمع الأخبار. | 7abb nesma3 l-akhbar.
+29 | نحبّ نروح نقضي. | N7ebb nrou7 n9addi.
+29 | ما نقدرش نجي معاك، عندي ما نقضي. | Ma n9derch nji m3ak, 3andi ma n9addi.
+30 | لابارطمون كان مقلوب على راسو، حاجة ما تتوصفش. | L-apartmoun kan ma9loub 3la rasou, 7aja ma tetwesfch.
+34 | واش هو الغرض من الزيارة تاعكم؟ | Wach houwa l-gharad men z-zyara ta3koum?
+34 | دخل في الموضوع طول. | Dkhel f l-mawdou3 toul.
+34 | بزّاف شباب ما عندهمش هدف في الحياة. | Bezzaf chbab ma 3andhoumch hadaf f l-7ayat.
+35 | خلّى نصّ الماكلة. | Khalla ness l-makla.
+36 | ما نجحش خاطر ما عندوش الخبرة. | Ma nje7ch khater ma 3andouch l-khebra.
+36 | التجارب على الحيوانات ما منهاش هروب. | Et-tajarib 3la l-7aywanat ma menhach hroub.
+38 | تقدر تنقّص الراديو شويّة؟ | Te9der tna99es r-radio chwiya?
+42 | الحوت هو الماكلة اللّي نحبّها كثر. | L-7out houwa l-makla elli n7ebbha ktar.
+42 | الفيجيتاريان ما ياكلوش لا اللّحم لا الحوت. | L-vejetarian ma yaklouch la l-l7am la l-7out.
+43 | رايحين نغرسو الشجر، الصنوبر والبلّوط. | Ray7in nghersou ch-chjer, s-snouber w l-ballout.
+44 | ما ندّيش الريسك. | Ma neddich er-risk.
+44 | نديرها على مسؤوليتي. | Ndirha 3la mas2ouliyti.
+44 | ديرها على مسؤوليتك. | Dirha 3la mas2ouliytek.
+44 | أنا لا! الريسك كبير بزّاف. | Ana la! Er-risk kbir bezzaf.
+44 | ما نغامرش. | Ma nghamerch.
+44 | ردّ بالك، ما تديرش ريسك. | Redd balek, ma tdirch risk.
+45 | حابّ نصرف الدراهم. | 7abb nsarref d-drahem.
+47 | تقبل تموت على جال الحرّية؟ | Te9bel tmout 3la jal el-7ourriya?
+48 | قال واش فيها مليح الماشينة الجديدة. | 9al wach fiha mli7 l-machina j-jdida.
+49 | غسلت سنانك؟ | Ghselt snanek?
+50 | مرتو دايرتو في جيبها. | Mertou dayrtou f jibha.
+52 | راني سحاق زوج صبابط جداد. | Rani s7a9 zouj sbabet jdad.
+52 | حابّ نشري زوج صبابط. | 7abb nechri zouj sbabet.
+57 | غلق الباب يرحم والديك. | Ghle9 el-bab yer7em waldik.
+59 | لوّحو الحجر على البوليسية. | Lawe7ou l-7jer 3la l-bolisiya.
+65 | في الليل، هاد الحومة خطيرة بزّاف. | F el-lil, had l-7ouma khatira bezzaf.
+66 | الاجتماع ما جاب والو. | L-ijtima3 ma jab walou.
+67 | ثقيل شويّة في السمع. | T9il chwiya f s-sme3.
+67 | سمع مليح: ما راكش رايح تصدّق واش تسمع. | Sma3 mli7: ma rakch raye7 tsadde9 wach tesma3.
+67 | خلّاتني نردّ بالي. | Khallatni nredd bali.
+67 | دخّلتلي الشكّ. | Dakhlatli ch-chekk.
+71 | هاد الخدمة عندها مستقبل. | Had el-khedma 3andha moust9bal.
+71 | في هاد الخدمة، عندك مستقبل. | F had el-khedma, 3andek moust9bal.
+72 | رجعنا للزيرو. | Rje3na l z-zero.
+73 | واش هو العنوان تاعكم؟ | Wach houwa l-3onwan ta3koum?
+73 | واش هو لاميل تاعكم؟ | Wach houwa l-email ta3koum?
+79 | تحبّ تشرب التاي؟ | T7ebb techrob et-tay?
+79 | تحبّ تشرب التاي ولّا الما؟ | T7ebb techrob et-tay walla l-ma?
+79 | تحبّو تاي ولّا قهوة؟ | T7ebbou tay walla 9ahwa?
+80 | جدّتي ماتت هادي ستّ سنين. | Jeddti matet hadi sett snin.
+80 | الحليب مليح للصحّة، كانت تقول جدّتي. | L-7lib mli7 l s-sa77a, kanet t9oul jeddti.
+80 | جدّتي عمرها ما راحت لدبلن. | Jeddti 3omrha ma ra7et l Dublin.
+81 | نحسّ روحي نهدر في الهوا، كيما راني نهدر مع الحيط. | N7ess rou7i nehder f l-hwa, kima rani nehder m3a l-7it.
+81 | نديرها كيفما كان الحال. | Ndirha kifma kan el-7al.
+83 | واش راكم تشوفو في هاد القضيّة؟ | Wach rakoum tchoufou f had el-9adiya?
+92 | هو عضو في الجمعيّة الرياضيّة تاع الحومة. | Houwa 3odw f j-jam3iya r-riyadiya ta3 l-7ouma.
+95 | يالله، قول واش عندك. | Yallah, 9oul wach 3andek.

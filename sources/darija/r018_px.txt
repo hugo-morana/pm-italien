@@ -1,0 +1,62 @@
+# idx | arabe | latin
+13 | ماهوش يدقّق بزّاف في القوانين. | Mahouch ydagge9 bezzaf f l-9wanin.
+15 | ما نخافش منّو. | Ma nkhafch mennou.
+15 | ما خمّمتش فيها. | Ma khemmemtch fiha.
+15 | ما سمعتش واش قلتو. | Ma sma3tch wach 9eltou.
+15 | مانيش عطشان. | Manich 3atchan.
+15 | ما عنديش الدراهم. | Ma 3andich d-drahem.
+15 | ما ضغطتش عليه. | Ma dghattch 3lih.
+22 | مانيش متّفق معاك ڨاع. | Manich mettafe9 m3ak ga3.
+22 | مانيش مزروب. | Manich mezroub.
+28 | نحبّ نعيّط للسفارة. | N7ebb n3ayyet l s-sfara.
+41 | كيفاش نقدر نقولّكم... | Kifach n9der n9oullkoum...
+41 | كيفاش نقدر نقول. | Kifach n9der n9oul.
+41 | نقدر نقترح حاجة؟ | N9der ne9tare7 7aja?
+41 | نقدر نضمنهالك. | N9der nedhmanhalek.
+41 | نقدر نشوف؟ | N9der nchouf?
+41 | نقدر نحضنك. | N9der n7adnek.
+41 | هادي نقدر نتصوّرها! | Hadi n9der ntsawwarha!
+42 | ما تديرش السينما، ما عندكش السخانة. | Ma tdirch s-cinema, ma 3andekch s-skhana.
+43 | تقدر تكون متأكّد. | Te9der tkoun mt2akked.
+43 | تقدر تسقسيه. | Te9der tsa9sih.
+43 | استنّى حتّى تعيا! | Stenna 7atta te3ya!
+43 | تقدر تتوسّطلو؟ | Te9der ttwassatlou?
+44 | ما نحبّش يرميوها عليّا. | Ma n7ebbch yermiwha 3liya.
+46 | عندكم المينو؟ | 3andkoum l-menu?
+46 | في يورك، عندكم ترين تبدّلو بيه لنيوكاسل. | F York, 3andkoum train tbeddlou bih l Newcastle.
+55 | ما نقدرش نتخيّل هادي. | Ma n9derch ntkhayyel hadi.
+55 | ما نقدرش نوعدك. | Ma n9derch nou3dek.
+55 | ما نقدرش نقولهالك. | Ma n9derch n9oulhalek.
+55 | ما نقدرش نفهمها. | Ma n9derch nefhamha.
+55 | ما نقدرش نفهم علاش فشلنا. | Ma n9derch nefhem 3lach fchelna.
+55 | ما نقدرش نتهنّى منّو. | Ma n9derch nethenna mennou.
+55 | مازال ما نقدرش نقولهالك. | Mazal ma n9derch n9oulhalek.
+55 | ما نقدرش نسمعكم. ما نسمعكمش. | Ma n9derch nesma3koum. Ma nsam3koumch.
+55 | سمحلي، ما نقدرش نعاونك. | Sma7li, ma n9derch n3awnek.
+55 | ما نقدرش نخرج، مازال ما بريتش. | Ma n9derch nokhroj, mazal ma britch.
+55 | ما نقدرش نقنع بهاد الشرح. | Ma n9derch ne9na3 b had ech-char7.
+57 | ما تقدرش تدير استثناء؟ | Ma te9derch tdir istithna2?
+57 | ما تقدرش تلومني على هادي. | Ma te9derch tloumni 3la hadi.
+57 | ما تقدرش تطلب منّو يدير هاد الخدمة وحدو. | Ma te9derch totlob mennou ydir had l-khedma wa7dou.
+61 | راهم لاباس عليهم بزّاف. | Rahoum labas 3lihoum bezzaf.
+61 | راهم يديرو البروفة. | Rahoum ydirou l-prova.
+61 | راحو بلا ما يحسّ بيهم حتّى واحد. | Ra7ou bla ma y7ess bihoum 7atta wa7ed.
+64 | إذا ما غلطتش، نتوما ممثّلات؟ | Ida ma ghlettch, ntouma mmethlat?
+64 | راكم هنا على جال الخدمة؟ | Rakoum hna 3la jal l-khedma?
+65 | كلّ واحد فيهم رايو عكس اللّخر كامل. | Koul wa7ed fihoum rayou 3eks l-lekher kamel.
+66 | ماهمش من نفس الوسط. | Mahoumch men nefs l-wast.
+71 | لازم نقولّك عندك الحقّ. | Lazem n9oullek 3andek l-7a9.
+71 | لازم نعترف بلّي هادي راهي شاغلتني. | Lazem ne3tarf belli hadi rahi chaghletni.
+71 | لازم نروح درك. | Lazem nrou7 dork.
+71 | لازم نروح للطواليت. | Lazem nrou7 l t-twalet.
+71 | لازم ندخل للدار درك. | Lazem nedkhoul l d-dar dork.
+72 | كان سحاق بزّاف يبيّض وجهو. | Kan s7a9 bezzaf ybayyedh wejhou.
+73 | لازم تحكم روحك. | Lazem to7kem rou7ek.
+73 | صحّ، لازم يبرّر واش دار! | Sa77, lazem ybarrer wach dar!
+73 | لازم تقنع بواش عندك. | Lazem te9na3 b wach 3andek.
+74 | نقدر نسيّيه؟ | N9der nsayyih?
+74 | نقدر نعاود نعيّطلك من بعد؟ | N9der n3awed n3ayyetlek men ba3d?
+78 | لازم هادي تبقى غير مرّة برك. | Lazem hadi tab9a ghir merra berk.
+78 | لازم تتحمّل النتيجة. | Lazem tet7emmel n-natija.
+81 | ما تعلّموش من اللّي فات. | Ma t3allmouch men lli fat.
+99 | راك سحاق الراحة. | Rak s7a9 r-ra7a.

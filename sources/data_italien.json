@@ -269,7 +269,8 @@
      ],
      "audio_anki": {
       "fr": "paste-03a6382f04865ba47960425f5220b4660b05d102.mp3"
-     }
+     },
+     "image": "images/noms_02.webp"
     },
     {
      "n": 4,
@@ -349,7 +350,8 @@
      ],
      "audio_anki": {
       "fr": "paste-1d26a0c1789dc4d1a06eb05dee1acb41762c718a.mp3"
-     }
+     },
+     "image": "images/noms_03.webp"
     },
     {
      "n": 5,
@@ -423,7 +425,8 @@
      "audio_anki": {
       "fr": "paste-3a0e8ef69dc7f06aef7c6d7c41372ccfdc516f24.mp3",
       "it": "paste-2fd61daf1bf816029ee8ab8c2092c66680e680a3.mp3"
-     }
+     },
+     "image": "images/noms_04.webp"
     },
     {
      "n": 6,
@@ -493,7 +496,8 @@
      ],
      "audio_anki": {
       "fr": "paste-9a3bffc9b14a09bec2e74d4a3808a0de982a40b7.mp3"
-     }
+     },
+     "image": "images/noms_05.webp"
     },
     {
      "n": 7,
@@ -570,7 +574,8 @@
      ],
      "audio_anki": {
       "fr": "paste-095dfe43204b101a02a1939868c3f0506ff53186.m4a"
-     }
+     },
+     "image": "images/noms_08.webp"
     },
     {
      "n": 8,
@@ -631,7 +636,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-f1ca10da9a59dc599a4c17238f8c542451083e1a.m4a"
-     }
+     },
+     "image": "images/noms_09.webp"
     },
     {
      "n": 9,
@@ -689,7 +695,8 @@
        "parle": 52500,
        "global": 21900
       }
-     }
+     },
+     "image": "images/noms_10.webp"
     },
     {
      "n": 10,
@@ -756,7 +763,8 @@
        "source": "Anki",
        "anki_id": 1723915110894
       }
-     ]
+     ],
+     "image": "images/noms_11.webp"
     },
     {
      "n": 11,
@@ -818,7 +826,8 @@
      "audio_anki": {
       "fr": "paste-5e857d19d71f854cee17ce8afcf89ec3334079af.mp3",
       "it": "paste-58efc657799144559ecaf7a50678c06d715002d4.mp3"
-     }
+     },
+     "image": "images/noms_12.webp"
     },
     {
      "n": 12,
@@ -879,7 +888,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-72af5f44c1f176b4306b328cfb387d46d667b808.mp3"
-     }
+     },
+     "image": "images/noms_13.webp"
     },
     {
      "n": 13,
@@ -937,7 +947,8 @@
      },
      "exemple_fr_mot": "monde",
      "exemple_cible_mot": "mondo",
-     "tags": []
+     "tags": [],
+     "image": "images/noms_14.webp"
     },
     {
      "n": 14,
@@ -1021,7 +1032,8 @@
      ],
      "audio_anki": {
       "fr": "paste-6bff7eab6fcb6458395f6a6a932e3f1555559e96.m4a"
-     }
+     },
+     "image": "images/noms_16.webp"
     },
     {
      "n": 15,
@@ -1079,7 +1091,8 @@
      },
      "exemple_fr_mot": "monsieur",
      "exemple_cible_mot": "signore",
-     "tags": []
+     "tags": [],
+     "image": "images/noms_17.webp"
     },
     {
      "n": 16,
@@ -1140,7 +1153,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-c656d8962534ea622053e1ba73936a1341c4373d.mp3"
-     }
+     },
+     "image": "images/noms_18.webp"
     },
     {
      "n": 17,
@@ -1201,7 +1215,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-66d54bc3f9ff7bd1c9b38711d03035772e9196d5.mp3"
-     }
+     },
+     "image": "images/noms_19.webp"
     },
     {
      "n": 18,
@@ -1285,7 +1300,8 @@
      ],
      "audio_anki": {
       "fr": "paste-4176f310d43a662c1530cfdde86ca8c9929e2349.mp3"
-     }
+     },
+     "image": "images/noms_20.webp"
     },
     {
      "n": 19,
@@ -1346,7 +1362,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-6708a50f1f36e607eb82311b47d7d66e34a6958b.mp3"
-     }
+     },
+     "image": "images/noms_21.webp"
     },
     {
      "n": 20,
@@ -1587,7 +1604,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-5548e1f512f0b6547a9615944071918f8cd68b80.mp3"
-     }
+     },
+     "image": "images/noms_25.webp"
     },
     {
      "n": 24,
@@ -1648,7 +1666,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-5765879c59523a3609d54a4fb2bec28e17cf8837.mp3"
-     }
+     },
+     "image": "images/noms_26.webp"
     },
     {
      "n": 25,
@@ -1718,7 +1737,8 @@
      ],
      "audio_anki": {
       "fr": "paste-019576b7e19f1a818967920569d325d066db8bec.mp3"
-     }
+     },
+     "image": "images/noms_27.webp"
     },
     {
      "n": 26,
@@ -1779,7 +1799,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-ed6f863ad8e589beb13a26cc95a134c85d3fe892.mp3"
-     }
+     },
+     "image": "images/noms_28.webp"
     },
     {
      "n": 27,
@@ -1912,7 +1933,8 @@
      },
      "exemple_fr_mot": "Maman",
      "exemple_cible_mot": "Mamma",
-     "tags": []
+     "tags": [],
+     "image": "images/noms_30.webp"
     },
     {
      "n": 29,
@@ -1990,7 +2012,8 @@
      "audio_anki": {
       "fr": "paste-6d7efb3e18711a36c1d66f3273b0d5e0a404ca85.mp3",
       "it": "paste-c6c2efbc659a812063fa0c522513bcf8f83a1605.mp3"
-     }
+     },
+     "image": "images/noms_31.webp"
     },
     {
      "n": 30,
@@ -2078,7 +2101,8 @@
      ],
      "audio_anki": {
       "fr": "paste-0a7ad390488c212fdcf8aff3801f244e983b228a.m4a"
-     }
+     },
+     "image": "images/noms_32.webp"
     },
     {
      "n": 31,
@@ -2162,7 +2186,8 @@
      ],
      "audio_anki": {
       "fr": "paste-af98a03d609b7c9358b4e0b6f1599dfc9b848a2f.mp3"
-     }
+     },
+     "image": "images/noms_33.webp"
     },
     {
      "n": 32,
@@ -2254,7 +2279,8 @@
      "audio_anki": {
       "fr": "paste-a2f3bac9612e0decb602fd48b8094daceff6c337.mp3",
       "it": "paste-6e8e56fc5bfba63d3abe44a8c718ee855c3e5d3c.mp3"
-     }
+     },
+     "image": "images/noms_35.webp"
     },
     {
      "n": 33,
@@ -2315,7 +2341,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-6e48c6688010570382f7806407ae2b85c47f8e27.mp3"
-     }
+     },
+     "image": "images/noms_36.webp"
     },
     {
      "n": 34,
@@ -2377,7 +2404,8 @@
      "audio_anki": {
       "fr": "paste-1add8396d7d7a4873080aaed85f740de4f7f95c4.m4a",
       "it": "paste-c68ab7357e7f7e3ed04a0b791e86dc2d2f9aa946.mp3"
-     }
+     },
+     "image": "images/noms_37.webp"
     },
     {
      "n": 35,
@@ -2447,7 +2475,8 @@
      ],
      "audio_anki": {
       "fr": "paste-0ccf9b5c10b43e4fd24b049fbbf3f7f5623e812d.mp3"
-     }
+     },
+     "image": "images/noms_38.webp"
     },
     {
      "n": 36,
@@ -2508,7 +2537,8 @@
      },
      "audio_anki": {
       "fr": "paste-98557a44746f855dbd039b3a49bea1f0733da894.mp3"
-     }
+     },
+     "image": "images/noms_39.webp"
     },
     {
      "n": 37,
@@ -2569,7 +2599,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-52f42146f9156b420a3f53e95a62f73dafa1f479.mp3"
-     }
+     },
+     "image": "images/noms_41.webp"
     },
     {
      "n": 38,
@@ -2653,7 +2684,8 @@
      ],
      "audio_anki": {
       "fr": "paste-8c73b736534b6ba69b3afd215d5692273eda00a5.mp3"
-     }
+     },
+     "image": "images/noms_42.webp"
     },
     {
      "n": 39,
@@ -2714,7 +2746,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-bb437f9a41a855584b067fa001e8f46ed81d6c05.mp3"
-     }
+     },
+     "image": "images/noms_43.webp"
     },
     {
      "n": 40,
@@ -2784,7 +2817,8 @@
      ],
      "audio_anki": {
       "fr": "paste-bc6eb470a77af9fac8adb61629dddf9c952e08da.m4a"
-     }
+     },
+     "image": "images/noms_44.webp"
     },
     {
      "n": 41,
@@ -2861,7 +2895,8 @@
      ],
      "audio_anki": {
       "fr": "paste-1e574223444b767239d4b3869ebae287fa9ffe08.mp3"
-     }
+     },
+     "image": "images/noms_45.webp"
     },
     {
      "n": 42,
@@ -2931,7 +2966,8 @@
      ],
      "audio_anki": {
       "fr": "paste-3e612459aecfb4dae4f87a6fc584dbae90857156.mp3"
-     }
+     },
+     "image": "images/noms_46.webp"
     },
     {
      "fr": "le truc",
@@ -2992,7 +3028,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-74c54e1cf85bd6a3d3e6e4c432aa2310febd8ec8.m4a"
-     }
+     },
+     "image": "images/noms_47.webp"
     },
     {
      "n": 44,
@@ -3084,7 +3121,8 @@
      "audio_anki": {
       "fr": "paste-5815e72a5476b94b56ecf4ba68f01fd7bb213a9f.mp3",
       "it": "paste-1c30ccc125a155aace55cf9c458763d0e8030306.mp3"
-     }
+     },
+     "image": "images/noms_50.webp"
     },
     {
      "n": 45,
@@ -3154,7 +3192,8 @@
      ],
      "audio_anki": {
       "fr": "paste-be0e234d836428df6b7f1f233e2e0a2f1e61ffc2.mp3"
-     }
+     },
+     "image": "images/noms_51.webp"
     },
     {
      "n": 46,
@@ -3215,7 +3254,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-1a1ed24b6a0dd64b7d26fba8d15f6785b3ba45bc.mp3"
-     }
+     },
+     "image": "images/noms_52.webp"
     },
     {
      "fr": "la chance",
@@ -3289,7 +3329,8 @@
        "source": "Anki",
        "anki_id": 1599086887931
       }
-     ]
+     ],
+     "image": "images/noms_53.webp"
     },
     {
      "n": 48,
@@ -3360,7 +3401,8 @@
      "audio_anki": {
       "fr": "paste-36c4f7302495b9d68a0ddfcb230d1650e951a73e.mp3",
       "it": "paste-8828ab1ccc719fdfd86c0055d838a3a2c0369298.mp3"
-     }
+     },
+     "image": "images/noms_54.webp"
     },
     {
      "fr": "le mec",
@@ -3418,7 +3460,8 @@
      },
      "exemple_fr_mot": "mec",
      "exemple_cible_mot": "tizio",
-     "tags": []
+     "tags": [],
+     "image": "images/noms_55.webp"
     },
     {
      "n": 50,
@@ -3488,7 +3531,8 @@
      ],
      "audio_anki": {
       "fr": "paste-0024fd09a00981230d54d0dc85e7853423b244fd.mp3"
-     }
+     },
+     "image": "images/noms_56.webp"
     },
     {
      "n": 51,

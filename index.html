@@ -2216,6 +2216,25 @@ function bindUI() {
   function moveJoy(e) { const b = joy.getBoundingClientRect(), x = (e.clientX - b.left - b.width / 2) / (b.width / 2), y = (e.clientY - b.top - b.height / 2) / (b.height / 2), l = Math.max(1, Math.hypot(x, y)); free.joy = [x / l, y / l]; knob.style.transform = `translate(${x / l * 34}px, ${y / l * 34}px)`; }
   // regarder en glissant, double-tap pour avancer
   const cv = $("#scene"); let last = 0, drag = null;
+  // toucher une case d'une grille : aller à cette niche (hors test)
+  let tap0 = null;
+  cv.addEventListener("pointerdown", e => { tap0 = e.button > 0 ? null : { x: e.clientX, y: e.clientY, t: performance.now(), busy: anim.active && anim.kind !== "fly" }; }, true);
+  cv.addEventListener("pointerup", e => {
+    const t = tap0; tap0 = null;
+    if (!t || t.busy || Math.hypot(e.clientX - t.x, e.clientY - t.y) > 8 || performance.now() - t.t > 500) return;
+    if (quizState.on && !$("#quiz").hidden) return;
+    const hit = cellAt(e); if (!hit) return;
+    if (st.mode === "free") { st.n = hit.n; renderFiche(); placeRing(hit.ri, hit.n); save(); }
+    else goTo(hit.ri, hit.n, { thread: true });
+  });
+  function cellAt(e) {
+    const b = cv.getBoundingClientRect(); ray.setFromCamera({ x: (e.clientX - b.left) / b.width * 2 - 1, y: -((e.clientY - b.top) / b.height) * 2 + 1 }, camera);
+    const faces = (R[st.r]?.panels || []).map(p => p.face);
+    const hits = ray.intersectObjects(faces); if (!hits.length || !hits[0].uv) return null;
+    const h = hits[0], { room: ri, panel: pi } = h.object.userData, col = Math.floor(h.uv.x * 3), row = Math.floor((1 - h.uv.y) * 4);
+    const d = CELL.findIndex(([c, r]) => c === col && r === row); if (d < 0) return null;
+    return { ri, n: pi * 10 + d };
+  }
   cv.addEventListener("pointerdown", e => {
     if (anim.active && st.mode === "guide" && anim.kind !== "fly") { const f = anim.then; anim.active = false; anim.then = null; particle.visible = false; if (f) f(); }
     if (st.mode !== "free" || (quizState.on && !$("#quiz").hidden)) return; drag = { x: e.clientX, y: e.clientY, id: e.pointerId, moved: false }; cv.setPointerCapture(e.pointerId);

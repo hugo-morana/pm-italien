@@ -332,6 +332,15 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="btns"><button class="btn alt" type="button" data-close>Annuler</button><button class="btn danger" type="button" id="resetGo">Oui, tout effacer</button></div>
 </div></div>
 
+<div class="sheet" id="delSheet" hidden><div role="alertdialog" aria-labelledby="delT">
+  <div class="shead"><h2 id="delT">Supprimer mon compte</h2><span class="spacer"></span><button class="chip" type="button" data-close>Annuler</button></div>
+  <p style="margin:0">Ton compte <b id="delMail"></b> et toute la progression enregistrée dessus seront supprimés définitivement. La progression gardée sur cet appareil reste, sauf si tu l'effaces aussi.</p>
+  <div class="frow"><label for="delConf">Tape SUPPRIMER</label><input id="delConf" type="text" autocomplete="off" style="font:inherit;font-size:16px;width:10em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)"></div>
+  <div class="pills"><button class="pill" type="button" id="delLocal" aria-pressed="false">Effacer aussi la progression de cet appareil</button></div>
+  <div class="btns"><button class="btn alt" type="button" data-close>Annuler</button><button class="btn danger" type="button" id="delGo" disabled>Supprimer définitivement</button></div>
+  <p class="pr" id="delMsg" style="margin:0"></p>
+</div></div>
+
 <div class="sheet" id="accountSheet" hidden><div>
   <div class="shead"><h2>Mon compte</h2><span class="spacer"></span><button class="chip" type="button" data-close>Fermer</button></div>
   <div id="accountBody" style="display:flex;flex-direction:column;gap:12px"></div>
@@ -401,6 +410,20 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="frow"><label for="mapType">Afficher</label><select id="mapType"></select></div>
   <div class="map" id="map"></div>
   <div class="legend"><span>vide = libre</span><span>gris = jamais vu</span><span>du rose au vert = boîte 1 à 5</span></div>
+  <h2 style="margin:12px 0 0">Compte</h2>
+  <p class="pr" id="acStatus" style="margin:0"></p>
+  <div class="btns" id="acActions"></div>
+  <p class="pr" id="acMsg" style="margin:0"></p>
+  <h3>Connexion Supabase</h3>
+  <p class="pr" style="margin:0">Pour retrouver ta progression sur tous tes appareils (version publiée sur GitHub Pages), colle ici l'adresse de ton projet Supabase et sa clé <b>publique</b> (« anon » ou « publishable », dans Supabase → Project Settings → API). Ne colle jamais la clé secrète « service_role » : elle est refusée.</p>
+  <div class="frow"><label for="sbUrl">URL du projet</label><input id="sbUrl" type="url" placeholder="https://xxxx.supabase.co" autocomplete="off" spellcheck="false" style="font:inherit;font-size:15px;flex:1;min-width:12em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)"></div>
+  <div class="frow"><label for="sbKey">Clé publique</label><input id="sbKey" type="password" placeholder="eyJ… ou sb_publishable_…" autocomplete="off" spellcheck="false" style="font:inherit;font-size:15px;flex:1;min-width:12em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)"></div>
+  <div class="btns"><button class="btn" type="button" id="sbCfgSave">Enregistrer la connexion</button><button class="btn alt" type="button" id="sbCfgShow">Afficher la clé</button><button class="btn alt" type="button" id="sbCfgClear">Retirer</button></div>
+  <p class="pr" id="sbCfgMsg" style="margin:0"></p>
+  <details class="pr"><summary>Préparer le projet Supabase (une seule fois)</summary>
+    <ol style="margin:6px 0;padding-left:1.2em"><li>Crée un projet gratuit sur supabase.com.</li><li>Dans <i>SQL Editor</i>, exécute le script ci-dessous : il crée la table de progression (chacun ne voit que la sienne) et la fonction qui permet de supprimer son compte.</li><li>Dans <i>Authentication → Email Templates</i>, mets <code>{{ .Token }}</code> dans le modèle « Magic Link » pour recevoir un code à 6 chiffres.</li><li>Colle l'URL et la clé publique ci-dessus.</li></ol>
+    <div class="btns"><button class="btn alt" type="button" id="sbSqlCopy">Copier le script SQL</button></div>
+  </details>
   <h3>Recommencer à zéro</h3>
   <div class="btns"><button class="btn danger" type="button" id="resetBtn">Effacer les résultats des tests…</button></div>
   <p class="pr" style="margin:0">Efface toutes les cartes de révision et l'historique du carnet, pour reprendre les tests depuis le début. Une confirmation est demandée.</p>
@@ -1278,7 +1301,11 @@ prefs.approach = AP_OF[PAL];   // l'approche d'apprentissage et la version du pa
 function save() { ls.set(PK("pos"), { r: st.r, n: st.n, zoom: st.zoom, zv: 2 }); }   // zv : cadrage choisi après le passage au « panneau » par défaut
 /* Deux comptes possibles : le compte Claude (capacité db) quand la page tourne dans Claude,
    ou un compte e-mail Supabase (code à 6 chiffres) sur la version GitHub Pages. Sinon : navigateur seulement. */
-const SBCFG = window.PM_CONFIG || {};
+const SBCFG = Object.assign({}, window.PM_CONFIG || {}, (() => { try { return JSON.parse(localStorage.getItem("pmit:sbcfg") || "null") || {}; } catch { return {}; } })());   // réglages (Réglages → Compte) prioritaires sur config.js
+function keyRole(k) {   // rôle porté par une clé Supabase : refuse la clé secrète
+  if (!k) return ""; if (/^sb_secret_/.test(k)) return "service_role"; if (/^sb_publishable_/.test(k)) return "anon";
+  try { const p = JSON.parse(atob(k.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))); return p.role || ""; } catch { return "?"; }
+}
 const store = { kind: null, db: null, sb: null, uid: null, email: "", cache: {}, timers: {} };
 const mergeCards = (a, b) => { const o = Object.assign({}, a); for (const k in b) { const x = o[k], y = b[k]; if (!x || (y.seen || 0) > (x.seen || 0) || (y.d || 0) > (x.d || 0) || ((y.d || 0) === (x.d || 0) && (y.b || 0) > (x.b || 0))) o[k] = y; } return o; };
 async function remoteGet(key) {
@@ -1302,7 +1329,7 @@ async function initStore() {
       if (db && uid) { store.kind = "claude"; store.db = db; store.uid = uid; await afterLogin(); toast("Progression synchronisée avec votre compte"); }
       return;
     }
-    if (SBCFG.supabaseUrl && SBCFG.supabaseKey) {
+    if (SBCFG.supabaseUrl && SBCFG.supabaseKey && keyRole(SBCFG.supabaseKey) !== "service_role") {
       await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js");
       store.sb = window.supabase.createClient(SBCFG.supabaseUrl, SBCFG.supabaseKey, { auth: { persistSession: true, autoRefreshToken: true } });
       $("#accountBtn").hidden = false;
@@ -1317,7 +1344,7 @@ async function useSession(session) {
   const owner = ls.get("owner", null);
   if (owner && owner !== store.uid) { for (const r of CR()) ls.set("srs_" + r.id, {}); ls.set("hist", []); HIST = []; }
   ls.set("owner", store.uid); store.cache = {};
-  await afterLogin(); renderAccount(); $("#accountBtn").textContent = "Compte ✓"; toast("Connecté : " + store.email);
+  await afterLogin(); renderAccount(); renderSettingsAccount(); $("#accountBtn").textContent = "Compte ✓"; toast("Connecté : " + store.email);
 }
 /* Réagencement des étages (tri par fréquence) : déplace les cartes de répétition vers les nouvelles niches */
 function migrateCards(all, from) { // all : { roomId: { "n:type": carte } } -> réindexé d'après les étapes de tri postérieures à « from »
@@ -1429,7 +1456,7 @@ function renderAccount(step) {
   if (step === "code") { b.innerHTML = `<p style="margin:0">Un code à 6 chiffres a été envoyé à <b>${esc(store.email)}</b>. Il peut mettre une minute à arriver ; pense aux courriers indésirables.</p>
       <div class="frow"><label for="sbCode">Code</label><input id="sbCode" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" style="font:inherit;font-size:20px;letter-spacing:.3em;width:7em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)"></div>
       <div class="btns"><button class="btn" type="button" id="sbVerify">Se connecter</button><button class="btn alt" type="button" id="sbBack">Changer d'adresse</button></div><p class="pr" id="sbMsg" style="margin:0"></p>`; setTimeout(() => $("#sbCode") && $("#sbCode").focus(), 50); return; }
-  b.innerHTML = `<p style="margin:0">Connecte-toi pour retrouver ta progression sur tous tes appareils. Pas de mot de passe : tu reçois un code par e-mail.</p>
+  b.innerHTML = `<p style="margin:0">${step === "signup" ? "Crée ton compte avec ton adresse e-mail : tu recevras un code à 6 chiffres pour le valider. Pas de mot de passe à retenir." : "Connecte-toi pour retrouver ta progression sur tous tes appareils. Pas de mot de passe : tu reçois un code par e-mail. Si tu n'as pas encore de compte, il est créé à la première connexion."}</p>
     <div class="frow"><label for="sbEmail">E-mail</label><input id="sbEmail" type="email" autocomplete="email" placeholder="prenom@exemple.fr" style="font:inherit;font-size:16px;flex:1;min-width:12em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)" value="${esc(store.email)}"></div>
     <div class="btns"><button class="btn" type="button" id="sbSend">Recevoir un code</button></div><p class="pr" id="sbMsg" style="margin:0"></p>`;
 }
@@ -1445,7 +1472,88 @@ async function sbVerify() {
   if (error || !data.session) { $("#sbMsg").textContent = "Code incorrect ou expiré. Redemande un code."; return; }
   await useSession(data.session); closeSheets();
 }
-async function sbOut() { await store.sb.auth.signOut(); store.kind = null; store.uid = null; store.cache = {}; $("#accountBtn").textContent = "Compte"; renderAccount(); toast("Déconnecté : la progression reste aussi sur cet appareil"); }
+/* Réglages → Compte : état, inscription / connexion, e-mail, export, déconnexion, suppression */
+const SQL_SETUP = `-- Palais : table de progression + suppression de son compte
+create table if not exists public.progress (
+  user_id uuid not null default auth.uid() references auth.users on delete cascade,
+  key text not null,
+  data jsonb not null default '{}'::jsonb,
+  updated_at timestamptz not null default now(),
+  primary key (user_id, key)
+);
+alter table public.progress enable row level security;
+drop policy if exists "lire sa progression" on public.progress;
+drop policy if exists "créer sa progression" on public.progress;
+drop policy if exists "modifier sa progression" on public.progress;
+drop policy if exists "supprimer sa progression" on public.progress;
+create policy "lire sa progression" on public.progress for select to authenticated using (auth.uid() = user_id);
+create policy "créer sa progression" on public.progress for insert to authenticated with check (auth.uid() = user_id);
+create policy "modifier sa progression" on public.progress for update to authenticated using (auth.uid() = user_id) with check (auth.uid() = user_id);
+create policy "supprimer sa progression" on public.progress for delete to authenticated using (auth.uid() = user_id);
+
+-- Supprimer son propre compte (et seulement le sien)
+create or replace function public.delete_my_account() returns void
+language plpgsql security definer set search_path = public as $$
+begin
+  if auth.uid() is null then raise exception 'non connecté'; end if;
+  delete from public.progress where user_id = auth.uid();
+  delete from auth.users where id = auth.uid();
+end $$;
+revoke all on function public.delete_my_account() from public, anon;
+grant execute on function public.delete_my_account() to authenticated;`;
+function renderSettingsAccount() {
+  const st = $("#acStatus"); if (!st) return;
+  const inClaude = !!(window.claude && window.claude.use), cfg = !!(SBCFG.supabaseUrl && SBCFG.supabaseKey);
+  $("#sbUrl").value = SBCFG.supabaseUrl || ""; $("#sbKey").value = SBCFG.supabaseKey || "";
+  let txt, btn = [];
+  if (store.kind === "claude") { txt = "Connecté avec ton compte Claude : ta progression est enregistrée sur ton compte et suit tes appareils dans Claude. La connexion Supabase ci-dessous sert à la version publiée sur GitHub Pages."; btn = ["acExport"]; }
+  else if (store.kind === "sb") { txt = `Connecté avec ${store.email} (Supabase). Ta progression est enregistrée sur ce compte et suit tes appareils.`; btn = ["acEmail", "acExport", "acOut", "acDel"]; }
+  else if (inClaude) { txt = "Progression enregistrée sur cet appareil."; btn = ["acExport"]; }
+  else if (cfg) { txt = "Pas encore connecté : ta progression n'est enregistrée que sur cet appareil."; btn = ["acSignup", "acLogin", "acExport"]; }
+  else { txt = "Aucun compte configuré : ta progression reste sur cet appareil. Renseigne la connexion Supabase ci-dessous pour créer un compte."; btn = ["acExport"]; }
+  st.textContent = txt;
+  const L = { acSignup: ["Créer un compte", ""], acLogin: ["Se connecter", "alt"], acEmail: ["Changer d'e-mail", "alt"], acExport: ["Télécharger mes données", "alt"], acOut: ["Se déconnecter", "alt"], acDel: ["Supprimer mon compte…", "danger"] };
+  $("#acActions").innerHTML = btn.map(id => `<button class="btn ${L[id][1]}" type="button" id="${id}">${L[id][0]}</button>`).join("");
+}
+function saveSbCfg() {
+  const url = ($("#sbUrl").value || "").trim().replace(/\/+$/, ""), key = ($("#sbKey").value || "").trim(), m = $("#sbCfgMsg");
+  if (!/^https:\/\/[\w.-]+(:\d+)?$/.test(url)) { m.textContent = "L'URL doit ressembler à https://xxxx.supabase.co"; return; }
+  const role = keyRole(key);
+  if (role === "service_role") { m.textContent = "C'est la clé secrète (service_role) : elle donne tous les droits sur la base et ne doit jamais aller dans une page web. Colle la clé publique « anon » ou « publishable »."; $("#sbKey").value = ""; return; }
+  if (role !== "anon") { m.textContent = "Clé non reconnue : colle la clé publique « anon » (commence par eyJ…) ou « publishable » (sb_publishable_…)."; return; }
+  ls.set("sbcfg", { supabaseUrl: url, supabaseKey: key }); m.textContent = "Connexion enregistrée. Rechargement…"; setTimeout(() => location.reload(), 600);
+}
+function clearSbCfg() { try { localStorage.removeItem("pmit:sbcfg"); } catch {} $("#sbCfgMsg").textContent = "Connexion retirée de cet appareil. Rechargement…"; setTimeout(() => location.reload(), 600); }
+function openAccountSheet() { closeSheets(); $("#accountSheet").hidden = false; renderAccount(); }
+async function sbChangeEmail() {
+  const email = (prompt("Nouvelle adresse e-mail :", store.email) || "").trim(); if (!email || email === store.email) return;
+  if (!/^\S+@\S+\.\S+$/.test(email)) { $("#acMsg").textContent = "Adresse e-mail invalide."; return; }
+  const { error } = await store.sb.auth.updateUser({ email });
+  $("#acMsg").textContent = error ? "Changement impossible : " + error.message : `Un lien de confirmation a été envoyé à ${email} (et à l'ancienne adresse selon les réglages du projet). Le changement prend effet après confirmation.`;
+}
+async function exportData() {
+  const out = { app: "Palazzo dell'italiano", date: new Date().toISOString(), compte: store.kind === "sb" ? store.email : store.kind || "appareil", appareil: {}, compte_distant: null };
+  try { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.startsWith("pmit:") && k !== "pmit:sbcfg") out.appareil[k.slice(5)] = JSON.parse(localStorage.getItem(k)); } } catch {}
+  if (store.kind === "sb") { const { data, error } = await store.sb.from("progress").select("key,data,updated_at"); if (!error) out.compte_distant = data; }
+  const blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" }), a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = `palais-italien-donnees-${today()}.json`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  $("#acMsg").textContent = "Fichier de données téléchargé.";
+}
+function openDelete() { closeSheets(); $("#delMail").textContent = store.email; $("#delConf").value = ""; $("#delGo").disabled = true; $("#delMsg").textContent = ""; $("#delLocal").setAttribute("aria-pressed", "false"); $("#delSheet").hidden = false; setTimeout(() => $("#delConf").focus(), 50); }
+async function doDelete() {
+  const m = $("#delMsg"); m.textContent = "Suppression…"; $("#delGo").disabled = true;
+  let { error } = await store.sb.rpc("delete_my_account");
+  if (error) {   // fonction absente du projet : on efface au moins la progression distante
+    const r2 = await store.sb.from("progress").delete().eq("user_id", store.uid);
+    if (r2.error) { m.textContent = "Suppression impossible : " + error.message; $("#delGo").disabled = false; return; }
+    m.textContent = "Ta progression en ligne est effacée, mais le compte lui-même n'a pas pu être supprimé : la fonction delete_my_account manque dans le projet Supabase (Réglages → Compte → Préparer le projet).";
+  }
+  if ($("#delLocal").getAttribute("aria-pressed") === "true") { try { Object.keys(localStorage).filter(k => k.startsWith("pmit:") && k !== "pmit:sbcfg" && k !== "pmit:prefs" && k !== "pmit:palais").forEach(k => localStorage.removeItem(k)); } catch {} }
+  try { localStorage.removeItem("pmit:owner"); } catch {}
+  await store.sb.auth.signOut(); store.kind = null; store.uid = null; store.email = ""; store.cache = {}; $("#accountBtn").textContent = "Compte";
+  if (!error) { closeSheets(); toast("Compte supprimé"); setTimeout(() => location.reload(), 800); }
+}
+async function sbOut() { await store.sb.auth.signOut(); store.kind = null; store.uid = null; store.cache = {}; $("#accountBtn").textContent = "Compte"; renderAccount(); renderSettingsAccount(); toast("Déconnecté : la progression reste aussi sur cet appareil"); }
 async function grade(ri, key, ok) {
   const c = await srsRoom(ri), cur = c[key] || { b: 0, d: today() };
   const b = ok ? Math.min(5, (cur.seen ? cur.b : 0) + 1) : 0;
@@ -1998,6 +2106,18 @@ function bindUI() {
   $("#planBtn").onclick = () => { $("#planSheet").hidden = false; renderPlan(); };
   $("#resetBtn").onclick = openReset; $("#resetGo").onclick = doReset;
   $("#accountBtn").onclick = () => { $("#accountSheet").hidden = false; renderAccount(); };
+  $("#reglages").addEventListener("click", e => { const id = e.target.id;
+    if (id === "acSignup") { closeSheets(); $("#accountSheet").hidden = false; renderAccount("signup"); }
+    if (id === "acLogin") openAccountSheet();
+    if (id === "acEmail") sbChangeEmail(); if (id === "acExport") exportData(); if (id === "acOut") sbOut(); if (id === "acDel") openDelete();
+    if (id === "sbCfgSave") saveSbCfg(); if (id === "sbCfgClear") clearSbCfg();
+    if (id === "sbCfgShow") { const k = $("#sbKey"); k.type = k.type === "password" ? "text" : "password"; e.target.textContent = k.type === "password" ? "Afficher la clé" : "Masquer la clé"; }
+    if (id === "sbSqlCopy") { (navigator.clipboard ? navigator.clipboard.writeText(SQL_SETUP) : Promise.reject()).then(() => toast("Script SQL copié"), () => { $("#sbCfgMsg").textContent = "Copie impossible ici : le script est aussi dans le dépôt (supabase/schema.sql)."; }); }
+  });
+  $("#delConf").addEventListener("input", e => { $("#delGo").disabled = e.target.value.trim().toUpperCase() !== "SUPPRIMER"; });
+  $("#delLocal").onclick = e => { const b = e.currentTarget; b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true"); };
+  $("#delGo").onclick = doDelete;
+  renderSettingsAccount();
   $("#accountSheet").addEventListener("click", e => { const id = e.target.id; if (id === "sbSend") sbSend(); if (id === "sbVerify") sbVerify(); if (id === "sbBack") renderAccount(); if (id === "sbOut") sbOut(); });
   $("#accountSheet").addEventListener("keydown", e => { if (e.key !== "Enter") return; if (e.target.id === "sbEmail") sbSend(); if (e.target.id === "sbCode") sbVerify(); });
   document.addEventListener("click", e => {
@@ -2165,6 +2285,7 @@ let VIEW = "palais";
 const FAML = { noms: "Noms", verbes: "Verbes", adjectifs: "Adjectifs", pronoms: "Pronoms", conjonctions: "Conjonctions", prepositions: "Prépositions", adverbes: "Adverbes", expressions: "Expressions", incises: "Incises", formes: "Formes verbales", accords: "Formes accordées", patrons: "Patrons syntaxiques" };
 const famOf = r => r.id.startsWith("determinants") ? "adjectifs" : r.fam;
 function setView(v) {
+  if (v === "reglages") renderSettingsAccount();
   if (!["lib", "palais", "carnet", "reglages"].includes(v)) v = "palais";
   if (v !== "palais" && quizState.on) endQuiz();
   if (v !== "palais" && st.mode === "free") leaveFree();

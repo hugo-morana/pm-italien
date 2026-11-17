@@ -39,7 +39,7 @@ for pid in TOUR:
                   "li": n.get("lien", ""), "t": n.get("tags", []), "zf": r1(zf.get("parle")), "zi": r1(zi.get("parle")),
                   "zfe": r1(zf.get("ecrit")), "zie": r1(zi.get("ecrit")), "of": (n.get("occ100M") or {}).get("fr", {}).get("parle"),
                   "oi": (n.get("occ100M") or {}).get("it", {}).get("parle"), "ax": bool(n.get("approx")), "rk": rank[n["n"]],
-                  "am": n.get("audio_mot"), "ap": n.get("audio_phrase")})
+                  "am": n.get("audio_mot"), "ap": n.get("audio_phrase"), **({"im": n["image"]} if n.get("image") else {})})
     while len(N) < 100: N.append(None)
     rooms.append({"id": pid, "fr": p["titre_fr"], "it": p["titre_cible"], "decor": p.get("decor", ""), "fam": FAM(pid),
                   "floor": SLOT[pid][0], "slot": {"floor": SLOT[pid][0], "side": SLOT[pid][1], "x": SLOT[pid][2]}, "blocs": p.get("blocs"), "niches": N})

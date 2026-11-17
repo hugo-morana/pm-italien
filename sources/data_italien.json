@@ -1523,7 +1523,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-b099fa4bcffe19718c386ac1bd2134af04c8165a.m4a"
-     }
+     },
+     "image": "images/casa.webp"
     },
     {
      "n": 23,
@@ -6760,7 +6761,8 @@
        "source": "Anki",
        "anki_id": 1723912374712
       }
-     ]
+     ],
+     "image": "images/cane.webp"
     },
     {
      "fr": "le jeu",
@@ -164829,7 +164831,8 @@
        "source": "Anki",
        "anki_id": 1723924741286
       }
-     ]
+     ],
+     "image": "images/gatto.webp"
     },
     {
      "n": 52,

@@ -989,6 +989,17 @@ function panelCanvas(ri, pi, maskN) {
   for (let d = 0; d < 10; d++) {
     const n = pi * 10 + d, [col, row] = CELL[d], x = col * cell, y = row * cell, it = r.niches[n];
     g.strokeStyle = "#d9cbb8"; g.lineWidth = 3; g.strokeRect(x + 6, y + 6, cell - 12, cell - 12);
+    const pic = it && it.im && maskN !== n && maskN !== "all" ? imgFor(it.im) : null;
+    if (pic) {   // image mnémotechnique : elle remplit la case, le numéro et les mots passent par-dessus
+      const iw = pic.naturalWidth, ih = pic.naturalHeight, k = Math.min(iw, ih);
+      g.drawImage(pic, (iw - k) / 2, (ih - k) / 2, k, k, x + 9, y + 9, cell - 18, cell - 18);
+      g.fillStyle = "rgba(246,239,226,.9)"; g.fillRect(x + 9, y + 9, 58, 44); g.fillRect(x + 9, y + 124, cell - 18, 67);
+      g.textAlign = "left"; g.fillStyle = COLS[pi] === "#f4f1ea" ? "#9b8f80" : COLS[pi]; g.font = "600 30px 'IBM Plex Mono', monospace"; g.fillText(String(n).padStart(2, "0"), x + 16, y + 42);
+      g.textAlign = "center"; g.fillStyle = "#9c3d22";
+      fitText(g, dI(it).replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + 154, cell - 28, 30, "600", "'Source Serif 4', Georgia, serif");
+      g.fillStyle = "#2a211d"; fitText(g, dF(it), x + cell / 2, y + 180, cell - 28, 20, "400", "'Source Serif 4', Georgia, serif");
+      continue;
+    }
     g.textAlign = "left"; g.fillStyle = COLS[pi] === "#f4f1ea" ? "#9b8f80" : COLS[pi]; g.font = "600 30px 'IBM Plex Mono', monospace"; g.fillText(String(n).padStart(2, "0"), x + 16, y + 42);
     if (!it) { g.fillStyle = "#b9ab98"; g.font = "italic 26px 'Source Serif 4', Georgia, serif"; g.textAlign = "center"; g.fillText("libre", x + cell / 2, y + cell / 2 + 12); continue; }
     if (maskN === n || maskN === "all") { g.fillStyle = "#2a211d"; g.fillRect(x + 14, y + 56, cell - 28, cell - 74); g.fillStyle = "#f6efe2"; g.font = "600 60px 'Cormorant SC', Georgia, serif"; g.textAlign = "center"; g.fillText("?", x + cell / 2, y + 140); continue; }
@@ -997,6 +1008,16 @@ function panelCanvas(ri, pi, maskN) {
     g.fillStyle = "#2a211d"; fitText(g, dF(it), x + cell / 2, y + 160, cell - 24, 26, "400", "'Source Serif 4', Georgia, serif");
   }
   return c;
+}
+const IMC = {};
+function imgFor(src) {   // images des niches : chargées une fois, puis la salle affichée est redessinée
+  let e = IMC[src];
+  if (!e) {
+    e = IMC[src] = { ok: false, im: new Image() };
+    e.im.onload = () => { e.ok = true; if (texturedRoom >= 0 && R[texturedRoom].niches.some(x => x && x.im === src)) { const r = texturedRoom, m = maskState; texturedRoom = -1; texturizeRoom(r, m); } };
+    e.im.src = src;
+  }
+  return e.ok ? e.im : null;
 }
 function fitText(g, t, x, y, maxW, size, w, fam) {
   let s = size; g.font = `${w} ${s}px ${fam}`;

@@ -1009,13 +1009,15 @@ function panelCanvas(ri, pi, maskN) {
   }
   return c;
 }
-const IMC = {};
+const IMC = {}, IMPK = {};
+const imSrc = src => IMPK[src] || src;
 function imgFor(src) {   // images des niches : chargées une fois, puis la salle affichée est redessinée
   let e = IMC[src];
   if (!e) {
     e = IMC[src] = { ok: false, im: new Image() };
     e.im.onload = () => { e.ok = true; if (texturedRoom >= 0 && R[texturedRoom].niches.some(x => x && x.im === src)) { const r = texturedRoom, m = maskState; texturedRoom = -1; texturizeRoom(r, m); } };
-    e.im.src = src;
+    if (DATA.impacks && !IMPK[src]) { delete IMC[src]; return null; }   // paquet pas encore arrivé
+    e.im.src = imSrc(src);
   }
   return e.ok ? e.im : null;
 }
@@ -1249,7 +1251,7 @@ function ficheHTML(ri, n) {
     <div class="big-it"><button class="say" type="button" data-say="${esc(x.it)}" data-src="${esc(asrc(x.ai, x.am))}" aria-label="Écouter le mot">🔊</button><span>${escP(dI(x))}</span></div>
     <div class="frw"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.fr)}" data-src="${esc(asrc(x.af))}" aria-label="Écouter le mot en français">🔊</button><span>${escP(dF(x))}</span><span class="lg">FR</span></div>
     <div class="phon"><span class="ipa" lang="it-fonipa">${esc(x.api)}</span><span class="pr">${esc(x.pr)}</span></div>
-    ${x.im ? `<figure class="mimg"><img src="${esc(x.im)}" alt="${esc(x.sc)}" loading="lazy"></figure>` : ""}
+    ${x.im ? `<figure class="mimg"><img src="${esc(imSrc(x.im))}" alt="${esc(x.sc)}" loading="lazy"></figure>` : ""}
     <div class="ex"><button class="say" type="button" data-say="${esc(x.eit)}" data-src="${esc(asrc(x.ap))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${mark(x.eit, x.eim)}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(x.efr)}" data-src="${esc(asrc(x.ae))}" aria-label="Écouter la phrase en français">🔊</button>${mark(x.efr, x.efm)}</p></div></div>
     ${x.px && x.px.length ? `<details class="more-ex"><summary>Autres exemples (${x.px.length})</summary>${x.px.map(e => `<div class="ex"><button class="say" type="button" data-say="${esc(e[1])}" data-src="${esc(asrc(e[3]))}" aria-label="Écouter la phrase">🔊</button><div><p class="exit" lang="it">${esc(e[1])}</p><p class="exfr"><button class="say sm" type="button" data-lang="fr" data-say="${esc(e[0])}" data-src="${esc(asrc(e[2]))}" aria-label="Écouter la phrase en français">🔊</button>${esc(e[0])}</p></div></div>`).join("")}</details>` : ""}
     <div class="bars"><span></span><span style="display:flex;justify-content:space-between"><span>Gain une fois appris</span><span>${x.rk != null ? "rang " + x.rk + " · " : ""}occ./100 M</span></span>${gainBar("Compréhension IT", gainOf(R[ri], x, "it"), gainUnit(R[ri], x), x.oi, x.ax)}${gainBar("Expression FR", gainOf(R[ri], x, "fr"), gainUnit(R[ri], x), x.of, x.ax)}</div>
@@ -2584,6 +2586,7 @@ function choosePalace(v) { if (v === PAL) return; ls.set("palais", v); location.
 async function start() {
   try {
     const res = await fetch("data3d.json"); DATA = await res.json();
+    (DATA.impacks || []).forEach(u => fetch(u).then(r => r.json()).then(pk => { Object.assign(IMPK, pk); if (texturedRoom >= 0) { const r = texturedRoom, m = maskState; texturedRoom = -1; texturizeRoom(r, m); } }).catch(() => {}));   // paquets d'images (version Claude : nombre de fichiers limité)
   } catch (e) { $("#chargement").innerHTML = "Données introuvables<small>data3d.json n'a pas pu être chargé</small>"; return; }
   document.body.dataset.view = "palais"; R = DATA.rooms; migrateLocal();
   if (PAL === "lisa") applyLisa();

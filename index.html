@@ -1535,8 +1535,16 @@ async function exportData() {
   const out = { app: "Palazzo dell'italiano", date: new Date().toISOString(), compte: store.kind === "sb" ? store.email : store.kind || "appareil", appareil: {}, compte_distant: null };
   try { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.startsWith("pmit:") && k !== "pmit:sbcfg") out.appareil[k.slice(5)] = JSON.parse(localStorage.getItem(k)); } } catch {}
   if (store.kind === "sb") { const { data, error } = await store.sb.from("progress").select("key,data,updated_at"); if (!error) out.compte_distant = data; }
-  const blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" }), a = document.createElement("a");
-  a.href = URL.createObjectURL(blob); a.download = `palais-italien-donnees-${today()}.json`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  const json = JSON.stringify(out, null, 1), fname = `palais-italien-donnees-${today()}.json`;
+  if (window.claude && window.claude.use) {   // dans Claude : la page ne télécharge pas elle-même, le visualiseur demande confirmation
+    const dl = await window.claude.use("downloads");
+    if (!dl) { $("#acMsg").textContent = "Le téléchargement n'est pas disponible ici."; return; }
+    try { await dl.save({ filename: fname, data: json }); $("#acMsg").textContent = "Fichier de données enregistré."; }
+    catch (e) { $("#acMsg").textContent = e && e.code === "declined" ? "Téléchargement annulé." : e && e.code === "rate_limited" ? "Une demande est déjà ouverte : réessaie dans un instant." : "Le téléchargement n'est pas disponible ici."; }
+    return;
+  }
+  const blob = new Blob([json], { type: "application/json" }), a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   $("#acMsg").textContent = "Fichier de données téléchargé.";
 }
 function openDelete() { closeSheets(); $("#delMail").textContent = store.email; $("#delConf").value = ""; $("#delGo").disabled = true; $("#delMsg").textContent = ""; $("#delLocal").setAttribute("aria-pressed", "false"); $("#delSheet").hidden = false; setTimeout(() => $("#delConf").focus(), 50); }

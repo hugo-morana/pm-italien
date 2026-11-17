@@ -368,6 +368,9 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <h3>Lecture pendant la visite</h3>
   <div class="pills" role="group" aria-label="Lecture audio pendant la visite du palais"><button class="pill" type="button" data-sayopt="vF">🔊 Mot FR</button><button class="pill" type="button" data-sayopt="vI">🔊 Mot IT</button><button class="pill" type="button" data-sayopt="vEF">🔊 Exemple FR</button><button class="pill" type="button" data-sayopt="vEI">🔊 Exemple IT</button></div>
   <p class="pr" style="margin:0">À chaque niche atteinte (visite guidée ou libre), les sons cochés sont lus l'un après l'autre, dans cet ordre.</p>
+  <h3>Affichage des grilles</h3>
+  <div class="pills" role="group" aria-label="Ce qui s'affiche sur les grilles du palais"><button class="pill" type="button" data-sayopt="gImg">🖼 Images</button><button class="pill" type="button" data-sayopt="gNum">#️⃣ Numéros</button><button class="pill" type="button" data-sayopt="gFr">Mots FR</button><button class="pill" type="button" data-sayopt="gIt">Mots IT</button></div>
+  <p class="pr" style="margin:0">Ce qui apparaît dans les cases des murs du palais. Masquer les mots permet de s'interroger en visitant : l'image ou le numéro seul doit rappeler le mot.</p>
   <h3>Passage d'une niche à la suivante</h3>
   <div class="pills" role="group" aria-label="Recul sur la pièce"><button class="pill" type="button" data-sayopt="recul">↩ Recul sur la vue de la pièce</button></div>
   <p class="pr" style="margin:0">Quand on est zoomé sur une niche, la caméra recule sur toute la pièce le temps du fil, pour resituer la niche, puis revient. Décoché : elle passe directement d'une niche à l'autre.</p>
@@ -989,23 +992,25 @@ function panelCanvas(ri, pi, maskN) {
   for (let d = 0; d < 10; d++) {
     const n = pi * 10 + d, [col, row] = CELL[d], x = col * cell, y = row * cell, it = r.niches[n];
     g.strokeStyle = "#d9cbb8"; g.lineWidth = 3; g.strokeRect(x + 6, y + 6, cell - 12, cell - 12);
-    const pic = it && it.im && maskN !== n && maskN !== "all" ? imgFor(it.im) : null;
+    const sN = prefs.gNum !== false, sF = prefs.gFr !== false, sI = prefs.gIt !== false, numTxt = () => { g.textAlign = "left"; g.fillStyle = COLS[pi] === "#f4f1ea" ? "#9b8f80" : COLS[pi]; g.font = "600 30px 'IBM Plex Mono', monospace"; g.fillText(String(n).padStart(2, "0"), x + 16, y + 42); };
+    const pic = it && it.im && prefs.gImg !== false && maskN !== n && maskN !== "all" ? imgFor(it.im) : null;
     if (pic) {   // image mnémotechnique : elle remplit la case, le numéro et les mots passent par-dessus
       const iw = pic.naturalWidth, ih = pic.naturalHeight, k = Math.min(iw, ih);
       g.drawImage(pic, (iw - k) / 2, (ih - k) / 2, k, k, x + 9, y + 9, cell - 18, cell - 18);
-      g.fillStyle = "rgba(246,239,226,.9)"; g.fillRect(x + 9, y + 9, 58, 44); g.fillRect(x + 9, y + 124, cell - 18, 67);
-      g.textAlign = "left"; g.fillStyle = COLS[pi] === "#f4f1ea" ? "#9b8f80" : COLS[pi]; g.font = "600 30px 'IBM Plex Mono', monospace"; g.fillText(String(n).padStart(2, "0"), x + 16, y + 42);
-      g.textAlign = "center"; g.fillStyle = "#9c3d22";
-      fitText(g, dI(it).replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + 154, cell - 28, 30, "600", "'Source Serif 4', Georgia, serif");
-      g.fillStyle = "#2a211d"; fitText(g, dF(it), x + cell / 2, y + 180, cell - 28, 20, "400", "'Source Serif 4', Georgia, serif");
+      g.fillStyle = "rgba(246,239,226,.9)"; if (sN) g.fillRect(x + 9, y + 9, 58, 44);
+      const lines = (sI ? 1 : 0) + (sF ? 1 : 0); if (lines) g.fillRect(x + 9, y + 191 - (lines === 2 ? 67 : 40), cell - 18, lines === 2 ? 67 : 40);
+      if (sN) numTxt();
+      g.textAlign = "center";
+      if (sI) { g.fillStyle = "#9c3d22"; fitText(g, dI(it).replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + (sF ? 154 : 176), cell - 28, 30, "600", "'Source Serif 4', Georgia, serif"); }
+      if (sF) { g.fillStyle = "#2a211d"; fitText(g, dF(it), x + cell / 2, y + (sI ? 180 : 177), cell - 28, sI ? 20 : 24, "400", "'Source Serif 4', Georgia, serif"); }
       continue;
     }
-    g.textAlign = "left"; g.fillStyle = COLS[pi] === "#f4f1ea" ? "#9b8f80" : COLS[pi]; g.font = "600 30px 'IBM Plex Mono', monospace"; g.fillText(String(n).padStart(2, "0"), x + 16, y + 42);
+    if (sN) numTxt();
     if (!it) { g.fillStyle = "#b9ab98"; g.font = "italic 26px 'Source Serif 4', Georgia, serif"; g.textAlign = "center"; g.fillText("libre", x + cell / 2, y + cell / 2 + 12); continue; }
     if (maskN === n || maskN === "all") { g.fillStyle = "#2a211d"; g.fillRect(x + 14, y + 56, cell - 28, cell - 74); g.fillStyle = "#f6efe2"; g.font = "600 60px 'Cormorant SC', Georgia, serif"; g.textAlign = "center"; g.fillText("?", x + cell / 2, y + 140); continue; }
-    g.textAlign = "center"; g.fillStyle = "#9c3d22";
-    fitText(g, dI(it).replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + 112, cell - 24, 42, "600", "'Source Serif 4', Georgia, serif");
-    g.fillStyle = "#2a211d"; fitText(g, dF(it), x + cell / 2, y + 160, cell - 24, 26, "400", "'Source Serif 4', Georgia, serif");
+    g.textAlign = "center";
+    if (sI) { g.fillStyle = "#9c3d22"; fitText(g, dI(it).replace(/\s*\(.*?\)\s*/g, " ").split(" / ")[0], x + cell / 2, y + (sF ? 112 : 130), cell - 24, 42, "600", "'Source Serif 4', Georgia, serif"); }
+    if (sF) { g.fillStyle = "#2a211d"; fitText(g, dF(it), x + cell / 2, y + (sI ? 160 : 128), cell - 24, sI ? 26 : 34, "400", "'Source Serif 4', Georgia, serif"); }
   }
   return c;
 }
@@ -1318,7 +1323,7 @@ const PAL = ["classe", "freq", "freqit", "theme", "lisa"].includes(ls.get("palai
 const CLASSE = PAL === "classe" || PAL === "lisa";   // Lisa : même contenu et même progression que le palais par classe, décor de maison
 const PK = k => CLASSE ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", lisa: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, showEx: true, vF: true, vI: true, vEF: true, vEI: true, recul: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, showEx: true, vF: true, vI: true, vEF: true, vEI: true, recul: true, gImg: true, gNum: true, gFr: true, gIt: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 // lecture du mot FR et du mot IT pendant la visite : activée par défaut (appliquée une fois aux réglages déjà enregistrés)
 if (!prefs.vDef1) { prefs.vF = true; prefs.vI = true; prefs.vDef1 = 1; }
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
@@ -2217,7 +2222,7 @@ function bindUI() {
   $("#curR").onclick = () => { prefs.rooms = [st.r]; savePrefs(); renderTests(); };
   $("#tagSel").onchange = e => { prefs.tag = e.target.value; savePrefs(); renderTests(); };
   $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = zminTxt(prefs.zmin); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
-  document.addEventListener("click", e => { const b = e.target.closest("[data-sayopt]"); if (!b) return; const k = b.dataset.sayopt; prefs[k] = !prefs[k]; savePrefs(); renderSayOpts(); });
+  document.addEventListener("click", e => { const b = e.target.closest("[data-sayopt]"); if (!b) return; const k = b.dataset.sayopt; prefs[k] = !prefs[k]; savePrefs(); renderSayOpts(); if (/^g(Img|Num|Fr|It)$/.test(k) && texturedRoom >= 0) { const r = texturedRoom, m = maskState; texturedRoom = -1; texturizeRoom(r, m); } });
   document.addEventListener("click", e => { const b = e.target.closest("[data-tmode]"); if (!b) return; prefs.testMode = b.dataset.tmode; savePrefs(); renderTMode(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-approach]"); if (!b) return; prefs.approach = b.dataset.approach; savePrefs(); renderApproach(); choosePalace(PAL_OF[b.dataset.approach]); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-inmode]"); if (!b) return; prefs.inMode = b.dataset.inmode; savePrefs(); renderInMode(); });

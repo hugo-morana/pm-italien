@@ -2266,15 +2266,15 @@ function bindUI() {
     const d = CELL.findIndex(([c, r]) => c === col && r === row); if (d < 0) return null;
     return { ri, n: pi * 10 + d };
   }
-  // pincer à deux doigts en visite libre (ou molette) : zoom optique, de 1× à 4×
+  // pincer à deux doigts en visite libre (ou molette) : zoom optique, de 0,4× (grand angle) à 4×
   const pts = new Map(); let pinch = null;
   const fovZ = () => { const base = camera.aspect < .8 ? 70 : 58; camera.fov = 2 * Math.atan(Math.tan(base * Math.PI / 360) / (free.zoom || 1)) * 180 / Math.PI; camera.updateProjectionMatrix(); }; window.__fovZ = fovZ;
   const pdist = () => { const [a, b] = [...pts.values()]; return Math.hypot(a.x - b.x, a.y - b.y) || 1; };
   cv.addEventListener("pointerdown", e => { pts.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (st.mode === "free" && pts.size === 2) { pinch = { d0: pdist(), z0: free.zoom || 1 }; drag = null; tap0 = null; } }, true);
-  cv.addEventListener("pointermove", e => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (pinch && pts.size >= 2) { free.zoom = Math.max(1, Math.min(4, pinch.z0 * pdist() / pinch.d0)); fovZ(); } }, true);
+  cv.addEventListener("pointermove", e => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (pinch && pts.size >= 2) { free.zoom = Math.max(.4, Math.min(4, pinch.z0 * pdist() / pinch.d0)); fovZ(); } }, true);
   const pend = e => { pts.delete(e.pointerId); if (pts.size < 2) pinch = null; };
   cv.addEventListener("pointerup", pend, true); cv.addEventListener("pointercancel", pend, true);
-  cv.addEventListener("wheel", e => { if (st.mode !== "free") return; e.preventDefault(); free.zoom = Math.max(1, Math.min(4, (free.zoom || 1) * Math.exp(-e.deltaY * .0015))); fovZ(); }, { passive: false });
+  cv.addEventListener("wheel", e => { if (st.mode !== "free") return; e.preventDefault(); free.zoom = Math.max(.4, Math.min(4, (free.zoom || 1) * Math.exp(-e.deltaY * .0015))); fovZ(); }, { passive: false });
   cv.addEventListener("pointerdown", e => {
     if (anim.active && st.mode === "guide" && anim.kind !== "fly") { const f = anim.then; anim.active = false; anim.then = null; particle.visible = false; if (f) f(); }
     if (st.mode !== "free" || pinch || (quizState.on && !$("#quiz").hidden)) return; drag = { x: e.clientX, y: e.clientY, id: e.pointerId, moved: false }; cv.setPointerCapture(e.pointerId);
@@ -2291,7 +2291,7 @@ function bindUI() {
 }
 function onResize() {
   renderer.setSize(innerWidth, innerHeight, false); camera.aspect = innerWidth / innerHeight;
-  camera.fov = camera.aspect < .8 ? 70 : 58; if (st.mode === "free" && free.zoom > 1 && window.__fovZ) { __fovZ(); } camera.updateProjectionMatrix(); measureDrawer();
+  camera.fov = camera.aspect < .8 ? 70 : 58; if (st.mode === "free" && free.zoom !== 1 && window.__fovZ) { __fovZ(); } camera.updateProjectionMatrix(); measureDrawer();
   if (st.mode === "guide" && !anim.walking && R.length) flyTo(poseFor(st.zoom), .25);
 }
 

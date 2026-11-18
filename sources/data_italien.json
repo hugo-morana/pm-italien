@@ -13862,7 +13862,8 @@
      "audio_anki": {
       "fr": "paste-4f869d6c3cf27531b0d7d05177357199b2bfb230.mp3",
       "it": "paste-c507afebf987ba3df4a9a7d9cf47b9b00723129c.mp3"
-     }
+     },
+     "image": "images/verbes_00.webp"
     },
     {
      "fr": "avoir",
@@ -13924,7 +13925,8 @@
      "audio_anki": {
       "fr": "paste-923f9b90ba8b3dd31b210f5879e75b0c984f1ba5.mp3",
       "it": "paste-532b8294471d87cfae88cc95dadf0a1d6d7f5953.mp3"
-     }
+     },
+     "image": "images/verbes_01.webp"
     },
     {
      "fr": "aller",
@@ -13985,7 +13987,8 @@
      "tags": [],
      "audio_anki": {
       "fr": "paste-a33ca9095bc862dad876928b74c240b045f6f3be.mp3"
-     }
+     },
+     "image": "images/verbes_02.webp"
     },
     {
      "fr": "faire",
@@ -14047,7 +14050,8 @@
      "audio_anki": {
       "fr": "paste-7366161622f55348e195513b908406751cc06628.mp3",
       "it": "paste-93819254ea16b7f85c0f7ece6975b953733f3cfa.mp3"
-     }
+     },
+     "image": "images/verbes_03.webp"
     },
     {
      "fr": "dire",
@@ -14105,7 +14109,8 @@
        "global": 275000
       }
      },
-     "tags": []
+     "tags": [],
+     "image": "images/verbes_04.webp"
     },
     {
      "fr": "pouvoir",
@@ -14167,7 +14172,8 @@
      "audio_anki": {
       "fr": "paste-a601111adcd64af06ea724cf586b6154c0037b8a.mp3",
       "it": "paste-7502c36144d15da81f3f88142e6f3329621afbf0.mp3"
-     }
+     },
+     "image": "images/verbes_05.webp"
     },
     {
      "fr": "vouloir",
@@ -14225,7 +14231,8 @@
        "global": 240000
       }
      },
-     "tags": []
+     "tags": [],
+     "image": "images/verbes_06.webp"
     },
     {
      "fr": "savoir",
@@ -14283,7 +14290,8 @@
        "global": 200000
       }
      },
-     "tags": []
+     "tags": [],
+     "image": "images/verbes_07.webp"
     },
     {
      "fr": "voir",
@@ -45058,7 +45066,8 @@
      "audio_anki": {
       "fr": "paste-6a19748befc1a4999a1e04cad7cedd33132d74d9.mp3",
       "it": "paste-1e864f5524b7843835b309f319b53733a43ad57c.mp3"
-     }
+     },
+     "image": "images/pronoms_00.webp"
     },
     {
      "n": 1,
@@ -45118,7 +45127,8 @@
      ],
      "audio_anki": {
       "fr": "paste-147ef7111b51c5353175a316dd360ebf1ff3b9ee.mp3"
-     }
+     },
+     "image": "images/pronoms_01.webp"
     },
     {
      "n": 2,
@@ -45177,7 +45187,8 @@
       "pronoms_personnels",
       "pronoms_personnels_sujets",
       "pronoms_personnels_toniques"
-     ]
+     ],
+     "image": "images/pronoms_02.webp"
     },
     {
      "n": 3,
@@ -45234,7 +45245,8 @@
       "pronoms",
       "pronoms_personnels",
       "pronoms_personnels_sujets"
-     ]
+     ],
+     "image": "images/pronoms_03.webp"
     },
     {
      "n": 4,
@@ -45293,7 +45305,8 @@
       "pronoms_personnels_compléments",
       "pronoms_personnels_compléments_directs",
       "pronoms_personnels_compléments_indirects"
-     ]
+     ],
+     "image": "images/pronoms_04.webp"
     },
     {
      "n": 5,
@@ -45527,7 +45540,8 @@
       "pronoms",
       "pronoms_personnels",
       "pronoms_personnels_sujets"
-     ]
+     ],
+     "image": "images/pronoms_07.webp"
     },
     {
      "n": 9,
@@ -45586,7 +45600,8 @@
       "pronoms_personnels_compléments",
       "pronoms_personnels_compléments_directs",
       "pronoms_personnels_compléments_indirects"
-     ]
+     ],
+     "image": "images/pronoms_09.webp"
     },
     {
      "n": 10,
@@ -45644,7 +45659,8 @@
       "pronoms_personnels",
       "pronoms_personnels_compléments",
       "pronoms_personnels_compléments_directs"
-     ]
+     ],
+     "image": "images/pronoms_10.webp"
     },
     {
      "n": 11,
@@ -45701,7 +45717,8 @@
       "pronoms",
       "pronoms_personnels",
       "pronoms_personnels_réfléchis"
-     ]
+     ],
+     "image": "images/pronoms_11.webp"
     },
     {
      "n": 12,
@@ -45816,7 +45833,8 @@
      "tags": [
       "pronoms",
       "pronoms_démonstratifs"
-     ]
+     ],
+     "image": "images/pronoms_13.webp"
     },
     {
      "n": 14,
@@ -45875,7 +45893,8 @@
       "pronoms_personnels_compléments",
       "pronoms_personnels_compléments_directs",
       "pronoms_personnels_compléments_indirects"
-     ]
+     ],
+     "image": "images/pronoms_14.webp"
     },
     {
      "n": 15,
@@ -45938,7 +45957,8 @@
      "audio_anki": {
       "fr": "paste-0c9cffc17f315ce1aba4fe824b22261f08f70d1c.mp3",
       "it": "paste-27c370bef29363d0b4494c3b677239bbc9e91a86.mp3"
-     }
+     },
+     "image": "images/pronoms_15.webp"
     },
     {
      "n": 16,
@@ -46001,7 +46021,8 @@
      "audio_anki": {
       "fr": "paste-bf6469d562ab744bff11dfb7a6ad5b18a3c8f796.mp3",
       "it": "paste-43b12c816cb8ea2ea80e7b74f9827b857cd155a7.mp3"
-     }
+     },
+     "image": "images/pronoms_16.webp"
     },
     {
      "n": 17,
@@ -46060,7 +46081,8 @@
       "pronoms_personnels_compléments",
       "pronoms_personnels_compléments_directs",
       "pronoms_personnels_compléments_indirects"
-     ]
+     ],
+     "image": "images/pronoms_17.webp"
     },
     {
      "n": 18,
@@ -51074,7 +51096,8 @@
      "tags": [
       "conjonctions",
       "conjonctions_coordination"
-     ]
+     ],
+     "image": "images/conjonctions_00.webp"
     },
     {
      "n": 1,
@@ -51193,7 +51216,8 @@
      "audio_anki": {
       "fr": "paste-9ec6c019e2da337336c35e89ef2375c2ff20cd62.mp3",
       "it": "paste-f7c52791447d0431575c541e4e6a408ae3a04afb.mp3"
-     }
+     },
+     "image": "images/conjonctions_01.webp"
     },
     {
      "n": 3,
@@ -51249,7 +51273,8 @@
       "conjonctions",
       "conjonctions_subordination",
       "conjonctions_subordination_autres"
-     ]
+     ],
+     "image": "images/conjonctions_02.webp"
     },
     {
      "n": 4,
@@ -57022,7 +57047,8 @@
      "tags": [
       "prépositions",
       "prépositions_autres"
-     ]
+     ],
+     "image": "images/prepositions_00.webp"
     },
     {
      "n": 1,
@@ -57139,7 +57165,8 @@
      "tags": [
       "prépositions",
       "prépositions_autres"
-     ]
+     ],
+     "image": "images/prepositions_02.webp"
     },
     {
      "n": 3,
@@ -57371,7 +57398,8 @@
      "tags": [
       "prépositions",
       "prépositions_autres"
-     ]
+     ],
+     "image": "images/prepositions_05.webp"
     },
     {
      "n": 7,
@@ -62886,7 +62914,8 @@
      "tags": [
       "adverbes",
       "adverbes_négation"
-     ]
+     ],
+     "image": "images/adverbes_00.webp"
     },
     {
      "n": 1,
@@ -62948,7 +62977,8 @@
      "audio_anki": {
       "fr": "paste-21c223bd4600abe459c3d4c72c3b72bcd94a9fd9.mp3",
       "it": "paste-10625e700e190073a992121808000ba4c944f657.mp3"
-     }
+     },
+     "image": "images/adverbes_01.webp"
     },
     {
      "n": 2,
@@ -63133,7 +63163,8 @@
      "audio_anki": {
       "fr": "paste-a42a05fbadc3685ad41162eba5b772fabc4809ff.mp3",
       "it": "paste-d369a5faedf1ebcd2212ce0ec5d8e51661c5786f.mp3"
-     }
+     },
+     "image": "images/adverbes_03.webp"
     },
     {
      "n": 5,

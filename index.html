@@ -53,7 +53,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline:2px so
 #zoom { display:flex; gap:2px; padding:3px; border-radius:16px; border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow) }
 #zoom button { width:48px; height:48px; border:0; border-radius:13px; background:transparent; color:var(--fg); display:grid; place-items:center; align-content:center; gap:2px; padding:0; cursor:pointer }
 #zoom button svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linejoin:round; stroke-linecap:round }
-#zoom button span { display:none }   /* pictogrammes seuls ; le nom reste dans title et aria-label */
+#zoom button span { font:600 9px/1 var(--mono); letter-spacing:.02em }
 .hfl { display:none }
 #zoom button[aria-pressed="true"] { background:var(--fg); color:var(--surface) }
 @media (max-width:560px) { #nav { left:max(10px, env(safe-area-inset-left,0px)); transform:none; gap:6px } #nav .rb { width:40px; height:40px; font-size:16px } #zoom button { width:44px; height:44px } }
@@ -373,8 +373,8 @@ body:not([data-view="palais"]) #joy, body:not([data-view="palais"]) #cross, body
   <div class="pills" role="group" aria-label="Ce qui s'affiche sur les grilles du palais"><button class="pill" type="button" data-sayopt="gImg">🖼 Images</button><button class="pill" type="button" data-sayopt="gNum">#️⃣ Numéros</button><button class="pill" type="button" data-sayopt="gFr">Mots FR</button><button class="pill" type="button" data-sayopt="gIt">Mots IT</button></div>
   <p class="pr" style="margin:0">Ce qui apparaît dans les cases des murs du palais. Masquer les mots permet de s'interroger en visitant : l'image ou le numéro seul doit rappeler le mot.</p>
   <h3>Passage d'une niche à la suivante</h3>
-  <div class="pills" role="group" aria-label="Recul sur la pièce"><button class="pill" type="button" data-sayopt="recul">↩ Recul sur la vue de la pièce</button></div>
-  <p class="pr" style="margin:0">Quand on est zoomé sur une niche, la caméra recule sur toute la pièce le temps du fil, pour resituer la niche, puis revient. Décoché : elle passe directement d'une niche à l'autre.</p>
+  <div class="pills" role="group" aria-label="Recul sur la pièce"><button class="pill" type="button" data-sayopt="recul">↩ Recul sur la vue de la pièce</button><button class="pill" type="button" data-sayopt="trail">〰 Traînée du lien</button></div>
+  <p class="pr" style="margin:0">Quand on est zoomé sur une niche, la caméra recule sur toute la pièce le temps du fil, pour resituer la niche, puis revient. Décoché : elle passe directement d'une niche à l'autre. « Traînée du lien » : le fil doré et la bille qui relient une niche à la suivante ; décoché, on passe sans les voir (le texte du lien reste affiché).</p>
   <h3>Parcours mains libres</h3>
   <div class="pills" role="group" aria-label="Pause entre deux niches en mains libres"><button class="pill" type="button" data-hfpause="1.5">Pause 1,5 s</button><button class="pill" type="button" data-hfpause="3">Pause 3 s</button><button class="pill" type="button" data-hfpause="6">Pause 6 s</button><button class="pill" type="button" data-hfpause="10">Pause 10 s</button></div>
   <p class="pr" style="margin:0">Le bouton ▶ Mains libres du palais passe seul à la niche suivante, en suivant la chaîne : il lit les sons cochés ci-dessus, attend la pause, puis avance. Sans case cochée, il avance après la pause seulement. Un geste (toucher l'écran, une touche, un bouton) l'arrête ; l'écran reste allumé pendant le parcours.</p>
@@ -1068,7 +1068,7 @@ function showThread(ri, a, b) {
   if (thread) { scene.remove(thread); thread.geometry.dispose(); }
   const cur = curveBetween(ri, a, b);
   thread = new THREE.Mesh(new THREE.TubeGeometry(cur, 48, .035, 8, false), new THREE.MeshBasicMaterial({ color: 0xffc04d, transparent: true, opacity: .95, depthTest: false }));
-  thread.renderOrder = 9; scene.add(thread); thread.userData.curve = cur; thread.userData.t0 = performance.now();
+  thread.renderOrder = 9; scene.add(thread); thread.userData.curve = cur; thread.userData.t0 = performance.now(); thread.visible = prefs.trail !== false;   // réglage « Traînée du lien »
 }
 function toggleChain(on) {
   if (chainLine) { scene.remove(chainLine); chainLine.geometry.dispose(); chainLine = null; }
@@ -1324,7 +1324,7 @@ const PAL = ["classe", "freq", "freqit", "theme", "lisa"].includes(ls.get("palai
 const CLASSE = PAL === "classe" || PAL === "lisa";   // Lisa : même contenu et même progression que le palais par classe, décor de maison
 const PK = k => CLASSE ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", lisa: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, showEx: true, vF: true, vI: true, vEF: true, vEI: true, recul: true, gImg: true, gNum: true, gFr: true, gIt: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, showEx: true, vF: true, vI: true, vEF: true, vEI: true, recul: true, trail: true, gImg: true, gNum: true, gFr: true, gIt: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
 // lecture du mot FR et du mot IT pendant la visite : activée par défaut (appliquée une fois aux réglages déjà enregistrés)
 if (!prefs.vDef1) { prefs.vF = true; prefs.vI = true; prefs.vDef1 = 1; }
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
@@ -2108,7 +2108,7 @@ function tick() {
       const ahead = anim.curve.getPointAt(Math.min(1, e + .04)), look = t > .82 ? ahead.clone().lerp(anim.look, (t - .82) / .18) : ahead.clone().setY(pos.y);
       if (look.distanceTo(pos) > .01) { camTarget.copy(look); camera.up.set(0, 1, 0); camera.lookAt(look); }
     } else if (anim.kind === "thread" && thread) {
-      particle.visible = true; particle.position.copy(thread.userData.curve.getPointAt(e));
+      particle.visible = thread.visible; particle.position.copy(thread.userData.curve.getPointAt(e));
     }
     if (t >= 1) { anim.active = false; if (anim.kind === "thread") particle.visible = false; const f = anim.then; anim.then = null; f && f(); }
   }
@@ -2223,7 +2223,7 @@ function bindUI() {
   $("#curR").onclick = () => { prefs.rooms = [st.r]; savePrefs(); renderTests(); };
   $("#tagSel").onchange = e => { prefs.tag = e.target.value; savePrefs(); renderTests(); };
   $("#zmin").oninput = e => { prefs.zmin = +e.target.value; $("#zminV").textContent = zminTxt(prefs.zmin); savePrefs(); clearTimeout(bindUI.t); bindUI.t = setTimeout(renderTests, 250); };
-  document.addEventListener("click", e => { const b = e.target.closest("[data-sayopt]"); if (!b) return; const k = b.dataset.sayopt; prefs[k] = !prefs[k]; savePrefs(); renderSayOpts(); if (/^g(Img|Num|Fr|It)$/.test(k) && texturedRoom >= 0) { const r = texturedRoom, m = maskState; texturedRoom = -1; texturizeRoom(r, m); } });
+  document.addEventListener("click", e => { const b = e.target.closest("[data-sayopt]"); if (!b) return; const k = b.dataset.sayopt; prefs[k] = !prefs[k]; savePrefs(); renderSayOpts(); if (k === "trail" && thread) thread.visible = prefs.trail; if (/^g(Img|Num|Fr|It)$/.test(k) && texturedRoom >= 0) { const r = texturedRoom, m = maskState; texturedRoom = -1; texturizeRoom(r, m); } });
   document.addEventListener("click", e => { const b = e.target.closest("[data-tmode]"); if (!b) return; prefs.testMode = b.dataset.tmode; savePrefs(); renderTMode(); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-approach]"); if (!b) return; prefs.approach = b.dataset.approach; savePrefs(); renderApproach(); choosePalace(PAL_OF[b.dataset.approach]); });
   document.addEventListener("click", e => { const b = e.target.closest("[data-inmode]"); if (!b) return; prefs.inMode = b.dataset.inmode; savePrefs(); renderInMode(); });

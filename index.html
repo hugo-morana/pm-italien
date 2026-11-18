@@ -1324,7 +1324,8 @@ const PAL = ["classe", "freq", "freqit", "theme", "lisa"].includes(ls.get("palai
 const CLASSE = PAL === "classe" || PAL === "lisa";   // Lisa : même contenu et même progression que le palais par classe, décor de maison
 const PK = k => CLASSE ? k : k + "_" + PAL;
 const AP_OF = { classe: "classe", lisa: "classe", freq: "freqfr", freqit: "freqit", theme: "theme" }, PAL_OF = { classe: "classe", freqfr: "freq", freqit: "freqit", theme: "theme" };
-const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: false, sayA: false, showEx: true, vF: true, vI: true, vEF: true, vEI: true, recul: true, trail: true, gImg: true, gNum: true, gFr: true, gIt: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+const prefs = Object.assign({ types: ["fr", "it", "num", "suite"], rooms: [0], decs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], tag: "", zmin: 1, newN: 10, mapType: "fr", inMode: "clavier", approach: "palais", testMode: "auto", sayQ: true, sayA: false, showEx: true, vF: true, vI: true, vEF: true, vEI: true, recul: true, trail: true, gImg: true, gNum: true, gFr: true, gIt: true, hfPause: 3, hfRep: { vF: 1, vI: 1, vEF: 1, vEI: 1 } }, ls.get("prefs", {}), ls.get(PK("prefs"), {}));
+if (!prefs.sq1) { prefs.sayQ = true; prefs.sq1 = 1; }   // nov. 2026 : la question est lue à voix haute par défaut pendant l'apprentissage
 // lecture du mot FR et du mot IT pendant la visite : activée par défaut (appliquée une fois aux réglages déjà enregistrés)
 if (!prefs.vDef1) { prefs.vF = true; prefs.vI = true; prefs.vDef1 = 1; }
 if (!prefs.nn10) { if (prefs.newN === 8) prefs.newN = 10; prefs.nn10 = 1; }   // ancien défaut 8 → nouveau défaut 10
@@ -1994,6 +1995,7 @@ function sayQuestion(q) {   // lit la question à son affichage (réglage « Lir
   else if (q.ty === "it" || q.ty === "img" || q.ty === "suite" || q.ty === "chaine") speak(x.it, asrc(x.ai, x.am));
   else if (q.ty === "phit") speak(x.eit, asrc(x.ap));
   else if (q.ty === "phfr") speak(x.efr, asrc(x.ae), null, "fr");
+  else if (q.ty === "num") speak(String(q.n), "", null, "fr");
 }
 function sayAnswer(q, force) {   // lit la réponse quand on la découvre (réglage « Lire la réponse ») ; force : bouton « 🔊 Réponse »
   if ((!prefs.sayA && !force) || !q) return; const x = R[q.ri].niches[q.n];

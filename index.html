@@ -1215,7 +1215,8 @@ function vsOne(text, src, lang, tok) {
 }
 function visitSay() {
   const key = st.r + ":" + st.n; if (key === vsKey) return; vsKey = key;
-  if (!(prefs.vF || prefs.vI || prefs.vEF || prefs.vEI) || quizState.on || document.body.dataset.view !== "palais") { vsStop(); vsDone = Promise.resolve(); return; }
+  if (quizState.on) { vsTok++; clearTimeout(vsTimer); if (vsAudio) vsAudio.pause(); vsDone = Promise.resolve(); return; }   // en test : ne pas couper la lecture de la question
+  if (!(prefs.vF || prefs.vI || prefs.vEF || prefs.vEI) || document.body.dataset.view !== "palais") { vsStop(); vsDone = Promise.resolve(); return; }
   vsStop(); const tok = vsTok, x = R[st.r].niches[st.n]; if (!x) { vsDone = Promise.resolve(); return; }
   vsDone = new Promise(r => vsFin = r);
   vsTimer = setTimeout(async () => {   // petit délai : en visite libre, le regard balaie plusieurs niches
@@ -1301,7 +1302,7 @@ function speak(text, src, btn, lang = "it") {
   const tts = () => {
     const s = window.speechSynthesis, v = lang === "fr" ? voiceFr : voice;
     if (!s || !v) { done(); toast(lang === "fr" ? "Aucune voix française sur cet appareil" : "Aucune voix italienne sur cet appareil"); return; }
-    s.cancel(); const u = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; s.speak(u);
+    const busy = s.speaking || s.pending; s.cancel(); const u = new SpeechSynthesisUtterance(sayable(text, lang).replace(/…/g, " ").replace(/\(.*?\)/g, "")); u.lang = lang === "fr" ? "fr-FR" : "it-IT"; u.voice = v; u.rate = .9; u.onend = u.onerror = done; busy ? setTimeout(() => s.speak(u), 150) : s.speak(u);   // iPhone : un speak() juste après cancel() est parfois ignoré
   };
   if (src) { clipUrl(src).then(u => { const a = spPlayer(); a.onended = done; a.onerror = null; a.src = u; return a.play(); }).catch(() => tts()); return; }
   tts();
@@ -1655,6 +1656,7 @@ function learnNext() {
   endQuiz(`Séance terminée : ${L.done} mot(s) appris.` + (quizState.auto ? " Touche « Test » pour la suite." : ""));
 }
 function present(a) {
+  $("#joy").hidden = true; $("#cross").hidden = true;   // pas de joystick pendant un test
   quizState.q = { ri: a.ri, n: a.n, ty: "present" }; quizState.revealed = true;
   $("#voile").hidden = true; goTo(a.ri, a.n, { thread: true });
   const x = R[a.ri].niches[a.n], p = R[a.ri].niches[a.n - 1];
@@ -1665,6 +1667,7 @@ function present(a) {
   speak(x.it, asrc(x.ai, x.am));
 }
 function ask(q) {
+  $("#joy").hidden = true; $("#cross").hidden = true;
   if (!q) return endQuiz();
   quizState.q = q; quizState.revealed = false; const x = R[q.ri].niches[q.n], num = String(q.n).padStart(2, "0"), room = shortName(R[q.ri]);
   const IM = prefs.inMode || "clavier"; let text = "", input = IM !== "aucun", mask = q.n; quizState.hideFr = false;
@@ -1863,6 +1866,7 @@ async function onGrade(ok) {
   ask(quizState.list[quizState.idx]);
 }
 function endQuiz(msg) {
+  if (st.mode === "free") { $("#joy").hidden = false; $("#cross").hidden = false; }
   const s = quizState.stats; Object.assign(quizState, { on: false, revealed: false, q: null, learn: null, auto: null, fromTest: false }); markTabs(); updateTestBadge();
   $("#quiz").hidden = true; $("#voile").hidden = true; texturizeRoom(st.r, null); st.ui = true; document.body.classList.remove("hidden-ui"); measureDrawer(); renderFiche(); placeRing(st.r, st.n);
   toast(msg || `Fin du test : ${s.ok} réussi(s), ${s.ko} raté(s)`);
